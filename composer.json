@@ -1,0 +1,24 @@
+{
+    "name": "crowdin/crowdin-api-client-php",
+    "description": "PHP SDK for the Crowdin",
+    "keywords": [
+        "crowdin",
+        "sdk"
+    ],
+    "homepage": "https://crowdin.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Crowdin",
+            "homepage": "https://support.crowdin.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Crowdin\\": "src/Crowdin"
+        }
+    }
+}
