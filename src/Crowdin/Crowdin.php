@@ -5,15 +5,20 @@ namespace Crowdin;
 
 
 use Crowdin\Api\ApiInterface;
-use Crowdin\Api\StorageApi;
 use Crowdin\Http\Client\CrowdinHttpClientFactory;
 use Crowdin\Http\Client\CrowdinHttpClientInterface;
+use Crowdin\Http\ResponseDecorator\ResponseDecoratorInterface;
+use Crowdin\Http\ResponseErrorHandlerFactory;
+use Crowdin\Http\ResponseErrorHandlerInterface;
 
 /**
  * Class Crowdin
  * @package Crowdin
  *
- * @property StorageApi storage
+ * @property \Crowdin\Api\StorageApi storage
+ * @property \Crowdin\Api\LanguageApi language
+ * @property \Crowdin\Api\GroupApi group
+ * @property \Crowdin\Api\ProjectApi project
  */
 class Crowdin
 {
@@ -37,10 +42,18 @@ class Crowdin
      */
     protected $baseUri = 'https://api.crowdin.com/api/v2';
 
+    /**
+     * @var ResponseErrorHandlerInterface
+     */
+    protected $responseErrorHandler;
+
+
+
     public function __construct(array $config)
     {
         $config = array_merge([
             'http_client_handler' => null,
+            'response_error_handler' => null,
             'access_token' => null,
         ], $config);
 
@@ -49,6 +62,7 @@ class Crowdin
         $this->accessToken = $config['access_token'];
 
         $this->client = CrowdinHttpClientFactory::make($config['http_client_handler']);
+        $this->responseErrorHandler = ResponseErrorHandlerFactory::make($config['response_error_handler']);
     }
 
     public function request(string $method, string $uri, array $options = [])
@@ -57,10 +71,33 @@ class Crowdin
 
         $options['headers'] = array_merge([
             'Authorization' => 'Bearer '. $this->accessToken,
+          //  'Content-Type' => 'application/json',
         ], $options['headers'] ?? []);
 
         $response = $this->client->request($method, $uri, $options);
 
+        return $response;
+    }
+
+    public function apiRequest(string $method, string $path, ResponseDecoratorInterface $decorator = null, array $options = [])
+    {
+        $response = $this->request($method, $this->getFullUrl($path), $options);
+
+        $response = json_decode($response, true);
+
+        //TODO
+        $this->responseErrorHandler->check($response);
+
+        if($decorator instanceof ResponseDecoratorInterface)
+        {
+            //TODO
+            if(isset($response['data']))
+            {
+                $response = $decorator->decorate($response['data']);
+            }
+        }
+
+        var_dump($response);
         return $response;
     }
 
@@ -70,7 +107,7 @@ class Crowdin
      */
     public function getFullUrl(string $path):string
     {
-        return $this->baseUri = '/'. ltrim($path);
+        return $this->baseUri = $this->baseUri. '/'. ltrim($path);
     }
 
     /**
@@ -81,6 +118,9 @@ class Crowdin
     {
         $services = [
             'storage',
+            'language',
+            'group',
+            'project'
         ];
 
         //TODO

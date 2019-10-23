@@ -16,7 +16,7 @@ class CurlClient implements CrowdinHttpClientInterface
      *
      * @return mixed
      * @throws HttpException
-     * @internal param array $body
+         * @internal param array $body
      * @internal param array $headers
      */
     public function request(string $method, string $uri, array $options)
@@ -32,6 +32,7 @@ class CurlClient implements CrowdinHttpClientInterface
         }
 
         $ch = curl_init();
+
         curl_setopt($ch, CURLOPT_URL, $uri);
         curl_setopt($ch, CURLOPT_TIMEOUT, 60);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -53,17 +54,16 @@ class CurlClient implements CrowdinHttpClientInterface
 
         $response = curl_exec($ch);
 
-        var_dump($uri);
-        var_dump($processed_headers);
-
         $responseCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-        if (false === $response) {
+        if (false === $response)
+        {
             $errNo = curl_errno($ch);
             $errStr = curl_error($ch);
             curl_close($ch);
 
-            if (empty($errStr)) {
+            if (empty($errStr))
+            {
                 throw new HttpException('There was a problem requesting the resource.', $responseCode);
             }
 

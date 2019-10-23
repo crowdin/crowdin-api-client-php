@@ -3,7 +3,10 @@
 
 namespace Crowdin\Model;
 
-
+/**
+ * Class BaseModel
+ * @package Crowdin\Model
+ */
 class BaseModel implements ModelInterface
 {
 
@@ -19,7 +22,7 @@ class BaseModel implements ModelInterface
      *
      * @param array $data
      */
-    public function __construct(array $data)
+    public function __construct(array $data = [])
     {
         $this->data = $data;
     }

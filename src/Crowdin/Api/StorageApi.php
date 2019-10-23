@@ -18,6 +18,8 @@ class StorageApi extends AbstractApi
 
     public function add(\SplFileObject $fileObject)
     {
+
+        //TODO
         $options = [
             'headers' => ['Content-Type' => $fileObject->getType()],
             'body' => file_get_contents($fileObject->getRealPath())
