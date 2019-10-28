@@ -13,7 +13,7 @@ abstract class AbstractApi implements ApiInterface
     /**
      * @var Crowdin
      */
-    protected $client;
+    public $client;
 
     /**
      * AbstractApi constructor.

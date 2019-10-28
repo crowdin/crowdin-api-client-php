@@ -6,6 +6,10 @@ namespace Crowdin\Http\Client;
 
 use Crowdin\Exceptions\HttpException;
 
+/**
+ * Class CurlClient
+ * @package Crowdin\Http\Client
+ */
 class CurlClient implements CrowdinHttpClientInterface
 {
 
@@ -16,7 +20,7 @@ class CurlClient implements CrowdinHttpClientInterface
      *
      * @return mixed
      * @throws HttpException
-         * @internal param array $body
+     * @internal param array $body
      * @internal param array $headers
      */
     public function request(string $method, string $uri, array $options)

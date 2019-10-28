@@ -10,7 +10,7 @@ namespace Crowdin\Api;
  */
 class StorageApi extends AbstractApi
 {
-    public function all()
+    public function list()
     {
         //TODO decorate response
         return $this->client->request('get', $this->client->getFullUrl('storages'));
@@ -18,7 +18,6 @@ class StorageApi extends AbstractApi
 
     public function add(\SplFileObject $fileObject)
     {
-
         //TODO
         $options = [
             'headers' => ['Content-Type' => $fileObject->getType()],

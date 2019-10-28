@@ -3,8 +3,7 @@
 
 namespace Crowdin\Api;
 
-use Crowdin\Http\ResponseDecorator\ResponseModelDecorator;
-use Crowdin\Http\ResponseDecorator\ResponseModelListDecorator;
+use Crowdin\Api\Traits\GrudTrait;
 use Crowdin\Model\Language;
 
 /**
@@ -13,19 +12,23 @@ use Crowdin\Model\Language;
  */
 class LanguageApi extends AbstractApi
 {
-    public function all()
+    use GrudTrait;
+
+    /**
+     * @return mixed
+     */
+    public function list()
     {
-        return $this->client->apiRequest('get', 'languages', new ResponseModelListDecorator(Language::class));
+        return $this->_list('languages', Language::class);
     }
 
-    public function add($data)
+    /**
+     * @param array $data
+     * @return mixed
+     */
+    public function create(array $data)
     {
-        //TODO
-        $options = [
-            'body' => json_encode($data),
-            'headers' => ['Content-Type' => 'application/json']
-        ];
-        return $this->client->apiRequest('post', 'languages', new ResponseModelDecorator(Language::class), $options);
+        return $this->_create('languages', Language::class, $data);
     }
 
     /**
@@ -34,16 +37,24 @@ class LanguageApi extends AbstractApi
      */
     public function get(int $languageId):?Language
     {
-        return $this->client->apiRequest('get', 'languages/'.$languageId, new ResponseModelDecorator(Language::class));
+        return $this->_get('languages/'.$languageId, Language::class);
     }
 
+    /**
+     * @param int $languageId
+     * @return mixed
+     */
     public function delete(int $languageId)
     {
-        return $this->client->apiRequest('delete', 'languages'.$languageId);
+        return $this->_delete('languages'.$languageId);
     }
 
-    public function update()
+    /**
+     * @param Language $language
+     * @return Language|mixed
+     */
+    public function update(Language $language):?Language
     {
-
+        return $this->_update('languages', $language);
     }
 }

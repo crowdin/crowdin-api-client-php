@@ -19,6 +19,13 @@ use Crowdin\Http\ResponseErrorHandlerInterface;
  * @property \Crowdin\Api\LanguageApi language
  * @property \Crowdin\Api\GroupApi group
  * @property \Crowdin\Api\ProjectApi project
+ * @property \Crowdin\Api\BranchApi branch
+ * @property \Crowdin\Api\TagApi task
+ * @property \Crowdin\Api\ScreenshotApi screenshot
+ * @property \Crowdin\Api\DirectoryApi directory
+ * @property \Crowdin\Api\GlossaryApi glossary
+ * @property \Crowdin\Api\StringTranslationApi stringTranslation
+ * @property \Crowdin\Api\VoteApi vote
  */
 class Crowdin
 {
@@ -47,7 +54,18 @@ class Crowdin
      */
     protected $responseErrorHandler;
 
-
+    protected  $services = [
+        'storage',
+        'language',
+        'group',
+        'project',
+        'task',
+        'branch',
+        'glossary',
+        'stringTranslation',
+        'directory',
+        'vote'
+    ];
 
     public function __construct(array $config)
     {
@@ -85,7 +103,6 @@ class Crowdin
 
         $response = json_decode($response, true);
 
-        //TODO
         $this->responseErrorHandler->check($response);
 
         if($decorator instanceof ResponseDecoratorInterface)
@@ -97,7 +114,6 @@ class Crowdin
             }
         }
 
-        var_dump($response);
         return $response;
     }
 
@@ -107,7 +123,7 @@ class Crowdin
      */
     public function getFullUrl(string $path):string
     {
-        return $this->baseUri = $this->baseUri. '/'. ltrim($path);
+        return $this->baseUri. '/'. ltrim($path);
     }
 
     /**
@@ -116,15 +132,8 @@ class Crowdin
      */
     public function __get($name)
     {
-        $services = [
-            'storage',
-            'language',
-            'group',
-            'project'
-        ];
-
-        //TODO
-        if (in_array($name, $services)) {
+        if (in_array($name, $this->services))
+        {
             return $this->getApi($name);
         }
 

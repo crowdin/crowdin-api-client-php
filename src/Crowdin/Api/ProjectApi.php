@@ -3,11 +3,77 @@
 
 namespace Crowdin\Api;
 
+use Crowdin\Api\Traits\GrudTrait;
+use Crowdin\Http\ResponseDecorator\ResponseModelDecorator;
+use Crowdin\Model\Project;
+use Crowdin\Model\ProjectSetting;
+
 /**
  * Class ProjectApi
  * @package Crowdin\Api
  */
 class ProjectApi extends AbstractApi
 {
+    use GrudTrait;
 
+    public function list()
+    {
+        return $this->_list('projects', Project::class);
+    }
+
+    /**
+     * @param int $projectId
+     * @return Project|null
+     */
+    public function get(int $projectId):?Project
+    {
+        return $this->_get('projects/'. $projectId, Project::class);
+    }
+
+    /**
+     * @param array $data
+     * @return Project|null
+     */
+    public function create(array $data):?Project
+    {
+        return $this->_create('projects', Project::class, $data);
+    }
+
+    /**
+     * @param Project $project
+     * @return mixed
+     */
+    public function update(Project $project):?Project
+    {
+        return $this->_update('projects', $project);
+    }
+
+    /**
+     * @param int $projectId
+     * @return mixed
+     */
+    public function delete(int $projectId)
+    {
+        return $this->client->apiRequest('delete', 'projects/'.$projectId);
+    }
+
+    /**
+     * @param int $projectId
+     * @return ProjectSetting|null
+     */
+    public function getSettings(int $projectId):?ProjectSetting
+    {
+        $path = sprintf('/projects/%d/settings', $projectId);
+        return $this->_get($path, ProjectSetting::class);
+    }
+
+    /**
+     * @param ProjectSetting $projectSetting
+     */
+    public function updateSettings(ProjectSetting $projectSetting)
+    {
+        $path = sprintf('/projects/%d/settings/', $projectSetting->getProjectId());
+
+        //TODO
+    }
 }

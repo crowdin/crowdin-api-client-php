@@ -10,7 +10,7 @@ namespace Crowdin\Model;
 class Language extends BaseModel
 {
     /**
-     * @var integer
+     * @var string
      */
     protected $id;
 
@@ -112,7 +112,7 @@ class Language extends BaseModel
     public function __construct(array $data = [])
     {
         parent::__construct($data);
-        $this->id = (integer)$this->getDataProperty('id');
+        $this->id = (string)$this->getDataProperty('string');
         $this->organizationId = (integer)$this->getDataProperty('organizationId');
         $this->name = (string)$this->getDataProperty('name');
         $this->dialectOf = (integer)$this->getDataProperty('dialectOf');
@@ -135,17 +135,17 @@ class Language extends BaseModel
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getId(): int
+    public function getId(): string
     {
         return $this->id;
     }
 
     /**
-     * @param int $id
+     * @param string $id
      */
-    public function setId(int $id): void
+    public function setId(string $id): void
     {
         $this->id = $id;
     }
