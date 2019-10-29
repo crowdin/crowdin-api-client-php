@@ -11,6 +11,11 @@ class BaseModel implements ModelInterface
 {
 
     /**
+     * @var string
+     */
+    protected $pk = 'id';
+
+    /**
      * Model Data
      *
      * @var array
@@ -25,6 +30,14 @@ class BaseModel implements ModelInterface
     public function __construct(array $data = [])
     {
         $this->data = $data;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPk()
+    {
+        return $this->{$this->pk};
     }
 
     /**
@@ -81,5 +94,13 @@ class BaseModel implements ModelInterface
     public function __set($property, $value)
     {
         $this->data[$property] = $value;
+    }
+
+    /**
+     * @return array
+     */
+    public function getVars()
+    {
+        return get_object_vars($this);
     }
 }

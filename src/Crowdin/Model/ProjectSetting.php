@@ -7,6 +7,11 @@ namespace Crowdin\Model;
 class ProjectSetting extends BaseModel
 {
     /**
+     * @var string
+     */
+    protected $pk = 'projectId';
+
+    /**
      * @var integer
      */
     protected $projectId;

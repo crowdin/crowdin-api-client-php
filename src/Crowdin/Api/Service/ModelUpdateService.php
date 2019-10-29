@@ -28,9 +28,10 @@ class ModelUpdateService
      */
     public function  getUpdateData()
     {
-        $dataModelPrev = $this->api->get($this->model->getId());
+        //TODO fixed PK
+        $dataModelPrev = $this->api->get($this->model->getPk());
 
-        $dataModel = $this->model->getData();
+        $dataModel = $this->model->getVars();
 
         $_data = [];
 
