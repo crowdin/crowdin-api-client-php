@@ -32,21 +32,21 @@ class LanguageApi extends AbstractApi
     }
 
     /**
-     * @param int $languageId
+     * @param string $languageId
      * @return Language|null
      */
-    public function get(int $languageId):?Language
+    public function get(string $languageId):?Language
     {
         return $this->_get('languages/'.$languageId, Language::class);
     }
 
     /**
-     * @param int $languageId
+     * @param string $languageId
      * @return mixed
      */
-    public function delete(int $languageId)
+    public function delete(string $languageId)
     {
-        return $this->_delete('languages'.$languageId);
+        return $this->_delete('languages/'.$languageId);
     }
 
     /**

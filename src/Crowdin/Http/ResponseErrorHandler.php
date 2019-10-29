@@ -23,7 +23,10 @@ class ResponseErrorHandler implements ResponseErrorHandlerInterface
     {
         if(isset($data['errors']))
         {
-            throw new ApiValidationException($data['errors']);
+            $apiValidationException =  new ApiValidationException('Api validation errors');
+            $apiValidationException->setErrors($data['errors']);
+            throw $apiValidationException;
+
         }elseif (isset($data['error']))
         {
             throw new ApiException($data['error']['message'], $data['error']['code']);

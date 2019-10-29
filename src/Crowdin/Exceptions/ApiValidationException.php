@@ -11,18 +11,6 @@ use Throwable;
  */
 class ApiValidationException extends CrowdinException
 {
-    /**
-     * ApiValidationException constructor.
-     * @param string $message
-     * @param array $errors
-     *
-     */
-    public function __construct($message = "", $errors = [])
-    {
-        $this->errors = $errors;
-        parent::__construct($message);
-    }
-
     public $errors = [];
 
     /**

@@ -112,7 +112,7 @@ class Language extends BaseModel
     public function __construct(array $data = [])
     {
         parent::__construct($data);
-        $this->id = (string)$this->getDataProperty('string');
+        $this->id = (string)$this->getDataProperty('id');
         $this->organizationId = (integer)$this->getDataProperty('organizationId');
         $this->name = (string)$this->getDataProperty('name');
         $this->dialectOf = (integer)$this->getDataProperty('dialectOf');
