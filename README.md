@@ -10,6 +10,7 @@ For more about Crowdin API see the [documentation](https://support.crowdin.com/e
 
 ## Status
 
+[![Azure DevOps builds (branch)](https://img.shields.io/azure-devops/build/crowdin/crowdin-api-client-php/15/master?logo=azure-pipelines)](https://dev.azure.com/crowdin/crowdin-api-client-php/_build/latest?definitionId=15&branchName=master)
 [![GitHub issues](https://img.shields.io/github/issues/crowdin/crowdin-api-client-php)](https://github.com/crowdin/crowdin-api-client-php/issues)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/crowdin/crowdin-api-client-php)](https://github.com/crowdin/crowdin-api-client-php/graphs/commit-activity)
 [![GitHub last commit](https://img.shields.io/github/last-commit/crowdin/crowdin-api-client-php)](https://github.com/crowdin/crowdin-api-client-php/commits/master)
