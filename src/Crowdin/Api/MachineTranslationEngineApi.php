@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Api;
 
 use Crowdin\Model\MachineTranslationEngine;
@@ -20,9 +19,9 @@ class MachineTranslationEngineApi extends AbstractApi
      * @param int $mtId
      * @return MachineTranslationEngine|null
      */
-    public function get(int $mtId):?MachineTranslationEngine
+    public function get(int $mtId): ?MachineTranslationEngine
     {
-        return $this->_get('mts/'. $mtId, MachineTranslationEngine::class);
+        return $this->_get('mts/' . $mtId, MachineTranslationEngine::class);
     }
 
     /**
@@ -38,7 +37,7 @@ class MachineTranslationEngineApi extends AbstractApi
      * @param MachineTranslationEngine $machineTranslationEngine
      * @return MachineTranslationEngine|null
      */
-    public function update(MachineTranslationEngine $machineTranslationEngine):?MachineTranslationEngine
+    public function update(MachineTranslationEngine $machineTranslationEngine): ?MachineTranslationEngine
     {
         return $this->_update('mts', $machineTranslationEngine);
     }
@@ -49,6 +48,6 @@ class MachineTranslationEngineApi extends AbstractApi
      */
     public function delete(int $mtId)
     {
-        return $this->_delete('mts/'. $mtId);
+        return $this->_delete('mts/' . $mtId);
     }
 }

@@ -14,7 +14,6 @@ class ResponseModelListDecorator implements ResponseDecoratorInterface
     protected $modelName;
 
     /**
-     * ResponseModelDecorator constructor.
      * @param string $modelName
      */
     public function __construct(string $modelName)
@@ -26,13 +25,12 @@ class ResponseModelListDecorator implements ResponseDecoratorInterface
      * @param $data
      * @return array
      */
-    public function decorate($data):array
+    public function decorate($data): array
     {
         //TODO collections
         $_items = [];
 
-        foreach ($data as $item)
-        {
+        foreach ($data as $item) {
             $_items[] = new $this->modelName($item['data']);
         }
 

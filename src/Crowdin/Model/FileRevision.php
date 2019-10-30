@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Model;
 
 /**
@@ -47,6 +46,5 @@ class FileRevision extends BaseModel
     public function __construct(array $data = [])
     {
         parent::__construct($data);
-
     }
 }

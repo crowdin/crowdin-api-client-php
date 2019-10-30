@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Api;
 
 use Crowdin\Model\Task;
@@ -22,7 +21,7 @@ class TaskApi extends AbstractApi
      * @param int $taskId
      * @return Task|null
      */
-    public function get(int $projectId, int $taskId):?Task
+    public function get(int $projectId, int $taskId): ?Task
     {
         $path = sprintf('/projects/%d/tasks/%d', $projectId, $taskId);
         return $this->_get($path, Task::class);
@@ -38,7 +37,7 @@ class TaskApi extends AbstractApi
      * @param Task $task
      * @return Task|null
      */
-    public function update(Task $task):?Task
+    public function update(Task $task): ?Task
     {
         $path = sprintf('/projects/%d/tasks', $task->getProjectId());
 

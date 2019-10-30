@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Authentication;
 
 /**
@@ -9,5 +8,4 @@ namespace Crowdin\Authentication;
  */
 class OAuth2Client
 {
-
 }

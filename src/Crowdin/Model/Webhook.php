@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Model;
 
 /**
@@ -70,7 +69,6 @@ class Webhook extends BaseModel
     protected $updatedAt;
 
     /**
-     * Webhook constructor.
      * @param array $data
      */
     public function __construct(array $data = [])

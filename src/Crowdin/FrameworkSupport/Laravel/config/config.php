@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return [
 
     /*
     |--------------------------------------------------------------------------
@@ -14,4 +14,4 @@ return array(
 
     'access_token' => env('CROWDIN_ACCESS_TOKEN')
 
-);
+];

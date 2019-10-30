@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Api;
 
 use Crowdin\Model\Project;
@@ -12,7 +11,6 @@ use Crowdin\Model\ProjectSetting;
  */
 class ProjectApi extends AbstractApi
 {
-
     public function list()
     {
         return $this->_list('projects', Project::class);
@@ -22,16 +20,16 @@ class ProjectApi extends AbstractApi
      * @param int $projectId
      * @return Project|null
      */
-    public function get(int $projectId):?Project
+    public function get(int $projectId): ?Project
     {
-        return $this->_get('projects/'. $projectId, Project::class);
+        return $this->_get('projects/' . $projectId, Project::class);
     }
 
     /**
      * @param array $data
      * @return Project|null
      */
-    public function create(array $data):?Project
+    public function create(array $data): ?Project
     {
         return $this->_create('projects', Project::class, $data);
     }
@@ -40,9 +38,9 @@ class ProjectApi extends AbstractApi
      * @param Project $project
      * @return mixed
      */
-    public function update(Project $project):?Project
+    public function update(Project $project): ?Project
     {
-        return $this->_update('projects/'.$project->getId(), $project);
+        return $this->_update('projects/' . $project->getId(), $project);
     }
 
     /**
@@ -51,14 +49,14 @@ class ProjectApi extends AbstractApi
      */
     public function delete(int $projectId)
     {
-        return $this->client->apiRequest('delete', 'projects/'.$projectId);
+        return $this->client->apiRequest('delete', 'projects/' . $projectId);
     }
 
     /**
      * @param int $projectId
      * @return ProjectSetting|null
      */
-    public function getSettings(int $projectId):?ProjectSetting
+    public function getSettings(int $projectId): ?ProjectSetting
     {
         $path = sprintf('projects/%d/settings', $projectId);
         return $this->_get($path, ProjectSetting::class);
@@ -68,7 +66,7 @@ class ProjectApi extends AbstractApi
      * @param ProjectSetting $projectSetting
      * @return ProjectSetting|null
      */
-    public function updateSettings(ProjectSetting $projectSetting):?ProjectSetting
+    public function updateSettings(ProjectSetting $projectSetting): ?ProjectSetting
     {
         $path = sprintf('/projects/%d/settings/', $projectSetting->getProjectId());
 

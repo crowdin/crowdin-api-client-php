@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Model;
 
 /**
@@ -60,7 +59,6 @@ class Term extends BaseModel
     protected $updatedAt;
 
     /**
-     * Term constructor.
      * @param array $data
      */
     public function __construct(array $data = [])

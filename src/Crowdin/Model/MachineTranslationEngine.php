@@ -39,7 +39,6 @@ class MachineTranslationEngine extends BaseModel
     protected $projectIds;
 
     /**
-     * MachineTranslationEngine constructor.
      * @param array $data
      */
     public function __construct(array $data = [])

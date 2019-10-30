@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Model;
 
 /**
@@ -9,5 +8,4 @@ namespace Crowdin\Model;
  */
 interface ModelInterface
 {
-
 }

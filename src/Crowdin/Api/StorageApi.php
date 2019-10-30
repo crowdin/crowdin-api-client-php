@@ -1,7 +1,8 @@
 <?php
 
-
 namespace Crowdin\Api;
+
+use SplFileObject;
 
 /**
  * Class StorageApi
@@ -16,7 +17,7 @@ class StorageApi extends AbstractApi
         return $this->client->request('get', $this->client->getFullUrl('storages'));
     }
 
-    public function add(\SplFileObject $fileObject)
+    public function add(SplFileObject $fileObject)
     {
         //TODO
         $options = [
@@ -29,12 +30,11 @@ class StorageApi extends AbstractApi
 
     public function getInfo(int $storageId)
     {
-        return $this->client->request('get', $this->client->getFullUrl('storages/'.$storageId), []);
+        return $this->client->request('get', $this->client->getFullUrl('storages/' . $storageId), []);
     }
 
     public function delete(int $storageId)
     {
-        return $this->client->request('delete', $this->client->getFullUrl('/storages/'.$storageId), []);
+        return $this->client->request('delete', $this->client->getFullUrl('/storages/' . $storageId), []);
     }
-
 }

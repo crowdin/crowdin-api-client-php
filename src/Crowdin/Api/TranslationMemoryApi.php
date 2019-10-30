@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Api;
 
 use Crowdin\Model\TranslationMemory;
@@ -13,22 +12,18 @@ class TranslationMemoryApi extends AbstractApi
 {
     public function list()
     {
-
     }
 
     public function get(int $translationMemoryId)
     {
-
     }
 
     public function create(array $data)
     {
-
     }
 
     public function update(TranslationMemory $translationMemory)
     {
-
     }
 
     /**
@@ -37,6 +32,6 @@ class TranslationMemoryApi extends AbstractApi
      */
     public function delete(int $translationMemoryId)
     {
-        return $this->client->apiRequest('delete', ''.$translationMemoryId);
+        return $this->client->apiRequest('delete', '' . $translationMemoryId);
     }
 }

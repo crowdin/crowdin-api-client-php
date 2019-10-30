@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Crowdin\Http\Client;
-
 
 use Crowdin\Exceptions\HttpException;
 
@@ -18,8 +16,8 @@ class CurlHttpClient implements CrowdinHttpClientInterface
      * @param string $uri
      * @param array $options
      *
-     * @return mixed
      * @throws HttpException
+     * @return mixed
      * @internal param array $body
      * @internal param array $headers
      */
@@ -28,7 +26,7 @@ class CurlHttpClient implements CrowdinHttpClientInterface
         $headers = $options['headers'];
         $body = $options['body'];
 
-        $processed_headers = array();
+        $processed_headers = [];
         if (!empty($headers)) {
             foreach ($headers as $key => $value) {
                 $processed_headers[] = $key . ': ' . $value;
@@ -60,14 +58,12 @@ class CurlHttpClient implements CrowdinHttpClientInterface
 
         $responseCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-        if (false === $response)
-        {
+        if (false === $response) {
             $errNo = curl_errno($ch);
             $errStr = curl_error($ch);
             curl_close($ch);
 
-            if (empty($errStr))
-            {
+            if (empty($errStr)) {
                 throw new HttpException('There was a problem requesting the resource.', $responseCode);
             }
 

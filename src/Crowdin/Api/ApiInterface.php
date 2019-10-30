@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Api;
 
 /**
@@ -9,5 +8,4 @@ namespace Crowdin\Api;
  */
 interface ApiInterface
 {
-
 }

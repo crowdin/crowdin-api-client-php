@@ -1,9 +1,11 @@
 <?php
 
-
 namespace Crowdin\Model;
 
-
+/**
+ * Class Screenshot
+ * @package Crowdin\Model
+ */
 class Screenshot extends BaseModel
 {
     /**

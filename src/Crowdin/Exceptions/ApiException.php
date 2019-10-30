@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Exceptions;
 
 /**
@@ -9,5 +8,4 @@ namespace Crowdin\Exceptions;
  */
 class ApiException extends CrowdinException
 {
-
 }

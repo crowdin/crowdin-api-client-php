@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Api;
 
 use Crowdin\Model\StringTranslationApproval;
@@ -26,7 +25,7 @@ class StringTranslationApprovalApi extends AbstractApi
      * @param int $approvalId
      * @return StringTranslationApproval|null
      */
-    public function get(int $projectId, int $approvalId):?StringTranslationApproval
+    public function get(int $projectId, int $approvalId): ?StringTranslationApproval
     {
         $path = sprintf('/projects/%d/approvals/%d', $projectId, $approvalId);
 
@@ -38,13 +37,12 @@ class StringTranslationApprovalApi extends AbstractApi
      * @param array $data
      * @return StringTranslationApproval|null
      */
-    public function create(int $projectId, array $data):?StringTranslationApproval
+    public function create(int $projectId, array $data): ?StringTranslationApproval
     {
         $path = sprintf('/projects/%s/approvals', $projectId);
 
         return $this->_create($path, StringTranslationApproval::class, $data);
     }
-
 
     public function update(int $projectId, StringTranslationApproval $stringTranslationApproval)
     {

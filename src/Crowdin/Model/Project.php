@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Model;
 
 /**
@@ -115,7 +114,6 @@ class Project extends BaseModel
     protected $updatedAt;
 
     /**
-     * Project constructor.
      * @param array $data
      */
     public function __construct(array $data = [])

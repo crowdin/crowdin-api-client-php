@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Model;
 
 /**
@@ -45,7 +44,6 @@ class TranslationMemory extends BaseModel
     protected $projectIds;
 
     /**
-     * TranslationMemory constructor.
      * @param array $data
      */
     public function __construct(array $data = [])

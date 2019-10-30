@@ -9,7 +9,6 @@ use InvalidArgumentException;
  */
 class CrowdinHttpClientFactory
 {
-
     /**
      * @param $handler
      * @return CrowdinHttpClientInterface
@@ -17,11 +16,11 @@ class CrowdinHttpClientFactory
     public static function make($handler): CrowdinHttpClientInterface
     {
         //No handler specified
-        if (!$handler)
-        {
+        if (!$handler) {
             return new CurlHttpClient();
-        }elseif ($handler instanceof CrowdinHttpClientInterface)
-        {
+        }
+
+        if ($handler instanceof CrowdinHttpClientInterface) {
             return  $handler;
         }
 

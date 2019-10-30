@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Crowdin\Api;
-
 
 use Crowdin\Model\Branch;
 
@@ -27,7 +25,7 @@ class BranchApi extends AbstractApi
      * @param int $branchId
      * @return Branch|null
      */
-    public function get(int $projectId, int $branchId):?Branch
+    public function get(int $projectId, int $branchId): ?Branch
     {
         $path = sprintf('/projects/%d/branches/%d', $projectId, $branchId);
         return $this->_get($path, Branch::class);
@@ -38,7 +36,7 @@ class BranchApi extends AbstractApi
      * @param array $data
      * @return Branch|null
      */
-    public function create(int $projectId, array $data):?Branch
+    public function create(int $projectId, array $data): ?Branch
     {
         $path = sprintf('/projects/%d/branches', $projectId);
         return $this->_create($path, Branch::class, $data);
@@ -48,7 +46,7 @@ class BranchApi extends AbstractApi
      * @param Branch $branch
      * @return Branch|null
      */
-    public function update(Branch $branch):?Branch
+    public function update(Branch $branch): ?Branch
     {
         //TODO not valid patch
         //return $this->_update('branches', $branch);

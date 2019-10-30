@@ -1,4 +1,5 @@
 <?php
+
 namespace Crowdin\Http\Client;
 
 /**

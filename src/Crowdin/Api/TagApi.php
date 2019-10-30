@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Api;
 
 /**
@@ -14,26 +13,21 @@ class TagApi extends AbstractApi
 
     public function list()
     {
-
     }
 
     public function get()
     {
-
     }
 
     public function create()
     {
-
     }
 
     public function update()
     {
-
     }
 
     public function delete()
     {
-
     }
 }

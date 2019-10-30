@@ -2,7 +2,6 @@
 
 namespace Crowdin\Api;
 
-use Crowdin\Api\Service\ModelUpdateService;
 use Crowdin\Crowdin;
 use Crowdin\Http\ResponseDecorator\ResponseModelDecorator;
 use Crowdin\Http\ResponseDecorator\ResponseModelListDecorator;
@@ -20,7 +19,6 @@ abstract class AbstractApi implements ApiInterface
     public $client;
 
     /**
-     * AbstractApi constructor.
      * @param Crowdin $client
      */
     public function __construct(Crowdin $client)
@@ -39,21 +37,18 @@ abstract class AbstractApi implements ApiInterface
 
         $_data = [];
 
-        foreach ($model->getData() as $key => $val)
-        {
-            if(isset($dataModel[$key]) && $dataModel[$key] != $val)
-            {
+        foreach ($model->getData() as $key => $val) {
+            if (isset($dataModel[$key]) && $dataModel[$key] != $val) {
                 $_data[] = [
                     'op' => 'replace',
-                    'path' => '/'.$key,
+                    'path' => '/' . $key,
                     'value' => $dataModel[$key]
                 ];
                 //TODO array add|remove
             }
         }
 
-        if(empty($data))
-        {
+        if (empty($data)) {
             return $model;
         }
 
@@ -63,7 +58,6 @@ abstract class AbstractApi implements ApiInterface
         ];
 
         return $this->client->apiRequest('PATCH', $path, new ResponseModelDecorator(get_class($model)), $options);
-
     }
 
     /**
@@ -109,7 +103,7 @@ abstract class AbstractApi implements ApiInterface
      * @param string $modelName
      * @return mixed
      */
-    protected function _get(string $path,  string $modelName)
+    protected function _get(string $path, string $modelName)
     {
         return $this->client->apiRequest('get', $path, new ResponseModelDecorator($modelName));
     }

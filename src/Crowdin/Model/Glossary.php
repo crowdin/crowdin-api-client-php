@@ -1,10 +1,9 @@
 <?php
 
-
 namespace Crowdin\Model;
 
 /**
- * Class Glossar
+ * Class Glossary
  * @package Crowdin\Model
  */
 class Glossary extends BaseModel
@@ -50,7 +49,6 @@ class Glossary extends BaseModel
     protected $createdAt;
 
     /**
-     * Glossar constructor.
      * @param array $data
      */
     public function __construct(array $data = [])

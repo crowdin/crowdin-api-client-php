@@ -1,31 +1,41 @@
 <?php
 
-
 namespace Crowdin;
 
-
 use Crowdin\Api\ApiInterface;
+use Crowdin\Api\BranchApi;
+use Crowdin\Api\DirectoryApi;
+use Crowdin\Api\GlossaryApi;
+use Crowdin\Api\GroupApi;
+use Crowdin\Api\LanguageApi;
+use Crowdin\Api\ProjectApi;
+use Crowdin\Api\ScreenshotApi;
+use Crowdin\Api\StorageApi;
+use Crowdin\Api\StringTranslationApi;
+use Crowdin\Api\TagApi;
+use Crowdin\Api\VoteApi;
 use Crowdin\Http\Client\CrowdinHttpClientFactory;
 use Crowdin\Http\Client\CrowdinHttpClientInterface;
 use Crowdin\Http\ResponseDecorator\ResponseDecoratorInterface;
 use Crowdin\Http\ResponseErrorHandlerFactory;
 use Crowdin\Http\ResponseErrorHandlerInterface;
+use UnexpectedValueException;
 
 /**
  * Class Crowdin
  * @package Crowdin
  *
- * @property \Crowdin\Api\StorageApi storage
- * @property \Crowdin\Api\LanguageApi language
- * @property \Crowdin\Api\GroupApi group
- * @property \Crowdin\Api\ProjectApi project
- * @property \Crowdin\Api\BranchApi branch
- * @property \Crowdin\Api\TagApi task
- * @property \Crowdin\Api\ScreenshotApi screenshot
- * @property \Crowdin\Api\DirectoryApi directory
- * @property \Crowdin\Api\GlossaryApi glossary
- * @property \Crowdin\Api\StringTranslationApi stringTranslation
- * @property \Crowdin\Api\VoteApi vote
+ * @property StorageApi storage
+ * @property LanguageApi language
+ * @property GroupApi group
+ * @property ProjectApi project
+ * @property BranchApi branch
+ * @property TagApi task
+ * @property ScreenshotApi screenshot
+ * @property DirectoryApi directory
+ * @property GlossaryApi glossary
+ * @property StringTranslationApi stringTranslation
+ * @property VoteApi vote
  */
 class Crowdin
 {
@@ -54,7 +64,7 @@ class Crowdin
      */
     protected $responseErrorHandler;
 
-    protected  $services = [
+    protected $services = [
         'storage',
         'language',
         'group',
@@ -88,7 +98,7 @@ class Crowdin
         $options['body'] = $options['body'] ?? null;
 
         $options['headers'] = array_merge([
-            'Authorization' => 'Bearer '. $this->accessToken,
+            'Authorization' => 'Bearer ' . $this->accessToken,
           //  'Content-Type' => 'application/json',
         ], $options['headers'] ?? []);
 
@@ -105,11 +115,9 @@ class Crowdin
 
         $this->responseErrorHandler->check($response);
 
-        if($decorator instanceof ResponseDecoratorInterface)
-        {
+        if ($decorator instanceof ResponseDecoratorInterface) {
             //TODO
-            if(isset($response['data']))
-            {
+            if (isset($response['data'])) {
                 $response = $decorator->decorate($response['data']);
             }
         }
@@ -121,9 +129,9 @@ class Crowdin
      * @param string $path
      * @return string
      */
-    public function getFullUrl(string $path):string
+    public function getFullUrl(string $path): string
     {
-        return $this->baseUri. '/'. ltrim($path);
+        return $this->baseUri . '/' . ltrim($path);
     }
 
     /**
@@ -132,29 +140,25 @@ class Crowdin
      */
     public function __get($name)
     {
-        if (in_array($name, $this->services))
-        {
+        if (in_array($name, $this->services)) {
             return $this->getApi($name);
         }
 
-        throw new \UnexpectedValueException(sprintf('Invalid property: %s', $name));
+        throw new UnexpectedValueException(sprintf('Invalid property: %s', $name));
     }
-
 
     /**
      * @param string $name
      * @return ApiInterface
      */
-    public function getApi(string $name):ApiInterface
+    public function getApi(string $name): ApiInterface
     {
         $class = '\Crowdin\\Api\\' . ucfirst($name) . 'Api';
 
-        if (!array_key_exists($class, $this->apis))
-        {
+        if (!array_key_exists($class, $this->apis)) {
             $this->apis[$class] = new $class($this);
         }
 
         return $this->apis[$class];
     }
-
 }
