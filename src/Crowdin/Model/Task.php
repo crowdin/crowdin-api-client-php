@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Model;
 
 /**
@@ -498,5 +497,4 @@ class Task extends BaseModel
     {
         $this->updatedAt = $updatedAt;
     }
-
 }

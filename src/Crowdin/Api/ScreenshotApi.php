@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Api;
 
 use Crowdin\Model\Screenshot;
@@ -27,7 +26,7 @@ class ScreenshotApi extends AbstractApi
      * @param int $screenshotId
      * @return Screenshot|null
      */
-    public function get(int $projectId, int $screenshotId):?Screenshot
+    public function get(int $projectId, int $screenshotId): ?Screenshot
     {
         $path = sprintf('/projects/%d/screenshots/%d', $projectId, $screenshotId);
         return $this->_get($path, Screenshot::class);
@@ -38,7 +37,7 @@ class ScreenshotApi extends AbstractApi
      * @param array $data
      * @return Screenshot|null
      */
-    public function create(int $projectId, array $data):?Screenshot
+    public function create(int $projectId, array $data): ?Screenshot
     {
         $path = sprintf('/projects/%d/screenshots', $projectId);
         return $this->_create($path, Screenshot::class, $data);
@@ -49,7 +48,7 @@ class ScreenshotApi extends AbstractApi
      * @param Screenshot $screenshot
      * @return Screenshot|null
      */
-    public function update(int $projectId, Screenshot $screenshot):?Screenshot
+    public function update(int $projectId, Screenshot $screenshot): ?Screenshot
     {
         $path = sprintf('/projects/%d/screenshots/%d', $projectId, $screenshot->getId());
         return $this->_update($path, $screenshot);

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Api;
 
 use Crowdin\Model\Group;
@@ -11,7 +10,6 @@ use Crowdin\Model\Group;
  */
 class GroupApi extends AbstractApi
 {
-
     public function list()
     {
         return $this->_list('groups', Group::class);
@@ -21,9 +19,9 @@ class GroupApi extends AbstractApi
      * @param int $groupID
      * @return Group|null
      */
-    public function get(int $groupID):?Group
+    public function get(int $groupID): ?Group
     {
-        return $this->_get('groups/'.$groupID, Group::class);
+        return $this->_get('groups/' . $groupID, Group::class);
     }
 
     /**
@@ -33,18 +31,18 @@ class GroupApi extends AbstractApi
      * @internal param description $description
      * @internal param string $name
      */
-    public function create(array $data):?Group
+    public function create(array $data): ?Group
     {
-        return $this->_create('groups',  Group::class, $data);
+        return $this->_create('groups', Group::class, $data);
     }
 
     /**
      * @param Group $group
      * @return Group|mixed
      */
-    public function update(Group $group):Group
+    public function update(Group $group): Group
     {
-        return  $this->_update('groups/'.$group->getId(), $group);
+        return  $this->_update('groups/' . $group->getId(), $group);
     }
 
     /**

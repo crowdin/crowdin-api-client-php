@@ -1,10 +1,9 @@
 <?php
 
-
 namespace Crowdin\Model;
 
 /**
- * Class Branche
+ * Class Branch
  * @package Crowdin\Model
  *
  */

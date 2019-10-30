@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Api;
 
 use Crowdin\Model\DownloadFile;
@@ -21,7 +20,7 @@ class GlossaryApi extends AbstractApi
      * @param int $glossaryId
      * @return Glossary|null
      */
-    public function get(int $glossaryId):?Glossary
+    public function get(int $glossaryId): ?Glossary
     {
         return $this->_get('glossaries/' . $glossaryId, Glossary::class);
     }
@@ -30,7 +29,7 @@ class GlossaryApi extends AbstractApi
      * @param array $data
      * @return mixed
      */
-    public function create(array $data):?Glossary
+    public function create(array $data): ?Glossary
     {
         return $this->_create('glossaries', Glossary::class, $data);
     }
@@ -39,7 +38,7 @@ class GlossaryApi extends AbstractApi
      * @param Glossary $glossary
      * @return Glossary|null
      */
-    public function update(Glossary $glossary):?Glossary
+    public function update(Glossary $glossary): ?Glossary
     {
         return $this->_update('glossaries', $glossary);
     }
@@ -48,7 +47,7 @@ class GlossaryApi extends AbstractApi
      * @param int $glossaryId
      * @return DownloadFile|null
      */
-    public function download(int $glossaryId):?DownloadFile
+    public function download(int $glossaryId): ?DownloadFile
     {
         $path = sprintf('glossaries/%d/exports/download', $glossaryId);
         return $this->_get($path, DownloadFile::class);

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Model;
 
 /**
@@ -453,5 +452,4 @@ class Language extends BaseModel
     {
         $this->osxLocale = $osxLocale;
     }
-
 }

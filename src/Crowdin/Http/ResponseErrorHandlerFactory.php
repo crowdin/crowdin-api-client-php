@@ -1,10 +1,7 @@
 <?php
 
-
 namespace Crowdin\Http;
 
-use Crowdin\Http\Client\CrowdinHttpClientInterface;
-use Crowdin\Http\Client\CurlHttpClient;
 use InvalidArgumentException;
 
 class ResponseErrorHandlerFactory
@@ -15,12 +12,11 @@ class ResponseErrorHandlerFactory
      */
     public static function make($handler): ResponseErrorHandlerInterface
     {
-        if (!$handler)
-        {
+        if (!$handler) {
             return new ResponseErrorHandler();
+        }
 
-        }elseif ($handler instanceof ResponseErrorHandlerInterface)
-        {
+        if ($handler instanceof ResponseErrorHandlerInterface) {
             return  $handler;
         }
 

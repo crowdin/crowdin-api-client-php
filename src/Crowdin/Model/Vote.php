@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Model;
 
 /**
@@ -35,7 +34,6 @@ class Vote extends BaseModel
     protected $mark;
 
     /**
-     * Vote constructor.
      * @param array $data
      */
     public function __construct(array $data = [])

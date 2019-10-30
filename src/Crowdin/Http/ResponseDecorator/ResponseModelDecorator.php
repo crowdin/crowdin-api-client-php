@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Http\ResponseDecorator;
 
 use Crowdin\Model\ModelInterface;
@@ -13,7 +12,6 @@ class ResponseModelDecorator implements ResponseDecoratorInterface
     protected $modelName;
 
     /**
-     * ResponseModelDecorator constructor.
      * @param string $modelName
      */
     public function __construct(string $modelName)
@@ -21,7 +19,7 @@ class ResponseModelDecorator implements ResponseDecoratorInterface
         $this->modelName = $modelName;
     }
 
-    public function decorate($data):ModelInterface
+    public function decorate($data): ModelInterface
     {
         return new $this->modelName($data);
     }

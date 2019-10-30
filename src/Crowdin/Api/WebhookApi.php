@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Api;
 
 use Crowdin\Model\Webhook;
@@ -11,7 +10,6 @@ use Crowdin\Model\Webhook;
  */
 class WebhookApi extends AbstractApi
 {
-
     public function list()
     {
         return $this->_list('webhooks', Webhook::class);
@@ -21,9 +19,9 @@ class WebhookApi extends AbstractApi
      * @param int $webhookId
      * @return Webhook
      */
-    public function get(int $webhookId):Webhook
+    public function get(int $webhookId): Webhook
     {
-        return $this->_get('webhooks/'.$webhookId, Webhook::class);
+        return $this->_get('webhooks/' . $webhookId, Webhook::class);
     }
 
     /**
@@ -39,7 +37,7 @@ class WebhookApi extends AbstractApi
      * @param Webhook $webhook
      * @return Webhook|null
      */
-    public function update(Webhook $webhook):?Webhook
+    public function update(Webhook $webhook): ?Webhook
     {
         return $this->_update('webhooks', $webhook);
     }
@@ -50,6 +48,6 @@ class WebhookApi extends AbstractApi
      */
     public function delete(int $webhookId)
     {
-        return $this->_delete('webhooks/'.$webhookId);
+        return $this->_delete('webhooks/' . $webhookId);
     }
 }

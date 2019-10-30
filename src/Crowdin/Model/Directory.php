@@ -1,10 +1,9 @@
 <?php
 
-
 namespace Crowdin\Model;
 
 /**
- * Class Directori
+ * Class Directory
  * @package Crowdin\Model
  */
 class Directory extends BaseModel

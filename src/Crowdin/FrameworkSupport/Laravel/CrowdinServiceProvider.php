@@ -1,4 +1,6 @@
-<?php namespace Infusionsoft\FrameworkSupport\Laravel;
+<?php
+
+namespace Infusionsoft\FrameworkSupport\Laravel;
 
 use Illuminate\Support\ServiceProvider;
 use Infusionsoft\Infusionsoft;
@@ -36,7 +38,6 @@ class CrowdinServiceProvider extends ServiceProvider
 
             //TODO
             return new Crowdin(config('Crowdin'));
-
         });
     }
 
@@ -47,7 +48,6 @@ class CrowdinServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return array('crowdin');
+        return ['crowdin'];
     }
-
 }

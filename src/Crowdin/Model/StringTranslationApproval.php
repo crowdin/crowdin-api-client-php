@@ -1,10 +1,9 @@
 <?php
 
-
 namespace Crowdin\Model;
 
 /**
- * Class StringTranslation
+ * Class StringTranslationApproval
  * @package Crowdin\Model
  */
 class StringTranslationApproval extends BaseModel

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Api;
 
 use Crowdin\Model\Language;
@@ -32,9 +31,9 @@ class LanguageApi extends AbstractApi
      * @param string $languageId
      * @return Language|null
      */
-    public function get(string $languageId):?Language
+    public function get(string $languageId): ?Language
     {
-        return $this->_get('languages/'.$languageId, Language::class);
+        return $this->_get('languages/' . $languageId, Language::class);
     }
 
     /**
@@ -43,15 +42,15 @@ class LanguageApi extends AbstractApi
      */
     public function delete(string $languageId)
     {
-        return $this->_delete('languages/'.$languageId);
+        return $this->_delete('languages/' . $languageId);
     }
 
     /**
      * @param Language $language
      * @return Language|mixed
      */
-    public function update(Language $language):?Language
+    public function update(Language $language): ?Language
     {
-        return $this->_update('languages/'.$language->getId(), $language);
+        return $this->_update('languages/' . $language->getId(), $language);
     }
 }

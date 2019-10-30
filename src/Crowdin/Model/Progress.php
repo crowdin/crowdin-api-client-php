@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Model;
 
 /**
@@ -44,9 +43,7 @@ class Progress extends BaseModel
      */
     protected $phrasesApprovedProgress;
 
-
     /**
-     * Progress constructor.
      * @param array $data
      */
     public function __construct(array $data = [])

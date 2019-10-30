@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Api;
 
 use Crowdin\Model\Directory;
@@ -26,7 +25,7 @@ class DirectoryApi extends AbstractApi
      * @param int $directoryId
      * @return Directory|null
      */
-    public function get(int $projectId, int $directoryId):?Directory
+    public function get(int $projectId, int $directoryId): ?Directory
     {
         $path = sprintf('/projects/%d/directories/%d', $projectId, $directoryId);
         return  $this->_get($path, Directory::class);
@@ -34,9 +33,10 @@ class DirectoryApi extends AbstractApi
 
     /**
      * @param int $projectId
+     * @param array $data
      * @return Directory|null
      */
-    public function create(int $projectId, array $data):?Directory
+    public function create(int $projectId, array $data): ?Directory
     {
         $path = sprintf('/projects/%d/directories', $projectId);
         return $this->_create($path, Directory::class, $data);

@@ -1,9 +1,11 @@
 <?php
 
-
 namespace Crowdin\Model;
 
-
+/**
+ * Class ProjectSetting
+ * @package Crowdin\Model
+ */
 class ProjectSetting extends BaseModel
 {
     /**

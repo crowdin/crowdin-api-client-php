@@ -1,9 +1,6 @@
 <?php
 
-
 namespace Crowdin\Exceptions;
-
-use Throwable;
 
 /**
  * Class ApiValidationException
@@ -28,5 +25,4 @@ class ApiValidationException extends CrowdinException
     {
         $this->errors = $errors;
     }
-
 }

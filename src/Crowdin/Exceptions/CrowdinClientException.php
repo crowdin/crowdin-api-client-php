@@ -1,6 +1,6 @@
 <?php
-namespace Crowdin\Exceptions;
 
+namespace Crowdin\Exceptions;
 
 /***
  * Class CrowdinClientException

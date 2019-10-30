@@ -54,7 +54,6 @@ class SourceString extends BaseModel
     protected $updatedAt;
 
     /**
-     * SourceString constructor.
      * @param array $data
      */
     public function __construct(array $data = [])
