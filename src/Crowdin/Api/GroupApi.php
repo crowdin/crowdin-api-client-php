@@ -3,7 +3,6 @@
 
 namespace Crowdin\Api;
 
-use Crowdin\Api\Traits\GrudTrait;
 use Crowdin\Model\Group;
 
 /**
@@ -12,7 +11,6 @@ use Crowdin\Model\Group;
  */
 class GroupApi extends AbstractApi
 {
-    use GrudTrait;
 
     public function list()
     {
@@ -46,7 +44,7 @@ class GroupApi extends AbstractApi
      */
     public function update(Group $group):Group
     {
-        return  $this->_update('groups', $group);
+        return  $this->_update('groups/'.$group->getId(), $group);
     }
 
     /**

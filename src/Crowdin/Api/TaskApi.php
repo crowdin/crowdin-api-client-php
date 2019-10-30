@@ -3,7 +3,6 @@
 
 namespace Crowdin\Api;
 
-use Crowdin\Api\Traits\GrudTrait;
 use Crowdin\Model\Task;
 
 /**
@@ -12,8 +11,6 @@ use Crowdin\Model\Task;
  */
 class TaskApi extends AbstractApi
 {
-    use GrudTrait;
-
     public function list(int $projectId)
     {
         $path = sprintf('projects/%s/tasks', $projectId);

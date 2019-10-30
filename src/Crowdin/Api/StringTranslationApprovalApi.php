@@ -3,7 +3,6 @@
 
 namespace Crowdin\Api;
 
-use Crowdin\Api\Traits\GrudTrait;
 use Crowdin\Model\StringTranslationApproval;
 
 /**
@@ -12,8 +11,6 @@ use Crowdin\Model\StringTranslationApproval;
  */
 class StringTranslationApprovalApi extends AbstractApi
 {
-    use GrudTrait;
-
     /**
      * @param int $projectId
      * @return mixed
@@ -49,9 +46,11 @@ class StringTranslationApprovalApi extends AbstractApi
     }
 
 
-    public function update()
+    public function update(int $projectId, StringTranslationApproval $stringTranslationApproval)
     {
-        //TODO
+        $path = sprintf('/projects/%s/approvals', $projectId);
+
+        return $this->_update($path, $stringTranslationApproval);
     }
 
     /**

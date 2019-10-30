@@ -3,9 +3,6 @@
 
 namespace Crowdin\Api;
 
-use Crowdin\Api\Traits\GrudTrait;
-use Crowdin\Http\ResponseDecorator\ResponseModelDecorator;
-use Crowdin\Http\ResponseDecorator\ResponseModelListDecorator;
 use Crowdin\Model\Directory;
 
 /**
@@ -14,8 +11,6 @@ use Crowdin\Model\Directory;
  */
 class DirectoryApi extends AbstractApi
 {
-    use GrudTrait;
-
     /**
      * @param int $projectId
      * @return mixed

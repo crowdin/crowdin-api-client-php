@@ -3,7 +3,6 @@
 
 namespace Crowdin\Api;
 
-use Crowdin\Api\Traits\GrudTrait;
 use Crowdin\Model\DownloadFile;
 use Crowdin\Model\Glossary;
 
@@ -13,8 +12,6 @@ use Crowdin\Model\Glossary;
  */
 class GlossaryApi extends AbstractApi
 {
-    use GrudTrait;
-
     public function list()
     {
         return $this->_list('glossaries', Glossary::class);

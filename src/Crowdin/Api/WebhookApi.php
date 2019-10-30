@@ -3,7 +3,6 @@
 
 namespace Crowdin\Api;
 
-use Crowdin\Api\Traits\GrudTrait;
 use Crowdin\Model\Webhook;
 
 /**
@@ -12,7 +11,6 @@ use Crowdin\Model\Webhook;
  */
 class WebhookApi extends AbstractApi
 {
-    use GrudTrait;
 
     public function list()
     {

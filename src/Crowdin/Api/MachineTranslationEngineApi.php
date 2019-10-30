@@ -3,7 +3,6 @@
 
 namespace Crowdin\Api;
 
-use Crowdin\Api\Traits\GrudTrait;
 use Crowdin\Model\MachineTranslationEngine;
 
 /**
@@ -12,8 +11,6 @@ use Crowdin\Model\MachineTranslationEngine;
  */
 class MachineTranslationEngineApi extends AbstractApi
 {
-    use GrudTrait;
-
     public function list(int $groupId)
     {
         //TODO query param

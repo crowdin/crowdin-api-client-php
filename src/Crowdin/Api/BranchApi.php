@@ -4,9 +4,6 @@
 namespace Crowdin\Api;
 
 
-use Crowdin\Api\Traits\GrudTrait;
-use Crowdin\Http\ResponseDecorator\ResponseModelDecorator;
-use Crowdin\Http\ResponseDecorator\ResponseModelListDecorator;
 use Crowdin\Model\Branch;
 
 /**
@@ -15,8 +12,6 @@ use Crowdin\Model\Branch;
  */
 class BranchApi extends AbstractApi
 {
-    use GrudTrait;
-
     /**
      * @param int $projectId
      * @return mixed

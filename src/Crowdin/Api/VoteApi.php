@@ -3,7 +3,6 @@
 
 namespace Crowdin\Api;
 
-use Crowdin\Api\Traits\GrudTrait;
 use Crowdin\Model\Vote;
 
 /**
@@ -12,7 +11,6 @@ use Crowdin\Model\Vote;
  */
 class VoteApi extends AbstractApi
 {
-    use GrudTrait;
 
     public function list(int $projectId)
     {

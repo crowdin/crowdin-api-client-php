@@ -3,7 +3,6 @@
 
 namespace Crowdin\Api;
 
-use Crowdin\Api\Traits\GrudTrait;
 use Crowdin\Model\Language;
 
 /**
@@ -12,8 +11,6 @@ use Crowdin\Model\Language;
  */
 class LanguageApi extends AbstractApi
 {
-    use GrudTrait;
-
     /**
      * @return mixed
      */
@@ -55,6 +52,6 @@ class LanguageApi extends AbstractApi
      */
     public function update(Language $language):?Language
     {
-        return $this->_update('languages', $language);
+        return $this->_update('languages/'.$language->getId(), $language);
     }
 }

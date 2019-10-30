@@ -3,7 +3,6 @@
 
 namespace Crowdin\Api;
 
-use Crowdin\Api\Traits\GrudTrait;
 use Crowdin\Model\Screenshot;
 
 /**
@@ -12,8 +11,6 @@ use Crowdin\Model\Screenshot;
  */
 class ScreenshotApi extends AbstractApi
 {
-    use GrudTrait;
-
     /**
      * @param int $projectId
      * @return mixed
@@ -47,9 +44,15 @@ class ScreenshotApi extends AbstractApi
         return $this->_create($path, Screenshot::class, $data);
     }
 
-    public function update()
+    /**
+     * @param int $projectId
+     * @param Screenshot $screenshot
+     * @return Screenshot|null
+     */
+    public function update(int $projectId, Screenshot $screenshot):?Screenshot
     {
-        //TODO
+        $path = sprintf('/projects/%d/screenshots/%d', $projectId, $screenshot->getId());
+        return $this->_update($path, $screenshot);
     }
 
     /**

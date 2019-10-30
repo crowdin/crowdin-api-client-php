@@ -3,8 +3,6 @@
 
 namespace Crowdin\Api;
 
-use Crowdin\Api\Traits\GrudTrait;
-use Crowdin\Http\ResponseDecorator\ResponseModelDecorator;
 use Crowdin\Model\Project;
 use Crowdin\Model\ProjectSetting;
 
@@ -14,7 +12,6 @@ use Crowdin\Model\ProjectSetting;
  */
 class ProjectApi extends AbstractApi
 {
-    use GrudTrait;
 
     public function list()
     {
@@ -45,7 +42,7 @@ class ProjectApi extends AbstractApi
      */
     public function update(Project $project):?Project
     {
-        return $this->_update('projects', $project);
+        return $this->_update('projects/'.$project->getId(), $project);
     }
 
     /**
@@ -63,17 +60,18 @@ class ProjectApi extends AbstractApi
      */
     public function getSettings(int $projectId):?ProjectSetting
     {
-        $path = sprintf('/projects/%d/settings', $projectId);
+        $path = sprintf('projects/%d/settings', $projectId);
         return $this->_get($path, ProjectSetting::class);
     }
 
     /**
      * @param ProjectSetting $projectSetting
+     * @return ProjectSetting|null
      */
-    public function updateSettings(ProjectSetting $projectSetting)
+    public function updateSettings(ProjectSetting $projectSetting):?ProjectSetting
     {
         $path = sprintf('/projects/%d/settings/', $projectSetting->getProjectId());
 
-        //TODO
+        return $this->_update($path, $projectSetting);
     }
 }

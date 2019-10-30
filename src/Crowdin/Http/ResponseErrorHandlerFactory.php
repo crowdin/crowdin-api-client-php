@@ -4,7 +4,7 @@
 namespace Crowdin\Http;
 
 use Crowdin\Http\Client\CrowdinHttpClientInterface;
-use Crowdin\Http\Client\CurlClient;
+use Crowdin\Http\Client\CurlHttpClient;
 use InvalidArgumentException;
 
 class ResponseErrorHandlerFactory

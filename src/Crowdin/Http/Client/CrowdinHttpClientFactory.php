@@ -19,7 +19,7 @@ class CrowdinHttpClientFactory
         //No handler specified
         if (!$handler)
         {
-            return new CurlClient();
+            return new CurlHttpClient();
         }elseif ($handler instanceof CrowdinHttpClientInterface)
         {
             return  $handler;
