@@ -21,11 +21,17 @@
         "guzzlehttp/guzzle": "^6.4"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.15"
+        "friendsofphp/php-cs-fixer": "^2.15",
+        "phpunit/phpunit": "^8"
     },
     "autoload": {
         "psr-4": {
             "Crowdin\\": "src/Crowdin"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
         }
     }
 }
