@@ -1,6 +1,8 @@
 <?php
 
+
 namespace Crowdin\Model;
+
 
 /**
  * Class User
