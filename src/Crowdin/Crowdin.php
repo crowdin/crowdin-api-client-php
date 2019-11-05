@@ -41,6 +41,8 @@ use UnexpectedValueException;
  * @property StringTranslationApi stringTranslation
  * @property StringTranslationApprovalApi stringTranslationApproval
  * @property VoteApi vote
+ * @property UserApi user
+ * @property VendorApi vendor
  */
 class Crowdin
 {
@@ -80,7 +82,9 @@ class Crowdin
         'stringTranslation',
         'stringTranslationApproval',
         'directory',
-        'vote'
+        'vote',
+        'vendor',
+        'user',
     ];
 
     public function __construct(array $config)
