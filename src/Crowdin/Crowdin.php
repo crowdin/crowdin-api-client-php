@@ -14,6 +14,9 @@ use Crowdin\Api\StorageApi;
 use Crowdin\Api\StringTranslationApi;
 use Crowdin\Api\StringTranslationApprovalApi;
 use Crowdin\Api\TagApi;
+use Crowdin\Api\TaskApi;
+use Crowdin\Api\UserApi;
+use Crowdin\Api\VendorApi;
 use Crowdin\Api\VoteApi;
 use Crowdin\Http\Client\CrowdinHttpClientFactory;
 use Crowdin\Http\Client\CrowdinHttpClientInterface;
@@ -31,13 +34,15 @@ use UnexpectedValueException;
  * @property GroupApi group
  * @property ProjectApi project
  * @property BranchApi branch
- * @property TagApi task
+ * @property TaskApi task
  * @property ScreenshotApi screenshot
  * @property DirectoryApi directory
  * @property GlossaryApi glossary
  * @property StringTranslationApi stringTranslation
  * @property StringTranslationApprovalApi stringTranslationApproval
  * @property VoteApi vote
+ * @property UserApi user
+ * @property VendorApi vendor
  */
 class Crowdin
 {
@@ -77,7 +82,9 @@ class Crowdin
         'stringTranslation',
         'stringTranslationApproval',
         'directory',
-        'vote'
+        'vote',
+        'vendor',
+        'user',
     ];
 
     public function __construct(array $config)
