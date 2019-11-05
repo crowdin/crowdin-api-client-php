@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Api;
 
 use Crowdin\Model\DownloadFile;
@@ -39,7 +38,7 @@ class FileApi extends AbstractApi
      * @param $fileId
      * @return File|null
      */
-    public function get(int $projectId, int $fileId):?File
+    public function get(int $projectId, int $fileId): ?File
     {
         $path = sprintf('projects/%d/files/%d', $projectId, $fileId);
         return $this->_get($path, File::class);
@@ -50,7 +49,7 @@ class FileApi extends AbstractApi
      * @param $fileId
      * @return DownloadFile|null
      */
-    public function download(int $projectId, int $fileId):?DownloadFile
+    public function download(int $projectId, int $fileId): ?DownloadFile
     {
         $path = sprintf('projects/%d/files/%d/download', $projectId, $fileId);
         return $this->_get($path, DownloadFile::class);
@@ -60,7 +59,7 @@ class FileApi extends AbstractApi
      * @param File $file
      * @return File|null
      */
-    public function update(File $file):?File
+    public function update(File $file): ?File
     {
         $path = sprintf('projects/%d/files/%d', $file->getProjectId(), $file->getId());
         return $this->_update($path, $file);
@@ -94,7 +93,7 @@ class FileApi extends AbstractApi
      * @param int $revision
      * @return FileRevision|null
      */
-    public function restoreFileToRevision(int $projectId, int $fileId, int $revision = 0):?FileRevision
+    public function restoreFileToRevision(int $projectId, int $fileId, int $revision = 0): ?FileRevision
     {
         $path = sprintf('projects/%d/files/%d/revisions', $projectId, $fileId);
         return $this->_put($path, FileRevision::class, ['revision' => $revision]);
@@ -106,7 +105,7 @@ class FileApi extends AbstractApi
      * @param int $revision
      * @return FileRevision|null
      */
-    public function getRevision(int $projectId, int $fileId, int $revision):?FileRevision
+    public function getRevision(int $projectId, int $fileId, int $revision): ?FileRevision
     {
         $path = sprintf('projects/%d/files/%d/revisions/%d', $projectId, $fileId, $revision);
         return $this->_get($path, FileRevision::class);
@@ -118,7 +117,7 @@ class FileApi extends AbstractApi
      * @param array $data
      * @return FileRevision|null
      */
-    public function updateFileRevision(int $projectId, int $fileId, array $data):?FileRevision
+    public function updateFileRevision(int $projectId, int $fileId, array $data): ?FileRevision
     {
         $path = sprintf('projects/%d/files/%d/revisions', $projectId, $fileId);
         return $this->_create($path, FileRevision::class, $data);

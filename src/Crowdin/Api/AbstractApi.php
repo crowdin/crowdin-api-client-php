@@ -70,8 +70,7 @@ abstract class AbstractApi implements ApiInterface
     {
         $options = [];
 
-        if(!empty($params))
-        {
+        if (!empty($params)) {
             $options['body'] = $params;
         }
 
@@ -114,8 +113,7 @@ abstract class AbstractApi implements ApiInterface
     {
         $options = [];
 
-        if(!empty($params))
-        {
+        if (!empty($params)) {
             $options['body'] = $params;
         }
         return $this->client->apiRequest('get', $path, new ResponseModelDecorator($modelName), $options);
@@ -152,5 +150,4 @@ abstract class AbstractApi implements ApiInterface
 
         return $this->client->apiRequest('post', $path, new ResponseModelDecorator($modelName), $options);
     }
-
 }

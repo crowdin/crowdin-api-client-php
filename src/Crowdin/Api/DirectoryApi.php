@@ -46,7 +46,7 @@ class DirectoryApi extends AbstractApi
      * @param Directory $directory
      * @return Directory|null
      */
-    public function update(Directory $directory):?Directory
+    public function update(Directory $directory): ?Directory
     {
         $path = sprintf('projects/%d/directories/%d', $directory->getProjectId(), $directory->getId());
         return $this->_update($path, $directory);
