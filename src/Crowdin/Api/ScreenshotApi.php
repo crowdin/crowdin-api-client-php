@@ -101,7 +101,7 @@ class ScreenshotApi extends AbstractApi
      * @param array $data
      * @return Tag|null
      */
-    public function addTag(int $projectId, int $screenshotId, array $data):?Tag
+    public function addTag(int $projectId, int $screenshotId, array $data): ?Tag
     {
         $path = sprintf('projects/%d/screenshots/%d/tags', $projectId, $screenshotId);
         return $this->_create($path, Tag::class, $data);
@@ -124,7 +124,7 @@ class ScreenshotApi extends AbstractApi
      * @param int $tagId
      * @return Tag|null
      */
-    public function getTag(int $projectId, int $screenshotId, int $tagId):?Tag
+    public function getTag(int $projectId, int $screenshotId, int $tagId): ?Tag
     {
         $path = sprintf('projects/%d/screenshots/%d/tags/%d', $projectId, $screenshotId, $tagId);
         return  $this->_get($path, Tag::class);
@@ -147,7 +147,7 @@ class ScreenshotApi extends AbstractApi
      * @param Tag $tag
      * @return mixed
      */
-    public function updateTag(int $projectId, Tag $tag):?Screenshot
+    public function updateTag(int $projectId, Tag $tag): ?Screenshot
     {
         $path = sprintf('projects/%d/screenshots/%d/tags/%d', $projectId, $tag->getScreenshotId(), $tag->getId());
         return  $this->_update($path, $tag);

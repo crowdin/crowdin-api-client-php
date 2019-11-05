@@ -14,7 +14,7 @@ class GuzzleHttpClient implements CrowdinHttpClientInterface
     /**
      * GuzzleHttp client.
      *
-     * @var \GuzzleHttp\Client
+     * @var Client
      */
     protected $client;
 

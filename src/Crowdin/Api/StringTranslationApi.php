@@ -25,7 +25,7 @@ class StringTranslationApi extends AbstractApi
      * @param int $translationId
      * @return StringTranslation|null
      */
-    public function get(int $projectId, int $translationId):?StringTranslation
+    public function get(int $projectId, int $translationId): ?StringTranslation
     {
         $path = sprintf('projects/%d/translations/%d', $projectId, $translationId);
         return $this->_get($path, StringTranslation::class);
@@ -36,7 +36,7 @@ class StringTranslationApi extends AbstractApi
      * @param array $data
      * @return StringTranslation|null
      */
-    public function create(int $projectId, array $data):?StringTranslation
+    public function create(int $projectId, array $data): ?StringTranslation
     {
         $path = sprintf('projects/%d/translations', $projectId);
         return $this->_create($path, StringTranslation::class, $data);
@@ -47,7 +47,7 @@ class StringTranslationApi extends AbstractApi
      * @param int $translationId
      * @return StringTranslation|null
      */
-    public function restore(int $projectId, int $translationId):?StringTranslation
+    public function restore(int $projectId, int $translationId): ?StringTranslation
     {
         $path = sprintf('projects/%d/translations/%d/restore', $projectId, $translationId);
 

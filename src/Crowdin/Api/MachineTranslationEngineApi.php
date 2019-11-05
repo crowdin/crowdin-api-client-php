@@ -43,7 +43,7 @@ class MachineTranslationEngineApi extends AbstractApi
      */
     public function update(MachineTranslationEngine $machineTranslationEngine): ?MachineTranslationEngine
     {
-        return $this->_update('mts/'. $machineTranslationEngine->getId(), $machineTranslationEngine);
+        return $this->_update('mts/' . $machineTranslationEngine->getId(), $machineTranslationEngine);
     }
 
     /**

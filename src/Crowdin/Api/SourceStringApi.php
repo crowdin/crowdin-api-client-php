@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Api;
 
 use Crowdin\Model\SourceString;
@@ -26,7 +25,7 @@ class SourceStringApi extends AbstractApi
      * @param int $stringId
      * @return SourceString
      */
-    public function get(int $projectId, int $stringId):?SourceString
+    public function get(int $projectId, int $stringId): ?SourceString
     {
         $path = sprintf('projects/%d/strings/%d', $projectId, $stringId);
         return $this->_get($path, SourceString::class);
@@ -37,7 +36,7 @@ class SourceStringApi extends AbstractApi
      * @param array $data
      * @return SourceString|null
      */
-    public function create(int $projectId, array $data):?SourceString
+    public function create(int $projectId, array $data): ?SourceString
     {
         $path = sprintf('projects/%d/strings', $projectId);
         return $this->_create($path, SourceString::class, $data);
@@ -47,7 +46,7 @@ class SourceStringApi extends AbstractApi
      * @param SourceString $sourceString
      * @return SourceString|null
      */
-    public function update(SourceString $sourceString):?SourceString
+    public function update(SourceString $sourceString): ?SourceString
     {
         $path = sprintf('projects/%d/strings/%d', $sourceString->getProjectId(), $sourceString->getId());
         return $this->_update($path, $sourceString);
