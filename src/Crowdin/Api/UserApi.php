@@ -1,5 +1,6 @@
 <?php
 
+
 namespace Crowdin\Api;
 
 use Crowdin\Model\User;
@@ -23,8 +24,8 @@ class UserApi extends AbstractApi
      * @param int $userId
      * @return User|null
      */
-    public function get(int $userId): ?User
+    public function get(int $userId):?User
     {
-        return $this->_get('user/' . $userId, User::class);
+        return $this->_get('user/'. $userId, User::class);
     }
 }
