@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Crowdin\Api;
-
 
 use Crowdin\Model\WorkflowTemplate;
 
@@ -24,8 +22,8 @@ class WorkflowTemplateApi extends AbstractApi
      * @param int $templateId
      * @return WorkflowTemplate|null
      */
-    public function get(int $templateId):?WorkflowTemplate
+    public function get(int $templateId): ?WorkflowTemplate
     {
-        return $this->_get('workflow-templates/'.$templateId, WorkflowTemplate::class);
+        return $this->_get('workflow-templates/' . $templateId, WorkflowTemplate::class);
     }
 }

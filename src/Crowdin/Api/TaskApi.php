@@ -32,7 +32,7 @@ class TaskApi extends AbstractApi
      * @param array $data
      * @return Task|null
      */
-    public function create(int $projectId, array $data):?Task
+    public function create(int $projectId, array $data): ?Task
     {
         $path = sprintf('projects/%d/tasks', $projectId);
         return $this->_create($path, Task::class, $data);

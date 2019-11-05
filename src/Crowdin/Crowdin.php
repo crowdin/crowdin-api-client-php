@@ -13,7 +13,7 @@ use Crowdin\Api\ScreenshotApi;
 use Crowdin\Api\StorageApi;
 use Crowdin\Api\StringTranslationApi;
 use Crowdin\Api\StringTranslationApprovalApi;
-use Crowdin\Api\TagApi;
+use Crowdin\Api\TaskApi;
 use Crowdin\Api\VoteApi;
 use Crowdin\Http\Client\CrowdinHttpClientFactory;
 use Crowdin\Http\Client\CrowdinHttpClientInterface;
@@ -31,7 +31,7 @@ use UnexpectedValueException;
  * @property GroupApi group
  * @property ProjectApi project
  * @property BranchApi branch
- * @property TagApi task
+ * @property TaskApi task
  * @property ScreenshotApi screenshot
  * @property DirectoryApi directory
  * @property GlossaryApi glossary

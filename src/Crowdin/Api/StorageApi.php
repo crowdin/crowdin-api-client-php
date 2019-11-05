@@ -23,7 +23,7 @@ class StorageApi extends AbstractApi
      * @param SplFileObject $fileObject
      * @return Storage|null
      */
-    public function create(SplFileObject $fileObject):?Storage
+    public function create(SplFileObject $fileObject): ?Storage
     {
         $options = [
             'headers' => ['Content-Type' => $fileObject->getType()],
@@ -37,9 +37,9 @@ class StorageApi extends AbstractApi
      * @param int $storageId
      * @return Storage|null
      */
-    public function get(int $storageId):?Storage
+    public function get(int $storageId): ?Storage
     {
-        return $this->_get('storages/'.$storageId, Storage::class);
+        return $this->_get('storages/' . $storageId, Storage::class);
     }
 
     /**
@@ -48,6 +48,6 @@ class StorageApi extends AbstractApi
      */
     public function delete(int $storageId)
     {
-        return $this->_delete('storages/'.$storageId);
+        return $this->_delete('storages/' . $storageId);
     }
 }

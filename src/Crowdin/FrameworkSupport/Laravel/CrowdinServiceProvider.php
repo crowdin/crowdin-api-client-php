@@ -1,9 +1,8 @@
 <?php
 
-namespace Infusionsoft\FrameworkSupport\Laravel;
+namespace Crowdin\FrameworkSupport\Laravel;
 
 use Illuminate\Support\ServiceProvider;
-use Infusionsoft\Infusionsoft;
 
 class CrowdinServiceProvider extends ServiceProvider
 {
