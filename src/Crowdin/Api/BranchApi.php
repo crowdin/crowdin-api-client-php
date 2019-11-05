@@ -16,7 +16,7 @@ class BranchApi extends AbstractApi
      */
     public function list(int $projectId)
     {
-        $path = sprintf('/projects/%d/branches', $projectId);
+        $path = sprintf('projects/%d/branches', $projectId);
         return $this->_list($path, Branch::class);
     }
 
@@ -27,7 +27,7 @@ class BranchApi extends AbstractApi
      */
     public function get(int $projectId, int $branchId): ?Branch
     {
-        $path = sprintf('/projects/%d/branches/%d', $projectId, $branchId);
+        $path = sprintf('projects/%d/branches/%d', $projectId, $branchId);
         return $this->_get($path, Branch::class);
     }
 
@@ -38,7 +38,7 @@ class BranchApi extends AbstractApi
      */
     public function create(int $projectId, array $data): ?Branch
     {
-        $path = sprintf('/projects/%d/branches', $projectId);
+        $path = sprintf('projects/%d/branches', $projectId);
         return $this->_create($path, Branch::class, $data);
     }
 
@@ -48,8 +48,9 @@ class BranchApi extends AbstractApi
      */
     public function update(Branch $branch): ?Branch
     {
-        //TODO not valid patch
-        //return $this->_update('branches', $branch);
+        $path = sprintf('projects/%d/branches/%d', $branch->getProjectId(), $branch->getId());
+
+        return $this->_update($path, $branch);
     }
 
     /**

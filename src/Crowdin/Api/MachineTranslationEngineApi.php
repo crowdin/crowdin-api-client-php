@@ -10,9 +10,13 @@ use Crowdin\Model\MachineTranslationEngine;
  */
 class MachineTranslationEngineApi extends AbstractApi
 {
+    /**
+     * @param int $groupId
+     * @return mixed
+     */
     public function list(int $groupId)
     {
-        //TODO query param
+        return $this->_list('mts', MachineTranslationEngine::class, ['groupId' => $groupId]);
     }
 
     /**
@@ -39,7 +43,7 @@ class MachineTranslationEngineApi extends AbstractApi
      */
     public function update(MachineTranslationEngine $machineTranslationEngine): ?MachineTranslationEngine
     {
-        return $this->_update('mts', $machineTranslationEngine);
+        return $this->_update('mts/'. $machineTranslationEngine->getId(), $machineTranslationEngine);
     }
 
     /**

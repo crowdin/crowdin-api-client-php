@@ -39,11 +39,6 @@ class VoteApi extends AbstractApi
         return $this->_create($path, Vote::class, $data);
     }
 
-    public function update(Vote $vote)
-    {
-        //TODO
-    }
-
     /**
      * @param int $projectId
      * @param int $voteId
@@ -51,7 +46,7 @@ class VoteApi extends AbstractApi
      */
     public function delete(int $projectId, int $voteId)
     {
-        $path = sprintf('/projects/%d/votes/%d', $projectId, $voteId);
+        $path = sprintf('projects/%d/votes/%d', $projectId, $voteId);
         return $this->_delete($path);
     }
 }

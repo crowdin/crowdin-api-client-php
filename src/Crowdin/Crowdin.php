@@ -12,6 +12,7 @@ use Crowdin\Api\ProjectApi;
 use Crowdin\Api\ScreenshotApi;
 use Crowdin\Api\StorageApi;
 use Crowdin\Api\StringTranslationApi;
+use Crowdin\Api\StringTranslationApprovalApi;
 use Crowdin\Api\TagApi;
 use Crowdin\Api\VoteApi;
 use Crowdin\Http\Client\CrowdinHttpClientFactory;
@@ -35,6 +36,7 @@ use UnexpectedValueException;
  * @property DirectoryApi directory
  * @property GlossaryApi glossary
  * @property StringTranslationApi stringTranslation
+ * @property StringTranslationApprovalApi stringTranslationApproval
  * @property VoteApi vote
  */
 class Crowdin
@@ -73,6 +75,7 @@ class Crowdin
         'branch',
         'glossary',
         'stringTranslation',
+        'stringTranslationApproval',
         'directory',
         'vote'
     ];

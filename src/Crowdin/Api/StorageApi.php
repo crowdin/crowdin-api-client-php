@@ -2,39 +2,52 @@
 
 namespace Crowdin\Api;
 
+use Crowdin\Model\Storage;
 use SplFileObject;
 
 /**
  * Class StorageApi
  * @package Crowdin\Api
- *
  */
 class StorageApi extends AbstractApi
 {
+    /**
+     * @return mixed
+     */
     public function list()
     {
-        //TODO decorate response
-        return $this->client->request('get', $this->client->getFullUrl('storages'));
+        return $this->_list('storages', Storage::class);
     }
 
-    public function add(SplFileObject $fileObject)
+    /**
+     * @param SplFileObject $fileObject
+     * @return Storage|null
+     */
+    public function create(SplFileObject $fileObject):?Storage
     {
-        //TODO
         $options = [
             'headers' => ['Content-Type' => $fileObject->getType()],
             'body' => file_get_contents($fileObject->getRealPath())
         ];
 
-        return $this->client->request('post', $this->client->getFullUrl('storages'), $options);
+        return $this->_create('storages', Storage::class, $options);
     }
 
-    public function getInfo(int $storageId)
+    /**
+     * @param int $storageId
+     * @return Storage|null
+     */
+    public function get(int $storageId):?Storage
     {
-        return $this->client->request('get', $this->client->getFullUrl('storages/' . $storageId), []);
+        return $this->_get('storages/'.$storageId, Storage::class);
     }
 
+    /**
+     * @param int $storageId
+     * @return mixed
+     */
     public function delete(int $storageId)
     {
-        return $this->client->request('delete', $this->client->getFullUrl('/storages/' . $storageId), []);
+        return $this->_delete('storages/'.$storageId);
     }
 }

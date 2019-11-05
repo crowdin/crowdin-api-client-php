@@ -16,7 +16,7 @@ class DirectoryApi extends AbstractApi
      */
     public function list(int $projectId)
     {
-        $path = sprintf('/projects/%d/directories', $projectId);
+        $path = sprintf('projects/%d/directories', $projectId);
         return $this->_list($path, Directory::class);
     }
 
@@ -27,7 +27,7 @@ class DirectoryApi extends AbstractApi
      */
     public function get(int $projectId, int $directoryId): ?Directory
     {
-        $path = sprintf('/projects/%d/directories/%d', $projectId, $directoryId);
+        $path = sprintf('projects/%d/directories/%d', $projectId, $directoryId);
         return  $this->_get($path, Directory::class);
     }
 
@@ -38,14 +38,18 @@ class DirectoryApi extends AbstractApi
      */
     public function create(int $projectId, array $data): ?Directory
     {
-        $path = sprintf('/projects/%d/directories', $projectId);
+        $path = sprintf('projects/%d/directories', $projectId);
         return $this->_create($path, Directory::class, $data);
     }
 
-    public function update(Directory $directory)
+    /**
+     * @param Directory $directory
+     * @return Directory|null
+     */
+    public function update(Directory $directory):?Directory
     {
-        //TODO not valid
-//        return $this->_update('directories', $directory);
+        $path = sprintf('projects/%d/directories/%d', $directory->getProjectId(), $directory->getId());
+        return $this->_update($path, $directory);
     }
 
     /**
@@ -55,7 +59,7 @@ class DirectoryApi extends AbstractApi
      */
     public function delete(int $projectId, int $directoryId)
     {
-        $path = sprintf('/projects/%d/directories/%d', $projectId, $directoryId);
+        $path = sprintf('projects/%d/directories/%d', $projectId, $directoryId);
         return $this->_delete($path);
     }
 }

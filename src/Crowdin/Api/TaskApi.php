@@ -23,13 +23,18 @@ class TaskApi extends AbstractApi
      */
     public function get(int $projectId, int $taskId): ?Task
     {
-        $path = sprintf('/projects/%d/tasks/%d', $projectId, $taskId);
+        $path = sprintf('projects/%d/tasks/%d', $projectId, $taskId);
         return $this->_get($path, Task::class);
     }
 
-    public function create(int $projectId, array $data)
+    /**
+     * @param int $projectId
+     * @param array $data
+     * @return Task|null
+     */
+    public function create(int $projectId, array $data):?Task
     {
-        $path = sprintf('/projects/%d/tasks', $projectId);
+        $path = sprintf('projects/%d/tasks', $projectId);
         return $this->_create($path, Task::class, $data);
     }
 
@@ -39,8 +44,7 @@ class TaskApi extends AbstractApi
      */
     public function update(Task $task): ?Task
     {
-        $path = sprintf('/projects/%d/tasks', $task->getProjectId());
-
+        $path = sprintf('projects/%d/tasks', $task->getProjectId());
         return $this->_update($path, $task);
     }
 
@@ -51,7 +55,7 @@ class TaskApi extends AbstractApi
      */
     public function delete(int $projectId, int $taskId)
     {
-        $path = sprintf('/projects/%d/tasks/%d', $projectId, $taskId);
+        $path = sprintf('projects/%d/tasks/%d', $projectId, $taskId);
         return $this->_delete($path);
     }
 }

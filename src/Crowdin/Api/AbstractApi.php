@@ -33,7 +33,7 @@ abstract class AbstractApi implements ApiInterface
      */
     protected function _update(string $path, ModelInterface $model)
     {
-        $dataModel = $model->getVars();
+        $dataModel = $model->getProperties();
 
         $_data = [];
 
@@ -48,12 +48,12 @@ abstract class AbstractApi implements ApiInterface
             }
         }
 
-        if (empty($data)) {
+        if (empty($_data)) {
             return $model;
         }
 
         $options = [
-            'body' => json_encode($data),
+            'body' => json_encode($_data),
             'headers' => ['Content-Type' => 'application/json']
         ];
 
@@ -63,13 +63,20 @@ abstract class AbstractApi implements ApiInterface
     /**
      * @param string $path
      * @param string $modelName
+     * @param array $params
      * @return mixed
      */
-    protected function _list(string $path, string $modelName)
+    protected function _list(string $path, string $modelName, array $params = [])
     {
+        $options = [];
+
+        if(!empty($params))
+        {
+            $options['body'] = $params;
+        }
 
         //TODO paginator
-        return $this->client->apiRequest('get', $path, new ResponseModelListDecorator($modelName));
+        return $this->client->apiRequest('get', $path, new ResponseModelListDecorator($modelName), $options);
     }
 
     /**
@@ -80,7 +87,6 @@ abstract class AbstractApi implements ApiInterface
      */
     protected function _create(string $path, string $modelName, array $data)
     {
-        //TODO validate and form model
         $options = [
             'body' => json_encode($data),
             'headers' => ['Content-Type' => 'application/json']
@@ -101,10 +107,50 @@ abstract class AbstractApi implements ApiInterface
     /**
      * @param string $path
      * @param string $modelName
+     * @param array $params
      * @return mixed
      */
-    protected function _get(string $path, string $modelName)
+    protected function _get(string $path, string $modelName, array $params = [])
     {
-        return $this->client->apiRequest('get', $path, new ResponseModelDecorator($modelName));
+        $options = [];
+
+        if(!empty($params))
+        {
+            $options['body'] = $params;
+        }
+        return $this->client->apiRequest('get', $path, new ResponseModelDecorator($modelName), $options);
     }
+
+    /**
+     * @param string $path
+     * @param string $modelName
+     * @param array $data
+     * @return mixed
+     */
+    protected function _put(string $path, string $modelName, array $data)
+    {
+        $options = [
+            'body' => json_encode($data),
+            'headers' => ['Content-Type' => 'application/json']
+        ];
+
+        return $this->client->apiRequest('put', $path, new ResponseModelDecorator($modelName), $options);
+    }
+
+    /**
+     * @param string $path
+     * @param string $modelName
+     * @param array $data
+     * @return mixed
+     */
+    protected function _post(string $path, string $modelName, array $data)
+    {
+        $options = [
+            'body' => json_encode($data),
+            'headers' => ['Content-Type' => 'application/json']
+        ];
+
+        return $this->client->apiRequest('post', $path, new ResponseModelDecorator($modelName), $options);
+    }
+
 }

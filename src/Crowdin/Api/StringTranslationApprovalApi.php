@@ -27,7 +27,7 @@ class StringTranslationApprovalApi extends AbstractApi
      */
     public function get(int $projectId, int $approvalId): ?StringTranslationApproval
     {
-        $path = sprintf('/projects/%d/approvals/%d', $projectId, $approvalId);
+        $path = sprintf('projects/%d/approvals/%d', $projectId, $approvalId);
 
         return $this->_get($path, StringTranslationApproval::class);
     }
@@ -39,14 +39,14 @@ class StringTranslationApprovalApi extends AbstractApi
      */
     public function create(int $projectId, array $data): ?StringTranslationApproval
     {
-        $path = sprintf('/projects/%s/approvals', $projectId);
+        $path = sprintf('projects/%d/approvals', $projectId);
 
         return $this->_create($path, StringTranslationApproval::class, $data);
     }
 
     public function update(int $projectId, StringTranslationApproval $stringTranslationApproval)
     {
-        $path = sprintf('/projects/%s/approvals', $projectId);
+        $path = sprintf('projects/%d/approvals', $projectId);
 
         return $this->_update($path, $stringTranslationApproval);
     }
@@ -58,7 +58,7 @@ class StringTranslationApprovalApi extends AbstractApi
      */
     public function delete(int $projectId, int $approvalId)
     {
-        $path = sprintf('/projects/%d/approvals/%d', $projectId, $approvalId);
+        $path = sprintf('projects/%d/approvals/%d', $projectId, $approvalId);
         return $this->_delete($path);
     }
 }
