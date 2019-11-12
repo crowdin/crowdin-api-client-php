@@ -1,13 +1,12 @@
 <?php
 
-namespace Kunnu\Dropbox\Http\Clients;
+namespace Crowdin\Http\Client;
 
-use Crowdin\Http\Client\CrowdinHttpClientInterface;
 use GuzzleHttp\Client;
 
 /**
  * Class GuzzleHttpClient
- * @package Kunnu\Dropbox\Http\Clients
+ * @package Crowdin\Http\Client
  */
 class GuzzleHttpClient implements CrowdinHttpClientInterface
 {
@@ -18,6 +17,9 @@ class GuzzleHttpClient implements CrowdinHttpClientInterface
      */
     protected $client;
 
+    protected $timeout = 30;
+
+    protected $connectTimeout = 30;
     /**
      * Create a new GuzzleHttpClient instance.
      *
@@ -25,12 +27,20 @@ class GuzzleHttpClient implements CrowdinHttpClientInterface
      */
     public function __construct(Client $client = null)
     {
-        //Set the client
         $this->client = $client ?: new Client();
     }
 
     public function request(string $method, string $uri, array $options)
     {
-        // TODO: Implement request() method.
+        $options = array_merge([
+            'headers' => null,
+            'body' => null,
+            'timeout' => $this->timeout,
+            'connect_timeout' => $this->connectTimeout
+        ], $options);
+
+        $request = $this->client->createRequest($method, $uri, $options);
+
+        $rawResponse = $this->client->send($request);
     }
 }
