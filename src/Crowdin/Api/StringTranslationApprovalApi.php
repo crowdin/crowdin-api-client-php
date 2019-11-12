@@ -12,12 +12,13 @@ class StringTranslationApprovalApi extends AbstractApi
 {
     /**
      * @param int $projectId
+     * @param array $params
      * @return mixed
      */
-    public function list(int $projectId)
+    public function list(int $projectId, array $params = [])
     {
         $path = sprintf('projects/%s/approvals', $projectId);
-        return $this->_list($path, StringTranslationApproval::class);
+        return $this->_list($path, StringTranslationApproval::class, $params);
     }
 
     /**

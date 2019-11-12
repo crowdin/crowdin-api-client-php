@@ -23,8 +23,16 @@ class CurlHttpClient implements CrowdinHttpClientInterface
      */
     public function request(string $method, string $uri, array $options)
     {
-        $headers = $options['headers'];
-        $body = $options['body'];
+        if (empty($method)) {
+            throw new \InvalidArgumentException('Method cannot be empty');
+        }
+
+        if (empty($uri)) {
+            throw new \InvalidArgumentException('Uri cannot be empty');
+        }
+
+        $headers = $options['headers'] ?? [];
+        $body = $options['body'] ?? null;
 
         $processed_headers = [];
         if (!empty($headers)) {

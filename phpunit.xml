@@ -9,8 +9,8 @@
          processIsolation="false"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="Unit">
-            <directory suffix="Test.php">./tests/Unit</directory>
+        <testsuite name="crowdin api client Test Suite">
+            <directory>./tests/Crowdin/</directory>
         </testsuite>
     </testsuites>
     <filter>

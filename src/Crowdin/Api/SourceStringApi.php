@@ -12,12 +12,13 @@ class SourceStringApi extends AbstractApi
 {
     /**
      * @param int $projectId
+     * @param array $params
      * @return mixed
      */
-    public function list(int $projectId)
+    public function list(int $projectId, array $params = [])
     {
         $path = sprintf('projects/%d/strings', $projectId);
-        return $this->_list($path, SourceString::class);
+        return $this->_list($path, SourceString::class, $params);
     }
 
     /**

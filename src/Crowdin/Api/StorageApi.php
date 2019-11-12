@@ -12,11 +12,12 @@ use SplFileObject;
 class StorageApi extends AbstractApi
 {
     /**
+     * @param array $params
      * @return mixed
      */
-    public function list()
+    public function list(array $params = [])
     {
-        return $this->_list('storages', Storage::class);
+        return $this->_list('storages', Storage::class, $params);
     }
 
     /**
