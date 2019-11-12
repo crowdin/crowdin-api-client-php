@@ -55,14 +55,14 @@ class Glossary extends BaseModel
     {
         parent::__construct($data);
 
-        $this->id = $this->getDataProperty('id');
-        $this->name = $this->getDataProperty('name');
-        $this->groupId = $this->getDataProperty('groupId');
-        $this->userId = $this->getDataProperty('userId');
-        $this->terms = $this->getDataProperty('terms');
-        $this->languageIds = $this->getDataProperty('languageIds');
-        $this->projectIds = $this->getDataProperty('projectIds');
-        $this->createdAt = $this->getDataProperty('createdAt');
+        $this->id = (integer)$this->getDataProperty('id');
+        $this->name = (string)$this->getDataProperty('name');
+        $this->groupId = (integer)$this->getDataProperty('groupId');
+        $this->userId = (integer)$this->getDataProperty('userId');
+        $this->terms = (integer)$this->getDataProperty('terms');
+        $this->languageIds = (array)$this->getDataProperty('languageIds');
+        $this->projectIds = (array)$this->getDataProperty('projectIds');
+        $this->createdAt = (string)$this->getDataProperty('createdAt');
     }
 
     /**

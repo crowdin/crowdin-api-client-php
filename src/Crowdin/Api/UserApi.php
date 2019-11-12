@@ -11,11 +11,12 @@ use Crowdin\Model\User;
 class UserApi extends AbstractApi
 {
     /**
+     * @param array $params
      * @return mixed
      */
-    public function list()
+    public function list(array $params = [])
     {
-        return $this->_list('users', User::class);
+        return $this->_list('users', User::class, $params);
     }
 
     /**

@@ -5,16 +5,25 @@ namespace Crowdin;
 use Crowdin\Api\ApiInterface;
 use Crowdin\Api\BranchApi;
 use Crowdin\Api\DirectoryApi;
+use Crowdin\Api\FileApi;
 use Crowdin\Api\GlossaryApi;
 use Crowdin\Api\GroupApi;
 use Crowdin\Api\LanguageApi;
+use Crowdin\Api\MachineTranslationEngineApi;
 use Crowdin\Api\ProjectApi;
+use Crowdin\Api\ReportApi;
 use Crowdin\Api\ScreenshotApi;
+use Crowdin\Api\SourceStringApi;
 use Crowdin\Api\StorageApi;
 use Crowdin\Api\StringTranslationApi;
 use Crowdin\Api\StringTranslationApprovalApi;
 use Crowdin\Api\TaskApi;
+use Crowdin\Api\TranslationMemoryApi;
+use Crowdin\Api\UserApi;
+use Crowdin\Api\VendorApi;
 use Crowdin\Api\VoteApi;
+use Crowdin\Api\WebhookApi;
+use Crowdin\Api\WorkflowTemplateApi;
 use Crowdin\Http\Client\CrowdinHttpClientFactory;
 use Crowdin\Http\Client\CrowdinHttpClientInterface;
 use Crowdin\Http\ResponseDecorator\ResponseDecoratorInterface;
@@ -40,6 +49,13 @@ use UnexpectedValueException;
  * @property VoteApi vote
  * @property UserApi user
  * @property VendorApi vendor
+ * @property WorkflowTemplateApi workflowTemplate
+ * @property FileApi file
+ * @property MachineTranslationEngineApi machineTranslationEngine
+ * @property ReportApi report
+ * @property SourceStringApi sourceString
+ * @property TranslationMemoryApi translationMemory
+ * @property WebhookApi webhook
  */
 class Crowdin
 {
@@ -52,6 +68,54 @@ class Crowdin
      * @var string
      */
     protected $accessToken;
+
+    /**
+     * @return CrowdinHttpClientInterface
+     */
+    public function getClient(): CrowdinHttpClientInterface
+    {
+        return $this->client;
+    }
+
+    /**
+     * @param CrowdinHttpClientInterface $client
+     */
+    public function setClient(CrowdinHttpClientInterface $client): void
+    {
+        $this->client = $client;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAccessToken(): string
+    {
+        return $this->accessToken;
+    }
+
+    /**
+     * @param string $accessToken
+     */
+    public function setAccessToken(string $accessToken): void
+    {
+        $this->accessToken = $accessToken;
+    }
+
+    /**
+     * @return ResponseErrorHandlerInterface
+     */
+    public function getResponseErrorHandler(): ResponseErrorHandlerInterface
+    {
+        return $this->responseErrorHandler;
+    }
+
+    /**
+     * @param ResponseErrorHandlerInterface $responseErrorHandler
+     */
+    public function setResponseErrorHandler(ResponseErrorHandlerInterface $responseErrorHandler): void
+    {
+        $this->responseErrorHandler = $responseErrorHandler;
+    }
 
     /**
      * @var array
@@ -82,6 +146,14 @@ class Crowdin
         'vote',
         'vendor',
         'user',
+        'screenshot',
+        'workflowTemplate',
+        'file',
+        'machineTranslationEngine',
+        'report',
+        'sourceString',
+        'translationMemory',
+        'webhook'
     ];
 
     public function __construct(array $config)
@@ -90,11 +162,11 @@ class Crowdin
             'http_client_handler' => null,
             'response_error_handler' => null,
             'access_token' => null,
+            'base_uri' => $this->baseUri
         ], $config);
 
-        $this->baseUri = $config['base_uri'] ?? $this->baseUri;
-
         $this->accessToken = $config['access_token'];
+        $this->baseUri = $config['base_uri'];
 
         $this->client = CrowdinHttpClientFactory::make($config['http_client_handler']);
         $this->responseErrorHandler = ResponseErrorHandlerFactory::make($config['response_error_handler']);
@@ -123,9 +195,10 @@ class Crowdin
         $this->responseErrorHandler->check($response);
 
         if ($decorator instanceof ResponseDecoratorInterface) {
-            //TODO
             if (isset($response['data'])) {
                 $response = $decorator->decorate($response['data']);
+            } else {
+                $response = $decorator->decorate($response);
             }
         }
 
@@ -167,5 +240,21 @@ class Crowdin
         }
 
         return $this->apis[$class];
+    }
+
+    /**
+     * @return string
+     */
+    public function getBaseUri(): string
+    {
+        return $this->baseUri;
+    }
+
+    /**
+     * @param string $baseUri
+     */
+    public function setBaseUri(string $baseUri): void
+    {
+        $this->baseUri = $baseUri;
     }
 }

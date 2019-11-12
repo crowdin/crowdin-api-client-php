@@ -12,12 +12,13 @@ class BranchApi extends AbstractApi
 {
     /**
      * @param int $projectId
+     * @param array $params
      * @return mixed
      */
-    public function list(int $projectId)
+    public function list(int $projectId, array $params = [])
     {
         $path = sprintf('projects/%d/branches', $projectId);
-        return $this->_list($path, Branch::class);
+        return $this->_list($path, Branch::class, $params);
     }
 
     /**
@@ -60,7 +61,7 @@ class BranchApi extends AbstractApi
      */
     public function delete(int $projectId, int $branchId)
     {
-        $path = sprintf('/projects/%d/branches/%d', $projectId, $branchId);
+        $path = sprintf('projects/%d/branches/%d', $projectId, $branchId);
         return $this->_delete($path);
     }
 }

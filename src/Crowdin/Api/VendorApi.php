@@ -11,10 +11,11 @@ use Crowdin\Model\Vendor;
 class VendorApi extends AbstractApi
 {
     /**
+     * @param array $params
      * @return mixed
      */
-    public function list()
+    public function list(array $params = [])
     {
-        return $this->_list('vendors', Vendor::class);
+        return $this->_list('vendors', Vendor::class, $params);
     }
 }

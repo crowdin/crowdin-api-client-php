@@ -16,7 +16,7 @@ abstract class AbstractApi implements ApiInterface
     /**
      * @var Crowdin
      */
-    public $client;
+    protected $client;
 
     /**
      * @param Crowdin $client
@@ -57,7 +57,7 @@ abstract class AbstractApi implements ApiInterface
             'headers' => ['Content-Type' => 'application/json']
         ];
 
-        return $this->client->apiRequest('PATCH', $path, new ResponseModelDecorator(get_class($model)), $options);
+        return $this->client->apiRequest('patch', $path, new ResponseModelDecorator(get_class($model)), $options);
     }
 
     /**

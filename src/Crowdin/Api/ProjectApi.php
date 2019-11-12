@@ -11,9 +11,14 @@ use Crowdin\Model\ProjectSetting;
  */
 class ProjectApi extends AbstractApi
 {
-    public function list()
+
+    /**
+     * @param array $params
+     * @return mixed
+     */
+    public function list(array $params = [])
     {
-        return $this->_list('projects', Project::class);
+        return $this->_list('projects', Project::class, $params);
     }
 
     /**

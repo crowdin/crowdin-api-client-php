@@ -11,9 +11,13 @@ use Crowdin\Model\Glossary;
  */
 class GlossaryApi extends AbstractApi
 {
-    public function list()
+    /**
+     * @param array $params
+     * @return mixed
+     */
+    public function list(array $params = [])
     {
-        return $this->_list('glossaries', Glossary::class);
+        return $this->_list('glossaries', Glossary::class, $params);
     }
 
     /**

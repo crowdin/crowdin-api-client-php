@@ -10,10 +10,15 @@ use Crowdin\Model\Task;
  */
 class TaskApi extends AbstractApi
 {
-    public function list(int $projectId)
+    /**
+     * @param int $projectId
+     * @param array $params
+     * @return mixed
+     */
+    public function list(int $projectId, array $params = [])
     {
         $path = sprintf('projects/%s/tasks', $projectId);
-        return $this->_list($path, Task::class);
+        return $this->_list($path, Task::class, $params);
     }
 
     /**

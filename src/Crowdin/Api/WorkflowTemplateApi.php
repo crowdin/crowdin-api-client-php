@@ -11,11 +11,12 @@ use Crowdin\Model\WorkflowTemplate;
 class WorkflowTemplateApi extends AbstractApi
 {
     /**
+     * @param array $params
      * @return mixed
      */
-    public function list()
+    public function list(array $params = [])
     {
-        return $this->_list('workflow-templates', WorkflowTemplate::class);
+        return $this->_list('workflow-templates', WorkflowTemplate::class, $params);
     }
 
     /**

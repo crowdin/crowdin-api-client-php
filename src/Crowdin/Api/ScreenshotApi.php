@@ -13,13 +13,14 @@ class ScreenshotApi extends AbstractApi
 {
     /**
      * @param int $projectId
+     * @param array $params
      * @return mixed
      */
-    public function list(int $projectId)
+    public function list(int $projectId, array $params = [])
     {
         $path = sprintf('projects/%d/screenshots', $projectId);
 
-        return $this->_list($path, Screenshot::class);
+        return $this->_list($path, Screenshot::class, $params);
     }
 
     /**

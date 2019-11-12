@@ -10,10 +10,15 @@ use Crowdin\Model\Vote;
  */
 class VoteApi extends AbstractApi
 {
-    public function list(int $projectId)
+    /**
+     * @param int $projectId
+     * @param array $params
+     * @return mixed
+     */
+    public function list(int $projectId, array $params = [])
     {
         $path = sprintf('projects/%d/votes', $projectId);
-        return $this->_list($path, Vote::class);
+        return $this->_list($path, Vote::class, $params);
     }
 
     /**
