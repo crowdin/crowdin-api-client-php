@@ -14,11 +14,13 @@ class TranslationMemoryApi extends AbstractApi
 {
     /**
      * @param int $groupId
+     * @param array $params
      * @return mixed
      */
-    public function list(int $groupId)
+    public function list(int $groupId, array $params = [])
     {
-        return $this->_list('tms', TranslationMemory::class, ['groupId' => $groupId]);
+        $params['groupId'] = $groupId;
+        return $this->_list('tms', TranslationMemory::class, $params);
     }
 
     /**

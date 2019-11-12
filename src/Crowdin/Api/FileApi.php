@@ -14,12 +14,13 @@ class FileApi extends AbstractApi
 {
     /**
      * @param int $projectId
+     * @param array $params
      * @return mixed
      */
-    public function list(int $projectId)
+    public function list(int $projectId, array $params = [])
     {
         $path = sprintf('projects/%d/files', $projectId);
-        return $this->_list($path, File::class);
+        return $this->_list($path, File::class, $params);
     }
 
     /**
