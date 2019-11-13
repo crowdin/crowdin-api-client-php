@@ -10,12 +10,16 @@ For more about Crowdin API see the [documentation](https://support.crowdin.com/e
 
 ## Status
 
-[![Azure DevOps builds (branch)](https://img.shields.io/azure-devops/build/crowdin/crowdin-api-client-php/15/master?logo=azure-pipelines)](https://dev.azure.com/crowdin/crowdin-api-client-php/_build/latest?definitionId=15&branchName=master)
 [![GitHub issues](https://img.shields.io/github/issues/crowdin/crowdin-api-client-php)](https://github.com/crowdin/crowdin-api-client-php/issues)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/crowdin/crowdin-api-client-php)](https://github.com/crowdin/crowdin-api-client-php/graphs/commit-activity)
 [![GitHub last commit](https://img.shields.io/github/last-commit/crowdin/crowdin-api-client-php)](https://github.com/crowdin/crowdin-api-client-php/commits/master)
 [![GitHub contributors](https://img.shields.io/github/contributors/crowdin/crowdin-api-client-php)](https://github.com/crowdin/crowdin-api-client-php/graphs/contributors)
 [![GitHub](https://img.shields.io/github/license/crowdin/crowdin-api-client-php)](https://github.com/crowdin/crowdin-api-client-php/blob/master/LICENSE)
+
+
+[![Azure DevOps builds (branch)](https://img.shields.io/azure-devops/build/crowdin/crowdin-api-client-php/15/master?logo=azure-pipelines)](https://dev.azure.com/crowdin/crowdin-api-client-php/_build/latest?definitionId=15&branchName=master)
+[![Azure DevOps tests (branch)](https://img.shields.io/azure-devops/tests/crowdin/crowdin-api-client-php/16/master)](https://dev.azure.com/crowdin/crowdin-api-client-php/_build/latest?definitionId=15&branchName=master)
+[![codecov](https://codecov.io/gh/crowdin/crowdin-api-client-php/branch/master/graph/badge.svg)](https://codecov.io/gh/crowdin/crowdin-api-client-php)
 
 ## Table of Contents
 * [Requirements](#requirements)
