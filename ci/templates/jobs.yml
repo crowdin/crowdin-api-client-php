@@ -27,5 +27,12 @@ jobs:
         displayName: 'composer install'
 
       - script: |
-          vendor/bin/phpunit
+          vendor/bin/phpunit --log-junit $(Build.SourcesDirectory)/reports/TEST-phpunit-junit.xml
         displayName: 'Running Unit tests'
+
+      - task: PublishTestResults@2
+        inputs:
+          testResultsFormat: 'JUnit'
+          testResultsFiles: '**/TEST-*.xml'
+          mergeTestResults: true
+        displayName: 'Publish tests results'
