@@ -34,3 +34,18 @@ steps:
 - script: |
     vendor/bin/php-cs-fixer fix --dry-run
   displayName: 'Running PHP CS fixer'
+
+- script: |
+    vendor/bin/phpunit --coverage-clover=coverage.xml --log-junit $(Build.SourcesDirectory)/reports/TEST-phpunit-junit.xml
+  displayName: 'Running Unit tests and generating coverage report'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/TEST-*.xml'
+    mergeTestResults: true
+  displayName: 'Publish tests results'
+
+- bash: |
+    cd reports & bash <(curl -s https://codecov.io/bash) -t $(CODECOV_TOKEN)
+  displayName: 'Upload coverage to codecov.io'
