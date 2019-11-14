@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Crowdin\Tests\Model;
-
 
 use Crowdin\Model\File;
 use PHPUnit\Framework\TestCase;

@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Crowdin\Tests\Model;
-
 
 use Crowdin\Model\Glossary;
 use PHPUnit\Framework\TestCase;
@@ -24,10 +22,9 @@ class GlossaryTest extends TestCase
         'userId' => 2,
         'terms' => 25,
         'languageIds' => ['ro'],
-        'projectIds' =>[6],
+        'projectIds' => [6],
         'createdAt' => '2019-09-16T13:42:04+00:00',
     ];
-
 
     public function setUp()
     {

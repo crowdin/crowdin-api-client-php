@@ -42,7 +42,7 @@ class WorkflowTemplateApiTest extends AbstractTestApi
 
     public function testGet()
     {
-        $this->mockRequestGet('/workflow-templates/2','{
+        $this->mockRequestGet('/workflow-templates/2', '{
               "data": {
                 "id": 2,
                 "title": "In-house + Machine Translation",
@@ -50,7 +50,7 @@ class WorkflowTemplateApiTest extends AbstractTestApi
                 "groupId": 2,
                 "isDefault": true
               }
-        }' );
+        }');
 
         $workflowTemplate = $this->crowdin->workflowTemplate->get(2);
         $this->assertInstanceOf(WorkflowTemplate::class, $workflowTemplate);

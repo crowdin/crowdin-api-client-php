@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Tests\Api;
 
 use Crowdin\Model\DownloadFile;
@@ -15,7 +14,6 @@ class TranslationApiTest extends AbstractTestApi
 {
     public function testApplyPreTranslation()
     {
-
         $params = [
             'languageIds' => ['uk'],
             'fileIds' => [0]
@@ -221,7 +219,7 @@ class TranslationApiTest extends AbstractTestApi
           }
         }');
 
-        $file  = $this->crowdin->translation->downloadProjectBuild(2,2);
+        $file = $this->crowdin->translation->downloadProjectBuild(2, 2);
         $this->assertInstanceOf(DownloadFile::class, $file);
         $this->assertEquals('https://production-enterprise-importer.downloads.crowdin.com/992000002/2/14.xliff?response-content-disposition=attachment%3B%20filename%3D%22APP.xliff%22&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIGJKLQV66ZXPMMEA%2F20190920%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190920T093121Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=439ebd69a1b7e4c23e6d17891a491c94f832e0c82e4692dedb35a6cd1e624b62', $file->getUrl());
     }
@@ -233,7 +231,7 @@ class TranslationApiTest extends AbstractTestApi
             'method' => 'delete',
         ]);
 
-        $this->crowdin->translation->deleteProjectBuild(2,2);
+        $this->crowdin->translation->deleteProjectBuild(2, 2);
     }
 
     public function testUploadTranslations()
@@ -272,6 +270,5 @@ class TranslationApiTest extends AbstractTestApi
             'languageId' => 'uk',
             'fileId' => 56
         ], $data);
-
     }
 }

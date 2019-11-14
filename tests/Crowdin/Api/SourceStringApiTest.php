@@ -124,6 +124,4 @@ class SourceStringApiTest extends AbstractTestApi
 
         $this->crowdin->sourceString->delete(2, 2814);
     }
-
-
 }

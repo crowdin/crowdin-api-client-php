@@ -90,5 +90,4 @@ class FileApiTest extends AbstractTestApi
         $this->assertInstanceOf(File::class, $file);
         $this->assertEquals(44, $file->getId());
     }
-
 }

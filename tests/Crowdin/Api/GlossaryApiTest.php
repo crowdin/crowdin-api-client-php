@@ -139,7 +139,6 @@ class GlossaryApiTest extends AbstractTestApi
                 }'
         ]);
 
-
         $glossaryExport = $this->crowdin->glossary->export(2);
         $this->assertInstanceOf(GlossaryExport::class, $glossaryExport);
         $this->assertEquals('5ed2ce93-6d47-4402-9e66-516ca835cb20', $glossaryExport->getIdentifier());
@@ -148,6 +147,6 @@ class GlossaryApiTest extends AbstractTestApi
     public function testDownload()
     {
         //TODO
-        $this->assertEquals(1,1);
+        $this->assertEquals(1, 1);
     }
 }

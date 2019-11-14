@@ -55,7 +55,7 @@ class StringTranslationApiTest extends AbstractTestApi
                 },
                 "rating": 10
               }
-            }') ;
+            }');
 
         $stringTranslation = $this->crowdin->stringTranslation->get(2, 190695);
         $this->assertInstanceOf(StringTranslation::class, $stringTranslation);
@@ -91,5 +91,4 @@ class StringTranslationApiTest extends AbstractTestApi
         $this->assertInstanceOf(StringTranslation::class, $stringTranslation);
         $this->assertEquals(190695, $stringTranslation->getId());
     }
-
 }

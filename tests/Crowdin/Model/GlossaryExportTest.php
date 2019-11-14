@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Crowdin\Tests\Model;
-
 
 use Crowdin\Model\GlossaryExport;
 use PHPUnit\Framework\TestCase;

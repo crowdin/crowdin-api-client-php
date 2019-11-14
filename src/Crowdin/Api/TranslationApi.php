@@ -1,13 +1,9 @@
 <?php
 
-
 namespace Crowdin\Api;
-
-
 
 use Crowdin\Http\ResponseDecorator\ResponseArrayDecorator;
 use Crowdin\Model\DownloadFile;
-use Crowdin\Model\File;
 use Crowdin\Model\PreTranslation;
 use Crowdin\Model\TranslationProjectBuild;
 
@@ -18,7 +14,7 @@ class TranslationApi extends AbstractApi
      * @param array $params
      * @return PreTranslation|null
      */
-    public function applyPreTranslation(int $projectId, array $params):?PreTranslation
+    public function applyPreTranslation(int $projectId, array $params): ?PreTranslation
     {
         $path = sprintf('projects/%s/pre-translations', $projectId);
         return $this->_post($path, PreTranslation::class, $params);
@@ -29,7 +25,7 @@ class TranslationApi extends AbstractApi
      * @param string $preTranslationId
      * @return PreTranslation|null
      */
-    public function getPreTranslation(int $projectId, string $preTranslationId):?PreTranslation
+    public function getPreTranslation(int $projectId, string $preTranslationId): ?PreTranslation
     {
         $path = sprintf('projects/%d/pre-translations/%s', $projectId, $preTranslationId);
 
@@ -43,7 +39,7 @@ class TranslationApi extends AbstractApi
      * @param bool $exportAsXliff
      * @return DownloadFile|null
      */
-    public function buildProjectFileTranslation(int $projectId, int $fileId, string $targetLanguageId, bool $exportAsXliff = false):?DownloadFile
+    public function buildProjectFileTranslation(int $projectId, int $fileId, string $targetLanguageId, bool $exportAsXliff = false): ?DownloadFile
     {
         $path = sprintf('projects/%d/translations/builds/files/%d', $projectId, $fileId);
 
@@ -72,7 +68,7 @@ class TranslationApi extends AbstractApi
      * @param array $targetLanguageIds
      * @return TranslationProjectBuild|null
      */
-    public function buildProject(int $projectId, int $branchId, array $targetLanguageIds):?TranslationProjectBuild
+    public function buildProject(int $projectId, int $branchId, array $targetLanguageIds): ?TranslationProjectBuild
     {
         $patch = sprintf('projects/%d/translations/builds', $projectId);
 
@@ -84,13 +80,12 @@ class TranslationApi extends AbstractApi
         return $this->_post($patch, TranslationProjectBuild::class, $data);
     }
 
-
     /**
      * @param int $projectId
      * @param int $buildId
      * @return TranslationProjectBuild|null
      */
-    public function getProjectBuildStatus(int $projectId, int $buildId):?TranslationProjectBuild
+    public function getProjectBuildStatus(int $projectId, int $buildId): ?TranslationProjectBuild
     {
         $path = sprintf('projects/%d/translations/builds/%d', $projectId, $buildId);
 
@@ -102,12 +97,11 @@ class TranslationApi extends AbstractApi
      * @param int $buildId
      * @return DownloadFile|null
      */
-    public function downloadProjectBuild(int $projectId, int $buildId):?DownloadFile
+    public function downloadProjectBuild(int $projectId, int $buildId): ?DownloadFile
     {
         $path = sprintf('projects/%d/translations/builds/%d/download', $projectId, $buildId);
         return $this->_get($path, DownloadFile::class);
     }
-
 
     /**
      * @param int $projectId
@@ -126,7 +120,7 @@ class TranslationApi extends AbstractApi
      * @param array $params
      * @return array
      */
-    public function uploadTranslations(int $projectId, string $languageId, array $params):array
+    public function uploadTranslations(int $projectId, string $languageId, array $params): array
     {
         $path = sprintf('projects/%d/translations/%s', $projectId, $languageId);
 

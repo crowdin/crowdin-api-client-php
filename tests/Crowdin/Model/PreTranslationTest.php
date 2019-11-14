@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Crowdin\Tests\Model;
-
 
 use Crowdin\Model\PreTranslation;
 use PHPUnit\Framework\TestCase;
@@ -69,6 +67,4 @@ class PreTranslationTest extends TestCase
         $this->assertEquals($this->data['finishedAt'], $this->preTranslation->getFinishedAt());
         $this->assertEquals($this->data['eta'], $this->preTranslation->getEta());
     }
-
-
 }
