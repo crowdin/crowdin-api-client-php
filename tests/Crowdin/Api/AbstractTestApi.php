@@ -37,11 +37,9 @@ abstract class AbstractTestApi extends TestCase
             ->will($this->returnCallback(function ($method, $uri, $options) use ($params) {
                 $this->assertEquals($params['method'], $method);
 
-                if(isset($params['path']))
-                {
-                    $this->assertEquals('https://organization_domain.crowdin.com/api/v2'.$params['path'], $uri);
-                }else
-                {
+                if (isset($params['path'])) {
+                    $this->assertEquals('https://organization_domain.crowdin.com/api/v2' . $params['path'], $uri);
+                } else {
                     $this->assertEquals($params['uri'], $uri);
                 }
 
@@ -60,7 +58,7 @@ abstract class AbstractTestApi extends TestCase
     public function mockRequestGet(string $path, string $response, array $options = [])
     {
         return $this->mockRequest([
-            'uri' => 'https://organization_domain.crowdin.com/api/v2'. $path,
+            'uri' => 'https://organization_domain.crowdin.com/api/v2' . $path,
             'method' => 'get',
             'response' => $response,
             'options' => $options
@@ -70,9 +68,8 @@ abstract class AbstractTestApi extends TestCase
     public function mockRequestDelete(string $path)
     {
         return $this->mockRequest([
-            'uri' => 'https://organization_domain.crowdin.com/api/v2'. $path,
+            'uri' => 'https://organization_domain.crowdin.com/api/v2' . $path,
             'method' => 'delete',
         ]);
     }
-
 }

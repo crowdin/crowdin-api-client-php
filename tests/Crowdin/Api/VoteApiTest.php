@@ -96,5 +96,4 @@ class VoteApiTest extends AbstractTestApi
         $this->mockRequestDelete('/projects/2/votes/6643');
         $this->crowdin->vote->delete(2, 6643);
     }
-
 }

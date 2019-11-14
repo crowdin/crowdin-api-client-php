@@ -108,7 +108,6 @@ class ScreenshotApiTest extends AbstractTestApi
         $this->assertEquals(2, $screenshot->getId());
     }
 
-
     public function testGet()
     {
         $this->mockRequestGet('/projects/2/screenshots/2', '{
@@ -226,7 +225,7 @@ class ScreenshotApiTest extends AbstractTestApi
               ]
         }');
 
-        $tags = $this->crowdin->screenshot->tags(2,2);
+        $tags = $this->crowdin->screenshot->tags(2, 2);
 
         $this->assertIsArray($tags);
         $this->assertCount(1, $tags);
@@ -267,5 +266,4 @@ class ScreenshotApiTest extends AbstractTestApi
         $this->mockRequestDelete('/projects/2/screenshots/2/tags/98');
         $tag = $this->crowdin->screenshot->deleteTag(2, 2, 98);
     }
-
 }

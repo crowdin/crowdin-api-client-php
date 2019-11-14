@@ -130,5 +130,4 @@ class ProjectApiTest extends AbstractTestApi
         $this->assertInstanceOf(ProjectSetting::class, $projectSettings);
         $this->assertEquals(1, $projectSettings->getProjectId());
     }
-
 }

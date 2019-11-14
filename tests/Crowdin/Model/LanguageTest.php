@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Crowdin\Tests\Model;
 
 use Crowdin\Model\Language;

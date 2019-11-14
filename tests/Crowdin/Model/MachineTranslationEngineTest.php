@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Crowdin\Tests\Model;
-
 
 use Crowdin\Model\MachineTranslationEngine;
 use PHPUnit\Framework\TestCase;

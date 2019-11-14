@@ -74,7 +74,6 @@ class StringTranslationApprovalApiTest extends AbstractTestApi
         $this->assertEquals(190695, $approval->getId());
     }
 
-
     public function testGet()
     {
         $this->mockRequestGet('/projects/2/approvals/190695', '{
@@ -102,5 +101,4 @@ class StringTranslationApprovalApiTest extends AbstractTestApi
         $this->mockRequestDelete('/projects/2/approvals/190695');
         $this->crowdin->stringTranslationApproval->delete(2, 190695);
     }
-
 }
