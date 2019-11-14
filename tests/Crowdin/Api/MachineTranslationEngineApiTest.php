@@ -8,8 +8,8 @@ class MachineTranslationEngineApiTest extends AbstractTestApi
 {
     public function testList()
     {
-        $this->mockRequestTest([
-            'uri' => 'https://organization_domain.crowdin.com/api/v2/mts',
+        $this->mockRequest([
+            'path' => '/mts',
             'method' => 'get',
             'response' => '{
               "data": [

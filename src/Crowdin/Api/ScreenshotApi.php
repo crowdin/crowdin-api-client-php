@@ -59,6 +59,23 @@ class ScreenshotApi extends AbstractApi
     /**
      * @param int $projectId
      * @param int $screenshotId
+     * @param int $storageId
+     * @param string $name
+     * @return Screenshot|null
+     */
+    public function replace(int $projectId, int $screenshotId, int $storageId, string  $name): ?Screenshot
+    {
+        $path = sprintf('projects/%d/screenshots/%d', $projectId, $screenshotId);
+        $params = [
+            'storageId' => $storageId,
+            'name' => $name
+        ];
+        return $this->_put($path, Screenshot::class, $params);
+    }
+
+    /**
+     * @param int $projectId
+     * @param int $screenshotId
      * @return mixed
      */
     public function delete(int $projectId, int $screenshotId)
@@ -72,7 +89,7 @@ class ScreenshotApi extends AbstractApi
      * @param int $screenshotId
      * @return mixed
      */
-    public function listTags(int $projectId, int $screenshotId)
+    public function tags(int $projectId, int $screenshotId)
     {
         $path = sprintf('projects/%d/screenshots/%d/tags', $projectId, $screenshotId);
         return $this->_list($path, Tag::class);

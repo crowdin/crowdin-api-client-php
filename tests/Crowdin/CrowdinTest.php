@@ -93,6 +93,7 @@ class CrowdinTest extends TestCase
             ['sourceString', \Crowdin\Api\SourceStringApi::class],
             ['translationMemory', \Crowdin\Api\TranslationMemoryApi::class],
             ['webhook', \Crowdin\Api\WebhookApi::class],
+            ['translation', \Crowdin\Api\TranslationApi::class],
         ];
     }
 

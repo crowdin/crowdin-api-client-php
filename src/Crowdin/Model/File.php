@@ -54,12 +54,12 @@ class File extends BaseModel
     protected $revision;
 
     /**
-     * @var integer
+     * @var string
      */
     protected $status;
 
     /**
-     * @var integer
+     * @var string
      */
     protected $priority;
 
@@ -87,21 +87,21 @@ class File extends BaseModel
     {
         parent::__construct($data);
 
-        $this->id = $this->getDataProperty('id');
-        $this->projectId = $this->getDataProperty('projectId');
-        $this->branchId = $this->getDataProperty('branchId');
-        $this->directoryId = $this->getDataProperty('directoryId');
-        $this->languageId = $this->getDataProperty('languageId');
-        $this->name = $this->getDataProperty('name');
-        $this->title = $this->getDataProperty('title');
-        $this->type = $this->getDataProperty('type');
-        $this->revision = $this->getDataProperty('revision');
-        $this->status = $this->getDataProperty('status');
-        $this->priority = $this->getDataProperty('priority');
-        $this->attributes = $this->getDataProperty('attributes');
-        $this->exportPattern = $this->getDataProperty('exportPattern');
-        $this->createdAt = $this->getDataProperty('createdAt');
-        $this->updatedAt = $this->getDataProperty('updatedAt');
+        $this->id = (integer)$this->getDataProperty('id');
+        $this->projectId = (integer)$this->getDataProperty('projectId');
+        $this->branchId = (integer)$this->getDataProperty('branchId');
+        $this->directoryId = (integer)$this->getDataProperty('directoryId');
+        $this->languageId = (string)$this->getDataProperty('languageId');
+        $this->name = (string)$this->getDataProperty('name');
+        $this->title = (string)$this->getDataProperty('title');
+        $this->type = (string)$this->getDataProperty('type');
+        $this->revision = (integer)$this->getDataProperty('revision');
+        $this->status = (string)$this->getDataProperty('status');
+        $this->priority = (string)$this->getDataProperty('priority');
+        $this->attributes = (array)$this->getDataProperty('attributes');
+        $this->exportPattern = (string)$this->getDataProperty('exportPattern');
+        $this->createdAt = (string)$this->getDataProperty('createdAt');
+        $this->updatedAt = (string)$this->getDataProperty('updatedAt');
     }
 
     /**
@@ -249,33 +249,33 @@ class File extends BaseModel
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getStatus(): int
+    public function getStatus(): string
     {
         return $this->status;
     }
 
     /**
-     * @param int $status
+     * @param string $status
      */
-    public function setStatus(int $status): void
+    public function setStatus(string $status): void
     {
         $this->status = $status;
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getPriority(): int
+    public function getPriority(): string
     {
         return $this->priority;
     }
 
     /**
-     * @param int $priority
+     * @param string $priority
      */
-    public function setPriority(int $priority): void
+    public function setPriority(string $priority): void
     {
         $this->priority = $priority;
     }

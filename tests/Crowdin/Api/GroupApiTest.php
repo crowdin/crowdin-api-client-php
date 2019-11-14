@@ -8,7 +8,7 @@ class GroupApiTest extends AbstractTestApi
 {
     public function testList()
     {
-        $this->mockRequestTest([
+        $this->mockRequest([
             'uri' => 'https://organization_domain.crowdin.com/api/v2/groups',
             'method' => 'get',
             'response' => '{
@@ -46,7 +46,7 @@ class GroupApiTest extends AbstractTestApi
 
     public function testCreate()
     {
-        $this->mockRequestTest([
+        $this->mockRequest([
             'uri' => 'https://organization_domain.crowdin.com/api/v2/groups',
             'method' => 'post',
             'response' => '{
@@ -77,10 +77,7 @@ class GroupApiTest extends AbstractTestApi
 
     public function testGet()
     {
-        $this->mockRequestTest([
-            'uri' => 'https://organization_domain.crowdin.com/api/v2/groups/1',
-            'method' => 'get',
-            'response' => '{
+        $this->mockRequestGet('/groups/1', '{
               "data": {
                 "id": 1,
                 "name": "KB materials",
@@ -93,8 +90,7 @@ class GroupApiTest extends AbstractTestApi
                 "createdAt": "2019-09-20T11:11:05+00:00",
                 "updatedAt": "2019-09-20T12:22:20+00:00"
               }
-            }',
-        ]);
+        }');
 
         $group = $this->crowdin->group->get(1);
 
@@ -104,7 +100,7 @@ class GroupApiTest extends AbstractTestApi
 
     public function testDelete()
     {
-        $this->mockRequestTest([
+        $this->mockRequest([
             'uri' => 'https://organization_domain.crowdin.com/api/v2/groups/1',
             'method' => 'delete',
         ]);

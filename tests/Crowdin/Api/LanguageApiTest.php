@@ -8,7 +8,7 @@ class LanguageApiTest extends AbstractTestApi
 {
     public function testList()
     {
-        $this->mockRequestTest([
+        $this->mockRequest([
             'uri' => 'https://organization_domain.crowdin.com/api/v2/languages',
             'method' => 'get',
             'response' => '{
@@ -53,7 +53,7 @@ class LanguageApiTest extends AbstractTestApi
 
     public function testCreate()
     {
-        $this->mockRequestTest([
+        $this->mockRequest([
             'uri' => 'https://organization_domain.crowdin.com/api/v2/languages',
             'method' => 'post',
             'response' => '{
@@ -96,10 +96,7 @@ class LanguageApiTest extends AbstractTestApi
 
     public function testGet()
     {
-        $mock = $this->mockRequestTest([
-            'uri' => 'https://organization_domain.crowdin.com/api/v2/languages/es',
-            'method' => 'get',
-            'response' => '{
+        $mock = $this->mockRequestGet('/languages/es', '{
               "data": {
                 "id": "es",
                 "name": "Spanish",
@@ -120,23 +117,21 @@ class LanguageApiTest extends AbstractTestApi
                 "textDirection": "ltr",
                 "dialectOf": "string"
               }
-            }'
-        ]);
+        }');
 
         $language = $this->crowdin->language->get('es');
 
         $this->assertInstanceOf(Language::class, $language);
         $this->assertEquals('es', $language->getId());
 
-        $this->update($mock, $language);
+//        $this->update($mock, $language);
     }
 
     public function testDelete()
     {
-        $this->mockRequestTest([
+        $this->mockRequest([
             'uri' => 'https://organization_domain.crowdin.com/api/v2/languages/es',
             'method' => 'delete',
-            'response' => null
         ]);
 
         $this->crowdin->language->delete('es');
@@ -144,8 +139,8 @@ class LanguageApiTest extends AbstractTestApi
 
     public function update($mock, $language)
     {
-        $params = [
-            'uri' => 'https://organization_domain.crowdin.com/api/v2/languages/es',
+        $this->mockRequest([
+            'path' => '/languages/es',
             'method' => 'patch',
             'response' => '{
               "data": {
@@ -169,13 +164,7 @@ class LanguageApiTest extends AbstractTestApi
                 "dialectOf": "string"
               }
             }'
-        ];
-
-        $mock->will($this->returnCallback(function ($method, $uri, $options) use ($params) {
-            $this->assertEquals($params['method'], $method);
-            $this->assertEquals($params['uri'], $uri);
-            return $params['response'] ?? null;
-        }));
+        ]);
 
         $language->setName('Spanish edit');
 

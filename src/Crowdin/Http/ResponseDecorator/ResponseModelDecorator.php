@@ -4,6 +4,10 @@ namespace Crowdin\Http\ResponseDecorator;
 
 use Crowdin\Model\ModelInterface;
 
+/**
+ * Class ResponseModelDecorator
+ * @package Crowdin\Http\ResponseDecorator
+ */
 class ResponseModelDecorator implements ResponseDecoratorInterface
 {
     /**
@@ -19,6 +23,10 @@ class ResponseModelDecorator implements ResponseDecoratorInterface
         $this->modelName = $modelName;
     }
 
+    /**
+     * @param $data
+     * @return ModelInterface
+     */
     public function decorate($data): ModelInterface
     {
         return new $this->modelName($data);

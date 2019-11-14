@@ -8,8 +8,8 @@ class WebhookApiTest extends AbstractTestApi
 {
     public function testList()
     {
-        $this->mockRequestTest([
-            'uri' => 'https://organization_domain.crowdin.com/api/v2/projects/2/webhooks',
+        $this->mockRequest([
+            'path' => '/projects/2/webhooks',
             'method' => 'get',
             'response' => '{
               "data": [

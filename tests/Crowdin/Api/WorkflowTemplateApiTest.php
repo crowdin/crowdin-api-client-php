@@ -8,8 +8,8 @@ class WorkflowTemplateApiTest extends AbstractTestApi
 {
     public function testList()
     {
-        $this->mockRequestTest([
-            'uri' => 'https://organization_domain.crowdin.com/api/v2/workflow-templates',
+        $this->mockRequest([
+            'path' => '/workflow-templates',
             'method' => 'get',
             'response' => '{
                   "data": [
@@ -42,19 +42,15 @@ class WorkflowTemplateApiTest extends AbstractTestApi
 
     public function testGet()
     {
-        $this->mockRequestTest([
-            'uri' => 'https://organization_domain.crowdin.com/api/v2/workflow-templates/2',
-            'method' => 'get',
-            'response' => '{
-                  "data": {
-                    "id": 2,
-                    "title": "In-house + Machine Translation",
-                    "description": "Combine the efforts of human translators and Machine Translation technology.\\n• Pre-translation - Translation Memory\\n• Pre-translation - Machine Translation\\n• Translation - in-house translators\\n• Proofreading - in-house translators",
-                    "groupId": 2,
-                    "isDefault": true
-                  }
-                }'
-        ]);
+        $this->mockRequestGet('/workflow-templates/2','{
+              "data": {
+                "id": 2,
+                "title": "In-house + Machine Translation",
+                "description": "Combine the efforts of human translators and Machine Translation technology.\\n• Pre-translation - Translation Memory\\n• Pre-translation - Machine Translation\\n• Translation - in-house translators\\n• Proofreading - in-house translators",
+                "groupId": 2,
+                "isDefault": true
+              }
+        }' );
 
         $workflowTemplate = $this->crowdin->workflowTemplate->get(2);
         $this->assertInstanceOf(WorkflowTemplate::class, $workflowTemplate);

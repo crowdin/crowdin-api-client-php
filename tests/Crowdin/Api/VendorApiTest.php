@@ -8,8 +8,8 @@ class VendorApiTest extends AbstractTestApi
 {
     public function testList()
     {
-        $this->mockRequestTest([
-           'uri' => 'https://organization_domain.crowdin.com/api/v2/vendors',
+        $this->mockRequest([
+           'path' => '/vendors',
            'method' => 'get',
            'response' => '{
               "data": [

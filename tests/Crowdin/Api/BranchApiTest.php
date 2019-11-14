@@ -8,12 +8,10 @@ class BranchApiTest extends AbstractTestApi
 {
     public function testList()
     {
-        $data = $this->mockClient->expects($this->once())
-            ->method('request')
-            ->will($this->returnCallback(function ($method, $uri, $options) {
-                $this->assertEquals('get', $method);
-                $this->assertEquals('https://organization_domain.crowdin.com/api/v2/projects/2/branches', $uri);
-                return '{
+        $this->mockRequest([
+            'uri' => 'https://organization_domain.crowdin.com/api/v2/projects/2/branches',
+            'method' => 'get',
+            'response' => '{
                   "data": [
                     {
                       "data": {
@@ -34,8 +32,8 @@ class BranchApiTest extends AbstractTestApi
                       "limit": 0
                     }
                   ]
-            }';
-            }));
+            }'
+        ]);
 
         $data = $this->crowdin->branch->list(2);
 
@@ -59,24 +57,19 @@ class BranchApiTest extends AbstractTestApi
 
     public function testGet()
     {
-        $this->mockClient->expects($this->once())
-            ->method('request')
-            ->will($this->returnCallback(function ($method, $uri, $options) {
-                $this->assertEquals('get', $method);
-                $this->assertEquals('https://organization_domain.crowdin.com/api/v2/projects/2/branches/34', $uri);
-                return '{
-                      "data": {
-                        "id": 34,
-                        "projectId": 2,
-                        "name": "develop-master",
-                        "title": "Master branch",
-                        "exportPattern": "%three_letters_code%",
-                        "priority": "normal",
-                        "createdAt": "2019-09-16T13:48:04+00:00",
-                        "updatedAt": "2019-09-19T13:25:27+00:00"
-                      }
-                    }';
-            }));
+        $this->mockRequestGet('/projects/2/branches/34',
+            '{
+                  "data": {
+                    "id": 34,
+                    "projectId": 2,
+                    "name": "develop-master",
+                    "title": "Master branch",
+                    "exportPattern": "%three_letters_code%",
+                    "priority": "normal",
+                    "createdAt": "2019-09-16T13:48:04+00:00",
+                    "updatedAt": "2019-09-19T13:25:27+00:00"
+                  }
+        }');
 
         $branch = $this->crowdin->branch->get(2, 34);
 
@@ -94,11 +87,10 @@ class BranchApiTest extends AbstractTestApi
 
     public function testDelete()
     {
-        $this->mockClient->expects($this->once())
-            ->method('request')->will($this->returnCallback(function ($method, $uri, $options) {
-                $this->assertEquals('delete', $method);
-                $this->assertEquals('https://organization_domain.crowdin.com/api/v2/projects/2/branches/34', $uri);
-            }));
+        $this->mockRequest([
+            'path' => '/projects/2/branches/34',
+            'method' => 'delete',
+        ]);
 
         $this->crowdin->branch->delete(2, 34);
     }
