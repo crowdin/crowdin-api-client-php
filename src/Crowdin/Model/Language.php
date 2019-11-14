@@ -24,7 +24,7 @@ class Language extends BaseModel
     protected $name;
 
     /**
-     * @var integer
+     * @var string
      */
     protected $dialectOf;
 
@@ -114,7 +114,7 @@ class Language extends BaseModel
         $this->id = (string)$this->getDataProperty('id');
         $this->organizationId = (integer)$this->getDataProperty('organizationId');
         $this->name = (string)$this->getDataProperty('name');
-        $this->dialectOf = (integer)$this->getDataProperty('dialectOf');
+        $this->dialectOf = (string)$this->getDataProperty('dialectOf');
         $this->textDirection = (string)$this->getDataProperty('textDirection');
         $this->internalCode = (string)$this->getDataProperty('internalCode');
         $this->editorCode = (string)$this->getDataProperty('editorCode');
@@ -182,17 +182,17 @@ class Language extends BaseModel
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getDialectOf(): int
+    public function getDialectOf(): string
     {
         return $this->dialectOf;
     }
 
     /**
-     * @param int $dialectOf
+     * @param string $dialectOf
      */
-    public function setDialectOf(int $dialectOf): void
+    public function setDialectOf(string $dialectOf): void
     {
         $this->dialectOf = $dialectOf;
     }

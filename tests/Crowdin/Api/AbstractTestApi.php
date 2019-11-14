@@ -30,22 +30,49 @@ abstract class AbstractTestApi extends TestCase
         ]);
     }
 
-    public function mockRequestTest(array $params)
+    public function mockRequest(array $params)
     {
         $mock = $this->mockClient->expects($this->any())
             ->method('request')
             ->will($this->returnCallback(function ($method, $uri, $options) use ($params) {
                 $this->assertEquals($params['method'], $method);
-                $this->assertEquals($params['uri'], $uri);
-                if (isset($params['options']['body'])) {
-                    $this->assertEquals($params['options']['body'], $options['options']['body']);
+
+                if(isset($params['path']))
+                {
+                    $this->assertEquals('https://organization_domain.crowdin.com/api/v2'.$params['path'], $uri);
+                }else
+                {
+                    $this->assertEquals($params['uri'], $uri);
                 }
-                if (isset($params['options']['header'])) {
-                    $this->assertEquals($params['options']['header'], $options['options']['header']);
+
+                if (isset($params['body'])) {
+                    $this->assertEquals($params['body'], $params['body']);
+                }
+                if (isset($params['header'])) {
+                    $this->assertEquals($params['header'], $params['header']);
                 }
                 return $params['response'] ?? null;
             }));
 
         return $mock;
     }
+
+    public function mockRequestGet(string $path, string $response, array $options = [])
+    {
+        return $this->mockRequest([
+            'uri' => 'https://organization_domain.crowdin.com/api/v2'. $path,
+            'method' => 'get',
+            'response' => $response,
+            'options' => $options
+        ]);
+    }
+
+    public function mockRequestDelete(string $path)
+    {
+        return $this->mockRequest([
+            'uri' => 'https://organization_domain.crowdin.com/api/v2'. $path,
+            'method' => 'delete',
+        ]);
+    }
+
 }

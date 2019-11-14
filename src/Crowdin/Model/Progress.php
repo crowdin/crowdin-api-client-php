@@ -11,11 +11,6 @@ class Progress extends BaseModel
     /**
      * @var string
      */
-    protected $pk = 'languageId';
-
-    /**
-     * @var string
-     */
     protected $languageId;
 
     /**

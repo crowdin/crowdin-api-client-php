@@ -8,12 +8,6 @@ namespace Crowdin\Model;
  */
 class BaseModel implements ModelInterface
 {
-
-    /**
-     * @var string
-     */
-    protected $pk = 'id';
-
     /**
      * Model Data
      *
@@ -29,14 +23,6 @@ class BaseModel implements ModelInterface
     public function __construct(array $data = [])
     {
         $this->data = $data;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPk()
-    {
-        return $this->{$this->pk};
     }
 
     /**

@@ -123,6 +123,7 @@ class Project extends BaseModel
         $this->id = (integer)$this->getDataProperty('id');
         $this->groupId = (integer)$this->getDataProperty('groupId');
         $this->userId = (integer)$this->getDataProperty('userId');
+        $this->sourceLanguageId = (string)$this->getDataProperty('sourceLanguageId');
         $this->targetLanguageIds = (array)$this->getDataProperty('targetLanguageIds');
         $this->joinPolicy = (string)$this->getDataProperty('joinPolicy');
         $this->languageAccessPolicy = (string)$this->getDataProperty('languageAccessPolicy');

@@ -8,8 +8,8 @@ class TranslationMemoryApiTest extends AbstractTestApi
 {
     public function testList()
     {
-        $this->mockRequestTest([
-            'uri' => 'https://organization_domain.crowdin.com/api/v2/tms',
+        $this->mockRequest([
+            'path' => '/tms',
             'method' => 'get',
             'response' => '{
               "data": [

@@ -8,8 +8,8 @@ class UserApiTest extends AbstractTestApi
 {
     public function testList()
     {
-        $this->mockRequestTest([
-            'uri' => 'https://organization_domain.crowdin.com/api/v2/users',
+        $this->mockRequest([
+            'path' => '/users',
             'method' => 'get',
             'response' => '{
                   "data": [

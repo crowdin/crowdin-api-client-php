@@ -8,8 +8,8 @@ class ReportApiTest extends AbstractTestApi
 {
     public function testGenerate()
     {
-        $this->mockRequestTest([
-            'uri' => 'https://organization_domain.crowdin.com/api/v2/projects/124/reports',
+        $this->mockRequest([
+            'path' => '/projects/124/reports',
             'method' => 'post',
             'response' => '{
                   "identifier": "50fb3506-4127-4ba8-8296-f97dc7e3e0c3",

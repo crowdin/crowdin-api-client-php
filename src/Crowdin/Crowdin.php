@@ -18,6 +18,7 @@ use Crowdin\Api\StorageApi;
 use Crowdin\Api\StringTranslationApi;
 use Crowdin\Api\StringTranslationApprovalApi;
 use Crowdin\Api\TaskApi;
+use Crowdin\Api\TranslationApi;
 use Crowdin\Api\TranslationMemoryApi;
 use Crowdin\Api\UserApi;
 use Crowdin\Api\VendorApi;
@@ -56,6 +57,7 @@ use UnexpectedValueException;
  * @property SourceStringApi sourceString
  * @property TranslationMemoryApi translationMemory
  * @property WebhookApi webhook
+ * @property TranslationApi translation
  */
 class Crowdin
 {
@@ -153,7 +155,8 @@ class Crowdin
         'report',
         'sourceString',
         'translationMemory',
-        'webhook'
+        'webhook',
+        'translation',
     ];
 
     public function __construct(array $config)

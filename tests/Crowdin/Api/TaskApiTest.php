@@ -8,8 +8,8 @@ class TaskApiTest extends AbstractTestApi
 {
     public function testList()
     {
-        $this->mockRequestTest([
-            'uri' => 'https://organization_domain.crowdin.com/api/v2/projects/2/tasks',
+        $this->mockRequest([
+            'path' => '/projects/2/tasks',
             'method' => 'get',
             'response' => '{
                   "data": [

@@ -4,6 +4,7 @@ namespace Crowdin\Api;
 
 use Crowdin\Model\DownloadFile;
 use Crowdin\Model\Glossary;
+use Crowdin\Model\GlossaryExport;
 
 /**
  * Class GlossaryApi
@@ -30,12 +31,17 @@ class GlossaryApi extends AbstractApi
     }
 
     /**
-     * @param array $data
-     * @return mixed
+     * @param string $name
+     * @param int $groupId
+     * @return Glossary|null
      */
-    public function create(array $data): ?Glossary
+    public function create(string $name, int $groupId = 0): ?Glossary
     {
-        return $this->_create('glossaries', Glossary::class, $data);
+        $params = [
+            'name' => $name,
+            'groupId' => $groupId
+        ];
+        return $this->_create('glossaries', Glossary::class, $params);
     }
 
     /**
@@ -55,5 +61,27 @@ class GlossaryApi extends AbstractApi
     {
         $path = sprintf('glossaries/%d/exports/download', $glossaryId);
         return $this->_get($path, DownloadFile::class);
+    }
+
+    /**
+     * @param int $glossaryId
+     * @return mixed
+     */
+    public function delete(int $glossaryId)
+    {
+        return $this->_delete('glossaries/' . $glossaryId);
+    }
+
+    /**
+     * @param int $glossaryId
+     * @param string $format
+     * @return GlossaryExport|null
+     */
+    public function export(int $glossaryId, $format = 'tbx'):?GlossaryExport
+    {
+        $path = sprintf('glossaries/%d/exports', $glossaryId);
+        $params = ['format' => $format];
+
+        return $this->_post($path, GlossaryExport::class, $params);
     }
 }
