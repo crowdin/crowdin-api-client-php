@@ -15,6 +15,7 @@
             "homepage": "https://support.crowdin.com/enterprise/api/"
         }
     ],
+    "version": "0.6.0",
     "require": {
         "php": ">=7.1",
         "ext-json": "*",
@@ -26,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Crowdin\\": "src/Crowdin"
+            "CrowdinApiClient\\": "src/CrowdinApiClient"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Crowdin\\Tests\\": "tests/Crowdin/"
+            "CrowdinApiClient\\Tests\\": "tests/CrowdinApiClient/"
         }
     }
 }
