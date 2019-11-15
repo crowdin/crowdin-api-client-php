@@ -10,7 +10,7 @@
          stopOnFailure="false">
     <testsuites>
         <testsuite name="crowdin api client Test Suite">
-            <directory>./tests/Crowdin/</directory>
+            <directory>./tests/CrowdinApiClient/</directory>
         </testsuite>
     </testsuites>
     <filter>
