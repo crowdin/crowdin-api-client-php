@@ -17,7 +17,7 @@
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./src</directory>
             <exclude>
-                <directory>./src/Crowdin/FrameworkSupport</directory>
+                <directory>./src/CrowdinApiClient/FrameworkSupport</directory>
             </exclude>
         </whitelist>
     </filter>
