@@ -68,6 +68,38 @@ class StringTranslationApiTest extends AbstractTestApi
         $this->crowdin->stringTranslation->delete(2, 190695);
     }
 
+    public function create()
+    {
+        $params = [
+            'stringId' => 35434,
+            'languageId' => 'uk',
+            'text' => 'Цю стрічку перекладено',
+            'pluralCategoryName' => 'few',
+        ];
+
+        $this->mockRequest([
+            'path' => '',
+            'method' => 'post',
+            'body' => $params,
+            'response' => '{
+              "data": {
+                "id": 190695,
+                "text": "Цю стрічку перекладено",
+                "pluralCategoryName": "few",
+                "user": {
+                  "id": 19,
+                  "login": "john_doe"
+                },
+                "rating": 10
+              }
+            }'
+        ]);
+
+        $stringTranslation = $this->crowdin->stringTranslation->create(2, $params);
+        $this->assertInstanceOf(StringTranslation::class, $stringTranslation);
+        $this->assertEquals(190695, $stringTranslation->getId());
+    }
+
     public function testRestore()
     {
         $this->mockRequest([
@@ -88,6 +120,38 @@ class StringTranslationApiTest extends AbstractTestApi
         ]);
 
         $stringTranslation = $this->crowdin->stringTranslation->restore(2, 190695);
+        $this->assertInstanceOf(StringTranslation::class, $stringTranslation);
+        $this->assertEquals(190695, $stringTranslation->getId());
+    }
+
+    public function testCreate()
+    {
+        $params = [
+            'stringId' => 35434,
+            'languageId' => 'uk',
+            'text' => 'Цю стрічку перекладено',
+            'pluralCategoryName' => 'few',
+        ];
+
+        $this->mockRequest([
+            'path' => '/projects/2/translations',
+            'method' => 'post',
+            'body' => $params,
+            'response' => '{
+                  "data": {
+                    "id": 190695,
+                    "text": "Цю стрічку перекладено",
+                    "pluralCategoryName": "few",
+                    "user": {
+                      "id": 19,
+                      "login": "john_doe"
+                    },
+                    "rating": 10
+                  }
+                }',
+        ]);
+
+        $stringTranslation = $this->crowdin->stringTranslation->create(2, $params);
         $this->assertInstanceOf(StringTranslation::class, $stringTranslation);
         $this->assertEquals(190695, $stringTranslation->getId());
     }

@@ -21,13 +21,25 @@ class MachineTranslationEngineTest extends TestCase
         'projectIds' => [1],
     ];
 
-    public function setUp()
+    public function testLoadData()
     {
-        parent::setUp();
         $this->machineTranslationEngine = new MachineTranslationEngine($this->data);
+        $this->checkData();
     }
 
-    public function testLoadData()
+    public function testSetData()
+    {
+        $this->machineTranslationEngine = new MachineTranslationEngine();
+        $this->machineTranslationEngine->setId($this->data['id']);
+        $this->machineTranslationEngine->setGroupId($this->data['groupId']);
+        $this->machineTranslationEngine->setName($this->data['name']);
+        $this->machineTranslationEngine->setType($this->data['type']);
+        $this->machineTranslationEngine->setCredentials($this->data['credentials']);
+        $this->machineTranslationEngine->setProjectIds($this->data['projectIds']);
+        $this->checkData();
+    }
+
+    public function checkData()
     {
         $this->assertEquals($this->data['id'], $this->machineTranslationEngine->getId());
         $this->assertEquals($this->data['groupId'], $this->machineTranslationEngine->getGroupId());

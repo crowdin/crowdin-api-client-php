@@ -34,14 +34,13 @@ class WebhookApi extends AbstractApi
 
     /**
      * @param int $projectId
-     * @param int $webhookId
      * @param array $data
      * @return mixed
      */
-    public function create(int $projectId, int $webhookId, array $data)
+    public function create(int $projectId, array $data)
     {
-        $patch = sprintf('projects/%d/webhooks/%d', $projectId, $webhookId);
-        return $this->_create('webhooks', Webhook::class, $data);
+        $patch = sprintf('projects/%d/webhooks', $projectId);
+        return $this->_create($patch, Webhook::class, $data);
     }
 
     /**

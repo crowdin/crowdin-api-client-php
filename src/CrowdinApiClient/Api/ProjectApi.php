@@ -73,7 +73,7 @@ class ProjectApi extends AbstractApi
      */
     public function updateSettings(ProjectSetting $projectSetting): ?ProjectSetting
     {
-        $path = sprintf('projects/%d/settings/', $projectSetting->getProjectId());
+        $path = sprintf('projects/%d/settings', $projectSetting->getProjectId());
 
         return $this->_update($path, $projectSetting);
     }

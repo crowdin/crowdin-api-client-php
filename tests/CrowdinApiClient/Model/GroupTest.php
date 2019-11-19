@@ -32,13 +32,29 @@ class GroupTest extends TestCase
         'updatedAt' => '2019-09-20T12:22:20+00:00',
     ];
 
-    public function setUp()
+    public function testLoadData()
     {
-        parent::setUp();
         $this->group = new Group($this->data);
+        $this->checkData();
     }
 
-    public function testLoadData()
+    public function testSetData()
+    {
+        $this->group = new Group();
+        $this->group->setId($this->data['id']);
+        $this->group->setName($this->data['name']);
+        $this->group->setDescription($this->data['description']);
+        $this->group->setParentId($this->data['parentId']);
+        $this->group->setOrganizationId($this->data['organizationId']);
+        $this->group->setUserId($this->data['userId']);
+        $this->group->setSubgroupsCount($this->data['subgroupsCount']);
+        $this->group->setProjectsCount($this->data['projectsCount']);
+        $this->group->setCreatedAt($this->data['createdAt']);
+        $this->group->setUpdatedAt($this->data['updatedAt']);
+        $this->checkData();
+    }
+
+    public function checkData()
     {
         $this->assertEquals($this->data['id'], $this->group->getId());
         $this->assertEquals($this->data['name'], $this->group->getName());

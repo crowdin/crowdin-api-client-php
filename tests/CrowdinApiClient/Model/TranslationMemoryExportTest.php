@@ -28,13 +28,29 @@ class TranslationMemoryExportTest extends TestCase
         'eta' => '1 second',
     ];
 
-    public function setUp()
+    public function testLoadData()
     {
-        parent::setUp();
         $this->translationMemoryExport = new TranslationMemoryExport($this->data);
+        $this->checkData();
     }
 
-    public function testLoadData()
+    public function testSetData()
+    {
+        $this->translationMemoryExport = new TranslationMemoryExport();
+
+        $this->translationMemoryExport->setIdentifier($this->data['identifier']);
+        $this->translationMemoryExport->setStatus($this->data['status']);
+        $this->translationMemoryExport->setProgress($this->data['progress']);
+        $this->translationMemoryExport->setAttributes($this->data['attributes']);
+        $this->translationMemoryExport->setCreatedAt($this->data['createdAt']);
+        $this->translationMemoryExport->setUpdatedAt($this->data['updatedAt']);
+        $this->translationMemoryExport->setStartedAt($this->data['startedAt']);
+        $this->translationMemoryExport->setFinishedAt($this->data['finishedAt']);
+        $this->translationMemoryExport->setEta($this->data['eta']);
+        $this->checkData();
+    }
+
+    public function checkData()
     {
         $this->assertEquals($this->data['identifier'], $this->translationMemoryExport->getIdentifier());
         $this->assertEquals($this->data['status'], $this->translationMemoryExport->getStatus());

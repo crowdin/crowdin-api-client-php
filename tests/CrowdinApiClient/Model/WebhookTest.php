@@ -33,13 +33,31 @@ class WebhookTest extends TestCase
         'updatedAt' => '2019-09-23T09:19:07+00:00',
     ];
 
-    public function setUp()
+    public function testLoadData()
     {
-        parent::setUp();
         $this->webhook = new Webhook($this->data);
+        $this->checkData();
     }
 
-    public function testLoadData()
+    public function testSetData()
+    {
+        $this->webhook = new Webhook();
+        $this->webhook->setId($this->data['id']);
+        $this->webhook->setProjectId($this->data['projectId']);
+        $this->webhook->setName($this->data['name']);
+        $this->webhook->setUrl($this->data['url']);
+        $this->webhook->setEvents($this->data['events']);
+        $this->webhook->setHeaders($this->data['headers']);
+        $this->webhook->setPayload($this->data['payload']);
+        $this->webhook->setIsActive($this->data['isActive']);
+        $this->webhook->setRequestType($this->data['requestType']);
+        $this->webhook->setContentType($this->data['contentType']);
+        $this->webhook->setCreatedAt($this->data['createdAt']);
+        $this->webhook->setUpdatedAt($this->data['updatedAt']);
+        $this->checkData();
+    }
+
+    public function checkData()
     {
         $this->assertEquals($this->data['id'], $this->webhook->getId());
         $this->assertEquals($this->data['projectId'], $this->webhook->getProjectId());

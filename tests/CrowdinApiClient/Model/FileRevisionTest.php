@@ -70,13 +70,25 @@ class FileRevisionTest extends TestCase
         'date' => '2019-09-20T09:08:16+00:00',
     ];
 
-    public function setUp()
+    public function testLoadData()
     {
-        parent::setUp();
         $this->fileRevision = new FileRevision($this->data);
+        $this->checkData();
     }
 
-    public function testLoadData()
+    public function testSetData()
+    {
+        $this->fileRevision = new FileRevision();
+        $this->fileRevision->setId($this->data['id']);
+        $this->fileRevision->setProjectId($this->data['projectId']);
+        $this->fileRevision->setRevision($this->data['revision']);
+        $this->fileRevision->setRevertTo($this->data['revertTo']);
+        $this->fileRevision->setTranslationChunks($this->data['translationChunks']);
+        $this->fileRevision->setInfo($this->data['info']);
+        $this->checkData();
+    }
+
+    public function checkData()
     {
         $this->assertEquals($this->data['id'], $this->fileRevision->getId());
         $this->assertEquals($this->data['projectId'], $this->fileRevision->getProjectId());

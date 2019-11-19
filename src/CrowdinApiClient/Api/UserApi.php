@@ -25,6 +25,6 @@ class UserApi extends AbstractApi
      */
     public function get(int $userId): ?User
     {
-        return $this->_get('user/' . $userId, User::class);
+        return $this->_get('users/' . $userId, User::class);
     }
 }

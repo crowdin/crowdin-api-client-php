@@ -72,7 +72,7 @@ class VoteApiTest extends AbstractTestApi
         $this->assertEquals(6643, $vote->getId());
     }
 
-    public function testGet()
+    public function testGetAndUpdate()
     {
         $this->mockRequestGet('/projects/2/votes/6643', '{
           "data": {

@@ -32,5 +32,10 @@ class StorageTest extends TestCase
     public function testLoadData()
     {
         $this->assertEquals($this->data['id'], $this->storage->getId());
+
+        $this->storage = new Storage();
+        $this->storage->setId($this->data['id']);
+
+        $this->assertEquals($this->data['id'], $this->storage->getId());
     }
 }

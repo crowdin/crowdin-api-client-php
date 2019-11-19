@@ -33,13 +33,34 @@ class SourceStringTest extends TestCase
         'updatedAt' => '2019-09-20T13:24:01+00:00',
     ];
 
-    public function setUp()
+    public function testLoadData()
     {
-        parent::setUp();
         $this->sourceString = new SourceString($this->data);
+        $this->checkData();
     }
 
-    public function testLoadData()
+    public function testSetData()
+    {
+        $this->sourceString = new SourceString();
+        $this->sourceString->setId($this->data['id']);
+        $this->sourceString->setProjectId($this->data['projectId']);
+        $this->sourceString->setFileId($this->data['fileId']);
+        $this->sourceString->setIdentifier($this->data['identifier']);
+        $this->sourceString->setText($this->data['text']);
+        $this->sourceString->setType($this->data['type']);
+        $this->sourceString->setContext($this->data['context']);
+        $this->sourceString->setMaxLength($this->data['maxLength']);
+        $this->sourceString->setIsHidden($this->data['isHidden']);
+        $this->sourceString->setRevision($this->data['revision']);
+        $this->sourceString->setHasPlurals($this->data['hasPlurals']);
+        $this->sourceString->setPlurals($this->data['plurals']);
+        $this->sourceString->setIsIcu($this->data['isIcu']);
+        $this->sourceString->setCreatedAt($this->data['createdAt']);
+        $this->sourceString->setUpdatedAt($this->data['updatedAt']);
+        $this->checkData();
+    }
+
+    public function checkData()
     {
         $this->assertEquals($this->data['id'], $this->sourceString->getId());
         $this->assertEquals($this->data['projectId'], $this->sourceString->getProjectId());

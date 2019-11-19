@@ -24,12 +24,23 @@ class ReportApi extends AbstractApi
 
     /**
      * @param int $projectId
-     * @param int $reportId
+     * @param string $reportId
+     * @return Report|null
+     */
+    public function get(int $projectId, string $reportId): ?Report
+    {
+        $path = sprintf('projects/%d/reports/%s', $projectId, $reportId);
+        return $this->_get($path, Report::class);
+    }
+
+    /**
+     * @param int $projectId
+     * @param string $reportId
      * @return DownloadFile|null
      */
-    public function download(int $projectId, int $reportId): ?DownloadFile
+    public function download(int $projectId, string $reportId): ?DownloadFile
     {
-        $path = sprintf('projects/%d/reports/%d/download', $projectId, $reportId);
+        $path = sprintf('projects/%d/reports/%s/download', $projectId, $reportId);
         return $this->_get($path, DownloadFile::class);
     }
 }

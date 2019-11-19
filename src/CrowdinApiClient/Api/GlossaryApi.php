@@ -50,7 +50,7 @@ class GlossaryApi extends AbstractApi
      */
     public function update(Glossary $glossary): ?Glossary
     {
-        return $this->_update('glossaries', $glossary);
+        return $this->_update('glossaries/' . $glossary->getId(), $glossary);
     }
 
     /**

@@ -45,13 +45,6 @@ class StringTranslationApprovalApi extends AbstractApi
         return $this->_create($path, StringTranslationApproval::class, $data);
     }
 
-    public function update(int $projectId, StringTranslationApproval $stringTranslationApproval)
-    {
-        $path = sprintf('projects/%d/approvals', $projectId);
-
-        return $this->_update($path, $stringTranslationApproval);
-    }
-
     /**
      * @param int $projectId
      * @param int $approvalId

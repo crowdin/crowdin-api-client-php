@@ -45,7 +45,7 @@ class DirectoryApiTest extends AbstractTestApi
         $this->assertEquals(4, $directories[0]->getId());
     }
 
-    public function testGet()
+    public function testGetAndUpdate()
     {
         $this->mockRequestGet('/projects/2/directories/34', '{
                   "data": {
@@ -64,5 +64,63 @@ class DirectoryApiTest extends AbstractTestApi
 
         $this->assertInstanceOf(Directory::class, $directory);
         $this->assertEquals(34, $directory->getId());
+
+        $directory->setName('edit test');
+
+        $this->mockRequestPath('/projects/2/directories/34', '{
+                  "data": {
+                    "id": 34,
+                    "projectId": 2,
+                    "name": "edit test",
+                    "title": "Master branch",
+                    "exportPattern": "%three_letters_code%",
+                    "priority": "normal",
+                    "createdAt": "2019-09-16T13:48:04+00:00",
+                    "updatedAt": "2019-09-19T13:25:27+00:00"
+                  }
+            }');
+
+        $this->crowdin->directory->update($directory);
+        $this->assertInstanceOf(Directory::class, $directory);
+        $this->assertEquals(34, $directory->getId());
+        $this->assertEquals('edit test', $directory->getName());
+    }
+
+    public function testCreate()
+    {
+        $params = [
+            'name' => 'develop-master',
+            'title' => 'Master branch',
+            'exportPattern' => '%three_letters_code%',
+            'priority' => 'normal',
+        ];
+
+        $this->mockRequest([
+            'path' => '/projects/2/directories',
+            'method' => 'post',
+            'body' => $params,
+            'response' => '{
+                  "data": {
+                    "id": 34,
+                    "projectId": 2,
+                    "name": "develop-master",
+                    "title": "Master branch",
+                    "exportPattern": "%three_letters_code%",
+                    "priority": "normal",
+                    "createdAt": "2019-09-16T13:48:04+00:00",
+                    "updatedAt": "2019-09-19T13:25:27+00:00"
+                  }
+                }'
+        ]);
+
+        $directory = $this->crowdin->directory->create(2, $params);
+        $this->assertInstanceOf(Directory::class, $directory);
+        $this->assertEquals(34, $directory->getId());
+    }
+
+    public function testDelete()
+    {
+        $this->mockRequestDelete('/projects/2/directories/34');
+        $this->crowdin->directory->delete(2, 34);
     }
 }

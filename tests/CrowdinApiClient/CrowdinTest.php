@@ -116,4 +116,18 @@ class CrowdinTest extends TestCase
             'response_error_handler' => 'response_error_handler'
         ]);
     }
+
+    /**
+     * @expectedException \UnexpectedValueException
+     */
+    public function testGetApiUnexpectedValueException()
+    {
+        $this->app->test;
+    }
+
+    public function testSetBaseUri()
+    {
+        $this->app->setBaseUri('https://foo.com');
+        $this->assertEquals('https://foo.com', $this->app->getBaseUri());
+    }
 }

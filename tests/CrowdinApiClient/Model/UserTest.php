@@ -24,13 +24,31 @@ class UserTest extends TestCase
         'timezone' => 'Europe/Kiev',
     ];
 
-    public function setUp()
+    public function testLoadData()
     {
-        parent::setUp();
         $this->user = new User($this->data);
+        $this->checkData();
     }
 
-    public function testLoadData()
+    public function testSetData()
+    {
+        $this->user = new User();
+        $this->user->setId($this->data['id']);
+        $this->user->setUsername($this->data['username']);
+        $this->user->setEmail($this->data['email']);
+        $this->user->setFirstName($this->data['firstName']);
+        $this->user->setLastName($this->data['lastName']);
+        $this->user->setStatus($this->data['status']);
+        $this->user->setAvatarUrl($this->data['avatarUrl']);
+        $this->user->setCreatedAt($this->data['createdAt']);
+        $this->user->setLastSeen($this->data['lastSeen']);
+        $this->user->setTwoFactor($this->data['twoFactor']);
+        $this->user->setIsAdmin($this->data['isAdmin']);
+        $this->user->setTimezone($this->data['timezone']);
+        $this->checkData();
+    }
+
+    public function checkData()
     {
         $this->assertEquals($this->data['id'], $this->user->getId());
         $this->assertEquals($this->data['username'], $this->user->getUsername());

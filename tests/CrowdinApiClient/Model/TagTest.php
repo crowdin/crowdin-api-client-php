@@ -5,8 +5,15 @@ namespace CrowdinApiClient\Tests\Model;
 use CrowdinApiClient\Model\Tag;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Class TagTest
+ * @package CrowdinApiClient\Tests\Model
+ */
 class TagTest extends TestCase
 {
+    /**
+     * @var Tag
+     */
     public $tag;
 
     public $data = [
@@ -23,13 +30,24 @@ class TagTest extends TestCase
         'createdAt' => '2019-09-23T09:35:31+00:00',
     ];
 
-    public function setUp()
+    public function testLoadData()
     {
-        parent::setUp();
         $this->tag = new Tag($this->data);
+        $this->checkData();
     }
 
-    public function testLoadData()
+    public function testSetData()
+    {
+        $this->tag = new Tag();
+        $this->tag->setId($this->data['id']);
+        $this->tag->setScreenshotId($this->data['screenshotId']);
+        $this->tag->setStringId($this->data['stringId']);
+        $this->tag->setPosition($this->data['position']);
+        $this->tag->setCreatedAt($this->data['createdAt']);
+        $this->checkData();
+    }
+
+    public function checkData()
     {
         $this->assertEquals($this->data['id'], $this->tag->getId());
         $this->assertEquals($this->data['screenshotId'], $this->tag->getScreenshotId());

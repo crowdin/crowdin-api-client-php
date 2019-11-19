@@ -25,13 +25,24 @@ class VoteTest extends TestCase
         'mark' => 'up',
     ];
 
-    public function setUp()
+    public function testLoadData()
     {
-        parent::setUp();
         $this->vote = new Vote($this->data);
+        $this->checkData();
     }
 
-    public function testLoadData()
+    public function testTestData()
+    {
+        $this->vote = new Vote();
+        $this->vote->setId($this->data['id']);
+        $this->vote->setUser($this->data['user']);
+        $this->vote->setTranslationId($this->data['translationId']);
+        $this->vote->setVotedAt($this->data['votedAt']);
+        $this->vote->setMark($this->data['mark']);
+        $this->checkData();
+    }
+
+    public function checkData()
     {
         $this->assertEquals($this->data['id'], $this->vote->getId());
         $this->assertEquals($this->data['user'], $this->vote->getUser());

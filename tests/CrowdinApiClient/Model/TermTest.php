@@ -32,13 +32,29 @@ class TermTest extends TestCase
         'updatedAt' => '2019-09-23T07:19:47+00:00',
     ];
 
-    public function setUp()
+    public function testLoadData()
     {
-        parent::setUp();
         $this->term = new Term($this->data);
+        $this->checkData();
     }
 
-    public function testLoadData()
+    public function testSetData()
+    {
+        $this->term = new Term();
+        $this->term->setId($this->data['id']);
+        $this->term->setUserId($this->data['userId']);
+        $this->term->setGlossaryId($this->data['glossaryId']);
+        $this->term->setLanguageId($this->data['languageId']);
+        $this->term->setText($this->data['text']);
+        $this->term->setDescription($this->data['description']);
+        $this->term->setPartOfSpeech($this->data['partOfSpeech']);
+        $this->term->setLemma($this->data['lemma']);
+        $this->term->setCreatedAt($this->data['createdAt']);
+        $this->term->setUpdatedAt($this->data['updatedAt']);
+        $this->checkData();
+    }
+
+    public function checkData()
     {
         $this->assertEquals($this->data['id'], $this->term->getId());
         $this->assertEquals($this->data['userId'], $this->term->getUserId());

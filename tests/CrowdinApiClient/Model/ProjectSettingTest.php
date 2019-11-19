@@ -49,16 +49,39 @@ class ProjectSettingTest extends TestCase
             ],
     ];
 
-    public function setUp()
+    /**
+     * @test
+     */
+    public function testLoadData()
     {
-        parent::setUp();
         $this->projectSetting = new ProjectSetting($this->data);
+        $this->checkData();
     }
 
     /**
      * @test
      */
-    public function testLoadData()
+    public function testSetData()
+    {
+        $this->projectSetting = new ProjectSetting();
+        $this->projectSetting->setProjectId($this->data['projectId']);
+        $this->projectSetting->setTranslateDuplicates($this->data['translateDuplicates']);
+        $this->projectSetting->setIsMtAllowed($this->data['isMtAllowed']);
+        $this->projectSetting->setAutoSubstitution($this->data['autoSubstitution']);
+        $this->projectSetting->setExportTranslatedOnly($this->data['exportTranslatedOnly']);
+        $this->projectSetting->setExportApprovedOnly($this->data['exportApprovedOnly']);
+        $this->projectSetting->setAutoTranslateDialects($this->data['autoTranslateDialects']);
+        $this->projectSetting->setPublicDownloads($this->data['publicDownloads']);
+        $this->projectSetting->setUseGlobalTm($this->data['useGlobalTm']);
+        $this->projectSetting->setInContext($this->data['inContext']);
+        $this->projectSetting->setPseudoLanguageId($this->data['pseudoLanguageId']);
+        $this->projectSetting->setQaCheckIsActive($this->data['qaCheckIsActive']);
+        $this->projectSetting->setLowestQualityProjectGoalId($this->data['lowestQualityProjectGoalId']);
+        $this->projectSetting->setQaCheckCategories($this->data['qaCheckCategories']);
+        $this->checkData();
+    }
+
+    public function checkData()
     {
         $this->assertEquals($this->data['projectId'], $this->projectSetting->getProjectId());
         $this->assertEquals($this->data['translateDuplicates'], $this->projectSetting->getTranslateDuplicates());

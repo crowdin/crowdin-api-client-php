@@ -35,13 +35,29 @@ class GlossaryExportTest extends TestCase
         'eta' => '1 second',
     ];
 
-    public function setUp()
+    public function testLoadData()
     {
-        parent::setUp();
         $this->glossaryExport = new GlossaryExport($this->data);
+        $this->checkData();
     }
 
-    public function testLoadData()
+    public function testSetData()
+    {
+        $this->glossaryExport = new GlossaryExport();
+
+        $this->glossaryExport->setIdentifier($this->data['identifier']);
+        $this->glossaryExport->setStatus($this->data['status']);
+        $this->glossaryExport->setProgress($this->data['progress']);
+        $this->glossaryExport->setAttributes($this->data['attributes']);
+        $this->glossaryExport->setCreatedAt($this->data['createdAt']);
+        $this->glossaryExport->setUpdatedAt($this->data['updatedAt']);
+        $this->glossaryExport->setStartedAt($this->data['startedAt']);
+        $this->glossaryExport->setFinishedAt($this->data['finishedAt']);
+        $this->glossaryExport->setEta($this->data['eta']);
+        $this->checkData();
+    }
+
+    public function checkData()
     {
         $this->assertEquals($this->data['identifier'], $this->glossaryExport->getIdentifier());
         $this->assertEquals($this->data['status'], $this->glossaryExport->getStatus());
