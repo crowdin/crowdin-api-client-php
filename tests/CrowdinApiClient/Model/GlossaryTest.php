@@ -26,16 +26,31 @@ class GlossaryTest extends TestCase
         'createdAt' => '2019-09-16T13:42:04+00:00',
     ];
 
-    public function setUp()
-    {
-        parent::setUp();
-        $this->glossary = new Glossary($this->data);
-    }
-
     /**
      * @test
      */
     public function testLoadData()
+    {
+        $this->glossary = new Glossary($this->data);
+        $this->checkData();
+    }
+
+    public function testSetData()
+    {
+        $this->glossary = new Glossary();
+
+        $this->glossary->setId($this->data['id']);
+        $this->glossary->setName($this->data['name']);
+        $this->glossary->setGroupId($this->data['groupId']);
+        $this->glossary->setUserId($this->data['userId']);
+        $this->glossary->setTerms($this->data['terms']);
+        $this->glossary->setLanguageIds($this->data['languageIds']);
+        $this->glossary->setProjectIds($this->data['projectIds']);
+        $this->glossary->setCreatedAt($this->data['createdAt']);
+        $this->checkData();
+    }
+
+    public function checkData()
     {
         $this->assertEquals($this->data['id'], $this->glossary->getId());
         $this->assertEquals($this->data['name'], $this->glossary->getName());

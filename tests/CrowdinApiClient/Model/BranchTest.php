@@ -33,13 +33,35 @@ class BranchTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $this->branch = new Branch($this->data);
     }
 
     /**
      * @test
      */
     public function testLoadData()
+    {
+        $this->branch = new Branch($this->data);
+        $this->checkData();
+    }
+
+    /**
+     * @depends testLoadData
+     */
+    public function testSetData()
+    {
+        $this->branch = new Branch();
+        $this->branch->setId($this->data['id']);
+        $this->branch->setProjectId($this->data['projectId']);
+        $this->branch->setName($this->data['name']);
+        $this->branch->setTitle($this->data['title']);
+        $this->branch->setExportPattern($this->data['exportPattern']);
+        $this->branch->setPriority($this->data['priority']);
+        $this->branch->setCreatedAt($this->data['createdAt']);
+        $this->branch->setUpdatedAt($this->data['updatedAt']);
+        $this->checkData();
+    }
+
+    public function checkData()
     {
         $this->assertEquals($this->data['id'], $this->branch->getId());
         $this->assertEquals($this->data['projectId'], $this->branch->getProjectId());

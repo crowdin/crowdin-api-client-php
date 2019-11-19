@@ -5,6 +5,7 @@ namespace CrowdinApiClient\Api;
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\TranslationMemory;
 use CrowdinApiClient\Model\TranslationMemoryExport;
+use CrowdinApiClient\Model\TranslationMemoryImport;
 
 /**
  * Class TranslationMemoryApi
@@ -33,11 +34,16 @@ class TranslationMemoryApi extends AbstractApi
     }
 
     /**
-     * @param array $data
+     * @param string $name
+     * @param int $groupID
      * @return mixed
      */
-    public function create(array $data)
+    public function create(string $name, int $groupID): ?TranslationMemory
     {
+        $data = [
+            'name' => $name,
+            'groupId' => $groupID
+        ];
         return $this->_create('tms', TranslationMemory::class, $data);
     }
 
@@ -62,9 +68,9 @@ class TranslationMemoryApi extends AbstractApi
     /**
      * @param int $translationMemoryId
      * @param array $params
-     * @return mixed
+     * @return DownloadFile|null
      */
-    public function download(int $translationMemoryId, $params = [])
+    public function download(int $translationMemoryId, $params = []): ?DownloadFile
     {
         $path = sprintf('tms/%d/exports', $translationMemoryId);
         return $this->_get($path, DownloadFile::class, $params);
@@ -97,9 +103,9 @@ class TranslationMemoryApi extends AbstractApi
      * @param int $storageId
      * @param bool $firstLineContainsHeader
      * @param array $scheme
-     * @return TranslationMemoryExport|null
+     * @return TranslationMemoryImport|null
      */
-    public function import(int $translationMemoryId, int $storageId, $firstLineContainsHeader = false, array $scheme = []): ?TranslationMemoryExport
+    public function import(int $translationMemoryId, int $storageId, $firstLineContainsHeader = false, array $scheme = []): ?TranslationMemoryImport
     {
         $path = sprintf('tms/%d/imports', $translationMemoryId);
         $params = [
@@ -108,17 +114,17 @@ class TranslationMemoryApi extends AbstractApi
             'scheme' => $scheme
         ];
 
-        return $this->_create($path, TranslationMemoryExport::class, $params);
+        return $this->_create($path, TranslationMemoryImport::class, $params);
     }
 
     /**
      * @param int $translationMemoryId
      * @param string $importId
-     * @return TranslationMemoryExport|null
+     * @return TranslationMemoryImport|null
      */
-    public function checkImportStatus(int $translationMemoryId, string $importId): ?TranslationMemoryExport
+    public function checkImportStatus(int $translationMemoryId, string $importId): ?TranslationMemoryImport
     {
         $path = sprintf('tms/%d/imports/%s', $translationMemoryId, $importId);
-        return $this->_get($path, TranslationMemoryExport::class);
+        return $this->_get($path, TranslationMemoryImport::class);
     }
 }

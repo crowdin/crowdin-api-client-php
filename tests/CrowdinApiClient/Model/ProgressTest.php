@@ -22,13 +22,25 @@ class ProgressTest extends TestCase
         'phrasesApprovedProgress' => 86,
     ];
 
-    public function setUp()
+    public function testLoadData()
     {
-        parent::setUp();
         $this->progress = new Progress($this->data);
+        $this->checkData();
     }
 
-    public function testLoadData()
+    public function testSetData()
+    {
+        $this->progress = new Progress();
+        $this->progress->setLanguageId($this->data['languageId']);
+        $this->progress->setPhrasesCount($this->data['phrasesCount']);
+        $this->progress->setPhrasesApprovedCount($this->data['phrasesApprovedCount']);
+        $this->progress->setPhrasesTranslatedCount($this->data['phrasesTranslatedCount']);
+        $this->progress->setPhrasesTranslatedProgress($this->data['phrasesTranslatedProgress']);
+        $this->progress->setPhrasesApprovedProgress($this->data['phrasesApprovedProgress']);
+        $this->checkData();
+    }
+
+    public function checkData()
     {
         $this->assertEquals($this->data['languageId'], $this->progress->getLanguageId());
         $this->assertEquals($this->data['phrasesCount'], $this->progress->getPhrasesCount());

@@ -49,7 +49,7 @@ class TaskApi extends AbstractApi
      */
     public function update(Task $task): ?Task
     {
-        $path = sprintf('projects/%d/tasks', $task->getProjectId());
+        $path = sprintf('projects/%d/tasks/%d', $task->getProjectId(), $task->getId());
         return $this->_update($path, $task);
     }
 

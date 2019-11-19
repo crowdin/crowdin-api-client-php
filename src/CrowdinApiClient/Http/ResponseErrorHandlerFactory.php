@@ -10,9 +10,9 @@ class ResponseErrorHandlerFactory
      * @param ResponseErrorHandlerInterface|null|mixed $handler
      * @return ResponseErrorHandlerInterface
      */
-    public static function make($handler): ResponseErrorHandlerInterface
+    public static function make($handler = null): ResponseErrorHandlerInterface
     {
-        if (!$handler) {
+        if ($handler === null) {
             return new ResponseErrorHandler();
         }
 

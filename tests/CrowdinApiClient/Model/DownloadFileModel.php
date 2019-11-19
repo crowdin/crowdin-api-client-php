@@ -24,16 +24,24 @@ class DownloadFileModel extends TestCase
      */
     public $downloadFile;
 
-    public function setUp()
-    {
-        parent::setUp();
-        $this->downloadFile = new DownloadFile($this->data);
-    }
-
     /**
      * @test
      */
     public function testLoadData()
+    {
+        $this->downloadFile = new DownloadFile($this->data);
+        $this->checkData();
+    }
+
+    public function testSetData()
+    {
+        $this->downloadFile = new DownloadFile();
+        $this->downloadFile->setUrl($this->data['url']);
+        $this->downloadFile->setExpireIn($this->data['expireIn']);
+        $this->checkData();
+    }
+
+    public function checkData()
     {
         $this->assertEquals($this->data['url'], $this->downloadFile->getUrl());
         $this->assertEquals($this->data['expireIn'], $this->downloadFile->getExpireIn());

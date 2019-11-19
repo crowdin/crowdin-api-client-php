@@ -49,13 +49,28 @@ class PreTranslationTest extends TestCase
         'eta' => '10 seconds',
     ];
 
-    public function setUp()
+    public function testLoadData()
     {
-        parent::setUp();
         $this->preTranslation = new PreTranslation($this->data);
+        $this->checkData();
     }
 
-    public function testLoadData()
+    public function testSetData()
+    {
+        $this->preTranslation = new PreTranslation();
+        $this->preTranslation->setIdentifier($this->data['identifier']);
+        $this->preTranslation->setStatus($this->data['status']);
+        $this->preTranslation->setProgress($this->data['progress']);
+        $this->preTranslation->setAttributes($this->data['attributes']);
+        $this->preTranslation->setCreatedAt($this->data['createdAt']);
+        $this->preTranslation->setUpdatedAt($this->data['updatedAt']);
+        $this->preTranslation->setStartedAt($this->data['startedAt']);
+        $this->preTranslation->setFinishedAt($this->data['finishedAt']);
+        $this->preTranslation->setEta($this->data['eta']);
+        $this->checkData();
+    }
+
+    public function checkData()
     {
         $this->assertEquals($this->data['identifier'], $this->preTranslation->getIdentifier());
         $this->assertEquals($this->data['status'], $this->preTranslation->getStatus());

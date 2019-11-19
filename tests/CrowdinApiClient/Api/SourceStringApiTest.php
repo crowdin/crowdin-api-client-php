@@ -50,7 +50,7 @@ class SourceStringApiTest extends AbstractTestApi
         $this->assertEquals(2814, $sourceStrings[0]->getId());
     }
 
-    public function testGet()
+    public function testGetAndUpdate()
     {
         $this->mockRequestGet('/projects/2/strings/2814', '{
           "data": {
@@ -75,6 +75,33 @@ class SourceStringApiTest extends AbstractTestApi
         $sourceString = $this->crowdin->sourceString->get(2, 2814);
         $this->assertInstanceOf(SourceString::class, $sourceString);
         $this->assertEquals(2814, $sourceString->getId());
+
+        $this->mockRequestPath('/projects/2/strings/2814', '{
+                  "data": {
+                    "id": 2814,
+                    "projectId": 2,
+                    "fileId": 48,
+                    "identifier": "6a1821e6499ebae94de4b880fd93b985",
+                    "text": "test edit",
+                    "type": "text",
+                    "context": "shown on main page",
+                    "maxLength": 35,
+                    "isHidden": false,
+                    "revision": 1,
+                    "hasPlurals": false,
+                    "plurals": {},
+                    "isIcu": false,
+                    "createdAt": "2019-09-20T12:43:57+00:00",
+                    "updatedAt": "2019-09-20T13:24:01+00:00"
+                  }
+                }'
+        );
+
+        $sourceString->setText('test edit');
+        $this->crowdin->sourceString->update($sourceString);
+        $this->assertInstanceOf(SourceString::class, $sourceString);
+        $this->assertEquals(2814, $sourceString->getId());
+        $this->assertEquals('test edit', $sourceString->getText());
     }
 
     public function testCreate()

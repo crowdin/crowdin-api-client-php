@@ -27,7 +27,6 @@ class ResponseModelListDecorator implements ResponseDecoratorInterface
      */
     public function decorate($data): array
     {
-        //TODO collections
         $_items = [];
 
         foreach ($data as $item) {

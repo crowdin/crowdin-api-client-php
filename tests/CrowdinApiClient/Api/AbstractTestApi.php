@@ -28,31 +28,40 @@ abstract class AbstractTestApi extends TestCase
             'access_token' => 'access_token',
             'base_uri' => 'https://organization_domain.crowdin.com/api/v2',
         ]);
+
+        $this->mockClient = $this->mockClient->expects($this->any())
+            ->method('request');
     }
 
     public function mockRequest(array $params)
     {
-        $mock = $this->mockClient->expects($this->any())
-            ->method('request')
-            ->will($this->returnCallback(function ($method, $uri, $options) use ($params) {
-                $this->assertEquals($params['method'], $method);
+        return $this->mockClient->will($this->returnCallback(function ($method, $uri, $options) use ($params) {
+            $this->assertEquals($params['method'], $method);
 
-                if (isset($params['path'])) {
-                    $this->assertEquals('https://organization_domain.crowdin.com/api/v2' . $params['path'], $uri);
-                } else {
-                    $this->assertEquals($params['uri'], $uri);
-                }
+            if (isset($params['path'])) {
+                $this->assertEquals('https://organization_domain.crowdin.com/api/v2' . $params['path'], $uri);
+            } else {
+                $this->assertEquals($params['uri'], $uri);
+            }
 
-                if (isset($params['body'])) {
-                    $this->assertEquals($params['body'], $params['body']);
-                }
-                if (isset($params['header'])) {
-                    $this->assertEquals($params['header'], $params['header']);
-                }
-                return $params['response'] ?? null;
-            }));
+            if (isset($params['body'])) {
+                $this->assertEquals($params['body'], $params['body']);
+            }
+            if (isset($params['header'])) {
+                $this->assertEquals($params['header'], $params['header']);
+            }
+            return $params['response'] ?? null;
+        }));
+    }
 
-        return $mock;
+    public function mockRequestPath(string $path, string $response, array $options = [])
+    {
+        return $this->mockRequest([
+            'uri' => 'https://organization_domain.crowdin.com/api/v2' . $path,
+            'method' => 'patch',
+            'response' => $response,
+            'options' => $options
+        ]);
     }
 
     public function mockRequestGet(string $path, string $response, array $options = [])

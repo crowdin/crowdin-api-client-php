@@ -94,9 +94,9 @@ class LanguageApiTest extends AbstractTestApi
         $this->assertEquals('es', $language->getId());
     }
 
-    public function testGet()
+    public function testGetUpdate()
     {
-        $mock = $this->mockRequestGet('/languages/es', '{
+        $this->mockRequestGet('/languages/es', '{
               "data": {
                 "id": "es",
                 "name": "Spanish",
@@ -124,28 +124,12 @@ class LanguageApiTest extends AbstractTestApi
         $this->assertInstanceOf(Language::class, $language);
         $this->assertEquals('es', $language->getId());
 
-//        $this->update($mock, $language);
-    }
+        $language->setName('edit test');
 
-    public function testDelete()
-    {
-        $this->mockRequest([
-            'uri' => 'https://organization_domain.crowdin.com/api/v2/languages/es',
-            'method' => 'delete',
-        ]);
-
-        $this->crowdin->language->delete('es');
-    }
-
-    public function update($mock, $language)
-    {
-        $this->mockRequest([
-            'path' => '/languages/es',
-            'method' => 'patch',
-            'response' => '{
+        $this->mockRequestPath('/languages/es', '{
               "data": {
                 "id": "es",
-                "name": "Spanish edit",
+                "name": "Spanish",
                 "editorCode": "es",
                 "twoLettersCode": "es",
                 "threeLettersCode": "spa",
@@ -163,14 +147,18 @@ class LanguageApiTest extends AbstractTestApi
                 "textDirection": "ltr",
                 "dialectOf": "string"
               }
-            }'
-        ]);
+        }');
 
-        $language->setName('Spanish edit');
+        $this->crowdin->language->update($language);
 
-        $languageNew = $this->crowdin->language->update($language);
+        $this->assertInstanceOf(Language::class, $language);
+        $this->assertEquals('es', $language->getId());
+        $this->assertEquals('edit test', $language->getName());
+    }
 
-        $this->assertInstanceOf(Language::class, $languageNew);
-        $this->assertEquals('Spanish edit', $languageNew->getName());
+    public function testDelete()
+    {
+        $this->mockRequestDelete('/languages/es');
+        $this->crowdin->language->delete('es');
     }
 }

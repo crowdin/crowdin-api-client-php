@@ -2,6 +2,7 @@
 
 namespace CrowdinApiClient\Api;
 
+use CrowdinApiClient\Http\ResponseDecorator\ResponseModelDecorator;
 use CrowdinApiClient\Model\Screenshot;
 use CrowdinApiClient\Model\Tag;
 
@@ -168,6 +169,30 @@ class ScreenshotApi extends AbstractApi
     public function updateTag(int $projectId, Tag $tag): ?Screenshot
     {
         $path = sprintf('projects/%d/screenshots/%d/tags/%d', $projectId, $tag->getScreenshotId(), $tag->getId());
-        return  $this->_update($path, $tag);
+
+        $dataModel = $tag->getProperties();
+
+        $_data = [];
+
+        foreach ($tag->getData() as $key => $val) {
+            if (isset($dataModel[$key]) && $dataModel[$key] != $val) {
+                $_data[] = [
+                    'op' => 'replace',
+                    'path' => '/' . $key,
+                    'value' => $dataModel[$key]
+                ];
+            }
+        }
+
+        if (empty($_data)) {
+            return $tag;
+        }
+
+        $options = [
+            'body' => json_encode($_data),
+            'headers' => ['Content-Type' => 'application/json']
+        ];
+
+        return $this->client->apiRequest('patch', $path, new ResponseModelDecorator(Screenshot::class), $options);
     }
 }

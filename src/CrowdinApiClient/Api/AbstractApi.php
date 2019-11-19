@@ -44,7 +44,6 @@ abstract class AbstractApi implements ApiInterface
                     'path' => '/' . $key,
                     'value' => $dataModel[$key]
                 ];
-                //TODO array add|remove
             }
         }
 

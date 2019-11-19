@@ -32,9 +32,9 @@ class MachineTranslationEngineApi extends AbstractApi
 
     /**
      * @param array $data
-     * @return mixed
+     * @return MachineTranslationEngine|null
      */
-    public function create(array $data)
+    public function create(array $data): ?MachineTranslationEngine
     {
         return $this->_create('mts', MachineTranslationEngine::class, $data);
     }

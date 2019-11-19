@@ -51,16 +51,34 @@ class ScreenshotTest extends TestCase
         'updatedAt' => '2019-09-23T09:29:19+00:00',
     ];
 
-    public function setUp()
+    /**
+     * @test
+     */
+    public function testLoadData()
     {
-        parent::setUp();
         $this->screenshot = new Screenshot($this->data);
+        $this->checkData();
     }
 
     /**
      * @test
      */
-    public function testLoadData()
+    public function testSetData()
+    {
+        $this->screenshot = new Screenshot();
+        $this->screenshot->setId($this->data['id']);
+        $this->screenshot->setUserId($this->data['userId']);
+        $this->screenshot->setUrl($this->data['url']);
+        $this->screenshot->setName($this->data['name']);
+        $this->screenshot->setSize($this->data['size']);
+        $this->screenshot->setTagsCount($this->data['tagsCount']);
+        $this->screenshot->setTags($this->data['tags']);
+        $this->screenshot->setCreatedAt($this->data['createdAt']);
+        $this->screenshot->setUpdatedAt($this->data['updatedAt']);
+        $this->checkData();
+    }
+
+    public function checkData()
     {
         $this->assertEquals($this->data['id'], $this->screenshot->getId());
         $this->assertEquals($this->data['userId'], $this->screenshot->getUserId());

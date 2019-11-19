@@ -40,16 +40,33 @@ class ReportTest extends TestCase
         'eta' => '1 second',
     ];
 
-    public function setUp()
-    {
-        parent::setUp();
-        $this->report = new Report($this->data);
-    }
-
     /**
      * @test
      */
     public function testLoadData()
+    {
+        $this->report = new Report($this->data);
+        $this->checkData();
+    }
+    /**
+     * @test
+     */
+    public function testSetData()
+    {
+        $this->report = new Report();
+        $this->report->setIdentifier($this->data['identifier']);
+        $this->report->setStatus($this->data['status']);
+        $this->report->setProgress($this->data['progress']);
+        $this->report->setAttributes($this->data['attributes']);
+        $this->report->setCreatedAt($this->data['createdAt']);
+        $this->report->setUpdatedAt($this->data['updatedAt']);
+        $this->report->setStartedAt($this->data['startedAt']);
+        $this->report->setFinishedAt($this->data['finishedAt']);
+        $this->report->setEta($this->data['eta']);
+        $this->checkData();
+    }
+
+    public function checkData()
     {
         $this->assertEquals($this->data['identifier'], $this->report->getIdentifier());
         $this->assertEquals($this->data['status'], $this->report->getStatus());

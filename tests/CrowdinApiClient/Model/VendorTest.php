@@ -20,13 +20,23 @@ class VendorTest extends TestCase
         'status' => 'pending',
     ];
 
-    public function setUp()
+    public function testLoadData()
     {
-        parent::setUp();
         $this->vendor = new Vendor($this->data);
+        $this->checkData();
     }
 
-    public function testLoadData()
+    public function testSetData()
+    {
+        $this->vendor = new Vendor();
+        $this->vendor->setId($this->data['id']);
+        $this->vendor->setName($this->data['name']);
+        $this->vendor->setDescription($this->data['description']);
+        $this->vendor->setStatus($this->data['status']);
+        $this->checkData();
+    }
+
+    public function checkData()
     {
         $this->assertEquals($this->data['id'], $this->vendor->getId());
         $this->assertEquals($this->data['name'], $this->vendor->getName());

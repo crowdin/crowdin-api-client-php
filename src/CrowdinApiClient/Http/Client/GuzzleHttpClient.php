@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Http\Client;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Psr7\Request;
 
 /**
  * Class GuzzleHttpClient
@@ -17,8 +18,14 @@ class GuzzleHttpClient implements CrowdinHttpClientInterface
      */
     protected $client;
 
+    /**
+     * @var int
+     */
     protected $timeout = 30;
 
+    /**
+     * @var int
+     */
     protected $connectTimeout = 30;
     /**
      * Create a new GuzzleHttpClient instance.
@@ -30,6 +37,13 @@ class GuzzleHttpClient implements CrowdinHttpClientInterface
         $this->client = $client ?: new Client();
     }
 
+    /**
+     * @param string $method
+     * @param string $uri
+     * @param array $options
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @return \Psr\Http\Message\StreamInterface
+     */
     public function request(string $method, string $uri, array $options)
     {
         $options = array_merge([
@@ -39,8 +53,10 @@ class GuzzleHttpClient implements CrowdinHttpClientInterface
             'connect_timeout' => $this->connectTimeout
         ], $options);
 
-        $request = $this->client->createRequest($method, $uri, $options);
+        $request = new Request($method, $uri, $options['headers'], $options['body'], $options);
 
         $rawResponse = $this->client->send($request);
+
+        return $rawResponse->getBody();
     }
 }

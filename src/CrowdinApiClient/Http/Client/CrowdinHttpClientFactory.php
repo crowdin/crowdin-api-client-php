@@ -13,18 +13,22 @@ class CrowdinHttpClientFactory
      * @param $handler
      * @return CrowdinHttpClientInterface
      */
-    public static function make($handler): CrowdinHttpClientInterface
+    public static function make($handler = null): CrowdinHttpClientInterface
     {
-        //No handler specified
-        if (!$handler) {
+        if ($handler === null) {
             return new CurlHttpClient();
         }
 
         if ($handler instanceof CrowdinHttpClientInterface) {
             return  $handler;
         }
+        if ($handler == 'guzzle') {
+            return  new GuzzleHttpClient();
+        }
+        if ($handler == 'curl') {
+            return  new CurlHttpClient();
+        }
 
-        //Invalid handler
         throw new InvalidArgumentException('Http handler error');
     }
 }

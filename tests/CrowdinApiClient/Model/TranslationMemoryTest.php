@@ -25,13 +25,26 @@ class TranslationMemoryTest extends TestCase
         ],
     ];
 
-    public function setUp()
+    public function testLoadData()
     {
-        parent::setUp();
         $this->translationMemory = new TranslationMemory($this->data);
+        $this->checkData();
     }
 
-    public function testLoadData()
+    public function testSetData()
+    {
+        $this->translationMemory = new TranslationMemory();
+        $this->translationMemory->setId($this->data['id']);
+        $this->translationMemory->setGroupId($this->data['groupId']);
+        $this->translationMemory->setName($this->data['name']);
+        $this->translationMemory->setLanguageIds($this->data['languageIds']);
+        $this->translationMemory->setSegmentsCount($this->data['segmentsCount']);
+        $this->translationMemory->setDefaultProjectId($this->data['defaultProjectId']);
+        $this->translationMemory->setProjectIds($this->data['projectIds']);
+        $this->checkData();
+    }
+
+    public function checkData()
     {
         $this->assertEquals($this->data['id'], $this->translationMemory->getId());
         $this->assertEquals($this->data['groupId'], $this->translationMemory->getGroupId());

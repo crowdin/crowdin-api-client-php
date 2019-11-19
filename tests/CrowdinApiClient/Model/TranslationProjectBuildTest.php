@@ -30,13 +30,25 @@ class TranslationProjectBuildTest extends TestCase
             ],
     ];
 
-    public function setUp()
+    public function testLoadData()
     {
-        parent::setUp();
         $this->translationProjectBuild = new TranslationProjectBuild($this->data);
+        $this->checkData();
     }
 
-    public function testLoadData()
+    public function testSetData()
+    {
+        $this->translationProjectBuild = new TranslationProjectBuild();
+        $this->translationProjectBuild->setId($this->data['id']);
+        $this->translationProjectBuild->setProjectId($this->data['projectId']);
+        $this->translationProjectBuild->setBranchId($this->data['branchId']);
+        $this->translationProjectBuild->setLanguagesId($this->data['languagesId']);
+        $this->translationProjectBuild->setStatus($this->data['status']);
+        $this->translationProjectBuild->setProgress($this->data['progress']);
+        $this->checkData();
+    }
+
+    public function checkData()
     {
         $this->assertEquals($this->data['id'], $this->translationProjectBuild->getId());
         $this->assertEquals($this->data['projectId'], $this->translationProjectBuild->getProjectId());

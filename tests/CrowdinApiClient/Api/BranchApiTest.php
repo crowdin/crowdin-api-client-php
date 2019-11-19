@@ -85,6 +85,40 @@ class BranchApiTest extends AbstractTestApi
         $this->assertEquals('2019-09-19T13:25:27+00:00', $branch->getUpdatedAt());
     }
 
+    public function testCreate()
+    {
+        $params = [
+            'name' => 'develop-master',
+            'title' => 'Master branch',
+            'exportPattern' => '%three_letters_code%',
+            'priority' => 'normal',
+        ];
+
+        $this->mockRequest([
+            'path' => '/projects/2/branches',
+            'method' => 'post',
+            'body' => $params,
+            'response' => '{
+                  "data": {
+                    "id": 34,
+                    "projectId": 2,
+                    "name": "develop-master",
+                    "title": "Master branch",
+                    "exportPattern": "%three_letters_code%",
+                    "priority": "normal",
+                    "createdAt": "2019-09-16T13:48:04+00:00",
+                    "updatedAt": "2019-09-19T13:25:27+00:00"
+                  }
+                }'
+        ]);
+
+        $branch = $this->crowdin->branch->create(2, $params);
+
+        $this->assertInstanceOf(Branch::class, $branch);
+        $this->assertEquals(34, $branch->getId());
+        $this->assertEquals(2, $branch->getProjectId());
+    }
+
     public function testDelete()
     {
         $this->mockRequest([
@@ -97,8 +131,7 @@ class BranchApiTest extends AbstractTestApi
 
     public function testUpdate()
     {
-        $mock = $this->mockClient->expects($this->exactly(2))
-            ->method('request')
+        $mock = $this->mockClient
             ->willReturn('{
               "data": {
                 "id": 34,

@@ -40,13 +40,35 @@ class FileTest extends TestCase
         'updatedAt' => '2019-09-19T15:10:46+00:00',
     ];
 
-    public function setUp()
+    public function testLoadData()
     {
-        parent::setUp();
         $this->file = new File($this->data);
+        $this->checkData();
     }
 
-    public function testLoadData()
+    public function testSetData()
+    {
+        $this->file = new File();
+        $this->file->setId($this->data['id']);
+        $this->file->setProjectId($this->data['projectId']);
+        $this->file->setBranchId($this->data['branchId']);
+        $this->file->setDirectoryId($this->data['directoryId']);
+        $this->file->setLanguageId($this->data['languageId']);
+        $this->file->setName($this->data['name']);
+        $this->file->setTitle($this->data['title']);
+        $this->file->setType($this->data['type']);
+        $this->file->setRevision($this->data['revision']);
+        $this->file->setStatus($this->data['status']);
+        $this->file->setPriority($this->data['priority']);
+        $this->file->setAttributes($this->data['attributes']);
+        $this->file->setExportPattern($this->data['exportPattern']);
+        $this->file->setCreatedAt($this->data['createdAt']);
+        $this->file->setUpdatedAt($this->data['updatedAt']);
+
+        $this->checkData();
+    }
+
+    public function checkData()
     {
         $this->assertEquals($this->data['id'], $this->file->getId());
         $this->assertEquals($this->data['projectId'], $this->file->getProjectId());

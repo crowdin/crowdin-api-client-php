@@ -75,7 +75,7 @@ class GroupApiTest extends AbstractTestApi
         $this->assertEquals(1, $group->getId());
     }
 
-    public function testGet()
+    public function testGetAndUpdate()
     {
         $this->mockRequestGet('/groups/1', '{
               "data": {
@@ -96,6 +96,29 @@ class GroupApiTest extends AbstractTestApi
 
         $this->assertInstanceOf(Group::class, $group);
         $this->assertEquals(1, $group->getId());
+
+        $group->setName('edit test');
+
+        $this->mockRequestPath('/groups/1', '{
+              "data": {
+                "id": 1,
+                "name": "edit test",
+                "description": "KB localization materials",
+                "parentId": 2,
+                "organizationId": 200000299,
+                "userId": 6,
+                "subgroupsCount": 0,
+                "projectsCount": 1,
+                "createdAt": "2019-09-20T11:11:05+00:00",
+                "updatedAt": "2019-09-20T12:22:20+00:00"
+              }
+        }');
+
+        $this->crowdin->group->update($group);
+
+        $this->assertInstanceOf(Group::class, $group);
+        $this->assertEquals(1, $group->getId());
+        $this->assertEquals('edit test', $group->getName());
     }
 
     public function testDelete()
