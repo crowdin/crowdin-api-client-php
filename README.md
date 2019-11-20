@@ -106,7 +106,7 @@ Need help working with Crowdin PHP client or have any questions?
 <pre>
 Copyright © 2019 Crowdin
 
-The Crowdin JavaScript client is licensed under the MIT License.
+The Crowdin PHP client is licensed under the MIT License.
 See the LICENSE file distributed with this work for additional
 information regarding copyright ownership.
 
