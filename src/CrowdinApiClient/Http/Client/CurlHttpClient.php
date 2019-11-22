@@ -12,6 +12,27 @@ class CurlHttpClient implements CrowdinHttpClientInterface
 {
 
     /**
+     * @var int
+     */
+    protected $timeout = 60;
+
+    /**
+     * @return int
+     */
+    public function getTimeout(): int
+    {
+        return $this->timeout;
+    }
+
+    /**
+     * @param int $timeout
+     */
+    public function setTimeout(int $timeout): void
+    {
+        $this->timeout = $timeout;
+    }
+
+    /**
      * @param string $method
      * @param string $uri
      * @param array $options
@@ -34,20 +55,20 @@ class CurlHttpClient implements CrowdinHttpClientInterface
         $headers = $options['headers'] ?? [];
         $body = $options['body'] ?? null;
 
-        $processed_headers = [];
+        $processedHeaders = [];
         if (!empty($headers)) {
             foreach ($headers as $key => $value) {
-                $processed_headers[] = $key . ': ' . $value;
+                $processedHeaders[] = $key . ': ' . $value;
             }
         }
 
         $ch = $this->curlInit();
 
         $this->curlSetUrl($ch, $uri);
-        $this->curlSetOption($ch, CURLOPT_TIMEOUT, 60);
+        $this->curlSetOption($ch, CURLOPT_TIMEOUT, $this->timeout);
         $this->curlSetOption($ch, CURLOPT_RETURNTRANSFER, true);
         $this->curlSetOption($ch, CURLOPT_HEADER, false);
-        $this->curlSetOption($ch, CURLOPT_HTTPHEADER, $processed_headers);
+        $this->curlSetOption($ch, CURLOPT_HTTPHEADER, $processedHeaders);
 
         if (strtolower($method) === 'post') {
             $this->curlSetOption($ch, CURLOPT_POST, true);

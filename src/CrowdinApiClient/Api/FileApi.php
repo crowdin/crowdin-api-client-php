@@ -27,9 +27,15 @@ class FileApi extends AbstractApi
     /**
      * @param int $projectId
      * @param array $data
-     * @return mixed
+     * @internal integer $data[storageId] required
+     * @internal string $data[name] required
+     * @internal integer $data[branchId]
+     * @internal integer $data[directoryId]
+     * @internal string $data[title]
+     * @internal string $data[type]
+     * @return File
      */
-    public function create(int $projectId, array $data)
+    public function create(int $projectId, array $data):File
     {
         $path = sprintf('projects/%d/files', $projectId);
         return $this->_create($path, File::class, $data);

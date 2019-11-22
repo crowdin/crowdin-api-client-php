@@ -46,6 +46,12 @@ class CurlHttpClientTest extends TestCase
         $this->assertTrue($this->mockClient->curlInit(''));
     }
 
+    public function testTimeout()
+    {
+        $this->client->setTimeout(30);
+        $this->assertEquals(30, $this->client->getTimeout());
+    }
+
     public function testInit()
     {
         $this->assertInstanceOf(CrowdinHttpClientInterface::class, $this->client);

@@ -36,9 +36,28 @@ class WebhookApi extends AbstractApi
     /**
      * @param int $projectId
      * @param array $data
-     * @return mixed
+     * @internal string $data[name] required
+     * @internal string $data[url] required
+     * @internal array $data[events] required
+     * Items Enum:
+     * "file.translated"
+     * "file.approved"
+     * "project.translated"
+     * "project.approved"
+     * "translation.updated"
+     * "suggestion.added"
+     * "suggestion.updated"
+     * "suggestion.deleted"
+     * "suggestion.approved"
+     * "suggestion.disapproved"
+     * @internal string $data[requestType] required
+     * @internal string $data[isActive]
+     * @internal string $data[contentType]
+     * @internal string $data[headers]
+     * @internal string $data[payload]
+     * @return Webhook|null
      */
-    public function create(int $projectId, array $data)
+    public function create(int $projectId, array $data):?Webhook
     {
         $patch = sprintf('projects/%d/webhooks', $projectId);
         return $this->_create($patch, Webhook::class, $data);

@@ -22,9 +22,17 @@ class LanguageApi extends AbstractApi
 
     /**
      * @param array $data
-     * @return mixed
+     * @internal string $data[name] required
+     * @internal string $data[code] required
+     * @internal string $data[localeCode] required
+     * @internal string $data[textDirection] required
+     * @internal array $data[pluralCategoryNames] required
+     * @internal array $data[threeLettersCode] required
+     * @internal string $data[twoLettersCode]
+     * @internal string $data[dialectOf]
+     * @return Language|null
      */
-    public function create(array $data)
+    public function create(array $data):?Language
     {
         return $this->_create('languages', Language::class, $data);
     }

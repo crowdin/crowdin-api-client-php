@@ -33,6 +33,10 @@ class MachineTranslationEngineApi extends AbstractApi
 
     /**
      * @param array $data
+     * @internal string $data[name] required
+     * @internal string $data[type] required Enum: "google" "microsoft" "yandex" "deepl" "amazon" "watson"
+     * @internal array $data[credentials] required
+     * @internal integer $data[groupId]
      * @return MachineTranslationEngine|null
      */
     public function create(array $data): ?MachineTranslationEngine

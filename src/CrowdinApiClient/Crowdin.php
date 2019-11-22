@@ -134,6 +134,9 @@ class Crowdin
      */
     protected $responseErrorHandler;
 
+    /**
+     * @var array
+     */
     protected $services = [
         'storage',
         'language',
@@ -159,6 +162,14 @@ class Crowdin
         'translation',
     ];
 
+    /**
+     * Crowdin constructor.
+     * @param array $config
+     * @internal mixed $config[http_client_handler]
+     * @internal mixed $config[response_error_handler]
+     * @internal string $config[access_token]
+     * @internal string $config[base_uri]
+     */
     public function __construct(array $config)
     {
         $config = array_merge([
@@ -169,19 +180,24 @@ class Crowdin
         ], $config);
 
         $this->accessToken = $config['access_token'];
-        $this->baseUri = $config['base_uri'];
+        $this->baseUri = rtrim($config['base_uri'], '/');
 
         $this->client = CrowdinHttpClientFactory::make($config['http_client_handler']);
         $this->responseErrorHandler = ResponseErrorHandlerFactory::make($config['response_error_handler']);
     }
 
+    /**
+     * @param string $method
+     * @param string $uri
+     * @param array $options
+     * @return mixed
+     */
     public function request(string $method, string $uri, array $options = [])
     {
         $options['body'] = $options['body'] ?? null;
 
         $options['headers'] = array_merge([
             'Authorization' => 'Bearer ' . $this->accessToken,
-          //  'Content-Type' => 'application/json',
         ], $options['headers'] ?? []);
 
         $response = $this->client->request($method, $uri, $options);
@@ -189,6 +205,13 @@ class Crowdin
         return $response;
     }
 
+    /**
+     * @param string $method
+     * @param string $path
+     * @param ResponseDecoratorInterface|null $decorator
+     * @param array $options
+     * @return mixed
+     */
     public function apiRequest(string $method, string $path, ResponseDecoratorInterface $decorator = null, array $options = [])
     {
         $response = $this->request($method, $this->getFullUrl($path), $options);
@@ -260,6 +283,6 @@ class Crowdin
      */
     public function setBaseUri(string $baseUri): void
     {
-        $this->baseUri = $baseUri;
+        $this->baseUri = rtrim($baseUri, '/');
     }
 }

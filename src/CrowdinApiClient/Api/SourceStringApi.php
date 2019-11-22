@@ -36,6 +36,12 @@ class SourceStringApi extends AbstractApi
     /**
      * @param int $projectId
      * @param array $data
+     * @internal string $data[identifier] required
+     * @internal string $data[text] required
+     * @internal integer $data[fileId]
+     * @internal string $data[context]
+     * @internal bool $data[isHidden]
+     * @internal integer $data[maxLength]
      * @return SourceString|null
      */
     public function create(int $projectId, array $data): ?SourceString

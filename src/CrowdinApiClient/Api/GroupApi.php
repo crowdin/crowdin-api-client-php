@@ -32,9 +32,9 @@ class GroupApi extends AbstractApi
     /**
      * @param array $data
      * @return Group|null
-     * @internal param integer $parentId
-     * @internal param description $description
-     * @internal param string $name
+     * @internal integer $data[parentId]
+     * @internal string $data[description]
+     * @internal string $data[name] required
      */
     public function create(array $data): ?Group
     {

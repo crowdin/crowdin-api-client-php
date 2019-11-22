@@ -73,7 +73,6 @@ abstract class AbstractApi implements ApiInterface
             $options['body'] = $params;
         }
 
-        //TODO paginator
         return $this->client->apiRequest('get', $path, new ResponseModelListDecorator($modelName), $options);
     }
 

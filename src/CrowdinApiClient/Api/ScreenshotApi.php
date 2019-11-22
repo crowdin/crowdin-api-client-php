@@ -39,6 +39,9 @@ class ScreenshotApi extends AbstractApi
     /**
      * @param int $projectId
      * @param array $data
+     * @internal integer $data[storageId] required
+     * @internal string $data[name] required
+     * @internal bool $data[autoTag] Automatically tags screenshot
      * @return Screenshot|null
      */
     public function create(int $projectId, array $data): ?Screenshot

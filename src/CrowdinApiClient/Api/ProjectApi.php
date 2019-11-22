@@ -33,6 +33,14 @@ class ProjectApi extends AbstractApi
 
     /**
      * @param array $data
+     * @internal string $data[name] required
+     * @internal string $data[sourceLanguageId] required
+     * @internal integer $data[groupId] required
+     * @internal integer $data[templateId] required
+     * @internal array $data[targetLanguageIds]
+     * @internal integer $data[vendorId]
+     * @internal integer $data[mtEngineId]
+     * @internal string $data[description]
      * @return Project|null
      */
     public function create(array $data): ?Project
