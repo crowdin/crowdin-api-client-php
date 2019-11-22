@@ -57,6 +57,7 @@ For more about Crowdin API see the [documentation](https://support.crowdin.com/e
 The API client must be instantiated and configured before calling any API method.
 
 ```php
+use CrowdinApiClient\Crowdin;
 
 $crowdin = new Crowdin([
     'access_token' => '<access_token>',
