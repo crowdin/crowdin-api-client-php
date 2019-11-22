@@ -14,7 +14,7 @@ class Collection implements IteratorAggregate, ArrayAccess, Countable
 {
 
     /**
-     * @var
+     * @var array
      */
     protected $_items = [];
 

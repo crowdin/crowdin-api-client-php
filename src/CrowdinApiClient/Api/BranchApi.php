@@ -14,6 +14,9 @@ class BranchApi extends AbstractApi
     /**
      * @param int $projectId
      * @param array $params
+     * @internal string $params[name]
+     * @internal integer $params[limit]
+     * @internal integer $params[offset]
      * @return ModelCollection
      */
     public function list(int $projectId, array $params = []): ModelCollection
@@ -36,6 +39,10 @@ class BranchApi extends AbstractApi
     /**
      * @param int $projectId
      * @param array $data
+     * @internal string $data[name] required Note: Can't contain \\ / : * ? \" < > | symbols
+     * @internal string $data[title]
+     * @internal string $data[exportPattern] Note: Can't contain \\ / : * ? \" < > | symbols
+     * @internal string $data[priority] Enum: "low" "normal" "high"
      * @return Branch|null
      */
     public function create(int $projectId, array $data): ?Branch

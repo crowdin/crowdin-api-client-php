@@ -12,7 +12,7 @@ class CollectionIterator implements Iterator
 {
 
     /**
-     * @var
+     * @var array
      */
     protected $_items;
 
