@@ -1,21 +1,22 @@
 {
-    "name": "crowdin/crowdin-api-client-php",
+    "name": "crowdin/crowdin-api-client",
     "description": "PHP client library for Crowdin API v2",
+    "version": "1.0.0",
     "keywords": [
         "crowdin",
         "sdk",
         "api",
-        "api-client"
+        "api-client",
+        "client"
     ],
-    "homepage": "https://crowdin.com",
+    "homepage": "https://github.com/crowdin/crowdin-api-client-php",
     "license": "MIT",
     "authors": [
         {
             "name": "Crowdin",
-            "homepage": "https://support.crowdin.com/enterprise/api/"
+            "homepage": "https://crowdin.com"
         }
     ],
-    "version": "0.8.0-beta",
     "require": {
         "php": ">=7.1",
         "ext-json": "*",
