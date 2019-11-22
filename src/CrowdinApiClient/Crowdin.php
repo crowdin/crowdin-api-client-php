@@ -127,7 +127,7 @@ class Crowdin
     /**
      * @var string
      */
-    protected $baseUri = 'https://api.crowdin.com/api/v2';
+    protected $baseUri = 'https://crowdin.com/api/v2';
 
     /**
      * @var ResponseErrorHandlerInterface

@@ -14,11 +14,6 @@ class Group extends BaseModel
     protected $id;
 
     /**
-     * @var integer
-     */
-    protected $visibility;
-
-    /**
      * @var string
      */
     protected $name;
@@ -86,22 +81,6 @@ class Group extends BaseModel
     public function getId(): int
     {
         return $this->id;
-    }
-
-    /**
-     * @param int $id
-     */
-    public function setId(int $id): void
-    {
-        $this->id = $id;
-    }
-
-    /**
-     * @return int
-     */
-    public function getVisibility(): int
-    {
-        return $this->visibility;
     }
 
     /**

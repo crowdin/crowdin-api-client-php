@@ -2,6 +2,10 @@
 
 namespace CrowdinApiClient\Http;
 
+/**
+ * Interface ResponseErrorHandlerInterface
+ * @package CrowdinApiClient\Http
+ */
 interface ResponseErrorHandlerInterface
 {
     /**

@@ -46,11 +46,6 @@ class Project extends BaseModel
     /**
      * @var string
      */
-    protected $type;
-
-    /**
-     * @var string
-     */
     protected $name;
 
     /**
@@ -127,7 +122,6 @@ class Project extends BaseModel
         $this->targetLanguageIds = (array)$this->getDataProperty('targetLanguageIds');
         $this->joinPolicy = (string)$this->getDataProperty('joinPolicy');
         $this->languageAccessPolicy = (string)$this->getDataProperty('languageAccessPolicy');
-        $this->type = (integer)$this->getDataProperty('type');
         $this->name = (string)$this->getDataProperty('name');
         $this->cname = (string)$this->getDataProperty('cname');
         $this->identifier = (string)$this->getDataProperty('identifier');
@@ -205,14 +199,6 @@ class Project extends BaseModel
     public function getLanguageAccessPolicy(): string
     {
         return $this->languageAccessPolicy;
-    }
-
-    /**
-     * @return string
-     */
-    public function getType(): string
-    {
-        return $this->type;
     }
 
     /**

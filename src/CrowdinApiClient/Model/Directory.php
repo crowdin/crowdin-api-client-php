@@ -44,11 +44,6 @@ class Directory extends BaseModel
     protected $exportPattern;
 
     /**
-     * @var integer
-     */
-    protected $status;
-
-    /**
      * @var string
      */
     protected $priority;
@@ -74,7 +69,6 @@ class Directory extends BaseModel
         $this->name = (string)$this->getDataProperty('name');
         $this->title = (string)$this->getDataProperty('title');
         $this->exportPattern = (string)$this->getDataProperty('exportPattern');
-        $this->status = (integer)$this->getDataProperty('status');
         $this->priority = (string)$this->getDataProperty('priority');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
@@ -174,14 +168,6 @@ class Directory extends BaseModel
     public function setExportPattern(string $exportPattern): void
     {
         $this->exportPattern = $exportPattern;
-    }
-
-    /**
-     * @return int
-     */
-    public function getStatus(): int
-    {
-        return $this->status;
     }
 
     /**

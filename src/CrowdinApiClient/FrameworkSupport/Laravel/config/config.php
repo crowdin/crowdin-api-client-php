@@ -12,6 +12,8 @@ return [
 
     'clientSecret' => env('CROWDIN_SECRET'),
 
-    'access_token' => env('CROWDIN_ACCESS_TOKEN')
+    'access_token' => env('CROWDIN_ACCESS_TOKEN'),
+
+    'base_uri' => env('CROWDIN_BASE_URI', 'https://crowdin.com/api/v2')
 
 ];

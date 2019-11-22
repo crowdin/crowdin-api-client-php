@@ -2,6 +2,10 @@
 
 namespace CrowdinApiClient;
 
+/**
+ * Class ModelCollection
+ * @package CrowdinApiClient
+ */
 class ModelCollection extends Collection
 {
     /**

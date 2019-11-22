@@ -5,10 +5,20 @@ namespace CrowdinApiClient\Tests\Model;
 use CrowdinApiClient\Model\FileRevision;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Class FileRevisionTest
+ * @package CrowdinApiClient\Tests\Model
+ */
 class FileRevisionTest extends TestCase
 {
+    /**
+     * @var FileRevision
+     */
     public $fileRevision;
 
+    /**
+     * @var array
+     */
     public $data = [
         'id' => 16,
         'projectId' => 2,
@@ -85,6 +95,7 @@ class FileRevisionTest extends TestCase
         $this->fileRevision->setRevertTo($this->data['revertTo']);
         $this->fileRevision->setTranslationChunks($this->data['translationChunks']);
         $this->fileRevision->setInfo($this->data['info']);
+        $this->fileRevision->setDate($this->data['date']);
         $this->checkData();
     }
 
@@ -96,5 +107,6 @@ class FileRevisionTest extends TestCase
         $this->assertEquals($this->data['revertTo'], $this->fileRevision->getRevertTo());
         $this->assertEquals($this->data['translationChunks'], $this->fileRevision->getTranslationChunks());
         $this->assertEquals($this->data['info'], $this->fileRevision->getInfo());
+        $this->assertEquals($this->data['date'], $this->fileRevision->getDate());
     }
 }

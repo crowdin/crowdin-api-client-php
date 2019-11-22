@@ -33,30 +33,12 @@ class WorkflowTemplate extends BaseModel
      */
     protected $isDefault;
 
-    public function __construct(array $data = [])
-    {
-        parent::__construct($data);
-        $this->id = (integer)$this->getDataProperty('id');
-        $this->title = (string)$this->getDataProperty('title');
-        $this->description = (string)$this->getDataProperty('description');
-        $this->groupId = (integer)$this->getDataProperty('groupId');
-        $this->isDefault = (bool)$this->getDataProperty('isDefault');
-    }
-
     /**
      * @return int
      */
     public function getId(): int
     {
         return $this->id;
-    }
-
-    /**
-     * @param int $id
-     */
-    public function setId(int $id): void
-    {
-        $this->id = $id;
     }
 
     /**
@@ -68,27 +50,11 @@ class WorkflowTemplate extends BaseModel
     }
 
     /**
-     * @param string $title
-     */
-    public function setTitle(string $title): void
-    {
-        $this->title = $title;
-    }
-
-    /**
      * @return string
      */
     public function getDescription(): string
     {
         return $this->description;
-    }
-
-    /**
-     * @param string $description
-     */
-    public function setDescription(string $description): void
-    {
-        $this->description = $description;
     }
 
     /**
@@ -100,14 +66,6 @@ class WorkflowTemplate extends BaseModel
     }
 
     /**
-     * @param int $groupId
-     */
-    public function setGroupId(int $groupId): void
-    {
-        $this->groupId = $groupId;
-    }
-
-    /**
      * @return bool
      */
     public function isDefault(): bool
@@ -115,11 +73,13 @@ class WorkflowTemplate extends BaseModel
         return $this->isDefault;
     }
 
-    /**
-     * @param bool $isDefault
-     */
-    public function setIsDefault(bool $isDefault): void
+    public function __construct(array $data = [])
     {
-        $this->isDefault = $isDefault;
+        parent::__construct($data);
+        $this->id = (integer)$this->getDataProperty('id');
+        $this->title = (string)$this->getDataProperty('title');
+        $this->description = (string)$this->getDataProperty('description');
+        $this->groupId = (integer)$this->getDataProperty('groupId');
+        $this->isDefault = (bool)$this->getDataProperty('isDefault');
     }
 }
