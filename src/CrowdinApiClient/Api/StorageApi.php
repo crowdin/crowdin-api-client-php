@@ -28,7 +28,7 @@ class StorageApi extends AbstractApi
     public function create(SplFileObject $fileObject): ?Storage
     {
         $options = [
-            'headers' => ['Content-Type' => $fileObject->getType()],
+            'headers' => ['Content-Type' => mime_content_type($fileObject->getRealPath())],
             'body' => file_get_contents($fileObject->getRealPath())
         ];
 
