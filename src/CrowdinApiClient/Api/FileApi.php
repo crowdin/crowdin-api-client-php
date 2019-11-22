@@ -35,7 +35,7 @@ class FileApi extends AbstractApi
      * @internal string $data[type]
      * @return File
      */
-    public function create(int $projectId, array $data):File
+    public function create(int $projectId, array $data): File
     {
         $path = sprintf('projects/%d/files', $projectId);
         return $this->_create($path, File::class, $data);
