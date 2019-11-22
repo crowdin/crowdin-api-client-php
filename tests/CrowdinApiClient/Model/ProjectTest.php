@@ -48,27 +48,15 @@ class ProjectTest extends TestCase
     public function testSetData()
     {
         $this->project = new Project();
-        $this->project->setId($this->data['id']);
-        $this->project->setGroupId($this->data['groupId']);
-        $this->project->setUserId($this->data['userId']);
-        $this->project->setSourceLanguageId($this->data['sourceLanguageId']);
-        $this->project->setTargetLanguageIds($this->data['targetLanguageIds']);
         $this->project->setJoinPolicy($this->data['joinPolicy']);
-        $this->project->setLanguageAccessPolicy($this->data['languageAccessPolicy']);
         $this->project->setName($this->data['name']);
         $this->project->setCname($this->data['cname']);
-        $this->project->setIdentifier($this->data['identifier']);
         $this->project->setDescription($this->data['description']);
-        $this->project->setVisibility($this->data['visibility']);
-        $this->project->setLogo($this->data['logo']);
-        $this->project->setBackground($this->data['background']);
-        $this->project->setIsExternal($this->data['isExternal']);
-        $this->project->setExternalType($this->data['externalType']);
-        $this->project->setAdvancedWorkflowId($this->data['advancedWorkflowId']);
-        $this->project->setHasCrowdsourcing($this->data['hasCrowdsourcing']);
-        $this->project->setCreatedAt($this->data['createdAt']);
-        $this->project->setUpdatedAt($this->data['updatedAt']);
-        $this->checkData();
+
+        $this->assertEquals($this->data['joinPolicy'], $this->project->getJoinPolicy());
+        $this->assertEquals($this->data['name'], $this->project->getName());
+        $this->assertEquals($this->data['cname'], $this->project->getCname());
+        $this->assertEquals($this->data['description'], $this->project->getDescription());
     }
 
     public function checkData()

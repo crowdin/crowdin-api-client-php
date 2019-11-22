@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Api;
 
 use CrowdinApiClient\Model\SourceString;
+use CrowdinApiClient\ModelCollection;
 
 /**
  * Class SourceStringApi
@@ -13,9 +14,9 @@ class SourceStringApi extends AbstractApi
     /**
      * @param int $projectId
      * @param array $params
-     * @return mixed
+     * @return ModelCollection
      */
-    public function list(int $projectId, array $params = [])
+    public function list(int $projectId, array $params = []): ModelCollection
     {
         $path = sprintf('projects/%d/strings', $projectId);
         return $this->_list($path, SourceString::class, $params);

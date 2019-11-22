@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Api;
 
 use CrowdinApiClient\Model\Directory;
+use CrowdinApiClient\ModelCollection;
 
 /**
  * Class DirectoryApi
@@ -13,9 +14,9 @@ class DirectoryApi extends AbstractApi
     /**
      * @param int $projectId
      * @param array $params
-     * @return mixed
+     * @return ModelCollection
      */
-    public function list(int $projectId, array $params = [])
+    public function list(int $projectId, array $params = []): ModelCollection
     {
         $path = sprintf('projects/%d/directories', $projectId);
         return $this->_list($path, Directory::class, $params);

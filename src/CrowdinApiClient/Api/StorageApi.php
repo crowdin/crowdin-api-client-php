@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Api;
 
 use CrowdinApiClient\Model\Storage;
+use CrowdinApiClient\ModelCollection;
 use SplFileObject;
 
 /**
@@ -13,9 +14,9 @@ class StorageApi extends AbstractApi
 {
     /**
      * @param array $params
-     * @return mixed
+     * @return ModelCollection
      */
-    public function list(array $params = [])
+    public function list(array $params = []): ModelCollection
     {
         return $this->_list('storages', Storage::class, $params);
     }

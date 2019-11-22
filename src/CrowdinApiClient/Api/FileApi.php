@@ -5,6 +5,7 @@ namespace CrowdinApiClient\Api;
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\File;
 use CrowdinApiClient\Model\FileRevision;
+use CrowdinApiClient\ModelCollection;
 
 /**
  * Class FileApi
@@ -15,9 +16,9 @@ class FileApi extends AbstractApi
     /**
      * @param int $projectId
      * @param array $params
-     * @return mixed
+     * @return ModelCollection
      */
-    public function list(int $projectId, array $params = [])
+    public function list(int $projectId, array $params = []): ModelCollection
     {
         $path = sprintf('projects/%d/files', $projectId);
         return $this->_list($path, File::class, $params);
@@ -80,9 +81,9 @@ class FileApi extends AbstractApi
     /**
      * @param int $projectId
      * @param int $fileId
-     * @return mixed
+     * @return ModelCollection
      */
-    public function revisions(int $projectId, int $fileId)
+    public function revisions(int $projectId, int $fileId): ModelCollection
     {
         $path = sprintf('projects/%d/files/%d/revisions', $projectId, $fileId);
         return $this->_list($path, FileRevision::class);
@@ -92,12 +93,12 @@ class FileApi extends AbstractApi
      * @param int $projectId
      * @param int $fileId
      * @param int $revision
-     * @return FileRevision|null
+     * @return File|null
      */
-    public function restoreFileToRevision(int $projectId, int $fileId, int $revision = 0): ?FileRevision
+    public function restoreFileToRevision(int $projectId, int $fileId, int $revision = 0): ?File
     {
-        $path = sprintf('projects/%d/files/%d/revisions', $projectId, $fileId);
-        return $this->_put($path, FileRevision::class, ['revision' => $revision]);
+        $path = sprintf('projects/%d/files/%d/restore', $projectId, $fileId);
+        return $this->_put($path, File::class, ['revision' => $revision]);
     }
 
     /**
@@ -116,11 +117,11 @@ class FileApi extends AbstractApi
      * @param int $projectId
      * @param int $fileId
      * @param array $data
-     * @return FileRevision|null
+     * @return File|null
      */
-    public function updateFileRevision(int $projectId, int $fileId, array $data): ?FileRevision
+    public function updateFileRevision(int $projectId, int $fileId, array $data): ?File
     {
-        $path = sprintf('projects/%d/files/%d/revisions', $projectId, $fileId);
-        return $this->_create($path, FileRevision::class, $data);
+        $path = sprintf('projects/%d/files/%d/update', $projectId, $fileId);
+        return $this->_create($path, File::class, $data);
     }
 }

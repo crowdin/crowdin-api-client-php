@@ -107,14 +107,6 @@ class ProjectSetting extends BaseModel
     }
 
     /**
-     * @param int $projectId
-     */
-    public function setProjectId(int $projectId): void
-    {
-        $this->projectId = $projectId;
-    }
-
-    /**
      * @return int
      */
     public function getTranslateDuplicates(): int

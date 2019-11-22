@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Api;
 
 use CrowdinApiClient\Model\Vendor;
+use CrowdinApiClient\ModelCollection;
 
 /**
  * Class VendorApi
@@ -12,9 +13,9 @@ class VendorApi extends AbstractApi
 {
     /**
      * @param array $params
-     * @return mixed
+     * @return ModelCollection
      */
-    public function list(array $params = [])
+    public function list(array $params = []): ModelCollection
     {
         return $this->_list('vendors', Vendor::class, $params);
     }

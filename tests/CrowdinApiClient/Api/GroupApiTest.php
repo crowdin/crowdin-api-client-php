@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Tests\Api;
 
 use CrowdinApiClient\Model\Group;
+use CrowdinApiClient\ModelCollection;
 
 class GroupApiTest extends AbstractTestApi
 {
@@ -39,7 +40,8 @@ class GroupApiTest extends AbstractTestApi
 
         $groups = $this->crowdin->group->list();
 
-        $this->assertIsArray($groups);
+        $this->assertInstanceOf(ModelCollection::class, $groups);
+        ;
         $this->assertCount(1, $groups);
         $this->assertInstanceOf(Group::class, $groups[0]);
     }

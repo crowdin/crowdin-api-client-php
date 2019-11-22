@@ -105,14 +105,6 @@ class Group extends BaseModel
     }
 
     /**
-     * @param int $visibility
-     */
-    public function setVisibility(int $visibility): void
-    {
-        $this->visibility = $visibility;
-    }
-
-    /**
      * @return string
      */
     public function getName(): string
@@ -169,27 +161,11 @@ class Group extends BaseModel
     }
 
     /**
-     * @param int $organizationId
-     */
-    public function setOrganizationId(int $organizationId): void
-    {
-        $this->organizationId = $organizationId;
-    }
-
-    /**
      * @return int
      */
     public function getUserId(): int
     {
         return $this->userId;
-    }
-
-    /**
-     * @param int $userId
-     */
-    public function setUserId(int $userId): void
-    {
-        $this->userId = $userId;
     }
 
     /**
@@ -201,27 +177,11 @@ class Group extends BaseModel
     }
 
     /**
-     * @param int $subgroupsCount
-     */
-    public function setSubgroupsCount(int $subgroupsCount): void
-    {
-        $this->subgroupsCount = $subgroupsCount;
-    }
-
-    /**
      * @return int
      */
     public function getProjectsCount(): int
     {
         return $this->projectsCount;
-    }
-
-    /**
-     * @param int $projectsCount
-     */
-    public function setProjectsCount(int $projectsCount): void
-    {
-        $this->projectsCount = $projectsCount;
     }
 
     /**
@@ -233,26 +193,10 @@ class Group extends BaseModel
     }
 
     /**
-     * @param string $createdAt
-     */
-    public function setCreatedAt(string $createdAt): void
-    {
-        $this->createdAt = $createdAt;
-    }
-
-    /**
      * @return string
      */
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;
-    }
-
-    /**
-     * @param string $updatedAt
-     */
-    public function setUpdatedAt(string $updatedAt): void
-    {
-        $this->updatedAt = $updatedAt;
     }
 }

@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Tests\Api;
 
 use CrowdinApiClient\Model\Vendor;
+use CrowdinApiClient\ModelCollection;
 
 class VendorApiTest extends AbstractTestApi
 {
@@ -32,7 +33,7 @@ class VendorApiTest extends AbstractTestApi
         ]);
 
         $vendors = $this->crowdin->vendor->list();
-        $this->assertIsArray($vendors);
+        $this->assertInstanceOf(ModelCollection::class, $vendors);
         $this->assertCount(1, $vendors);
         $this->assertInstanceOf(Vendor::class, $vendors[0]);
         $this->assertEquals(52760, $vendors[0]->getId());

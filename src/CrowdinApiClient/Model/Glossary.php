@@ -74,14 +74,6 @@ class Glossary extends BaseModel
     }
 
     /**
-     * @param int $id
-     */
-    public function setId(int $id): void
-    {
-        $this->id = $id;
-    }
-
-    /**
      * @return string
      */
     public function getName(): string
@@ -106,27 +98,11 @@ class Glossary extends BaseModel
     }
 
     /**
-     * @param int $groupId
-     */
-    public function setGroupId(int $groupId): void
-    {
-        $this->groupId = $groupId;
-    }
-
-    /**
      * @return int
      */
     public function getUserId(): int
     {
         return $this->userId;
-    }
-
-    /**
-     * @param int $userId
-     */
-    public function setUserId(int $userId): void
-    {
-        $this->userId = $userId;
     }
 
     /**
@@ -138,27 +114,11 @@ class Glossary extends BaseModel
     }
 
     /**
-     * @param int $terms
-     */
-    public function setTerms(int $terms): void
-    {
-        $this->terms = $terms;
-    }
-
-    /**
      * @return array
      */
     public function getLanguageIds(): array
     {
         return $this->languageIds;
-    }
-
-    /**
-     * @param array $languageIds
-     */
-    public function setLanguageIds(array $languageIds): void
-    {
-        $this->languageIds = $languageIds;
     }
 
     /**
@@ -170,26 +130,10 @@ class Glossary extends BaseModel
     }
 
     /**
-     * @param array $projectIds
-     */
-    public function setProjectIds(array $projectIds): void
-    {
-        $this->projectIds = $projectIds;
-    }
-
-    /**
      * @return string
      */
     public function getCreatedAt(): string
     {
         return $this->createdAt;
-    }
-
-    /**
-     * @param string $createdAt
-     */
-    public function setCreatedAt(string $createdAt): void
-    {
-        $this->createdAt = $createdAt;
     }
 }

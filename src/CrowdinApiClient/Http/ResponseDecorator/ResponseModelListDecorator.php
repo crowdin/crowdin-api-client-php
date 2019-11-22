@@ -2,6 +2,8 @@
 
 namespace CrowdinApiClient\Http\ResponseDecorator;
 
+use CrowdinApiClient\ModelCollection;
+
 /**
  * Class ResponseModelListDecorator
  * @package Crowdin\Http\ResponseDecorator
@@ -23,16 +25,18 @@ class ResponseModelListDecorator implements ResponseDecoratorInterface
 
     /**
      * @param $data
-     * @return array
+     * @return ModelCollection
      */
-    public function decorate($data): array
+    public function decorate($data): ModelCollection
     {
-        $_items = [];
+        $modelCollection = new ModelCollection();
 
-        foreach ($data as $item) {
-            $_items[] = new $this->modelName($item['data']);
+        foreach ($data['data'] as $item) {
+            $modelCollection->add(new $this->modelName($item['data']));
         }
 
-        return  $_items;
+        $modelCollection->setPagination($data['pagination']);
+
+        return  $modelCollection;
     }
 }

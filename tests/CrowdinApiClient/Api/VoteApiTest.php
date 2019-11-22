@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Tests\Api;
 
 use CrowdinApiClient\Model\Vote;
+use CrowdinApiClient\ModelCollection;
 
 class VoteApiTest extends AbstractTestApi
 {
@@ -36,7 +37,7 @@ class VoteApiTest extends AbstractTestApi
         ]);
 
         $votes = $this->crowdin->vote->list(2);
-        $this->assertIsArray($votes);
+        $this->assertInstanceOf(ModelCollection::class, $votes);
         $this->assertCount(1, $votes);
         $this->assertInstanceOf(Vote::class, $votes[0]);
         $this->assertEquals(6643, $votes[0]->getId());

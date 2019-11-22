@@ -58,29 +58,19 @@ class TaskTest extends TestCase
     public function testSetData()
     {
         $this->task = new Task();
-        $this->task->setId($this->data['id']);
-        $this->task->setProjectId($this->data['projectId']);
-        $this->task->setCreatorId($this->data['creatorId']);
-        $this->task->setType($this->data['type']);
         $this->task->setStatus($this->data['status']);
         $this->task->setTitle($this->data['title']);
         $this->task->setAssignees($this->data['assignees']);
         $this->task->setFileIds($this->data['fileIds']);
-        $this->task->setProgress($this->data['progress']);
-        $this->task->setSourceLanguageId($this->data['sourceLanguageId']);
-        $this->task->setTargetLanguageId($this->data['targetLanguageId']);
         $this->task->setDescription($this->data['description']);
-        $this->task->setHash($this->data['hash']);
-        $this->task->setTranslationUrl($this->data['translationUrl']);
-        $this->task->setWordsCount($this->data['wordsCount']);
-        $this->task->setFilesCount($this->data['filesCount']);
-        $this->task->setCommentsCount($this->data['commentsCount']);
         $this->task->setDeadline($this->data['deadline']);
-        $this->task->setTimeRange($this->data['timeRange']);
-        $this->task->setWorkflowStepId($this->data['workflowStepId']);
-        $this->task->setCreatedAt($this->data['createdAt']);
-        $this->task->setUpdatedAt($this->data['updatedAt']);
-        $this->checkData();
+
+        $this->assertEquals($this->data['status'], $this->task->getStatus());
+        $this->assertEquals($this->data['title'], $this->task->getTitle());
+        $this->assertEquals($this->data['assignees'], $this->task->getAssignees());
+        $this->assertEquals($this->data['fileIds'], $this->task->getFileIds());
+        $this->assertEquals($this->data['description'], $this->task->getDescription());
+        $this->assertEquals($this->data['deadline'], $this->task->getDeadline());
     }
 
     public function checkData()

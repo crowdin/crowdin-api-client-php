@@ -6,6 +6,7 @@ use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\TranslationMemory;
 use CrowdinApiClient\Model\TranslationMemoryExport;
 use CrowdinApiClient\Model\TranslationMemoryImport;
+use CrowdinApiClient\ModelCollection;
 
 /**
  * Class TranslationMemoryApi
@@ -16,9 +17,9 @@ class TranslationMemoryApi extends AbstractApi
     /**
      * @param int $groupId
      * @param array $params
-     * @return mixed
+     * @return ModelCollection
      */
-    public function list(int $groupId, array $params = [])
+    public function list(int $groupId, array $params = []): ModelCollection
     {
         $params['groupId'] = $groupId;
         return $this->_list('tms', TranslationMemory::class, $params);

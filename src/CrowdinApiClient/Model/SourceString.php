@@ -116,27 +116,11 @@ class SourceString extends BaseModel
     }
 
     /**
-     * @param int $id
-     */
-    public function setId(int $id): void
-    {
-        $this->id = $id;
-    }
-
-    /**
      * @return int
      */
     public function getProjectId(): int
     {
         return $this->projectId;
-    }
-
-    /**
-     * @param int $projectId
-     */
-    public function setProjectId(int $projectId): void
-    {
-        $this->projectId = $projectId;
     }
 
     /**
@@ -148,27 +132,11 @@ class SourceString extends BaseModel
     }
 
     /**
-     * @param int $fileId
-     */
-    public function setFileId(int $fileId): void
-    {
-        $this->fileId = $fileId;
-    }
-
-    /**
      * @return string
      */
     public function getIdentifier(): string
     {
         return $this->identifier;
-    }
-
-    /**
-     * @param string $identifier
-     */
-    public function setIdentifier(string $identifier): void
-    {
-        $this->identifier = $identifier;
     }
 
     /**
@@ -193,14 +161,6 @@ class SourceString extends BaseModel
     public function getType(): string
     {
         return $this->type;
-    }
-
-    /**
-     * @param string $type
-     */
-    public function setType(string $type): void
-    {
-        $this->type = $type;
     }
 
     /**
@@ -260,27 +220,11 @@ class SourceString extends BaseModel
     }
 
     /**
-     * @param int $revision
-     */
-    public function setRevision(int $revision): void
-    {
-        $this->revision = $revision;
-    }
-
-    /**
      * @return bool
      */
     public function isHasPlurals(): bool
     {
         return $this->hasPlurals;
-    }
-
-    /**
-     * @param bool $hasPlurals
-     */
-    public function setHasPlurals(bool $hasPlurals): void
-    {
-        $this->hasPlurals = $hasPlurals;
     }
 
     /**
@@ -292,27 +236,11 @@ class SourceString extends BaseModel
     }
 
     /**
-     * @param array $plurals
-     */
-    public function setPlurals(array $plurals): void
-    {
-        $this->plurals = $plurals;
-    }
-
-    /**
      * @return bool
      */
     public function isIcu(): bool
     {
         return $this->isIcu;
-    }
-
-    /**
-     * @param bool $isIcu
-     */
-    public function setIsIcu(bool $isIcu): void
-    {
-        $this->isIcu = $isIcu;
     }
 
     /**
@@ -324,26 +252,10 @@ class SourceString extends BaseModel
     }
 
     /**
-     * @param string $createdAt
-     */
-    public function setCreatedAt(string $createdAt): void
-    {
-        $this->createdAt = $createdAt;
-    }
-
-    /**
      * @return string
      */
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;
-    }
-
-    /**
-     * @param string $updatedAt
-     */
-    public function setUpdatedAt(string $updatedAt): void
-    {
-        $this->updatedAt = $updatedAt;
     }
 }

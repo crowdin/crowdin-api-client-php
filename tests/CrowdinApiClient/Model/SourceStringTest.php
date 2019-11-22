@@ -42,22 +42,15 @@ class SourceStringTest extends TestCase
     public function testSetData()
     {
         $this->sourceString = new SourceString();
-        $this->sourceString->setId($this->data['id']);
-        $this->sourceString->setProjectId($this->data['projectId']);
-        $this->sourceString->setFileId($this->data['fileId']);
-        $this->sourceString->setIdentifier($this->data['identifier']);
         $this->sourceString->setText($this->data['text']);
-        $this->sourceString->setType($this->data['type']);
         $this->sourceString->setContext($this->data['context']);
         $this->sourceString->setMaxLength($this->data['maxLength']);
         $this->sourceString->setIsHidden($this->data['isHidden']);
-        $this->sourceString->setRevision($this->data['revision']);
-        $this->sourceString->setHasPlurals($this->data['hasPlurals']);
-        $this->sourceString->setPlurals($this->data['plurals']);
-        $this->sourceString->setIsIcu($this->data['isIcu']);
-        $this->sourceString->setCreatedAt($this->data['createdAt']);
-        $this->sourceString->setUpdatedAt($this->data['updatedAt']);
-        $this->checkData();
+
+        $this->assertEquals($this->data['text'], $this->sourceString->getText());
+        $this->assertEquals($this->data['context'], $this->sourceString->getContext());
+        $this->assertEquals($this->data['maxLength'], $this->sourceString->getMaxLength());
+        $this->assertEquals($this->data['isHidden'], $this->sourceString->isHidden());
     }
 
     public function checkData()

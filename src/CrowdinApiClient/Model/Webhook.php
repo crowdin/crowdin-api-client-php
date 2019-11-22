@@ -98,27 +98,11 @@ class Webhook extends BaseModel
     }
 
     /**
-     * @param int $id
-     */
-    public function setId(int $id): void
-    {
-        $this->id = $id;
-    }
-
-    /**
      * @return int
      */
     public function getProjectId(): int
     {
         return $this->projectId;
-    }
-
-    /**
-     * @param int $projectId
-     */
-    public function setProjectId(int $projectId): void
-    {
-        $this->projectId = $projectId;
     }
 
     /**
@@ -258,26 +242,10 @@ class Webhook extends BaseModel
     }
 
     /**
-     * @param string $createdAt
-     */
-    public function setCreatedAt(string $createdAt): void
-    {
-        $this->createdAt = $createdAt;
-    }
-
-    /**
      * @return string
      */
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;
-    }
-
-    /**
-     * @param string $updatedAt
-     */
-    public function setUpdatedAt(string $updatedAt): void
-    {
-        $this->updatedAt = $updatedAt;
     }
 }

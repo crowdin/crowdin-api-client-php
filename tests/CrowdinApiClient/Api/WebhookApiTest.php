@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Tests\Api;
 
 use CrowdinApiClient\Model\Webhook;
+use CrowdinApiClient\ModelCollection;
 
 class WebhookApiTest extends AbstractTestApi
 {
@@ -46,7 +47,7 @@ class WebhookApiTest extends AbstractTestApi
         ]);
 
         $webhooks = $this->crowdin->webhook->list(2);
-        $this->assertIsArray($webhooks);
+        $this->assertInstanceOf(ModelCollection::class, $webhooks);
         $this->assertCount(1, $webhooks);
         $this->assertInstanceOf(Webhook::class, $webhooks[0]);
         $this->assertEquals(4, $webhooks[0]->getId());

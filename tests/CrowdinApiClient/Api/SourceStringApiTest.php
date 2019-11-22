@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Tests\Api;
 
 use CrowdinApiClient\Model\SourceString;
+use CrowdinApiClient\ModelCollection;
 
 class SourceStringApiTest extends AbstractTestApi
 {
@@ -44,7 +45,7 @@ class SourceStringApiTest extends AbstractTestApi
 
         $sourceStrings = $this->crowdin->sourceString->list(2);
 
-        $this->assertIsArray($sourceStrings);
+        $this->assertInstanceOf(ModelCollection::class, $sourceStrings);
         $this->assertCount(1, $sourceStrings);
         $this->assertInstanceOf(SourceString::class, $sourceStrings[0]);
         $this->assertEquals(2814, $sourceStrings[0]->getId());

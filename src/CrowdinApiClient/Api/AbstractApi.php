@@ -108,14 +108,9 @@ abstract class AbstractApi implements ApiInterface
      * @param array $params
      * @return mixed
      */
-    protected function _get(string $path, string $modelName, array $params = [])
+    protected function _get(string $path, string $modelName, $params = [])
     {
-        $options = [];
-
-        if (!empty($params)) {
-            $options['body'] = $params;
-        }
-        return $this->client->apiRequest('get', $path, new ResponseModelDecorator($modelName), $options);
+        return $this->client->apiRequest('get', $path, new ResponseModelDecorator($modelName), $params);
     }
 
     /**

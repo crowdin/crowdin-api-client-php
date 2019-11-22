@@ -68,27 +68,11 @@ class TranslationMemory extends BaseModel
     }
 
     /**
-     * @param int $id
-     */
-    public function setId(int $id): void
-    {
-        $this->id = $id;
-    }
-
-    /**
      * @return int
      */
     public function getGroupId(): int
     {
         return $this->groupId;
-    }
-
-    /**
-     * @param int $groupId
-     */
-    public function setGroupId(int $groupId): void
-    {
-        $this->groupId = $groupId;
     }
 
     /**
@@ -116,27 +100,11 @@ class TranslationMemory extends BaseModel
     }
 
     /**
-     * @param array $languageIds
-     */
-    public function setLanguageIds(array $languageIds): void
-    {
-        $this->languageIds = $languageIds;
-    }
-
-    /**
      * @return int
      */
     public function getSegmentsCount(): int
     {
         return $this->segmentsCount;
-    }
-
-    /**
-     * @param int $segmentsCount
-     */
-    public function setSegmentsCount(int $segmentsCount): void
-    {
-        $this->segmentsCount = $segmentsCount;
     }
 
     /**
@@ -148,26 +116,10 @@ class TranslationMemory extends BaseModel
     }
 
     /**
-     * @param int $defaultProjectId
-     */
-    public function setDefaultProjectId(int $defaultProjectId): void
-    {
-        $this->defaultProjectId = $defaultProjectId;
-    }
-
-    /**
      * @return array
      */
     public function getProjectIds(): array
     {
         return $this->projectIds;
-    }
-
-    /**
-     * @param array $projectIds
-     */
-    public function setProjectIds(array $projectIds): void
-    {
-        $this->projectIds = $projectIds;
     }
 }

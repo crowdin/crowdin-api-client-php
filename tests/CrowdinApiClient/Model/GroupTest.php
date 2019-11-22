@@ -41,17 +41,13 @@ class GroupTest extends TestCase
     public function testSetData()
     {
         $this->group = new Group();
-        $this->group->setId($this->data['id']);
         $this->group->setName($this->data['name']);
         $this->group->setDescription($this->data['description']);
         $this->group->setParentId($this->data['parentId']);
-        $this->group->setOrganizationId($this->data['organizationId']);
-        $this->group->setUserId($this->data['userId']);
-        $this->group->setSubgroupsCount($this->data['subgroupsCount']);
-        $this->group->setProjectsCount($this->data['projectsCount']);
-        $this->group->setCreatedAt($this->data['createdAt']);
-        $this->group->setUpdatedAt($this->data['updatedAt']);
-        $this->checkData();
+
+        $this->assertEquals($this->data['name'], $this->group->getName());
+        $this->assertEquals($this->data['description'], $this->group->getDescription());
+        $this->assertEquals($this->data['parentId'], $this->group->getParentId());
     }
 
     public function checkData()

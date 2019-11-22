@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Tests\Api;
 
 use CrowdinApiClient\Model\Storage;
+use CrowdinApiClient\ModelCollection;
 
 class StorageApiTest extends AbstractTestApi
 {
@@ -30,7 +31,7 @@ class StorageApiTest extends AbstractTestApi
 
         $storages = $this->crowdin->storage->list();
 
-        $this->assertIsArray($storages);
+        $this->assertInstanceOf(ModelCollection::class, $storages);
         $this->assertCount(1, $storages);
 
         /**

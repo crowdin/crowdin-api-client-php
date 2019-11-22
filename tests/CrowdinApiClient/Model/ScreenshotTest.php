@@ -66,16 +66,9 @@ class ScreenshotTest extends TestCase
     public function testSetData()
     {
         $this->screenshot = new Screenshot();
-        $this->screenshot->setId($this->data['id']);
-        $this->screenshot->setUserId($this->data['userId']);
-        $this->screenshot->setUrl($this->data['url']);
         $this->screenshot->setName($this->data['name']);
-        $this->screenshot->setSize($this->data['size']);
-        $this->screenshot->setTagsCount($this->data['tagsCount']);
-        $this->screenshot->setTags($this->data['tags']);
-        $this->screenshot->setCreatedAt($this->data['createdAt']);
-        $this->screenshot->setUpdatedAt($this->data['updatedAt']);
-        $this->checkData();
+
+        $this->assertEquals($this->data['name'], $this->screenshot->getName());
     }
 
     public function checkData()

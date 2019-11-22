@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Api;
 
 use CrowdinApiClient\Model\MachineTranslationEngine;
+use CrowdinApiClient\ModelCollection;
 
 /**
  * Class MachineTranslationEngineApi
@@ -13,9 +14,9 @@ class MachineTranslationEngineApi extends AbstractApi
     /**
      * @param int $groupId
      * @param array $params
-     * @return mixed
+     * @return ModelCollection
      */
-    public function list(int $groupId, array $params = [])
+    public function list(int $groupId, array $params = []): ModelCollection
     {
         $params['groupId'] = $groupId;
         return $this->_list('mts', MachineTranslationEngine::class, $params);

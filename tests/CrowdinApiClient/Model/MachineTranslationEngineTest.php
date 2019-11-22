@@ -30,13 +30,13 @@ class MachineTranslationEngineTest extends TestCase
     public function testSetData()
     {
         $this->machineTranslationEngine = new MachineTranslationEngine();
-        $this->machineTranslationEngine->setId($this->data['id']);
-        $this->machineTranslationEngine->setGroupId($this->data['groupId']);
         $this->machineTranslationEngine->setName($this->data['name']);
         $this->machineTranslationEngine->setType($this->data['type']);
         $this->machineTranslationEngine->setCredentials($this->data['credentials']);
-        $this->machineTranslationEngine->setProjectIds($this->data['projectIds']);
-        $this->checkData();
+
+        $this->assertEquals($this->data['name'], $this->machineTranslationEngine->getName());
+        $this->assertEquals($this->data['type'], $this->machineTranslationEngine->getType());
+        $this->assertEquals($this->data['credentials'], $this->machineTranslationEngine->getCredentials());
     }
 
     public function checkData()

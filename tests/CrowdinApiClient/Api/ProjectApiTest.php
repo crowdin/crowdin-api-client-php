@@ -4,6 +4,7 @@ namespace CrowdinApiClient\Tests\Api;
 
 use CrowdinApiClient\Model\Project;
 use CrowdinApiClient\Model\ProjectSetting;
+use CrowdinApiClient\ModelCollection;
 
 class ProjectApiTest extends AbstractTestApi
 {
@@ -52,7 +53,7 @@ class ProjectApiTest extends AbstractTestApi
 
         $projects = $this->crowdin->project->list();
 
-        $this->assertIsArray($projects);
+        $this->assertInstanceOf(ModelCollection::class, $projects);
         $this->assertCount(1, $projects);
         $this->assertInstanceOf(Project::class, $projects[0]);
         $this->assertEquals(8, $projects[0]->getId());

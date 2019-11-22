@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Tests\Api;
 
 use CrowdinApiClient\Model\Directory;
+use CrowdinApiClient\ModelCollection;
 
 class DirectoryApiTest extends AbstractTestApi
 {
@@ -39,7 +40,7 @@ class DirectoryApiTest extends AbstractTestApi
 
         $directories = $this->crowdin->directory->list(2);
 
-        $this->assertIsArray($directories);
+        $this->assertInstanceOf(ModelCollection::class, $directories);
         $this->assertCount(1, $directories);
         $this->assertInstanceOf(Directory::class, $directories[0]);
         $this->assertEquals(4, $directories[0]->getId());

@@ -62,27 +62,11 @@ class MachineTranslationEngine extends BaseModel
     }
 
     /**
-     * @param int $id
-     */
-    public function setId(int $id): void
-    {
-        $this->id = $id;
-    }
-
-    /**
      * @return int
      */
     public function getGroupId(): int
     {
         return $this->groupId;
-    }
-
-    /**
-     * @param int $groupId
-     */
-    public function setGroupId(int $groupId): void
-    {
-        $this->groupId = $groupId;
     }
 
     /**
@@ -139,13 +123,5 @@ class MachineTranslationEngine extends BaseModel
     public function getProjectIds(): array
     {
         return $this->projectIds;
-    }
-
-    /**
-     * @param array $projectIds
-     */
-    public function setProjectIds(array $projectIds): void
-    {
-        $this->projectIds = $projectIds;
     }
 }
