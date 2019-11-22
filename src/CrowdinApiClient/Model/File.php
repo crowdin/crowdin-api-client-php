@@ -113,27 +113,11 @@ class File extends BaseModel
     }
 
     /**
-     * @param int $id
-     */
-    public function setId(int $id): void
-    {
-        $this->id = $id;
-    }
-
-    /**
      * @return int
      */
     public function getProjectId(): int
     {
         return $this->projectId;
-    }
-
-    /**
-     * @param int $projectId
-     */
-    public function setProjectId(int $projectId): void
-    {
-        $this->projectId = $projectId;
     }
 
     /**
@@ -177,14 +161,6 @@ class File extends BaseModel
     }
 
     /**
-     * @param string $languageId
-     */
-    public function setLanguageId(string $languageId): void
-    {
-        $this->languageId = $languageId;
-    }
-
-    /**
      * @return string
      */
     public function getName(): string
@@ -225,14 +201,6 @@ class File extends BaseModel
     }
 
     /**
-     * @param string $type
-     */
-    public function setType(string $type): void
-    {
-        $this->type = $type;
-    }
-
-    /**
      * @return int
      */
     public function getRevision(): int
@@ -241,27 +209,11 @@ class File extends BaseModel
     }
 
     /**
-     * @param int $revision
-     */
-    public function setRevision(int $revision): void
-    {
-        $this->revision = $revision;
-    }
-
-    /**
      * @return string
      */
     public function getStatus(): string
     {
         return $this->status;
-    }
-
-    /**
-     * @param string $status
-     */
-    public function setStatus(string $status): void
-    {
-        $this->status = $status;
     }
 
     /**
@@ -289,14 +241,6 @@ class File extends BaseModel
     }
 
     /**
-     * @param array $attributes
-     */
-    public function setAttributes(array $attributes): void
-    {
-        $this->attributes = $attributes;
-    }
-
-    /**
      * @return string
      */
     public function getExportPattern(): string
@@ -321,26 +265,10 @@ class File extends BaseModel
     }
 
     /**
-     * @param string $createdAt
-     */
-    public function setCreatedAt(string $createdAt): void
-    {
-        $this->createdAt = $createdAt;
-    }
-
-    /**
      * @return string
      */
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;
-    }
-
-    /**
-     * @param string $updatedAt
-     */
-    public function setUpdatedAt(string $updatedAt): void
-    {
-        $this->updatedAt = $updatedAt;
     }
 }

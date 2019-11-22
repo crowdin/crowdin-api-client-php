@@ -6,6 +6,10 @@ use ArrayAccess;
 use Countable;
 use IteratorAggregate;
 
+/**
+ * Class Collection
+ * @package CrowdinApiClient
+ */
 class Collection implements IteratorAggregate, ArrayAccess, Countable
 {
 

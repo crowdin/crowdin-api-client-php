@@ -4,6 +4,10 @@ namespace CrowdinApiClient\Http;
 
 use InvalidArgumentException;
 
+/**
+ * Class ResponseErrorHandlerFactory
+ * @package CrowdinApiClient\Http
+ */
 class ResponseErrorHandlerFactory
 {
     /**

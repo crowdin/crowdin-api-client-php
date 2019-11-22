@@ -10,6 +10,8 @@ class CurlHttpClientTest extends TestCase
 {
     protected $client;
 
+    protected $mockClient;
+
     protected function setUp()
     {
         if (!extension_loaded('curl')) {
@@ -17,6 +19,31 @@ class CurlHttpClientTest extends TestCase
         }
 
         $this->client = new CurlHttpClient();
+        $this->mockClient = $this->getMockBuilder(CurlHttpClient::class)->enableArgumentCloning()->getMock();
+    }
+
+    public function testFunctionsCurl()
+    {
+        $this->mockClient->expects($this->once())->method('curlSetUrl')->willReturnCallback(function ($ch, $url) {
+            $this->assertEquals('https://foo.com', $url);
+            return true;
+        });
+        $this->mockClient->curlSetUrl('', 'https://foo.com');
+
+        $this->mockClient->expects($this->once())->method('curlSetOption')->willReturnCallback(function ($ch, $option, $value) {
+            $this->assertEquals('', $ch);
+            $this->assertEquals(CURLOPT_TIMEOUT, $option);
+            $this->assertEquals(60, $value);
+            return true;
+        });
+        $this->mockClient->curlSetOption('', CURLOPT_TIMEOUT, 60);
+
+        $this->mockClient->expects($this->once())->method('curlClose')->will($this->returnValue(true));
+
+        $this->assertTrue($this->mockClient->curlClose(''));
+
+        $this->mockClient->expects($this->once())->method('curlInit')->will($this->returnValue(true));
+        $this->assertTrue($this->mockClient->curlInit(''));
     }
 
     public function testInit()

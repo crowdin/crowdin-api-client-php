@@ -2,6 +2,7 @@
 
 namespace CrowdinApiClient\FrameworkSupport\Laravel;
 
+use CrowdinApiClient\Crowdin;
 use Illuminate\Support\ServiceProvider;
 
 class CrowdinServiceProvider extends ServiceProvider
@@ -34,8 +35,6 @@ class CrowdinServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('crowdin', function ($app) {
-
-            //TODO
             return new Crowdin(config('Crowdin'));
         });
     }

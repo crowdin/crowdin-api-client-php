@@ -41,35 +41,35 @@ class CurlHttpClient implements CrowdinHttpClientInterface
             }
         }
 
-        $ch = curl_init();
+        $ch = $this->curlInit();
 
-        curl_setopt($ch, CURLOPT_URL, $uri);
-        curl_setopt($ch, CURLOPT_TIMEOUT, 60);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_HEADER, false);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $processed_headers);
+        $this->curlSetUrl($ch, $uri);
+        $this->curlSetOption($ch, CURLOPT_TIMEOUT, 60);
+        $this->curlSetOption($ch, CURLOPT_RETURNTRANSFER, true);
+        $this->curlSetOption($ch, CURLOPT_HEADER, false);
+        $this->curlSetOption($ch, CURLOPT_HTTPHEADER, $processed_headers);
 
         if (strtolower($method) === 'post') {
-            curl_setopt($ch, CURLOPT_POST, true);
+            $this->curlSetOption($ch, CURLOPT_POST, true);
 
             if ($body && is_array($body)) {
                 $body = http_build_query($body, '', '&');
             }
 
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
+            $this->curlSetOption($ch, CURLOPT_POSTFIELDS, $body);
         } else {
-            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, strtoupper($method));
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
+            $this->curlSetOption($ch, CURLOPT_CUSTOMREQUEST, strtoupper($method));
+            $this->curlSetOption($ch, CURLOPT_POSTFIELDS, $body);
         }
 
-        $response = curl_exec($ch);
+        $response = $this->curlExec($ch);
 
-        $responseCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $responseCode = $this->curlGetInfo($ch);
 
         if (false === $response) {
-            $errNo = curl_errno($ch);
-            $errStr = curl_error($ch);
-            curl_close($ch);
+            $errNo = $this->curlErrno($ch);
+            $errStr = $this->curlError($ch);
+            $this->curlClose($ch);
 
             if (empty($errStr)) {
                 throw new HttpException('There was a problem requesting the resource.', $responseCode);
@@ -78,8 +78,70 @@ class CurlHttpClient implements CrowdinHttpClientInterface
             throw new HttpException($errStr . '(cURL Error: ' . $errNo . ')', $responseCode);
         }
 
-        curl_close($ch);
+        $this->curlExec($ch);
 
         return $response;
+    }
+
+    public function curlError($ch)
+    {
+        return curl_error($ch);
+    }
+
+    public function curlErrno($ch)
+    {
+        return curl_errno($ch);
+    }
+
+    public function curlClose($ch)
+    {
+        return curl_close($ch);
+    }
+
+    /**
+     * @param $ch
+     * @return bool|string
+     */
+    public function curlExec($ch)
+    {
+        return curl_exec($ch);
+    }
+
+    /**
+     * @param $ch
+     * @return mixed
+     */
+    public function curlGetInfo($ch)
+    {
+        return curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    }
+
+    /**
+     * @param $ch
+     * @param $option
+     * @param $value
+     * @return bool
+     */
+    public function curlSetOption($ch, $option, $value): bool
+    {
+        return curl_setopt($ch, $option, $value);
+    }
+
+    /***
+     * @return false|resource
+     */
+    public function curlInit()
+    {
+        return curl_init();
+    }
+
+    /**
+     * @param $ch
+     * @param $uri
+     * @return bool
+     */
+    public function curlSetUrl($ch, $uri): bool
+    {
+        return curl_setopt($ch, CURLOPT_URL, $uri);
     }
 }
