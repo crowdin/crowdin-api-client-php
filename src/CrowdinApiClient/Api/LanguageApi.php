@@ -32,7 +32,7 @@ class LanguageApi extends AbstractApi
      * @internal string $data[dialectOf]
      * @return Language|null
      */
-    public function create(array $data):?Language
+    public function create(array $data): ?Language
     {
         return $this->_create('languages', Language::class, $data);
     }
