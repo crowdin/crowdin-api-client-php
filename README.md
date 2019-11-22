@@ -10,9 +10,10 @@ For more about Crowdin API see the [documentation](https://support.crowdin.com/e
 
 ## Status
 
+[![Packagist Version](https://img.shields.io/packagist/v/crowdin/crowdin-api-client?cacheSeconds=3600)](https://packagist.org/packages/crowdin/crowdin-api-client)
+[![Packagist](https://img.shields.io/packagist/dt/crowdin/crowdin-api-client?cacheSeconds=3600)](https://packagist.org/packages/crowdin/crowdin-api-client)
+[![GitHub Release Date](https://img.shields.io/github/release-date/crowdin/crowdin-api-client-php?cacheSeconds=3600)](https://github.com/crowdin/crowdin-api-client-php/releases)
 [![GitHub issues](https://img.shields.io/github/issues/crowdin/crowdin-api-client-php?cacheSeconds=3600)](https://github.com/crowdin/crowdin-api-client-php/issues)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/crowdin/crowdin-api-client-php?cacheSeconds=3600)](https://github.com/crowdin/crowdin-api-client-php/graphs/commit-activity)
-[![GitHub last commit](https://img.shields.io/github/last-commit/crowdin/crowdin-api-client-php?cacheSeconds=3600)](https://github.com/crowdin/crowdin-api-client-php/commits/master)
 [![GitHub contributors](https://img.shields.io/github/contributors/crowdin/crowdin-api-client-php?cacheSeconds=3600)](https://github.com/crowdin/crowdin-api-client-php/graphs/contributors)
 [![GitHub](https://img.shields.io/github/license/crowdin/crowdin-api-client-php?cacheSeconds=3600)](https://github.com/crowdin/crowdin-api-client-php/blob/master/LICENSE)
 
