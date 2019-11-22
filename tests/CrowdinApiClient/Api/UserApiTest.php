@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Tests\Api;
 
 use CrowdinApiClient\Model\User;
+use CrowdinApiClient\ModelCollection;
 
 class UserApiTest extends AbstractTestApi
 {
@@ -41,7 +42,7 @@ class UserApiTest extends AbstractTestApi
 
         $users = $this->crowdin->user->list();
 
-        $this->assertIsArray($users);
+        $this->assertInstanceOf(ModelCollection::class, $users);
         $this->assertCount(1, $users);
         $this->assertInstanceOf(User::class, $users[0]);
         $this->assertEquals(1, $users[0]->getId());

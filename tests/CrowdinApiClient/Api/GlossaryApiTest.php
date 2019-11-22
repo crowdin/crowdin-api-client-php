@@ -5,6 +5,7 @@ namespace CrowdinApiClient\Tests\Api;
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\Glossary;
 use CrowdinApiClient\Model\GlossaryExport;
+use CrowdinApiClient\ModelCollection;
 
 class GlossaryApiTest extends AbstractTestApi
 {
@@ -43,7 +44,7 @@ class GlossaryApiTest extends AbstractTestApi
 
         $glossaries = $this->crowdin->glossary->list();
 
-        $this->assertIsArray($glossaries);
+        $this->assertInstanceOf(ModelCollection::class, $glossaries);
         $this->assertCount(1, $glossaries);
         $this->assertInstanceOf(Glossary::class, $glossaries[0]);
         $this->assertEquals(2, $glossaries[0]->getId());

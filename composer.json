@@ -15,7 +15,7 @@
             "homepage": "https://support.crowdin.com/enterprise/api/"
         }
     ],
-    "version": "0.6.0",
+    "version": "0.8.0-beta",
     "require": {
         "php": ">=7.1",
         "ext-json": "*",

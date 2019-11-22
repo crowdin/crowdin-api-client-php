@@ -41,17 +41,13 @@ class TermTest extends TestCase
     public function testSetData()
     {
         $this->term = new Term();
-        $this->term->setId($this->data['id']);
-        $this->term->setUserId($this->data['userId']);
-        $this->term->setGlossaryId($this->data['glossaryId']);
-        $this->term->setLanguageId($this->data['languageId']);
         $this->term->setText($this->data['text']);
         $this->term->setDescription($this->data['description']);
         $this->term->setPartOfSpeech($this->data['partOfSpeech']);
-        $this->term->setLemma($this->data['lemma']);
-        $this->term->setCreatedAt($this->data['createdAt']);
-        $this->term->setUpdatedAt($this->data['updatedAt']);
-        $this->checkData();
+
+        $this->assertEquals($this->data['text'], $this->term->getText());
+        $this->assertEquals($this->data['description'], $this->term->getDescription());
+        $this->assertEquals($this->data['partOfSpeech'], $this->term->getPartOfSpeech());
     }
 
     public function checkData()

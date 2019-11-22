@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Api;
 
 use CrowdinApiClient\Model\Group;
+use CrowdinApiClient\ModelCollection;
 
 /**
  * Class GroupApi
@@ -12,9 +13,9 @@ class GroupApi extends AbstractApi
 {
     /**
      * @param array $params
-     * @return mixed
+     * @return ModelCollection
      */
-    public function list(array $params = [])
+    public function list(array $params = []): ModelCollection
     {
         return $this->_list('groups', Group::class, $params);
     }

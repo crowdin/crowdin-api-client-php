@@ -41,19 +41,19 @@ class DirectoryTest extends TestCase
     public function testSetData()
     {
         $this->directory = new Directory();
-        $this->directory->setId($this->data['id']);
-        $this->directory->setProjectId($this->data['projectId']);
         $this->directory->setBranchId($this->data['branchId']);
         $this->directory->setParentId($this->data['parentId']);
         $this->directory->setName($this->data['name']);
         $this->directory->setTitle($this->data['title']);
         $this->directory->setExportPattern($this->data['exportPattern']);
         $this->directory->setPriority($this->data['priority']);
-        $this->directory->setCreatedAt($this->data['createdAt']);
-        $this->directory->setCreatedAt($this->data['createdAt']);
-        $this->directory->setUpdatedAt($this->data['updatedAt']);
 
-        $this->checkData();
+        $this->assertEquals($this->data['branchId'], $this->directory->getBranchId());
+        $this->assertEquals($this->data['parentId'], $this->directory->getParentId());
+        $this->assertEquals($this->data['name'], $this->directory->getName());
+        $this->assertEquals($this->data['title'], $this->directory->getTitle());
+        $this->assertEquals($this->data['exportPattern'], $this->directory->getExportPattern());
+        $this->assertEquals($this->data['priority'], $this->directory->getPriority());
     }
 
     public function checkData()

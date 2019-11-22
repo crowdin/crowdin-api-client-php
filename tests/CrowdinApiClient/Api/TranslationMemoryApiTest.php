@@ -6,6 +6,7 @@ use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\TranslationMemory;
 use CrowdinApiClient\Model\TranslationMemoryExport;
 use CrowdinApiClient\Model\TranslationMemoryImport;
+use CrowdinApiClient\ModelCollection;
 
 class TranslationMemoryApiTest extends AbstractTestApi
 {
@@ -42,7 +43,7 @@ class TranslationMemoryApiTest extends AbstractTestApi
         ]);
 
         $translationMemories = $this->crowdin->translationMemory->list(2);
-        $this->assertIsArray($translationMemories);
+        $this->assertInstanceOf(ModelCollection::class, $translationMemories);
         $this->assertCount(1, $translationMemories);
         $this->assertInstanceOf(TranslationMemory::class, $translationMemories[0]);
         $this->assertEquals(4, $translationMemories[0]->getId());

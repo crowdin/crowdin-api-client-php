@@ -5,6 +5,7 @@ namespace CrowdinApiClient\Api;
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\Glossary;
 use CrowdinApiClient\Model\GlossaryExport;
+use CrowdinApiClient\ModelCollection;
 
 /**
  * Class GlossaryApi
@@ -14,9 +15,9 @@ class GlossaryApi extends AbstractApi
 {
     /**
      * @param array $params
-     * @return mixed
+     * @return ModelCollection
      */
-    public function list(array $params = [])
+    public function list(array $params = []): ModelCollection
     {
         return $this->_list('glossaries', Glossary::class, $params);
     }

@@ -7,6 +7,7 @@ use CrowdinApiClient\Http\ResponseDecorator\ResponseDecoratorInterface;
 use CrowdinApiClient\Http\ResponseDecorator\ResponseModelDecorator;
 use CrowdinApiClient\Http\ResponseDecorator\ResponseModelListDecorator;
 use CrowdinApiClient\Model\DownloadFile;
+use CrowdinApiClient\ModelCollection;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -41,9 +42,9 @@ class ResponseDecoratorTest extends TestCase
 
         $this->assertInstanceOf(ResponseModelListDecorator::class, $modelDecorate);
 
-        $downloadFiles = $modelDecorate->decorate([['data' => $this->dataItem]]);
+        $downloadFiles = $modelDecorate->decorate(['data' => [['data' => $this->dataItem]], 'pagination' => []]);
 
-        $this->assertIsArray($downloadFiles);
+        $this->assertInstanceOf(ModelCollection::class, $downloadFiles);
         $this->assertCount(1, $downloadFiles);
         $this->assertInstanceOf(DownloadFile::class, $downloadFiles[0]);
         $this->assertEquals($this->dataItem['url'], $downloadFiles[0]->getUrl());

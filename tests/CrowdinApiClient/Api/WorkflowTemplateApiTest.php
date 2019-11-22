@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Tests\Api;
 
 use CrowdinApiClient\Model\WorkflowTemplate;
+use CrowdinApiClient\ModelCollection;
 
 class WorkflowTemplateApiTest extends AbstractTestApi
 {
@@ -34,7 +35,7 @@ class WorkflowTemplateApiTest extends AbstractTestApi
 
         $workflowTemplates = $this->crowdin->workflowTemplate->list();
 
-        $this->assertIsArray($workflowTemplates);
+        $this->assertInstanceOf(ModelCollection::class, $workflowTemplates);
         $this->assertCount(1, $workflowTemplates);
         $this->assertInstanceOf(WorkflowTemplate::class, $workflowTemplates[0]);
         $this->assertEquals(2, $workflowTemplates[0]->getId());

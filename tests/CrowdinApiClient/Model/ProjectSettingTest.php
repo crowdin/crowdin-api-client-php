@@ -64,7 +64,6 @@ class ProjectSettingTest extends TestCase
     public function testSetData()
     {
         $this->projectSetting = new ProjectSetting();
-        $this->projectSetting->setProjectId($this->data['projectId']);
         $this->projectSetting->setTranslateDuplicates($this->data['translateDuplicates']);
         $this->projectSetting->setIsMtAllowed($this->data['isMtAllowed']);
         $this->projectSetting->setAutoSubstitution($this->data['autoSubstitution']);
@@ -78,7 +77,20 @@ class ProjectSettingTest extends TestCase
         $this->projectSetting->setQaCheckIsActive($this->data['qaCheckIsActive']);
         $this->projectSetting->setLowestQualityProjectGoalId($this->data['lowestQualityProjectGoalId']);
         $this->projectSetting->setQaCheckCategories($this->data['qaCheckCategories']);
-        $this->checkData();
+
+        $this->assertEquals($this->data['translateDuplicates'], $this->projectSetting->getTranslateDuplicates());
+        $this->assertEquals($this->data['isMtAllowed'], $this->projectSetting->isMtAllowed());
+        $this->assertEquals($this->data['autoSubstitution'], $this->projectSetting->isAutoSubstitution());
+        $this->assertEquals($this->data['exportTranslatedOnly'], $this->projectSetting->isExportTranslatedOnly());
+        $this->assertEquals($this->data['exportApprovedOnly'], $this->projectSetting->isExportApprovedOnly());
+        $this->assertEquals($this->data['autoTranslateDialects'], $this->projectSetting->isAutoTranslateDialects());
+        $this->assertEquals($this->data['publicDownloads'], $this->projectSetting->isPublicDownloads());
+        $this->assertEquals($this->data['useGlobalTm'], $this->projectSetting->isUseGlobalTm());
+        $this->assertEquals($this->data['inContext'], $this->projectSetting->isInContext());
+        $this->assertEquals($this->data['pseudoLanguageId'], $this->projectSetting->getPseudoLanguageId());
+        $this->assertEquals($this->data['qaCheckIsActive'], $this->projectSetting->isQaCheckIsActive());
+        $this->assertEquals($this->data['lowestQualityProjectGoalId'], $this->projectSetting->getLowestQualityProjectGoalId());
+        $this->assertEquals($this->data['qaCheckCategories'], $this->projectSetting->getQaCheckCategories());
     }
 
     public function checkData()

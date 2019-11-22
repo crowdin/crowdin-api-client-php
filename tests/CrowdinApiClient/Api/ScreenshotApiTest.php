@@ -4,6 +4,7 @@ namespace CrowdinApiClient\Tests\Api;
 
 use CrowdinApiClient\Model\Screenshot;
 use CrowdinApiClient\Model\Tag;
+use CrowdinApiClient\ModelCollection;
 
 class ScreenshotApiTest extends AbstractTestApi
 {
@@ -55,7 +56,7 @@ class ScreenshotApiTest extends AbstractTestApi
 
         $screenshots = $this->crowdin->screenshot->list(2);
 
-        $this->assertIsArray($screenshots);
+        $this->assertInstanceOf(ModelCollection::class, $screenshots);
         $this->assertCount(1, $screenshots);
         $this->assertInstanceOf(Screenshot::class, $screenshots[0]);
         $this->assertEquals(2, $screenshots[0]->getId());
@@ -305,7 +306,7 @@ class ScreenshotApiTest extends AbstractTestApi
 
         $tags = $this->crowdin->screenshot->tags(2, 2);
 
-        $this->assertIsArray($tags);
+        $this->assertInstanceOf(ModelCollection::class, $tags);
         $this->assertCount(1, $tags);
         $this->assertInstanceOf(Tag::class, $tags[0]);
         $this->assertEquals(98, $tags[0]->getId());
@@ -378,7 +379,7 @@ class ScreenshotApiTest extends AbstractTestApi
     public function testDeleteTag()
     {
         $this->mockRequestDelete('/projects/2/screenshots/2/tags/98');
-        $tag = $this->crowdin->screenshot->deleteTag(2, 2, 98);
+        $this->crowdin->screenshot->deleteTag(2, 2, 98);
     }
 
     public function testReplaceTags()

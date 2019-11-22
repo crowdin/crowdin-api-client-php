@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Tests\Api;
 
 use CrowdinApiClient\Model\Language;
+use CrowdinApiClient\ModelCollection;
 
 class LanguageApiTest extends AbstractTestApi
 {
@@ -46,7 +47,7 @@ class LanguageApiTest extends AbstractTestApi
         ]);
 
         $languages = $this->crowdin->language->list();
-        $this->assertIsArray($languages);
+        $this->assertInstanceOf(ModelCollection::class, $languages);
         $this->assertCount(1, $languages);
         $this->assertInstanceOf(Language::class, $languages[0]);
     }

@@ -39,12 +39,11 @@ class TagTest extends TestCase
     public function testSetData()
     {
         $this->tag = new Tag();
-        $this->tag->setId($this->data['id']);
-        $this->tag->setScreenshotId($this->data['screenshotId']);
         $this->tag->setStringId($this->data['stringId']);
         $this->tag->setPosition($this->data['position']);
-        $this->tag->setCreatedAt($this->data['createdAt']);
-        $this->checkData();
+
+        $this->assertEquals($this->data['stringId'], $this->tag->getStringId());
+        $this->assertEquals($this->data['position'], $this->tag->getPosition());
     }
 
     public function checkData()

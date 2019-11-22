@@ -155,27 +155,11 @@ class Task extends BaseModel
     }
 
     /**
-     * @param int $id
-     */
-    public function setId(int $id): void
-    {
-        $this->id = $id;
-    }
-
-    /**
      * @return int
      */
     public function getProjectId(): int
     {
         return $this->projectId;
-    }
-
-    /**
-     * @param int $projectId
-     */
-    public function setProjectId(int $projectId): void
-    {
-        $this->projectId = $projectId;
     }
 
     /**
@@ -187,27 +171,11 @@ class Task extends BaseModel
     }
 
     /**
-     * @param int $creatorId
-     */
-    public function setCreatorId(int $creatorId): void
-    {
-        $this->creatorId = $creatorId;
-    }
-
-    /**
      * @return int
      */
     public function getType(): int
     {
         return $this->type;
-    }
-
-    /**
-     * @param int $type
-     */
-    public function setType(int $type): void
-    {
-        $this->type = $type;
     }
 
     /**
@@ -283,14 +251,6 @@ class Task extends BaseModel
     }
 
     /**
-     * @param array $progress
-     */
-    public function setProgress(array $progress): void
-    {
-        $this->progress = $progress;
-    }
-
-    /**
      * @return string
      */
     public function getSourceLanguageId(): string
@@ -299,27 +259,11 @@ class Task extends BaseModel
     }
 
     /**
-     * @param string $sourceLanguageId
-     */
-    public function setSourceLanguageId(string $sourceLanguageId): void
-    {
-        $this->sourceLanguageId = $sourceLanguageId;
-    }
-
-    /**
      * @return string
      */
     public function getTargetLanguageId(): string
     {
         return $this->targetLanguageId;
-    }
-
-    /**
-     * @param string $targetLanguageId
-     */
-    public function setTargetLanguageId(string $targetLanguageId): void
-    {
-        $this->targetLanguageId = $targetLanguageId;
     }
 
     /**
@@ -347,27 +291,11 @@ class Task extends BaseModel
     }
 
     /**
-     * @param string $hash
-     */
-    public function setHash(string $hash): void
-    {
-        $this->hash = $hash;
-    }
-
-    /**
      * @return string
      */
     public function getTranslationUrl(): string
     {
         return $this->translationUrl;
-    }
-
-    /**
-     * @param string $translationUrl
-     */
-    public function setTranslationUrl(string $translationUrl): void
-    {
-        $this->translationUrl = $translationUrl;
     }
 
     /**
@@ -379,14 +307,6 @@ class Task extends BaseModel
     }
 
     /**
-     * @param int $wordsCount
-     */
-    public function setWordsCount(int $wordsCount): void
-    {
-        $this->wordsCount = $wordsCount;
-    }
-
-    /**
      * @return int
      */
     public function getFilesCount(): int
@@ -395,27 +315,11 @@ class Task extends BaseModel
     }
 
     /**
-     * @param int $filesCount
-     */
-    public function setFilesCount(int $filesCount): void
-    {
-        $this->filesCount = $filesCount;
-    }
-
-    /**
      * @return int
      */
     public function getCommentsCount(): int
     {
         return $this->commentsCount;
-    }
-
-    /**
-     * @param int $commentsCount
-     */
-    public function setCommentsCount(int $commentsCount): void
-    {
-        $this->commentsCount = $commentsCount;
     }
 
     /**
@@ -443,27 +347,11 @@ class Task extends BaseModel
     }
 
     /**
-     * @param string $timeRange
-     */
-    public function setTimeRange(string $timeRange): void
-    {
-        $this->timeRange = $timeRange;
-    }
-
-    /**
      * @return int
      */
     public function getWorkflowStepId(): int
     {
         return $this->workflowStepId;
-    }
-
-    /**
-     * @param int $workflowStepId
-     */
-    public function setWorkflowStepId(int $workflowStepId): void
-    {
-        $this->workflowStepId = $workflowStepId;
     }
 
     /**
@@ -475,26 +363,10 @@ class Task extends BaseModel
     }
 
     /**
-     * @param string $createdAt
-     */
-    public function setCreatedAt(string $createdAt): void
-    {
-        $this->createdAt = $createdAt;
-    }
-
-    /**
      * @return string
      */
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;
-    }
-
-    /**
-     * @param string $updatedAt
-     */
-    public function setUpdatedAt(string $updatedAt): void
-    {
-        $this->updatedAt = $updatedAt;
     }
 }

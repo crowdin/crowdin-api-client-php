@@ -42,8 +42,6 @@ class WebhookTest extends TestCase
     public function testSetData()
     {
         $this->webhook = new Webhook();
-        $this->webhook->setId($this->data['id']);
-        $this->webhook->setProjectId($this->data['projectId']);
         $this->webhook->setName($this->data['name']);
         $this->webhook->setUrl($this->data['url']);
         $this->webhook->setEvents($this->data['events']);
@@ -52,9 +50,15 @@ class WebhookTest extends TestCase
         $this->webhook->setIsActive($this->data['isActive']);
         $this->webhook->setRequestType($this->data['requestType']);
         $this->webhook->setContentType($this->data['contentType']);
-        $this->webhook->setCreatedAt($this->data['createdAt']);
-        $this->webhook->setUpdatedAt($this->data['updatedAt']);
-        $this->checkData();
+
+        $this->assertEquals($this->data['name'], $this->webhook->getName());
+        $this->assertEquals($this->data['url'], $this->webhook->getUrl());
+        $this->assertEquals($this->data['events'], $this->webhook->getEvents());
+        $this->assertEquals($this->data['headers'], $this->webhook->getHeaders());
+        $this->assertEquals($this->data['payload'], $this->webhook->getPayload());
+        $this->assertEquals($this->data['isActive'], $this->webhook->isActive());
+        $this->assertEquals($this->data['requestType'], $this->webhook->getRequestType());
+        $this->assertEquals($this->data['contentType'], $this->webhook->getContentType());
     }
 
     public function checkData()

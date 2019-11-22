@@ -198,7 +198,9 @@ class Crowdin
         $this->responseErrorHandler->check($response);
 
         if ($decorator instanceof ResponseDecoratorInterface) {
-            if (isset($response['data'])) {
+            if (isset($response['data']) && isset($response['pagination'])) {
+                $response = $decorator->decorate($response);
+            } elseif (isset($response['data'])) {
                 $response = $decorator->decorate($response['data']);
             } else {
                 $response = $decorator->decorate($response);

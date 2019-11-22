@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Tests\Api;
 
 use CrowdinApiClient\Model\StringTranslationApproval;
+use CrowdinApiClient\ModelCollection;
 
 class StringTranslationApprovalApiTest extends AbstractTestApi
 {
@@ -39,7 +40,7 @@ class StringTranslationApprovalApiTest extends AbstractTestApi
 
         $stringTranslationApprovals = $this->crowdin->stringTranslationApproval->list(2);
 
-        $this->assertIsArray($stringTranslationApprovals);
+        $this->assertInstanceOf(ModelCollection::class, $stringTranslationApprovals);
         $this->assertCount(1, $stringTranslationApprovals);
         $this->assertInstanceOf(StringTranslationApproval::class, $stringTranslationApprovals[0]);
         $this->assertEquals(190695, $stringTranslationApprovals[0]->getId());

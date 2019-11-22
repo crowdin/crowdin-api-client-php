@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
  * Class DownloadFileModel
  * @package Crowdin\Tests\Model
  */
-class DownloadFileModel extends TestCase
+class DownloadFileTest extends TestCase
 {
     /**
      * @var array

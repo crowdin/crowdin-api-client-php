@@ -4,6 +4,8 @@ namespace CrowdinApiClient\Tests;
 
 use CrowdinApiClient\Crowdin;
 use CrowdinApiClient\Http\Client\CrowdinHttpClientInterface;
+use CrowdinApiClient\Http\Client\CurlHttpClient;
+use CrowdinApiClient\Http\ResponseErrorHandler;
 use CrowdinApiClient\Http\ResponseErrorHandlerInterface;
 use PHPUnit\Framework\TestCase;
 
@@ -129,5 +131,17 @@ class CrowdinTest extends TestCase
     {
         $this->app->setBaseUri('https://foo.com');
         $this->assertEquals('https://foo.com', $this->app->getBaseUri());
+    }
+
+    public function testSetGet()
+    {
+        $this->app->setClient(new CurlHttpClient());
+        $this->assertInstanceOf(CrowdinHttpClientInterface::class, $this->app->getClient());
+
+        $this->app->setAccessToken('token');
+        $this->assertEquals('token', $this->app->getAccessToken());
+
+        $this->app->setResponseErrorHandler(new ResponseErrorHandler());
+        $this->assertInstanceOf(ResponseErrorHandler::class, $this->app->getResponseErrorHandler());
     }
 }

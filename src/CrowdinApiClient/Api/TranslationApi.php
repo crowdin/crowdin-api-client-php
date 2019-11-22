@@ -6,6 +6,7 @@ use CrowdinApiClient\Http\ResponseDecorator\ResponseArrayDecorator;
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\PreTranslation;
 use CrowdinApiClient\Model\TranslationProjectBuild;
+use CrowdinApiClient\ModelCollection;
 
 class TranslationApi extends AbstractApi
 {
@@ -53,9 +54,9 @@ class TranslationApi extends AbstractApi
     /**
      * @param int $projectId
      * @param array $params
-     * @return mixed
+     * @return ModelCollection
      */
-    public function getProjectBuilds(int $projectId, array $params = [])
+    public function getProjectBuilds(int $projectId, array $params = []): ModelCollection
     {
         $path = sprintf('projects/%d/translations/builds', $projectId);
 

@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Tests\Api;
 
 use CrowdinApiClient\Model\MachineTranslationEngine;
+use CrowdinApiClient\ModelCollection;
 
 class MachineTranslationEngineApiTest extends AbstractTestApi
 {
@@ -39,7 +40,7 @@ class MachineTranslationEngineApiTest extends AbstractTestApi
         ]);
 
         $machineTranslationEngines = $this->crowdin->machineTranslationEngine->list(2);
-        $this->assertIsArray($machineTranslationEngines);
+        $this->assertInstanceOf(ModelCollection::class, $machineTranslationEngines);
         $this->assertCount(1, $machineTranslationEngines);
         $this->assertInstanceOf(MachineTranslationEngine::class, $machineTranslationEngines[0]);
     }

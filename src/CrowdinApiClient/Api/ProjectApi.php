@@ -4,6 +4,7 @@ namespace CrowdinApiClient\Api;
 
 use CrowdinApiClient\Model\Project;
 use CrowdinApiClient\Model\ProjectSetting;
+use CrowdinApiClient\ModelCollection;
 
 /**
  * Class ProjectApi
@@ -14,9 +15,9 @@ class ProjectApi extends AbstractApi
 
     /**
      * @param array $params
-     * @return mixed
+     * @return ModelCollection
      */
-    public function list(array $params = [])
+    public function list(array $params = []): ModelCollection
     {
         return $this->_list('projects', Project::class, $params);
     }

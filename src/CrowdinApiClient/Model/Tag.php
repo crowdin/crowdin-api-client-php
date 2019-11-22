@@ -52,27 +52,11 @@ class Tag extends BaseModel
     }
 
     /**
-     * @param int $id
-     */
-    public function setId(int $id): void
-    {
-        $this->id = $id;
-    }
-
-    /**
      * @return int
      */
     public function getScreenshotId(): int
     {
         return $this->screenshotId;
-    }
-
-    /**
-     * @param int $screenshotId
-     */
-    public function setScreenshotId(int $screenshotId): void
-    {
-        $this->screenshotId = $screenshotId;
     }
 
     /**
@@ -113,13 +97,5 @@ class Tag extends BaseModel
     public function getCreatedAt(): string
     {
         return $this->createdAt;
-    }
-
-    /**
-     * @param string $createdAt
-     */
-    public function setCreatedAt(string $createdAt): void
-    {
-        $this->createdAt = $createdAt;
     }
 }

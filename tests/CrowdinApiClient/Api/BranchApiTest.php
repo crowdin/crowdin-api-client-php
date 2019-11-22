@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Tests\Api;
 
 use CrowdinApiClient\Model\Branch;
+use CrowdinApiClient\ModelCollection;
 
 class BranchApiTest extends AbstractTestApi
 {
@@ -37,7 +38,7 @@ class BranchApiTest extends AbstractTestApi
 
         $data = $this->crowdin->branch->list(2);
 
-        $this->assertIsArray($data);
+        $this->assertInstanceOf(ModelCollection::class, $data);
         $this->assertCount(1, $data);
         /**
          * @var Branch $branchModel

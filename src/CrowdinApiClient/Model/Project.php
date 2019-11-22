@@ -152,27 +152,11 @@ class Project extends BaseModel
     }
 
     /**
-     * @param int $id
-     */
-    public function setId(int $id): void
-    {
-        $this->id = $id;
-    }
-
-    /**
      * @return int
      */
     public function getGroupId(): int
     {
         return $this->groupId;
-    }
-
-    /**
-     * @param int $groupId
-     */
-    public function setGroupId(int $groupId): void
-    {
-        $this->groupId = $groupId;
     }
 
     /**
@@ -184,14 +168,6 @@ class Project extends BaseModel
     }
 
     /**
-     * @param int $userId
-     */
-    public function setUserId(int $userId): void
-    {
-        $this->userId = $userId;
-    }
-
-    /**
      * @return string
      */
     public function getSourceLanguageId(): string
@@ -200,27 +176,11 @@ class Project extends BaseModel
     }
 
     /**
-     * @param string $sourceLanguageId
-     */
-    public function setSourceLanguageId(string $sourceLanguageId): void
-    {
-        $this->sourceLanguageId = $sourceLanguageId;
-    }
-
-    /**
      * @return array
      */
     public function getTargetLanguageIds(): array
     {
         return $this->targetLanguageIds;
-    }
-
-    /**
-     * @param array $targetLanguageIds
-     */
-    public function setTargetLanguageIds(array $targetLanguageIds): void
-    {
-        $this->targetLanguageIds = $targetLanguageIds;
     }
 
     /**
@@ -248,27 +208,11 @@ class Project extends BaseModel
     }
 
     /**
-     * @param string $languageAccessPolicy
-     */
-    public function setLanguageAccessPolicy(string $languageAccessPolicy): void
-    {
-        $this->languageAccessPolicy = $languageAccessPolicy;
-    }
-
-    /**
      * @return string
      */
     public function getType(): string
     {
         return $this->type;
-    }
-
-    /**
-     * @param string $type
-     */
-    public function setType(string $type): void
-    {
-        $this->type = $type;
     }
 
     /**
@@ -312,14 +256,6 @@ class Project extends BaseModel
     }
 
     /**
-     * @param string $identifier
-     */
-    public function setIdentifier(string $identifier): void
-    {
-        $this->identifier = $identifier;
-    }
-
-    /**
      * @return string
      */
     public function getDescription(): string
@@ -344,27 +280,11 @@ class Project extends BaseModel
     }
 
     /**
-     * @param string $visibility
-     */
-    public function setVisibility(string $visibility): void
-    {
-        $this->visibility = $visibility;
-    }
-
-    /**
      * @return string
      */
     public function getLogo(): string
     {
         return $this->logo;
-    }
-
-    /**
-     * @param string $logo
-     */
-    public function setLogo(string $logo): void
-    {
-        $this->logo = $logo;
     }
 
     /**
@@ -376,27 +296,11 @@ class Project extends BaseModel
     }
 
     /**
-     * @param string $background
-     */
-    public function setBackground(string $background): void
-    {
-        $this->background = $background;
-    }
-
-    /**
      * @return bool
      */
     public function isExternal(): bool
     {
         return $this->isExternal;
-    }
-
-    /**
-     * @param bool $isExternal
-     */
-    public function setIsExternal(bool $isExternal): void
-    {
-        $this->isExternal = $isExternal;
     }
 
     /**
@@ -408,27 +312,11 @@ class Project extends BaseModel
     }
 
     /**
-     * @param string $externalType
-     */
-    public function setExternalType(string $externalType): void
-    {
-        $this->externalType = $externalType;
-    }
-
-    /**
      * @return int
      */
     public function getAdvancedWorkflowId(): int
     {
         return $this->advancedWorkflowId;
-    }
-
-    /**
-     * @param int $advancedWorkflowId
-     */
-    public function setAdvancedWorkflowId(int $advancedWorkflowId): void
-    {
-        $this->advancedWorkflowId = $advancedWorkflowId;
     }
 
     /**
@@ -440,14 +328,6 @@ class Project extends BaseModel
     }
 
     /**
-     * @param bool $hasCrowdsourcing
-     */
-    public function setHasCrowdsourcing(bool $hasCrowdsourcing): void
-    {
-        $this->hasCrowdsourcing = $hasCrowdsourcing;
-    }
-
-    /**
      * @return string
      */
     public function getCreatedAt(): string
@@ -456,26 +336,10 @@ class Project extends BaseModel
     }
 
     /**
-     * @param string $createdAt
-     */
-    public function setCreatedAt(string $createdAt): void
-    {
-        $this->createdAt = $createdAt;
-    }
-
-    /**
      * @return string
      */
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;
-    }
-
-    /**
-     * @param string $updatedAt
-     */
-    public function setUpdatedAt(string $updatedAt): void
-    {
-        $this->updatedAt = $updatedAt;
     }
 }

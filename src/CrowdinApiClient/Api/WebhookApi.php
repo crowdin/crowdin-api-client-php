@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Api;
 
 use CrowdinApiClient\Model\Webhook;
+use CrowdinApiClient\ModelCollection;
 
 /**
  * Class WebhookApi
@@ -13,9 +14,9 @@ class WebhookApi extends AbstractApi
     /**
      * @param int $projectId
      * @param array $params
-     * @return mixed
+     * @return ModelCollection
      */
-    public function list(int $projectId, array $params = [])
+    public function list(int $projectId, array $params = []): ModelCollection
     {
         $patch = sprintf('projects/%d/webhooks', $projectId);
         return $this->_list($patch, Webhook::class, $params);

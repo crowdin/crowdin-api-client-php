@@ -51,27 +51,25 @@ class LanguageTest extends TestCase
     public function testSetData()
     {
         $this->language = new Language();
-        $this->language->setId($this->data['id']);
         $this->language->setName($this->data['name']);
-        $this->language->setEditorCode($this->data['editorCode']);
         $this->language->setTwoLettersCode($this->data['twoLettersCode']);
         $this->language->setThreeLettersCode($this->data['threeLettersCode']);
-        $this->language->setLocale($this->data['locale']);
-        $this->language->setAndroidCode($this->data['androidCode']);
-        $this->language->setOsxCode($this->data['osxCode']);
-        $this->language->setOsxLocale($this->data['osxLocale']);
         $this->language->setPluralCategoryNames($this->data['pluralCategoryNames']);
-        $this->language->setPluralRules($this->data['pluralRules']);
-        $this->language->setPluralExamples($this->data['pluralExamples']);
         $this->language->setTextDirection($this->data['textDirection']);
         $this->language->setDialectOf($this->data['dialectOf']);
-        $this->checkData();
+
+        $this->assertEquals($this->data['name'], $this->language->getName());
+        $this->assertEquals($this->data['twoLettersCode'], $this->language->getTwoLettersCode());
+        $this->assertEquals($this->data['threeLettersCode'], $this->language->getThreeLettersCode());
+        $this->assertEquals($this->data['textDirection'], $this->language->getTextDirection());
+        $this->assertEquals($this->data['dialectOf'], $this->language->getDialectOf());
     }
 
     public function checkData()
     {
         $this->assertEquals($this->data['id'], $this->language->getId());
         $this->assertEquals($this->data['name'], $this->language->getName());
+        $this->assertEquals($this->data['textDirection'], $this->language->getTextDirection());
         $this->assertEquals($this->data['editorCode'], $this->language->getEditorCode());
         $this->assertEquals($this->data['twoLettersCode'], $this->language->getTwoLettersCode());
         $this->assertEquals($this->data['threeLettersCode'], $this->language->getThreeLettersCode());

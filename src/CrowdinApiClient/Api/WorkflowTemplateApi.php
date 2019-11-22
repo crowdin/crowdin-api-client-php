@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Api;
 
 use CrowdinApiClient\Model\WorkflowTemplate;
+use CrowdinApiClient\ModelCollection;
 
 /**
  * Class WorkflowTemplateApi
@@ -12,9 +13,9 @@ class WorkflowTemplateApi extends AbstractApi
 {
     /**
      * @param array $params
-     * @return mixed
+     * @return ModelCollection
      */
-    public function list(array $params = [])
+    public function list(array $params = []): ModelCollection
     {
         return $this->_list('workflow-templates', WorkflowTemplate::class, $params);
     }

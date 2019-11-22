@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Api;
 
 use CrowdinApiClient\Model\Vote;
+use CrowdinApiClient\ModelCollection;
 
 /**
  * Class VoteApi
@@ -13,9 +14,9 @@ class VoteApi extends AbstractApi
     /**
      * @param int $projectId
      * @param array $params
-     * @return mixed
+     * @return ModelCollection
      */
-    public function list(int $projectId, array $params = [])
+    public function list(int $projectId, array $params = []): ModelCollection
     {
         $path = sprintf('projects/%d/votes', $projectId);
         return $this->_list($path, Vote::class, $params);

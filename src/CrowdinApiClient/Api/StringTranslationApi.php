@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Api;
 
 use CrowdinApiClient\Model\StringTranslation;
+use CrowdinApiClient\ModelCollection;
 
 /**
  * Class StringTranslationApi
@@ -13,9 +14,9 @@ class StringTranslationApi extends AbstractApi
     /**
      * @param int $projectId
      * @param array $params
-     * @return mixed
+     * @return ModelCollection
      */
-    public function list(int $projectId, array $params = [])
+    public function list(int $projectId, array $params = []): ModelCollection
     {
         $path = sprintf('projects/%d/translations', $projectId);
         return $this->_list($path, StringTranslation::class, $params);

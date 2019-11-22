@@ -142,27 +142,11 @@ class Language extends BaseModel
     }
 
     /**
-     * @param string $id
-     */
-    public function setId(string $id): void
-    {
-        $this->id = $id;
-    }
-
-    /**
      * @return int
      */
     public function getOrganizationId(): int
     {
         return $this->organizationId;
-    }
-
-    /**
-     * @param int $organizationId
-     */
-    public function setOrganizationId(int $organizationId): void
-    {
-        $this->organizationId = $organizationId;
     }
 
     /**
@@ -222,27 +206,11 @@ class Language extends BaseModel
     }
 
     /**
-     * @param string $internalCode
-     */
-    public function setInternalCode(string $internalCode): void
-    {
-        $this->internalCode = $internalCode;
-    }
-
-    /**
      * @return string
      */
     public function getEditorCode(): string
     {
         return $this->editorCode;
-    }
-
-    /**
-     * @param string $editorCode
-     */
-    public function setEditorCode(string $editorCode): void
-    {
-        $this->editorCode = $editorCode;
     }
 
     /**
@@ -254,27 +222,11 @@ class Language extends BaseModel
     }
 
     /**
-     * @param string $crowdinCode
-     */
-    public function setCrowdinCode(string $crowdinCode): void
-    {
-        $this->crowdinCode = $crowdinCode;
-    }
-
-    /**
      * @return string
      */
     public function getCode(): string
     {
         return $this->code;
-    }
-
-    /**
-     * @param string $code
-     */
-    public function setCode(string $code): void
-    {
-        $this->code = $code;
     }
 
     /**
@@ -302,14 +254,6 @@ class Language extends BaseModel
     }
 
     /**
-     * @param string $pluralRules
-     */
-    public function setPluralRules(string $pluralRules): void
-    {
-        $this->pluralRules = $pluralRules;
-    }
-
-    /**
      * @return array
      */
     public function getPluralExamples(): array
@@ -318,27 +262,11 @@ class Language extends BaseModel
     }
 
     /**
-     * @param array $pluralExamples
-     */
-    public function setPluralExamples(array $pluralExamples): void
-    {
-        $this->pluralExamples = $pluralExamples;
-    }
-
-    /**
      * @return string
      */
     public function getIso6391(): string
     {
         return $this->iso6391;
-    }
-
-    /**
-     * @param string $iso6391
-     */
-    public function setIso6391(string $iso6391): void
-    {
-        $this->iso6391 = $iso6391;
     }
 
     /**
@@ -366,14 +294,6 @@ class Language extends BaseModel
     }
 
     /**
-     * @param string $iso6393
-     */
-    public function setIso6393(string $iso6393): void
-    {
-        $this->iso6393 = $iso6393;
-    }
-
-    /**
      * @return string
      */
     public function getThreeLettersCode(): string
@@ -398,27 +318,11 @@ class Language extends BaseModel
     }
 
     /**
-     * @param string $locale
-     */
-    public function setLocale(string $locale): void
-    {
-        $this->locale = $locale;
-    }
-
-    /**
      * @return string
      */
     public function getAndroidCode(): string
     {
         return $this->androidCode;
-    }
-
-    /**
-     * @param string $androidCode
-     */
-    public function setAndroidCode(string $androidCode): void
-    {
-        $this->androidCode = $androidCode;
     }
 
     /**
@@ -430,26 +334,10 @@ class Language extends BaseModel
     }
 
     /**
-     * @param string $osxCode
-     */
-    public function setOsxCode(string $osxCode): void
-    {
-        $this->osxCode = $osxCode;
-    }
-
-    /**
      * @return string
      */
     public function getOsxLocale(): string
     {
         return $this->osxLocale;
-    }
-
-    /**
-     * @param string $osxLocale
-     */
-    public function setOsxLocale(string $osxLocale): void
-    {
-        $this->osxLocale = $osxLocale;
     }
 }

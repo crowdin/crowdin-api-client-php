@@ -5,6 +5,7 @@ namespace CrowdinApiClient\Tests\Api;
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\PreTranslation;
 use CrowdinApiClient\Model\TranslationProjectBuild;
+use CrowdinApiClient\ModelCollection;
 
 /**
  * Class TranslationApiTest
@@ -144,7 +145,7 @@ class TranslationApiTest extends AbstractTestApi
         }');
 
         $translationProjectBuilds = $this->crowdin->translation->getProjectBuilds(2);
-        $this->assertIsArray($translationProjectBuilds);
+        $this->assertInstanceOf(ModelCollection::class, $translationProjectBuilds);
         $this->assertCount(1, $translationProjectBuilds);
         $this->assertInstanceOf(TranslationProjectBuild::class, $translationProjectBuilds[0]);
         $this->assertEquals(2, $translationProjectBuilds[0]->getId());

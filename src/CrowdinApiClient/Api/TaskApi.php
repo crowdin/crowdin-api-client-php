@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Api;
 
 use CrowdinApiClient\Model\Task;
+use CrowdinApiClient\ModelCollection;
 
 /**
  * Class TaskApi
@@ -13,9 +14,9 @@ class TaskApi extends AbstractApi
     /**
      * @param int $projectId
      * @param array $params
-     * @return mixed
+     * @return ModelCollection
      */
-    public function list(int $projectId, array $params = [])
+    public function list(int $projectId, array $params = []): ModelCollection
     {
         $path = sprintf('projects/%s/tasks', $projectId);
         return $this->_list($path, Task::class, $params);

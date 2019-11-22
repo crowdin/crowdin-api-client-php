@@ -5,6 +5,7 @@ namespace CrowdinApiClient\Api;
 use CrowdinApiClient\Http\ResponseDecorator\ResponseModelDecorator;
 use CrowdinApiClient\Model\Screenshot;
 use CrowdinApiClient\Model\Tag;
+use CrowdinApiClient\ModelCollection;
 
 /**
  * Class ScreenshotApi
@@ -15,9 +16,9 @@ class ScreenshotApi extends AbstractApi
     /**
      * @param int $projectId
      * @param array $params
-     * @return mixed
+     * @return ModelCollection
      */
-    public function list(int $projectId, array $params = [])
+    public function list(int $projectId, array $params = []): ModelCollection
     {
         $path = sprintf('projects/%d/screenshots', $projectId);
 
@@ -88,9 +89,9 @@ class ScreenshotApi extends AbstractApi
     /**
      * @param int $projectId
      * @param int $screenshotId
-     * @return mixed
+     * @return ModelCollection
      */
-    public function tags(int $projectId, int $screenshotId)
+    public function tags(int $projectId, int $screenshotId): ModelCollection
     {
         $path = sprintf('projects/%d/screenshots/%d/tags', $projectId, $screenshotId);
         return $this->_list($path, Tag::class);

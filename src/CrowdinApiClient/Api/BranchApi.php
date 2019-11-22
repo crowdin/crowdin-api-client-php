@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Api;
 
 use CrowdinApiClient\Model\Branch;
+use CrowdinApiClient\ModelCollection;
 
 /**
  * Class BranchApi
@@ -13,9 +14,9 @@ class BranchApi extends AbstractApi
     /**
      * @param int $projectId
      * @param array $params
-     * @return mixed
+     * @return ModelCollection
      */
-    public function list(int $projectId, array $params = [])
+    public function list(int $projectId, array $params = []): ModelCollection
     {
         $path = sprintf('projects/%d/branches', $projectId);
         return $this->_list($path, Branch::class, $params);

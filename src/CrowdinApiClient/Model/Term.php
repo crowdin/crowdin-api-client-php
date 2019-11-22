@@ -86,27 +86,11 @@ class Term extends BaseModel
     }
 
     /**
-     * @param int $id
-     */
-    public function setId(int $id): void
-    {
-        $this->id = $id;
-    }
-
-    /**
      * @return int
      */
     public function getUserId(): int
     {
         return $this->userId;
-    }
-
-    /**
-     * @param int $userId
-     */
-    public function setUserId(int $userId): void
-    {
-        $this->userId = $userId;
     }
 
     /**
@@ -118,27 +102,11 @@ class Term extends BaseModel
     }
 
     /**
-     * @param int $glossaryId
-     */
-    public function setGlossaryId(int $glossaryId): void
-    {
-        $this->glossaryId = $glossaryId;
-    }
-
-    /**
      * @return string
      */
     public function getLanguageId(): string
     {
         return $this->languageId;
-    }
-
-    /**
-     * @param string $languageId
-     */
-    public function setLanguageId(string $languageId): void
-    {
-        $this->languageId = $languageId;
     }
 
     /**
@@ -198,14 +166,6 @@ class Term extends BaseModel
     }
 
     /**
-     * @param string $lemma
-     */
-    public function setLemma(string $lemma): void
-    {
-        $this->lemma = $lemma;
-    }
-
-    /**
      * @return string
      */
     public function getCreatedAt(): string
@@ -214,26 +174,10 @@ class Term extends BaseModel
     }
 
     /**
-     * @param string $createdAt
-     */
-    public function setCreatedAt(string $createdAt): void
-    {
-        $this->createdAt = $createdAt;
-    }
-
-    /**
      * @return string
      */
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;
-    }
-
-    /**
-     * @param string $updatedAt
-     */
-    public function setUpdatedAt(string $updatedAt): void
-    {
-        $this->updatedAt = $updatedAt;
     }
 }
