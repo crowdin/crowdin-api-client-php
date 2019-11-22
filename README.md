@@ -35,7 +35,10 @@ For more about Crowdin API see the [documentation](https://support.crowdin.com/e
 
 ## Installation
 
-1. Install via Composer [TBA]
+1. Install via Composer
+
+    `composer require crowdin/crowdin-api-client`
+
 2. Download this library to your project's 3rd party libraries path
 
     ```
