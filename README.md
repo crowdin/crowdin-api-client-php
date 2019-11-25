@@ -6,7 +6,7 @@ The Crowdin PHP client is a lightweight interface to the Crowdin API v2. It prov
 
 Our API is a full-featured RESTful API that helps you to integrate localization into your development process. The endpoints that we use allow you to easily make calls to retrieve information and to execute actions needed.
 
-For more about Crowdin API see the [documentation](https://support.crowdin.com/enterprise/api/).
+For more about Crowdin API v2 please see the [documentation](https://support.crowdin.com/api/v2/). 
 
 ## Status
 
@@ -61,36 +61,36 @@ use CrowdinApiClient\Crowdin;
 
 $crowdin = new Crowdin([
     'access_token' => '<access_token>',
-    'base_uri' => 'https://<organization_domain>.crowdin.com/api/v2',
+    'base_uri' => '<base_uri>',
 ]);
 ```
 
 `<access_token>` - your Personal Access Token.
 
-`<organization_domain>` - your Organization Domain.
+`<base_uri>` - `https://crowdin.com/api/v2/`.
 
-For more about Authorization see the [documentation](https://support.crowdin.com/enterprise/api/#section/Introduction/Authorization).
+For more about Authorization see the [documentation](https://support.crowdin.com/api/v2/#section/Introduction/Authorization).
 
 #### Running methods
 
 * Create
     ```php
-    $group = $crowdin->group->create([
-        'name' => 'test api2',
-        'description' => 'test description'
-    ]));
+    $directory = $crowdin->directory->create(
+        <project_id>, 
+        ['name'=> 'My Directory']
+    );
     ```
 
 * Edit
     ```php
-    $group->setName('Test edit');
+    $directory->setTitle('My Title');
 
-    $crowdin->group->update($group);
+    $crowdin->directory->update($directory);
     ```
 
 * Delete
     ```php
-    $crowdin->group->delete($group->getId());
+    $crowdin->directory->delete($directory->getProjectId(), $directory->getId());
     ```
 
 ### Contribution
