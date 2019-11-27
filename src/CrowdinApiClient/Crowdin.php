@@ -72,54 +72,6 @@ class Crowdin
     protected $accessToken;
 
     /**
-     * @return CrowdinHttpClientInterface
-     */
-    public function getClient(): CrowdinHttpClientInterface
-    {
-        return $this->client;
-    }
-
-    /**
-     * @param CrowdinHttpClientInterface $client
-     */
-    public function setClient(CrowdinHttpClientInterface $client): void
-    {
-        $this->client = $client;
-    }
-
-    /**
-     * @return string
-     */
-    public function getAccessToken(): string
-    {
-        return $this->accessToken;
-    }
-
-    /**
-     * @param string $accessToken
-     */
-    public function setAccessToken(string $accessToken): void
-    {
-        $this->accessToken = $accessToken;
-    }
-
-    /**
-     * @return ResponseErrorHandlerInterface
-     */
-    public function getResponseErrorHandler(): ResponseErrorHandlerInterface
-    {
-        return $this->responseErrorHandler;
-    }
-
-    /**
-     * @param ResponseErrorHandlerInterface $responseErrorHandler
-     */
-    public function setResponseErrorHandler(ResponseErrorHandlerInterface $responseErrorHandler): void
-    {
-        $this->responseErrorHandler = $responseErrorHandler;
-    }
-
-    /**
      * @var array
      */
     protected $apis = [];
@@ -127,12 +79,17 @@ class Crowdin
     /**
      * @var string
      */
-    protected $baseUri = 'https://crowdin.com/api/v2';
+    protected $baseUri = 'https://api.crowdin.com/api/v2';
 
     /**
      * @var ResponseErrorHandlerInterface
      */
     protected $responseErrorHandler;
+
+    /**
+     * @var string
+     */
+    protected $organization;
 
     /**
      * @var array
@@ -176,14 +133,24 @@ class Crowdin
             'http_client_handler' => null,
             'response_error_handler' => null,
             'access_token' => null,
-            'base_uri' => $this->baseUri
+            'organization' => null
         ], $config);
 
         $this->accessToken = $config['access_token'];
-        $this->baseUri = rtrim($config['base_uri'], '/');
+
+        $this->setOrganization($config['organization']);
 
         $this->client = CrowdinHttpClientFactory::make($config['http_client_handler']);
         $this->responseErrorHandler = ResponseErrorHandlerFactory::make($config['response_error_handler']);
+    }
+
+    /**
+     * @return $this
+     */
+    protected function updateBaseUri()
+    {
+        $this->baseUri = sprintf('https://%s.crowdin.com/api/v2', $this->organization ?? 'api');
+        return $this;
     }
 
     /**
@@ -284,5 +251,70 @@ class Crowdin
     public function setBaseUri(string $baseUri): void
     {
         $this->baseUri = rtrim($baseUri, '/');
+    }
+
+    /**
+     * @return CrowdinHttpClientInterface
+     */
+    public function getClient(): CrowdinHttpClientInterface
+    {
+        return $this->client;
+    }
+
+    /**
+     * @param CrowdinHttpClientInterface $client
+     */
+    public function setClient(CrowdinHttpClientInterface $client): void
+    {
+        $this->client = $client;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAccessToken(): string
+    {
+        return $this->accessToken;
+    }
+
+    /**
+     * @param string $accessToken
+     */
+    public function setAccessToken(string $accessToken): void
+    {
+        $this->accessToken = $accessToken;
+    }
+
+    /**
+     * @return ResponseErrorHandlerInterface
+     */
+    public function getResponseErrorHandler(): ResponseErrorHandlerInterface
+    {
+        return $this->responseErrorHandler;
+    }
+
+    /**
+     * @param ResponseErrorHandlerInterface $responseErrorHandler
+     */
+    public function setResponseErrorHandler(ResponseErrorHandlerInterface $responseErrorHandler): void
+    {
+        $this->responseErrorHandler = $responseErrorHandler;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getOrganization(): ?string
+    {
+        return $this->organization;
+    }
+
+    /**
+     * @param string|null $organization
+     */
+    public function setOrganization(?string $organization): void
+    {
+        $this->organization = $organization;
+        $this->updateBaseUri();
     }
 }

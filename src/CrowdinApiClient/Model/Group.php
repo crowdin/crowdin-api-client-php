@@ -63,7 +63,6 @@ class Group extends BaseModel
         parent::__construct($data);
 
         $this->id = (integer)$this->getDataProperty('id');
-        $this->visibility = (integer)$this->getDataProperty('visibility');
         $this->name = (string)$this->getDataProperty('name');
         $this->description = (string)$this->getDataProperty('description');
         $this->parentId = (integer)$this->getDataProperty('parentId');
