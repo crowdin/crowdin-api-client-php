@@ -61,13 +61,13 @@ use CrowdinApiClient\Crowdin;
 
 $crowdin = new Crowdin([
     'access_token' => '<access_token>',
-    'base_uri' => '<base_uri>',
+    'organization' => '<organization_domain>', // optional
 ]);
 ```
 
-`<access_token>` - your Personal Access Token.
+`<access_token>` - Personal Access Token. You can generate Personal Access Token in your Crowdin Account Settings.
 
-`<base_uri>` - `https://crowdin.com/api/v2/`.
+`<organization_domain>` - Organization domain name (for Crowdin Enterprise users only).
 
 For more about Authorization see the [documentation](https://support.crowdin.com/api/v2/#section/Introduction/Authorization).
 

@@ -26,7 +26,7 @@ abstract class AbstractTestApi extends TestCase
         $this->crowdin = new Crowdin([
             'http_client_handler' => $this->mockClient,
             'access_token' => 'access_token',
-            'base_uri' => 'https://organization_domain.crowdin.com/api/v2',
+            'organization' => 'organization_domain',
         ]);
 
         $this->mockClient = $this->mockClient->expects($this->any())

@@ -21,7 +21,7 @@ class CrowdinTest extends TestCase
     {
         $this->app = new Crowdin([
             'access_token' => 'token',
-            'base_uri' => 'https://organization_domain.crowdin.com/api/v2',
+            'organization' => 'organization_domain',
         ]);
     }
 
@@ -143,5 +143,18 @@ class CrowdinTest extends TestCase
 
         $this->app->setResponseErrorHandler(new ResponseErrorHandler());
         $this->assertInstanceOf(ResponseErrorHandler::class, $this->app->getResponseErrorHandler());
+    }
+
+    public function testBaseUrl()
+    {
+        $crowdin = new Crowdin([
+            'access_token' => 'token',
+        ]);
+
+        $this->assertEquals('https://api.crowdin.com/api/v2', $crowdin->getBaseUri());
+
+        $crowdin->setOrganization('organization_name');
+
+        $this->assertEquals('https://organization_name.crowdin.com/api/v2', $crowdin->getBaseUri());
     }
 }
