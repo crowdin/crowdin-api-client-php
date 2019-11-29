@@ -2,8 +2,8 @@
 
 namespace CrowdinApiClient\Tests\Api\Enterprise;
 
-use CrowdinApiClient\Model\Enterprise\Screenshot;
-use CrowdinApiClient\Model\Enterprise\Tag;
+use CrowdinApiClient\Model\Screenshot;
+use CrowdinApiClient\Model\Tag;
 use CrowdinApiClient\ModelCollection;
 
 class ScreenshotApiTest extends AbstractTestApi

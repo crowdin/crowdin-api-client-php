@@ -2,7 +2,7 @@
 
 namespace CrowdinApiClient\Tests\Api\Enterprise;
 
-use CrowdinApiClient\Model\Enterprise\Storage;
+use CrowdinApiClient\Model\Storage;
 use CrowdinApiClient\ModelCollection;
 
 class StorageApiTest extends AbstractTestApi

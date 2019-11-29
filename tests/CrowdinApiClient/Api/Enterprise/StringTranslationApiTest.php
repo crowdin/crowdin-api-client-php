@@ -2,7 +2,7 @@
 
 namespace CrowdinApiClient\Tests\Api\Enterprise;
 
-use CrowdinApiClient\Model\Enterprise\StringTranslation;
+use CrowdinApiClient\Model\StringTranslation;
 use CrowdinApiClient\ModelCollection;
 
 class StringTranslationApiTest extends AbstractTestApi

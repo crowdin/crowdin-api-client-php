@@ -2,7 +2,7 @@
 
 namespace CrowdinApiClient\Tests\Api\Enterprise;
 
-use CrowdinApiClient\Model\Enterprise\Vendor;
+use CrowdinApiClient\Model\Vendor;
 use CrowdinApiClient\ModelCollection;
 
 class VendorApiTest extends AbstractTestApi

@@ -2,7 +2,7 @@
 
 namespace CrowdinApiClient\Tests\Api\Enterprise;
 
-use CrowdinApiClient\Model\Enterprise\Vote;
+use CrowdinApiClient\Model\Vote;
 use CrowdinApiClient\ModelCollection;
 
 class VoteApiTest extends AbstractTestApi

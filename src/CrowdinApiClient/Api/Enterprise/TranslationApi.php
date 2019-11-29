@@ -4,9 +4,9 @@ namespace CrowdinApiClient\Api\Enterprise;
 
 use CrowdinApiClient\Api\AbstractApi;
 use CrowdinApiClient\Http\ResponseDecorator\ResponseArrayDecorator;
-use CrowdinApiClient\Model\Enterprise\DownloadFile;
-use CrowdinApiClient\Model\Enterprise\PreTranslation;
-use CrowdinApiClient\Model\Enterprise\TranslationProjectBuild;
+use CrowdinApiClient\Model\DownloadFile;
+use CrowdinApiClient\Model\PreTranslation;
+use CrowdinApiClient\Model\TranslationProjectBuild;
 use CrowdinApiClient\ModelCollection;
 
 class TranslationApi extends AbstractApi

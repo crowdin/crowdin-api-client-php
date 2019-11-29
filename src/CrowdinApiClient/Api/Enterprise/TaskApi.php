@@ -3,7 +3,7 @@
 namespace CrowdinApiClient\Api\Enterprise;
 
 use CrowdinApiClient\Api\AbstractApi;
-use CrowdinApiClient\Model\Enterprise\Task;
+use CrowdinApiClient\Model\Task;
 use CrowdinApiClient\ModelCollection;
 
 /**

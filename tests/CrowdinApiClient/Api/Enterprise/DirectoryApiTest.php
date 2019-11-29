@@ -2,7 +2,7 @@
 
 namespace CrowdinApiClient\Tests\Api\Enterprise;
 
-use CrowdinApiClient\Model\Enterprise\Directory;
+use CrowdinApiClient\Model\Directory;
 use CrowdinApiClient\ModelCollection;
 
 class DirectoryApiTest extends AbstractTestApi

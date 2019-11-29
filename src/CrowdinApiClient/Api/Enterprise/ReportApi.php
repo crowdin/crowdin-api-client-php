@@ -3,8 +3,8 @@
 namespace CrowdinApiClient\Api\Enterprise;
 
 use CrowdinApiClient\Api\AbstractApi;
-use CrowdinApiClient\Model\Enterprise\DownloadFile;
-use CrowdinApiClient\Model\Enterprise\Report;
+use CrowdinApiClient\Model\DownloadFile;
+use CrowdinApiClient\Model\Report;
 
 /**
  * Class ReportApi

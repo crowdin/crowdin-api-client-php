@@ -15,26 +15,26 @@ use UnexpectedValueException;
  * @package Crowdin
  *
  * @property \CrowdinApiClient\Api\StorageApi|\CrowdinApiClient\Api\StorageApi storage
- * @property \CrowdinApiClient\Api\Enterprise\LanguageApi|\CrowdinApiClient\Api\LanguageApi language
+ * @property \CrowdinApiClient\Api\LanguageApi language
  * @property \CrowdinApiClient\Api\Enterprise\GroupApi group
  * @property \CrowdinApiClient\Api\Enterprise\ProjectApi|\CrowdinApiClient\Api\ProjectApi project
- * @property \CrowdinApiClient\Api\Enterprise\BranchApi|\CrowdinApiClient\Api\BranchApi branch
+ * @property \CrowdinApiClient\Api\BranchApi branch
  * @property \CrowdinApiClient\Api\Enterprise\TaskApi|\CrowdinApiClient\Api\TaskApi task
- * @property \CrowdinApiClient\Api\Enterprise\ScreenshotApi|\CrowdinApiClient\Api\ScreenshotApi screenshot
- * @property \CrowdinApiClient\Api\Enterprise\DirectoryApi|\CrowdinApiClient\Api\DirectoryApi directory
- * @property \CrowdinApiClient\Api\Enterprise\GlossaryApi|\CrowdinApiClient\Api\GlossaryApi glossary
- * @property \CrowdinApiClient\Api\Enterprise\StringTranslationApi|\CrowdinApiClient\Api\StringTranslationApi stringTranslation
- * @property \CrowdinApiClient\Api\Enterprise\StringTranslationApprovalApi|\CrowdinApiClient\Api\StringTranslationApprovalApi stringTranslationApproval
- * @property \CrowdinApiClient\Api\Enterprise\VoteApi|\CrowdinApiClient\Api\VoteApi vote
+ * @property \CrowdinApiClient\Api\ScreenshotApi screenshot
+ * @property \CrowdinApiClient\Api\DirectoryApi directory
+ * @property \CrowdinApiClient\Api\GlossaryApi glossary
+ * @property \CrowdinApiClient\Api\StringTranslationApi stringTranslation
+ * @property \CrowdinApiClient\Api\StringTranslationApprovalApi stringTranslationApproval
+ * @property \CrowdinApiClient\Api\VoteApi vote
  * @property \CrowdinApiClient\Api\Enterprise\UserApi|\CrowdinApiClient\Api\UserApi user
- * @property \CrowdinApiClient\Api\Enterprise\VendorApi|\CrowdinApiClient\Api\VendorApi vendor
- * @property \CrowdinApiClient\Api\Enterprise\WorkflowTemplateApi|\CrowdinApiClient\Api\WorkflowTemplateApi workflowTemplate
- * @property \CrowdinApiClient\Api\Enterprise\FileApi|\CrowdinApiClient\Api\FileApi file
- * @property \CrowdinApiClient\Api\Enterprise\MachineTranslationEngineApi|\CrowdinApiClient\Api\MachineTranslationEngineApi machineTranslationEngine
+ * @property \CrowdinApiClient\Api\VendorApi vendor
+ * @property \CrowdinApiClient\Api\WorkflowTemplateApi workflowTemplate
+ * @property \CrowdinApiClient\Api\FileApi file
+ * @property \CrowdinApiClient\Api\MachineTranslationEngineApi machineTranslationEngine
  * @property \CrowdinApiClient\Api\Enterprise\ReportApi|\CrowdinApiClient\Api\ReportApi report
- * @property \CrowdinApiClient\Api\Enterprise\SourceStringApi|\CrowdinApiClient\Api\SourceStringApi sourceString
+ * @property \CrowdinApiClient\Api\SourceStringApi sourceString
  * @property \CrowdinApiClient\Api\Enterprise\TranslationMemoryApi|\CrowdinApiClient\Api\TranslationMemoryApi translationMemory
- * @property \CrowdinApiClient\Api\Enterprise\WebhookApi|\CrowdinApiClient\Api\WebhookApi webhook
+ * @property \CrowdinApiClient\Api\WebhookApi webhook
  * @property \CrowdinApiClient\Api\Enterprise\TranslationApi|\CrowdinApiClient\Api\TranslationApi translation
  */
 class Crowdin
@@ -241,10 +241,15 @@ class Crowdin
      */
     public function getApi(string $name): ApiInterface
     {
+        $class = '\CrowdinApiClient\\Api\\' . ucfirst($name) . 'Api';
+
         if ($this->isEnterprise) {
-            $class = '\CrowdinApiClient\\Api\\Enterprise\\' . ucfirst($name) . 'Api';
-        } else {
-            $class = '\CrowdinApiClient\\Api\\' . ucfirst($name) . 'Api';
+            $_class = '\CrowdinApiClient\\Api\\Enterprise\\' . ucfirst($name) . 'Api';
+
+            if(class_exists($_class))
+            {
+                $class = $_class;
+            }
         }
 
         if (!array_key_exists($class, $this->apis)) {

@@ -2,7 +2,7 @@
 
 namespace CrowdinApiClient\Tests\Api\Enterprise;
 
-use CrowdinApiClient\Model\Enterprise\Webhook;
+use CrowdinApiClient\Model\Webhook;
 use CrowdinApiClient\ModelCollection;
 
 class WebhookApiTest extends AbstractTestApi

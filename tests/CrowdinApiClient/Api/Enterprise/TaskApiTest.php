@@ -2,7 +2,7 @@
 
 namespace CrowdinApiClient\Tests\Api\Enterprise;
 
-use CrowdinApiClient\Model\Enterprise\Task;
+use CrowdinApiClient\Model\Task;
 use CrowdinApiClient\ModelCollection;
 
 class TaskApiTest extends AbstractTestApi

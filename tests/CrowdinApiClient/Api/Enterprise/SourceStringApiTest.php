@@ -2,7 +2,7 @@
 
 namespace CrowdinApiClient\Tests\Api\Enterprise;
 
-use CrowdinApiClient\Model\Enterprise\SourceString;
+use CrowdinApiClient\Model\SourceString;
 use CrowdinApiClient\ModelCollection;
 
 class SourceStringApiTest extends AbstractTestApi

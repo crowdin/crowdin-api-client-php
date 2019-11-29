@@ -2,7 +2,7 @@
 
 namespace CrowdinApiClient\Tests\Api\Enterprise;
 
-use CrowdinApiClient\Model\Enterprise\Branch;
+use CrowdinApiClient\Model\Branch;
 use CrowdinApiClient\ModelCollection;
 
 class BranchApiTest extends AbstractTestApi

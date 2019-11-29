@@ -3,10 +3,10 @@
 namespace CrowdinApiClient\Api\Enterprise;
 
 use CrowdinApiClient\Api\AbstractApi;
-use CrowdinApiClient\Model\Enterprise\DownloadFile;
-use CrowdinApiClient\Model\Enterprise\TranslationMemory;
-use CrowdinApiClient\Model\Enterprise\TranslationMemoryExport;
-use CrowdinApiClient\Model\Enterprise\TranslationMemoryImport;
+use CrowdinApiClient\Model\DownloadFile;
+use CrowdinApiClient\Model\TranslationMemory;
+use CrowdinApiClient\Model\TranslationMemoryExport;
+use CrowdinApiClient\Model\TranslationMemoryImport;
 use CrowdinApiClient\ModelCollection;
 
 /**

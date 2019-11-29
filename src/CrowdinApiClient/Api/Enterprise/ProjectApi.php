@@ -4,7 +4,7 @@ namespace CrowdinApiClient\Api\Enterprise;
 
 use CrowdinApiClient\Api\AbstractApi;
 use CrowdinApiClient\Model\Enterprise\Project;
-use CrowdinApiClient\Model\Enterprise\ProjectSetting;
+use CrowdinApiClient\Model\ProjectSetting;
 use CrowdinApiClient\ModelCollection;
 
 /**

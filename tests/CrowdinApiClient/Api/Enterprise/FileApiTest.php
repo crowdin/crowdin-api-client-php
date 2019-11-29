@@ -2,9 +2,9 @@
 
 namespace CrowdinApiClient\Tests\Api\Enterprise;
 
-use CrowdinApiClient\Model\Enterprise\DownloadFile;
-use CrowdinApiClient\Model\Enterprise\File;
-use CrowdinApiClient\Model\Enterprise\FileRevision;
+use CrowdinApiClient\Model\DownloadFile;
+use CrowdinApiClient\Model\File;
+use CrowdinApiClient\Model\FileRevision;
 use CrowdinApiClient\ModelCollection;
 
 /**

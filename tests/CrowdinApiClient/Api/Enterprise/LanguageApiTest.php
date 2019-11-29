@@ -2,7 +2,7 @@
 
 namespace CrowdinApiClient\Tests\Api\Enterprise;
 
-use CrowdinApiClient\Model\Enterprise\Language;
+use CrowdinApiClient\Model\Language;
 use CrowdinApiClient\ModelCollection;
 
 class LanguageApiTest extends AbstractTestApi

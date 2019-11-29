@@ -3,9 +3,9 @@
 namespace CrowdinApiClient\Api\Enterprise;
 
 use CrowdinApiClient\Api\AbstractApi;
-use CrowdinApiClient\Model\Enterprise\DownloadFile;
-use CrowdinApiClient\Model\Enterprise\Glossary;
-use CrowdinApiClient\Model\Enterprise\GlossaryExport;
+use CrowdinApiClient\Model\DownloadFile;
+use CrowdinApiClient\Model\Glossary;
+use CrowdinApiClient\Model\GlossaryExport;
 use CrowdinApiClient\ModelCollection;
 
 /**

@@ -3,7 +3,7 @@
 namespace CrowdinApiClient\Tests\Api\Enterprise;
 
 use CrowdinApiClient\Model\Enterprise\Project;
-use CrowdinApiClient\Model\Enterprise\ProjectSetting;
+use CrowdinApiClient\Model\ProjectSetting;
 use CrowdinApiClient\ModelCollection;
 
 class ProjectApiTest extends AbstractTestApi

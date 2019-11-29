@@ -2,8 +2,8 @@
 
 namespace CrowdinApiClient\Tests\Api\Enterprise;
 
-use CrowdinApiClient\Model\Enterprise\DownloadFile;
-use CrowdinApiClient\Model\Enterprise\Report;
+use CrowdinApiClient\Model\DownloadFile;
+use CrowdinApiClient\Model\Report;
 
 class ReportApiTest extends AbstractTestApi
 {
