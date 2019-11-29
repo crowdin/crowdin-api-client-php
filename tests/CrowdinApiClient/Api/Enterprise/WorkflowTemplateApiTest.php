@@ -2,7 +2,7 @@
 
 namespace CrowdinApiClient\Tests\Api\Enterprise;
 
-use CrowdinApiClient\Model\WorkflowTemplate;
+use CrowdinApiClient\Model\Enterprise\WorkflowTemplate;
 use CrowdinApiClient\ModelCollection;
 
 class WorkflowTemplateApiTest extends AbstractTestApi

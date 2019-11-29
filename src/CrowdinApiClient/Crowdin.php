@@ -22,15 +22,12 @@ use UnexpectedValueException;
  * @property \CrowdinApiClient\Api\Enterprise\TaskApi|\CrowdinApiClient\Api\TaskApi task
  * @property \CrowdinApiClient\Api\ScreenshotApi screenshot
  * @property \CrowdinApiClient\Api\DirectoryApi directory
- * @property \CrowdinApiClient\Api\GlossaryApi glossary
+ * @property \CrowdinApiClient\Api\Enterprise\GlossaryApi|\CrowdinApiClient\Api\GlossaryApi glossary
  * @property \CrowdinApiClient\Api\StringTranslationApi stringTranslation
- * @property \CrowdinApiClient\Api\StringTranslationApprovalApi stringTranslationApproval
- * @property \CrowdinApiClient\Api\VoteApi vote
  * @property \CrowdinApiClient\Api\Enterprise\UserApi|\CrowdinApiClient\Api\UserApi user
  * @property \CrowdinApiClient\Api\VendorApi vendor
  * @property \CrowdinApiClient\Api\WorkflowTemplateApi workflowTemplate
  * @property \CrowdinApiClient\Api\FileApi file
- * @property \CrowdinApiClient\Api\MachineTranslationEngineApi machineTranslationEngine
  * @property \CrowdinApiClient\Api\Enterprise\ReportApi|\CrowdinApiClient\Api\ReportApi report
  * @property \CrowdinApiClient\Api\SourceStringApi sourceString
  * @property \CrowdinApiClient\Api\Enterprise\TranslationMemoryApi|\CrowdinApiClient\Api\TranslationMemoryApi translationMemory
@@ -85,15 +82,10 @@ class Crowdin
         'branch',
         'glossary',
         'stringTranslation',
-        'stringTranslationApproval',
         'directory',
-        'vote',
-        'vendor',
         'user',
         'screenshot',
-        'workflowTemplate',
         'file',
-        'machineTranslationEngine',
         'report',
         'sourceString',
         'translationMemory',
@@ -112,7 +104,6 @@ class Crowdin
         'stringTranslation',
         'stringTranslationApproval',
         'directory',
-        'vote',
         'vendor',
         'user',
         'screenshot',
