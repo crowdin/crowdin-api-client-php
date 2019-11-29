@@ -246,8 +246,7 @@ class Crowdin
         if ($this->isEnterprise) {
             $_class = '\CrowdinApiClient\\Api\\Enterprise\\' . ucfirst($name) . 'Api';
 
-            if(class_exists($_class))
-            {
+            if (class_exists($_class)) {
                 $class = $_class;
             }
         }
