@@ -76,7 +76,6 @@ class CrowdinTest extends TestCase
         return [
             ['storage', \CrowdinApiClient\Api\StorageApi::class],
             ['language', \CrowdinApiClient\Api\LanguageApi::class],
-            ['group',  \CrowdinApiClient\Api\GroupApi::class],
             ['project', \CrowdinApiClient\Api\ProjectApi::class],
             ['branch', \CrowdinApiClient\Api\BranchApi::class],
             ['task', \CrowdinApiClient\Api\TaskApi::class],
@@ -96,6 +95,48 @@ class CrowdinTest extends TestCase
             ['translationMemory', \CrowdinApiClient\Api\TranslationMemoryApi::class],
             ['webhook', \CrowdinApiClient\Api\WebhookApi::class],
             ['translation', \CrowdinApiClient\Api\TranslationApi::class],
+        ];
+    }
+
+    /**
+     * @test
+     * @dataProvider getApiClassesEnterpriseProvider
+     * @param string $apiName
+     * @param string $class
+     */
+    public function testShouldGetApiEnterpriseInstance(string $apiName, string $class)
+    {
+        $crowdin = new Crowdin(['organization' => 'organization']);
+
+        $this->assertInstanceOf($class, $crowdin->{$apiName});
+    }
+    /**
+     * @return array
+     */
+    public function getApiClassesEnterpriseProvider(): array
+    {
+        return [
+            ['storage', \CrowdinApiClient\Api\Enterprise\StorageApi::class],
+            ['language', \CrowdinApiClient\Api\Enterprise\LanguageApi::class],
+            ['project', \CrowdinApiClient\Api\Enterprise\ProjectApi::class],
+            ['branch', \CrowdinApiClient\Api\Enterprise\BranchApi::class],
+            ['task', \CrowdinApiClient\Api\Enterprise\TaskApi::class],
+            ['screenshot', \CrowdinApiClient\Api\Enterprise\ScreenshotApi::class],
+            ['directory', \CrowdinApiClient\Api\Enterprise\DirectoryApi::class],
+            ['glossary', \CrowdinApiClient\Api\Enterprise\GlossaryApi::class],
+            ['stringTranslation', \CrowdinApiClient\Api\Enterprise\StringTranslationApi::class],
+            ['stringTranslationApproval', \CrowdinApiClient\Api\Enterprise\StringTranslationApprovalApi::class],
+            ['vote', \CrowdinApiClient\Api\Enterprise\VoteApi::class],
+            ['user', \CrowdinApiClient\Api\Enterprise\UserApi::class],
+            ['vendor', \CrowdinApiClient\Api\Enterprise\VendorApi::class],
+            ['workflowTemplate', \CrowdinApiClient\Api\Enterprise\WorkflowTemplateApi::class],
+            ['file', \CrowdinApiClient\Api\Enterprise\FileApi::class],
+            ['machineTranslationEngine', \CrowdinApiClient\Api\Enterprise\MachineTranslationEngineApi::class],
+            ['report', \CrowdinApiClient\Api\Enterprise\ReportApi::class],
+            ['sourceString', \CrowdinApiClient\Api\Enterprise\SourceStringApi::class],
+            ['translationMemory', \CrowdinApiClient\Api\Enterprise\TranslationMemoryApi::class],
+            ['webhook', \CrowdinApiClient\Api\Enterprise\WebhookApi::class],
+            ['translation', \CrowdinApiClient\Api\Enterprise\TranslationApi::class],
         ];
     }
 
@@ -156,5 +197,18 @@ class CrowdinTest extends TestCase
         $crowdin->setOrganization('organization_name');
 
         $this->assertEquals('https://organization_name.crowdin.com/api/v2', $crowdin->getBaseUri());
+    }
+
+    public function testiSEnterprise()
+    {
+        $crowdin = new Crowdin([
+            'access_token' => 'token',
+        ]);
+
+        $this->assertFalse($crowdin->isEnterprise());
+
+        $crowdin->setIsEnterprise(true);
+
+        $this->assertTrue($crowdin->isEnterprise());
     }
 }

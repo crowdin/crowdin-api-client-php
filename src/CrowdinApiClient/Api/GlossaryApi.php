@@ -15,6 +15,9 @@ class GlossaryApi extends AbstractApi
 {
     /**
      * @param array $params
+     * @internal integer $params[limit]
+     * @internal integer $params[offset]
+     * @internal integer $params[userId]
      * @return ModelCollection
      */
     public function list(array $params = []): ModelCollection
@@ -33,14 +36,12 @@ class GlossaryApi extends AbstractApi
 
     /**
      * @param string $name
-     * @param int $groupId
      * @return Glossary|null
      */
-    public function create(string $name, int $groupId = 0): ?Glossary
+    public function create(string $name): ?Glossary
     {
         $params = [
             'name' => $name,
-            'groupId' => $groupId
         ];
         return $this->_create('glossaries', Glossary::class, $params);
     }

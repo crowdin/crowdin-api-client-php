@@ -328,4 +328,20 @@ class Project extends BaseModel
     {
         return $this->updatedAt;
     }
+
+    /**
+     * @param array $targetLanguageIds
+     */
+    public function setTargetLanguageIds(array $targetLanguageIds): void
+    {
+        $this->targetLanguageIds = $targetLanguageIds;
+    }
+
+    /**
+     * @param string $languageAccessPolicy
+     */
+    public function setLanguageAccessPolicy(string $languageAccessPolicy): void
+    {
+        $this->languageAccessPolicy = $languageAccessPolicy;
+    }
 }

@@ -54,7 +54,6 @@ class GlossaryApiTest extends AbstractTestApi
     {
         $params = [
             'name' => 'Be My Eyes iOS\'s Glossary',
-            'groupId' => 2
         ];
 
         $this->mockRequest([
@@ -79,7 +78,7 @@ class GlossaryApiTest extends AbstractTestApi
                 }'
         ]);
 
-        $glossary = $this->crowdin->glossary->create('Be My Eyes iOS\'s Glossary', 2);
+        $glossary = $this->crowdin->glossary->create('Be My Eyes iOS\'s Glossary');
         $this->assertInstanceOf(Glossary::class, $glossary);
         $this->assertEquals(2, $glossary->getId());
     }

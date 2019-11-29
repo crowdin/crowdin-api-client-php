@@ -31,25 +31,46 @@ class ReportApiTest extends AbstractTestApi
                 }'
         ]);
 
-        $report = $this->crowdin->report->generate(124, ['name' => 'costs-estimation', ['schema' => [
-                "unit" => "words",
-                "currency" => "USD",
-                "languageId" => "ach",
-                "format" => "xlsx",
-                "stepTypes" => [
+        $data = [
+            [
+                'name' => 'costs-estimation',
+                'schema' =>
                     [
-                        "type" => "Translate",
-                        "mode" => "simple",
-                        "regularRates" => [
+                        'unit' => 'words',
+                        'currency' => 'USD',
+                        'mode' => 'simple',
+                        'languageId' => 'ach',
+                        'format' => 'xlsx',
+                        'regularRates' =>
                             [
-                                "mode" => "tm_match",
-                                "value" => 0.1
-                            ]
-                        ]
-                    ]
-                 ]
-            ]]
-        ]);
+                                0 =>
+                                    [
+                                        'mode' => 'tm_match',
+                                        'value' => 0.1,
+                                    ],
+                            ],
+                        'individualRates' =>
+                            [
+                                0 =>
+                                    [
+                                        'languageIds' =>
+                                            [
+                                                0 => 'uk',
+                                            ],
+                                        'rates' =>
+                                            [
+                                                0 =>
+                                                    [
+                                                        'mode' => 'tm_match',
+                                                        'value' => 0.1,
+                                                    ],
+                                            ],
+                                    ],
+                            ],
+                    ],
+            ]
+        ];
+        $report = $this->crowdin->report->generate(124, $data);
 
         $this->assertInstanceOf(Report::class, $report);
         $this->assertEquals('50fb3506-4127-4ba8-8296-f97dc7e3e0c3', $report->getIdentifier());

@@ -36,13 +36,13 @@ class TranslationMemoryApiTest extends AbstractTestApi
               "pagination": [
                 {
                   "offset": 0,
-                  "limit": 0
+                  "limit": 25
                 }
               ]
             }'
         ]);
 
-        $translationMemories = $this->crowdin->translationMemory->list(2);
+        $translationMemories = $this->crowdin->translationMemory->list();
         $this->assertInstanceOf(ModelCollection::class, $translationMemories);
         $this->assertCount(1, $translationMemories);
         $this->assertInstanceOf(TranslationMemory::class, $translationMemories[0]);
@@ -53,7 +53,6 @@ class TranslationMemoryApiTest extends AbstractTestApi
     {
         $params = [
             'name' => 'nowledge Base\'s TM',
-            'groupId' => 2
         ];
 
         $this->mockRequest([
@@ -77,7 +76,7 @@ class TranslationMemoryApiTest extends AbstractTestApi
             }'
         ]);
 
-        $translationMemory = $this->crowdin->translationMemory->create($params['name'], $params['groupId']);
+        $translationMemory = $this->crowdin->translationMemory->create($params['name']);
         $this->assertInstanceOf(TranslationMemory::class, $translationMemory);
         $this->assertEquals(4, $translationMemory->getId());
     }

@@ -10,7 +10,7 @@ class LanguageApiTest extends AbstractTestApi
     public function testList()
     {
         $this->mockRequest([
-            'uri' => 'https://organization_domain.crowdin.com/api/v2/languages',
+            'uri' => 'https://api.crowdin.com/api/v2/languages',
             'method' => 'get',
             'response' => '{
                   "data": [
@@ -55,7 +55,7 @@ class LanguageApiTest extends AbstractTestApi
     public function testCreate()
     {
         $this->mockRequest([
-            'uri' => 'https://organization_domain.crowdin.com/api/v2/languages',
+            'uri' => 'https://api.crowdin.com/api/v2/languages',
             'method' => 'post',
             'response' => '{
               "data": {

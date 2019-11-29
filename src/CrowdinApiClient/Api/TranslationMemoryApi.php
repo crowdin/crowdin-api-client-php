@@ -17,11 +17,13 @@ class TranslationMemoryApi extends AbstractApi
     /**
      * @param int $groupId
      * @param array $params
+     * @internal integer $params[userId]
+     * @internal integer $params[limit]
+     * @internal integer $params[offset]
      * @return ModelCollection
      */
-    public function list(int $groupId, array $params = []): ModelCollection
+    public function list(array $params = []): ModelCollection
     {
-        $params['groupId'] = $groupId;
         return $this->_list('tms', TranslationMemory::class, $params);
     }
 
@@ -36,14 +38,12 @@ class TranslationMemoryApi extends AbstractApi
 
     /**
      * @param string $name
-     * @param int $groupID
      * @return mixed
      */
-    public function create(string $name, int $groupID): ?TranslationMemory
+    public function create(string $name): ?TranslationMemory
     {
         $data = [
             'name' => $name,
-            'groupId' => $groupID
         ];
         return $this->_create('tms', TranslationMemory::class, $data);
     }
