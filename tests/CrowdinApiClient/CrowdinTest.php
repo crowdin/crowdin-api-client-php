@@ -113,22 +113,22 @@ class CrowdinTest extends TestCase
         return [
             ['storage', \CrowdinApiClient\Api\StorageApi::class],
             ['language', \CrowdinApiClient\Api\LanguageApi::class],
-            ['project', \CrowdinApiClient\Api\Enterprise\ProjectApi::class],
+            ['project', \CrowdinApiClient\Api\ProjectApi::class],
             ['branch', \CrowdinApiClient\Api\BranchApi::class],
-            ['task', \CrowdinApiClient\Api\Enterprise\TaskApi::class],
+            ['task', \CrowdinApiClient\Api\TaskApi::class],
             ['screenshot', \CrowdinApiClient\Api\ScreenshotApi::class],
-            ['glossary', \CrowdinApiClient\Api\Enterprise\GlossaryApi::class],
+            ['glossary', \CrowdinApiClient\Api\GlossaryApi::class],
             ['stringTranslation', \CrowdinApiClient\Api\StringTranslationApi::class],
             ['user', \CrowdinApiClient\Api\Enterprise\UserApi::class],
             ['vendor', \CrowdinApiClient\Api\Enterprise\VendorApi::class],
             ['workflowTemplate', \CrowdinApiClient\Api\Enterprise\WorkflowTemplateApi::class],
             ['file', \CrowdinApiClient\Api\FileApi::class],
             ['machineTranslationEngine', \CrowdinApiClient\Api\Enterprise\MachineTranslationEngineApi::class],
-            ['report', \CrowdinApiClient\Api\Enterprise\ReportApi::class],
+            ['report', \CrowdinApiClient\Api\ReportApi::class],
             ['sourceString', \CrowdinApiClient\Api\SourceStringApi::class],
-            ['translationMemory', \CrowdinApiClient\Api\Enterprise\TranslationMemoryApi::class],
+            ['translationMemory', \CrowdinApiClient\Api\TranslationMemoryApi::class],
             ['webhook', \CrowdinApiClient\Api\WebhookApi::class],
-            ['translation', \CrowdinApiClient\Api\Enterprise\TranslationApi::class],
+            ['translation', \CrowdinApiClient\Api\TranslationApi::class],
         ];
     }
 

@@ -14,25 +14,25 @@ use UnexpectedValueException;
  * Class Crowdin
  * @package Crowdin
  *
- * @property \CrowdinApiClient\Api\StorageApi|\CrowdinApiClient\Api\StorageApi storage
+ * @property \CrowdinApiClient\Api\StorageApi storage
  * @property \CrowdinApiClient\Api\LanguageApi language
  * @property \CrowdinApiClient\Api\Enterprise\GroupApi group
- * @property \CrowdinApiClient\Api\Enterprise\ProjectApi|\CrowdinApiClient\Api\ProjectApi project
+ * @property \CrowdinApiClient\Api\ProjectApi project
  * @property \CrowdinApiClient\Api\BranchApi branch
- * @property \CrowdinApiClient\Api\Enterprise\TaskApi|\CrowdinApiClient\Api\TaskApi task
+ * @property \CrowdinApiClient\Api\TaskApi task
  * @property \CrowdinApiClient\Api\ScreenshotApi screenshot
  * @property \CrowdinApiClient\Api\DirectoryApi directory
- * @property \CrowdinApiClient\Api\Enterprise\GlossaryApi|\CrowdinApiClient\Api\GlossaryApi glossary
+ * @property \CrowdinApiClient\Api\GlossaryApi glossary
  * @property \CrowdinApiClient\Api\StringTranslationApi stringTranslation
  * @property \CrowdinApiClient\Api\Enterprise\UserApi|\CrowdinApiClient\Api\UserApi user
- * @property \CrowdinApiClient\Api\VendorApi vendor
- * @property \CrowdinApiClient\Api\WorkflowTemplateApi workflowTemplate
+ * @property \CrowdinApiClient\Api\Enterprise\VendorApi vendor
+ * @property \CrowdinApiClient\Api\Enterprise\WorkflowTemplateApi workflowTemplate
  * @property \CrowdinApiClient\Api\FileApi file
- * @property \CrowdinApiClient\Api\Enterprise\ReportApi|\CrowdinApiClient\Api\ReportApi report
+ * @property \CrowdinApiClient\Api\ReportApi report
  * @property \CrowdinApiClient\Api\SourceStringApi sourceString
- * @property \CrowdinApiClient\Api\Enterprise\TranslationMemoryApi|\CrowdinApiClient\Api\TranslationMemoryApi translationMemory
+ * @property \CrowdinApiClient\Api\TranslationMemoryApi translationMemory
  * @property \CrowdinApiClient\Api\WebhookApi webhook
- * @property \CrowdinApiClient\Api\Enterprise\TranslationApi|\CrowdinApiClient\Api\TranslationApi translation
+ * @property \CrowdinApiClient\Api\TranslationApi translation
  */
 class Crowdin
 {

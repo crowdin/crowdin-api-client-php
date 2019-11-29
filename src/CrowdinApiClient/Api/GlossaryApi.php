@@ -35,14 +35,11 @@ class GlossaryApi extends AbstractApi
     }
 
     /**
-     * @param string $name
+     * @param array $params
      * @return Glossary|null
      */
-    public function create(string $name): ?Glossary
+    public function create(array $params): ?Glossary
     {
-        $params = [
-            'name' => $name,
-        ];
         return $this->_create('glossaries', Glossary::class, $params);
     }
 

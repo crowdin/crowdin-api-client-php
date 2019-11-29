@@ -2,7 +2,7 @@
 
 namespace CrowdinApiClient\Tests\Api\Enterprise;
 
-use CrowdinApiClient\Model\Enterprise\Project;
+use CrowdinApiClient\Model\Project;
 use CrowdinApiClient\Model\ProjectSetting;
 use CrowdinApiClient\ModelCollection;
 

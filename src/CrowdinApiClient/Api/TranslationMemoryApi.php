@@ -37,14 +37,12 @@ class TranslationMemoryApi extends AbstractApi
     }
 
     /**
-     * @param string $name
+     * @param array $data
+     * @internal string $data[name]
      * @return mixed
      */
-    public function create(string $name): ?TranslationMemory
+    public function create(array $data): ?TranslationMemory
     {
-        $data = [
-            'name' => $name,
-        ];
         return $this->_create('tms', TranslationMemory::class, $data);
     }
 

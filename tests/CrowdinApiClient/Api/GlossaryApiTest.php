@@ -78,7 +78,7 @@ class GlossaryApiTest extends AbstractTestApi
                 }'
         ]);
 
-        $glossary = $this->crowdin->glossary->create('Be My Eyes iOS\'s Glossary');
+        $glossary = $this->crowdin->glossary->create(['name', 'Be My Eyes iOS\'s Glossary']);
         $this->assertInstanceOf(Glossary::class, $glossary);
         $this->assertEquals(2, $glossary->getId());
     }

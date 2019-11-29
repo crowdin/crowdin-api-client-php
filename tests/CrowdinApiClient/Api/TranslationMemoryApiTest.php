@@ -8,6 +8,10 @@ use CrowdinApiClient\Model\TranslationMemoryExport;
 use CrowdinApiClient\Model\TranslationMemoryImport;
 use CrowdinApiClient\ModelCollection;
 
+/**
+ * Class TranslationMemoryApiTest
+ * @package CrowdinApiClient\Tests\Api
+ */
 class TranslationMemoryApiTest extends AbstractTestApi
 {
     public function testList()
@@ -76,7 +80,7 @@ class TranslationMemoryApiTest extends AbstractTestApi
             }'
         ]);
 
-        $translationMemory = $this->crowdin->translationMemory->create($params['name']);
+        $translationMemory = $this->crowdin->translationMemory->create($params);
         $this->assertInstanceOf(TranslationMemory::class, $translationMemory);
         $this->assertEquals(4, $translationMemory->getId());
     }

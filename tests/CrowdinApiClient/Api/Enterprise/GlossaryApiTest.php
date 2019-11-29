@@ -2,7 +2,6 @@
 
 namespace CrowdinApiClient\Tests\Api\Enterprise;
 
-use CrowdinApiClient\Api\Enterprise\GlossaryApi;
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\Glossary;
 use CrowdinApiClient\Model\GlossaryExport;
@@ -43,8 +42,6 @@ class GlossaryApiTest extends AbstractTestApi
                 }'
         ]);
 
-        $this->assertInstanceOf(GlossaryApi::class, $this->crowdin->glossary);
-
         $glossaries = $this->crowdin->glossary->list();
 
         $this->assertInstanceOf(ModelCollection::class, $glossaries);
@@ -82,7 +79,7 @@ class GlossaryApiTest extends AbstractTestApi
                 }'
         ]);
 
-        $glossary = $this->crowdin->glossary->create('Be My Eyes iOS\'s Glossary', 2);
+        $glossary = $this->crowdin->glossary->create($params);
         $this->assertInstanceOf(Glossary::class, $glossary);
         $this->assertEquals(2, $glossary->getId());
     }

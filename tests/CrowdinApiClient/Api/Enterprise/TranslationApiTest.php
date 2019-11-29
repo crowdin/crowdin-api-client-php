@@ -180,7 +180,7 @@ class TranslationApiTest extends AbstractTestApi
             ]
         ]);
 
-        $projectBuild = $this->crowdin->translation->buildProject(2, 34, ['uk']);
+        $projectBuild = $this->crowdin->translation->buildProject(2, [34, ['uk']]);
 
         $this->assertInstanceOf(TranslationProjectBuild::class, $projectBuild);
         $this->assertEquals(2, $projectBuild->getId());
