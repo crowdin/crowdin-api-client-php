@@ -65,24 +65,6 @@ class TranslationApi extends AbstractApi
 
     /**
      * @param int $projectId
-     * @param int $branchId
-     * @param array $targetLanguageIds
-     * @return TranslationProjectBuild|null
-     */
-    public function buildProject(int $projectId, int $branchId, array $targetLanguageIds): ?TranslationProjectBuild
-    {
-        $patch = sprintf('projects/%d/translations/builds', $projectId);
-
-        $data = [
-            'branchId' => $branchId,
-            'targetLanguageIds' => $targetLanguageIds
-        ];
-
-        return $this->_post($patch, TranslationProjectBuild::class, $data);
-    }
-
-    /**
-     * @param int $projectId
      * @param int $buildId
      * @return TranslationProjectBuild|null
      */
@@ -126,5 +108,22 @@ class TranslationApi extends AbstractApi
         $path = sprintf('projects/%d/translations/%s', $projectId, $languageId);
 
         return $this->client->apiRequest('post', $path, new ResponseArrayDecorator(), $params);
+    }
+
+    /**
+     * @param int $projectId
+     * @param array $params
+     * @internal integer $params[branchId]
+     * @internal integer $params[branchId]
+     * @internal array $params[targetLanguageIds]
+     * @internal bool $params[exportTranslatedOnly]
+     * @internal bool $params[exportApprovedOnly]
+     * @return TranslationProjectBuild|null
+     */
+    public function buildProject(int $projectId, array $params = []): ?TranslationProjectBuild
+    {
+        $patch = sprintf('projects/%d/translations/builds', $projectId);
+
+        return $this->_post($patch, TranslationProjectBuild::class, $params);
     }
 }

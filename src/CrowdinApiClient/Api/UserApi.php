@@ -3,7 +3,6 @@
 namespace CrowdinApiClient\Api;
 
 use CrowdinApiClient\Model\User;
-use CrowdinApiClient\ModelCollection;
 
 /**
  * Class UserApi
@@ -12,20 +11,10 @@ use CrowdinApiClient\ModelCollection;
 class UserApi extends AbstractApi
 {
     /**
-     * @param array $params
-     * @return ModelCollection
-     */
-    public function list(array $params = []): ModelCollection
-    {
-        return $this->_list('users', User::class, $params);
-    }
-
-    /**
-     * @param int $userId
      * @return User|null
      */
-    public function get(int $userId): ?User
+    public function getAuthenticatedUser(): ?User
     {
-        return $this->_get('users/' . $userId, User::class);
+        return $this->_get('user', User::class);
     }
 }

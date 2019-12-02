@@ -1,8 +1,8 @@
 <?php
 
-namespace CrowdinApiClient\Tests\Api;
+namespace CrowdinApiClient\Tests\Api\Enterprise;
 
-use CrowdinApiClient\Model\Group;
+use CrowdinApiClient\Model\Enterprise\Group;
 use CrowdinApiClient\ModelCollection;
 
 class GroupApiTest extends AbstractTestApi

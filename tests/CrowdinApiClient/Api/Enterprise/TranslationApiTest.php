@@ -1,6 +1,6 @@
 <?php
 
-namespace CrowdinApiClient\Tests\Api;
+namespace CrowdinApiClient\Tests\Api\Enterprise;
 
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\PreTranslation;
@@ -99,7 +99,7 @@ class TranslationApiTest extends AbstractTestApi
     public function testBuildProjectFileTranslation()
     {
         $this->mockRequest([
-            'uri' => 'https://api.crowdin.com/api/v2/projects/1/translations/builds/files/2',
+            'uri' => 'https://organization_domain.crowdin.com/api/v2/projects/1/translations/builds/files/2',
             'method' => 'post',
             'response' => '{
               "data": {
@@ -154,7 +154,7 @@ class TranslationApiTest extends AbstractTestApi
     public function testBuildProject()
     {
         $this->mockRequest([
-            'uri' => 'https://api.crowdin.com/api/v2/projects/2/translations/builds',
+            'uri' => 'https://organization_domain.crowdin.com/api/v2/projects/2/translations/builds',
             'method' => 'post',
             'response' => '{
               "data": {
@@ -180,17 +180,7 @@ class TranslationApiTest extends AbstractTestApi
             ]
         ]);
 
-        $params = [
-            'branchId' => 2,
-            'targetLanguageIds' =>
-                [
-                    0 => 'uk',
-                ],
-            'exportTranslatedOnly' => false,
-            'exportApprovedOnly' => false,
-        ];
-
-        $projectBuild = $this->crowdin->translation->buildProject(2, $params);
+        $projectBuild = $this->crowdin->translation->buildProject(2, [34, ['uk']]);
 
         $this->assertInstanceOf(TranslationProjectBuild::class, $projectBuild);
         $this->assertEquals(2, $projectBuild->getId());

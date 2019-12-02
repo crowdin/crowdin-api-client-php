@@ -1,6 +1,6 @@
 <?php
 
-namespace CrowdinApiClient\Tests\Api;
+namespace CrowdinApiClient\Tests\Api\Enterprise;
 
 use CrowdinApiClient\Model\MachineTranslationEngine;
 use CrowdinApiClient\ModelCollection;

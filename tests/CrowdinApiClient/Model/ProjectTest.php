@@ -51,12 +51,16 @@ class ProjectTest extends TestCase
         $this->project->setJoinPolicy($this->data['joinPolicy']);
         $this->project->setName($this->data['name']);
         $this->project->setCname($this->data['cname']);
+        $this->project->setTargetLanguageIds(['uk']);
+        $this->project->setLanguageAccessPolicy('moderate');
         $this->project->setDescription($this->data['description']);
 
         $this->assertEquals($this->data['joinPolicy'], $this->project->getJoinPolicy());
         $this->assertEquals($this->data['name'], $this->project->getName());
         $this->assertEquals($this->data['cname'], $this->project->getCname());
         $this->assertEquals($this->data['description'], $this->project->getDescription());
+        $this->assertEquals(['uk'], $this->project->getTargetLanguageIds());
+        $this->assertEquals('moderate', $this->project->getLanguageAccessPolicy());
     }
 
     public function checkData()

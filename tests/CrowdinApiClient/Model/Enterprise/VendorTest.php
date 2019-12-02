@@ -2,7 +2,7 @@
 
 namespace CrowdinApiClient\Tests\Model;
 
-use CrowdinApiClient\Model\Vendor;
+use CrowdinApiClient\Model\Enterprise\Vendor;
 use PHPUnit\Framework\TestCase;
 
 /**

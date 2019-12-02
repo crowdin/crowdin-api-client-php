@@ -1,6 +1,6 @@
 <?php
 
-namespace CrowdinApiClient\Tests\Api;
+namespace CrowdinApiClient\Tests\Api\Enterprise;
 
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\Glossary;
@@ -54,6 +54,7 @@ class GlossaryApiTest extends AbstractTestApi
     {
         $params = [
             'name' => 'Be My Eyes iOS\'s Glossary',
+            'groupId' => 2
         ];
 
         $this->mockRequest([
@@ -78,7 +79,7 @@ class GlossaryApiTest extends AbstractTestApi
                 }'
         ]);
 
-        $glossary = $this->crowdin->glossary->create(['name', 'Be My Eyes iOS\'s Glossary']);
+        $glossary = $this->crowdin->glossary->create($params);
         $this->assertInstanceOf(Glossary::class, $glossary);
         $this->assertEquals(2, $glossary->getId());
     }

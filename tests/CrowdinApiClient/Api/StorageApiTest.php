@@ -11,7 +11,7 @@ class StorageApiTest extends AbstractTestApi
     {
         $this->mockRequest([
             'method' => 'get',
-            'uri' => 'https://organization_domain.crowdin.com/api/v2/storages',
+            'uri' => 'https://api.crowdin.com/api/v2/storages',
             'response' => '{
                   "data": [
                     {
@@ -60,7 +60,7 @@ class StorageApiTest extends AbstractTestApi
     {
         $this->mockRequest([
             'method' => 'delete',
-            'uri' => 'https://organization_domain.crowdin.com/api/v2/storages/1',
+            'uri' => 'https://api.crowdin.com/api/v2/storages/1',
             'response' => null
         ]);
 
@@ -71,7 +71,7 @@ class StorageApiTest extends AbstractTestApi
     {
         $this->mockRequest([
             'method' => 'post',
-            'uri' => 'https://organization_domain.crowdin.com/api/v2/storages',
+            'uri' => 'https://api.crowdin.com/api/v2/storages',
             'response' => '{
               "data": {
                 "id": 1

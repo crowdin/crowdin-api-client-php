@@ -1,6 +1,6 @@
 <?php
 
-namespace CrowdinApiClient\Tests\Api;
+namespace CrowdinApiClient\Tests\Api\Enterprise;
 
 use CrowdinApiClient\Model\Task;
 use CrowdinApiClient\ModelCollection;
@@ -71,27 +71,27 @@ class TaskApiTest extends AbstractTestApi
     public function testCreate()
     {
         $params = [
-            'title' => 'string',
-            'languageId' => 'es',
+            'workflowStepId' => 0,
+            'title' => 'French',
+            'languageId' => 'fr',
             'fileIds' =>
                 [
-                    0 => 0,
+                    0 => 1,
                 ],
-            'type' => 0,
             'status' => 'todo',
-            'description' => 'string',
+            'description' => 'Proofread all French strings',
             'splitFiles' => false,
             'assignees' =>
                 [
                     0 =>
                         [
-                            'id' => 0,
-                            'wordsCount' => 0,
+                            'id' => 1,
+                            'wordsCount' => 5,
                         ],
                 ],
-            'deadline' => '2100-12-31T23:59:59+00:00',
-            'dateFrom' => '2100-12-31T23:59:59+00:00',
-            'dateTo' => '2100-12-31T23:59:59+00:00',
+            'deadline' => '2019-09-27T07:00:14+00:00',
+            'dateFrom' => '2019-09-23T07:00:14+00:00',
+            'dateTo' => '2019-09-27T07:00:14+00:00',
         ];
 
         $this->mockRequest([
@@ -99,42 +99,42 @@ class TaskApiTest extends AbstractTestApi
             'method' => 'post',
             'body' => $params,
             'response' => '{
-              "data": {
-                "id": 2,
-                "projectId": 2,
-                "creatorId": 6,
-                "type": 1,
-                "status": "todo",
-                "title": "French",
-                "assignees": [
-                  {
-                    "id": 1,
-                    "wordsCount": 5
+                  "data": {
+                    "id": 2,
+                    "projectId": 2,
+                    "creatorId": 6,
+                    "type": 1,
+                    "status": "todo",
+                    "title": "French",
+                    "assignees": [
+                      {
+                        "id": 1,
+                        "wordsCount": 5
+                      }
+                    ],
+                    "fileIds": [
+                      1
+                    ],
+                    "progress": {
+                      "total": 24,
+                      "done": 15,
+                      "percent": 62
+                    },
+                    "sourceLanguageId": "en",
+                    "targetLanguageId": "fr",
+                    "description": "Proofread all French strings",
+                    "hash": "dac37aff364d83899128e68afe0de4994",
+                    "translationUrl": "/proofread/9092638ac9f2a2d1b5571d08edc53763/all/en-fr/10?task=dac37aff364d83899128e68afe0de4994",
+                    "wordsCount": 24,
+                    "filesCount": 2,
+                    "commentsCount": 0,
+                    "deadline": "2019-09-27T07:00:14+00:00",
+                    "timeRange": "string",
+                    "workflowStepId": 10,
+                    "createdAt": "2019-09-23T09:04:29+00:00",
+                    "updatedAt": "2019-09-23T09:04:29+00:00"
                   }
-                ],
-                "fileIds": [
-                  1
-                ],
-                "progress": {
-                  "total": 24,
-                  "done": 15,
-                  "percent": 62
-                },
-                "sourceLanguageId": "en",
-                "targetLanguageId": "fr",
-                "description": "Proofread all French strings",
-                "hash": "dac37aff364d83899128e68afe0de4994",
-                "translationUrl": "/proofread/9092638ac9f2a2d1b5571d08edc53763/all/en-fr/10?task=dac37aff364d83899128e68afe0de4994",
-                "wordsCount": 24,
-                "filesCount": 2,
-                "commentsCount": 0,
-                "deadline": "2019-09-27T07:00:14+00:00",
-                "timeRange": "string",
-                "workflowStepId": 10,
-                "createdAt": "2019-09-23T09:04:29+00:00",
-                "updatedAt": "2019-09-23T09:04:29+00:00"
-              }
-            }'
+                }'
 
         ]);
 

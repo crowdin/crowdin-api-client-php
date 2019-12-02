@@ -1,6 +1,8 @@
 <?php
 
-namespace CrowdinApiClient\Model;
+namespace CrowdinApiClient\Model\Enterprise;
+
+use CrowdinApiClient\Model\BaseModel;
 
 /**
  * Class WorkflowTemplate

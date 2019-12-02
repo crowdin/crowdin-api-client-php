@@ -7,6 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class TaskTest extends TestCase
 {
+    /**
+     * @var Task
+     */
     public $task;
 
     public $data = [

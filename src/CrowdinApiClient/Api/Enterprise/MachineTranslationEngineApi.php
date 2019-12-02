@@ -1,7 +1,8 @@
 <?php
 
-namespace CrowdinApiClient\Api;
+namespace CrowdinApiClient\Api\Enterprise;
 
+use CrowdinApiClient\Api\AbstractApi;
 use CrowdinApiClient\Model\MachineTranslationEngine;
 use CrowdinApiClient\ModelCollection;
 

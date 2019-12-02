@@ -3,28 +3,6 @@
 namespace CrowdinApiClient;
 
 use CrowdinApiClient\Api\ApiInterface;
-use CrowdinApiClient\Api\BranchApi;
-use CrowdinApiClient\Api\DirectoryApi;
-use CrowdinApiClient\Api\FileApi;
-use CrowdinApiClient\Api\GlossaryApi;
-use CrowdinApiClient\Api\GroupApi;
-use CrowdinApiClient\Api\LanguageApi;
-use CrowdinApiClient\Api\MachineTranslationEngineApi;
-use CrowdinApiClient\Api\ProjectApi;
-use CrowdinApiClient\Api\ReportApi;
-use CrowdinApiClient\Api\ScreenshotApi;
-use CrowdinApiClient\Api\SourceStringApi;
-use CrowdinApiClient\Api\StorageApi;
-use CrowdinApiClient\Api\StringTranslationApi;
-use CrowdinApiClient\Api\StringTranslationApprovalApi;
-use CrowdinApiClient\Api\TaskApi;
-use CrowdinApiClient\Api\TranslationApi;
-use CrowdinApiClient\Api\TranslationMemoryApi;
-use CrowdinApiClient\Api\UserApi;
-use CrowdinApiClient\Api\VendorApi;
-use CrowdinApiClient\Api\VoteApi;
-use CrowdinApiClient\Api\WebhookApi;
-use CrowdinApiClient\Api\WorkflowTemplateApi;
 use CrowdinApiClient\Http\Client\CrowdinHttpClientFactory;
 use CrowdinApiClient\Http\Client\CrowdinHttpClientInterface;
 use CrowdinApiClient\Http\ResponseDecorator\ResponseDecoratorInterface;
@@ -36,28 +14,25 @@ use UnexpectedValueException;
  * Class Crowdin
  * @package Crowdin
  *
- * @property StorageApi storage
- * @property LanguageApi language
- * @property GroupApi group
- * @property ProjectApi project
- * @property BranchApi branch
- * @property TaskApi task
- * @property ScreenshotApi screenshot
- * @property DirectoryApi directory
- * @property GlossaryApi glossary
- * @property StringTranslationApi stringTranslation
- * @property StringTranslationApprovalApi stringTranslationApproval
- * @property VoteApi vote
- * @property UserApi user
- * @property VendorApi vendor
- * @property WorkflowTemplateApi workflowTemplate
- * @property FileApi file
- * @property MachineTranslationEngineApi machineTranslationEngine
- * @property ReportApi report
- * @property SourceStringApi sourceString
- * @property TranslationMemoryApi translationMemory
- * @property WebhookApi webhook
- * @property TranslationApi translation
+ * @property \CrowdinApiClient\Api\StorageApi storage
+ * @property \CrowdinApiClient\Api\LanguageApi language
+ * @property \CrowdinApiClient\Api\Enterprise\GroupApi group
+ * @property \CrowdinApiClient\Api\ProjectApi project
+ * @property \CrowdinApiClient\Api\BranchApi branch
+ * @property \CrowdinApiClient\Api\TaskApi task
+ * @property \CrowdinApiClient\Api\ScreenshotApi screenshot
+ * @property \CrowdinApiClient\Api\DirectoryApi directory
+ * @property \CrowdinApiClient\Api\GlossaryApi glossary
+ * @property \CrowdinApiClient\Api\StringTranslationApi stringTranslation
+ * @property \CrowdinApiClient\Api\Enterprise\UserApi|\CrowdinApiClient\Api\UserApi user
+ * @property \CrowdinApiClient\Api\Enterprise\VendorApi vendor
+ * @property \CrowdinApiClient\Api\Enterprise\WorkflowTemplateApi workflowTemplate
+ * @property \CrowdinApiClient\Api\FileApi file
+ * @property \CrowdinApiClient\Api\ReportApi report
+ * @property \CrowdinApiClient\Api\SourceStringApi sourceString
+ * @property \CrowdinApiClient\Api\TranslationMemoryApi translationMemory
+ * @property \CrowdinApiClient\Api\WebhookApi webhook
+ * @property \CrowdinApiClient\Api\TranslationApi translation
  */
 class Crowdin
 {
@@ -92,9 +67,33 @@ class Crowdin
     protected $organization;
 
     /**
+     * @var bool
+     */
+    protected $isEnterprise = false;
+
+    /**
      * @var array
      */
     protected $services = [
+        'storage',
+        'language',
+        'project',
+        'task',
+        'branch',
+        'glossary',
+        'stringTranslation',
+        'directory',
+        'user',
+        'screenshot',
+        'file',
+        'report',
+        'sourceString',
+        'translationMemory',
+        'webhook',
+        'translation',
+    ];
+
+    protected $servicesEnterprise = [
         'storage',
         'language',
         'group',
@@ -105,7 +104,6 @@ class Crowdin
         'stringTranslation',
         'stringTranslationApproval',
         'directory',
-        'vote',
         'vendor',
         'user',
         'screenshot',
@@ -215,7 +213,13 @@ class Crowdin
      */
     public function __get($name)
     {
-        if (in_array($name, $this->services)) {
+        if ($this->isEnterprise) {
+            $services = $this->servicesEnterprise;
+        } else {
+            $services = $this->services;
+        }
+
+        if (in_array($name, $services)) {
             return $this->getApi($name);
         }
 
@@ -229,6 +233,14 @@ class Crowdin
     public function getApi(string $name): ApiInterface
     {
         $class = '\CrowdinApiClient\\Api\\' . ucfirst($name) . 'Api';
+
+        if ($this->isEnterprise) {
+            $_class = '\CrowdinApiClient\\Api\\Enterprise\\' . ucfirst($name) . 'Api';
+
+            if (class_exists($_class)) {
+                $class = $_class;
+            }
+        }
 
         if (!array_key_exists($class, $this->apis)) {
             $this->apis[$class] = new $class($this);
@@ -315,6 +327,23 @@ class Crowdin
     public function setOrganization(?string $organization): void
     {
         $this->organization = $organization;
+        $this->isEnterprise = (bool)$organization;
         $this->updateBaseUri();
+    }
+
+    /**
+     * @return bool
+     */
+    public function isEnterprise(): bool
+    {
+        return $this->isEnterprise;
+    }
+
+    /**
+     * @param bool $isEnterprise
+     */
+    public function setIsEnterprise(bool $isEnterprise): void
+    {
+        $this->isEnterprise = $isEnterprise;
     }
 }

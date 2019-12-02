@@ -1,6 +1,6 @@
 <?php
 
-namespace CrowdinApiClient\Tests\Api;
+namespace CrowdinApiClient\Tests\Api\Enterprise;
 
 use CrowdinApiClient\Model\Project;
 use CrowdinApiClient\Model\ProjectSetting;
@@ -63,17 +63,16 @@ class ProjectApiTest extends AbstractTestApi
     {
         $params = [
             'name' => 'Knowledge Base',
-            'identifier' => '1f198a4e907688bc65834a6d5a6000c3',
-            'type' => 1,
-            'sourceLanguageId' => 'es',
+            'sourceLanguageId' => 'en',
+            'groupId' => 1,
+            'templateId' => 0,
             'targetLanguageIds' =>
                 [
                     0 => 'uk',
                 ],
-            'joinPolicy' => 'private',
-            'languageAccessPolicy' => 'moderate',
-            'cname' => 'my-custom-domain.crowdin.com',
-            'description' => 'Articles and tutorials',
+            'vendorId' => 52760,
+            'mtEngineId' => 2,
+            'description' => 'Vault of all terms and their explanation',
         ];
 
         $this->mockRequest([
@@ -111,7 +110,6 @@ class ProjectApiTest extends AbstractTestApi
         $project = $this->crowdin->project->create($params);
         $this->assertInstanceOf(Project::class, $project);
         $this->assertEquals(8, $project->getId());
-        $this->assertEquals('1f198a4e907688bc65834a6d5a6000c3', $project->getIdentifier());
     }
 
     public function testGetAndUpdate()

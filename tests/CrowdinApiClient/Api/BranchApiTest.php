@@ -10,7 +10,7 @@ class BranchApiTest extends AbstractTestApi
     public function testList()
     {
         $this->mockRequest([
-            'uri' => 'https://organization_domain.crowdin.com/api/v2/projects/2/branches',
+            'uri' => 'https://api.crowdin.com/api/v2/projects/2/branches',
             'method' => 'get',
             'response' => '{
                   "data": [
@@ -152,7 +152,7 @@ class BranchApiTest extends AbstractTestApi
 
         $mock->will($this->returnCallback(function ($method, $uri, $options) {
             $this->assertEquals('patch', $method);
-            $this->assertEquals('https://organization_domain.crowdin.com/api/v2/projects/2/branches/34', $uri);
+            $this->assertEquals('https://api.crowdin.com/api/v2/projects/2/branches/34', $uri);
             return '{
                   "data": {
                     "id": 34,

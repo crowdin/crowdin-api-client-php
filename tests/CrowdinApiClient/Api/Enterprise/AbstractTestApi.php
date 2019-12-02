@@ -1,6 +1,6 @@
 <?php
 
-namespace CrowdinApiClient\Tests\Api;
+namespace CrowdinApiClient\Tests\Api\Enterprise;
 
 use CrowdinApiClient\Crowdin;
 use CrowdinApiClient\Http\Client\CurlHttpClient;
@@ -26,6 +26,7 @@ abstract class AbstractTestApi extends TestCase
         $this->crowdin = new Crowdin([
             'http_client_handler' => $this->mockClient,
             'access_token' => 'access_token',
+            'organization' => 'organization_domain',
         ]);
 
         $this->mockClient = $this->mockClient->expects($this->any())
@@ -38,7 +39,7 @@ abstract class AbstractTestApi extends TestCase
             $this->assertEquals($params['method'], $method);
 
             if (isset($params['path'])) {
-                $this->assertEquals('https://api.crowdin.com/api/v2' . $params['path'], $uri);
+                $this->assertEquals('https://organization_domain.crowdin.com/api/v2' . $params['path'], $uri);
             } else {
                 $this->assertEquals($params['uri'], $uri);
             }
@@ -56,7 +57,7 @@ abstract class AbstractTestApi extends TestCase
     public function mockRequestPath(string $path, string $response, array $options = [])
     {
         return $this->mockRequest([
-            'uri' => 'https://api.crowdin.com/api/v2' . $path,
+            'uri' => 'https://organization_domain.crowdin.com/api/v2' . $path,
             'method' => 'patch',
             'response' => $response,
             'options' => $options
@@ -66,7 +67,7 @@ abstract class AbstractTestApi extends TestCase
     public function mockRequestGet(string $path, string $response, array $options = [])
     {
         return $this->mockRequest([
-            'uri' => 'https://api.crowdin.com/api/v2' . $path,
+            'uri' => 'https://organization_domain.crowdin.com/api/v2' . $path,
             'method' => 'get',
             'response' => $response,
             'options' => $options
@@ -76,7 +77,7 @@ abstract class AbstractTestApi extends TestCase
     public function mockRequestDelete(string $path)
     {
         return $this->mockRequest([
-            'uri' => 'https://api.crowdin.com/api/v2' . $path,
+            'uri' => 'https://organization_domain.crowdin.com/api/v2' . $path,
             'method' => 'delete',
         ]);
     }
