@@ -61,7 +61,7 @@ class ProjectSetting extends BaseModel
     /**
      * @var string
      */
-    protected $pseudoLanguageId;
+    protected $jiptPseudoLanguageId;
 
     /**
      * @var bool
@@ -92,7 +92,7 @@ class ProjectSetting extends BaseModel
         $this->publicDownloads = (bool)$this->getDataProperty('publicDownloads');
         $this->useGlobalTm = (bool)$this->getDataProperty('useGlobalTm');
         $this->inContext = (bool)$this->getDataProperty('inContext');
-        $this->pseudoLanguageId = (string)$this->getDataProperty('pseudoLanguageId');
+        $this->jiptPseudoLanguageId = (string)$this->getDataProperty('jiptPseudoLanguageId');
         $this->qaCheckIsActive = (bool)$this->getDataProperty('qaCheckIsActive');
         $this->lowestQualityProjectGoalId = (integer)$this->getDataProperty('lowestQualityProjectGoalId');
         $this->qaCheckCategories = (array)$this->getDataProperty('qaCheckCategories');
@@ -251,22 +251,6 @@ class ProjectSetting extends BaseModel
     }
 
     /**
-     * @return string
-     */
-    public function getPseudoLanguageId(): string
-    {
-        return $this->pseudoLanguageId;
-    }
-
-    /**
-     * @param string $pseudoLanguageId
-     */
-    public function setPseudoLanguageId(string $pseudoLanguageId): void
-    {
-        $this->pseudoLanguageId = $pseudoLanguageId;
-    }
-
-    /**
      * @return bool
      */
     public function isQaCheckIsActive(): bool
@@ -312,5 +296,21 @@ class ProjectSetting extends BaseModel
     public function setQaCheckCategories(array $qaCheckCategories): void
     {
         $this->qaCheckCategories = $qaCheckCategories;
+    }
+
+    /**
+     * @return string
+     */
+    public function getJiptPseudoLanguageId(): ?string
+    {
+        return $this->jiptPseudoLanguageId;
+    }
+
+    /**
+     * @param string $jiptPseudoLanguageId
+     */
+    public function setJiptPseudoLanguageId(string $jiptPseudoLanguageId): void
+    {
+        $this->jiptPseudoLanguageId = $jiptPseudoLanguageId;
     }
 }

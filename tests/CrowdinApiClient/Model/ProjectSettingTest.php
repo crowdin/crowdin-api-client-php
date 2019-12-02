@@ -30,11 +30,11 @@ class ProjectSettingTest extends TestCase
         'publicDownloads' => true,
         'useGlobalTm' => false,
         'inContext' => true,
-        'pseudoLanguageId' => 'uk',
+        'jiptPseudoLanguageId' => 'uk',
         'qaCheckIsActive' => true,
         'lowestQualityProjectGoalId' => 1,
         'qaCheckCategories' =>
-            [
+            array (
                 'empty' => true,
                 'size' => true,
                 'tags' => true,
@@ -46,7 +46,7 @@ class ProjectSettingTest extends TestCase
                 'wrongTranslation' => true,
                 'spellcheck' => true,
                 'icu' => true,
-            ],
+            ),
     ];
 
     /**
@@ -73,7 +73,7 @@ class ProjectSettingTest extends TestCase
         $this->projectSetting->setPublicDownloads($this->data['publicDownloads']);
         $this->projectSetting->setUseGlobalTm($this->data['useGlobalTm']);
         $this->projectSetting->setInContext($this->data['inContext']);
-        $this->projectSetting->setPseudoLanguageId($this->data['pseudoLanguageId']);
+        $this->projectSetting->setJiptPseudoLanguageId($this->data['jiptPseudoLanguageId']);
         $this->projectSetting->setQaCheckIsActive($this->data['qaCheckIsActive']);
         $this->projectSetting->setLowestQualityProjectGoalId($this->data['lowestQualityProjectGoalId']);
         $this->projectSetting->setQaCheckCategories($this->data['qaCheckCategories']);
@@ -87,7 +87,7 @@ class ProjectSettingTest extends TestCase
         $this->assertEquals($this->data['publicDownloads'], $this->projectSetting->isPublicDownloads());
         $this->assertEquals($this->data['useGlobalTm'], $this->projectSetting->isUseGlobalTm());
         $this->assertEquals($this->data['inContext'], $this->projectSetting->isInContext());
-        $this->assertEquals($this->data['pseudoLanguageId'], $this->projectSetting->getPseudoLanguageId());
+        $this->assertEquals($this->data['jiptPseudoLanguageId'], $this->projectSetting->getJiptPseudoLanguageId());
         $this->assertEquals($this->data['qaCheckIsActive'], $this->projectSetting->isQaCheckIsActive());
         $this->assertEquals($this->data['lowestQualityProjectGoalId'], $this->projectSetting->getLowestQualityProjectGoalId());
         $this->assertEquals($this->data['qaCheckCategories'], $this->projectSetting->getQaCheckCategories());
@@ -105,7 +105,7 @@ class ProjectSettingTest extends TestCase
         $this->assertEquals($this->data['publicDownloads'], $this->projectSetting->isPublicDownloads());
         $this->assertEquals($this->data['useGlobalTm'], $this->projectSetting->isUseGlobalTm());
         $this->assertEquals($this->data['inContext'], $this->projectSetting->isInContext());
-        $this->assertEquals($this->data['pseudoLanguageId'], $this->projectSetting->getPseudoLanguageId());
+        $this->assertEquals($this->data['jiptPseudoLanguageId'], $this->projectSetting->getJiptPseudoLanguageId());
         $this->assertEquals($this->data['qaCheckIsActive'], $this->projectSetting->isQaCheckIsActive());
         $this->assertEquals($this->data['lowestQualityProjectGoalId'], $this->projectSetting->getLowestQualityProjectGoalId());
         $this->assertEquals($this->data['qaCheckCategories'], $this->projectSetting->getQaCheckCategories());
