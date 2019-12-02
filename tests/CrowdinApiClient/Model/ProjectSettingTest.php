@@ -34,7 +34,7 @@ class ProjectSettingTest extends TestCase
         'qaCheckIsActive' => true,
         'lowestQualityProjectGoalId' => 1,
         'qaCheckCategories' =>
-            array (
+            [
                 'empty' => true,
                 'size' => true,
                 'tags' => true,
@@ -46,7 +46,7 @@ class ProjectSettingTest extends TestCase
                 'wrongTranslation' => true,
                 'spellcheck' => true,
                 'icu' => true,
-            ),
+            ],
     ];
 
     /**
