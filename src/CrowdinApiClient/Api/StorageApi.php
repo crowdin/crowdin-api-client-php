@@ -2,6 +2,7 @@
 
 namespace CrowdinApiClient\Api;
 
+use CrowdinApiClient\Http\ResponseDecorator\ResponseModelDecorator;
 use CrowdinApiClient\Model\Storage;
 use CrowdinApiClient\ModelCollection;
 use SplFileObject;
@@ -32,7 +33,7 @@ class StorageApi extends AbstractApi
             'body' => file_get_contents($fileObject->getRealPath())
         ];
 
-        return $this->_create('storages', Storage::class, $options);
+        return $this->client->apiRequest('post', 'storages', new ResponseModelDecorator(Storage::class), $options);
     }
 
     /**
