@@ -33,6 +33,7 @@ use UnexpectedValueException;
  * @property \CrowdinApiClient\Api\TranslationMemoryApi translationMemory
  * @property \CrowdinApiClient\Api\WebhookApi webhook
  * @property \CrowdinApiClient\Api\TranslationApi translation
+ * @property \CrowdinApiClient\Api\TranslationStatusApi translationStatus
  */
 class Crowdin
 {
@@ -91,6 +92,7 @@ class Crowdin
         'translationMemory',
         'webhook',
         'translation',
+        'translationStatus'
     ];
 
     protected $servicesEnterprise = [
@@ -115,6 +117,7 @@ class Crowdin
         'translationMemory',
         'webhook',
         'translation',
+        'translationStatus'
     ];
 
     /**
