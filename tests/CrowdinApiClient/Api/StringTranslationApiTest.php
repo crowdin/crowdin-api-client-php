@@ -156,4 +156,21 @@ class StringTranslationApiTest extends AbstractTestApi
         $this->assertInstanceOf(StringTranslation::class, $stringTranslation);
         $this->assertEquals(190695, $stringTranslation->getId());
     }
+
+    public function testDeleteStringTranslations()
+    {
+        $params = [
+            'stringId' => 1,
+            'languageId' => 'en'
+        ];
+
+        $this->mockRequest([
+            'path' => '/projects/1/translations',
+            'method' => 'delete',
+            'body' => $params,
+            'response' => '',
+        ]);
+
+        $this->crowdin->stringTranslation->deleteStringTranslations(1, 1, 'en');
+    }
 }

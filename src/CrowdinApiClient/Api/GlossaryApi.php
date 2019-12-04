@@ -134,12 +134,12 @@ class GlossaryApi extends AbstractApi
      * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.imports.get API Documentation Enterprise
      *
      * @param int $glossaryId
-     * @param int $importId
+     * @param string $importId
      * @return GlossaryImport|null
      */
-    public function getImport(int $glossaryId, int $importId): ?GlossaryImport
+    public function getImport(int $glossaryId, string $importId): ?GlossaryImport
     {
-        $path = sprintf('glossaries/%d/imports/%d', $glossaryId, $importId);
+        $path = sprintf('glossaries/%d/imports/%s', $glossaryId, $importId);
         return $this->_get($path, GlossaryImport::class);
     }
 
@@ -184,7 +184,7 @@ class GlossaryApi extends AbstractApi
     public function clearTerms(int $glossaryId)
     {
         $path = sprintf('glossaries/%d/terms', $glossaryId);
-        return $this->delete($path);
+        return $this->_delete($path);
     }
 
     /**
