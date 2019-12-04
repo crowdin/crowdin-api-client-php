@@ -84,8 +84,13 @@ class TranslationStatusApi extends AbstractApi
      */
     public function getProjectProgress(int $projectId, array $languageIds = []): ?ModelCollection
     {
+        $params = [];
+        if (!empty($languageIds)) {
+            $params['languageIds'] = $languageIds;
+        }
+
         $path = sprintf('projects/%d/languages/progress', $projectId);
-        return $this->_list($path, Progress::class, ['languageIds' => $languageIds]);
+        return $this->_list($path, Progress::class, $params);
     }
 
     /**

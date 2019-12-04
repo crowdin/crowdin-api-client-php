@@ -10,7 +10,7 @@ class MachineTranslationEngineApiTest extends AbstractTestApi
     public function testList()
     {
         $this->mockRequest([
-            'path' => '/mts',
+            'path' => '/mts?groupId=2',
             'method' => 'get',
             'response' => '{
               "data": [
