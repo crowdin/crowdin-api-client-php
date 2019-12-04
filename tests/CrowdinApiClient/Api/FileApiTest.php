@@ -358,7 +358,7 @@ class FileApiTest extends AbstractTestApi
             }',
         ]);
 
-        $fileRevision = $this->crowdin->file->updateFileRevision(2, 44, $params);
+        $fileRevision = $this->crowdin->file->replace(2, 44, $params);
 
         $this->assertInstanceOf(File::class, $fileRevision);
         $this->assertEquals(44, $fileRevision->getId());

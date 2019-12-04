@@ -13,6 +13,9 @@ use CrowdinApiClient\ModelCollection;
 class VendorApi extends AbstractApi
 {
     /**
+     * List Vendors
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.vendors.getMany API Documentation
+     *
      * @param array $params
      * @return ModelCollection
      */

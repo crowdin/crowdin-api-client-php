@@ -14,6 +14,11 @@ use SplFileObject;
 class StorageApi extends AbstractApi
 {
     /**
+     * List Storages
+     *
+     * @link https://support.crowdin.com/api/v2/#operation/api.storages.getMany  API Documentation Enterprise
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.storages.getMany  API Documentation
+     *
      * @param array $params
      * @return ModelCollection
      */
@@ -23,6 +28,11 @@ class StorageApi extends AbstractApi
     }
 
     /**
+     * Add Storage
+     *
+     * @link https://support.crowdin.com/api/v2/#operation/api.storages.post API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.storages.post API Documentation Enterprise
+     *
      * @param SplFileObject $fileObject
      * @return Storage|null
      */
@@ -37,6 +47,10 @@ class StorageApi extends AbstractApi
     }
 
     /**
+     * Get Storage Info
+     * @link https://support.crowdin.com/api/v2/#operation/api.storages.get  API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.storages.get  API Documentation Enterprise
+     *
      * @param int $storageId
      * @return Storage|null
      */
@@ -46,6 +60,10 @@ class StorageApi extends AbstractApi
     }
 
     /**
+     * Delete Storage
+     * @link https://support.crowdin.com/api/v2/#operation/api.storages.delete  API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.storages.delete  API Documentation Enterprisse
+     *
      * @param int $storageId
      * @return mixed
      */

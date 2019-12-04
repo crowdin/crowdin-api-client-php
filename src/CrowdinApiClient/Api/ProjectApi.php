@@ -14,6 +14,10 @@ class ProjectApi extends AbstractApi
 {
 
     /**
+     * List Projects
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.getMany API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.getMany API Documentation Enterprise
+     *
      * @param array $params
      * @return ModelCollection
      */
@@ -23,6 +27,10 @@ class ProjectApi extends AbstractApi
     }
 
     /**
+     * Get Project Info
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.get API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.get API Documentation Enterprise
+     *
      * @param int $projectId
      * @return Project|null
      */
@@ -32,6 +40,10 @@ class ProjectApi extends AbstractApi
     }
 
     /**
+     * Add Project
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.post API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.post API Documentation Enterprise
+     *
      * @param array $data
      * @internal string $data[name] required
      * @internal string $data[sourceLanguageId] required
@@ -49,6 +61,10 @@ class ProjectApi extends AbstractApi
     }
 
     /**
+     * Edit Project Info
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.patch API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.patch API Documentation Enterprise
+     *
      * @param Project $project
      * @return mixed
      */
@@ -58,6 +74,10 @@ class ProjectApi extends AbstractApi
     }
 
     /**
+     * Delete Project
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.delete API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.delete API Documentation Enterprise
+     *
      * @param int $projectId
      * @return mixed
      */
@@ -67,6 +87,10 @@ class ProjectApi extends AbstractApi
     }
 
     /**
+     * Get Project Settings
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.settings.get API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.settings.get API Documentation Enterprise
+     *
      * @param int $projectId
      * @return ProjectSetting|null
      */
@@ -77,6 +101,10 @@ class ProjectApi extends AbstractApi
     }
 
     /**
+     * Edit Project Settings
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.settings.patch  API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.settings.patch  API Documentation Enterprise
+     *
      * @param ProjectSetting $projectSetting
      * @return ProjectSetting|null
      */

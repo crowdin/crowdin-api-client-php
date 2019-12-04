@@ -13,17 +13,21 @@ use CrowdinApiClient\ModelCollection;
 class MachineTranslationEngineApi extends AbstractApi
 {
     /**
-     * @param int $groupId
+     * List MTs
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.mts.getMany API Documentation
+     *
      * @param array $params
      * @return ModelCollection
      */
-    public function list(int $groupId, array $params = []): ModelCollection
+    public function list(array $params = []): ModelCollection
     {
-        $params['groupId'] = $groupId;
         return $this->_list('mts', MachineTranslationEngine::class, $params);
     }
 
     /**
+     * Get MT
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.mts.get API Documentation
+     *
      * @param int $mtId
      * @return MachineTranslationEngine|null
      */
@@ -33,6 +37,9 @@ class MachineTranslationEngineApi extends AbstractApi
     }
 
     /**
+     * Add MT
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.mts.post API Documentation
+     *
      * @param array $data
      * @internal string $data[name] required
      * @internal string $data[type] required Enum: "google" "microsoft" "yandex" "deepl" "amazon" "watson"
@@ -46,6 +53,9 @@ class MachineTranslationEngineApi extends AbstractApi
     }
 
     /**
+     * Edit MT
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.mts.patch API Documentation
+     *
      * @param MachineTranslationEngine $machineTranslationEngine
      * @return MachineTranslationEngine|null
      */
@@ -55,6 +65,9 @@ class MachineTranslationEngineApi extends AbstractApi
     }
 
     /**
+     * Delete MT
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.mts.delete API Documentation
+     *
      * @param int $mtId
      * @return mixed
      */

@@ -94,11 +94,12 @@ abstract class AbstractApi implements ApiInterface
 
     /**
      * @param string $path
+     * @param array $params
      * @return mixed
      */
-    protected function _delete(string $path)
+    protected function _delete(string $path, array $params = [])
     {
-        return $this->client->apiRequest('delete', $path);
+        return $this->client->apiRequest('delete', $path, null, $params);
     }
 
     /**

@@ -13,6 +13,9 @@ use CrowdinApiClient\ModelCollection;
 class WorkflowTemplateApi extends AbstractApi
 {
     /**
+     * List Workflow Templates
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.workflow-templates.getMany API Documentation
+     *
      * @param array $params
      * @return ModelCollection
      */
@@ -22,6 +25,9 @@ class WorkflowTemplateApi extends AbstractApi
     }
 
     /**
+     * Get Workflow Template Info
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.workflow-templates.get API Documentation
+     *
      * @param int $templateId
      * @return WorkflowTemplate|null
      */

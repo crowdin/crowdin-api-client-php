@@ -2,6 +2,7 @@
 
 namespace CrowdinApiClient\Tests\Api;
 
+use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\Task;
 use CrowdinApiClient\ModelCollection;
 
@@ -236,5 +237,19 @@ class TaskApiTest extends AbstractTestApi
     {
         $this->mockRequestDelete('/projects/2/tasks/2');
         $this->crowdin->task->delete(2, 2);
+    }
+
+    public function testExportStrings()
+    {
+        $this->mockRequestGet('/projects/2/tasks/3/export', '{
+          "data": {
+            "url": "https://production-enterprise-importer.downloads.crowdin.com/992000002/2/14.xliff?response-content-disposition=attachment%3B%20filename%3D%22APP.xliff%22&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIGJKLQV66ZXPMMEA%2F20190920%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190920T093121Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=439ebd69a1b7e4c23e6d17891a491c94f832e0c82e4692dedb35a6cd1e624b62",
+            "expireIn": "2019-09-20T10:31:21+00:00"
+          }
+        }');
+
+        $export = $this->crowdin->task->exportStrings(2, 3);
+        $this->assertInstanceOf(DownloadFile::class, $export);
+        $this->assertEquals('https://production-enterprise-importer.downloads.crowdin.com/992000002/2/14.xliff?response-content-disposition=attachment%3B%20filename%3D%22APP.xliff%22&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIGJKLQV66ZXPMMEA%2F20190920%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190920T093121Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=439ebd69a1b7e4c23e6d17891a491c94f832e0c82e4692dedb35a6cd1e624b62', $export->getUrl());
     }
 }

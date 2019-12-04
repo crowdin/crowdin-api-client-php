@@ -39,7 +39,8 @@ class MachineTranslationEngineApiTest extends AbstractTestApi
             }'
         ]);
 
-        $machineTranslationEngines = $this->crowdin->machineTranslationEngine->list(2);
+        $machineTranslationEngines = $this->crowdin->machineTranslationEngine->list(['groupId' => 2]);
+
         $this->assertInstanceOf(ModelCollection::class, $machineTranslationEngines);
         $this->assertCount(1, $machineTranslationEngines);
         $this->assertInstanceOf(MachineTranslationEngine::class, $machineTranslationEngines[0]);
