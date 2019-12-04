@@ -168,6 +168,10 @@ class Crowdin
             'Authorization' => 'Bearer ' . $this->accessToken,
         ], $options['headers'] ?? []);
 
+        if (!empty($options['params'])) {
+            $uri .= '?' . http_build_query($options['params']);
+            $options['body'] = null;
+        }
         $response = $this->client->request($method, $uri, $options);
 
         return $response;
