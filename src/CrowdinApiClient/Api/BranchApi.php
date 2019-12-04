@@ -12,6 +12,10 @@ use CrowdinApiClient\ModelCollection;
 class BranchApi extends AbstractApi
 {
     /**
+     * List Branches
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.branches.getMany API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.branches.getMany API Documentation Enterprise
+     *
      * @param int $projectId
      * @param array $params
      * @internal string $params[name]
@@ -26,6 +30,10 @@ class BranchApi extends AbstractApi
     }
 
     /**
+     * Get Branch Info
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.branches.get API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.branches.get API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $branchId
      * @return Branch|null
@@ -37,6 +45,10 @@ class BranchApi extends AbstractApi
     }
 
     /**
+     * Add Branch
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.branches.post API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.branches.post API Documentation Enterprise
+     *
      * @param int $projectId
      * @param array $data
      * @internal string $data[name] required Note: Can't contain \\ / : * ? \" < > | symbols
@@ -52,6 +64,10 @@ class BranchApi extends AbstractApi
     }
 
     /**
+     * Edit Branch
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.branches.patch API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.branches.patch API Documentation Enterprise
+     *
      * @param Branch $branch
      * @return Branch|null
      */
@@ -63,6 +79,10 @@ class BranchApi extends AbstractApi
     }
 
     /**
+     * Delete Branch
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.branches.delete API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.branches.delete API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $branchId
      * @return mixed

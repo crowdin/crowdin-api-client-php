@@ -14,6 +14,9 @@ use CrowdinApiClient\ModelCollection;
 class FileApi extends AbstractApi
 {
     /**
+     * List Files
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.files.getMany API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.files.getMany API Documentation Enterprise
      * @param int $projectId
      * @param array $params
      * @return ModelCollection
@@ -25,6 +28,10 @@ class FileApi extends AbstractApi
     }
 
     /**
+     * Add File
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.files.post API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.files.post API Documentation Enterprise
+     *
      * @param int $projectId
      * @param array $data
      * @internal integer $data[storageId] required
@@ -42,6 +49,9 @@ class FileApi extends AbstractApi
     }
 
     /**
+     * Get File Info
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.files.get API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.files.get API Documentation Enterprise
      * @param int $projectId
      * @param $fileId
      * @return File|null
@@ -53,6 +63,10 @@ class FileApi extends AbstractApi
     }
 
     /**
+     * Download File
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.files.download.get API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.files.download.get API Documentation Enterprise
+     *
      * @param int $projectId
      * @param $fileId
      * @return DownloadFile|null
@@ -64,6 +78,10 @@ class FileApi extends AbstractApi
     }
 
     /**
+     * Edit File
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.files.patch API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.files.patch API Documentation Enterprise
+     *
      * @param File $file
      * @return File|null
      */
@@ -74,6 +92,26 @@ class FileApi extends AbstractApi
     }
 
     /**
+     * Update File
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.files.update.updateFile API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.files.update.updateFile API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param int $fileId
+     * @param array $params
+     * @return File|null
+     */
+    public function replace(int $projectId, int $fileId, array $params): ?File
+    {
+        $path = sprintf('projects/%d/files/%d/update', $projectId, $fileId);
+        return $this->_post($path, File::class, $params);
+    }
+
+    /**
+     * Delete File
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.files.delete API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.files.delete API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $fileId
      * @return mixed
@@ -85,6 +123,10 @@ class FileApi extends AbstractApi
     }
 
     /**
+     * List File Revisions
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.files.revisions.getMany API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.files.revisions.getMany API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $fileId
      * @return ModelCollection
@@ -96,6 +138,10 @@ class FileApi extends AbstractApi
     }
 
     /**
+     * Restore File to Revision
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.files.restore.restoreToRevision API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.files.restore.restoreToRevision API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $fileId
      * @param int $revision
@@ -108,6 +154,10 @@ class FileApi extends AbstractApi
     }
 
     /**
+     * Get File Revision
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.files.revisions.get API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.files.revisions.get API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $fileId
      * @param int $revision
@@ -117,17 +167,5 @@ class FileApi extends AbstractApi
     {
         $path = sprintf('projects/%d/files/%d/revisions/%d', $projectId, $fileId, $revision);
         return $this->_get($path, FileRevision::class);
-    }
-
-    /**
-     * @param int $projectId
-     * @param int $fileId
-     * @param array $data
-     * @return File|null
-     */
-    public function updateFileRevision(int $projectId, int $fileId, array $data): ?File
-    {
-        $path = sprintf('projects/%d/files/%d/update', $projectId, $fileId);
-        return $this->_create($path, File::class, $data);
     }
 }

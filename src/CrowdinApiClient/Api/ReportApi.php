@@ -12,6 +12,10 @@ use CrowdinApiClient\Model\Report;
 class ReportApi extends AbstractApi
 {
     /**
+     * Generate Report
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.reports.post API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.reports.post API Documentation Enterprise
+     *
      * @param int $projectId
      * @param array $data
      * @return Report|null
@@ -23,6 +27,10 @@ class ReportApi extends AbstractApi
     }
 
     /**
+     * Check Report Generation Status
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.reports.get API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.reports.get API Documentation Enterprise
+     *
      * @param int $projectId
      * @param string $reportId
      * @return Report|null
@@ -34,6 +42,10 @@ class ReportApi extends AbstractApi
     }
 
     /**
+     * Download Report
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.reports.download.get API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.reports.download.get API Documentation Enterprise
+     *
      * @param int $projectId
      * @param string $reportId
      * @return DownloadFile|null

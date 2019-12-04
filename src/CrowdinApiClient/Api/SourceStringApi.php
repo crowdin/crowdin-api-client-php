@@ -12,6 +12,10 @@ use CrowdinApiClient\ModelCollection;
 class SourceStringApi extends AbstractApi
 {
     /**
+     * List Strings
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.strings.getMany API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.strings.getMany API Documentation Enterprise
+     *
      * @param int $projectId
      * @param array $params
      * @return ModelCollection
@@ -23,6 +27,10 @@ class SourceStringApi extends AbstractApi
     }
 
     /**
+     * Get String
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.strings.get API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.strings.get API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $stringId
      * @return SourceString
@@ -34,6 +42,10 @@ class SourceStringApi extends AbstractApi
     }
 
     /**
+     * Add String
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.strings.post API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.strings.post API Documentation Enterprise
+     *
      * @param int $projectId
      * @param array $data
      * @internal string $data[identifier] required
@@ -51,6 +63,10 @@ class SourceStringApi extends AbstractApi
     }
 
     /**
+     * Edit String
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.strings.patch API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.strings.patch API Documentation Enterprise
+     *
      * @param SourceString $sourceString
      * @return SourceString|null
      */
@@ -61,6 +77,10 @@ class SourceStringApi extends AbstractApi
     }
 
     /**
+     * Delete String
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.strings.delete API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.strings.delete API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $stringId
      * @return mixed

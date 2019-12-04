@@ -14,6 +14,10 @@ use CrowdinApiClient\ModelCollection;
 class TranslationStatusApi extends AbstractApi
 {
     /**
+     * List Reported Issues
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.issues.getMany API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.issues.getMany API Documentation Enterprise
+     *
      * @param int $projectId
      * @param array $params
      * @return Issue|null
@@ -25,6 +29,10 @@ class TranslationStatusApi extends AbstractApi
     }
 
     /**
+     * Get Branch Progress
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.branches.languages.progress.getMany API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.branches.languages.progress.getMany API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $branchId
      * @return ModelCollection|null
@@ -36,6 +44,10 @@ class TranslationStatusApi extends AbstractApi
     }
 
     /**
+     * Get Directory Progress
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.directories.languages.progress.getMany API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.directories.languages.progress.getMany API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $directoryId
      * @return ModelCollection|null
@@ -47,6 +59,10 @@ class TranslationStatusApi extends AbstractApi
     }
 
     /**
+     * Get File Progress
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.files.languages.progress.getMany API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.files.languages.progress.getMany API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $fileId
      * @return ModelCollection|null
@@ -58,6 +74,10 @@ class TranslationStatusApi extends AbstractApi
     }
 
     /**
+     * Get Project Progress
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.languages.progress.getMany API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.languages.progress.getMany API Documentation Enterprise
+     *
      * @param int $projectId
      * @param array $languageIds
      * @return ModelCollection|null
@@ -69,6 +89,10 @@ class TranslationStatusApi extends AbstractApi
     }
 
     /**
+     * List QA Check Issues
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.qa-check.getMany API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.qa-check.getMany API Documentation Enterprise
+     *
      * @param int $projectId
      * @param array $params
      * @return ModelCollection|null

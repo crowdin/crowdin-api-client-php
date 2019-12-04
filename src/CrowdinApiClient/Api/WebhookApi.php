@@ -12,6 +12,10 @@ use CrowdinApiClient\ModelCollection;
 class WebhookApi extends AbstractApi
 {
     /**
+     * List Webhooks
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.webhooks.getMany API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.webhooks.getMany API Documentation Enterprise
+     *
      * @param int $projectId
      * @param array $params
      * @return ModelCollection
@@ -23,6 +27,10 @@ class WebhookApi extends AbstractApi
     }
 
     /**
+     * Get Webhook Info
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.webhooks.get API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.webhooks.get API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $webhookId
      * @return Webhook
@@ -34,6 +42,10 @@ class WebhookApi extends AbstractApi
     }
 
     /**
+     * Add Webhook
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.webhooks.post API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.webhooks.post API Documentation Enterprise
+     *
      * @param int $projectId
      * @param array $data
      * @internal string $data[name] required
@@ -64,6 +76,10 @@ class WebhookApi extends AbstractApi
     }
 
     /**
+     * Edit Webhook
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.webhooks.patch API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.webhooks.patch API Documentation Enterprise
+     *
      * @param Webhook $webhook
      * @return Webhook|null
      */
@@ -73,7 +89,11 @@ class WebhookApi extends AbstractApi
         return $this->_update($patch, $webhook);
     }
 
-    /***
+    /**
+     * Delete Webhook
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.webhooks.delete API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.webhooks.delete API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $webhookId
      * @return mixed

@@ -2,6 +2,7 @@
 
 namespace CrowdinApiClient\Api;
 
+use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\Task;
 use CrowdinApiClient\ModelCollection;
 
@@ -12,6 +13,10 @@ use CrowdinApiClient\ModelCollection;
 class TaskApi extends AbstractApi
 {
     /**
+     * List Tasks
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.tasks.getMany API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.tasks.getMany API Documentation Enterprise
+     *
      * @param int $projectId
      * @param array $params
      * @return ModelCollection
@@ -23,6 +28,10 @@ class TaskApi extends AbstractApi
     }
 
     /**
+     * Get Task
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.tasks.get API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.tasks.get API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $taskId
      * @return Task|null
@@ -34,6 +43,10 @@ class TaskApi extends AbstractApi
     }
 
     /**
+     * Add Task
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.tasks.post API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.tasks.post API Documentation Enterprise
+     *
      * @param int $projectId
      * @param array $data
      * @return Task|null
@@ -45,6 +58,10 @@ class TaskApi extends AbstractApi
     }
 
     /**
+     * Edit Task
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.tasks.patch API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.tasks.patch API Documentation Enterprise
+     *
      * @param Task $task
      * @return Task|null
      */
@@ -55,6 +72,10 @@ class TaskApi extends AbstractApi
     }
 
     /**
+     * Delete Task
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.tasks.delete API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.tasks.delete API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $taskId
      * @return mixed
@@ -63,5 +84,20 @@ class TaskApi extends AbstractApi
     {
         $path = sprintf('projects/%d/tasks/%d', $projectId, $taskId);
         return $this->_delete($path);
+    }
+
+    /**
+     * Export Task Strings
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.tasks.export.get API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.tasks.export.get API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param int $taskId
+     * @return DownloadFile|null
+     */
+    public function exportStrings(int $projectId, int $taskId): ?DownloadFile
+    {
+        $path = sprintf('projects/%d/tasks/%d/export', $projectId, $taskId);
+        return $this->_get($path, DownloadFile::class);
     }
 }

@@ -11,6 +11,10 @@ use CrowdinApiClient\ModelCollection;
 class TranslationApi extends AbstractApi
 {
     /**
+     * Apply Pre-Translation
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.pre-translations.post API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.pre-translations.post API Documentation Enterprise
+     *
      * @param int $projectId
      * @param array $params
      * @return PreTranslation|null
@@ -22,6 +26,10 @@ class TranslationApi extends AbstractApi
     }
 
     /**
+     * Pre-Translation Status
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.pre-translations.get  API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.pre-translations.get  API Documentation Enterprise
+     *
      * @param int $projectId
      * @param string $preTranslationId
      * @return PreTranslation|null
@@ -34,6 +42,10 @@ class TranslationApi extends AbstractApi
     }
 
     /**
+     * Build Project File Translation
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.translations.builds.files.post API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.translations.builds.files.post API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $fileId
      * @param string $targetLanguageId
@@ -52,6 +64,10 @@ class TranslationApi extends AbstractApi
     }
 
     /**
+     * List Project Builds
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.translations.builds.getMany  API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.translations.builds.getMany  API Documentation Enterprise
+     *
      * @param int $projectId
      * @param array $params
      * @return ModelCollection
@@ -64,6 +80,10 @@ class TranslationApi extends AbstractApi
     }
 
     /**
+     * Check Project Build Status
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.translations.builds.get  API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.translations.builds.get  API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $buildId
      * @return TranslationProjectBuild|null
@@ -76,6 +96,10 @@ class TranslationApi extends AbstractApi
     }
 
     /**
+     * Download Project Translations
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.translations.builds.download.download API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.translations.builds.download.download API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $buildId
      * @return DownloadFile|null
@@ -87,6 +111,10 @@ class TranslationApi extends AbstractApi
     }
 
     /**
+     * Cancel Build
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.translations.builds.delete  API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.translations.builds.delete  API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $buildId
      * @return mixed
@@ -98,6 +126,10 @@ class TranslationApi extends AbstractApi
     }
 
     /**
+     * Upload Translations
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.translations.post  API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.translations.post  API Documentation Enterprise
+     *
      * @param int $projectId
      * @param string $languageId
      * @param array $params
@@ -111,6 +143,10 @@ class TranslationApi extends AbstractApi
     }
 
     /**
+     * Build Project Translation
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.translations.builds.build API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.translations.builds.build API Documentation Enterprise
+     *
      * @param int $projectId
      * @param array $params
      * @internal integer $params[branchId]

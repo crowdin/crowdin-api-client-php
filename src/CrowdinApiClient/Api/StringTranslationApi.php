@@ -14,6 +14,10 @@ use CrowdinApiClient\ModelCollection;
 class StringTranslationApi extends AbstractApi
 {
     /**
+     * List String Translations
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.translations.getMany  API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.translations.getMany  API Documentation Enterprise
+     *
      * @param int $projectId
      * @param array $params
      * @return ModelCollection
@@ -25,6 +29,10 @@ class StringTranslationApi extends AbstractApi
     }
 
     /**
+     * Translation Info
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.translations.get API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.translations.get API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $translationId
      * @return StringTranslation|null
@@ -36,6 +44,10 @@ class StringTranslationApi extends AbstractApi
     }
 
     /**
+     * Add Translation
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.translations.add API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.translations.add API Documentation Enterprise
+     *
      * @param int $projectId
      * @param array $data
      * @return StringTranslation|null
@@ -47,6 +59,10 @@ class StringTranslationApi extends AbstractApi
     }
 
     /**
+     * Restore Translation
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.translations{translationId}.restore.post  API Documentation Enterprise
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.translations{translationId}.restore.post  API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $translationId
      * @return StringTranslation|null
@@ -59,6 +75,31 @@ class StringTranslationApi extends AbstractApi
     }
 
     /**
+     * Delete String Translations
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.translations.deleteMany API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.translations.deleteMany API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param int $stringId
+     * @param string $languageId
+     * @return mixed
+     */
+    public function deleteStringTranslations(int $projectId, int $stringId, string $languageId)
+    {
+        $path = sprintf('projects/%d/translations', $projectId);
+        $params = [
+            'stringId' => $stringId,
+            'languageId' => $languageId,
+        ];
+
+        return $this->_delete($path, $params);
+    }
+
+    /**
+     * Delete Translation
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.translations.delete API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.translations.delete API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $translationId
      * @return mixed
@@ -70,6 +111,10 @@ class StringTranslationApi extends AbstractApi
     }
 
     /**
+     * List Translation Approvals
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.approvals.getMany API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.approvals.getMany API Documentation Enterprise
+     *
      * @param int $projectId
      * @param array $params
      * @return ModelCollection
@@ -81,6 +126,10 @@ class StringTranslationApi extends AbstractApi
     }
 
     /**
+     * Approval Info
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.approvals.get API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.approvals.get API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $approvalId
      * @return StringTranslationApproval|null
@@ -93,6 +142,10 @@ class StringTranslationApi extends AbstractApi
     }
 
     /**
+     * Add Approval
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.approvals.post API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.approvals.post API Documentation Enterprise
+     *
      * @param int $projectId
      * @param array $data
      * @return StringTranslationApproval|null
@@ -105,6 +158,10 @@ class StringTranslationApi extends AbstractApi
     }
 
     /**
+     * Remove Approval
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.approvals.delete API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.approvals.delete API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $approvalId
      * @return mixed
@@ -116,6 +173,10 @@ class StringTranslationApi extends AbstractApi
     }
 
     /**
+     * List Translation Votes
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.votes.getMany API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.votes.getMany API Documentation Enterprise
+     *
      * @param int $projectId
      * @param array $params
      * @return ModelCollection
@@ -127,6 +188,10 @@ class StringTranslationApi extends AbstractApi
     }
 
     /**
+     * Vote Info
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.votes.get API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.votes.get API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $voteId
      * @return Vote|null
@@ -139,6 +204,10 @@ class StringTranslationApi extends AbstractApi
     }
 
     /**
+     * Add Vote
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.votes.post API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.votes.post API Documentation Enterprise
+     *
      * @param int $projectId
      * @param array $data
      * @return Vote|null
@@ -150,6 +219,9 @@ class StringTranslationApi extends AbstractApi
     }
 
     /**
+     * Cancel Vote
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.votes.delete API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.votes.delete API Documentation Enterprise
      * @param int $projectId
      * @param int $voteId
      * @return mixed

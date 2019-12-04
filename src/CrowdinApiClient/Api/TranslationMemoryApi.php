@@ -15,7 +15,10 @@ use CrowdinApiClient\ModelCollection;
 class TranslationMemoryApi extends AbstractApi
 {
     /**
-     * @param int $groupId
+     * List TMs
+     * @link https://support.crowdin.com/api/v2/#operation/api.tms.getMany API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.tms.getMany API Documentation Enterprise
+     *
      * @param array $params
      * @internal integer $params[userId]
      * @internal integer $params[limit]
@@ -28,6 +31,10 @@ class TranslationMemoryApi extends AbstractApi
     }
 
     /**
+     * Get TM Info
+     * @link https://support.crowdin.com/api/v2/#operation/api.tms.get API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.tms.get API Documentation Enterprise
+     *
      * @param int $translationMemoryId
      * @return TranslationMemory|null
      */
@@ -37,6 +44,10 @@ class TranslationMemoryApi extends AbstractApi
     }
 
     /**
+     * Add TM
+     * @link https://support.crowdin.com/api/v2/#operation/api.tms.post API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.tms.post API Documentation Enterprise
+     *
      * @param array $data
      * @internal string $data[name]
      * @return mixed
@@ -47,6 +58,9 @@ class TranslationMemoryApi extends AbstractApi
     }
 
     /**
+     * Edit TM Info
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.tms.patch API Documentation Enterprise
+     *
      * @param TranslationMemory $translationMemory
      * @return TranslationMemory|null
      */
@@ -56,6 +70,10 @@ class TranslationMemoryApi extends AbstractApi
     }
 
     /**
+     * Delete TM
+     * @link https://support.crowdin.com/api/v2/#operation/api.tms.delete API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.tms.delete API Documentation Enterprise
+     *
      * @param int $translationMemoryId
      * @return mixed
      */
@@ -65,6 +83,10 @@ class TranslationMemoryApi extends AbstractApi
     }
 
     /**
+     * Download TM
+     * @link https://support.crowdin.com/api/v2/#operation/api.tms.exports.getMany API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.tms.exports.getMany API Documentation Enterprise
+     *
      * @param int $translationMemoryId
      * @param array $params
      * @return DownloadFile|null
@@ -76,6 +98,10 @@ class TranslationMemoryApi extends AbstractApi
     }
 
     /**
+     * Export TM
+     * @link https://support.crowdin.com/api/v2/#operation/api.tms.exports.post API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.tms.exports.post API Documentation Enterprise
+     *
      * @param int $translationMemoryId
      * @param array $params
      * @return TranslationMemoryExport|null
@@ -87,6 +113,10 @@ class TranslationMemoryApi extends AbstractApi
     }
 
     /**
+     * Check TM Export Status
+     * @link https://support.crowdin.com/api/v2/#operation/api.tms.exports.get API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.tms.exports.get API Documentation Enterprise
+     *
      * @param int $translationMemoryId
      * @param string $exportId
      * @return TranslationMemoryExport|null
@@ -98,6 +128,10 @@ class TranslationMemoryApi extends AbstractApi
     }
 
     /**
+     * Import TM
+     * @link https://support.crowdin.com/api/v2/#operation/api.tms.imports.post API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.tms.imports.post API Documentation Enterprise
+     *
      * @param int $translationMemoryId
      * @param int $storageId
      * @param bool $firstLineContainsHeader
@@ -117,6 +151,10 @@ class TranslationMemoryApi extends AbstractApi
     }
 
     /**
+     * Check TM Import Status
+     * @link https://support.crowdin.com/api/v2/#operation/api.tms.imports.get API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.tms.imports.get API Documentation Enterprise
+     *
      * @param int $translationMemoryId
      * @param string $importId
      * @return TranslationMemoryImport|null
