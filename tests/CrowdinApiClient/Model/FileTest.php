@@ -24,7 +24,6 @@ class FileTest extends TestCase
         'projectId' => 2,
         'branchId' => 34,
         'directoryId' => 4,
-        'languageId' => 'en',
         'name' => 'umbrella_app.xliff',
         'title' => 'source_app_info',
         'type' => 'xliff',
@@ -70,7 +69,6 @@ class FileTest extends TestCase
         $this->assertEquals($this->data['projectId'], $this->file->getProjectId());
         $this->assertEquals($this->data['branchId'], $this->file->getBranchId());
         $this->assertEquals($this->data['directoryId'], $this->file->getDirectoryId());
-        $this->assertEquals($this->data['languageId'], $this->file->getLanguageId());
         $this->assertEquals($this->data['name'], $this->file->getName());
         $this->assertEquals($this->data['title'], $this->file->getTitle());
         $this->assertEquals($this->data['type'], $this->file->getType());

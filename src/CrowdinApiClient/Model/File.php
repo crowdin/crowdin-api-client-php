@@ -31,11 +31,6 @@ class File extends BaseModel
     /**
      * @var string
      */
-    protected $languageId;
-
-    /**
-     * @var string
-     */
     protected $name;
 
     /**
@@ -91,7 +86,6 @@ class File extends BaseModel
         $this->projectId = (integer)$this->getDataProperty('projectId');
         $this->branchId = (integer)$this->getDataProperty('branchId');
         $this->directoryId = (integer)$this->getDataProperty('directoryId');
-        $this->languageId = (string)$this->getDataProperty('languageId');
         $this->name = (string)$this->getDataProperty('name');
         $this->title = (string)$this->getDataProperty('title');
         $this->type = (string)$this->getDataProperty('type');
@@ -150,14 +144,6 @@ class File extends BaseModel
     public function setDirectoryId(int $directoryId): void
     {
         $this->directoryId = $directoryId;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLanguageId(): string
-    {
-        return $this->languageId;
     }
 
     /**

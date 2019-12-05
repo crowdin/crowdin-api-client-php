@@ -40,6 +40,8 @@ class FileApi extends AbstractApi
      * @internal integer $data[directoryId]
      * @internal string $data[title]
      * @internal string $data[type]
+     * @internal array $data[importOptions]
+     * @internal array $data[exportOptions]
      * @return File
      */
     public function create(int $projectId, array $data): File

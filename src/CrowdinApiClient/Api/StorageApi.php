@@ -5,6 +5,7 @@ namespace CrowdinApiClient\Api;
 use CrowdinApiClient\Http\ResponseDecorator\ResponseModelDecorator;
 use CrowdinApiClient\Model\Storage;
 use CrowdinApiClient\ModelCollection;
+use CrowdinApiClient\Utility\Mimetypes;
 use SplFileObject;
 
 /**
@@ -39,7 +40,7 @@ class StorageApi extends AbstractApi
     public function create(SplFileObject $fileObject): ?Storage
     {
         $options = [
-            'headers' => ['Content-Type' => mime_content_type($fileObject->getRealPath())],
+            'headers' => ['Content-Type' => Mimetypes::getInstance()->fromFilename($fileObject->getFilename())],
             'body' => file_get_contents($fileObject->getRealPath())
         ];
 
