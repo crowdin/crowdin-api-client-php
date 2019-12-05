@@ -19,6 +19,11 @@ class ProjectApi extends AbstractApi
      * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.getMany API Documentation Enterprise
      *
      * @param array $params
+     * @internal integer $params[groupId] for enterprise only
+     * @internal integer $params[hasManagerAccess] for enterprise only Enum{0,1} (0 -false, 1 true)
+     * @internal integer $params[limit]
+     * @internal integer $params[offset]
+     * @internal integer $params[userId] Get user own projects
      * @return ModelCollection
      */
     public function list(array $params = []): ModelCollection
