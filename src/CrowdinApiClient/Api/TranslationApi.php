@@ -133,13 +133,24 @@ class TranslationApi extends AbstractApi
      * @param int $projectId
      * @param string $languageId
      * @param array $params
+     * @internal  integer $params[storageId] required
+     * @internal  integer $params[fileId] required
+     * @internal  bool $params[importDuplicates]
+     * @internal  bool $params[importEqSuggestions]
+     * @internal  bool $params[autoApproveImported]
+     * @internal  bool $params[markAddedTranslationsAsDone]
      * @return array
      */
     public function uploadTranslations(int $projectId, string $languageId, array $params): array
     {
         $path = sprintf('projects/%d/translations/%s', $projectId, $languageId);
 
-        return $this->client->apiRequest('post', $path, new ResponseArrayDecorator(), $params);
+        $options = [
+            'body' => json_encode($params),
+            'headers' => ['Content-Type' => 'application/json']
+        ];
+
+        return $this->client->apiRequest('post', $path, new ResponseArrayDecorator(), $options);
     }
 
     /**
