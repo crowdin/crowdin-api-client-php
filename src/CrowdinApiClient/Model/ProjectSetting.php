@@ -78,6 +78,11 @@ class ProjectSetting extends BaseModel
      */
     protected $qaCheckCategories = [];
 
+    /**
+     * @var array
+     */
+    protected $languageMapping = [];
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -96,6 +101,7 @@ class ProjectSetting extends BaseModel
         $this->qaCheckIsActive = (bool)$this->getDataProperty('qaCheckIsActive');
         $this->lowestQualityProjectGoalId = (integer)$this->getDataProperty('lowestQualityProjectGoalId');
         $this->qaCheckCategories = (array)$this->getDataProperty('qaCheckCategories');
+        $this->languageMapping = (array)$this->getDataProperty('languageMapping');
     }
 
     /**
@@ -312,5 +318,21 @@ class ProjectSetting extends BaseModel
     public function setJiptPseudoLanguageId(string $jiptPseudoLanguageId): void
     {
         $this->jiptPseudoLanguageId = $jiptPseudoLanguageId;
+    }
+
+    /**
+     * @return array
+     */
+    public function getLanguageMapping(): array
+    {
+        return $this->languageMapping;
+    }
+
+    /**
+     * @param array $languageMapping
+     */
+    public function setLanguageMapping(array $languageMapping): void
+    {
+        $this->languageMapping = $languageMapping;
     }
 }
