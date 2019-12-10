@@ -47,6 +47,20 @@ class ProjectSettingTest extends TestCase
                 'spellcheck' => true,
                 'icu' => true,
             ],
+        'languageMapping' =>
+            [
+                'uk' =>
+                    [
+                        'name' => 'Ukranian',
+                        'two_letters_code' => 'ua',
+                        'three_letters_code' => 'ukr',
+                        'locale' => 'uk-UA',
+                        'locale_with_underscore' => 'uk_UA',
+                        'android_code' => 'uk-rUA',
+                        'osx_code' => 'ua.lproj',
+                        'osx_locale' => 'ua',
+                    ],
+            ],
     ];
 
     /**
@@ -77,6 +91,7 @@ class ProjectSettingTest extends TestCase
         $this->projectSetting->setQaCheckIsActive($this->data['qaCheckIsActive']);
         $this->projectSetting->setLowestQualityProjectGoalId($this->data['lowestQualityProjectGoalId']);
         $this->projectSetting->setQaCheckCategories($this->data['qaCheckCategories']);
+        $this->projectSetting->setLanguageMapping($this->data['languageMapping']);
 
         $this->assertEquals($this->data['translateDuplicates'], $this->projectSetting->getTranslateDuplicates());
         $this->assertEquals($this->data['isMtAllowed'], $this->projectSetting->isMtAllowed());
@@ -91,6 +106,7 @@ class ProjectSettingTest extends TestCase
         $this->assertEquals($this->data['qaCheckIsActive'], $this->projectSetting->isQaCheckIsActive());
         $this->assertEquals($this->data['lowestQualityProjectGoalId'], $this->projectSetting->getLowestQualityProjectGoalId());
         $this->assertEquals($this->data['qaCheckCategories'], $this->projectSetting->getQaCheckCategories());
+        $this->assertEquals($this->data['languageMapping'], $this->projectSetting->getLanguageMapping());
     }
 
     public function checkData()
@@ -109,5 +125,6 @@ class ProjectSettingTest extends TestCase
         $this->assertEquals($this->data['qaCheckIsActive'], $this->projectSetting->isQaCheckIsActive());
         $this->assertEquals($this->data['lowestQualityProjectGoalId'], $this->projectSetting->getLowestQualityProjectGoalId());
         $this->assertEquals($this->data['qaCheckCategories'], $this->projectSetting->getQaCheckCategories());
+        $this->assertEquals($this->data['languageMapping'], $this->projectSetting->getLanguageMapping());
     }
 }

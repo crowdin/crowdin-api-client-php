@@ -19,7 +19,7 @@ class DirectoryApiTest extends AbstractTestApi
                     "id": 4,
                     "projectId": 2,
                     "branchId": 34,
-                    "parentId": 0,
+                    "directoryId": 0,
                     "name": "main",
                     "title": "<Description materials>",
                     "exportPattern": "/localization/%locale%/%file_name%",

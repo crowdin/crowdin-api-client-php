@@ -212,6 +212,18 @@ class ProjectApiTest extends AbstractTestApi
                   "wrongTranslation": true,
                   "spellcheck": true,
                   "icu": true
+                },
+                 "languageMapping": {
+                    "uk": {
+                    "name": "Ukranian",
+                    "two_letters_code": "ua",
+                    "three_letters_code": "ukr",
+                    "locale": "uk-UA",
+                    "locale_with_underscore": "uk_UA",
+                    "android_code": "uk-rUA",
+                    "osx_code": "ua.lproj",
+                    "osx_locale": "ua"
+                    }
                 }
               }
             }');
@@ -249,6 +261,18 @@ class ProjectApiTest extends AbstractTestApi
                   "wrongTranslation": true,
                   "spellcheck": true,
                   "icu": true
+                },
+                "languageMapping": {
+                    "uk": {
+                    "name": "Ukranian",
+                    "two_letters_code": "ua",
+                    "three_letters_code": "ukr",
+                    "locale": "uk-UA",
+                    "locale_with_underscore": "uk_UA",
+                    "android_code": "uk-rUA",
+                    "osx_code": "ua.lproj",
+                    "osx_locale": "ua"
+                    }
                 }
               }
             }');

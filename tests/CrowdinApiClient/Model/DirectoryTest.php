@@ -18,7 +18,7 @@ class DirectoryTest extends TestCase
         'id' => 4,
         'projectId' => 2,
         'branchId' => 34,
-        'parentId' => 0,
+        'directoryId' => 0,
         'name' => 'main',
         'title' => '<Description materials>',
         'exportPattern' => '/localization/%locale%/%file_name%',
@@ -42,14 +42,14 @@ class DirectoryTest extends TestCase
     {
         $this->directory = new Directory();
         $this->directory->setBranchId($this->data['branchId']);
-        $this->directory->setParentId($this->data['parentId']);
+        $this->directory->setDirectoryId($this->data['directoryId']);
         $this->directory->setName($this->data['name']);
         $this->directory->setTitle($this->data['title']);
         $this->directory->setExportPattern($this->data['exportPattern']);
         $this->directory->setPriority($this->data['priority']);
 
         $this->assertEquals($this->data['branchId'], $this->directory->getBranchId());
-        $this->assertEquals($this->data['parentId'], $this->directory->getParentId());
+        $this->assertEquals($this->data['directoryId'], $this->directory->getDirectoryId());
         $this->assertEquals($this->data['name'], $this->directory->getName());
         $this->assertEquals($this->data['title'], $this->directory->getTitle());
         $this->assertEquals($this->data['exportPattern'], $this->directory->getExportPattern());
@@ -61,7 +61,7 @@ class DirectoryTest extends TestCase
         $this->assertEquals($this->data['id'], $this->directory->getId());
         $this->assertEquals($this->data['projectId'], $this->directory->getProjectId());
         $this->assertEquals($this->data['branchId'], $this->directory->getBranchId());
-        $this->assertEquals($this->data['parentId'], $this->directory->getParentId());
+        $this->assertEquals($this->data['directoryId'], $this->directory->getDirectoryId());
         $this->assertEquals($this->data['name'], $this->directory->getName());
         $this->assertEquals($this->data['title'], $this->directory->getTitle());
         $this->assertEquals($this->data['exportPattern'], $this->directory->getExportPattern());

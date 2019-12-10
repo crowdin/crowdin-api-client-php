@@ -55,7 +55,7 @@ class DirectoryApi extends AbstractApi
      * @param array $data
      * @internal string $data[name] required
      * @internal integer $data[branchId]
-     * @internal integer $data[parentId]
+     * @internal integer $data[directoryId]
      * @internal string $data[title]
      * @internal string $data[exportPattern]
      * @internal string $data[priority] Enum: "low" "normal" "high"

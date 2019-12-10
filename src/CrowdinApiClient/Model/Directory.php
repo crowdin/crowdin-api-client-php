@@ -26,7 +26,7 @@ class Directory extends BaseModel
     /**
      * @var integer
      */
-    protected $parentId;
+    protected $directoryId;
 
     /**
      * @var string
@@ -65,7 +65,7 @@ class Directory extends BaseModel
         $this->id = (integer)$this->getDataProperty('id');
         $this->projectId = (integer)$this->getDataProperty('projectId');
         $this->branchId = (integer)$this->getDataProperty('branchId');
-        $this->parentId = (integer)$this->getDataProperty('parentId');
+        $this->directoryId = (integer)$this->getDataProperty('directoryId');
         $this->name = (string)$this->getDataProperty('name');
         $this->title = (string)$this->getDataProperty('title');
         $this->exportPattern = (string)$this->getDataProperty('exportPattern');
@@ -104,22 +104,6 @@ class Directory extends BaseModel
     public function setBranchId(int $branchId): void
     {
         $this->branchId = $branchId;
-    }
-
-    /**
-     * @return int
-     */
-    public function getParentId(): int
-    {
-        return $this->parentId;
-    }
-
-    /**
-     * @param int $parentId
-     */
-    public function setParentId(int $parentId): void
-    {
-        $this->parentId = $parentId;
     }
 
     /**
@@ -200,5 +184,21 @@ class Directory extends BaseModel
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;
+    }
+
+    /**
+     * @return int
+     */
+    public function getDirectoryId(): int
+    {
+        return $this->directoryId;
+    }
+
+    /**
+     * @param int $directoryId
+     */
+    public function setDirectoryId(int $directoryId): void
+    {
+        $this->directoryId = $directoryId;
     }
 }
