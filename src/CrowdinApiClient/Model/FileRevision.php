@@ -21,17 +21,12 @@ class FileRevision extends BaseModel
     /**
      * @var integer
      */
-    protected $revision;
+    protected $fileId;
 
     /**
      * @var integer
      */
-    protected $revertTo;
-
-    /**
-     * @var integer
-     */
-    protected $translationChunks;
+    protected $restoreToRevision;
 
     /**
      * @var array
@@ -52,9 +47,8 @@ class FileRevision extends BaseModel
         parent::__construct($data);
         $this->id = (integer)$this->getDataProperty('id');
         $this->projectId = (integer)$this->getDataProperty('projectId');
-        $this->revision = (integer)$this->getDataProperty('revision');
-        $this->revertTo = (integer)$this->getDataProperty('revertTo');
-        $this->translationChunks = (integer)$this->getDataProperty('translationChunks');
+        $this->restoreToRevision = (integer)$this->getDataProperty('restoreToRevision');
+        $this->fileId = (integer)$this->getDataProperty('fileId');
         $this->info = (array)$this->getDataProperty('info');
         $this->date = (string)$this->getDataProperty('date');
     }
@@ -65,14 +59,6 @@ class FileRevision extends BaseModel
     public function getId(): int
     {
         return $this->id;
-    }
-
-    /**
-     * @param int $id
-     */
-    public function setId(int $id): void
-    {
-        $this->id = $id;
     }
 
     /**
@@ -89,54 +75,6 @@ class FileRevision extends BaseModel
     public function setProjectId(int $projectId): void
     {
         $this->projectId = $projectId;
-    }
-
-    /**
-     * @return int
-     */
-    public function getRevision(): int
-    {
-        return $this->revision;
-    }
-
-    /**
-     * @param int $revision
-     */
-    public function setRevision(int $revision): void
-    {
-        $this->revision = $revision;
-    }
-
-    /**
-     * @return int
-     */
-    public function getRevertTo(): int
-    {
-        return $this->revertTo;
-    }
-
-    /**
-     * @param int $revertTo
-     */
-    public function setRevertTo(int $revertTo): void
-    {
-        $this->revertTo = $revertTo;
-    }
-
-    /**
-     * @return int
-     */
-    public function getTranslationChunks(): int
-    {
-        return $this->translationChunks;
-    }
-
-    /**
-     * @param int $translationChunks
-     */
-    public function setTranslationChunks(int $translationChunks): void
-    {
-        $this->translationChunks = $translationChunks;
     }
 
     /**
@@ -164,10 +102,18 @@ class FileRevision extends BaseModel
     }
 
     /**
-     * @param string $date
+     * @return int
      */
-    public function setDate(string $date): void
+    public function getFileId(): int
     {
-        $this->date = $date;
+        return $this->fileId;
+    }
+
+    /**
+     * @return int
+     */
+    public function getRestoreToRevision(): int
+    {
+        return $this->restoreToRevision;
     }
 }
