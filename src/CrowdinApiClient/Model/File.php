@@ -61,12 +61,12 @@ class File extends BaseModel
     /**
      * @var array
      */
-    protected $attributes = [];
+    protected $importOptions = [];
 
     /**
-     * @var string
+     * @var array
      */
-    protected $exportPattern;
+    protected $exportOptions = [];
 
     /**
      * @var string
@@ -92,10 +92,10 @@ class File extends BaseModel
         $this->revision = (integer)$this->getDataProperty('revision');
         $this->status = (string)$this->getDataProperty('status');
         $this->priority = (string)$this->getDataProperty('priority');
-        $this->attributes = (array)$this->getDataProperty('attributes');
-        $this->exportPattern = (string)$this->getDataProperty('exportPattern');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
+        $this->importOptions = (array)$this->getDataProperty('importOptions');
+        $this->exportOptions = (array)$this->getDataProperty('exportOptions');
     }
 
     /**
@@ -219,30 +219,6 @@ class File extends BaseModel
     }
 
     /**
-     * @return array
-     */
-    public function getAttributes(): array
-    {
-        return $this->attributes;
-    }
-
-    /**
-     * @return string
-     */
-    public function getExportPattern(): string
-    {
-        return $this->exportPattern;
-    }
-
-    /**
-     * @param string $exportPattern
-     */
-    public function setExportPattern(string $exportPattern): void
-    {
-        $this->exportPattern = $exportPattern;
-    }
-
-    /**
      * @return string
      */
     public function getCreatedAt(): string
@@ -256,5 +232,37 @@ class File extends BaseModel
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;
+    }
+
+    /**
+     * @return array
+     */
+    public function getImportOptions(): array
+    {
+        return $this->importOptions;
+    }
+
+    /**
+     * @param array $importOptions
+     */
+    public function setImportOptions(array $importOptions): void
+    {
+        $this->importOptions = $importOptions;
+    }
+
+    /**
+     * @return array
+     */
+    public function getExportOptions(): array
+    {
+        return $this->exportOptions;
+    }
+
+    /**
+     * @param array $exportOptions
+     */
+    public function setExportOptions(array $exportOptions): void
+    {
+        $this->exportOptions = $exportOptions;
     }
 }

@@ -30,11 +30,21 @@ class FileTest extends TestCase
         'revision' => 1,
         'status' => 'active',
         'priority' => 'normal',
-        'attributes' => [
-            'mimeType' => 'application/xml',
-            'fileSize' => 261433,
-        ],
-        'exportPattern' => 'string',
+        'importOptions' =>
+            [
+                'firstLineContainsHeader' => true,
+                'scheme' =>
+                    [
+                        'identifier' => 0,
+                        'sourcePhrase' => 1,
+                        'en' => 2,
+                        'de' => 3,
+                    ],
+            ],
+        'exportOptions' =>
+            [
+                'escapeQuotes' => 3,
+            ],
         'createdAt' => '2019-09-19T15:10:43+00:00',
         'updatedAt' => '2019-09-19T15:10:46+00:00',
     ];
@@ -53,14 +63,16 @@ class FileTest extends TestCase
         $this->file->setName($this->data['name']);
         $this->file->setTitle($this->data['title']);
         $this->file->setPriority($this->data['priority']);
-        $this->file->setExportPattern($this->data['exportPattern']);
+        $this->file->setImportOptions($this->data['importOptions']);
+        $this->file->setExportOptions($this->data['exportOptions']);
 
         $this->assertEquals($this->data['branchId'], $this->file->getBranchId());
         $this->assertEquals($this->data['directoryId'], $this->file->getDirectoryId());
         $this->assertEquals($this->data['name'], $this->file->getName());
         $this->assertEquals($this->data['title'], $this->file->getTitle());
         $this->assertEquals($this->data['priority'], $this->file->getPriority());
-        $this->assertEquals($this->data['exportPattern'], $this->file->getExportPattern());
+        $this->assertEquals($this->data['importOptions'], $this->file->getImportOptions());
+        $this->assertEquals($this->data['exportOptions'], $this->file->getExportOptions());
     }
 
     public function checkData()
@@ -75,9 +87,9 @@ class FileTest extends TestCase
         $this->assertEquals($this->data['revision'], $this->file->getRevision());
         $this->assertEquals($this->data['status'], $this->file->getStatus());
         $this->assertEquals($this->data['priority'], $this->file->getPriority());
-        $this->assertEquals($this->data['attributes'], $this->file->getAttributes());
-        $this->assertEquals($this->data['exportPattern'], $this->file->getExportPattern());
         $this->assertEquals($this->data['createdAt'], $this->file->getCreatedAt());
         $this->assertEquals($this->data['updatedAt'], $this->file->getUpdatedAt());
+        $this->assertEquals($this->data['importOptions'], $this->file->getImportOptions());
+        $this->assertEquals($this->data['exportOptions'], $this->file->getExportOptions());
     }
 }
