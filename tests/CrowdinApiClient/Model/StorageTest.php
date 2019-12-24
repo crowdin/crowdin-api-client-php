@@ -20,7 +20,8 @@ class StorageTest extends TestCase
      * @var array
      */
     public $data = [
-        'id' => 1
+        'id' => 1,
+        'fileName' => 'tps-tm.tmx'
     ];
 
     public function setUp()
@@ -32,10 +33,6 @@ class StorageTest extends TestCase
     public function testLoadData()
     {
         $this->assertEquals($this->data['id'], $this->storage->getId());
-
-        $this->storage = new Storage();
-        $this->storage->setId($this->data['id']);
-
-        $this->assertEquals($this->data['id'], $this->storage->getId());
+        $this->assertEquals($this->data['fileName'], $this->storage->getFileName());
     }
 }

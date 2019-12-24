@@ -22,12 +22,7 @@ class TranslationProjectBuildTest extends TestCase
                 0 => 15,
             ],
         'status' => 'finished',
-        'progress' =>
-            [
-                'percent' => 90,
-                'currentLanguageId' => 'uk',
-                'currentFileId' => 1,
-            ],
+        'progress' => 90
     ];
 
     public function testLoadData()

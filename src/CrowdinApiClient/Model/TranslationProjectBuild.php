@@ -34,7 +34,7 @@ class TranslationProjectBuild extends BaseModel
     protected $status;
 
     /**
-     * @var array
+     * @var integer
      */
     protected $progress;
 
@@ -51,7 +51,7 @@ class TranslationProjectBuild extends BaseModel
         $this->branchId = (integer)$this->getDataProperty('branchId');
         $this->languagesId = (array)$this->getDataProperty('languagesId');
         $this->status = (string)$this->getDataProperty('status');
-        $this->progress = (array)$this->getDataProperty('progress');
+        $this->progress = (integer)$this->getDataProperty('progress');
     }
 
     /**
@@ -135,17 +135,17 @@ class TranslationProjectBuild extends BaseModel
     }
 
     /**
-     * @return array
+     * @return int
      */
-    public function getProgress(): array
+    public function getProgress(): int
     {
         return $this->progress;
     }
 
     /**
-     * @param array $progress
+     * @param int $progress
      */
-    public function setProgress(array $progress): void
+    public function setProgress(int $progress): void
     {
         $this->progress = $progress;
     }
