@@ -13,10 +13,16 @@ class Storage extends BaseModel
      */
     protected $id;
 
+    /**
+     * @var string
+     */
+    protected $fileName;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
         $this->id = (integer)$this->getDataProperty('id');
+        $this->fileName = (string)$this->getDataProperty('fileName');
     }
 
     /**
@@ -28,10 +34,10 @@ class Storage extends BaseModel
     }
 
     /**
-     * @param int $id
+     * @return string
      */
-    public function setId(int $id): void
+    public function getFileName(): string
     {
-        $this->id = $id;
+        return $this->fileName;
     }
 }

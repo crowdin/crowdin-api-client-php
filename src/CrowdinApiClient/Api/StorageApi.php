@@ -40,7 +40,10 @@ class StorageApi extends AbstractApi
     public function create(SplFileObject $fileObject): ?Storage
     {
         $options = [
-            'headers' => ['Content-Type' => Mimetypes::getInstance()->fromFilename($fileObject->getFilename())],
+            'headers' => [
+                'Content-Type' => Mimetypes::getInstance()->fromFilename($fileObject->getFilename()),
+                'Crowdin-API-FileName' => $fileObject->getFilename(),
+            ],
             'body' => file_get_contents($fileObject->getRealPath())
         ];
 

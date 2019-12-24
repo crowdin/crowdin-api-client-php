@@ -4,6 +4,7 @@ namespace CrowdinApiClient\Tests\Api;
 
 use CrowdinApiClient\Model\Storage;
 use CrowdinApiClient\ModelCollection;
+use CrowdinApiClient\Utility\Mimetypes;
 
 class StorageApiTest extends AbstractTestApi
 {
@@ -69,6 +70,8 @@ class StorageApiTest extends AbstractTestApi
 
     public function testCreate()
     {
+        $fileObject = new \SplFileObject(__FILE__);
+
         $this->mockRequest([
             'method' => 'post',
             'uri' => 'https://api.crowdin.com/api/v2/storages',
@@ -76,10 +79,14 @@ class StorageApiTest extends AbstractTestApi
               "data": {
                 "id": 1
               }
-            }'
+            }',
+            'headers' => [
+                'Content-Type' => Mimetypes::getInstance()->fromFilename($fileObject->getFilename()),
+                'Crowdin-API-FileName' => $fileObject->getFilename(),
+            ],
         ]);
 
-        $storage = $this->crowdin->storage->create(new \SplFileObject(__FILE__));
+        $storage = $this->crowdin->storage->create($fileObject);
 
         $this->assertInstanceOf(Storage::class, $storage);
     }
