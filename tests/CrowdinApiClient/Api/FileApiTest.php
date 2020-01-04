@@ -63,9 +63,9 @@ class FileApiTest extends AbstractTestApi
         $this->assertEquals(44, $files[0]->getId());
     }
 
-    public function testGetAndUpdate()
+    public function testGetAndEdit()
     {
-        $mock = $this->mockRequestGet('/projects/2/files/44', '{
+        $this->mockRequestGet('/projects/2/files/44', '{
               "data": {
                 "id": 44,
                 "projectId": 2,
@@ -97,7 +97,7 @@ class FileApiTest extends AbstractTestApi
 
         $file->setTitle('source_app_info edit');
 
-        $mock = $this->mockRequestPath('/projects/2/files/44', '{
+        $this->mockRequestPath('/projects/2/files/44', '{
               "data": {
                 "id": 44,
                 "projectId": 2,
@@ -120,9 +120,71 @@ class FileApiTest extends AbstractTestApi
               }
         }');
 
-        $file = $this->crowdin->file->update($file);
+        $file = $this->crowdin->file->edit($file);
 
         $this->assertEquals('source_app_info edit', $file->getTitle());
+    }
+
+    public function testUpdate()
+    {
+        $this->mockRequestPut('/projects/2/files/44', '{
+            "data": {
+                "id": 44,
+                "projectId": 2,
+                "branchId": 34,
+                "directoryId": 4,
+                "languageId": "en",
+                "name": "umbrella_app.xliff",
+                "title": "source_app_info",
+                "type": "xliff",
+                "revision": 2,
+                "status": "active",
+                "priority": "normal",
+                "attributes": {
+                    "mimeType": "application/xml",
+                    "fileSize": 261433
+                },
+                "exportPattern": "string",
+                "createdAt": "2019-09-19T15:10:43+00:00",
+                "updatedAt": "2019-09-19T15:10:46+00:00"
+            }
+        }');
+
+        $file = $this->crowdin->file->update(2, 44, ['storageId' => 1]);
+
+        $this->assertInstanceOf(File::class, $file);
+        $this->assertEquals(2, $file->getRevision());
+    }
+
+    public function testRestore()
+    {
+        $this->mockRequestPut('/projects/2/files/44', '{
+            "data": {
+                "id": 44,
+                "projectId": 2,
+                "branchId": 34,
+                "directoryId": 4,
+                "languageId": "en",
+                "name": "umbrella_app.xliff",
+                "title": "source_app_info",
+                "type": "xliff",
+                "revision": 19,
+                "status": "active",
+                "priority": "normal",
+                "attributes": {
+                    "mimeType": "application/xml",
+                    "fileSize": 261433
+                },
+                "exportPattern": "string",
+                "createdAt": "2019-09-19T15:10:43+00:00",
+                "updatedAt": "2019-09-19T15:10:46+00:00"
+            }
+        }');
+
+        $file = $this->crowdin->file->update(2, 44, ['storageId' => 1]);
+
+        $this->assertInstanceOf(File::class, $file);
+        $this->assertEquals(19, $file->getRevision());
     }
 
     public function testCreate()
@@ -276,92 +338,6 @@ class FileApiTest extends AbstractTestApi
         $this->assertCount(1, $revisions);
         $this->assertInstanceOf(FileRevision::class, $revisions[0]);
         $this->assertEquals(16, $revisions[0]->getId());
-    }
-
-    public function testRestoreFileToRevision()
-    {
-        $this->mockRequest([
-            'path' => '/projects/2/files/44/restore',
-            'method' => 'put',
-            'body' => ['revision' => 0],
-            'response' => '{
-              "data": {
-                "id": 44,
-                "projectId": 2,
-                "branchId": 34,
-                "directoryId": 4,
-                "languageId": "en",
-                "name": "umbrella_app.xliff",
-                "title": "source_app_info",
-                "type": "xliff",
-                "revisionId": 1,
-                "status": "active",
-                "priority": "normal",
-                "attributes": {
-                  "mimeType": "application/xml",
-                  "fileSize": 261433
-                },
-                "exportPattern": "/localization/%locale%/%file_name%.%file_extension%",
-                "createdAt": "2019-09-19T15:10:43+00:00",
-                "updatedAt": "2019-09-19T15:10:46+00:00"
-              }
-            }'
-        ]);
-
-        $fileRevision = $this->crowdin->file->restoreFileToRevision(2, 44, 16);
-
-        $this->assertInstanceOf(File::class, $fileRevision);
-        $this->assertEquals(44, $fileRevision->getId());
-    }
-
-    public function testUploadFile()
-    {
-        $params = [
-            'storageId' => 61,
-            'scheme' =>
-                [
-                    'identifier' => 0,
-                    'sourcePhrase' => 1,
-                    'en' => 2,
-                    'de' => 3,
-                ],
-            'firstLineContainsHeader' => false,
-            'updateOption' => 'clear_translations_and_approvals',
-            'escapeQuotes' => 3,
-        ];
-
-        $this->mockRequest([
-            'path' => '/projects/2/files/44/update',
-            'method' => 'post',
-            'body' => $params,
-            'response' => '{
-              "data": {
-                "id": 44,
-                "projectId": 2,
-                "branchId": 34,
-                "directoryId": 4,
-                "languageId": "en",
-                "name": "umbrella_app.xliff",
-                "title": "source_app_info",
-                "type": "xliff",
-                "revisionId": 1,
-                "status": "active",
-                "priority": "normal",
-                "attributes": {
-                  "mimeType": "application/xml",
-                  "fileSize": 261433
-                },
-                "exportPattern": "/localization/%locale%/%file_name%.%file_extension%",
-                "createdAt": "2019-09-19T15:10:43+00:00",
-                "updatedAt": "2019-09-19T15:10:46+00:00"
-              }
-            }',
-        ]);
-
-        $fileRevision = $this->crowdin->file->replace(2, 44, $params);
-
-        $this->assertInstanceOf(File::class, $fileRevision);
-        $this->assertEquals(44, $fileRevision->getId());
     }
 
     public function testGetRevision()
