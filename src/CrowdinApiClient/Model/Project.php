@@ -109,8 +109,75 @@ class Project extends BaseModel
     protected $updatedAt;
 
     /**
-     * @param array $data
+     * @var integer
      */
+    protected $projectId;
+
+    /**
+     * @var integer
+     */
+    protected $translateDuplicates;
+
+    /**
+     * @var bool
+     */
+    protected $isMtAllowed;
+
+    /**
+     * @var bool
+     */
+    protected $autoSubstitution;
+
+    /**
+     * @var bool
+     */
+    protected $exportTranslatedOnly;
+
+    /**
+     * @var bool
+     */
+    protected $exportApprovedOnly;
+
+    /**
+     * @var bool
+     */
+    protected $autoTranslateDialects;
+
+    /**
+     * @var bool
+     */
+    protected $publicDownloads;
+
+    /**
+     * @var bool
+     */
+    protected $useGlobalTm;
+
+    /**
+     * @var bool
+     */
+    protected $inContext;
+
+    /**
+     * @var string
+     */
+    protected $jiptPseudoLanguageId;
+
+    /**
+     * @var bool
+     */
+    protected $qaCheckIsActive;
+
+    /**
+     * @var array
+     */
+    protected $qaCheckCategories = [];
+
+    /**
+     * @var array
+     */
+    protected $languageMapping = [];
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -135,6 +202,20 @@ class Project extends BaseModel
         $this->hasCrowdsourcing = (bool)$this->getDataProperty('hasCrowdsourcing');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
+
+        $this->translateDuplicates = (integer)$this->getDataProperty('translateDuplicates');
+        $this->isMtAllowed = (bool)$this->getDataProperty('isMtAllowed');
+        $this->autoSubstitution = (bool)$this->getDataProperty('autoSubstitution');
+        $this->exportTranslatedOnly = (bool)$this->getDataProperty('exportTranslatedOnly');
+        $this->exportApprovedOnly = (bool)$this->getDataProperty('exportApprovedOnly');
+        $this->autoTranslateDialects = (bool)$this->getDataProperty('autoTranslateDialects');
+        $this->publicDownloads = (bool)$this->getDataProperty('publicDownloads');
+        $this->useGlobalTm = (bool)$this->getDataProperty('useGlobalTm');
+        $this->inContext = (bool)$this->getDataProperty('inContext');
+        $this->jiptPseudoLanguageId = (string)$this->getDataProperty('jiptPseudoLanguageId');
+        $this->qaCheckIsActive = (bool)$this->getDataProperty('qaCheckIsActive');
+        $this->qaCheckCategories = (array)$this->getDataProperty('qaCheckCategories');
+        $this->languageMapping = (array)$this->getDataProperty('languageMapping');
     }
 
     /**
@@ -146,11 +227,27 @@ class Project extends BaseModel
     }
 
     /**
+     * @param int $id
+     */
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
      * @return int
      */
     public function getGroupId(): int
     {
         return $this->groupId;
+    }
+
+    /**
+     * @param int $groupId
+     */
+    public function setGroupId(int $groupId): void
+    {
+        $this->groupId = $groupId;
     }
 
     /**
@@ -162,11 +259,27 @@ class Project extends BaseModel
     }
 
     /**
+     * @param int $userId
+     */
+    public function setUserId(int $userId): void
+    {
+        $this->userId = $userId;
+    }
+
+    /**
      * @return string
      */
     public function getSourceLanguageId(): string
     {
         return $this->sourceLanguageId;
+    }
+
+    /**
+     * @param string $sourceLanguageId
+     */
+    public function setSourceLanguageId(string $sourceLanguageId): void
+    {
+        $this->sourceLanguageId = $sourceLanguageId;
     }
 
     /**
@@ -178,17 +291,25 @@ class Project extends BaseModel
     }
 
     /**
+     * @param array $targetLanguageIds
+     */
+    public function setTargetLanguageIds(array $targetLanguageIds): void
+    {
+        $this->targetLanguageIds = $targetLanguageIds;
+    }
+
+    /**
      * @return string
      */
-    public function getJoinPolicy(): string
+    public function getJoinPolicy(): ?string
     {
         return $this->joinPolicy;
     }
 
     /**
-     * @param string $joinPolicy
+     * @param string|null $joinPolicy
      */
-    public function setJoinPolicy(string $joinPolicy): void
+    public function setJoinPolicy(?string $joinPolicy): void
     {
         $this->joinPolicy = $joinPolicy;
     }
@@ -199,6 +320,14 @@ class Project extends BaseModel
     public function getLanguageAccessPolicy(): string
     {
         return $this->languageAccessPolicy;
+    }
+
+    /**
+     * @param string $languageAccessPolicy
+     */
+    public function setLanguageAccessPolicy(string $languageAccessPolicy): void
+    {
+        $this->languageAccessPolicy = $languageAccessPolicy;
     }
 
     /**
@@ -242,6 +371,14 @@ class Project extends BaseModel
     }
 
     /**
+     * @param string $identifier
+     */
+    public function setIdentifier(string $identifier): void
+    {
+        $this->identifier = $identifier;
+    }
+
+    /**
      * @return string
      */
     public function getDescription(): string
@@ -266,11 +403,27 @@ class Project extends BaseModel
     }
 
     /**
+     * @param string $visibility
+     */
+    public function setVisibility(?string $visibility): void
+    {
+        $this->visibility = $visibility;
+    }
+
+    /**
      * @return string
      */
     public function getLogo(): string
     {
         return $this->logo;
+    }
+
+    /**
+     * @param string $logo
+     */
+    public function setLogo(string $logo): void
+    {
+        $this->logo = $logo;
     }
 
     /**
@@ -282,11 +435,27 @@ class Project extends BaseModel
     }
 
     /**
+     * @param string $background
+     */
+    public function setBackground(string $background): void
+    {
+        $this->background = $background;
+    }
+
+    /**
      * @return bool
      */
     public function isExternal(): bool
     {
         return $this->isExternal;
+    }
+
+    /**
+     * @param bool $isExternal
+     */
+    public function setIsExternal(bool $isExternal): void
+    {
+        $this->isExternal = $isExternal;
     }
 
     /**
@@ -298,11 +467,27 @@ class Project extends BaseModel
     }
 
     /**
+     * @param string $externalType
+     */
+    public function setExternalType(string $externalType): void
+    {
+        $this->externalType = $externalType;
+    }
+
+    /**
      * @return int
      */
     public function getAdvancedWorkflowId(): int
     {
         return $this->advancedWorkflowId;
+    }
+
+    /**
+     * @param int $advancedWorkflowId
+     */
+    public function setAdvancedWorkflowId(int $advancedWorkflowId): void
+    {
+        $this->advancedWorkflowId = $advancedWorkflowId;
     }
 
     /**
@@ -314,11 +499,27 @@ class Project extends BaseModel
     }
 
     /**
+     * @param bool $hasCrowdsourcing
+     */
+    public function setHasCrowdsourcing(bool $hasCrowdsourcing): void
+    {
+        $this->hasCrowdsourcing = $hasCrowdsourcing;
+    }
+
+    /**
      * @return string
      */
     public function getCreatedAt(): string
     {
         return $this->createdAt;
+    }
+
+    /**
+     * @param string $createdAt
+     */
+    public function setCreatedAt(string $createdAt): void
+    {
+        $this->createdAt = $createdAt;
     }
 
     /**
@@ -330,18 +531,234 @@ class Project extends BaseModel
     }
 
     /**
-     * @param array $targetLanguageIds
+     * @param string $updatedAt
      */
-    public function setTargetLanguageIds(array $targetLanguageIds): void
+    public function setUpdatedAt(string $updatedAt): void
     {
-        $this->targetLanguageIds = $targetLanguageIds;
+        $this->updatedAt = $updatedAt;
     }
 
     /**
-     * @param string $languageAccessPolicy
+     * @return int
      */
-    public function setLanguageAccessPolicy(string $languageAccessPolicy): void
+    public function getProjectId(): int
     {
-        $this->languageAccessPolicy = $languageAccessPolicy;
+        return $this->projectId;
+    }
+
+    /**
+     * @param int $projectId
+     */
+    public function setProjectId(int $projectId): void
+    {
+        $this->projectId = $projectId;
+    }
+
+    /**
+     * @return int
+     */
+    public function getTranslateDuplicates(): int
+    {
+        return $this->translateDuplicates;
+    }
+
+    /**
+     * @param int $translateDuplicates
+     */
+    public function setTranslateDuplicates(int $translateDuplicates): void
+    {
+        $this->translateDuplicates = $translateDuplicates;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isMtAllowed(): bool
+    {
+        return $this->isMtAllowed;
+    }
+
+    /**
+     * @param bool $isMtAllowed
+     */
+    public function setIsMtAllowed(bool $isMtAllowed): void
+    {
+        $this->isMtAllowed = $isMtAllowed;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isAutoSubstitution(): bool
+    {
+        return $this->autoSubstitution;
+    }
+
+    /**
+     * @param bool $autoSubstitution
+     */
+    public function setAutoSubstitution(bool $autoSubstitution): void
+    {
+        $this->autoSubstitution = $autoSubstitution;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isExportTranslatedOnly(): bool
+    {
+        return $this->exportTranslatedOnly;
+    }
+
+    /**
+     * @param bool $exportTranslatedOnly
+     */
+    public function setExportTranslatedOnly(bool $exportTranslatedOnly): void
+    {
+        $this->exportTranslatedOnly = $exportTranslatedOnly;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isExportApprovedOnly(): bool
+    {
+        return $this->exportApprovedOnly;
+    }
+
+    /**
+     * @param bool $exportApprovedOnly
+     */
+    public function setExportApprovedOnly(bool $exportApprovedOnly): void
+    {
+        $this->exportApprovedOnly = $exportApprovedOnly;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isAutoTranslateDialects(): bool
+    {
+        return $this->autoTranslateDialects;
+    }
+
+    /**
+     * @param bool $autoTranslateDialects
+     */
+    public function setAutoTranslateDialects(bool $autoTranslateDialects): void
+    {
+        $this->autoTranslateDialects = $autoTranslateDialects;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isPublicDownloads(): bool
+    {
+        return $this->publicDownloads;
+    }
+
+    /**
+     * @param bool $publicDownloads
+     */
+    public function setPublicDownloads(bool $publicDownloads): void
+    {
+        $this->publicDownloads = $publicDownloads;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isUseGlobalTm(): bool
+    {
+        return $this->useGlobalTm;
+    }
+
+    /**
+     * @param bool $useGlobalTm
+     */
+    public function setUseGlobalTm(bool $useGlobalTm): void
+    {
+        $this->useGlobalTm = $useGlobalTm;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isInContext(): bool
+    {
+        return $this->inContext;
+    }
+
+    /**
+     * @param bool $inContext
+     */
+    public function setInContext(bool $inContext): void
+    {
+        $this->inContext = $inContext;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isQaCheckIsActive(): bool
+    {
+        return $this->qaCheckIsActive;
+    }
+
+    /**
+     * @param bool $qaCheckIsActive
+     */
+    public function setQaCheckIsActive(bool $qaCheckIsActive): void
+    {
+        $this->qaCheckIsActive = $qaCheckIsActive;
+    }
+
+    /**
+     * @return array
+     */
+    public function getQaCheckCategories(): array
+    {
+        return $this->qaCheckCategories;
+    }
+
+    /**
+     * @param array $qaCheckCategories
+     */
+    public function setQaCheckCategories(array $qaCheckCategories): void
+    {
+        $this->qaCheckCategories = $qaCheckCategories;
+    }
+
+    /**
+     * @return string
+     */
+    public function getJiptPseudoLanguageId(): ?string
+    {
+        return $this->jiptPseudoLanguageId;
+    }
+
+    /**
+     * @param string $jiptPseudoLanguageId
+     */
+    public function setJiptPseudoLanguageId(string $jiptPseudoLanguageId): void
+    {
+        $this->jiptPseudoLanguageId = $jiptPseudoLanguageId;
+    }
+
+    /**
+     * @return array
+     */
+    public function getLanguageMapping(): array
+    {
+        return $this->languageMapping;
+    }
+
+    /**
+     * @param array $languageMapping
+     */
+    public function setLanguageMapping(array $languageMapping): void
+    {
+        $this->languageMapping = $languageMapping;
     }
 }

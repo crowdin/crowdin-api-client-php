@@ -60,7 +60,7 @@ class Crowdin
     /**
      * @var ResponseErrorHandlerInterface
      */
-    protected $responseErrorHandler;
+    public $responseErrorHandler;
 
     /**
      * @var string
