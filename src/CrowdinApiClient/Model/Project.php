@@ -111,11 +111,6 @@ class Project extends BaseModel
     /**
      * @var integer
      */
-    protected $projectId;
-
-    /**
-     * @var integer
-     */
     protected $translateDuplicates;
 
     /**
@@ -536,22 +531,6 @@ class Project extends BaseModel
     public function setUpdatedAt(string $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
-    }
-
-    /**
-     * @return int
-     */
-    public function getProjectId(): int
-    {
-        return $this->projectId;
-    }
-
-    /**
-     * @param int $projectId
-     */
-    public function setProjectId(int $projectId): void
-    {
-        $this->projectId = $projectId;
     }
 
     /**
