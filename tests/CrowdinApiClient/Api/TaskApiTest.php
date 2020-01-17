@@ -252,4 +252,112 @@ class TaskApiTest extends AbstractTestApi
         $this->assertInstanceOf(DownloadFile::class, $export);
         $this->assertEquals('https://production-enterprise-importer.downloads.crowdin.com/992000002/2/14.xliff?response-content-disposition=attachment%3B%20filename%3D%22APP.xliff%22&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIGJKLQV66ZXPMMEA%2F20190920%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190920T093121Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=439ebd69a1b7e4c23e6d17891a491c94f832e0c82e4692dedb35a6cd1e624b62', $export->getUrl());
     }
+
+    public function testListUserTasks()
+    {
+        $this->mockRequestGet('/user/tasks', '{
+              "data": [
+                {
+                  "data": {
+                    "id": 2,
+                    "projectId": 2,
+                    "creatorId": 6,
+                    "type": 1,
+                    "status": "todo",
+                    "title": "French",
+                    "assignees": [
+                      {
+                        "id": 1,
+                        "wordsCount": 5
+                      }
+                    ],
+                    "fileIds": [
+                      1
+                    ],
+                    "progress": {
+                      "total": 24,
+                      "done": 15,
+                      "percent": 62
+                    },
+                    "sourceLanguageId": "en",
+                    "targetLanguageId": "fr",
+                    "description": "Proofread all French strings",
+                    "hash": "dac37aff364d83899128e68afe0de4994",
+                    "translationUrl": "/proofread/9092638ac9f2a2d1b5571d08edc53763/all/en-fr/10?task=dac37aff364d83899128e68afe0de4994",
+                    "wordsCount": 24,
+                    "filesCount": 2,
+                    "commentsCount": 0,
+                    "deadline": "2019-09-27T07:00:14+00:00",
+                    "timeRange": "string",
+                    "workflowStepId": 10,
+                    "createdAt": "2019-09-23T09:04:29+00:00",
+                    "updatedAt": "2019-09-23T09:04:29+00:00",
+                    "isArchived": false
+                  }
+                }
+              ],
+              "pagination": [
+                {
+                  "offset": 0,
+                  "limit": 25
+                }
+              ]
+            }');
+
+        $tasks = $this->crowdin->task->listUserTasks();
+        $this->assertInstanceOf(ModelCollection::class, $tasks);
+        $this->assertCount(1, $tasks);
+        $this->assertInstanceOf(Task::class, $tasks[0]);
+        $this->assertEquals(2, $tasks[0]->getId());
+    }
+
+    public function testUserTaskArchivedStatus()
+    {
+        $this->mockRequestPath('/user/tasks/2?projectId=2', '{
+                  "data": {
+                    "id": 2,
+                    "projectId": 2,
+                    "creatorId": 6,
+                    "type": 1,
+                    "status": "todo",
+                    "title": "French",
+                    "assignees": [
+                      {
+                        "id": 1,
+                        "wordsCount": 5
+                      }
+                    ],
+                    "fileIds": [
+                      1
+                    ],
+                    "progress": {
+                      "total": 24,
+                      "done": 15,
+                      "percent": 62
+                    },
+                    "sourceLanguageId": "en",
+                    "targetLanguageId": "fr",
+                    "description": "Proofread all French strings",
+                    "hash": "dac37aff364d83899128e68afe0de4994",
+                    "translationUrl": "/proofread/9092638ac9f2a2d1b5571d08edc53763/all/en-fr/10?task=dac37aff364d83899128e68afe0de4994",
+                    "wordsCount": 24,
+                    "filesCount": 2,
+                    "commentsCount": 0,
+                    "deadline": "2019-09-27T07:00:14+00:00",
+                    "timeRange": "string",
+                    "workflowStepId": 10,
+                    "createdAt": "2019-09-23T09:04:29+00:00",
+                    "updatedAt": "2019-09-23T09:04:29+00:00",
+                    "isArchived": true
+                  }
+                }', [
+
+        ]);
+
+        $task = $this->crowdin->task->userTaskArchivedStatus(2, 2);
+
+        $this->assertInstanceOf(Task::class, $task);
+        $this->assertEquals(2, $task->getId());
+        $this->assertTrue($task->isArchived());
+    }
 }

@@ -19,6 +19,10 @@ class TaskApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $params
+     * @internal integer $params[limit]  [ 1 .. 500 ] Default: 25
+     * @internal integer $params[limit]  >= 0 Default: 25
+     * @internal string $params[status]  Enum: "todo" "in_progress" "done" "closed" Example: status=done
+     *
      * @return ModelCollection
      */
     public function list(int $projectId, array $params = []): ModelCollection
@@ -99,5 +103,46 @@ class TaskApi extends AbstractApi
     {
         $path = sprintf('projects/%d/tasks/%d/export', $projectId, $taskId);
         return $this->_get($path, DownloadFile::class);
+    }
+
+    /**
+     * List User Tasks
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.user.tasks.getMany API Documentation Enterprise
+     *
+     * @param array $params
+     * @internal integer $params[limit]  [ 1 .. 500 ] Default: 25
+     * @internal integer $params[offset]  >= 0 Default: 25
+     * @internal string $params[status]  Enum: "todo" "in_progress" "done" "closed" Example: status=done
+     * @internal string $params[isArchived]  Default: 0 Default: 0 Example: isArchived=1
+     *
+     * @return ModelCollection
+     */
+    public function listUserTasks(array $params = []): ?ModelCollection
+    {
+        return  $this->_list('user/tasks', Task::class, $params);
+    }
+
+    /**
+     * Edit Task Archived Status
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.user.tasks.patch
+     *
+     * @param int $taskId
+     * @param int $projectId
+     * @param bool $isArchived
+     * @return Task|null
+     */
+    public function userTaskArchivedStatus(int $taskId, int $projectId, bool $isArchived = true): ?Task
+    {
+        $path = sprintf('user/tasks/%s', $taskId);
+
+        $body = [
+            [
+                'op' => 'replace',
+                'path' => '/isArchived',
+                'value' => $isArchived,
+            ]
+        ];
+
+        return $this->_patch($path, Task::class, $body, ['projectId' => $projectId]);
     }
 }
