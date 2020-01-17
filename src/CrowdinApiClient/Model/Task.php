@@ -118,6 +118,11 @@ class Task extends BaseModel
      */
     protected $updatedAt;
 
+    /**
+     * @var bool
+     */
+    protected $isArchived;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -144,6 +149,7 @@ class Task extends BaseModel
         $this->workflowStepId = (integer)$this->getDataProperty('workflowStepId');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
+        $this->isArchived = (bool)$this->getDataProperty('isArchived');
     }
 
     /**
@@ -368,5 +374,21 @@ class Task extends BaseModel
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isArchived(): ?bool
+    {
+        return $this->isArchived;
+    }
+
+    /**
+     * @param bool $isArchived
+     */
+    public function setIsArchived(?bool $isArchived): void
+    {
+        $this->isArchived = $isArchived;
     }
 }

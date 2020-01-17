@@ -50,6 +50,7 @@ class TaskTest extends TestCase
         'workflowStepId' => 10,
         'createdAt' => '2019-09-23T09:04:29+00:00',
         'updatedAt' => '2019-09-23T09:04:29+00:00',
+        'isArchived' => false
     ];
 
     public function testLoadData()
@@ -67,6 +68,7 @@ class TaskTest extends TestCase
         $this->task->setFileIds($this->data['fileIds']);
         $this->task->setDescription($this->data['description']);
         $this->task->setDeadline($this->data['deadline']);
+        $this->task->setIsArchived($this->data['isArchived']);
 
         $this->assertEquals($this->data['status'], $this->task->getStatus());
         $this->assertEquals($this->data['title'], $this->task->getTitle());
@@ -74,6 +76,7 @@ class TaskTest extends TestCase
         $this->assertEquals($this->data['fileIds'], $this->task->getFileIds());
         $this->assertEquals($this->data['description'], $this->task->getDescription());
         $this->assertEquals($this->data['deadline'], $this->task->getDeadline());
+        $this->assertEquals($this->data['isArchived'], $this->task->isArchived());
     }
 
     public function checkData()
@@ -100,5 +103,6 @@ class TaskTest extends TestCase
         $this->assertEquals($this->data['workflowStepId'], $this->task->getWorkflowStepId());
         $this->assertEquals($this->data['createdAt'], $this->task->getCreatedAt());
         $this->assertEquals($this->data['updatedAt'], $this->task->getUpdatedAt());
+        $this->assertEquals($this->data['isArchived'], $this->task->isArchived());
     }
 }

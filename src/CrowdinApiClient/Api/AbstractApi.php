@@ -148,4 +148,22 @@ abstract class AbstractApi implements ApiInterface
 
         return $this->client->apiRequest('post', $path, new ResponseModelDecorator($modelName), $options);
     }
+
+    /**
+     * @param string $path
+     * @param string $modelName
+     * @param array $body
+     * @param array $params
+     * @return mixed
+     */
+    protected function _patch(string $path, string $modelName, array $body, array $params = [])
+    {
+        $options = [
+            'body' => json_encode($body),
+            'headers' => ['Content-Type' => 'application/json'],
+            'params' => $params
+        ];
+
+        return $this->client->apiRequest('patch', $path, new ResponseModelDecorator($modelName), $options);
+    }
 }
