@@ -55,25 +55,32 @@ class TranslationStatusApiTest extends AbstractTestApi
     public function testGetBranchProgress()
     {
         $this->mockRequestGet('/projects/1/branches/1/languages/progress', '{
-          "data": [
-            {
-              "data": {
-                "languageId": "af",
-                "phrasesCount": 3041,
-                "phrasesTranslatedCount": 2631,
-                "phrasesApprovedCount": 2622,
-                "phrasesTranslatedProgress": 86,
-                "phrasesApprovedProgress": 86
-              }
-            }
-          ],
-          "pagination": [
-            {
-              "offset": 0,
-              "limit": 25
-            }
-          ]
-        }');
+                  "data": [
+                    {
+                      "data": {
+                        "languageId": "af",
+                        "words": {
+                          "total": 7249,
+                          "translated": 3651,
+                          "approved": 3637
+                        },
+                        "phrases": {
+                          "total": 3041,
+                          "translated": 2631,
+                          "approved": 2622
+                        },
+                        "translationProgress": 86,
+                        "approvalProgress": 86
+                      }
+                    }
+                  ],
+                  "pagination": [
+                    {
+                      "offset": 0,
+                      "limit": 25
+                    }
+                  ]
+                }');
 
         $branchProgress = $this->crowdin->translationStatus->getBranchProgress(1, 1);
 
@@ -86,25 +93,32 @@ class TranslationStatusApiTest extends AbstractTestApi
     public function testGetDirectoryProgress()
     {
         $this->mockRequestGet('/projects/1/directories/2/languages/progress', '{
-              "data": [
-                {
-                  "data": {
-                    "languageId": "af",
-                    "phrasesCount": 3041,
-                    "phrasesTranslatedCount": 2631,
-                    "phrasesApprovedCount": 2622,
-                    "phrasesTranslatedProgress": 86,
-                    "phrasesApprovedProgress": 86
-                  }
-                }
-              ],
-              "pagination": [
-                {
-                  "offset": 0,
-                  "limit": 25
-                }
-              ]
-            }');
+                  "data": [
+                    {
+                      "data": {
+                        "languageId": "af",
+                        "words": {
+                          "total": 7249,
+                          "translated": 3651,
+                          "approved": 3637
+                        },
+                        "phrases": {
+                          "total": 3041,
+                          "translated": 2631,
+                          "approved": 2622
+                        },
+                        "translationProgress": 86,
+                        "approvalProgress": 86
+                      }
+                    }
+                  ],
+                  "pagination": [
+                    {
+                      "offset": 0,
+                      "limit": 25
+                    }
+                  ]
+                }');
 
         $progress = $this->crowdin->translationStatus->getDirectoryProgress(1, 2);
 
@@ -120,25 +134,32 @@ class TranslationStatusApiTest extends AbstractTestApi
     public function testGetFileProgress()
     {
         $this->mockRequestGet('/projects/1/files/3/languages/progress', '{
-              "data": [
-                {
-                  "data": {
-                    "languageId": "af",
-                    "phrasesCount": 3041,
-                    "phrasesTranslatedCount": 2631,
-                    "phrasesApprovedCount": 2622,
-                    "phrasesTranslatedProgress": 86,
-                    "phrasesApprovedProgress": 86
-                  }
-                }
-              ],
-              "pagination": [
-                {
-                  "offset": 0,
-                  "limit": 25
-                }
-              ]
-            }');
+                  "data": [
+                    {
+                      "data": {
+                        "languageId": "af",
+                        "words": {
+                          "total": 7249,
+                          "translated": 3651,
+                          "approved": 3637
+                        },
+                        "phrases": {
+                          "total": 3041,
+                          "translated": 2631,
+                          "approved": 2622
+                        },
+                        "translationProgress": 86,
+                        "approvalProgress": 86
+                      }
+                    }
+                  ],
+                  "pagination": [
+                    {
+                      "offset": 0,
+                      "limit": 25
+                    }
+                  ]
+                }');
 
         $progress = $this->crowdin->translationStatus->getFileProgress(1, 3);
 
@@ -154,25 +175,32 @@ class TranslationStatusApiTest extends AbstractTestApi
     public function testGetProjectProgress()
     {
         $this->mockRequestGet('/projects/1/languages/progress', '{
-              "data": [
-                {
-                  "data": {
-                    "languageId": "af",
-                    "phrasesCount": 3041,
-                    "phrasesTranslatedCount": 2631,
-                    "phrasesApprovedCount": 2622,
-                    "phrasesTranslatedProgress": 86,
-                    "phrasesApprovedProgress": 86
-                  }
-                }
-              ],
-              "pagination": [
-                {
-                  "offset": 0,
-                  "limit": 25
-                }
-              ]
-            }');
+                  "data": [
+                    {
+                      "data": {
+                        "languageId": "af",
+                        "words": {
+                          "total": 7249,
+                          "translated": 3651,
+                          "approved": 3637
+                        },
+                        "phrases": {
+                          "total": 3041,
+                          "translated": 2631,
+                          "approved": 2622
+                        },
+                        "translationProgress": 86,
+                        "approvalProgress": 86
+                      }
+                    }
+                  ],
+                  "pagination": [
+                    {
+                      "offset": 0,
+                      "limit": 25
+                    }
+                  ]
+                }');
 
         $progress = $this->crowdin->translationStatus->getProjectProgress(1);
 

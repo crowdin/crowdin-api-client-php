@@ -14,29 +14,24 @@ class Progress extends BaseModel
     protected $languageId;
 
     /**
-     * @var integer
+     * @var array
      */
-    protected $phrasesCount;
+    protected $words;
+
+    /**
+     * @var array
+     */
+    protected $phrases;
 
     /**
      * @var integer
      */
-    protected $phrasesTranslatedCount;
+    protected $translationProgress;
 
     /**
      * @var integer
      */
-    protected $phrasesApprovedCount;
-
-    /**
-     * @var integer
-     */
-    protected $phrasesTranslatedProgress;
-
-    /**
-     * @var integer
-     */
-    protected $phrasesApprovedProgress;
+    protected $approvalProgress;
 
     /**
      * @param array $data
@@ -46,11 +41,10 @@ class Progress extends BaseModel
         parent::__construct($data);
 
         $this->languageId = (string)$this->getDataProperty('languageId');
-        $this->phrasesCount = (integer)$this->getDataProperty('phrasesCount');
-        $this->phrasesTranslatedCount = (integer)$this->getDataProperty('phrasesTranslatedCount');
-        $this->phrasesApprovedCount = (integer)$this->getDataProperty('phrasesApprovedCount');
-        $this->phrasesTranslatedProgress = (integer)$this->getDataProperty('phrasesTranslatedProgress');
-        $this->phrasesApprovedProgress = (integer)$this->getDataProperty('phrasesApprovedProgress');
+        $this->words = (array)$this->getDataProperty('words');
+        $this->phrases = (array)$this->getDataProperty('phrases');
+        $this->translationProgress = (integer)$this->getDataProperty('translationProgress');
+        $this->approvalProgress = (integer)$this->getDataProperty('approvalProgress');
     }
 
     /**
@@ -62,90 +56,34 @@ class Progress extends BaseModel
     }
 
     /**
-     * @param string $languageId
+     * @return array
      */
-    public function setLanguageId(string $languageId): void
+    public function getWords(): array
     {
-        $this->languageId = $languageId;
+        return $this->words;
+    }
+
+    /**
+     * @return array
+     */
+    public function getPhrases(): array
+    {
+        return $this->phrases;
     }
 
     /**
      * @return int
      */
-    public function getPhrasesCount(): int
+    public function getTranslationProgress(): int
     {
-        return $this->phrasesCount;
-    }
-
-    /**
-     * @param int $phrasesCount
-     */
-    public function setPhrasesCount(int $phrasesCount): void
-    {
-        $this->phrasesCount = $phrasesCount;
+        return $this->translationProgress;
     }
 
     /**
      * @return int
      */
-    public function getPhrasesTranslatedCount(): int
+    public function getApprovalProgress(): int
     {
-        return $this->phrasesTranslatedCount;
-    }
-
-    /**
-     * @param int $phrasesTranslatedCount
-     */
-    public function setPhrasesTranslatedCount(int $phrasesTranslatedCount): void
-    {
-        $this->phrasesTranslatedCount = $phrasesTranslatedCount;
-    }
-
-    /**
-     * @return int
-     */
-    public function getPhrasesApprovedCount(): int
-    {
-        return $this->phrasesApprovedCount;
-    }
-
-    /**
-     * @param int $phrasesApprovedCount
-     */
-    public function setPhrasesApprovedCount(int $phrasesApprovedCount): void
-    {
-        $this->phrasesApprovedCount = $phrasesApprovedCount;
-    }
-
-    /**
-     * @return int
-     */
-    public function getPhrasesTranslatedProgress(): int
-    {
-        return $this->phrasesTranslatedProgress;
-    }
-
-    /**
-     * @param int $phrasesTranslatedProgress
-     */
-    public function setPhrasesTranslatedProgress(int $phrasesTranslatedProgress): void
-    {
-        $this->phrasesTranslatedProgress = $phrasesTranslatedProgress;
-    }
-
-    /**
-     * @return int
-     */
-    public function getPhrasesApprovedProgress(): int
-    {
-        return $this->phrasesApprovedProgress;
-    }
-
-    /**
-     * @param int $phrasesApprovedProgress
-     */
-    public function setPhrasesApprovedProgress(int $phrasesApprovedProgress): void
-    {
-        $this->phrasesApprovedProgress = $phrasesApprovedProgress;
+        return $this->approvalProgress;
     }
 }
