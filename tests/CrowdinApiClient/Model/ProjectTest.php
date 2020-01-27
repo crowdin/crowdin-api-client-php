@@ -84,7 +84,6 @@ class ProjectTest extends TestCase
 
         'joinPolicy' => null,
         'visibility' => null,
-        'jiptPseudoLanguageId' => null,
     ];
 
     public function testLoadData()
@@ -143,7 +142,7 @@ class ProjectTest extends TestCase
         $this->assertEquals($this->data['publicDownloads'], $this->project->isPublicDownloads());
         $this->assertEquals($this->data['useGlobalTm'], $this->project->isUseGlobalTm());
         $this->assertEquals($this->data['inContext'], $this->project->isInContext());
-        $this->assertEquals($this->data['jiptPseudoLanguageId'], $this->project->getJiptPseudoLanguageId());
+        $this->assertEquals($this->data['inContextPseudoLanguageId'], $this->project->getInContextPseudoLanguageId());
         $this->assertEquals($this->data['qaCheckIsActive'], $this->project->isQaCheckIsActive());
         $this->assertEquals($this->data['qaCheckCategories'], $this->project->getQaCheckCategories());
         $this->assertEquals($this->data['languageMapping'], $this->project->getLanguageMapping());
