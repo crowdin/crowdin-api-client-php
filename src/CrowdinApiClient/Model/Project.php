@@ -156,7 +156,7 @@ class Project extends BaseModel
     /**
      * @var string
      */
-    protected $jiptPseudoLanguageId;
+    protected $inContextPseudoLanguageId;
 
     /**
      * @var bool
@@ -207,7 +207,7 @@ class Project extends BaseModel
         $this->publicDownloads = (bool)$this->getDataProperty('publicDownloads');
         $this->useGlobalTm = (bool)$this->getDataProperty('useGlobalTm');
         $this->inContext = (bool)$this->getDataProperty('inContext');
-        $this->jiptPseudoLanguageId = (string)$this->getDataProperty('jiptPseudoLanguageId');
+        $this->inContextPseudoLanguageId = (string)$this->getDataProperty('inContextPseudoLanguageId');
         $this->qaCheckIsActive = (bool)$this->getDataProperty('qaCheckIsActive');
         $this->qaCheckCategories = (array)$this->getDataProperty('qaCheckCategories');
         $this->languageMapping = (array)$this->getDataProperty('languageMapping');
@@ -712,17 +712,17 @@ class Project extends BaseModel
     /**
      * @return string
      */
-    public function getJiptPseudoLanguageId(): ?string
+    public function getInContextPseudoLanguageId(): ?string
     {
-        return $this->jiptPseudoLanguageId;
+        return $this->inContextPseudoLanguageId;
     }
 
     /**
-     * @param string $jiptPseudoLanguageId
+     * @param string $inContextPseudoLanguageId
      */
-    public function setJiptPseudoLanguageId(string $jiptPseudoLanguageId): void
+    public function setInContextPseudoLanguageId(string $inContextPseudoLanguageId): void
     {
-        $this->jiptPseudoLanguageId = $jiptPseudoLanguageId;
+        $this->inContextPseudoLanguageId = $inContextPseudoLanguageId;
     }
 
     /**
