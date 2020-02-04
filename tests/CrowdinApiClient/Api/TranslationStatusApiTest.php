@@ -54,7 +54,7 @@ class TranslationStatusApiTest extends AbstractTestApi
      */
     public function testGetBranchProgress()
     {
-        $this->mockRequestGet('/projects/1/branches/1/languages/progress', '{
+        $this->mockRequestGet('/projects/1/branches/1/languages/progress?limit=10', '{
                   "data": [
                     {
                       "data": {
@@ -80,9 +80,10 @@ class TranslationStatusApiTest extends AbstractTestApi
                       "limit": 25
                     }
                   ]
-                }');
+                }'
+            );
 
-        $branchProgress = $this->crowdin->translationStatus->getBranchProgress(1, 1);
+        $branchProgress = $this->crowdin->translationStatus->getBranchProgress(1, 1, ['limit' => 10]);
 
         $this->assertInstanceOf(ModelCollection::class, $branchProgress);
         $this->assertCount(1, $branchProgress);
@@ -92,7 +93,7 @@ class TranslationStatusApiTest extends AbstractTestApi
 
     public function testGetDirectoryProgress()
     {
-        $this->mockRequestGet('/projects/1/directories/2/languages/progress', '{
+        $this->mockRequestGet('/projects/1/directories/2/languages/progress?limit=10', '{
                   "data": [
                     {
                       "data": {
@@ -120,7 +121,7 @@ class TranslationStatusApiTest extends AbstractTestApi
                   ]
                 }');
 
-        $progress = $this->crowdin->translationStatus->getDirectoryProgress(1, 2);
+        $progress = $this->crowdin->translationStatus->getDirectoryProgress(1, 2, ['limit' => 10]);
 
         $this->assertInstanceOf(ModelCollection::class, $progress);
         $this->assertCount(1, $progress);
@@ -133,7 +134,7 @@ class TranslationStatusApiTest extends AbstractTestApi
      */
     public function testGetFileProgress()
     {
-        $this->mockRequestGet('/projects/1/files/3/languages/progress', '{
+        $this->mockRequestGet('/projects/1/files/3/languages/progress?limit=10', '{
                   "data": [
                     {
                       "data": {
@@ -161,7 +162,7 @@ class TranslationStatusApiTest extends AbstractTestApi
                   ]
                 }');
 
-        $progress = $this->crowdin->translationStatus->getFileProgress(1, 3);
+        $progress = $this->crowdin->translationStatus->getFileProgress(1, 3, ['limit' => 10]);
 
         $this->assertInstanceOf(ModelCollection::class, $progress);
         $this->assertCount(1, $progress);
@@ -174,7 +175,7 @@ class TranslationStatusApiTest extends AbstractTestApi
      */
     public function testGetProjectProgress()
     {
-        $this->mockRequestGet('/projects/1/languages/progress', '{
+        $this->mockRequestGet('/projects/1/languages/progress?limit=10', '{
                   "data": [
                     {
                       "data": {
@@ -202,7 +203,7 @@ class TranslationStatusApiTest extends AbstractTestApi
                   ]
                 }');
 
-        $progress = $this->crowdin->translationStatus->getProjectProgress(1);
+        $progress = $this->crowdin->translationStatus->getProjectProgress(1, ['limit' => 10]);
 
         $this->assertInstanceOf(ModelCollection::class, $progress);
         $this->assertCount(1, $progress);
@@ -215,7 +216,7 @@ class TranslationStatusApiTest extends AbstractTestApi
      */
     public function testListQACheckIssues()
     {
-        $this->mockRequestGet('/projects/1/qa-check', '{
+        $this->mockRequestGet('/projects/1/qa-check?limit=10', '{
                   "data": [
                     {
                       "data": {
@@ -238,7 +239,7 @@ class TranslationStatusApiTest extends AbstractTestApi
                   ]
                 }');
 
-        $QACheckIssues = $this->crowdin->translationStatus->listQACheckIssues(1);
+        $QACheckIssues = $this->crowdin->translationStatus->listQACheckIssues(1, ['limit' => 10]);
 
         $this->assertInstanceOf(ModelCollection::class, $QACheckIssues);
         $this->assertCount(1, $QACheckIssues);
