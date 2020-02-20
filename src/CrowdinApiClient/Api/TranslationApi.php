@@ -4,6 +4,7 @@ namespace CrowdinApiClient\Api;
 
 use CrowdinApiClient\Http\ResponseDecorator\ResponseArrayDecorator;
 use CrowdinApiClient\Model\DownloadFile;
+use CrowdinApiClient\Model\DownloadFileTranslation;
 use CrowdinApiClient\Model\PreTranslation;
 use CrowdinApiClient\Model\TranslationProjectBuild;
 use CrowdinApiClient\ModelCollection;
@@ -60,7 +61,7 @@ class TranslationApi extends AbstractApi
             'targetLanguageId' => $targetLanguageId,
             'exportAsXliff' => $exportAsXliff
         ];
-        return $this->_post($path, DownloadFile::class, $data);
+        return $this->_post($path, DownloadFileTranslation::class, $data);
     }
 
     /**

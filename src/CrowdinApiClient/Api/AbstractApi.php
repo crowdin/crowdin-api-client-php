@@ -19,11 +19,78 @@ abstract class AbstractApi implements ApiInterface
     protected $client;
 
     /**
+     * @var array
+     */
+    protected $headers = [];
+
+    /**
      * @param Crowdin $client
      */
     public function __construct(Crowdin $client)
     {
         $this->client = $client;
+        $this->setHeader('Content-Type', 'application/json');
+    }
+
+    public function addHeader($header, $value)
+    {
+        $this->headers[strtolower($header)] = $value;
+
+        return $this;
+    }
+
+    public function addHeaders(array $headers)
+    {
+        foreach ($headers as $key => $value) {
+            $this->addHeader($key, $value);
+        }
+
+        return $this;
+    }
+
+    public function getHeader($header)
+    {
+        return $this->headers[strtolower($header)];
+    }
+
+    public function getHeaders()
+    {
+        return $this->headers;
+    }
+
+    public function setHeader($header, $value)
+    {
+        unset($this->headers[strtolower($header)]);
+        $this->addHeader($header, $value);
+
+        return $this;
+    }
+
+    public function setHeaders(array $headers)
+    {
+        $this->clearHeaders();
+        foreach ($headers as $key => $value) {
+            $this->addHeader($key, $value);
+        }
+
+        return $this;
+    }
+
+    public function hasHeader($header)
+    {
+        return isset($this->headers[strtolower($header)]);
+    }
+
+    public function clearHeaders()
+    {
+        $this->headers = [];
+    }
+
+    public function removeHeader($header)
+    {
+        unset($this->headers[strtolower($header)]);
+
+        return $this;
     }
 
     /**
@@ -53,7 +120,7 @@ abstract class AbstractApi implements ApiInterface
 
         $options = [
             'body' => json_encode($_data),
-            'headers' => ['Content-Type' => 'application/json']
+            'headers' => $this->getHeaders()
         ];
 
         return $this->client->apiRequest('patch', $path, new ResponseModelDecorator(get_class($model)), $options);
@@ -86,7 +153,7 @@ abstract class AbstractApi implements ApiInterface
     {
         $options = [
             'body' => json_encode($data),
-            'headers' => ['Content-Type' => 'application/json']
+            'headers' => $this->getHeaders()
         ];
 
         return $this->client->apiRequest('post', $path, new ResponseModelDecorator($modelName), $options);
@@ -127,7 +194,7 @@ abstract class AbstractApi implements ApiInterface
     {
         $options = [
             'body' => json_encode($data),
-            'headers' => ['Content-Type' => 'application/json']
+            'headers' => $this->getHeaders()
         ];
 
         return $this->client->apiRequest('put', $path, new ResponseModelDecorator($modelName), $options);
@@ -143,7 +210,7 @@ abstract class AbstractApi implements ApiInterface
     {
         $options = [
             'body' => json_encode($data),
-            'headers' => ['Content-Type' => 'application/json']
+            'headers' => $this->getHeaders(),
         ];
 
         return $this->client->apiRequest('post', $path, new ResponseModelDecorator($modelName), $options);
@@ -160,7 +227,7 @@ abstract class AbstractApi implements ApiInterface
     {
         $options = [
             'body' => json_encode($body),
-            'headers' => ['Content-Type' => 'application/json'],
+            'headers' => $this->getHeaders(),
             'params' => $params
         ];
 

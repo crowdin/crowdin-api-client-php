@@ -4,6 +4,7 @@ namespace CrowdinApiClient\Api;
 
 use CrowdinApiClient\Model\Issue;
 use CrowdinApiClient\Model\Progress;
+use CrowdinApiClient\Model\ProgressFile;
 use CrowdinApiClient\Model\QaCheck;
 use CrowdinApiClient\ModelCollection;
 
@@ -81,7 +82,7 @@ class TranslationStatusApi extends AbstractApi
     public function getFileProgress(int $projectId, int $fileId, array $params = []): ?ModelCollection
     {
         $path = sprintf('projects/%d/files/%d/languages/progress', $projectId, $fileId);
-        return $this->_list($path, Progress::class, $params);
+        return $this->_list($path, ProgressFile::class, $params);
     }
 
     /**

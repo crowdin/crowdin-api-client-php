@@ -4,6 +4,7 @@ namespace CrowdinApiClient\Http\Client;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class GuzzleHttpClient
@@ -27,6 +28,20 @@ class GuzzleHttpClient implements CrowdinHttpClientInterface
      * @var int
      */
     protected $connectTimeout = 30;
+
+    /**
+     * @var ResponseInterface
+     */
+    protected $response;
+
+    /**
+     * @return ResponseInterface
+     */
+    public function getResponse(): ResponseInterface
+    {
+        return $this->response;
+    }
+
     /**
      * Create a new GuzzleHttpClient instance.
      *
@@ -55,8 +70,8 @@ class GuzzleHttpClient implements CrowdinHttpClientInterface
 
         $request = new Request($method, $uri, $options['headers'], $options['body'], $options);
 
-        $rawResponse = $this->client->send($request);
+        $this->response = $this->client->send($request);
 
-        return $rawResponse->getBody();
+        return $this->response->getBody();
     }
 }

@@ -48,6 +48,7 @@ class ProjectTest extends TestCase
         'useGlobalTm' => false,
         'inContext' => true,
         'inContextPseudoLanguageId' => 'uk',
+        "isSuspended" => false,
         'qaCheckIsActive' => true,
         'qaCheckCategories' =>
             [
@@ -146,5 +147,6 @@ class ProjectTest extends TestCase
         $this->assertEquals($this->data['qaCheckIsActive'], $this->project->isQaCheckIsActive());
         $this->assertEquals($this->data['qaCheckCategories'], $this->project->getQaCheckCategories());
         $this->assertEquals($this->data['languageMapping'], $this->project->getLanguageMapping());
+        $this->assertEquals($this->data['isSuspended'], $this->project->isSuspended());
     }
 }
