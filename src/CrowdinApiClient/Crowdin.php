@@ -197,8 +197,10 @@ class Crowdin
                 $response = $decorator->decorate($response);
             } elseif (isset($response['data'])) {
                 $response = $decorator->decorate($response['data']);
-            } else {
+            } elseif (is_array($response)) {
                 $response = $decorator->decorate($response);
+            } else {
+                $response = null;
             }
         }
 

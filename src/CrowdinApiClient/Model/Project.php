@@ -173,6 +173,11 @@ class Project extends BaseModel
      */
     protected $languageMapping = [];
 
+    /**
+     * @var bool
+     */
+    protected $isSuspended;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -211,6 +216,7 @@ class Project extends BaseModel
         $this->qaCheckIsActive = (bool)$this->getDataProperty('qaCheckIsActive');
         $this->qaCheckCategories = (array)$this->getDataProperty('qaCheckCategories');
         $this->languageMapping = (array)$this->getDataProperty('languageMapping');
+        $this->isSuspended = (bool)$this->getDataProperty('isSuspended');
     }
 
     /**
@@ -739,5 +745,21 @@ class Project extends BaseModel
     public function setLanguageMapping(array $languageMapping): void
     {
         $this->languageMapping = $languageMapping;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isSuspended(): bool
+    {
+        return $this->isSuspended;
+    }
+
+    /**
+     * @param bool $isSuspended
+     */
+    public function setIsSuspended(bool $isSuspended): void
+    {
+        $this->isSuspended = $isSuspended;
     }
 }
