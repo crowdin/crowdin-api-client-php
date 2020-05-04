@@ -99,7 +99,7 @@ class CurlHttpClient implements CrowdinHttpClientInterface
             throw new HttpException($errStr . '(cURL Error: ' . $errNo . ')', $responseCode);
         }
 
-        $this->curlExec($ch);
+        $this->curlClose($ch);
 
         return $response;
     }
