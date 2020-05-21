@@ -88,13 +88,13 @@ class TranslationMemoryApi extends AbstractApi
      * @link https://support.crowdin.com/enterprise/api/#operation/api.tms.exports.getMany API Documentation Enterprise
      *
      * @param int $translationMemoryId
-     * @param array $params
+     * @param string $exportId
      * @return DownloadFile|null
      */
-    public function download(int $translationMemoryId, $params = []): ?DownloadFile
+    public function download(int $translationMemoryId, string $exportId): ?DownloadFile
     {
-        $path = sprintf('tms/%d/exports', $translationMemoryId);
-        return $this->_get($path, DownloadFile::class, $params);
+        $path = sprintf('tms/%d/exports/%s/download', $translationMemoryId, $exportId);
+        return $this->_get($path, DownloadFile::class);
     }
 
     /**
