@@ -126,11 +126,6 @@ class Project extends BaseModel
     /**
      * @var bool
      */
-    protected $exportTranslatedOnly;
-
-    /**
-     * @var bool
-     */
     protected $exportApprovedOnly;
 
     /**
@@ -206,7 +201,6 @@ class Project extends BaseModel
         $this->translateDuplicates = (integer)$this->getDataProperty('translateDuplicates');
         $this->isMtAllowed = (bool)$this->getDataProperty('isMtAllowed');
         $this->autoSubstitution = (bool)$this->getDataProperty('autoSubstitution');
-        $this->exportTranslatedOnly = (bool)$this->getDataProperty('exportTranslatedOnly');
         $this->exportApprovedOnly = (bool)$this->getDataProperty('exportApprovedOnly');
         $this->autoTranslateDialects = (bool)$this->getDataProperty('autoTranslateDialects');
         $this->publicDownloads = (bool)$this->getDataProperty('publicDownloads');
@@ -585,22 +579,6 @@ class Project extends BaseModel
     public function setAutoSubstitution(bool $autoSubstitution): void
     {
         $this->autoSubstitution = $autoSubstitution;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isExportTranslatedOnly(): bool
-    {
-        return $this->exportTranslatedOnly;
-    }
-
-    /**
-     * @param bool $exportTranslatedOnly
-     */
-    public function setExportTranslatedOnly(bool $exportTranslatedOnly): void
-    {
-        $this->exportTranslatedOnly = $exportTranslatedOnly;
     }
 
     /**
