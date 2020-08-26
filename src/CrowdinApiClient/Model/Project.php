@@ -131,6 +131,11 @@ class Project extends BaseModel
     /**
      * @var bool
      */
+    protected $skipUntranslatedFiles;
+
+    /**
+     * @var bool
+     */
     protected $exportApprovedOnly;
 
     /**
@@ -207,6 +212,7 @@ class Project extends BaseModel
         $this->isMtAllowed = (bool)$this->getDataProperty('isMtAllowed');
         $this->autoSubstitution = (bool)$this->getDataProperty('autoSubstitution');
         $this->skipUntranslatedStrings = (bool)$this->getDataProperty('skipUntranslatedStrings');
+        $this->skipUntranslatedFiles = (bool)$this->getDataProperty('skipUntranslatedFiles');
         $this->exportApprovedOnly = (bool)$this->getDataProperty('exportApprovedOnly');
         $this->autoTranslateDialects = (bool)$this->getDataProperty('autoTranslateDialects');
         $this->publicDownloads = (bool)$this->getDataProperty('publicDownloads');
@@ -595,6 +601,16 @@ class Project extends BaseModel
     public function setSkipUntranslatedStrings(bool $skipUntranslatedStrings): void
     {
         $this->skipUntranslatedStrings = $skipUntranslatedStrings;
+    }
+
+    public function isSkipUntranslatedFiles(): bool
+    {
+        return $this->skipUntranslatedFiles;
+    }
+
+    public function setSkipUntranslatedFiles(bool $skipUntranslatedFiles): void
+    {
+        $this->skipUntranslatedFiles = $skipUntranslatedFiles;
     }
 
     /**
