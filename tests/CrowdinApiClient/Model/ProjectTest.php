@@ -41,6 +41,7 @@ class ProjectTest extends TestCase
         'translateDuplicates' => 1,
         'isMtAllowed' => true,
         'autoSubstitution' => true,
+        'skipUntranslatedStrings' => false,
         'exportApprovedOnly' => false,
         'autoTranslateDialects' => true,
         'publicDownloads' => true,
@@ -136,6 +137,7 @@ class ProjectTest extends TestCase
         $this->assertEquals($this->data['translateDuplicates'], $this->project->getTranslateDuplicates());
         $this->assertEquals($this->data['isMtAllowed'], $this->project->isMtAllowed());
         $this->assertEquals($this->data['autoSubstitution'], $this->project->isAutoSubstitution());
+        $this->assertEquals($this->data['skipUntranslatedStrings'], $this->project->isSkipUntranslatedStrings());
         $this->assertEquals($this->data['exportApprovedOnly'], $this->project->isExportApprovedOnly());
         $this->assertEquals($this->data['autoTranslateDialects'], $this->project->isAutoTranslateDialects());
         $this->assertEquals($this->data['publicDownloads'], $this->project->isPublicDownloads());

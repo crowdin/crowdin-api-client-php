@@ -164,6 +164,7 @@ class TranslationApi extends AbstractApi
      * @internal integer $params[branchId]
      * @internal integer $params[branchId]
      * @internal array $params[targetLanguageIds]
+     * @internal bool $params[skipUntranslatedStrings]
      * @internal bool $params[exportApprovedOnly]
      * @return TranslationProjectBuild|null
      */
