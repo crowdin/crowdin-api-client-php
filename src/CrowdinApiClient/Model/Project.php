@@ -109,6 +109,11 @@ class Project extends BaseModel
     protected $updatedAt;
 
     /**
+     * @var string
+     */
+    protected $lastActivity;
+
+    /**
      * @var integer
      */
     protected $translateDuplicates;
@@ -207,6 +212,7 @@ class Project extends BaseModel
         $this->hasCrowdsourcing = (bool)$this->getDataProperty('hasCrowdsourcing');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
+        $this->lastActivity = (string)$this->getDataProperty('lastActivity');
 
         $this->translateDuplicates = (integer)$this->getDataProperty('translateDuplicates');
         $this->isMtAllowed = (bool)$this->getDataProperty('isMtAllowed');
@@ -543,6 +549,16 @@ class Project extends BaseModel
     public function setUpdatedAt(string $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
+    }
+
+    public function getLastActivity(): string
+    {
+        return $this->lastActivity;
+    }
+
+    public function setLastActivity(string $lastActivity): void
+    {
+        $this->lastActivity = $lastActivity;
     }
 
     /**
