@@ -91,6 +91,7 @@ class CrowdinTest extends TestCase
             ['webhook', \CrowdinApiClient\Api\WebhookApi::class],
             ['translation', \CrowdinApiClient\Api\TranslationApi::class],
             ['translationStatus', \CrowdinApiClient\Api\TranslationStatusApi::class],
+            ['distribution', \CrowdinApiClient\Api\DistributionApi::class],
         ];
     }
 
@@ -131,6 +132,7 @@ class CrowdinTest extends TestCase
             ['webhook', \CrowdinApiClient\Api\WebhookApi::class],
             ['translation', \CrowdinApiClient\Api\TranslationApi::class],
             ['translationStatus', \CrowdinApiClient\Api\TranslationStatusApi::class],
+            ['distribution', \CrowdinApiClient\Api\DistributionApi::class],
         ];
     }
 
