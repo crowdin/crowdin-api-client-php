@@ -51,15 +51,19 @@ class TranslationApi extends AbstractApi
      * @param int $fileId
      * @param string $targetLanguageId
      * @param bool $exportAsXliff
+     * @param array $params
      * @return DownloadFile|null
      */
-    public function buildProjectFileTranslation(int $projectId, int $fileId, string $targetLanguageId, bool $exportAsXliff = false): ?DownloadFile
+    public function buildProjectFileTranslation(int $projectId, int $fileId, string $targetLanguageId, bool $exportAsXliff = false, array $params = []): ?DownloadFile
     {
         $path = sprintf('projects/%d/translations/builds/files/%d', $projectId, $fileId);
 
         $data = [
             'targetLanguageId' => $targetLanguageId,
-            'exportAsXliff' => $exportAsXliff
+            'exportAsXliff' => $exportAsXliff,
+            'skipUntranslatedStrings' => $params['skipUntranslatedStrings'] ?? false,
+            'skipUntranslatedFiles' => $params['skipUntranslatedFiles'] ?? false,
+            'exportApprovedOnly' => $params['exportApprovedOnly'] ?? false,
         ];
         return $this->_post($path, DownloadFileTranslation::class, $data);
     }
@@ -165,6 +169,7 @@ class TranslationApi extends AbstractApi
      * @internal integer $params[branchId]
      * @internal array $params[targetLanguageIds]
      * @internal bool $params[skipUntranslatedStrings]
+     * @internal bool $params[skipUntranslatedFiles]
      * @internal bool $params[exportApprovedOnly]
      * @return TranslationProjectBuild|null
      */

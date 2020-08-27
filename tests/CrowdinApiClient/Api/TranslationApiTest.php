@@ -187,6 +187,7 @@ class TranslationApiTest extends AbstractTestApi
                     0 => 'uk',
                 ],
             'skipUntranslatedStrings' => false,
+            'skipUntranslatedFiles' => false,
             'exportApprovedOnly' => false,
         ];
 
