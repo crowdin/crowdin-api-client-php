@@ -38,6 +38,7 @@ class ProjectTest extends TestCase
         'hasCrowdsourcing' => false,
         'createdAt' => '2019-09-20T11:34:40+00:00',
         'updatedAt' => '2019-09-20T11:34:40+00:00',
+        'lastActivity' => '2019-09-20T11:34:40+00:00',
         'translateDuplicates' => 1,
         'isMtAllowed' => true,
         'autoSubstitution' => true,
@@ -134,6 +135,7 @@ class ProjectTest extends TestCase
         $this->assertEquals($this->data['hasCrowdsourcing'], $this->project->isHasCrowdsourcing());
         $this->assertEquals($this->data['createdAt'], $this->project->getCreatedAt());
         $this->assertEquals($this->data['updatedAt'], $this->project->getUpdatedAt());
+        $this->assertEquals($this->data['lastActivity'], $this->project->getLastActivity());
 
         $this->assertEquals($this->data['translateDuplicates'], $this->project->getTranslateDuplicates());
         $this->assertEquals($this->data['isMtAllowed'], $this->project->isMtAllowed());

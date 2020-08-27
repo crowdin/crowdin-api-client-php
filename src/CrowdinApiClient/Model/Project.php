@@ -109,6 +109,11 @@ class Project extends BaseModel
     protected $updatedAt;
 
     /**
+     * @var string
+     */
+    protected $lastActivity;
+
+    /**
      * @var integer
      */
     protected $translateDuplicates;
@@ -207,6 +212,7 @@ class Project extends BaseModel
         $this->hasCrowdsourcing = (bool)$this->getDataProperty('hasCrowdsourcing');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
+        $this->lastActivity = (string)$this->getDataProperty('lastActivity');
 
         $this->translateDuplicates = (integer)$this->getDataProperty('translateDuplicates');
         $this->isMtAllowed = (bool)$this->getDataProperty('isMtAllowed');
@@ -546,6 +552,22 @@ class Project extends BaseModel
     }
 
     /**
+     * @return string
+     */
+    public function getLastActivity(): string
+    {
+        return $this->lastActivity;
+    }
+
+    /**
+     * @param string $lastActivity
+     */
+    public function setLastActivity(string $lastActivity): void
+    {
+        $this->lastActivity = $lastActivity;
+    }
+
+    /**
      * @return int
      */
     public function getTranslateDuplicates(): int
@@ -593,21 +615,33 @@ class Project extends BaseModel
         $this->autoSubstitution = $autoSubstitution;
     }
 
+    /**
+     * @return bool
+     */
     public function isSkipUntranslatedStrings(): bool
     {
         return $this->skipUntranslatedStrings;
     }
 
+    /**
+     * @param bool $skipUntranslatedStrings
+     */
     public function setSkipUntranslatedStrings(bool $skipUntranslatedStrings): void
     {
         $this->skipUntranslatedStrings = $skipUntranslatedStrings;
     }
 
+    /**
+     * @return bool
+     */
     public function isSkipUntranslatedFiles(): bool
     {
         return $this->skipUntranslatedFiles;
     }
 
+    /**
+     * @param bool $skipUntranslatedFiles
+     */
     public function setSkipUntranslatedFiles(bool $skipUntranslatedFiles): void
     {
         $this->skipUntranslatedFiles = $skipUntranslatedFiles;
