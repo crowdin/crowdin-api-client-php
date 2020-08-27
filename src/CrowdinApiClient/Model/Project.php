@@ -551,11 +551,17 @@ class Project extends BaseModel
         $this->updatedAt = $updatedAt;
     }
 
+    /**
+     * @return string
+     */
     public function getLastActivity(): string
     {
         return $this->lastActivity;
     }
 
+    /**
+     * @param string $lastActivity
+     */
     public function setLastActivity(string $lastActivity): void
     {
         $this->lastActivity = $lastActivity;
@@ -609,21 +615,33 @@ class Project extends BaseModel
         $this->autoSubstitution = $autoSubstitution;
     }
 
+    /**
+     * @return bool
+     */
     public function isSkipUntranslatedStrings(): bool
     {
         return $this->skipUntranslatedStrings;
     }
 
+    /**
+     * @param bool $skipUntranslatedStrings
+     */
     public function setSkipUntranslatedStrings(bool $skipUntranslatedStrings): void
     {
         $this->skipUntranslatedStrings = $skipUntranslatedStrings;
     }
 
+    /**
+     * @return bool
+     */
     public function isSkipUntranslatedFiles(): bool
     {
         return $this->skipUntranslatedFiles;
     }
 
+    /**
+     * @param bool $skipUntranslatedFiles
+     */
     public function setSkipUntranslatedFiles(bool $skipUntranslatedFiles): void
     {
         $this->skipUntranslatedFiles = $skipUntranslatedFiles;
