@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace CrowdinApiClient\Api;
 
-
 use CrowdinApiClient\Model\Distribution;
 use CrowdinApiClient\Model\DistributionRelease;
 use CrowdinApiClient\ModelCollection;

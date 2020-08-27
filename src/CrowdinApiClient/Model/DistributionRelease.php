@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace CrowdinApiClient\Model;
 
-
 class DistributionRelease extends BaseModel
 {
     /**
@@ -92,5 +91,4 @@ class DistributionRelease extends BaseModel
     {
         $this->date = $date;
     }
-
 }

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace CrowdinApiClient\Tests\Model;
 
-
 use CrowdinApiClient\Model\Distribution;
 use PHPUnit\Framework\TestCase;
 

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace CrowdinApiClient\Tests\Model;
 
-
 use CrowdinApiClient\Model\DistributionRelease;
 use PHPUnit\Framework\TestCase;
 
@@ -54,5 +53,4 @@ class DistributionReleaseTest extends TestCase
         $this->assertEquals($this->data['currentFileId'], $this->distributionRelease->getCurrentFileId());
         $this->assertEquals($this->data['date'], $this->distributionRelease->getDate());
     }
-
 }

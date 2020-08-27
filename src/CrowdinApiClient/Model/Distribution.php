@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace CrowdinApiClient\Model;
 
-
 class Distribution extends BaseModel
 {
     /**
@@ -88,5 +87,4 @@ class Distribution extends BaseModel
     {
         $this->updatedAt = $updatedAt;
     }
-
 }
