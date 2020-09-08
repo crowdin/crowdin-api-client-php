@@ -17,6 +17,21 @@ class LanguageTranslation extends BaseModel
     protected $contentType;
 
     /**
+     * @var int
+     */
+    protected $translationId;
+
+    /**
+     * @var string
+     */
+    protected $text;
+
+    /**
+     * @var array
+     */
+    protected $plurals;
+
+    /**
      * LanguageTranslation constructor
      * @param array $data
      */
@@ -41,4 +56,35 @@ class LanguageTranslation extends BaseModel
     {
         return $this->contentType;
     }
+
+    public function getTranslationId(): int
+    {
+        return $this->translationId;
+    }
+
+    public function setTranslationId(int $translationId): void
+    {
+        $this->translationId = $translationId;
+    }
+
+    public function getText(): string
+    {
+        return $this->text;
+    }
+
+    public function setText(string $text): void
+    {
+        $this->text = $text;
+    }
+
+    public function getPlurals(): array
+    {
+        return $this->plurals;
+    }
+
+    public function setPlurals(array $plurals): void
+    {
+        $this->plurals = $plurals;
+    }
+
 }
