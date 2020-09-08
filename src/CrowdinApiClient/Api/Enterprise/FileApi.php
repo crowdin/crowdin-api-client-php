@@ -20,7 +20,7 @@ class FileApi extends CrowdinFileApi
      * @internal integer $data[branchId]
      * @return ReviewedSourceFileBuild
      */
-    public function buildReviewedSourceFiles(int $projectId, array $data): ReviewedSourceFileBuild
+    public function buildReviewedSourceFiles(int $projectId, array $data = []): ReviewedSourceFileBuild
     {
         $path = sprintf('projects/%d/strings/reviewed-builds', $projectId);
         return $this->_create($path, ReviewedSourceFileBuild::class, $data);
