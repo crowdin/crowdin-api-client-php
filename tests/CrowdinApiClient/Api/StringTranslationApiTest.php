@@ -2,10 +2,7 @@
 
 namespace CrowdinApiClient\Tests\Api;
 
-use CrowdinApiClient\Model\IcuLanguageTranslation;
 use CrowdinApiClient\Model\LanguageTranslation;
-use CrowdinApiClient\Model\PlainLanguageTranslation;
-use CrowdinApiClient\Model\PluralLanguageTranslation;
 use CrowdinApiClient\Model\StringTranslation;
 use CrowdinApiClient\ModelCollection;
 

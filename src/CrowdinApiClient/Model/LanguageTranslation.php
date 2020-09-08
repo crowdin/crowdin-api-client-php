@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace CrowdinApiClient\Model;
 
-
 class LanguageTranslation extends BaseModel
 {
     /**
