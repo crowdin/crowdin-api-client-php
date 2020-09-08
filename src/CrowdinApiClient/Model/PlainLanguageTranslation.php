@@ -8,13 +8,8 @@ namespace CrowdinApiClient\Model;
  * Class PlainLanguageTranslation
  * @package CrowdinApiClient\Model
  */
-class PlainLanguageTranslation extends BaseModel
+class PlainLanguageTranslation extends LanguageTranslation
 {
-    /**
-     * @var int
-     */
-    protected $stringId;
-
     /**
      * @var string
      */
@@ -41,26 +36,6 @@ class PlainLanguageTranslation extends BaseModel
         $this->contentType = (string)$this->getDataProperty('contentType');
         $this->translationId = (int)$this->getDataProperty('translationId');
         $this->text = (string)$this->getDataProperty('text');
-    }
-
-    public function getStringId(): int
-    {
-        return $this->stringId;
-    }
-
-    public function setStringId(int $stringId): void
-    {
-        $this->stringId = $stringId;
-    }
-
-    public function getContentType(): string
-    {
-        return $this->contentType;
-    }
-
-    public function setContentType(string $contentType): void
-    {
-        $this->contentType = $contentType;
     }
 
     public function getTranslationId(): int

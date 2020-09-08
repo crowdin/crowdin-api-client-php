@@ -2,6 +2,10 @@
 
 namespace CrowdinApiClient\Tests\Api;
 
+use CrowdinApiClient\Model\IcuLanguageTranslation;
+use CrowdinApiClient\Model\LanguageTranslation;
+use CrowdinApiClient\Model\PlainLanguageTranslation;
+use CrowdinApiClient\Model\PluralLanguageTranslation;
 use CrowdinApiClient\Model\StringTranslation;
 use CrowdinApiClient\ModelCollection;
 
@@ -172,5 +176,62 @@ class StringTranslationApiTest extends AbstractTestApi
         ]);
 
         $this->crowdin->stringTranslation->deleteStringTranslations(1, 1, 'en');
+    }
+
+    public function testListLanguageTranslations()
+    {
+        $params = [
+            'stringsId' => '12,7815,9011',
+            'fileId' => 5,
+        ];
+
+        $this->mockRequest([
+            'path' => '/projects/2/languages/en/translations',
+            'method' => 'get',
+            'response' => '{
+              "data": [
+                {
+                  "data": {
+                    "stringId": 12,
+                    "contentType": "text/plain",
+                    "translationId": 1,
+                    "text": "Confirm New Password"
+                  }
+                },
+                {
+                  "data": {
+                    "stringId": 7815,
+                    "contentType": "application/vnd.crowdin.text+plural",
+                    "translationId": 2,
+                    "text": "Confirm New Password"
+                  }
+                },
+                {
+                  "data": {
+                    "stringId": 9011,
+                    "contentType": "application/vnd.crowdin.text+icu",
+                    "translationId": 3,
+                    "text": "Confirm New Password"
+                  }
+                }
+              ],
+              "pagination": [
+                {
+                  "offset": 0,
+                  "limit": 0
+                }
+              ]
+            }'
+        ]);
+
+        $stringTranslations = $this->crowdin->stringTranslation->listLanguageTranslations(2, 'en');
+        $this->assertInstanceOf(ModelCollection::class, $stringTranslations);
+        $this->assertCount(3, $stringTranslations);
+        $this->assertInstanceOf(LanguageTranslation::class, $stringTranslations[0]);
+        $this->assertInstanceOf(LanguageTranslation::class, $stringTranslations[1]);
+        $this->assertInstanceOf(LanguageTranslation::class, $stringTranslations[2]);
+        $this->assertEquals(12, $stringTranslations[0]->getStringId());
+        $this->assertEquals(7815, $stringTranslations[1]->getStringId());
+        $this->assertEquals(9011, $stringTranslations[2]->getStringId());
     }
 }

@@ -8,13 +8,8 @@ namespace CrowdinApiClient\Model;
  * Class PluralLanguageTranslation
  * @package CrowdinApiClient\Model
  */
-class PluralLanguageTranslation extends BaseModel
+class PluralLanguageTranslation extends LanguageTranslation
 {
-    /**
-     * @var int
-     */
-    protected $stringId;
-
     /**
      * @var string
      */
@@ -32,10 +27,16 @@ class PluralLanguageTranslation extends BaseModel
     public function __construct(array $data = [])
     {
         parent::__construct($data);
-        $this->stringId = (int)$this->getDataProperty('stringId');
-        $this->contentType = (string)$this->getDataProperty('contentType');
         $this->plurals = (array)$this->getDataProperty('plurals');
     }
 
+    public function getPlurals(): array
+    {
+        return $this->plurals;
+    }
 
+    public function setPlurals(array $plurals): void
+    {
+        $this->plurals = $plurals;
+    }
 }

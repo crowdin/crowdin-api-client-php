@@ -2,9 +2,7 @@
 
 namespace CrowdinApiClient\Api;
 
-use CrowdinApiClient\Model\IcuLanguageTranslation;
-use CrowdinApiClient\Model\PlainLanguageTranslation;
-use CrowdinApiClient\Model\PluralLanguageTranslation;
+use CrowdinApiClient\Model\LanguageTranslation;
 use CrowdinApiClient\Model\StringTranslation;
 use CrowdinApiClient\Model\StringTranslationApproval;
 use CrowdinApiClient\Model\Vote;
@@ -247,14 +245,14 @@ class StringTranslationApi extends AbstractApi
      * @internal int $params[denormalizePlaceholders]
      * @internal int $params[limit]
      * @internal int $params[offset]
-     * @return mixed|PlainLanguageTranslation|PluralLanguageTranslation|IcuLanguageTranslation
+     * @return ModelCollection
      */
-    public function listLanguageTranslations(int $projectId, string $languageId, array $params)
+    public function listLanguageTranslations(int $projectId, string $languageId, array $params = []): ModelCollection
     {
         $path = sprintf('projects/%d/languages/%s/translations', $projectId, $languageId);
-        return $this->_get(
+        return $this->_list(
             $path,
-            PlainLanguageTranslation::class|PluralLanguageTranslation::class|IcuLanguageTranslation::class,
+            LanguageTranslation::class,
             $params
         );
     }

@@ -8,13 +8,8 @@ namespace CrowdinApiClient\Model;
  * Class IcuLanguageTranslation
  * @package CrowdinApiClient\Model
  */
-class IcuLanguageTranslation extends BaseModel
+class IcuLanguageTranslation extends LanguageTranslation
 {
-    /**
-     * @var int
-     */
-    protected $stringId;
-
     /**
      * @var string
      */
@@ -37,30 +32,8 @@ class IcuLanguageTranslation extends BaseModel
     public function __construct(array $data = [])
     {
         parent::__construct($data);
-        $this->stringId = (int)$this->getDataProperty('stringId');
-        $this->contentType = (string)$this->getDataProperty('contentType');
         $this->translationId = (int)$this->getDataProperty('translationId');
         $this->text = (string)$this->getDataProperty('text');
-    }
-
-    public function getStringId(): int
-    {
-        return $this->stringId;
-    }
-
-    public function setStringId(int $stringId): void
-    {
-        $this->stringId = $stringId;
-    }
-
-    public function getContentType(): string
-    {
-        return $this->contentType;
-    }
-
-    public function setContentType(string $contentType): void
-    {
-        $this->contentType = $contentType;
     }
 
     public function getTranslationId(): int
