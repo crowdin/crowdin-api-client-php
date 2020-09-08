@@ -124,7 +124,7 @@ class CrowdinTest extends TestCase
             ['user', \CrowdinApiClient\Api\Enterprise\UserApi::class],
             ['vendor', \CrowdinApiClient\Api\Enterprise\VendorApi::class],
             ['workflowTemplate', \CrowdinApiClient\Api\Enterprise\WorkflowTemplateApi::class],
-            ['file', \CrowdinApiClient\Api\FileApi::class],
+            ['file', \CrowdinApiClient\Api\Enterprise\FileApi::class],
             ['machineTranslationEngine', \CrowdinApiClient\Api\Enterprise\MachineTranslationEngineApi::class],
             ['report', \CrowdinApiClient\Api\ReportApi::class],
             ['sourceString', \CrowdinApiClient\Api\SourceStringApi::class],
