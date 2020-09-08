@@ -40,6 +40,13 @@ class LanguageTranslation extends BaseModel
         parent::__construct($data);
         $this->stringId = (int)$this->getDataProperty('stringId');
         $this->contentType = (string)$this->getDataProperty('contentType');
+
+        $this->translationId = $this->getDataProperty('translationId')
+            ? (int)$this->getDataProperty('translationId') : null;
+        $this->text = $this->getDataProperty('text')
+            ? (string)$this->getDataProperty('text') : null;
+        $this->plurals = $this->getDataProperty('plurals')
+            ? (array)$this->getDataProperty('plurals') : null;
     }
 
     public function getStringId(): int
@@ -86,5 +93,4 @@ class LanguageTranslation extends BaseModel
     {
         $this->plurals = $plurals;
     }
-
 }
