@@ -2,6 +2,9 @@
 
 namespace CrowdinApiClient\Api;
 
+use CrowdinApiClient\Model\IcuLanguageTranslation;
+use CrowdinApiClient\Model\PlainLanguageTranslation;
+use CrowdinApiClient\Model\PluralLanguageTranslation;
 use CrowdinApiClient\Model\StringTranslation;
 use CrowdinApiClient\Model\StringTranslationApproval;
 use CrowdinApiClient\Model\Vote;
@@ -230,5 +233,29 @@ class StringTranslationApi extends AbstractApi
     {
         $path = sprintf('projects/%d/votes/%d', $projectId, $voteId);
         return $this->_delete($path);
+    }
+
+    /**
+     * List Language Translations
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.languages.translations.getMany API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.languages.translations.getMany API Documentation Enterprise
+     * @param int $projectId
+     * @param string $languageId
+     * @param array $params
+     * @internal string $params[stringsId]
+     * @internal int $params[fileId]
+     * @internal int $params[denormalizePlaceholders]
+     * @internal int $params[limit]
+     * @internal int $params[offset]
+     * @return mixed|PlainLanguageTranslation|PluralLanguageTranslation|IcuLanguageTranslation
+     */
+    public function listLanguageTranslations(int $projectId, string $languageId, array $params)
+    {
+        $path = sprintf('projects/%d/languages/%s/translations', $projectId, $languageId);
+        return $this->_get(
+            $path,
+            PlainLanguageTranslation::class|PluralLanguageTranslation::class|IcuLanguageTranslation::class,
+            $params
+        );
     }
 }
