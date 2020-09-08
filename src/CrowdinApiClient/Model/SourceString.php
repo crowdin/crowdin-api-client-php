@@ -64,11 +64,6 @@ class SourceString extends BaseModel
     protected $hasPlurals;
 
     /**
-     * @var array
-     */
-    protected $plurals;
-
-    /**
      * @var bool
      */
     protected $isIcu;
@@ -101,7 +96,6 @@ class SourceString extends BaseModel
         $this->isHidden = (bool)$this->getDataProperty('isHidden');
         $this->revision = (integer)$this->getDataProperty('revision');
         $this->hasPlurals = (bool)$this->getDataProperty('hasPlurals');
-        $this->plurals = (array)$this->getDataProperty('plurals');
         $this->isIcu = (bool)$this->getDataProperty('isIcu');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
@@ -225,14 +219,6 @@ class SourceString extends BaseModel
     public function isHasPlurals(): bool
     {
         return $this->hasPlurals;
-    }
-
-    /**
-     * @return array
-     */
-    public function getPlurals(): array
-    {
-        return $this->plurals;
     }
 
     /**

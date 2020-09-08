@@ -25,9 +25,6 @@ class SourceStringTest extends TestCase
         'isHidden' => false,
         'revision' => 1,
         'hasPlurals' => false,
-        'plurals' =>
-            [
-            ],
         'isIcu' => false,
         'createdAt' => '2019-09-20T12:43:57+00:00',
         'updatedAt' => '2019-09-20T13:24:01+00:00',
@@ -66,7 +63,6 @@ class SourceStringTest extends TestCase
         $this->assertEquals($this->data['isHidden'], $this->sourceString->isHidden());
         $this->assertEquals($this->data['revision'], $this->sourceString->getRevision());
         $this->assertEquals($this->data['hasPlurals'], $this->sourceString->isHasPlurals());
-        $this->assertEquals($this->data['plurals'], $this->sourceString->getPlurals());
         $this->assertEquals($this->data['isIcu'], $this->sourceString->isIcu());
         $this->assertEquals($this->data['createdAt'], $this->sourceString->getCreatedAt());
         $this->assertEquals($this->data['updatedAt'], $this->sourceString->getUpdatedAt());
