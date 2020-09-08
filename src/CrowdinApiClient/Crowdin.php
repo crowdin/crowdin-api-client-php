@@ -27,7 +27,7 @@ use UnexpectedValueException;
  * @property \CrowdinApiClient\Api\Enterprise\UserApi|\CrowdinApiClient\Api\UserApi user
  * @property \CrowdinApiClient\Api\Enterprise\VendorApi vendor
  * @property \CrowdinApiClient\Api\Enterprise\WorkflowTemplateApi workflowTemplate
- * @property \CrowdinApiClient\Api\FileApi file
+ * @property \CrowdinApiClient\Api\FileApi|\CrowdinApiClient\Api\Enterprise\FileApi file
  * @property \CrowdinApiClient\Api\ReportApi report
  * @property \CrowdinApiClient\Api\SourceStringApi sourceString
  * @property \CrowdinApiClient\Api\TranslationMemoryApi translationMemory
