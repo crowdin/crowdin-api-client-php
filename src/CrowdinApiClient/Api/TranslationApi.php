@@ -175,8 +175,32 @@ class TranslationApi extends AbstractApi
      */
     public function buildProject(int $projectId, array $params = []): ?TranslationProjectBuild
     {
-        $patch = sprintf('projects/%d/translations/builds', $projectId);
+        $path = sprintf('projects/%d/translations/builds', $projectId);
 
-        return $this->_post($patch, TranslationProjectBuild::class, $params);
+        return $this->_post($path, TranslationProjectBuild::class, $params);
+    }
+
+    /**
+     * Export Project Translation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.translations.exports.post API Documentation
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.translations.exports.post API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param array $params
+     * @internal string $params[targetLanguageId] required
+     * @internal string $params[format]
+     * @internal int[] $params[branchIds] Note: Can't be used with directoryIds or fileIds in same request
+     * @internal int[] $params[directoryIds] Note: Can't be used with branchIds or fileIds in same request
+     * @internal int[] $params[fileIds] Note: Can't be used with branchIds or directoryIds in same request
+     * @internal bool $params[skipUntranslatedStrings] Note: Can't be used with skipUntranslatedFiles in same request
+     * @internal bool $params[skipUntranslatedFiles] Note: Can't be used with skipUntranslatedStrings in same request
+     * @internal bool $params[exportApprovedOnly]
+     *
+     * @return DownloadFile
+     */
+    public function exportProjectTranslation(int $projectId, array $params = []): DownloadFile
+    {
+        $path = sprintf('projects/%d/translations/exports', $projectId);
+        return $this->_post($path, DownloadFile::class, $params);
     }
 }
