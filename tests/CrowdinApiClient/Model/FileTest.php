@@ -27,7 +27,8 @@ class FileTest extends TestCase
         'name' => 'umbrella_app.xliff',
         'title' => 'source_app_info',
         'type' => 'xliff',
-        'revision' => 1,
+        'path' => '/someBranch/someDir/umbrella_app.xliff',
+        'revisionId' => 1,
         'status' => 'active',
         'priority' => 'normal',
         'importOptions' =>
@@ -84,7 +85,8 @@ class FileTest extends TestCase
         $this->assertEquals($this->data['name'], $this->file->getName());
         $this->assertEquals($this->data['title'], $this->file->getTitle());
         $this->assertEquals($this->data['type'], $this->file->getType());
-        $this->assertEquals($this->data['revision'], $this->file->getRevision());
+        $this->assertEquals($this->data['path'], $this->file->getPath());
+        $this->assertEquals($this->data['revisionId'], $this->file->getRevisionId());
         $this->assertEquals($this->data['status'], $this->file->getStatus());
         $this->assertEquals($this->data['priority'], $this->file->getPriority());
         $this->assertEquals($this->data['createdAt'], $this->file->getCreatedAt());

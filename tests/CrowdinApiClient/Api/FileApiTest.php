@@ -33,7 +33,8 @@ class FileApiTest extends AbstractTestApi
                         "name": "umbrella_app.xliff",
                         "title": "source_app_info",
                         "type": "xliff",
-                        "revision": 1,
+                        "path":"/someBranch/someDir/umbrella_app.xliff",
+                        "revisionId": 1,
                         "status": "active",
                         "priority": "normal",
                         "attributes": {
@@ -75,7 +76,8 @@ class FileApiTest extends AbstractTestApi
                 "name": "umbrella_app.xliff",
                 "title": "source_app_info",
                 "type": "xliff",
-                "revision": 1,
+                "path":"/someBranch/someDir/umbrella_app.xliff",
+                "revisionId": 1,
                 "status": "active",
                 "priority": "normal",
                 "attributes": {
@@ -107,7 +109,8 @@ class FileApiTest extends AbstractTestApi
                 "name": "umbrella_app.xliff",
                 "title": "source_app_info edit",
                 "type": "xliff",
-                "revision": 1,
+                "path":"/someBranch/someDir/umbrella_app.xliff",
+                "revisionId": 1,
                 "status": "active",
                 "priority": "normal",
                 "attributes": {
@@ -137,7 +140,8 @@ class FileApiTest extends AbstractTestApi
                 "name": "umbrella_app.xliff",
                 "title": "source_app_info",
                 "type": "xliff",
-                "revision": 2,
+                "path":"/someBranch/someDir/umbrella_app.xliff",
+                "revisionId": 2,
                 "status": "active",
                 "priority": "normal",
                 "attributes": {
@@ -153,7 +157,7 @@ class FileApiTest extends AbstractTestApi
         $file = $this->crowdin->file->update(2, 44, ['storageId' => 1]);
 
         $this->assertInstanceOf(File::class, $file);
-        $this->assertEquals(2, $file->getRevision());
+        $this->assertEquals(2, $file->getRevisionId());
     }
 
     public function testRestore()
@@ -168,7 +172,8 @@ class FileApiTest extends AbstractTestApi
                 "name": "umbrella_app.xliff",
                 "title": "source_app_info",
                 "type": "xliff",
-                "revision": 19,
+                "path":"/someBranch/someDir/umbrella_app.xliff",
+                "revisionId": 19,
                 "status": "active",
                 "priority": "normal",
                 "attributes": {
@@ -184,7 +189,7 @@ class FileApiTest extends AbstractTestApi
         $file = $this->crowdin->file->update(2, 44, ['storageId' => 1]);
 
         $this->assertInstanceOf(File::class, $file);
-        $this->assertEquals(19, $file->getRevision());
+        $this->assertEquals(19, $file->getRevisionId());
     }
 
     public function testCreate()
@@ -227,7 +232,8 @@ class FileApiTest extends AbstractTestApi
                     "name": "umbrella_app.xliff",
                     "title": "source_app_info",
                     "type": "xliff",
-                    "revision": 1,
+                    "path":"/someBranch/someDir/umbrella_app.xliff",
+                    "revisionId": 1,
                     "status": "active",
                     "priority": "normal",
                     "attributes": {
