@@ -56,7 +56,7 @@ class TranslationMemoryApiTest extends AbstractTestApi
     public function testCreate()
     {
         $params = [
-            'name' => 'nowledge Base\'s TM',
+            'name' => 'knowledge Base\'s TM',
         ];
 
         $this->mockRequest([
@@ -293,5 +293,11 @@ class TranslationMemoryApiTest extends AbstractTestApi
         $translationMemoryImport = $this->crowdin->translationMemory->checkImportStatus(4, 'b5215a34-1305-4b21-8054-fc2eb252842f');
         $this->assertInstanceOf(TranslationMemoryImport::class, $translationMemoryImport);
         $this->assertEquals('b5215a34-1305-4b21-8054-fc2eb252842f', $translationMemoryImport->getIdentifier());
+    }
+
+    public function testClear()
+    {
+        $this->mockRequestDelete('/tms/4/segments');
+        $this->crowdin->translationMemory->clear(4);
     }
 }
