@@ -164,4 +164,18 @@ class TranslationMemoryApi extends AbstractApi
         $path = sprintf('tms/%d/imports/%s', $translationMemoryId, $importId);
         return $this->_get($path, TranslationMemoryImport::class);
     }
+
+    /**
+     * Clear TM
+     * @link https://support.crowdin.com/api/v2/#operation/api.tms.segments.clear API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.tms.segments.clear API Documentation Enterprise
+     *
+     * @param int $translationMemoryId
+     * @return mixed
+     */
+    public function clear(int $translationMemoryId)
+    {
+        $path = sprintf('tms/%d/segments', $translationMemoryId);
+        return $this->_delete($path);
+    }
 }
