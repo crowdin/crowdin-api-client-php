@@ -44,9 +44,14 @@ class File extends BaseModel
     protected $type;
 
     /**
+     * @var string
+     */
+    protected $path;
+
+    /**
      * @var integer
      */
-    protected $revision;
+    protected $revisionId;
 
     /**
      * @var string
@@ -89,7 +94,8 @@ class File extends BaseModel
         $this->name = (string)$this->getDataProperty('name');
         $this->title = (string)$this->getDataProperty('title');
         $this->type = (string)$this->getDataProperty('type');
-        $this->revision = (integer)$this->getDataProperty('revision');
+        $this->path = (string)$this->getDataProperty('path');
+        $this->revisionId = (integer)$this->getDataProperty('revisionId');
         $this->status = (string)$this->getDataProperty('status');
         $this->priority = (string)$this->getDataProperty('priority');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
@@ -187,11 +193,27 @@ class File extends BaseModel
     }
 
     /**
+     * @return string
+     */
+    public function getPath(): string
+    {
+        return $this->path;
+    }
+
+    /**
+     * @param string $path
+     */
+    public function setPath(string $path): void
+    {
+        $this->path = $path;
+    }
+
+    /**
      * @return int
      */
-    public function getRevision(): int
+    public function getRevisionId(): int
     {
-        return $this->revision;
+        return $this->revisionId;
     }
 
     /**
