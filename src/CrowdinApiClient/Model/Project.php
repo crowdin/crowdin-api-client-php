@@ -139,6 +139,11 @@ class Project extends BaseModel
     protected $skipUntranslatedFiles;
 
     /**
+     * @var integer
+     */
+    protected $exportWithMinApprovalsCount;
+
+    /**
      * @var bool
      */
     protected $exportApprovedOnly;
@@ -184,6 +189,11 @@ class Project extends BaseModel
     protected $qaCheckCategories = [];
 
     /**
+     * @var int[]
+     */
+    protected $customQaCheckIds = [];
+
+    /**
      * @var array
      */
     protected $languageMapping = [];
@@ -224,6 +234,7 @@ class Project extends BaseModel
         $this->autoSubstitution = (bool)$this->getDataProperty('autoSubstitution');
         $this->skipUntranslatedStrings = (bool)$this->getDataProperty('skipUntranslatedStrings');
         $this->skipUntranslatedFiles = (bool)$this->getDataProperty('skipUntranslatedFiles');
+        $this->exportWithMinApprovalsCount = (integer)$this->getDataProperty('exportWithMinApprovalsCount');
         $this->exportApprovedOnly = (bool)$this->getDataProperty('exportApprovedOnly');
         $this->autoTranslateDialects = (bool)$this->getDataProperty('autoTranslateDialects');
         $this->publicDownloads = (bool)$this->getDataProperty('publicDownloads');
@@ -233,6 +244,7 @@ class Project extends BaseModel
         $this->inContextPseudoLanguage = (array)$this->getDataProperty('inContextPseudoLanguage');
         $this->qaCheckIsActive = (bool)$this->getDataProperty('qaCheckIsActive');
         $this->qaCheckCategories = (array)$this->getDataProperty('qaCheckCategories');
+        $this->customQaCheckIds = (array)$this->getDataProperty('customQaCheckIds');
         $this->languageMapping = (array)$this->getDataProperty('languageMapping');
         $this->isSuspended = (bool)$this->getDataProperty('isSuspended');
     }
@@ -648,6 +660,22 @@ class Project extends BaseModel
     }
 
     /**
+     * @return int
+     */
+    public function getExportWithMinApprovalsCount(): int
+    {
+        return $this->exportWithMinApprovalsCount;
+    }
+
+    /**
+     * @param int $exportWithMinApprovalsCount
+     */
+    public function setExportWithMinApprovalsCount(int $exportWithMinApprovalsCount): void
+    {
+        $this->exportWithMinApprovalsCount = $exportWithMinApprovalsCount;
+    }
+
+    /**
      * @return bool
      */
     public function isExportApprovedOnly(): bool
@@ -757,6 +785,22 @@ class Project extends BaseModel
     public function setQaCheckCategories(array $qaCheckCategories): void
     {
         $this->qaCheckCategories = $qaCheckCategories;
+    }
+
+    /**
+     * @return array|int[]
+     */
+    public function getCustomQaCheckIds(): array
+    {
+        return $this->customQaCheckIds;
+    }
+
+    /**
+     * @param array $customQaCheckIds
+     */
+    public function setCustomQaCheckIds(array $customQaCheckIds): void
+    {
+        $this->customQaCheckIds = $customQaCheckIds;
     }
 
     /**
