@@ -216,7 +216,7 @@ class TranslationStatusApiTest extends AbstractTestApi
      */
     public function testListQACheckIssues()
     {
-        $this->mockRequestGet('/projects/1/qa-check?limit=10', '{
+        $this->mockRequestGet('/projects/1/qa-checks?limit=10', '{
                   "data": [
                     {
                       "data": {

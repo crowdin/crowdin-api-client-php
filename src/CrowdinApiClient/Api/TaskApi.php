@@ -101,8 +101,8 @@ class TaskApi extends AbstractApi
      */
     public function exportStrings(int $projectId, int $taskId): ?DownloadFile
     {
-        $path = sprintf('projects/%d/tasks/%d/export', $projectId, $taskId);
-        return $this->_get($path, DownloadFile::class);
+        $path = sprintf('projects/%d/tasks/%d/exports', $projectId, $taskId);
+        return $this->_post($path, DownloadFile::class, []);
     }
 
     /**
