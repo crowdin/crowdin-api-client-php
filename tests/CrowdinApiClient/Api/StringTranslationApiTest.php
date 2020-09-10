@@ -106,7 +106,7 @@ class StringTranslationApiTest extends AbstractTestApi
     {
         $this->mockRequest([
            'path' => '/projects/2/translations/190695/restore',
-           'method' => 'post',
+           'method' => 'put',
            'response' => '{
                   "data": {
                     "id": 190695,
@@ -177,11 +177,6 @@ class StringTranslationApiTest extends AbstractTestApi
 
     public function testListLanguageTranslations()
     {
-        $params = [
-            'stringsId' => '12,7815,9011',
-            'fileId' => 5,
-        ];
-
         $this->mockRequest([
             'path' => '/projects/2/languages/en/translations',
             'method' => 'get',

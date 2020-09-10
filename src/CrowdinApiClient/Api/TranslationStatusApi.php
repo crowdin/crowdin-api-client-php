@@ -119,7 +119,7 @@ class TranslationStatusApi extends AbstractApi
      */
     public function listQACheckIssues(int $projectId, array $params = []): ?ModelCollection
     {
-        $path = sprintf('projects/%d/qa-check', $projectId);
+        $path = sprintf('projects/%d/qa-checks', $projectId);
         return $this->_list($path, QaCheck::class, $params);
     }
 }

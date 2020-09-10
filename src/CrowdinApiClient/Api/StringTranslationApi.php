@@ -61,8 +61,8 @@ class StringTranslationApi extends AbstractApi
 
     /**
      * Restore Translation
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.translations{translationId}.restore.post  API Documentation Enterprise
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.translations{translationId}.restore.post  API Documentation Enterprise
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.translations.put  API Documentation Enterprise
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.translations.put  API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $translationId
@@ -72,7 +72,7 @@ class StringTranslationApi extends AbstractApi
     {
         $path = sprintf('projects/%d/translations/%d/restore', $projectId, $translationId);
 
-        return $this->_post($path, StringTranslation::class, []);
+        return $this->_put($path, StringTranslation::class, []);
     }
 
     /**
