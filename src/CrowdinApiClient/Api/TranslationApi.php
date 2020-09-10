@@ -58,13 +58,10 @@ class TranslationApi extends AbstractApi
     {
         $path = sprintf('projects/%d/translations/builds/files/%d', $projectId, $fileId);
 
-        $data = [
+        $data = array_merge([
             'targetLanguageId' => $targetLanguageId,
             'exportAsXliff' => $exportAsXliff,
-            'skipUntranslatedStrings' => $params['skipUntranslatedStrings'] ?? false,
-            'skipUntranslatedFiles' => $params['skipUntranslatedFiles'] ?? false,
-            'exportApprovedOnly' => $params['exportApprovedOnly'] ?? false,
-        ];
+        ], $params);
         return $this->_post($path, DownloadFileTranslation::class, $data);
     }
 
@@ -171,6 +168,7 @@ class TranslationApi extends AbstractApi
      * @internal bool $params[skipUntranslatedStrings]
      * @internal bool $params[skipUntranslatedFiles]
      * @internal bool $params[exportApprovedOnly]
+     * @internal integer $params[exportWithMinApprovalsCount]
      * @return TranslationProjectBuild|null
      */
     public function buildProject(int $projectId, array $params = []): ?TranslationProjectBuild
@@ -195,6 +193,7 @@ class TranslationApi extends AbstractApi
      * @internal bool $params[skipUntranslatedStrings] Note: Can't be used with skipUntranslatedFiles in same request
      * @internal bool $params[skipUntranslatedFiles] Note: Can't be used with skipUntranslatedStrings in same request
      * @internal bool $params[exportApprovedOnly]
+     * @internal integer $params[exportWithMinApprovalsCount]
      *
      * @return DownloadFile
      */
