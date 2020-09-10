@@ -36,11 +36,6 @@ class Project extends BaseModel
     /**
      * @var string
      */
-    protected $joinPolicy;
-
-    /**
-     * @var string
-     */
     protected $languageAccessPolicy;
 
     /**
@@ -72,11 +67,6 @@ class Project extends BaseModel
      * @var string
      */
     protected $logo;
-
-    /**
-     * @var string
-     */
-    protected $background;
 
     /**
      * @var bool
@@ -197,7 +187,6 @@ class Project extends BaseModel
         $this->userId = (integer)$this->getDataProperty('userId');
         $this->sourceLanguageId = (string)$this->getDataProperty('sourceLanguageId');
         $this->targetLanguageIds = (array)$this->getDataProperty('targetLanguageIds');
-        $this->joinPolicy = (string)$this->getDataProperty('joinPolicy');
         $this->languageAccessPolicy = (string)$this->getDataProperty('languageAccessPolicy');
         $this->name = (string)$this->getDataProperty('name');
         $this->cname = (string)$this->getDataProperty('cname');
@@ -205,7 +194,6 @@ class Project extends BaseModel
         $this->description = (string)$this->getDataProperty('description');
         $this->visibility = (string)$this->getDataProperty('visibility');
         $this->logo = (string)$this->getDataProperty('logo');
-        $this->background = (string)$this->getDataProperty('background');
         $this->isExternal = (bool)$this->getDataProperty('isExternal');
         $this->externalType = (string)$this->getDataProperty('externalType');
         $this->advancedWorkflowId = (integer)$this->getDataProperty('advancedWorkflowId');
@@ -314,22 +302,6 @@ class Project extends BaseModel
     /**
      * @return string
      */
-    public function getJoinPolicy(): ?string
-    {
-        return $this->joinPolicy;
-    }
-
-    /**
-     * @param string|null $joinPolicy
-     */
-    public function setJoinPolicy(?string $joinPolicy): void
-    {
-        $this->joinPolicy = $joinPolicy;
-    }
-
-    /**
-     * @return string
-     */
     public function getLanguageAccessPolicy(): string
     {
         return $this->languageAccessPolicy;
@@ -418,7 +390,7 @@ class Project extends BaseModel
     /**
      * @param string $visibility
      */
-    public function setVisibility(?string $visibility): void
+    public function setVisibility(string $visibility): void
     {
         $this->visibility = $visibility;
     }
@@ -437,22 +409,6 @@ class Project extends BaseModel
     public function setLogo(string $logo): void
     {
         $this->logo = $logo;
-    }
-
-    /**
-     * @return string
-     */
-    public function getBackground(): string
-    {
-        return $this->background;
-    }
-
-    /**
-     * @param string $background
-     */
-    public function setBackground(string $background): void
-    {
-        $this->background = $background;
     }
 
     /**
