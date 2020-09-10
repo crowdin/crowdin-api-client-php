@@ -20,11 +20,29 @@ class ProjectTest extends TestCase
         'id' => 8,
         'groupId' => 4,
         'userId' => 6,
-        'sourceLanguageId' => 'es',
+        'sourceLanguageId' => 'uk',
         'targetLanguageIds' =>
             [
-                0 => 'uk',
+                0 => 'es',
             ],
+        'targetLanguages' => [
+            [
+                'id' => 'es',
+                'name' => 'Spanish',
+                'editorCode' => 'es',
+                'twoLettersCode' => 'es',
+                'threeLettersCode' => 'spa',
+                'locale' => 'es-ES',
+                'androidCode' => 'es-rES',
+                'osxCode' => 'es.lproj',
+                'osxLocale' => 'es',
+                'pluralCategoryNames' => ['one'],
+                'pluralRules' => '(n != 1)',
+                'pluralExamples' => ['0, 2-999; 1.2, 2.07...'],
+                'textDirection' => 'ltr',
+                'dialectOf' => 'string'
+            ]
+        ],
         'languageAccessPolicy' => 'moderate',
         'name' => 'Knowledge Base',
         'cname' => 'my-custom-domain.crowdin.com',
@@ -82,6 +100,17 @@ class ProjectTest extends TestCase
                         'osx_code' => 'ua.lproj',
                         'osx_locale' => 'ua',
                     ],
+                'es' =>
+                    [
+                        'name' => 'Spanish',
+                        'two_letters_code' => 'es',
+                        'three_letters_code' => 'es',
+                        'locale' => 'es-ES',
+                        'locale_with_underscore' => 'es_ES',
+                        'android_code' => 'es-rES',
+                        'osx_code' => 'es.lproj',
+                        'osx_locale' => 'es',
+                    ]
             ],
 
         'joinPolicy' => null,
@@ -117,6 +146,7 @@ class ProjectTest extends TestCase
         $this->assertEquals($this->data['userId'], $this->project->getUserId());
         $this->assertEquals($this->data['sourceLanguageId'], $this->project->getSourceLanguageId());
         $this->assertEquals($this->data['targetLanguageIds'], $this->project->getTargetLanguageIds());
+        $this->assertEquals($this->data['targetLanguages'], $this->project->getTargetLanguages());
         $this->assertEquals($this->data['languageAccessPolicy'], $this->project->getLanguageAccessPolicy());
         $this->assertEquals($this->data['name'], $this->project->getName());
         $this->assertEquals($this->data['cname'], $this->project->getCname());

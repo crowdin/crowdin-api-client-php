@@ -19,9 +19,9 @@ class ProjectApiTest extends AbstractTestApi
                         "id": 8,
                         "groupId": 4,
                         "userId": 6,
-                        "sourceLanguageId": "es",
+                        "sourceLanguageId": "uk",
                         "targetLanguageIds": [
-                          "uk"
+                          "es"
                         ],
                         "languageAccessPolicy": "moderate",
                         "name": "Knowledge Base",
@@ -62,10 +62,10 @@ class ProjectApiTest extends AbstractTestApi
             'name' => 'Knowledge Base',
             'identifier' => '1f198a4e907688bc65834a6d5a6000c3',
             'type' => 1,
-            'sourceLanguageId' => 'es',
+            'sourceLanguageId' => 'uk',
             'targetLanguageIds' =>
                 [
-                    0 => 'uk',
+                    0 => 'es',
                 ],
             'visibility' => 'private',
             'languageAccessPolicy' => 'moderate',
@@ -82,9 +82,27 @@ class ProjectApiTest extends AbstractTestApi
                     "id": 8,
                     "groupId": 4,
                     "userId": 6,
-                    "sourceLanguageId": "es",
+                    "sourceLanguageId": "uk",
                     "targetLanguageIds": [
-                      "uk"
+                      "es"
+                    ],
+                    "targetLanguages": [
+                        {
+                            "id": "es",
+                            "name": "Spanish",
+                            "editorCode": "es",
+                            "twoLettersCode": "es",
+                            "threeLettersCode": "spa",
+                            "locale": "es-ES",
+                            "androidCode": "es-rES",
+                            "osxCode": "es.lproj",
+                            "osxLocale": "es",
+                            "pluralCategoryNames": [],
+                            "pluralRules": "(n != 1)",
+                            "pluralExamples": [],
+                            "textDirection": "ltr",
+                            "dialectOf": "string"
+                        }
                     ],
                     "languageAccessPolicy": "moderate",
                     "name": "Knowledge Base",
@@ -106,6 +124,7 @@ class ProjectApiTest extends AbstractTestApi
         $project = $this->crowdin->project->create($params);
         $this->assertInstanceOf(Project::class, $project);
         $this->assertEquals(8, $project->getId());
+        $this->assertEquals('es', $project->getTargetLanguageIds()[0]);
         $this->assertEquals('1f198a4e907688bc65834a6d5a6000c3', $project->getIdentifier());
     }
 
@@ -115,9 +134,27 @@ class ProjectApiTest extends AbstractTestApi
                   "data": {
                             "id": 8,
                             "userId": 6,
-                            "sourceLanguageId": "es",
+                            "sourceLanguageId": "uk",
                             "targetLanguageIds": [
-                            "uk"
+                                "es"
+                            ],
+                            "targetLanguages": [
+                                {
+                                    "id": "es",
+                                    "name": "Spanish",
+                                    "editorCode": "es",
+                                    "twoLettersCode": "es",
+                                    "threeLettersCode": "spa",
+                                    "locale": "es-ES",
+                                    "androidCode": "es-rES",
+                                    "osxCode": "es.lproj",
+                                    "osxLocale": "es",
+                                    "pluralCategoryNames": [],
+                                    "pluralRules": "(n != 1)",
+                                    "pluralExamples": [],
+                                    "textDirection": "ltr",
+                                    "dialectOf": "string"
+                                }
                             ],
                             "languageAccessPolicy": "moderate",
                             "name": "Knowledge Base",
@@ -142,9 +179,27 @@ class ProjectApiTest extends AbstractTestApi
                   "data": {
                             "id": 8,
                             "userId": 6,
-                            "sourceLanguageId": "es",
+                            "sourceLanguageId": "uk",
                             "targetLanguageIds": [
-                            "uk"
+                                "es"
+                            ],
+                            "targetLanguages": [
+                                {
+                                    "id": "es",
+                                    "name": "Spanish",
+                                    "editorCode": "es",
+                                    "twoLettersCode": "es",
+                                    "threeLettersCode": "spa",
+                                    "locale": "es-ES",
+                                    "androidCode": "es-rES",
+                                    "osxCode": "es.lproj",
+                                    "osxLocale": "es",
+                                    "pluralCategoryNames": [],
+                                    "pluralRules": "(n != 1)",
+                                    "pluralExamples": [],
+                                    "textDirection": "ltr",
+                                    "dialectOf": "string"
+                                }
                             ],
                             "languageAccessPolicy": "moderate",
                             "name": "edit test",

@@ -34,6 +34,11 @@ class Project extends BaseModel
     protected $targetLanguageIds = [];
 
     /**
+     * @var array
+     */
+    protected $targetLanguages;
+
+    /**
      * @var string
      */
     protected $languageAccessPolicy;
@@ -67,6 +72,11 @@ class Project extends BaseModel
      * @var string
      */
     protected $logo;
+
+    /**
+     * @var string
+     */
+    protected $background;
 
     /**
      * @var bool
@@ -154,9 +164,14 @@ class Project extends BaseModel
     protected $inContext;
 
     /**
-     * @var string
+     * @var ?string
      */
     protected $inContextPseudoLanguageId;
+
+    /**
+     * @var array
+     */
+    protected $inContextPseudoLanguage = [];
 
     /**
      * @var bool
@@ -187,6 +202,7 @@ class Project extends BaseModel
         $this->userId = (integer)$this->getDataProperty('userId');
         $this->sourceLanguageId = (string)$this->getDataProperty('sourceLanguageId');
         $this->targetLanguageIds = (array)$this->getDataProperty('targetLanguageIds');
+        $this->targetLanguages = (array)$this->getDataProperty('targetLanguages');
         $this->languageAccessPolicy = (string)$this->getDataProperty('languageAccessPolicy');
         $this->name = (string)$this->getDataProperty('name');
         $this->cname = (string)$this->getDataProperty('cname');
@@ -194,6 +210,7 @@ class Project extends BaseModel
         $this->description = (string)$this->getDataProperty('description');
         $this->visibility = (string)$this->getDataProperty('visibility');
         $this->logo = (string)$this->getDataProperty('logo');
+        $this->background = (string)$this->getDataProperty('background');
         $this->isExternal = (bool)$this->getDataProperty('isExternal');
         $this->externalType = (string)$this->getDataProperty('externalType');
         $this->workflowId = (integer)$this->getDataProperty('workflowId');
@@ -213,6 +230,7 @@ class Project extends BaseModel
         $this->useGlobalTm = (bool)$this->getDataProperty('useGlobalTm');
         $this->inContext = (bool)$this->getDataProperty('inContext');
         $this->inContextPseudoLanguageId = (string)$this->getDataProperty('inContextPseudoLanguageId');
+        $this->inContextPseudoLanguage = (array)$this->getDataProperty('inContextPseudoLanguage');
         $this->qaCheckIsActive = (bool)$this->getDataProperty('qaCheckIsActive');
         $this->qaCheckCategories = (array)$this->getDataProperty('qaCheckCategories');
         $this->languageMapping = (array)$this->getDataProperty('languageMapping');
@@ -297,6 +315,16 @@ class Project extends BaseModel
     public function setTargetLanguageIds(array $targetLanguageIds): void
     {
         $this->targetLanguageIds = $targetLanguageIds;
+    }
+
+    public function getTargetLanguages(): array
+    {
+        return $this->targetLanguages;
+    }
+
+    public function setTargetLanguages(array $targetLanguages): void
+    {
+        $this->targetLanguages = $targetLanguages;
     }
 
     /**
@@ -409,6 +437,22 @@ class Project extends BaseModel
     public function setLogo(string $logo): void
     {
         $this->logo = $logo;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBackground(): string
+    {
+        return $this->background;
+    }
+
+    /**
+     * @param string $background
+     */
+    public function setBackground(string $background): void
+    {
+        $this->background = $background;
     }
 
     /**
@@ -724,11 +768,27 @@ class Project extends BaseModel
     }
 
     /**
-     * @param string $inContextPseudoLanguageId
+     * @param ?string $inContextPseudoLanguageId
      */
-    public function setInContextPseudoLanguageId(string $inContextPseudoLanguageId): void
+    public function setInContextPseudoLanguageId(?string $inContextPseudoLanguageId): void
     {
         $this->inContextPseudoLanguageId = $inContextPseudoLanguageId;
+    }
+
+    /**
+     * @return array
+     */
+    public function getInContextPseudoLanguage(): array
+    {
+        return $this->inContextPseudoLanguage;
+    }
+
+    /**
+     * @param array $inContextPseudoLanguage
+     */
+    public function setInContextPseudoLanguage(array $inContextPseudoLanguage): void
+    {
+        $this->inContextPseudoLanguage = $inContextPseudoLanguage;
     }
 
     /**
