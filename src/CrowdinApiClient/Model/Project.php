@@ -81,7 +81,7 @@ class Project extends BaseModel
     /**
      * @var integer
      */
-    protected $advancedWorkflowId;
+    protected $workflowId;
 
     /**
      * @var bool
@@ -196,7 +196,7 @@ class Project extends BaseModel
         $this->logo = (string)$this->getDataProperty('logo');
         $this->isExternal = (bool)$this->getDataProperty('isExternal');
         $this->externalType = (string)$this->getDataProperty('externalType');
-        $this->advancedWorkflowId = (integer)$this->getDataProperty('advancedWorkflowId');
+        $this->workflowId = (integer)$this->getDataProperty('workflowId');
         $this->hasCrowdsourcing = (bool)$this->getDataProperty('hasCrowdsourcing');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
@@ -446,17 +446,17 @@ class Project extends BaseModel
     /**
      * @return int
      */
-    public function getAdvancedWorkflowId(): int
+    public function getWorkflowId(): int
     {
-        return $this->advancedWorkflowId;
+        return $this->workflowId;
     }
 
     /**
-     * @param int $advancedWorkflowId
+     * @param int $workflowId
      */
-    public function setAdvancedWorkflowId(int $advancedWorkflowId): void
+    public function setWorkflowId(int $workflowId): void
     {
-        $this->advancedWorkflowId = $advancedWorkflowId;
+        $this->workflowId = $workflowId;
     }
 
     /**
