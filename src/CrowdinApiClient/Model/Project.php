@@ -34,9 +34,9 @@ class Project extends BaseModel
     protected $targetLanguageIds = [];
 
     /**
-     * @var string
+     * @var array
      */
-    protected $joinPolicy;
+    protected $targetLanguages;
 
     /**
      * @var string
@@ -91,7 +91,7 @@ class Project extends BaseModel
     /**
      * @var integer
      */
-    protected $advancedWorkflowId;
+    protected $workflowId;
 
     /**
      * @var bool
@@ -139,6 +139,11 @@ class Project extends BaseModel
     protected $skipUntranslatedFiles;
 
     /**
+     * @var integer
+     */
+    protected $exportWithMinApprovalsCount;
+
+    /**
      * @var bool
      */
     protected $exportApprovedOnly;
@@ -164,9 +169,14 @@ class Project extends BaseModel
     protected $inContext;
 
     /**
-     * @var string
+     * @var ?string
      */
     protected $inContextPseudoLanguageId;
+
+    /**
+     * @var array
+     */
+    protected $inContextPseudoLanguage = [];
 
     /**
      * @var bool
@@ -177,6 +187,11 @@ class Project extends BaseModel
      * @var array
      */
     protected $qaCheckCategories = [];
+
+    /**
+     * @var int[]
+     */
+    protected $customQaCheckIds = [];
 
     /**
      * @var array
@@ -197,7 +212,7 @@ class Project extends BaseModel
         $this->userId = (integer)$this->getDataProperty('userId');
         $this->sourceLanguageId = (string)$this->getDataProperty('sourceLanguageId');
         $this->targetLanguageIds = (array)$this->getDataProperty('targetLanguageIds');
-        $this->joinPolicy = (string)$this->getDataProperty('joinPolicy');
+        $this->targetLanguages = (array)$this->getDataProperty('targetLanguages');
         $this->languageAccessPolicy = (string)$this->getDataProperty('languageAccessPolicy');
         $this->name = (string)$this->getDataProperty('name');
         $this->cname = (string)$this->getDataProperty('cname');
@@ -208,7 +223,7 @@ class Project extends BaseModel
         $this->background = (string)$this->getDataProperty('background');
         $this->isExternal = (bool)$this->getDataProperty('isExternal');
         $this->externalType = (string)$this->getDataProperty('externalType');
-        $this->advancedWorkflowId = (integer)$this->getDataProperty('advancedWorkflowId');
+        $this->workflowId = (integer)$this->getDataProperty('workflowId');
         $this->hasCrowdsourcing = (bool)$this->getDataProperty('hasCrowdsourcing');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
@@ -219,14 +234,17 @@ class Project extends BaseModel
         $this->autoSubstitution = (bool)$this->getDataProperty('autoSubstitution');
         $this->skipUntranslatedStrings = (bool)$this->getDataProperty('skipUntranslatedStrings');
         $this->skipUntranslatedFiles = (bool)$this->getDataProperty('skipUntranslatedFiles');
+        $this->exportWithMinApprovalsCount = (integer)$this->getDataProperty('exportWithMinApprovalsCount');
         $this->exportApprovedOnly = (bool)$this->getDataProperty('exportApprovedOnly');
         $this->autoTranslateDialects = (bool)$this->getDataProperty('autoTranslateDialects');
         $this->publicDownloads = (bool)$this->getDataProperty('publicDownloads');
         $this->useGlobalTm = (bool)$this->getDataProperty('useGlobalTm');
         $this->inContext = (bool)$this->getDataProperty('inContext');
         $this->inContextPseudoLanguageId = (string)$this->getDataProperty('inContextPseudoLanguageId');
+        $this->inContextPseudoLanguage = (array)$this->getDataProperty('inContextPseudoLanguage');
         $this->qaCheckIsActive = (bool)$this->getDataProperty('qaCheckIsActive');
         $this->qaCheckCategories = (array)$this->getDataProperty('qaCheckCategories');
+        $this->customQaCheckIds = (array)$this->getDataProperty('customQaCheckIds');
         $this->languageMapping = (array)$this->getDataProperty('languageMapping');
         $this->isSuspended = (bool)$this->getDataProperty('isSuspended');
     }
@@ -311,20 +329,14 @@ class Project extends BaseModel
         $this->targetLanguageIds = $targetLanguageIds;
     }
 
-    /**
-     * @return string
-     */
-    public function getJoinPolicy(): ?string
+    public function getTargetLanguages(): array
     {
-        return $this->joinPolicy;
+        return $this->targetLanguages;
     }
 
-    /**
-     * @param string|null $joinPolicy
-     */
-    public function setJoinPolicy(?string $joinPolicy): void
+    public function setTargetLanguages(array $targetLanguages): void
     {
-        $this->joinPolicy = $joinPolicy;
+        $this->targetLanguages = $targetLanguages;
     }
 
     /**
@@ -418,7 +430,7 @@ class Project extends BaseModel
     /**
      * @param string $visibility
      */
-    public function setVisibility(?string $visibility): void
+    public function setVisibility(string $visibility): void
     {
         $this->visibility = $visibility;
     }
@@ -490,17 +502,17 @@ class Project extends BaseModel
     /**
      * @return int
      */
-    public function getAdvancedWorkflowId(): int
+    public function getWorkflowId(): int
     {
-        return $this->advancedWorkflowId;
+        return $this->workflowId;
     }
 
     /**
-     * @param int $advancedWorkflowId
+     * @param int $workflowId
      */
-    public function setAdvancedWorkflowId(int $advancedWorkflowId): void
+    public function setWorkflowId(int $workflowId): void
     {
-        $this->advancedWorkflowId = $advancedWorkflowId;
+        $this->workflowId = $workflowId;
     }
 
     /**
@@ -648,6 +660,22 @@ class Project extends BaseModel
     }
 
     /**
+     * @return int
+     */
+    public function getExportWithMinApprovalsCount(): int
+    {
+        return $this->exportWithMinApprovalsCount;
+    }
+
+    /**
+     * @param int $exportWithMinApprovalsCount
+     */
+    public function setExportWithMinApprovalsCount(int $exportWithMinApprovalsCount): void
+    {
+        $this->exportWithMinApprovalsCount = $exportWithMinApprovalsCount;
+    }
+
+    /**
      * @return bool
      */
     public function isExportApprovedOnly(): bool
@@ -760,6 +788,22 @@ class Project extends BaseModel
     }
 
     /**
+     * @return array|int[]
+     */
+    public function getCustomQaCheckIds(): array
+    {
+        return $this->customQaCheckIds;
+    }
+
+    /**
+     * @param array $customQaCheckIds
+     */
+    public function setCustomQaCheckIds(array $customQaCheckIds): void
+    {
+        $this->customQaCheckIds = $customQaCheckIds;
+    }
+
+    /**
      * @return string
      */
     public function getInContextPseudoLanguageId(): ?string
@@ -768,11 +812,27 @@ class Project extends BaseModel
     }
 
     /**
-     * @param string $inContextPseudoLanguageId
+     * @param ?string $inContextPseudoLanguageId
      */
-    public function setInContextPseudoLanguageId(string $inContextPseudoLanguageId): void
+    public function setInContextPseudoLanguageId(?string $inContextPseudoLanguageId): void
     {
         $this->inContextPseudoLanguageId = $inContextPseudoLanguageId;
+    }
+
+    /**
+     * @return array
+     */
+    public function getInContextPseudoLanguage(): array
+    {
+        return $this->inContextPseudoLanguage;
+    }
+
+    /**
+     * @param array $inContextPseudoLanguage
+     */
+    public function setInContextPseudoLanguage(array $inContextPseudoLanguage): void
+    {
+        $this->inContextPseudoLanguage = $inContextPseudoLanguage;
     }
 
     /**
