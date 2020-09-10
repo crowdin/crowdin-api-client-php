@@ -4,6 +4,7 @@ namespace CrowdinApiClient\Tests\Api;
 
 use CrowdinApiClient\Model\Issue;
 use CrowdinApiClient\Model\Progress;
+use CrowdinApiClient\Model\ProgressLanguage;
 use CrowdinApiClient\Model\QaCheck;
 use CrowdinApiClient\ModelCollection;
 
@@ -168,6 +169,48 @@ class TranslationStatusApiTest extends AbstractTestApi
         $this->assertCount(1, $progress);
         $this->assertInstanceOf(Progress::class, $progress[0]);
         $this->assertEquals('af', $progress[0]->getLanguageId());
+    }
+
+    /**
+     * @test
+     */
+    public function testGetLanguageProgress()
+    {
+        $this->mockRequestGet('/projects/1/languages/af/progress?limit=10', '{
+                  "data": [
+                    {
+                      "data": {
+                        "words": {
+                          "total": 7249,
+                          "translated": 3651,
+                          "approved": 3637
+                        },
+                        "phrases": {
+                          "total": 3041,
+                          "translated": 2631,
+                          "approved": 2622
+                        },
+                        "translationProgress": 86,
+                        "approvalProgress": 86,
+                        "fileId": 12,
+                        "etag": "fd0ea167420ef1687fd16635b9fb67a3"
+                      }
+                    }
+                  ],
+                  "pagination": [
+                    {
+                      "offset": 0,
+                      "limit": 25
+                    }
+                  ]
+                }');
+
+        $progress = $this->crowdin->translationStatus->getLanguageProgress(1, 'af', ['limit' => 10]);
+
+        $this->assertInstanceOf(ModelCollection::class, $progress);
+        $this->assertCount(1, $progress);
+        $this->assertInstanceOf(ProgressLanguage::class, $progress[0]);
+        $this->assertEquals(12, $progress[0]->getFileId());
     }
 
     /**

@@ -5,6 +5,7 @@ namespace CrowdinApiClient\Api;
 use CrowdinApiClient\Model\Issue;
 use CrowdinApiClient\Model\Progress;
 use CrowdinApiClient\Model\ProgressFile;
+use CrowdinApiClient\Model\ProgressLanguage;
 use CrowdinApiClient\Model\QaCheck;
 use CrowdinApiClient\ModelCollection;
 
@@ -83,6 +84,24 @@ class TranslationStatusApi extends AbstractApi
     {
         $path = sprintf('projects/%d/files/%d/languages/progress', $projectId, $fileId);
         return $this->_list($path, ProgressFile::class, $params);
+    }
+
+    /**
+     * Get Language Progress
+     * @link https://support.crowdin.com/api/v2/#operation/api.projects.languages.files.progress.getMany API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.files.languages.progress.getMany API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param string $languageId
+     * @param array $params
+     * @internal integer $params[limit] default 25
+     * @internal integer $params[offset] default 0
+     * @return ModelCollection|null
+     */
+    public function getLanguageProgress(int $projectId, string $languageId, array $params = []): ?ModelCollection
+    {
+        $path = sprintf('projects/%d/languages/%s/progress', $projectId, $languageId);
+        return $this->_list($path, ProgressLanguage::class, $params);
     }
 
     /**
