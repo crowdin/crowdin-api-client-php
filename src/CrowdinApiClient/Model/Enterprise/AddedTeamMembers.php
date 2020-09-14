@@ -39,7 +39,6 @@ class AddedTeamMembers extends BaseModel
                     $this->added->add(new TeamMember($item['data']));
                 }
             }
-
         }
     }
 

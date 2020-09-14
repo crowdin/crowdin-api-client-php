@@ -32,7 +32,6 @@ class AddedProjectTeamInfoTest extends TestCase
         ]
     ];
 
-
     public function testLoadData()
     {
         $this->addedProjectTeamInfo = new AddedProjectTeamInfo($this->data);

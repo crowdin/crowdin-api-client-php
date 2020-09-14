@@ -1,9 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
 namespace CrowdinApiClient\Api\Enterprise;
-
 
 use CrowdinApiClient\Api\AbstractApi;
 use CrowdinApiClient\Model\Enterprise\AddedTeamMembers;

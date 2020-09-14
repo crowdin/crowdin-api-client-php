@@ -46,6 +46,11 @@ class Task extends BaseModel
     /**
      * @var array
      */
+    protected $assignedTeams;
+
+    /**
+     * @var array
+     */
     protected $fileIds;
 
     /**
@@ -134,6 +139,7 @@ class Task extends BaseModel
         $this->status = (string)$this->getDataProperty('status');
         $this->title = (string)$this->getDataProperty('title');
         $this->assignees = (array)$this->getDataProperty('assignees');
+        $this->assignedTeams = (array)$this->getDataProperty('assignedTeams');
         $this->fileIds = (array)$this->getDataProperty('fileIds');
         $this->progress = (array)$this->getDataProperty('progress');
         $this->sourceLanguageId = (string)$this->getDataProperty('sourceLanguageId');
@@ -230,6 +236,16 @@ class Task extends BaseModel
     public function setAssignees(array $assignees): void
     {
         $this->assignees = $assignees;
+    }
+
+    public function getAssignedTeams(): array
+    {
+        return $this->assignedTeams;
+    }
+
+    public function setAssignedTeams(array $assignedTeams): void
+    {
+        $this->assignedTeams = $assignedTeams;
     }
 
     /**

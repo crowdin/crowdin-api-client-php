@@ -1,6 +1,5 @@
 <?php
 
-
 namespace CrowdinApiClient\Model\Enterprise;
 
 use CrowdinApiClient\Collection;
@@ -38,7 +37,6 @@ class AddedTeamMembersTest extends TestCase
                 ]
             ]
         ],
-
 
     ];
 
