@@ -27,6 +27,12 @@ class TaskTest extends TestCase
                         'wordsCount' => 5,
                     ],
             ],
+        "assignedTeams" => [
+            [
+                'id' => 1,
+                'wordsCount' => 5,
+            ]
+        ],
         'fileIds' =>
             [
                 0 => 1,
@@ -65,6 +71,7 @@ class TaskTest extends TestCase
         $this->task->setStatus($this->data['status']);
         $this->task->setTitle($this->data['title']);
         $this->task->setAssignees($this->data['assignees']);
+        $this->task->setAssignedTeams($this->data['assignedTeams']);
         $this->task->setFileIds($this->data['fileIds']);
         $this->task->setDescription($this->data['description']);
         $this->task->setDeadline($this->data['deadline']);
@@ -73,6 +80,7 @@ class TaskTest extends TestCase
         $this->assertEquals($this->data['status'], $this->task->getStatus());
         $this->assertEquals($this->data['title'], $this->task->getTitle());
         $this->assertEquals($this->data['assignees'], $this->task->getAssignees());
+        $this->assertEquals($this->data['assignedTeams'], $this->task->getAssignedTeams());
         $this->assertEquals($this->data['fileIds'], $this->task->getFileIds());
         $this->assertEquals($this->data['description'], $this->task->getDescription());
         $this->assertEquals($this->data['deadline'], $this->task->getDeadline());
@@ -88,6 +96,7 @@ class TaskTest extends TestCase
         $this->assertEquals($this->data['status'], $this->task->getStatus());
         $this->assertEquals($this->data['title'], $this->task->getTitle());
         $this->assertEquals($this->data['assignees'], $this->task->getAssignees());
+        $this->assertEquals($this->data['assignedTeams'], $this->task->getAssignedTeams());
         $this->assertEquals($this->data['fileIds'], $this->task->getFileIds());
         $this->assertEquals($this->data['progress'], $this->task->getProgress());
         $this->assertEquals($this->data['sourceLanguageId'], $this->task->getSourceLanguageId());

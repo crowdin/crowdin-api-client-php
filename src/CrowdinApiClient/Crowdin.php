@@ -35,6 +35,8 @@ use UnexpectedValueException;
  * @property \CrowdinApiClient\Api\TranslationApi translation
  * @property \CrowdinApiClient\Api\TranslationStatusApi translationStatus
  * @property \CrowdinApiClient\Api\DistributionApi distribution
+ * @property \CrowdinApiClient\Api\Enterprise\TeamApi team
+ * @property \CrowdinApiClient\Api\Enterprise\TeamMemberApi teamMember
  */
 class Crowdin
 {
@@ -120,7 +122,9 @@ class Crowdin
         'webhook',
         'translation',
         'translationStatus',
-        'distribution'
+        'distribution',
+        'team',
+        'teamMember'
     ];
 
     /**
