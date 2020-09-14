@@ -2,6 +2,7 @@
 
 namespace CrowdinApiClient\Api\Enterprise;
 
+use CrowdinApiClient\Model\Enterprise\AddedProjectTeamInfo;
 use CrowdinApiClient\Model\Enterprise\Team;
 use CrowdinApiClient\ModelCollection;
 use CrowdinApiClient\Tests\Api\Enterprise\AbstractTestApi;
@@ -105,5 +106,45 @@ class TeamApiTest extends AbstractTestApi
     {
         $this->mockRequestDelete('/teams/2');
         $this->crowdin->team->delete(2);
+    }
+
+    public function testAddTeamToProject()
+    {
+        $params = [
+            'teamId' => 3,
+            'permissions' => [
+                'it' => ['workflowStepIds' => [313, 315]]
+            ]
+        ];
+
+        $this->mockRequest([
+            'path' => '/projects/2/teams',
+            'method' => 'post',
+            'body' => $params,
+            'response' => '
+                {
+                    "data": {
+                        "skipped": [],
+                        "added": {
+                            "id": 3,
+                            "hasManagerAccess": false,
+                            "hasAccessToAllWorkflowSteps": true,
+                            "permissions": {
+                                "it": {
+                                    "workflowStepIds": [
+                                        313
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            '
+
+        ]);
+
+        $addedProjectTeamInfo = $this->crowdin->team->addTeamToProject(2, $params);
+        $this->assertInstanceOf(AddedProjectTeamInfo::class, $addedProjectTeamInfo);
+        $this->assertEquals(3, $addedProjectTeamInfo->getAdded()->getId());
     }
 }

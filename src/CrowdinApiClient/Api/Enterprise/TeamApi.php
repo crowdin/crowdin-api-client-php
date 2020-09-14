@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Api\Enterprise;
 
 use CrowdinApiClient\Api\AbstractApi;
+use CrowdinApiClient\Model\Enterprise\AddedProjectTeamInfo;
 use CrowdinApiClient\Model\Enterprise\Team;
 use CrowdinApiClient\ModelCollection;
 
@@ -64,5 +65,23 @@ class TeamApi extends AbstractApi
     public function update(Team $team): Team
     {
         return $this->_update('teams/' . $team->getId(), $team);
+    }
+
+    /**
+     * Add Team ToProject
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.teams.post API Documentation
+     *
+     * @param int $projectId
+     * @param array $data
+     * @internal integer $data[teamId] required
+     * @internal boolean $data[accessToAllWorkflowSteps]
+     * @internal boolean $data[managerAccess]
+     * @internal array $data[permissions] Note: managerAccess, accessToAllWorkflowSteps, and permissions parameters are mutually exclusive
+     * @return AddedProjectTeamInfo
+     */
+    public function addTeamToProject(int $projectId, array $data): AddedProjectTeamInfo
+    {
+        $path = sprintf('projects/%d/teams', $projectId);
+        return $this->_post($path, AddedProjectTeamInfo::class, $data);
     }
 }
