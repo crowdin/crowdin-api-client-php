@@ -19,42 +19,17 @@ class Language extends BaseModel
     protected $name;
 
     /**
-     * @var string
-     */
-    protected $dialectOf;
-
-    /**
-     * @var string
-     */
-    protected $textDirection;
-
-    /**
-     * @var string
+     * @var string alias of internal code
      */
     protected $editorCode;
 
     /**
-     * @var array
-     */
-    protected $pluralCategoryNames = [];
-
-    /**
-     * @var string
-     */
-    protected $pluralRules;
-
-    /**
-     * @var array
-     */
-    protected $pluralExamples = [];
-
-    /**
-     * @var string
+     * @var string alias of iso6391 code
      */
     protected $twoLettersCode;
 
     /**
-     * @var string
+     * @var string alias of iso6393 code
      */
     protected $threeLettersCode;
 
@@ -77,6 +52,31 @@ class Language extends BaseModel
      * @var string
      */
     protected $osxLocale;
+
+    /**
+     * @var array
+     */
+    protected $pluralCategoryNames = [];
+
+    /**
+     * @var string
+     */
+    protected $pluralRules;
+
+    /**
+     * @var array
+     */
+    protected $pluralExamples = [];
+
+    /**
+     * @var string Enum: "ltr" "rtl"
+     */
+    protected $textDirection;
+
+    /**
+     * @var string|null
+     */
+    protected $dialectOf;
 
     public function __construct(array $data = [])
     {
@@ -122,17 +122,17 @@ class Language extends BaseModel
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getDialectOf(): string
+    public function getDialectOf(): ?string
     {
         return $this->dialectOf;
     }
 
     /**
-     * @param string $dialectOf
+     * @param string|null $dialectOf
      */
-    public function setDialectOf(string $dialectOf): void
+    public function setDialectOf(?string $dialectOf): void
     {
         $this->dialectOf = $dialectOf;
     }
