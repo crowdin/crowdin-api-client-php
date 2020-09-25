@@ -21,6 +21,8 @@ class StorageApi extends AbstractApi
      * @link https://support.crowdin.com/enterprise/api/#operation/api.storages.getMany  API Documentation
      *
      * @param array $params
+     * @internal integer $params[limit]
+     * @internal integer $params[offset]
      * @return ModelCollection
      */
     public function list(array $params = []): ModelCollection
@@ -41,7 +43,6 @@ class StorageApi extends AbstractApi
     {
         $options = [
             'headers' => [
-                'Content-Type' => Mimetypes::getInstance()->fromFilename($fileObject->getFilename()),
                 'Crowdin-API-FileName' => $fileObject->getFilename(),
             ],
             'body' => file_get_contents($fileObject->getRealPath())
