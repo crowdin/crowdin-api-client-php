@@ -50,13 +50,24 @@ class ProjectApi extends AbstractApi
      *
      * @param array $data
      * @internal string $data[name] required
+     * @internal string $data[identifier]
+     * @internal string $data[type]
      * @internal string $data[sourceLanguageId] required
      * @internal integer $data[groupId] required
      * @internal integer $data[templateId] required
+     * @internal integer $data[groupId]
      * @internal array $data[targetLanguageIds]
+     * @internal string $data[visibility]
+     * @internal string $data[languageAccessPolicy]
+     * @internal string $data[cname]
      * @internal integer $data[vendorId]
      * @internal integer $data[mtEngineId]
      * @internal string $data[description]
+     * @internal boolean $data[delayedWorkflowStart]
+     * @internal boolean $data[skipUntranslatedStrings]
+     * @internal boolean $data[skipUntranslatedFiles]
+     * @internal integer $data[exportWithMinApprovalsCount]
+     * @internal integer $data[exportApprovedOnly]
      * @return Project|null
      */
     public function create(array $data): ?Project

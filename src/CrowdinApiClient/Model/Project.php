@@ -99,6 +99,11 @@ class Project extends BaseModel
     protected $hasCrowdsourcing;
 
     /**
+     * @var bool
+     */
+    protected $publicDownloads;
+
+    /**
      * @var string
      */
     protected $createdAt;
@@ -129,6 +134,11 @@ class Project extends BaseModel
     protected $autoSubstitution;
 
     /**
+     * @var boolean
+     */
+    protected $exportTranslatedOnly;
+
+    /**
      * @var bool
      */
     protected $skipUntranslatedStrings;
@@ -156,11 +166,6 @@ class Project extends BaseModel
     /**
      * @var bool
      */
-    protected $publicDownloads;
-
-    /**
-     * @var bool
-     */
     protected $useGlobalTm;
 
     /**
@@ -181,6 +186,11 @@ class Project extends BaseModel
     /**
      * @var bool
      */
+    protected $isSuspended;
+
+    /**
+     * @var bool
+     */
     protected $qaCheckIsActive;
 
     /**
@@ -197,11 +207,6 @@ class Project extends BaseModel
      * @var array
      */
     protected $languageMapping = [];
-
-    /**
-     * @var bool
-     */
-    protected $isSuspended;
 
     public function __construct(array $data = [])
     {
@@ -625,6 +630,16 @@ class Project extends BaseModel
     public function setAutoSubstitution(bool $autoSubstitution): void
     {
         $this->autoSubstitution = $autoSubstitution;
+    }
+
+    public function isExportTranslatedOnly(): bool
+    {
+        return $this->exportTranslatedOnly;
+    }
+
+    public function setExportTranslatedOnly(bool $exportTranslatedOnly): void
+    {
+        $this->exportTranslatedOnly = $exportTranslatedOnly;
     }
 
     /**
