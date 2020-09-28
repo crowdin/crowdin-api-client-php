@@ -5,7 +5,6 @@ namespace CrowdinApiClient\Api;
 use CrowdinApiClient\Http\ResponseDecorator\ResponseModelDecorator;
 use CrowdinApiClient\Model\Storage;
 use CrowdinApiClient\ModelCollection;
-use CrowdinApiClient\Utility\Mimetypes;
 use SplFileObject;
 
 /**
