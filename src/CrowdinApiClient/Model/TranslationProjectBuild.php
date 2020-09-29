@@ -19,16 +19,6 @@ class TranslationProjectBuild extends BaseModel
     protected $projectId;
 
     /**
-     * @var integer
-     */
-    protected $branchId;
-
-    /**
-     * @var array
-     */
-    protected $languagesId;
-
-    /**
      * @var string
      */
     protected $status;
@@ -37,6 +27,11 @@ class TranslationProjectBuild extends BaseModel
      * @var integer
      */
     protected $progress;
+
+    /**
+     * @var array
+     */
+    protected $attributes;
 
     /**
      * TranslationProjectBuild constructor.
@@ -48,10 +43,9 @@ class TranslationProjectBuild extends BaseModel
 
         $this->id = (integer)$this->getDataProperty('id');
         $this->projectId = (integer)$this->getDataProperty('projectId');
-        $this->branchId = (integer)$this->getDataProperty('branchId');
-        $this->languagesId = (array)$this->getDataProperty('languagesId');
         $this->status = (string)$this->getDataProperty('status');
         $this->progress = (integer)$this->getDataProperty('progress');
+        $this->attributes = (array)$this->getDataProperty('attributes');
     }
 
     /**
@@ -87,38 +81,6 @@ class TranslationProjectBuild extends BaseModel
     }
 
     /**
-     * @return int
-     */
-    public function getBranchId(): int
-    {
-        return $this->branchId;
-    }
-
-    /**
-     * @param int $branchId
-     */
-    public function setBranchId(int $branchId): void
-    {
-        $this->branchId = $branchId;
-    }
-
-    /**
-     * @return array
-     */
-    public function getLanguagesId(): array
-    {
-        return $this->languagesId;
-    }
-
-    /**
-     * @param array $languagesId
-     */
-    public function setLanguagesId(array $languagesId): void
-    {
-        $this->languagesId = $languagesId;
-    }
-
-    /**
      * @return string
      */
     public function getStatus(): string
@@ -148,5 +110,15 @@ class TranslationProjectBuild extends BaseModel
     public function setProgress(int $progress): void
     {
         $this->progress = $progress;
+    }
+
+    public function getAttributes(): array
+    {
+        return $this->attributes;
+    }
+
+    public function setAttributes(array $attributes): void
+    {
+        $this->attributes = $attributes;
     }
 }
