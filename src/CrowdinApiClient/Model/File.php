@@ -49,14 +49,14 @@ class File extends BaseModel
     protected $path;
 
     /**
-     * @var integer
-     */
-    protected $revisionId;
-
-    /**
      * @var string
      */
     protected $status;
+
+    /**
+     * @var integer
+     */
+    protected $revisionId;
 
     /**
      * @var string

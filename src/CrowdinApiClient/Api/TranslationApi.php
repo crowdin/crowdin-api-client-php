@@ -18,6 +18,15 @@ class TranslationApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $params
+     * @internal string[] $params[languageIds] required
+     * @internal int[] $params[fileIds] required
+     * @internal string $params[method]
+     * @internal int $params[engineId]
+     * @internal string $params[autoApproveOption]
+     * @internal boolean $params[duplicateTranslations] Works only with TM pre-translation method
+     * @internal boolean $params[translateUntranslatedOnly] Works only with TM pre-translation method
+     * @internal boolean $params[translateWithPerfectMatchOnly] Works only with TM pre-translation method
+     * @internal boolean $params[markAddedTranslationsAsDone]
      * @return PreTranslation|null
      */
     public function applyPreTranslation(int $projectId, array $params): ?PreTranslation
