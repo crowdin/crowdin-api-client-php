@@ -120,12 +120,15 @@ class ScreenshotApi extends AbstractApi
      *
      * @param int $projectId
      * @param int $screenshotId
+     * @param array $params
+     * @internal integer $params[limit]
+     * @internal integer $params[offset]
      * @return ModelCollection
      */
-    public function tags(int $projectId, int $screenshotId): ModelCollection
+    public function tags(int $projectId, int $screenshotId, array $params = []): ModelCollection
     {
         $path = sprintf('projects/%d/screenshots/%d/tags', $projectId, $screenshotId);
-        return $this->_list($path, Tag::class);
+        return $this->_list($path, Tag::class, $params);
     }
 
     /**
@@ -158,6 +161,8 @@ class ScreenshotApi extends AbstractApi
      * @param int $projectId
      * @param int $screenshotId
      * @param array $data
+     * @internal integer $data[stringId] required
+     * @internal array $data[position]
      * @return Tag|null
      */
     public function addTag(int $projectId, int $screenshotId, array $data): ?Tag
