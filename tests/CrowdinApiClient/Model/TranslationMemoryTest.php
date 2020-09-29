@@ -27,6 +27,7 @@ class TranslationMemoryTest extends TestCase
         [
           0 => 2,
         ],
+        'createdAt' => '2019-09-23T09:04:29+00:00'
     ];
 
     public function testLoadData()
@@ -39,8 +40,10 @@ class TranslationMemoryTest extends TestCase
     {
         $this->translationMemory = new TranslationMemory();
         $this->translationMemory->setName($this->data['name']);
+        $this->translationMemory->setCreatedAt($this->data['createdAt']);
 
         $this->assertEquals($this->data['name'], $this->translationMemory->getName());
+        $this->assertEquals($this->data['createdAt'], $this->translationMemory->getCreatedAt());
     }
 
     public function checkData()
@@ -52,5 +55,6 @@ class TranslationMemoryTest extends TestCase
         $this->assertEquals($this->data['segmentsCount'], $this->translationMemory->getSegmentsCount());
         $this->assertEquals($this->data['defaultProjectId'], $this->translationMemory->getDefaultProjectId());
         $this->assertEquals($this->data['projectIds'], $this->translationMemory->getProjectIds());
+        $this->assertEquals($this->data['createdAt'], $this->translationMemory->getCreatedAt());
     }
 }

@@ -21,6 +21,7 @@ class TranslationMemoryApi extends AbstractApi
      *
      * @param array $params
      * @internal integer $params[userId]
+     * @internal integer $params[groupId]
      * @internal integer $params[limit]
      * @internal integer $params[offset]
      * @return ModelCollection
@@ -83,18 +84,17 @@ class TranslationMemoryApi extends AbstractApi
     }
 
     /**
-     * Download TM
-     * @link https://support.crowdin.com/api/v2/#operation/api.tms.exports.getMany API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.tms.exports.getMany API Documentation Enterprise
+     * Clear TM
+     * @link https://support.crowdin.com/api/v2/#operation/api.tms.segments.clear API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.tms.segments.clear API Documentation Enterprise
      *
      * @param int $translationMemoryId
-     * @param string $exportId
-     * @return DownloadFile|null
+     * @return mixed
      */
-    public function download(int $translationMemoryId, string $exportId): ?DownloadFile
+    public function clear(int $translationMemoryId)
     {
-        $path = sprintf('tms/%d/exports/%s/download', $translationMemoryId, $exportId);
-        return $this->_get($path, DownloadFile::class);
+        $path = sprintf('tms/%d/segments', $translationMemoryId);
+        return $this->_delete($path);
     }
 
     /**
@@ -104,6 +104,9 @@ class TranslationMemoryApi extends AbstractApi
      *
      * @param int $translationMemoryId
      * @param array $params
+     * @internal string $params[sourceLanguageId]
+     * @internal string $params[targetLanguageId]
+     * @internal string $params[format]
      * @return TranslationMemoryExport|null
      */
     public function export(int $translationMemoryId, array $params = []): ?TranslationMemoryExport
@@ -125,6 +128,21 @@ class TranslationMemoryApi extends AbstractApi
     {
         $path = sprintf('tms/%d/exports/%s', $translationMemoryId, $exportId);
         return $this->_get($path, TranslationMemoryExport::class);
+    }
+
+    /**
+     * Download TM
+     * @link https://support.crowdin.com/api/v2/#operation/api.tms.exports.getMany API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.tms.exports.getMany API Documentation Enterprise
+     *
+     * @param int $translationMemoryId
+     * @param string $exportId
+     * @return DownloadFile|null
+     */
+    public function download(int $translationMemoryId, string $exportId): ?DownloadFile
+    {
+        $path = sprintf('tms/%d/exports/%s/download', $translationMemoryId, $exportId);
+        return $this->_get($path, DownloadFile::class);
     }
 
     /**
@@ -163,19 +181,5 @@ class TranslationMemoryApi extends AbstractApi
     {
         $path = sprintf('tms/%d/imports/%s', $translationMemoryId, $importId);
         return $this->_get($path, TranslationMemoryImport::class);
-    }
-
-    /**
-     * Clear TM
-     * @link https://support.crowdin.com/api/v2/#operation/api.tms.segments.clear API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.tms.segments.clear API Documentation Enterprise
-     *
-     * @param int $translationMemoryId
-     * @return mixed
-     */
-    public function clear(int $translationMemoryId)
-    {
-        $path = sprintf('tms/%d/segments', $translationMemoryId);
-        return $this->_delete($path);
     }
 }

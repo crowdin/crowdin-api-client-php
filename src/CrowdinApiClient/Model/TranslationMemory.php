@@ -44,6 +44,11 @@ class TranslationMemory extends BaseModel
     protected $projectIds;
 
     /**
+     * @var string
+     */
+    protected $createdAt;
+
+    /**
      * @param array $data
      */
     public function __construct(array $data = [])
@@ -57,6 +62,7 @@ class TranslationMemory extends BaseModel
         $this->segmentsCount = $this->getDataProperty('segmentsCount');
         $this->defaultProjectId = $this->getDataProperty('defaultProjectId');
         $this->projectIds = $this->getDataProperty('projectIds');
+        $this->createdAt = $this->getDataProperty('createdAt');
     }
 
     /**
@@ -121,5 +127,21 @@ class TranslationMemory extends BaseModel
     public function getProjectIds(): array
     {
         return $this->projectIds;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCreatedAt(): string
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @param string $createdAt
+     */
+    public function setCreatedAt(string $createdAt): void
+    {
+        $this->createdAt = $createdAt;
     }
 }

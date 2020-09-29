@@ -75,7 +75,8 @@ class TranslationMemoryApiTest extends AbstractTestApi
                 "defaultProjectId": 0,
                 "projectIds": [
                   2
-                ]
+                ],
+                "createdAt":"2019-09-23T09:04:29+00:00"
               }
             }'
         ]);
