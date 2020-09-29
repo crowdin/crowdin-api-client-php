@@ -21,6 +21,7 @@ class GlossaryApi extends AbstractApi
      * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.getMany API Documentation Enterprise
      *
      * @param array $params
+     * @internal integer $params[groupId]
      * @internal integer $params[limit]
      * @internal integer $params[offset]
      * @internal integer $params[userId]
@@ -29,6 +30,21 @@ class GlossaryApi extends AbstractApi
     public function list(array $params = []): ModelCollection
     {
         return $this->_list('glossaries', Glossary::class, $params);
+    }
+
+    /**
+     * Add Glossary
+     * @link https://support.crowdin.com/api/v2/#operation/api.glossaries.post API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.post API Documentation Enterprise
+     *
+     * @param array $params
+     * @internal string $params[name] required
+     * @internal integer $params[groupId]
+     * @return Glossary|null
+     */
+    public function create(array $params): ?Glossary
+    {
+        return $this->_create('glossaries', Glossary::class, $params);
     }
 
     /**
@@ -45,16 +61,16 @@ class GlossaryApi extends AbstractApi
     }
 
     /**
-     * Add Glossary
-     * @link https://support.crowdin.com/api/v2/#operation/api.glossaries.post API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.post API Documentation Enterprise
+     * Delete Glossary
+     * @link https://support.crowdin.com/api/v2/#operation/api.glossaries.delete API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.delete API Documentation Enterprise
      *
-     * @param array $params
-     * @return Glossary|null
+     * @param int $glossaryId
+     * @return mixed
      */
-    public function create(array $params): ?Glossary
+    public function delete(int $glossaryId)
     {
-        return $this->_create('glossaries', Glossary::class, $params);
+        return $this->_delete('glossaries/' . $glossaryId);
     }
 
     /**
@@ -68,33 +84,6 @@ class GlossaryApi extends AbstractApi
     public function update(Glossary $glossary): ?Glossary
     {
         return $this->_update('glossaries/' . $glossary->getId(), $glossary);
-    }
-
-    /**
-     * Download Glossary
-     * @link https://support.crowdin.com/api/v2/#operation/api.glossaries.exports.download.getMany API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.exports.download.getMany API Documentation Enterprise
-     *
-     * @param int $glossaryId
-     * @return DownloadFile|null
-     */
-    public function download(int $glossaryId): ?DownloadFile
-    {
-        $path = sprintf('glossaries/%d/exports/download', $glossaryId);
-        return $this->_get($path, DownloadFile::class);
-    }
-
-    /**
-     * Delete Glossary
-     * @link https://support.crowdin.com/api/v2/#operation/api.glossaries.delete API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.delete API Documentation Enterprise
-     *
-     * @param int $glossaryId
-     * @return mixed
-     */
-    public function delete(int $glossaryId)
-    {
-        return $this->_delete('glossaries/' . $glossaryId);
     }
 
     /**
@@ -115,11 +104,43 @@ class GlossaryApi extends AbstractApi
     }
 
     /**
+     * Check Glossary Export Status
+     * @link https://support.crowdin.com/api/v2/#operation/api.glossaries.exports.get API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.exports.get API Documentation Enterprise
+     *
+     * @param int $glossaryId
+     * @param string $exportId
+     * @return GlossaryExport|null
+     */
+    public function getExport(int $glossaryId, string $exportId): ?GlossaryExport
+    {
+        $path = sprintf('glossaries/%d/exports/%s', $glossaryId, $exportId);
+        return $this->_get($path, GlossaryExport::class);
+    }
+
+    /**
+     * Download Glossary
+     * @link https://support.crowdin.com/api/v2/#operation/api.glossaries.exports.download.getMany API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.exports.download.getMany API Documentation Enterprise
+     *
+     * @param int $glossaryId
+     * @return DownloadFile|null
+     */
+    public function download(int $glossaryId): ?DownloadFile
+    {
+        $path = sprintf('glossaries/%d/exports/download', $glossaryId);
+        return $this->_get($path, DownloadFile::class);
+    }
+
+    /**
      * Import Glossary
      * @link https://support.crowdin.com/api/v2/#operation/api.glossaries.imports.post API Documentation
      * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.imports.post API Documentation
      * @param int $glossaryId
      * @param array $data
+     * @internal integer $data[storageId] required
+     * @internal array $data[scheme]
+     * @internal boolean $data[firstLineContainsHeader]
      * @return GlossaryImport|null
      */
     public function import(int $glossaryId, array $data): ?GlossaryImport
@@ -150,6 +171,11 @@ class GlossaryApi extends AbstractApi
      *
      * @param int $glossaryId
      * @param array $params
+     * @internal integer $params[userId]
+     * @internal string $params[languageId]
+     * @internal integer $params[translationOfTermId]
+     * @internal integer $params[limit]
+     * @internal integer $params[offset]
      * @return ModelCollection|null
      */
     public function listTerms(int $glossaryId, array $params = []): ?ModelCollection
@@ -165,6 +191,11 @@ class GlossaryApi extends AbstractApi
      *
      * @param int $glossaryId
      * @param array $data
+     * @internal string $data[languageId] required
+     * @internal string $data[text] required
+     * @internal string $data[description]
+     * @internal string $data[partOfSpeech]
+     * @internal integer $data[translationOfTermId]
      * @return mixed
      */
     public function createTerm(int $glossaryId, array $data): ?Term
