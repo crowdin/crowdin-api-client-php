@@ -33,6 +33,11 @@ class StringTranslation extends BaseModel
      */
     protected $rating;
 
+    /**
+     * @var string
+     */
+    protected $createdAt;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -122,5 +127,15 @@ class StringTranslation extends BaseModel
     public function setRating(int $rating): void
     {
         $this->rating = $rating;
+    }
+
+    public function getCreatedAt(): string
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(string $createdAt): void
+    {
+        $this->createdAt = $createdAt;
     }
 }

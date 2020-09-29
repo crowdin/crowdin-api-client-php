@@ -29,6 +29,7 @@ class StringTranslationTest extends TestCase
                 'login' => 'john_doe',
             ],
         'rating' => 10,
+        'createdAt' => '2019-09-19T12:42:12+00:00'
     ];
 
     public function testLoadData()
@@ -39,6 +40,7 @@ class StringTranslationTest extends TestCase
         $this->stringTranslation->setPluralCategoryName($this->data['pluralCategoryName']);
         $this->stringTranslation->setUser($this->data['user']);
         $this->stringTranslation->setRating($this->data['rating']);
+        $this->stringTranslation->setCreatedAt($this->data['createdAt']);
         $this->checkData();
     }
 
@@ -49,5 +51,6 @@ class StringTranslationTest extends TestCase
         $this->assertEquals($this->data['pluralCategoryName'], $this->stringTranslation->getPluralCategoryName());
         $this->assertEquals($this->data['user'], $this->stringTranslation->getUser());
         $this->assertEquals($this->data['rating'], $this->stringTranslation->getRating());
+        $this->assertEquals($this->data['createdAt'], $this->stringTranslation->getCreatedAt());
     }
 }

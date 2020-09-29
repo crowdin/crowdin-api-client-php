@@ -105,7 +105,7 @@ class StringTranslationApiTest extends AbstractTestApi
     public function testRestore()
     {
         $this->mockRequest([
-           'path' => '/projects/2/translations/190695/restore',
+           'path' => '/projects/2/translations/190695',
            'method' => 'put',
            'response' => '{
                   "data": {
