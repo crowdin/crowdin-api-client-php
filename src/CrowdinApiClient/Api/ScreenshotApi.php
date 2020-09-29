@@ -20,6 +20,8 @@ class ScreenshotApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $params
+     * @internal integer $params[limit]
+     * @internal integer $params[offset]
      * @return ModelCollection
      */
     public function list(int $projectId, array $params = []): ModelCollection
