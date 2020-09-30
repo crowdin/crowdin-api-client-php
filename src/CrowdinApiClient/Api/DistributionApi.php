@@ -18,7 +18,7 @@ class DistributionApi extends AbstractApi
      * @param int $projectId
      * @param array $params
      * @internal integer $params[limit]  [ 1 .. 500 ] Default: 25
-     * @internal integer $params[limit]  >= 0 Default: 25
+     * @internal integer $params[offset]  >= 0 Default: 0
      *
      * @return ModelCollection
      */
