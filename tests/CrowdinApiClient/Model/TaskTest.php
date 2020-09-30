@@ -17,6 +17,7 @@ class TaskTest extends TestCase
         'projectId' => 2,
         'creatorId' => 6,
         'type' => 1,
+        'vendor' => 'gengo',
         'status' => 'todo',
         'title' => 'French',
         'assignees' =>
@@ -54,6 +55,7 @@ class TaskTest extends TestCase
         'deadline' => '2019-09-27T07:00:14+00:00',
         'timeRange' => 'string',
         'workflowStepId' => 10,
+        'buyUrl' => 'https://www.paypal.com/cgi-bin/webscr?cmd=...',
         'createdAt' => '2019-09-23T09:04:29+00:00',
         'updatedAt' => '2019-09-23T09:04:29+00:00',
         'isArchived' => false
@@ -93,6 +95,7 @@ class TaskTest extends TestCase
         $this->assertEquals($this->data['projectId'], $this->task->getProjectId());
         $this->assertEquals($this->data['creatorId'], $this->task->getCreatorId());
         $this->assertEquals($this->data['type'], $this->task->getType());
+        $this->assertEquals($this->data['vendor'], $this->task->getVendor());
         $this->assertEquals($this->data['status'], $this->task->getStatus());
         $this->assertEquals($this->data['title'], $this->task->getTitle());
         $this->assertEquals($this->data['assignees'], $this->task->getAssignees());
@@ -110,6 +113,7 @@ class TaskTest extends TestCase
         $this->assertEquals($this->data['deadline'], $this->task->getDeadline());
         $this->assertEquals($this->data['timeRange'], $this->task->getTimeRange());
         $this->assertEquals($this->data['workflowStepId'], $this->task->getWorkflowStepId());
+        $this->assertEquals($this->data['buyUrl'], $this->task->getBuyUrl());
         $this->assertEquals($this->data['createdAt'], $this->task->getCreatedAt());
         $this->assertEquals($this->data['updatedAt'], $this->task->getUpdatedAt());
         $this->assertEquals($this->data['isArchived'], $this->task->isArchived());
