@@ -18,6 +18,8 @@ class ReportApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $data
+     * @internal string $data[name]
+     * @internal array $data[schema]
      * @return Report|null
      */
     public function generate(int $projectId, array $data): ?Report
