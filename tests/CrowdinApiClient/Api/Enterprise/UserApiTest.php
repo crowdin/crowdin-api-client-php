@@ -2,11 +2,65 @@
 
 namespace CrowdinApiClient\Tests\Api\Enterprise;
 
+use CrowdinApiClient\Model\Enterprise\ProjectTeamMemberAddedStatistics;
 use CrowdinApiClient\Model\Enterprise\User;
 use CrowdinApiClient\ModelCollection;
 
 class UserApiTest extends AbstractTestApi
 {
+    public function testAddProjectTeamMember()
+    {
+        $params = [
+            'userIds' => [1],
+            'accessToAllWorkflowSteps' => false,
+            'managerAccess' => false,
+            'permissions' => [
+                'it' => ['workflowStepIds' => [313]]
+            ]
+        ];
+
+        $this->mockRequest([
+            'path' => '/projects/1/members',
+            'method' => 'post',
+            'body' => $params,
+            'response' => '{
+            "skipped": [],
+            "added": [
+                {
+                    "data": {
+                        "id": 1,
+                        "username": "john_smith",
+                        "firstName": "John",
+                        "lastName": "Smith",
+                        "isManager": false,
+                        "managerOfGroup": {
+                            "id": 1,
+                            "name": "KB materials"
+                        },
+                        "accessToAllWorkflowSteps": false,
+                        "permissions": {
+                            "it": {
+                                "workflowStepIds": [
+                                    313
+                                ]
+                            }
+                        },
+                        "givenAccessAt": "2019-10-23T11:44:02+00:00"
+                    }
+                }
+            ],
+            "pagination": {
+                "offset": 0,
+                "limit": 25
+            }
+        }'
+        ]);
+
+        $projectTeamMemberAddedStatistics = $this->crowdin->user->addProjectTeamMember(1, $params);
+        $this->assertInstanceOf(ProjectTeamMemberAddedStatistics::class, $projectTeamMemberAddedStatistics);
+        $this->assertEquals([], $projectTeamMemberAddedStatistics->getSkipped());
+    }
+
     public function testList()
     {
         $this->mockRequest([

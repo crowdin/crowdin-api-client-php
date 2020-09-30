@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Api\Enterprise;
 
 use CrowdinApiClient\Api\AbstractApi;
+use CrowdinApiClient\Model\Enterprise\ProjectTeamMemberAddedStatistics;
 use CrowdinApiClient\Model\Enterprise\User;
 use CrowdinApiClient\ModelCollection;
 
@@ -12,6 +13,19 @@ use CrowdinApiClient\ModelCollection;
  */
 class UserApi extends AbstractApi
 {
+    /**
+     * Add Project Team Member
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.members.post API Documentation
+     *
+     * @param int $projectId
+     * @param array $data
+     * @return ProjectTeamMemberAddedStatistics
+     */
+    public function addProjectTeamMember(int $projectId, array $data): ProjectTeamMemberAddedStatistics
+    {
+        return $this->_post(sprintf('projects/%d/members', $projectId), ProjectTeamMemberAddedStatistics::class, $data);
+    }
+
     /**
      * List Users
      * @link https://support.crowdin.com/enterprise/api/#operation/api.users.getMany API Documentation
