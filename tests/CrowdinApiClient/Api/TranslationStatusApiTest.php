@@ -2,7 +2,6 @@
 
 namespace CrowdinApiClient\Tests\Api;
 
-use CrowdinApiClient\Model\Issue;
 use CrowdinApiClient\Model\Progress;
 use CrowdinApiClient\Model\ProgressLanguage;
 use CrowdinApiClient\Model\QaCheck;
@@ -14,42 +13,6 @@ use CrowdinApiClient\ModelCollection;
  */
 class TranslationStatusApiTest extends AbstractTestApi
 {
-    /**
-     * @test
-     */
-    public function testListReportedIssues()
-    {
-        $this->mockRequestGet('/projects/1/issues', '{
-              "data": [
-                {
-                  "data": {
-                    "id": 2,
-                    "text": "@BeMyEyes  Please provide more details on where the text will be used",
-                    "userId": 6,
-                    "stringId": 742,
-                    "languageId": "bg",
-                    "type": "source_mistake",
-                    "status": "unresolved",
-                    "createdAt": "2019-09-20T11:05:24+00:00"
-                  }
-                }
-              ],
-              "pagination": [
-                {
-                  "offset": 0,
-                  "limit": 25
-                }
-              ]
-            }');
-
-        $issues = $this->crowdin->translationStatus->listReportedIssues(1);
-
-        $this->assertInstanceOf(ModelCollection::class, $issues);
-        $this->assertCount(1, $issues);
-        $this->assertInstanceOf(Issue::class, $issues[0]);
-        $this->assertEquals(2, $issues[0]->getId());
-    }
-
     /**
      * @test
      */

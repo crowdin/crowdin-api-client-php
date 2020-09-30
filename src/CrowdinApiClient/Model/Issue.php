@@ -29,6 +29,16 @@ class Issue extends BaseModel
     protected $stringId;
 
     /**
+     * @var array
+     */
+    protected $user;
+
+    /**
+     * @var array
+     */
+    protected $string;
+
+    /**
      * @var string
      */
     protected $languageId;
@@ -55,6 +65,8 @@ class Issue extends BaseModel
         $this->text = (string)$this->getDataProperty('text');
         $this->userId = (integer)$this->getDataProperty('userId');
         $this->stringId = (integer)$this->getDataProperty('stringId');
+        $this->user = (array)$this->getDataProperty('user');
+        $this->string = (array)$this->getDataProperty('string');
         $this->languageId = (string)$this->getDataProperty('languageId');
         $this->type = (string)$this->getDataProperty('type');
         $this->status = (string)$this->getDataProperty('status');
@@ -94,6 +106,22 @@ class Issue extends BaseModel
     }
 
     /**
+     * @return array
+     */
+    public function getUser(): array
+    {
+        return $this->user;
+    }
+
+    /**
+     * @return array
+     */
+    public function getString(): array
+    {
+        return $this->string;
+    }
+
+    /**
      * @return string
      */
     public function getLanguageId(): string
@@ -115,6 +143,14 @@ class Issue extends BaseModel
     public function getStatus(): string
     {
         return $this->status;
+    }
+
+    /**
+     * @param string $status
+     */
+    public function setStatus(string $status): void
+    {
+        $this->status = $status;
     }
 
     /**
