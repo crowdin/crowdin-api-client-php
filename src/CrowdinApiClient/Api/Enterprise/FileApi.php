@@ -12,6 +12,23 @@ use CrowdinApiClient\ModelCollection;
 class FileApi extends CrowdinFileApi
 {
     /**
+     * List Reviewed Source Files Builds
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.strings.reviewed-builds.getMany API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param array $params
+     * @internal integer $params[branchId]
+     * @internal integer $params[limit]
+     * @internal integer $params[offset]
+     * @return ModelCollection
+     */
+    public function listReviewedSourceFilesBuilds(int $projectId, array $params = []): ModelCollection
+    {
+        $path = sprintf('projects/%d/strings/reviewed-builds', $projectId);
+        return $this->_list($path, ReviewedSourceFileBuild::class, $params);
+    }
+
+    /**
      * Build Reviewed Source Files
      * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.strings.reviewed-builds.post API Documentation Enterprise
      *
@@ -38,23 +55,6 @@ class FileApi extends CrowdinFileApi
     {
         $path = sprintf('projects/%d/strings/reviewed-builds/%d', $projectId, $buildId);
         return $this->_get($path, ReviewedSourceFileBuild::class);
-    }
-
-    /**
-     * List Reviewed Source Files Builds
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.strings.reviewed-builds.getMany API Documentation Enterprise
-     *
-     * @param int $projectId
-     * @param array $params
-     * @internal integer $params[branchId]
-     * @internal integer $params[limit]
-     * @internal integer $params[offset]
-     * @return ModelCollection
-     */
-    public function listReviewedSourceFilesBuilds(int $projectId, array $params = []): ModelCollection
-    {
-        $path = sprintf('projects/%d/strings/reviewed-builds', $projectId);
-        return $this->_list($path, ReviewedSourceFileBuild::class, $params);
     }
 
     public function downloadReviewedSourceFiles(int $projectId, int $buildId): DownloadFile

@@ -63,10 +63,10 @@ class WebhookApi extends AbstractApi
      * "suggestion.approved"
      * "suggestion.disapproved"
      * @internal string $data[requestType] required
-     * @internal string $data[isActive]
+     * @internal boolean $data[isActive]
      * @internal string $data[contentType]
-     * @internal string $data[headers]
-     * @internal string $data[payload]
+     * @internal array $data[headers]
+     * @internal array $data[payload]
      * @return Webhook|null
      */
     public function create(int $projectId, array $data): ?Webhook

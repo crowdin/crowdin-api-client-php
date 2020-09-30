@@ -109,7 +109,7 @@ class TranslationApiTest extends AbstractTestApi
             }'
         ]);
 
-        $file = $this->crowdin->translation->buildProjectFileTranslation(1, 2, 'uk', false);
+        $file = $this->crowdin->translation->buildProjectFileTranslation(1, 2, ['targetLanguageId' => 'uk']);
 
         $this->assertInstanceOf(DownloadFile::class, $file);
         $this->assertEquals('https://foo.com/file', $file->getUrl());

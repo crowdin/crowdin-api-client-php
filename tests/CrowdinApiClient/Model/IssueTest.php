@@ -20,6 +20,21 @@ class IssueTest extends TestCase
         'text' => '@BeMyEyes  Please provide more details on where the text will be used',
         'userId' => 6,
         'stringId' => 742,
+        'user' => [
+            'id' => 6,
+            'username' => 'john_smith',
+            'fullName' => 'John Smith',
+            'avatarUrl' => '',
+        ],
+        'string' => [
+            'id' => 742,
+            'text' => 'HTML page example',
+            'type' => 'text',
+            'hasPlurals' => false,
+            'isIcu' => false,
+            'context' => 'Document Title\\r\\nXPath: /html/head/title',
+            'fileId' => 22,
+        ],
         'languageId' => 'bg',
         'type' => 'source_mistake',
         'status' => 'unresolved',
@@ -37,6 +52,8 @@ class IssueTest extends TestCase
         $this->assertEquals($this->data['text'], $this->issue->getText());
         $this->assertEquals($this->data['userId'], $this->issue->getUserId());
         $this->assertEquals($this->data['stringId'], $this->issue->getStringId());
+        $this->assertEquals($this->data['user'], $this->issue->getUser());
+        $this->assertEquals($this->data['string'], $this->issue->getString());
         $this->assertEquals($this->data['languageId'], $this->issue->getLanguageId());
         $this->assertEquals($this->data['type'], $this->issue->getType());
         $this->assertEquals($this->data['status'], $this->issue->getStatus());

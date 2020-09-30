@@ -20,8 +20,9 @@ class TaskApi extends AbstractApi
      * @param int $projectId
      * @param array $params
      * @internal integer $params[limit]  [ 1 .. 500 ] Default: 25
-     * @internal integer $params[limit]  >= 0 Default: 25
+     * @internal integer $params[offset]  >= 0 Default: 0
      * @internal string $params[status]  Enum: "todo" "in_progress" "done" "closed" Example: status=done
+     * @internal integer $params[assigneeId]
      *
      * @return ModelCollection
      */

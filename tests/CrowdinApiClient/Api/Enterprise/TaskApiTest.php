@@ -20,6 +20,7 @@ class TaskApiTest extends AbstractTestApi
                         "projectId": 2,
                         "creatorId": 6,
                         "type": 1,
+                        "vendor": "gengo",
                         "status": "todo",
                         "title": "French",
                         "assignees": [
@@ -47,6 +48,7 @@ class TaskApiTest extends AbstractTestApi
                         "deadline": "2019-09-27T07:00:14+00:00",
                         "timeRange": "string",
                         "workflowStepId": 10,
+                        "buyUrl": "https://www.paypal.com/cgi-bin/webscr?cmd=...",
                         "createdAt": "2019-09-23T09:04:29+00:00",
                         "updatedAt": "2019-09-23T09:04:29+00:00"
                       }
@@ -104,6 +106,7 @@ class TaskApiTest extends AbstractTestApi
                     "projectId": 2,
                     "creatorId": 6,
                     "type": 1,
+                    "vendor": "gengo",
                     "status": "todo",
                     "title": "French",
                     "assignees": [
@@ -131,6 +134,7 @@ class TaskApiTest extends AbstractTestApi
                     "deadline": "2019-09-27T07:00:14+00:00",
                     "timeRange": "string",
                     "workflowStepId": 10,
+                    "buyUrl": "https://www.paypal.com/cgi-bin/webscr?cmd=...",
                     "createdAt": "2019-09-23T09:04:29+00:00",
                     "updatedAt": "2019-09-23T09:04:29+00:00"
                   }
@@ -151,6 +155,7 @@ class TaskApiTest extends AbstractTestApi
                     "projectId": 2,
                     "creatorId": 6,
                     "type": 1,
+                    "vendor": "gengo",
                     "status": "todo",
                     "title": "French",
                     "assignees": [
@@ -178,6 +183,7 @@ class TaskApiTest extends AbstractTestApi
                     "deadline": "2019-09-27T07:00:14+00:00",
                     "timeRange": "string",
                     "workflowStepId": 10,
+                    "buyUrl": "https://www.paypal.com/cgi-bin/webscr?cmd=...",
                     "createdAt": "2019-09-23T09:04:29+00:00",
                     "updatedAt": "2019-09-23T09:04:29+00:00"
                   }
@@ -193,6 +199,7 @@ class TaskApiTest extends AbstractTestApi
                     "projectId": 2,
                     "creatorId": 6,
                     "type": 1,
+                    "vendor": "gengo",
                     "status": "todo",
                     "title": "test edit",
                     "assignees": [
@@ -220,6 +227,7 @@ class TaskApiTest extends AbstractTestApi
                     "deadline": "2019-09-27T07:00:14+00:00",
                     "timeRange": "string",
                     "workflowStepId": 10,
+                    "buyUrl": "https://www.paypal.com/cgi-bin/webscr?cmd=...",
                     "createdAt": "2019-09-23T09:04:29+00:00",
                     "updatedAt": "2019-09-23T09:04:29+00:00"
                   }

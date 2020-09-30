@@ -20,6 +20,7 @@ use UnexpectedValueException;
  * @property \CrowdinApiClient\Api\ProjectApi project
  * @property \CrowdinApiClient\Api\BranchApi branch
  * @property \CrowdinApiClient\Api\TaskApi task
+ * @property \CrowdinApiClient\Api\IssueApi issue
  * @property \CrowdinApiClient\Api\ScreenshotApi screenshot
  * @property \CrowdinApiClient\Api\DirectoryApi directory
  * @property \CrowdinApiClient\Api\GlossaryApi glossary
@@ -27,6 +28,7 @@ use UnexpectedValueException;
  * @property \CrowdinApiClient\Api\Enterprise\UserApi|\CrowdinApiClient\Api\UserApi user
  * @property \CrowdinApiClient\Api\Enterprise\VendorApi vendor
  * @property \CrowdinApiClient\Api\Enterprise\WorkflowTemplateApi workflowTemplate
+ * @property \CrowdinApiClient\Api\Enterprise\WorkflowStepApi workflowStep
  * @property \CrowdinApiClient\Api\FileApi|\CrowdinApiClient\Api\Enterprise\FileApi file
  * @property \CrowdinApiClient\Api\ReportApi report
  * @property \CrowdinApiClient\Api\SourceStringApi sourceString
@@ -83,6 +85,7 @@ class Crowdin
         'language',
         'project',
         'task',
+        'issue',
         'branch',
         'glossary',
         'stringTranslation',
@@ -105,6 +108,7 @@ class Crowdin
         'group',
         'project',
         'task',
+        'issue',
         'branch',
         'glossary',
         'stringTranslation',
@@ -114,6 +118,7 @@ class Crowdin
         'user',
         'screenshot',
         'workflowTemplate',
+        'workflowStep',
         'file',
         'machineTranslationEngine',
         'report',

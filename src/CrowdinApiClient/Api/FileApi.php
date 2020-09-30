@@ -19,6 +19,11 @@ class FileApi extends AbstractApi
      * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.files.getMany API Documentation Enterprise
      * @param int $projectId
      * @param array $params
+     * @internal integer $params[branchId]  Can't be used with directoryId in the same reque
+     * @internal integer $params[directoryId] Can't be used with branchId in the same request
+     * @internal mixed $params[recursion] Works only when directoryId or branchId parameter is specified
+     * @internal integer $params[limit]
+     * @internal integer $params[offset]
      * @return ModelCollection
      */
     public function list(int $projectId, array $params = []): ModelCollection
@@ -36,8 +41,8 @@ class FileApi extends AbstractApi
      * @param array $data
      * @internal integer $data[storageId] required
      * @internal string $data[name] required
-     * @internal integer $data[branchId]
-     * @internal integer $data[directoryId]
+     * @internal integer $data[branchId] Can't be used with directoryId in same request
+     * @internal integer $data[directoryId] Can't be used with branchId in same request
      * @internal string $data[title]
      * @internal string $data[type]
      * @internal array $data[importOptions]
