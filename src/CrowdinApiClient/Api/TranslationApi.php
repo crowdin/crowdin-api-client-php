@@ -140,6 +140,7 @@ class TranslationApi extends AbstractApi
 
         $options = [
             'body' => json_encode($params),
+            'headers' => $this->getHeaders(),
         ];
 
         return $this->client->apiRequest('post', $path, new ResponseArrayDecorator(), $options);
