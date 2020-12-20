@@ -24,7 +24,7 @@ class StorageTest extends TestCase
         'fileName' => 'tps-tm.tmx'
     ];
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->storage = new Storage($this->data);

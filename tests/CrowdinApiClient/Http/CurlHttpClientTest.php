@@ -12,7 +12,7 @@ class CurlHttpClientTest extends TestCase
 
     protected $mockClient;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         if (!extension_loaded('curl')) {
             $this->markTestSkipped('cURL must be installed to test cURL client handler.');

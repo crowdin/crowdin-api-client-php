@@ -30,7 +30,7 @@ class BranchTest extends TestCase
      */
     public $branch;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
     }

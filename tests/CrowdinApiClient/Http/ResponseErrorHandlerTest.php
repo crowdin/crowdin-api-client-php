@@ -9,7 +9,7 @@ class ResponseErrorHandlerTest extends TestCase
 {
     public $responseErrorHandler;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->responseErrorHandler = new ResponseErrorHandler();

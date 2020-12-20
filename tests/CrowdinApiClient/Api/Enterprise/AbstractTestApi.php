@@ -19,7 +19,7 @@ abstract class AbstractTestApi extends TestCase
 
     protected $mockClient;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->mockClient = $this->getMockBuilder(CurlHttpClient::class)->enableArgumentCloning()->getMock();
 
