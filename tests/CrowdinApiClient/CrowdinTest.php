@@ -17,7 +17,7 @@ class CrowdinTest extends TestCase
      */
     private $app;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->app = new Crowdin([
             'access_token' => 'token',
