@@ -1,6 +1,6 @@
 <?php
 
-namespace Infusionsoft\FrameworkSupport\Laravel;
+namespace CrowdinApiClient\FrameworkSupport\Laravel;
 
 use Illuminate\Support\Facades\Facade;
 
