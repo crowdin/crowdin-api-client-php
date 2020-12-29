@@ -35,7 +35,7 @@ class CrowdinServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('crowdin', function ($app) {
-            return new Crowdin(config('Crowdin'));
+            return new Crowdin(config('crowdin'));
         });
     }
 
