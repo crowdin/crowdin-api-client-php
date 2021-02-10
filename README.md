@@ -38,21 +38,9 @@ For more about Crowdin API v2 see the documentation:
 
 ## Installation
 
-1. Install via Composer
+Install via Composer
 
     `composer require crowdin/crowdin-api-client`
-
-2. Download this library to your project's 3rd party libraries path
-
-    ```
-    git clone https://github.com/crowdin/crowdin-api-client-php.git </your-project/libs/crowdin>
-    ```
-
-    and include the library in your project:
-
-    ```php
-    require_once 'path/to/Crowdin.php';
-    ```
 
 ### Quick Start
 
