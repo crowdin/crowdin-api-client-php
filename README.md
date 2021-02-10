@@ -40,7 +40,7 @@ For more about Crowdin API v2 see the documentation:
 
 Install via Composer
 
-    `composer require crowdin/crowdin-api-client`
+    composer require crowdin/crowdin-api-client
 
 ### Quick Start
 
