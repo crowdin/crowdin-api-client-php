@@ -1,6 +1,5 @@
 <?php
 
-
 namespace CrowdinApiClient\Model;
 
 class StringComment extends BaseModel
