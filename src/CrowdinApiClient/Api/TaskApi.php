@@ -4,6 +4,7 @@ namespace CrowdinApiClient\Api;
 
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\Task;
+use CrowdinApiClient\Model\TaskForUpdate;
 use CrowdinApiClient\ModelCollection;
 
 /**
@@ -67,10 +68,10 @@ class TaskApi extends AbstractApi
      * @link https://support.crowdin.com/api/v2/#operation/api.projects.tasks.patch API Documentation
      * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.tasks.patch API Documentation Enterprise
      *
-     * @param Task $task
+     * @param TaskForUpdate $task
      * @return Task|null
      */
-    public function update(Task $task): ?Task
+    public function update(TaskForUpdate $task): ?Task
     {
         $path = sprintf('projects/%d/tasks/%d', $task->getProjectId(), $task->getId());
         return $this->_update($path, $task);
