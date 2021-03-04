@@ -22,38 +22,47 @@ class FileApiTest extends AbstractTestApi
             'path' => '/projects/2/files',
             'method' => 'get',
             'response' => '{
-                  "data": [
-                    {
-                      "data": {
-                        "id": 44,
-                        "projectId": 2,
-                        "branchId": 34,
-                        "directoryId": 4,
-                        "languageId": "en",
-                        "name": "umbrella_app.xliff",
-                        "title": "source_app_info",
-                        "type": "xliff",
-                        "path":"/someBranch/someDir/umbrella_app.xliff",
-                        "revisionId": 1,
-                        "status": "active",
-                        "priority": "normal",
-                        "attributes": {
-                          "mimeType": "application/xml",
-                          "fileSize": 261433
-                        },
-                        "exportPattern": "string",
-                        "createdAt": "2019-09-19T15:10:43+00:00",
-                        "updatedAt": "2019-09-19T15:10:46+00:00"
+              "data": [
+                {
+                  "data": {
+                    "id": 44,
+                    "projectId": 2,
+                    "branchId": 34,
+                    "directoryId": 4,
+                    "name": "umbrella_app.xliff",
+                    "title": "source_app_info",
+                    "type": "xliff",
+                    "path": "/directory1/directory2/filename.extension",
+                    "status": "active",
+                    "revisionId": 1,
+                    "priority": "normal",
+                    "importOptions": {
+                      "firstLineContainsHeader": false,
+                      "importTranslations": true,
+                      "scheme": {
+                        "identifier": 0,
+                        "sourcePhrase": 1,
+                        "en": 2,
+                        "de": 3
                       }
-                    }
-                  ],
-                  "pagination": [
-                    {
-                      "offset": 0,
-                      "limit": 0
-                    }
-                  ]
-                }'
+                    },
+                    "exportOptions": {
+                      "exportPattern": "/localization/%locale%/%file_name%.%file_extension%"
+                    },
+                    "excludedTargetLanguages": [
+                      "es",
+                      "pl"
+                    ],
+                    "createdAt": "2019-09-19T15:10:43+00:00",
+                    "updatedAt": "2019-09-19T15:10:46+00:00"
+                  }
+                }
+              ],
+              "pagination": {
+                "offset": 0,
+                "limit": 25
+              }
+            }'
         ]);
 
         $files = $files = $this->crowdin->file->list(2);
@@ -67,27 +76,38 @@ class FileApiTest extends AbstractTestApi
     public function testGetAndEdit()
     {
         $this->mockRequestGet('/projects/2/files/44', '{
-              "data": {
-                "id": 44,
-                "projectId": 2,
-                "branchId": 34,
-                "directoryId": 4,
-                "languageId": "en",
-                "name": "umbrella_app.xliff",
-                "title": "source_app_info",
-                "type": "xliff",
-                "path":"/someBranch/someDir/umbrella_app.xliff",
-                "revisionId": 1,
-                "status": "active",
-                "priority": "normal",
-                "attributes": {
-                  "mimeType": "application/xml",
-                  "fileSize": 261433
-                },
-                "exportPattern": "string",
-                "createdAt": "2019-09-19T15:10:43+00:00",
-                "updatedAt": "2019-09-19T15:10:46+00:00"
+          "data": {
+            "id": 44,
+            "projectId": 2,
+            "branchId": 34,
+            "directoryId": 4,
+            "name": "umbrella_app.xliff",
+            "title": "source_app_info",
+            "type": "xliff",
+            "path": "/directory1/directory2/filename.extension",
+            "status": "active",
+            "revisionId": 1,
+            "priority": "normal",
+            "importOptions": {
+              "firstLineContainsHeader": false,
+              "importTranslations": true,
+              "scheme": {
+                "identifier": 0,
+                "sourcePhrase": 1,
+                "en": 2,
+                "de": 3
               }
+            },
+            "exportOptions": {
+              "exportPattern": "/localization/%locale%/%file_name%.%file_extension%"
+            },
+            "excludedTargetLanguages": [
+              "es",
+              "pl"
+            ],
+            "createdAt": "2019-09-19T15:10:43+00:00",
+            "updatedAt": "2019-09-19T15:10:46+00:00"
+          }
         }');
 
         $file = $this->crowdin->file->get(2, 44);
@@ -96,8 +116,10 @@ class FileApiTest extends AbstractTestApi
         $this->assertEquals(44, $file->getId());
 
         $this->assertEquals('source_app_info', $file->getTitle());
+        $this->assertEquals(['es', 'pl'], $file->getExcludedTargetLanguages());
 
         $file->setTitle('source_app_info edit');
+        $file->setExcludedTargetLanguages(['bg', 'es', 'pl']);
 
         $this->mockRequestPath('/projects/2/files/44', '{
               "data": {
@@ -105,19 +127,31 @@ class FileApiTest extends AbstractTestApi
                 "projectId": 2,
                 "branchId": 34,
                 "directoryId": 4,
-                "languageId": "en",
                 "name": "umbrella_app.xliff",
                 "title": "source_app_info edit",
                 "type": "xliff",
-                "path":"/someBranch/someDir/umbrella_app.xliff",
-                "revisionId": 1,
+                "path": "/directory1/directory2/filename.extension",
                 "status": "active",
+                "revisionId": 1,
                 "priority": "normal",
-                "attributes": {
-                  "mimeType": "application/xml",
-                  "fileSize": 261433
+                "importOptions": {
+                  "firstLineContainsHeader": false,
+                  "importTranslations": true,
+                  "scheme": {
+                    "identifier": 0,
+                    "sourcePhrase": 1,
+                    "en": 2,
+                    "de": 3
+                  }
                 },
-                "exportPattern": "string",
+                "exportOptions": {
+                  "exportPattern": "/localization/%locale%/%file_name%.%file_extension%"
+                },
+                "excludedTargetLanguages": [
+                  "bg",
+                  "es",
+                  "pl"
+                ],
                 "createdAt": "2019-09-19T15:10:43+00:00",
                 "updatedAt": "2019-09-19T15:10:46+00:00"
               }
@@ -126,31 +160,43 @@ class FileApiTest extends AbstractTestApi
         $file = $this->crowdin->file->edit($file);
 
         $this->assertEquals('source_app_info edit', $file->getTitle());
+        $this->assertEquals(['bg', 'es', 'pl'], $file->getExcludedTargetLanguages());
     }
 
     public function testUpdate()
     {
         $this->mockRequestPut('/projects/2/files/44', '{
             "data": {
-                "id": 44,
-                "projectId": 2,
-                "branchId": 34,
-                "directoryId": 4,
-                "languageId": "en",
-                "name": "umbrella_app.xliff",
-                "title": "source_app_info",
-                "type": "xliff",
-                "path":"/someBranch/someDir/umbrella_app.xliff",
-                "revisionId": 2,
-                "status": "active",
-                "priority": "normal",
-                "attributes": {
-                    "mimeType": "application/xml",
-                    "fileSize": 261433
-                },
-                "exportPattern": "string",
-                "createdAt": "2019-09-19T15:10:43+00:00",
-                "updatedAt": "2019-09-19T15:10:46+00:00"
+              "id": 44,
+              "projectId": 2,
+              "branchId": 34,
+              "directoryId": 4,
+              "name": "umbrella_app.xliff",
+              "title": "source_app_info",
+              "type": "xliff",
+              "path": "/directory1/directory2/filename.extension",
+              "status": "active",
+              "revisionId": 2,
+              "priority": "normal",
+              "importOptions": {
+                "firstLineContainsHeader": false,
+                "importTranslations": true,
+                "scheme": {
+                  "identifier": 0,
+                  "sourcePhrase": 1,
+                  "en": 2,
+                  "de": 3
+                }
+              },
+              "exportOptions": {
+                "exportPattern": "/localization/%locale%/%file_name%.%file_extension%"
+              },
+              "excludedTargetLanguages": [
+                "es",
+                "pl"
+              ],
+              "createdAt": "2019-09-19T15:10:43+00:00",
+              "updatedAt": "2019-09-19T15:10:46+00:00"
             }
         }');
 
@@ -163,27 +209,39 @@ class FileApiTest extends AbstractTestApi
     public function testRestore()
     {
         $this->mockRequestPut('/projects/2/files/44', '{
-            "data": {
-                "id": 44,
-                "projectId": 2,
-                "branchId": 34,
-                "directoryId": 4,
-                "languageId": "en",
-                "name": "umbrella_app.xliff",
-                "title": "source_app_info",
-                "type": "xliff",
-                "path":"/someBranch/someDir/umbrella_app.xliff",
-                "revisionId": 19,
-                "status": "active",
-                "priority": "normal",
-                "attributes": {
-                    "mimeType": "application/xml",
-                    "fileSize": 261433
-                },
-                "exportPattern": "string",
-                "createdAt": "2019-09-19T15:10:43+00:00",
-                "updatedAt": "2019-09-19T15:10:46+00:00"
-            }
+          "data": {
+            "id": 44,
+            "projectId": 2,
+            "branchId": 34,
+            "directoryId": 4,
+            "name": "umbrella_app.xliff",
+            "title": "source_app_info",
+            "type": "xliff",
+            "path": "/directory1/directory2/filename.extension",
+            "status": "active",
+            "revisionId": 19,
+            "priority": "normal",
+            "importOptions": {
+              "firstLineContainsHeader": false,
+              "importTranslations": true,
+              "scheme": {
+                "identifier": 0,
+                "sourcePhrase": 1,
+                "en": 2,
+                "de": 3
+              }
+            },
+            "exportOptions": {
+              "exportPattern": "/localization/%locale%/%file_name%.%file_extension%"
+            },
+            "excludedTargetLanguages": [
+              "en",
+              "es",
+              "pl"
+            ],
+            "createdAt": "2019-09-19T15:10:43+00:00",
+            "updatedAt": "2019-09-19T15:10:46+00:00"
+          }
         }');
 
         $file = $this->crowdin->file->update(2, 44, ['storageId' => 1]);
@@ -216,6 +274,7 @@ class FileApiTest extends AbstractTestApi
                 [
                     'escapeQuotes' => 3,
                 ],
+            'excludedTargetLanguages' => ['bg']
         ];
 
         $this->mockRequest([
@@ -223,33 +282,44 @@ class FileApiTest extends AbstractTestApi
             'method' => 'post',
             'body' => $params,
             'response' => '{
-                  "data": {
-                    "id": 44,
-                    "projectId": 2,
-                    "branchId": 34,
-                    "directoryId": 4,
-                    "languageId": "en",
-                    "name": "umbrella_app.xliff",
-                    "title": "source_app_info",
-                    "type": "xliff",
-                    "path":"/someBranch/someDir/umbrella_app.xliff",
-                    "revisionId": 1,
-                    "status": "active",
-                    "priority": "normal",
-                    "attributes": {
-                      "mimeType": "application/xml",
-                      "fileSize": 261433
-                    },
-                    "exportPattern": "string",
-                    "createdAt": "2019-09-19T15:10:43+00:00",
-                    "updatedAt": "2019-09-19T15:10:46+00:00"
+              "data": {
+                "id": 44,
+                "projectId": 2,
+                "branchId": 34,
+                "directoryId": 4,
+                "name": "umbrella_app.xliff",
+                "title": "source_app_info",
+                "type": "xliff",
+                "path": "/directory1/directory2/filename.extension",
+                "status": "active",
+                "revisionId": 1,
+                "priority": "normal",
+                "importOptions": {
+                  "firstLineContainsHeader": false,
+                  "importTranslations": true,
+                  "scheme": {
+                    "identifier": 0,
+                    "sourcePhrase": 1,
+                    "en": 2,
+                    "de": 3
                   }
-                }'
+                },
+                "exportOptions": {
+                  "exportPattern": "/localization/%locale%/%file_name%.%file_extension%"
+                },
+                "excludedTargetLanguages": [
+                  "bg"
+                ],
+                "createdAt": "2019-09-19T15:10:43+00:00",
+                "updatedAt": "2019-09-19T15:10:46+00:00"
+              }
+            }'
         ]);
 
         $file = $this->crowdin->file->create(2, $params);
         $this->assertInstanceOf(File::class, $file);
         $this->assertEquals(44, $file->getId());
+        $this->assertEquals(["bg"], $file->getExcludedTargetLanguages());
     }
 
     public function testDelete()

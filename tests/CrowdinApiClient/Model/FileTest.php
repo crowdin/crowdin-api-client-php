@@ -46,6 +46,10 @@ class FileTest extends TestCase
             [
                 'escapeQuotes' => 3,
             ],
+        'excludedTargetLanguages' => [
+            "es",
+            "pl"
+        ],
         'createdAt' => '2019-09-19T15:10:43+00:00',
         'updatedAt' => '2019-09-19T15:10:46+00:00',
     ];
@@ -66,6 +70,7 @@ class FileTest extends TestCase
         $this->file->setPriority($this->data['priority']);
         $this->file->setImportOptions($this->data['importOptions']);
         $this->file->setExportOptions($this->data['exportOptions']);
+        $this->file->setExcludedTargetLanguages($this->data['excludedTargetLanguages']);
 
         $this->assertEquals($this->data['branchId'], $this->file->getBranchId());
         $this->assertEquals($this->data['directoryId'], $this->file->getDirectoryId());
@@ -74,6 +79,7 @@ class FileTest extends TestCase
         $this->assertEquals($this->data['priority'], $this->file->getPriority());
         $this->assertEquals($this->data['importOptions'], $this->file->getImportOptions());
         $this->assertEquals($this->data['exportOptions'], $this->file->getExportOptions());
+        $this->assertEquals($this->data['excludedTargetLanguages'], $this->file->getExcludedTargetLanguages());
     }
 
     public function checkData()
@@ -93,5 +99,6 @@ class FileTest extends TestCase
         $this->assertEquals($this->data['updatedAt'], $this->file->getUpdatedAt());
         $this->assertEquals($this->data['importOptions'], $this->file->getImportOptions());
         $this->assertEquals($this->data['exportOptions'], $this->file->getExportOptions());
+        $this->assertEquals($this->data['excludedTargetLanguages'], $this->file->getExcludedTargetLanguages());
     }
 }
