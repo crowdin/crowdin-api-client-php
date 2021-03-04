@@ -90,6 +90,7 @@ class Crowdin
         'branch',
         'glossary',
         'stringTranslation',
+        'stringComment',
         'directory',
         'user',
         'screenshot',
