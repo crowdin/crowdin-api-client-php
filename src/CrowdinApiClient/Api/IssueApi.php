@@ -21,6 +21,7 @@ class IssueApi extends AbstractApi
      * @internal integer $params[limit] default 25
      * @internal integer $params[offset] default 0
      * @return Issue|null
+     * @deprecated Use StringCommentApi::list() instead
      */
     public function listReportedIssues(int $projectId, array $params = []): ?ModelCollection
     {
@@ -36,6 +37,7 @@ class IssueApi extends AbstractApi
      * @param int $projectId
      * @param Issue $issue
      * @return Issue
+     * @deprecated Use StringCommentApi::update() instead
      */
     public function update(int $projectId, Issue $issue): Issue
     {
