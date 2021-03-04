@@ -19,6 +19,7 @@ class SourceStringApiTest extends AbstractTestApi
                     "id": 2814,
                     "projectId": 2,
                     "fileId": 48,
+                    "branchId": 12,
                     "identifier": "6a1821e6499ebae94de4b880fd93b985",
                     "text": "Not all videos are shown to users. See more",
                     "type": "text",
@@ -48,6 +49,7 @@ class SourceStringApiTest extends AbstractTestApi
         $this->assertCount(1, $sourceStrings);
         $this->assertInstanceOf(SourceString::class, $sourceStrings[0]);
         $this->assertEquals(2814, $sourceStrings[0]->getId());
+        $this->assertEquals(12, $sourceStrings[0]->getBranchId());
     }
 
     public function testGetAndUpdate()
@@ -57,6 +59,7 @@ class SourceStringApiTest extends AbstractTestApi
             "id": 2814,
             "projectId": 2,
             "fileId": 48,
+            "branchId": 12,
             "identifier": "6a1821e6499ebae94de4b880fd93b985",
             "text": "Not all videos are shown to users. See more",
             "type": "text",
@@ -80,6 +83,7 @@ class SourceStringApiTest extends AbstractTestApi
                     "id": 2814,
                     "projectId": 2,
                     "fileId": 48,
+                    "branchId": 12,
                     "identifier": "6a1821e6499ebae94de4b880fd93b985",
                     "text": "test edit",
                     "type": "text",
@@ -100,6 +104,7 @@ class SourceStringApiTest extends AbstractTestApi
         $this->assertInstanceOf(SourceString::class, $sourceString);
         $this->assertEquals(2814, $sourceString->getId());
         $this->assertEquals('test edit', $sourceString->getText());
+        $this->assertEquals(12, $sourceString->getBranchId());
     }
 
     public function testCreate()
@@ -117,6 +122,7 @@ class SourceStringApiTest extends AbstractTestApi
                     "id": 2814,
                     "projectId": 2,
                     "fileId": 48,
+                    "branchId": 12,
                     "identifier": "6a1821e6499ebae94de4b880fd93b985",
                     "text": "Not all videos are shown to users. See more",
                     "type": "text",
