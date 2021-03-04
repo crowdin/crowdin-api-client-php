@@ -59,6 +59,7 @@ class TaskForUpdate extends Task
     public function setSplitFiles(bool $splitFiles): void
     {
         $this->splitFiles = $splitFiles;
+        $this->data['splitFiles'] = $splitFiles;
     }
 
     /**
@@ -75,6 +76,7 @@ class TaskForUpdate extends Task
     public function setSkipAssignedStrings(bool $skipAssignedStrings): void
     {
         $this->skipAssignedStrings = $skipAssignedStrings;
+        $this->data['skipAssignedStrings'] = $skipAssignedStrings;
     }
 
     /**
@@ -91,6 +93,7 @@ class TaskForUpdate extends Task
     public function setDateFrom(string $dateFrom): void
     {
         $this->dateFrom = $dateFrom;
+        $this->data['dateFrom'] = $dateFrom;
     }
 
     /**
@@ -107,6 +110,7 @@ class TaskForUpdate extends Task
     public function setDateTo(string $dateTo): void
     {
         $this->dateTo = $dateTo;
+        $this->data['dateTo'] = $dateTo;
     }
 
     /**
@@ -123,5 +127,6 @@ class TaskForUpdate extends Task
     public function setLabelIds(array $labelIds): void
     {
         $this->labelIds = $labelIds;
+        $this->data['labelIds'] = $labelIds;
     }
 }
