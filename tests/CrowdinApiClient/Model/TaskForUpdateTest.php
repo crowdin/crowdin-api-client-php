@@ -72,23 +72,19 @@ class TaskForUpdateTest extends TestCase
         $this->taskForUpdate = new TaskForUpdate();
         $this->taskForUpdate->setStatus($this->data['status']);
         $this->taskForUpdate->setTitle($this->data['title']);
-        $this->taskForUpdate->setAssignees($this->data['assignees']);
-        $this->taskForUpdate->setAssignedTeams($this->data['assignedTeams']);
-        $this->taskForUpdate->setFileIds($this->data['fileIds']);
-        $this->taskForUpdate->setDescription($this->data['description']);
-        $this->taskForUpdate->setDeadline($this->data['deadline']);
-        $this->taskForUpdate->setIsArchived($this->data['isArchived']);
         $this->taskForUpdate->setSkipAssignedStrings(true);
+        $this->taskForUpdate->setSplitFiles(true);
+        $this->taskForUpdate->setDateFrom('2021-03-01T11:05:24+00:00');
+        $this->taskForUpdate->setDateTo('2021-03-04T11:05:24+00:00');
         $this->taskForUpdate->setLabelIds([8, 9, 23]);
 
         $this->assertEquals($this->data['status'], $this->taskForUpdate->getStatus());
         $this->assertEquals($this->data['title'], $this->taskForUpdate->getTitle());
-        $this->assertEquals($this->data['assignees'], $this->taskForUpdate->getAssignees());
-        $this->assertEquals($this->data['assignedTeams'], $this->taskForUpdate->getAssignedTeams());
-        $this->assertEquals($this->data['fileIds'], $this->taskForUpdate->getFileIds());
-        $this->assertEquals($this->data['description'], $this->taskForUpdate->getDescription());
-        $this->assertEquals($this->data['deadline'], $this->taskForUpdate->getDeadline());
-        $this->assertEquals($this->data['isArchived'], $this->taskForUpdate->isArchived());
+        $this->assertEquals(true, $this->taskForUpdate->getSkipAssignedStrings());
+        $this->assertEquals(true, $this->taskForUpdate->getSplitFiles());
+        $this->assertEquals('2021-03-01T11:05:24+00:00', $this->taskForUpdate->getDateFrom());
+        $this->assertEquals('2021-03-04T11:05:24+00:00', $this->taskForUpdate->getDateTo());
+        $this->assertEquals([8, 9, 23], $this->taskForUpdate->getLabelIds());
     }
 
     public function checkData()

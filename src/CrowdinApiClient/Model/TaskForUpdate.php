@@ -32,23 +32,28 @@ class TaskForUpdate extends Task
     public function __construct(array $data = [])
     {
         parent::__construct($data);
+        $this->data['splitFiles'] = false;
+        $this->data['skipAssignedStrings'] = false;
+        $this->data['dateFrom'] = '';
+        $this->data['dateTo'] = '';
+        $this->data['labelIds'] = [];
 
-        $this->splitFiles = null === $this->getDataProperty('splitFiles')
+        $this->splitFiles = null !== $this->getDataProperty('splitFiles')
             ? (bool)$this->getDataProperty('splitFiles') : null;
-        $this->skipAssignedStrings = null === $this->getDataProperty('skipAssignedStrings')
+        $this->skipAssignedStrings = null !== $this->getDataProperty('skipAssignedStrings')
             ? (bool)$this->getDataProperty('skipAssignedStrings') : null;
-        $this->dateFrom = null === $this->getDataProperty('dateFrom')
+        $this->dateFrom = null !== $this->getDataProperty('dateFrom')
             ? (string)$this->getDataProperty('dateFrom') : null;
-        $this->dateTo = null === $this->getDataProperty('dateTo')
+        $this->dateTo = null !== $this->getDataProperty('dateTo')
             ? (string)$this->getDataProperty('dateTo') : null;
-        $this->labelIds = null === $this->getDataProperty('labelIds')
-            ? (string)$this->getDataProperty('labelIds') : null;
+        $this->labelIds = null !== $this->getDataProperty('labelIds')
+            ? (array)$this->getDataProperty('labelIds') : null;
     }
 
     /**
      * @return bool
      */
-    public function isSplitFiles(): ?bool
+    public function getSplitFiles(): ?bool
     {
         return $this->splitFiles;
     }
@@ -59,13 +64,12 @@ class TaskForUpdate extends Task
     public function setSplitFiles(bool $splitFiles): void
     {
         $this->splitFiles = $splitFiles;
-        $this->data['splitFiles'] = $splitFiles;
     }
 
     /**
      * @return bool
      */
-    public function isSkipAssignedStrings(): ?bool
+    public function getSkipAssignedStrings(): ?bool
     {
         return $this->skipAssignedStrings;
     }
@@ -76,7 +80,6 @@ class TaskForUpdate extends Task
     public function setSkipAssignedStrings(bool $skipAssignedStrings): void
     {
         $this->skipAssignedStrings = $skipAssignedStrings;
-        $this->data['skipAssignedStrings'] = $skipAssignedStrings;
     }
 
     /**
@@ -93,7 +96,6 @@ class TaskForUpdate extends Task
     public function setDateFrom(string $dateFrom): void
     {
         $this->dateFrom = $dateFrom;
-        $this->data['dateFrom'] = $dateFrom;
     }
 
     /**
@@ -110,7 +112,6 @@ class TaskForUpdate extends Task
     public function setDateTo(string $dateTo): void
     {
         $this->dateTo = $dateTo;
-        $this->data['dateTo'] = $dateTo;
     }
 
     /**
@@ -127,6 +128,5 @@ class TaskForUpdate extends Task
     public function setLabelIds(array $labelIds): void
     {
         $this->labelIds = $labelIds;
-        $this->data['labelIds'] = $labelIds;
     }
 }
