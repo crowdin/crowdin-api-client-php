@@ -68,10 +68,10 @@ class TaskApi extends AbstractApi
      * @link https://support.crowdin.com/api/v2/#operation/api.projects.tasks.patch API Documentation
      * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.tasks.patch API Documentation Enterprise
      *
-     * @param TaskForUpdate $task
+     * @param TaskForUpdate|Task $task
      * @return Task|null
      */
-    public function update(TaskForUpdate $task): ?Task
+    public function update($task): ?Task
     {
         $path = sprintf('projects/%d/tasks/%d', $task->getProjectId(), $task->getId());
         return $this->_update($path, $task);
