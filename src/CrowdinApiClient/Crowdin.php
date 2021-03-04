@@ -115,6 +115,7 @@ class Crowdin
         'glossary',
         'stringTranslation',
         'stringTranslationApproval',
+        'stringComment',
         'directory',
         'vendor',
         'user',
