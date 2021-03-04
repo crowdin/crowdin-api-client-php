@@ -1,8 +1,6 @@
 <?php
 
-
 namespace CrowdinApiClient\Tests\Api;
-
 
 use CrowdinApiClient\Model\StringComment;
 use CrowdinApiClient\ModelCollection;
