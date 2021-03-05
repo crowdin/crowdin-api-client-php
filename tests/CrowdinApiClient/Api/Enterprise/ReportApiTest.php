@@ -26,8 +26,7 @@ class ReportApiTest extends AbstractTestApi
                   "createdAt": "2019-09-23T11:26:54+00:00",
                   "updatedAt": "2019-09-23T11:26:54+00:00",
                   "startedAt": "2019-09-23T11:26:54+00:00",
-                  "finishedAt": "2019-09-23T11:26:54+00:00",
-                  "eta": "1 second"
+                  "finishedAt": "2019-09-23T11:26:54+00:00"
                 }'
         ]);
 
@@ -71,8 +70,7 @@ class ReportApiTest extends AbstractTestApi
               "createdAt": "2019-09-23T11:26:54+00:00",
               "updatedAt": "2019-09-23T11:26:54+00:00",
               "startedAt": "2019-09-23T11:26:54+00:00",
-              "finishedAt": "2019-09-23T11:26:54+00:00",
-              "eta": "1 second"
+              "finishedAt": "2019-09-23T11:26:54+00:00"
             }');
 
         $report = $this->crowdin->report->get(124, '50fb3506-4127-4ba8-8296-f97dc7e3e0c3');

@@ -37,7 +37,6 @@ class ReportTest extends TestCase
         'updatedAt' => '2019-09-23T11:26:54+00:00',
         'startedAt' => '2019-09-23T11:26:54+00:00',
         'finishedAt' => '2019-09-23T11:26:54+00:00',
-        'eta' => '1 second',
     ];
 
     /**
@@ -62,7 +61,6 @@ class ReportTest extends TestCase
         $this->report->setUpdatedAt($this->data['updatedAt']);
         $this->report->setStartedAt($this->data['startedAt']);
         $this->report->setFinishedAt($this->data['finishedAt']);
-        $this->report->setEta($this->data['eta']);
         $this->checkData();
     }
 
@@ -76,6 +74,5 @@ class ReportTest extends TestCase
         $this->assertEquals($this->data['updatedAt'], $this->report->getUpdatedAt());
         $this->assertEquals($this->data['startedAt'], $this->report->getStartedAt());
         $this->assertEquals($this->data['finishedAt'], $this->report->getFinishedAt());
-        $this->assertEquals($this->data['eta'], $this->report->getEta());
     }
 }

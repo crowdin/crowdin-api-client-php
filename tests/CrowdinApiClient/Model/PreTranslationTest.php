@@ -46,7 +46,6 @@ class PreTranslationTest extends TestCase
         'updatedAt' => '2019-09-20T14:05:50+00:00',
         'startedAt' => '2019-11-14T09:29:32Z',
         'finishedAt' => '2019-11-14T09:29:32Z',
-        'eta' => '10 seconds',
     ];
 
     public function testLoadData()
@@ -66,7 +65,6 @@ class PreTranslationTest extends TestCase
         $this->preTranslation->setUpdatedAt($this->data['updatedAt']);
         $this->preTranslation->setStartedAt($this->data['startedAt']);
         $this->preTranslation->setFinishedAt($this->data['finishedAt']);
-        $this->preTranslation->setEta($this->data['eta']);
         $this->checkData();
     }
 
@@ -80,6 +78,5 @@ class PreTranslationTest extends TestCase
         $this->assertEquals($this->data['updatedAt'], $this->preTranslation->getUpdatedAt());
         $this->assertEquals($this->data['startedAt'], $this->preTranslation->getStartedAt());
         $this->assertEquals($this->data['finishedAt'], $this->preTranslation->getFinishedAt());
-        $this->assertEquals($this->data['eta'], $this->preTranslation->getEta());
     }
 }
