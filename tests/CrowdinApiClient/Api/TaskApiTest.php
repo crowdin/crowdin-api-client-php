@@ -4,6 +4,7 @@ namespace CrowdinApiClient\Tests\Api;
 
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\Task;
+use CrowdinApiClient\Model\TaskForUpdate;
 use CrowdinApiClient\ModelCollection;
 
 class TaskApiTest extends AbstractTestApi
@@ -232,8 +233,15 @@ class TaskApiTest extends AbstractTestApi
                   }
                 }');
 
-        $task->setTitle('test edit');
-        $task = $this->crowdin->task->update($task);
+        $taskForUpdate = new TaskForUpdate($task->getData());
+        $taskForUpdate->setTitle('test edit');
+        $taskForUpdate->setSkipAssignedStrings(true);
+        $taskForUpdate->setSplitFiles(true);
+        $taskForUpdate->setLabelIds([1, 3]);
+        $taskForUpdate->setDateFrom('2021-01-23T09:04:29+00:00');
+        $taskForUpdate->setDateTo('2021-02-12T09:04:29+00:00');
+
+        $task = $this->crowdin->task->update($taskForUpdate);
         $this->assertInstanceOf(Task::class, $task);
         $this->assertEquals(2, $task->getId());
         $this->assertEquals('test edit', $task->getTitle());
