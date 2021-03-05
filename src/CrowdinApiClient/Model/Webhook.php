@@ -49,6 +49,11 @@ class Webhook extends BaseModel
     protected $isActive;
 
     /**
+     * @var bool
+     */
+    protected $batchingEnabled;
+
+    /**
      * @var string
      */
     protected $requestType;
@@ -83,6 +88,7 @@ class Webhook extends BaseModel
         $this->headers = $this->getDataProperty('headers');
         $this->payload = $this->getDataProperty('payload');
         $this->isActive = (bool)$this->getDataProperty('isActive');
+        $this->batchingEnabled = (bool)$this->getDataProperty('batchingEnabled');
         $this->requestType = (string)$this->getDataProperty('requestType');
         $this->contentType = (string)$this->getDataProperty('contentType');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
@@ -199,6 +205,22 @@ class Webhook extends BaseModel
     public function setIsActive(bool $isActive): void
     {
         $this->isActive = $isActive;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isBatchingEnabled(): bool
+    {
+        return $this->batchingEnabled;
+    }
+
+    /**
+     * @param bool $batchingEnabled
+     */
+    public function setBatchingEnabled(bool $batchingEnabled): void
+    {
+        $this->batchingEnabled = $batchingEnabled;
     }
 
     /**
