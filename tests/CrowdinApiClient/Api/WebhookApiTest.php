@@ -30,6 +30,7 @@ class WebhookApiTest extends AbstractTestApi
                       "string"
                     ],
                     "isActive": true,
+                    "batchingEnabled": true,
                     "requestType": "GET",
                     "contentType": "multipart/form-data",
                     "createdAt": "2019-09-23T09:19:07+00:00",
@@ -51,6 +52,7 @@ class WebhookApiTest extends AbstractTestApi
         $this->assertCount(1, $webhooks);
         $this->assertInstanceOf(Webhook::class, $webhooks[0]);
         $this->assertEquals(4, $webhooks[0]->getId());
+        $this->assertEquals(true, $webhooks[0]->isBatchingEnabled());
     }
 
     public function testCreate()
@@ -64,6 +66,7 @@ class WebhookApiTest extends AbstractTestApi
                 ],
             'requestType' => 'POST',
             'isActive' => true,
+            'batchingEnabled' => false,
             'contentType' => 'multipart/form-data',
             'headers' =>
                 [
@@ -93,6 +96,7 @@ class WebhookApiTest extends AbstractTestApi
                   "string"
                 ],
                 "isActive": true,
+                "batchingEnabled": false,
                 "requestType": "GET",
                 "contentType": "multipart/form-data",
                 "createdAt": "2019-09-23T09:19:07+00:00",
@@ -104,6 +108,7 @@ class WebhookApiTest extends AbstractTestApi
         $webhook = $this->crowdin->webhook->create(2, $params);
         $this->assertInstanceOf(Webhook::class, $webhook);
         $this->assertEquals(4, $webhook->getId());
+        $this->assertEquals(false, $webhook->isBatchingEnabled());
     }
 
     public function testGetAndUpdate()
@@ -124,6 +129,7 @@ class WebhookApiTest extends AbstractTestApi
                   "string"
                 ],
                 "isActive": true,
+                "batchingEnabled": true,
                 "requestType": "GET",
                 "contentType": "multipart/form-data",
                 "createdAt": "2019-09-23T09:19:07+00:00",
@@ -136,6 +142,7 @@ class WebhookApiTest extends AbstractTestApi
         $this->assertEquals(4, $webhook->getId());
 
         $webhook->setName('test edit');
+        $webhook->setBatchingEnabled(false);
         $this->mockRequestPath('/projects/2/webhooks/4', '{
               "data": {
                 "id": 4,
@@ -152,6 +159,7 @@ class WebhookApiTest extends AbstractTestApi
                   "string"
                 ],
                 "isActive": true,
+                "batchingEnabled": false,
                 "requestType": "GET",
                 "contentType": "multipart/form-data",
                 "createdAt": "2019-09-23T09:19:07+00:00",
@@ -163,6 +171,7 @@ class WebhookApiTest extends AbstractTestApi
         $this->assertInstanceOf(Webhook::class, $webhook);
         $this->assertEquals(4, $webhook->getId());
         $this->assertEquals('test edit', $webhook->getName());
+        $this->assertEquals(false, $webhook->isBatchingEnabled());
     }
 
     public function testDelete()
