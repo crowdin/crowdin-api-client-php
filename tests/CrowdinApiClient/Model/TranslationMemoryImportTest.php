@@ -28,7 +28,6 @@ class TranslationMemoryImportTest extends TestCase
         'updatedAt' => '2019-09-23T11:26:54+00:00',
         'startedAt' => '2019-09-23T11:26:54+00:00',
         'finishedAt' => '2019-09-23T11:26:54+00:00',
-        'eta' => '1 second',
     ];
 
     public function testLoadData()
@@ -49,7 +48,6 @@ class TranslationMemoryImportTest extends TestCase
         $this->translationMemoryImport->setUpdatedAt($this->data['updatedAt']);
         $this->translationMemoryImport->setStartedAt($this->data['startedAt']);
         $this->translationMemoryImport->setFinishedAt($this->data['finishedAt']);
-        $this->translationMemoryImport->setEta($this->data['eta']);
         $this->checkData();
     }
 
@@ -63,6 +61,5 @@ class TranslationMemoryImportTest extends TestCase
         $this->assertEquals($this->data['updatedAt'], $this->translationMemoryImport->getUpdatedAt());
         $this->assertEquals($this->data['startedAt'], $this->translationMemoryImport->getStartedAt());
         $this->assertEquals($this->data['finishedAt'], $this->translationMemoryImport->getFinishedAt());
-        $this->assertEquals($this->data['eta'], $this->translationMemoryImport->getEta());
     }
 }

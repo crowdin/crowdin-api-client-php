@@ -160,8 +160,7 @@ class GlossaryApiTest extends AbstractTestApi
                     "createdAt": "2019-09-23T07:06:43+00:00",
                     "updatedAt": "2019-09-23T07:06:43+00:00",
                     "startedAt": "2019-11-13T08:17:23Z",
-                    "finishedAt": "2019-11-13T08:17:23Z",
-                    "eta": "1 second"
+                    "finishedAt": "2019-11-13T08:17:23Z"
                   }
                 }'
         ]);
@@ -214,8 +213,7 @@ class GlossaryApiTest extends AbstractTestApi
                     "createdAt": "2019-09-23T12:17:54+00:00",
                     "updatedAt": "2019-09-23T12:17:54+00:00",
                     "startedAt": "2019-12-04T13:14:36Z",
-                    "finishedAt": "2019-12-04T13:14:36Z",
-                    "eta": "1 second"
+                    "finishedAt": "2019-12-04T13:14:36Z"
                   }
                 }'
         ]);
@@ -247,8 +245,7 @@ class GlossaryApiTest extends AbstractTestApi
                 "createdAt": "2019-09-23T12:17:54+00:00",
                 "updatedAt": "2019-09-23T12:17:54+00:00",
                 "startedAt": "2019-12-04T13:14:36Z",
-                "finishedAt": "2019-12-04T13:14:36Z",
-                "eta": "1 second"
+                "finishedAt": "2019-12-04T13:14:36Z"
               }
             }');
 

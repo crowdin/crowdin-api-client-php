@@ -49,11 +49,6 @@ class PreTranslation extends BaseModel
     protected $finishedAt;
 
     /**
-     * @var string
-     */
-    protected $eta;
-
-    /**
      * PreTranslation constructor.
      * @param array $data
      */
@@ -68,7 +63,6 @@ class PreTranslation extends BaseModel
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
         $this->startedAt = (string)$this->getDataProperty('startedAt');
         $this->finishedAt = (string)$this->getDataProperty('finishedAt');
-        $this->eta = (string)$this->getDataProperty('eta');
     }
 
     /**
@@ -197,21 +191,5 @@ class PreTranslation extends BaseModel
     public function setFinishedAt(string $finishedAt): void
     {
         $this->finishedAt = $finishedAt;
-    }
-
-    /**
-     * @return string
-     */
-    public function getEta(): string
-    {
-        return $this->eta;
-    }
-
-    /**
-     * @param string $eta
-     */
-    public function setEta(string $eta): void
-    {
-        $this->eta = $eta;
     }
 }

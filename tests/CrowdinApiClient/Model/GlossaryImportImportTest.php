@@ -28,7 +28,6 @@ class GlossaryImportImportTest extends TestCase
         'updatedAt' => '2019-09-23T11:26:54+00:00',
         'startedAt' => '2019-09-23T11:26:54+00:00',
         'finishedAt' => '2019-09-23T11:26:54+00:00',
-        'eta' => '1 second',
     ];
 
     public function testLoadData()
@@ -47,6 +46,5 @@ class GlossaryImportImportTest extends TestCase
         $this->assertEquals($this->data['updatedAt'], $this->glossaryImport->getUpdatedAt());
         $this->assertEquals($this->data['startedAt'], $this->glossaryImport->getStartedAt());
         $this->assertEquals($this->data['finishedAt'], $this->glossaryImport->getFinishedAt());
-        $this->assertEquals($this->data['eta'], $this->glossaryImport->getEta());
     }
 }

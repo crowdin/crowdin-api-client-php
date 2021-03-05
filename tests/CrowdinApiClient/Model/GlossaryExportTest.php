@@ -32,7 +32,6 @@ class GlossaryExportTest extends TestCase
         'updatedAt' => '2019-09-23T07:06:43+00:00',
         'startedAt' => '2019-11-14T09:29:33Z',
         'finishedAt' => '2019-11-14T09:29:33Z',
-        'eta' => '1 second',
     ];
 
     public function testLoadData()
@@ -53,7 +52,6 @@ class GlossaryExportTest extends TestCase
         $this->glossaryExport->setUpdatedAt($this->data['updatedAt']);
         $this->glossaryExport->setStartedAt($this->data['startedAt']);
         $this->glossaryExport->setFinishedAt($this->data['finishedAt']);
-        $this->glossaryExport->setEta($this->data['eta']);
         $this->checkData();
     }
 
@@ -67,6 +65,5 @@ class GlossaryExportTest extends TestCase
         $this->assertEquals($this->data['updatedAt'], $this->glossaryExport->getUpdatedAt());
         $this->assertEquals($this->data['startedAt'], $this->glossaryExport->getStartedAt());
         $this->assertEquals($this->data['finishedAt'], $this->glossaryExport->getFinishedAt());
-        $this->assertEquals($this->data['eta'], $this->glossaryExport->getEta());
     }
 }

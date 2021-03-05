@@ -48,11 +48,6 @@ class GlossaryImport extends BaseModel
      */
     protected $finishedAt;
 
-    /**
-     * @var string
-     */
-    protected $eta;
-
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -65,7 +60,6 @@ class GlossaryImport extends BaseModel
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
         $this->startedAt = (string)$this->getDataProperty('startedAt');
         $this->finishedAt = (string)$this->getDataProperty('finishedAt');
-        $this->eta = (string)$this->getDataProperty('eta');
     }
 
     /**
@@ -130,13 +124,5 @@ class GlossaryImport extends BaseModel
     public function getFinishedAt(): string
     {
         return $this->finishedAt;
-    }
-
-    /**
-     * @return string
-     */
-    public function getEta(): string
-    {
-        return $this->eta;
     }
 }

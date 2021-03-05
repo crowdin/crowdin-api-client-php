@@ -48,8 +48,7 @@ class TranslationApiTest extends AbstractTestApi
                     "createdAt": "2019-09-20T14:05:50+00:00",
                     "updatedAt": "2019-09-20T14:05:50+00:00",
                     "startedAt": "2019-11-13T08:17:22Z",
-                    "finishedAt": "2019-11-13T08:17:22Z",
-                    "eta": "10 seconds"
+                    "finishedAt": "2019-11-13T08:17:22Z"
                   }
                 }'
         ]);
@@ -85,8 +84,7 @@ class TranslationApiTest extends AbstractTestApi
                 "createdAt": "2019-09-20T14:05:50+00:00",
                 "updatedAt": "2019-09-20T14:05:50+00:00",
                 "startedAt": "2019-11-13T08:17:22Z",
-                "finishedAt": "2019-11-13T08:17:22Z",
-                "eta": "10 seconds"
+                "finishedAt": "2019-11-13T08:17:22Z"
               }
             }');
 

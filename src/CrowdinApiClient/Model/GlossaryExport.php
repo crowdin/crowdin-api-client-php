@@ -48,11 +48,6 @@ class GlossaryExport extends BaseModel
      */
     protected $finishedAt;
 
-    /**
-     * @var string
-     */
-    protected $eta;
-
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -65,7 +60,6 @@ class GlossaryExport extends BaseModel
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
         $this->startedAt = (string)$this->getDataProperty('startedAt');
         $this->finishedAt = (string)$this->getDataProperty('finishedAt');
-        $this->eta = (string)$this->getDataProperty('eta');
     }
 
     /**
@@ -194,21 +188,5 @@ class GlossaryExport extends BaseModel
     public function setFinishedAt(string $finishedAt): void
     {
         $this->finishedAt = $finishedAt;
-    }
-
-    /**
-     * @return string
-     */
-    public function getEta(): string
-    {
-        return $this->eta;
-    }
-
-    /**
-     * @param string $eta
-     */
-    public function setEta(string $eta): void
-    {
-        $this->eta = $eta;
     }
 }
