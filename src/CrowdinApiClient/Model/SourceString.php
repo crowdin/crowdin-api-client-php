@@ -74,6 +74,11 @@ class SourceString extends BaseModel
     protected $isIcu;
 
     /**
+     * @var array
+     */
+    protected $labelIds;
+
+    /**
      * @var string
      */
     protected $createdAt;
@@ -103,6 +108,7 @@ class SourceString extends BaseModel
         $this->revision = (integer)$this->getDataProperty('revision');
         $this->hasPlurals = (bool)$this->getDataProperty('hasPlurals');
         $this->isIcu = (bool)$this->getDataProperty('isIcu');
+        $this->labelIds = (array)$this->getDataProperty('labelIds');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
     }
@@ -241,6 +247,22 @@ class SourceString extends BaseModel
     public function isIcu(): bool
     {
         return $this->isIcu;
+    }
+
+    /**
+     * @return array
+     */
+    public function getLabelIds(): array
+    {
+        return $this->labelIds;
+    }
+
+    /**
+     * @param array $labelIds
+     */
+    public function setLabelIds(array $labelIds): void
+    {
+        $this->labelIds = $labelIds;
     }
 
     /**

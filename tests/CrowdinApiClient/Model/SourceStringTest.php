@@ -30,6 +30,7 @@ class SourceStringTest extends TestCase
         'revision' => 1,
         'hasPlurals' => false,
         'isIcu' => false,
+        'labelIds' => [1],
         'createdAt' => '2019-09-20T12:43:57+00:00',
         'updatedAt' => '2019-09-20T13:24:01+00:00',
     ];
@@ -47,6 +48,7 @@ class SourceStringTest extends TestCase
         $this->sourceString->setContext($this->data['context']);
         $this->sourceString->setMaxLength($this->data['maxLength']);
         $this->sourceString->setIsHidden($this->data['isHidden']);
+        $this->sourceString->setLabelIds($this->data['labelIds']);
 
         $this->assertEquals($this->data['text'], $this->sourceString->getText());
         $this->assertEquals($this->data['context'], $this->sourceString->getContext());
@@ -69,6 +71,7 @@ class SourceStringTest extends TestCase
         $this->assertEquals($this->data['revision'], $this->sourceString->getRevision());
         $this->assertEquals($this->data['hasPlurals'], $this->sourceString->isHasPlurals());
         $this->assertEquals($this->data['isIcu'], $this->sourceString->isIcu());
+        $this->assertEquals($this->data['labelIds'], $this->sourceString->getLabelIds());
         $this->assertEquals($this->data['createdAt'], $this->sourceString->getCreatedAt());
         $this->assertEquals($this->data['updatedAt'], $this->sourceString->getUpdatedAt());
     }

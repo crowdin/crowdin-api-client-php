@@ -27,6 +27,11 @@ class LanguageTranslation extends BaseModel
     protected $text;
 
     /**
+     * @var array|null
+     */
+    protected $user;
+
+    /**
      * @var array
      */
     protected $plurals;
@@ -47,6 +52,8 @@ class LanguageTranslation extends BaseModel
             ? (string)$this->getDataProperty('text') : null;
         $this->plurals = $this->getDataProperty('plurals')
             ? (array)$this->getDataProperty('plurals') : null;
+        $this->user = $this->getDataProperty('user')
+            ? (array)$this->getDataProperty('user') : null;
     }
 
     public function getStringId(): int
@@ -77,6 +84,11 @@ class LanguageTranslation extends BaseModel
     public function getText(): string
     {
         return $this->text;
+    }
+
+    public function getUser(): ?array
+    {
+        return $this->user;
     }
 
     public function setText(string $text): void

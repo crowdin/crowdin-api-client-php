@@ -44,6 +44,7 @@ class TaskTest extends TestCase
                 'done' => 15,
                 'percent' => 62,
             ],
+        'translateProgress' => null,
         'sourceLanguageId' => 'en',
         'targetLanguageId' => 'fr',
         'description' => 'Proofrea all French strings',
@@ -102,6 +103,7 @@ class TaskTest extends TestCase
         $this->assertEquals($this->data['assignedTeams'], $this->task->getAssignedTeams());
         $this->assertEquals($this->data['fileIds'], $this->task->getFileIds());
         $this->assertEquals($this->data['progress'], $this->task->getProgress());
+        $this->assertEquals($this->data['translateProgress'], $this->task->getTranslateProgress());
         $this->assertEquals($this->data['sourceLanguageId'], $this->task->getSourceLanguageId());
         $this->assertEquals($this->data['targetLanguageId'], $this->task->getTargetLanguageId());
         $this->assertEquals($this->data['description'], $this->task->getDescription());

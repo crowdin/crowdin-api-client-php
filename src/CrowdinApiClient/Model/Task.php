@@ -64,6 +64,11 @@ class Task extends BaseModel
     protected $progress;
 
     /**
+     * @var array|null
+     */
+    protected $translateProgress;
+
+    /**
      * @var string
      */
     protected $sourceLanguageId;
@@ -153,6 +158,7 @@ class Task extends BaseModel
         $this->assignedTeams = (array)$this->getDataProperty('assignedTeams');
         $this->fileIds = (array)$this->getDataProperty('fileIds');
         $this->progress = (array)$this->getDataProperty('progress');
+        $this->translateProgress = $this->getDataProperty('translateProgress') ? (array)$this->getDataProperty('translateProgress') : null;
         $this->sourceLanguageId = (string)$this->getDataProperty('sourceLanguageId');
         $this->targetLanguageId = (string)$this->getDataProperty('targetLanguageId');
         $this->description = (string)$this->getDataProperty('description');
@@ -292,6 +298,14 @@ class Task extends BaseModel
     public function getProgress(): array
     {
         return $this->progress;
+    }
+
+    /**
+     * @return array|null
+     */
+    public function getTranslateProgress(): ?array
+    {
+        return $this->translateProgress;
     }
 
     /**
