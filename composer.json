@@ -35,5 +35,12 @@
         "psr-4": {
             "CrowdinApiClient\\Tests\\": "tests/CrowdinApiClient/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CrowdinApiClient\\FrameworkSupport\\Laravel\\CrowdinServiceProvider"
+            ]
+        }
     }
 }
