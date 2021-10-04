@@ -104,6 +104,11 @@ class Project extends BaseModel
     protected $publicDownloads;
 
     /**
+     * @var bool
+     */
+    protected $hiddenStringsProofreadersAccess;
+
+    /**
      * @var string
      */
     protected $createdAt;
@@ -174,6 +179,11 @@ class Project extends BaseModel
     protected $inContext;
 
     /**
+     * @var bool
+     */
+    protected $inContextProcessHiddenStrings;
+
+    /**
      * @var ?string
      */
     protected $inContextPseudoLanguageId;
@@ -207,6 +217,26 @@ class Project extends BaseModel
      * @var array
      */
     protected $languageMapping = [];
+
+    /**
+     * @var bool
+     */
+    protected $glossaryAccess;
+
+    /**
+     * @var bool
+     */
+    protected $normalizePlaceholder;
+
+    /**
+     * @var bool
+     */
+    protected $saveMetaInfoInSource;
+
+    /**
+     * @var array
+     */
+    protected $notificationSettings = [];
 
     public function __construct(array $data = [])
     {
@@ -243,15 +273,21 @@ class Project extends BaseModel
         $this->exportApprovedOnly = (bool)$this->getDataProperty('exportApprovedOnly');
         $this->autoTranslateDialects = (bool)$this->getDataProperty('autoTranslateDialects');
         $this->publicDownloads = (bool)$this->getDataProperty('publicDownloads');
+        $this->hiddenStringsProofreadersAccess = (bool)$this->getDataProperty('hiddenStringsProofreadersAccess');
         $this->useGlobalTm = (bool)$this->getDataProperty('useGlobalTm');
         $this->inContext = (bool)$this->getDataProperty('inContext');
+        $this->inContextProcessHiddenStrings = (bool)$this->getDataProperty('inContextProcessHiddenStrings');
         $this->inContextPseudoLanguageId = (string)$this->getDataProperty('inContextPseudoLanguageId');
         $this->inContextPseudoLanguage = (array)$this->getDataProperty('inContextPseudoLanguage');
         $this->qaCheckIsActive = (bool)$this->getDataProperty('qaCheckIsActive');
         $this->qaCheckCategories = (array)$this->getDataProperty('qaCheckCategories');
         $this->customQaCheckIds = (array)$this->getDataProperty('customQaCheckIds');
         $this->languageMapping = (array)$this->getDataProperty('languageMapping');
+        $this->glossaryAccess = (bool)$this->getDataProperty('glossaryAccess');
         $this->isSuspended = (bool)$this->getDataProperty('isSuspended');
+        $this->normalizePlaceholder = (bool)$this->getDataProperty('normalizePlaceholder');
+        $this->saveMetaInfoInSource = (bool)$this->getDataProperty('saveMetaInfoInSource');
+        $this->notificationSettings = (array)$this->getDataProperty('notificationSettings');
     }
 
     /**
@@ -741,6 +777,22 @@ class Project extends BaseModel
     /**
      * @return bool
      */
+    public function isHiddenStringsProofreadersAccess(): bool
+    {
+        return $this->hiddenStringsProofreadersAccess;
+    }
+
+    /**
+     * @param bool $hiddenStringsProofreadersAccess
+     */
+    public function setHiddenStringsProofreadersAccess(bool $hiddenStringsProofreadersAccess): void
+    {
+        $this->hiddenStringsProofreadersAccess = $hiddenStringsProofreadersAccess;
+    }
+
+    /**
+     * @return bool
+     */
     public function isUseGlobalTm(): bool
     {
         return $this->useGlobalTm;
@@ -768,6 +820,22 @@ class Project extends BaseModel
     public function setInContext(bool $inContext): void
     {
         $this->inContext = $inContext;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isInContextProcessHiddenStrings(): bool
+    {
+        return $this->inContextProcessHiddenStrings;
+    }
+
+    /**
+     * @param bool $inContextProcessHiddenStrings
+     */
+    public function setInContextProcessHiddenStrings(bool $inContextProcessHiddenStrings): void
+    {
+        $this->inContextProcessHiddenStrings = $inContextProcessHiddenStrings;
     }
 
     /**
@@ -869,6 +937,22 @@ class Project extends BaseModel
     /**
      * @return bool
      */
+    public function isGlossaryAccess(): bool
+    {
+        return $this->glossaryAccess;
+    }
+
+    /**
+     * @param bool $glossaryAccess
+     */
+    public function setGlossaryAccess(bool $glossaryAccess): void
+    {
+        $this->glossaryAccess = $glossaryAccess;
+    }
+
+    /**
+     * @return bool
+     */
     public function isSuspended(): bool
     {
         return $this->isSuspended;
@@ -880,5 +964,53 @@ class Project extends BaseModel
     public function setIsSuspended(bool $isSuspended): void
     {
         $this->isSuspended = $isSuspended;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isNormalizePlaceholder(): bool
+    {
+        return $this->normalizePlaceholder;
+    }
+
+    /**
+     * @param bool $normalizePlaceholder
+     */
+    public function setNormalizePlaceholder(bool $normalizePlaceholder): void
+    {
+        $this->normalizePlaceholder = $normalizePlaceholder;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isSaveMetaInfoInSource(): bool
+    {
+        return $this->saveMetaInfoInSource;
+    }
+
+    /**
+     * @param bool $saveMetaInfoInSource
+     */
+    public function setSaveMetaInfoInSource(bool $saveMetaInfoInSource): void
+    {
+        $this->saveMetaInfoInSource = $saveMetaInfoInSource;
+    }
+
+    /**
+     * @return array
+     */
+    public function getNotificationSettings(): array
+    {
+        return $this->notificationSettings;
+    }
+
+    /**
+     * @param array $notificationSettings
+     */
+    public function setNotificationSettings(array $notificationSettings): void
+    {
+        $this->notificationSettings = $notificationSettings;
     }
 }
