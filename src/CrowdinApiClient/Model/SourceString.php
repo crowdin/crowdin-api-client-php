@@ -29,6 +29,11 @@ class SourceString extends BaseModel
     protected $branchId;
 
     /**
+     * @var ?integer
+     */
+    protected $directoryId;
+
+    /**
      * @var string
      */
     protected $identifier;
@@ -99,6 +104,7 @@ class SourceString extends BaseModel
         $this->projectId = (integer)$this->getDataProperty('projectId');
         $this->fileId = (integer)$this->getDataProperty('fileId');
         $this->branchId = $this->getDataProperty('branchId') ? (integer)$this->getDataProperty('branchId') : null;
+        $this->directoryId = $this->getDataProperty('directoryId') ? (integer)$this->getDataProperty('directoryId') : null;
         $this->identifier = (string)$this->getDataProperty('identifier');
         $this->text = (string)$this->getDataProperty('text');
         $this->type = (string)$this->getDataProperty('type');
@@ -143,6 +149,14 @@ class SourceString extends BaseModel
     public function getBranchId(): ?int
     {
         return $this->branchId;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getDirectoryId(): ?int
+    {
+        return $this->directoryId;
     }
 
     /**

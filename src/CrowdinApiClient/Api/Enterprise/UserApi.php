@@ -4,6 +4,7 @@ namespace CrowdinApiClient\Api\Enterprise;
 
 use CrowdinApiClient\Api\AbstractApi;
 use CrowdinApiClient\Model\Enterprise\ProjectTeamMemberAddedStatistics;
+use CrowdinApiClient\Model\Enterprise\ProjectTeamMemberResource;
 use CrowdinApiClient\Model\Enterprise\User;
 use CrowdinApiClient\ModelCollection;
 
@@ -14,7 +15,7 @@ use CrowdinApiClient\ModelCollection;
 class UserApi extends AbstractApi
 {
     /**
-     * Add Project Team Member
+     * Add Project Member
      * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.members.post API Documentation
      *
      * @param int $projectId
@@ -24,6 +25,59 @@ class UserApi extends AbstractApi
     public function addProjectTeamMember(int $projectId, array $data): ProjectTeamMemberAddedStatistics
     {
         return $this->_post(sprintf('projects/%d/members', $projectId), ProjectTeamMemberAddedStatistics::class, $data);
+    }
+
+    /**
+     * List Project Members
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.members.getMany API Documentation
+     *
+     * @param int $projectId
+     * @param array $data
+     * @return ModelCollection
+     */
+    public function listProjectMembers(int $projectId, array $data): ModelCollection
+    {
+        return $this->_list(sprintf('projects/%d/members', $projectId), ProjectTeamMemberResource::class, $data);
+    }
+
+    /**
+     * Get Project Member Permissions
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.members.post API Documentation
+     *
+     * @param int $projectId
+     * @param int $memberId
+     * @return ProjectTeamMemberResource
+     */
+    public function getProjectMemberPermissions(int $projectId, int $memberId): ProjectTeamMemberResource
+    {
+        return $this->_get(sprintf('projects/%d/members/%d', $projectId, $memberId), ProjectTeamMemberResource::class);
+    }
+
+    /**
+     * Replace Project Member Permissions
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.members.put API Documentation
+     *
+     * @param int $projectId
+     * @param int $memberId
+     * @param array $data
+     * @return ProjectTeamMemberResource
+     */
+    public function replaceProjectMemberPermissions(int $projectId, int $memberId, array $data): ProjectTeamMemberResource
+    {
+        return $this->_put(sprintf('projects/%d/members/%d', $projectId, $memberId), ProjectTeamMemberResource::class, $data);
+    }
+
+    /**
+     * Delete Member From Project
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.members.delete API Documentation
+     *
+     * @param int $projectId
+     * @param int $memberId
+     */
+    public function deleteMemberFromProject(int $projectId, int $memberId): void
+    {
+        $path = sprintf('projects/%d/members/%s', $projectId, $memberId);
+        $this->_delete($path);
     }
 
     /**

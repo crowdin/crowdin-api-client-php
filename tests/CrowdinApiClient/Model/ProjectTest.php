@@ -54,6 +54,7 @@ class ProjectTest extends TestCase
         'externalType' => 'proofread',
         'workflowId' => 3,
         'hasCrowdsourcing' => false,
+        'hiddenStringsProofreadersAccess' => false,
         'createdAt' => '2019-09-20T11:34:40+00:00',
         'updatedAt' => '2019-09-20T11:34:40+00:00',
         'lastActivity' => '2019-09-20T11:34:40+00:00',
@@ -68,6 +69,7 @@ class ProjectTest extends TestCase
         'publicDownloads' => true,
         'useGlobalTm' => false,
         'inContext' => true,
+        'inContextProcessHiddenStrings' => true,
         'inContextPseudoLanguageId' => 'uk',
         "isSuspended" => false,
         'qaCheckIsActive' => true,
@@ -115,6 +117,14 @@ class ProjectTest extends TestCase
                     ]
             ],
 
+        'glossaryAccess' => true,
+        'normalizePlaceholder' => false,
+        'saveMetaInfoInSource' => false,
+        'notificationSettings' => [
+            'translatorNewStrings' => true,
+            'managerNewStrings' => false,
+            'managerLanguageCompleted' => true,
+        ],
         'joinPolicy' => null,
         'visibility' => null,
     ];
@@ -161,6 +171,7 @@ class ProjectTest extends TestCase
         $this->assertEquals($this->data['externalType'], $this->project->getExternalType());
         $this->assertEquals($this->data['workflowId'], $this->project->getWorkflowId());
         $this->assertEquals($this->data['hasCrowdsourcing'], $this->project->isHasCrowdsourcing());
+        $this->assertEquals($this->data['hiddenStringsProofreadersAccess'], $this->project->isHiddenStringsProofreadersAccess());
         $this->assertEquals($this->data['createdAt'], $this->project->getCreatedAt());
         $this->assertEquals($this->data['updatedAt'], $this->project->getUpdatedAt());
         $this->assertEquals($this->data['lastActivity'], $this->project->getLastActivity());
@@ -176,11 +187,17 @@ class ProjectTest extends TestCase
         $this->assertEquals($this->data['publicDownloads'], $this->project->isPublicDownloads());
         $this->assertEquals($this->data['useGlobalTm'], $this->project->isUseGlobalTm());
         $this->assertEquals($this->data['inContext'], $this->project->isInContext());
+        $this->assertEquals($this->data['inContextProcessHiddenStrings'], $this->project->isInContextProcessHiddenStrings());
         $this->assertEquals($this->data['inContextPseudoLanguageId'], $this->project->getInContextPseudoLanguageId());
         $this->assertEquals($this->data['qaCheckIsActive'], $this->project->isQaCheckIsActive());
         $this->assertEquals($this->data['qaCheckCategories'], $this->project->getQaCheckCategories());
         $this->assertEquals($this->data['customQaCheckIds'], $this->project->getCustomQaCheckIds());
         $this->assertEquals($this->data['languageMapping'], $this->project->getLanguageMapping());
         $this->assertEquals($this->data['isSuspended'], $this->project->isSuspended());
+
+        $this->assertEquals($this->data['glossaryAccess'], $this->project->isGlossaryAccess());
+        $this->assertEquals($this->data['normalizePlaceholder'], $this->project->isNormalizePlaceholder());
+        $this->assertEquals($this->data['saveMetaInfoInSource'], $this->project->isSaveMetaInfoInSource());
+        $this->assertEquals($this->data['notificationSettings'], $this->project->getNotificationSettings());
     }
 }

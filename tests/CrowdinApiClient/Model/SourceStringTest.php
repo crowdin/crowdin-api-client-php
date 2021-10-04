@@ -21,6 +21,7 @@ class SourceStringTest extends TestCase
         'projectId' => 2,
         'fileId' => 48,
         'branchId' => 4,
+        'directoryId' => null,
         'identifier' => '6a1821e6499ebae94de4b880fd93b985',
         'text' => 'Not all videos are shown to users. See more',
         'type' => 'text',
@@ -62,6 +63,7 @@ class SourceStringTest extends TestCase
         $this->assertEquals($this->data['projectId'], $this->sourceString->getProjectId());
         $this->assertEquals($this->data['fileId'], $this->sourceString->getFileId());
         $this->assertEquals($this->data['branchId'], $this->sourceString->getBranchId());
+        $this->assertEquals($this->data['directoryId'], $this->sourceString->getDirectoryId());
         $this->assertEquals($this->data['identifier'], $this->sourceString->getIdentifier());
         $this->assertEquals($this->data['text'], $this->sourceString->getText());
         $this->assertEquals($this->data['type'], $this->sourceString->getType());
