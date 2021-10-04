@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Tests\Api\Enterprise;
 
 use CrowdinApiClient\Model\Enterprise\ProjectTeamMemberAddedStatistics;
+use CrowdinApiClient\Model\Enterprise\ProjectTeamMemberResource;
 use CrowdinApiClient\Model\Enterprise\User;
 use CrowdinApiClient\ModelCollection;
 
@@ -59,6 +60,110 @@ class UserApiTest extends AbstractTestApi
         $projectTeamMemberAddedStatistics = $this->crowdin->user->addProjectTeamMember(1, $params);
         $this->assertInstanceOf(ProjectTeamMemberAddedStatistics::class, $projectTeamMemberAddedStatistics);
         $this->assertEquals([], $projectTeamMemberAddedStatistics->getSkipped());
+    }
+
+    public function testListProjectMembers()
+    {
+        $this->mockRequestGet('/projects/1/members', '{
+                  "data": [
+                    {
+                      "data": {
+                        "id": 1,
+                        "username": "john_smith",
+                        "firstName": "John",
+                        "lastName": "Smith",
+                        "isManager": true,
+                        "managerOfGroup": {"id": 1, "name": "Marketing materials"},
+                        "accessToAllWorkflowSteps": true,
+                        "permissions": {"it": {"workflowStepIds": [313]}},
+                        "givenAccessAt": "2019-10-23T11:44:02+00:00"
+                      }
+                    }
+                  ],
+                  "pagination": [
+                    {
+                      "offset": 0,
+                      "limit": 0
+                    }
+                  ]
+                }'
+        );
+
+        $members = $this->crowdin->user->listProjectMembers(1, []);
+
+        $this->assertInstanceOf(ModelCollection::class, $members);
+        $this->assertCount(1, $members);
+        $this->assertInstanceOf(ProjectTeamMemberResource::class, $members[0]);
+        $this->assertEquals(1, $members[0]->getId());
+    }
+
+    public function testGetProjectMemberPermissions()
+    {
+        $this->mockRequestGet('/projects/1/members/1', '{
+              "data": {
+                "id": 1,
+                "username": "john_smith",
+                "firstName": "John",
+                "lastName": "Smith",
+                "isManager": true,
+                "managerOfGroup": {"id": 1, "name": "Marketing materials"},
+                "accessToAllWorkflowSteps": true,
+                "permissions": {"it": {"workflowStepIds": [313]}},
+                "givenAccessAt": "2019-10-23T11:44:02+00:00"
+              }
+        }');
+
+        $member = $this->crowdin->user->getProjectMemberPermissions(1, 1);
+
+        $this->assertInstanceOf(ProjectTeamMemberResource::class, $member);
+        $this->assertEquals(1, $member->getId());
+    }
+
+    public function testReplaceProjectMemberPermissions()
+    {
+        $params = [
+            'managerAccess' => true,
+            'permissions' => [
+                'it' => [
+                    'workflowStepIds' => [1, 2, 3],
+                ],
+            ],
+        ];
+
+        $this->mockRequest([
+            'path' => '/projects/1/members/1',
+            'method' => 'put',
+            'body' => $params,
+            'response' => '{
+              "data": {
+                "id": 1,
+                "username": "john_smith",
+                "firstName": "John",
+                "lastName": "Smith",
+                "isManager": true,
+                "managerOfGroup": {"id": 1, "name": "Marketing materials"},
+                "accessToAllWorkflowSteps": true,
+                "permissions": {"it": {"workflowStepIds": [1,2,3]}},
+                "givenAccessAt": "2019-10-23T11:44:02+00:00"
+              }
+            }'
+        ]);
+
+        $member = $this->crowdin->user->replaceProjectMemberPermissions(1, 1, $params);
+
+        $this->assertInstanceOf(ProjectTeamMemberResource::class, $member);
+        $this->assertEquals(['it' => ['workflowStepIds' => [1, 2, 3]]], $member->getPermissions());
+        $this->assertEquals(true, $member->isManager());
+    }
+
+    public function testDelete()
+    {
+        $this->mockRequest([
+            'path' => '/projects/2/members/1',
+            'method' => 'delete',
+        ]);
+
+        $this->crowdin->user->deleteMemberFromProject(2, 1);
     }
 
     public function testList()
