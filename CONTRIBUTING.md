@@ -69,3 +69,13 @@ Before sending your pull requests, make sure you followed the list below:
 
 - Include unit tests when you contribute new features, as they help to a) prove that your code works correctly, and b) guard against future breaking changes to lower the maintenance cost.
 - Bug fixes also generally require unit tests, because the presence of bugs usually indicates insufficient test coverage.
+
+#### Running Unit tests
+
+To run all tests use the following command:
+
+`vendor/bin/phpunit`
+
+To run a specific test:
+
+`vendor/bin/phpunit tests/CrowdinApiClient/Model/ProjectTest.php`
