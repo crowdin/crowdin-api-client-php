@@ -81,6 +81,7 @@ class CrowdinTest extends TestCase
             ['task', \CrowdinApiClient\Api\TaskApi::class],
             ['screenshot', \CrowdinApiClient\Api\ScreenshotApi::class],
             ['directory', \CrowdinApiClient\Api\DirectoryApi::class],
+            ['label', \CrowdinApiClient\Api\LabelApi::class],
             ['glossary', \CrowdinApiClient\Api\GlossaryApi::class],
             ['stringTranslation', \CrowdinApiClient\Api\StringTranslationApi::class],
             ['user', \CrowdinApiClient\Api\UserApi::class],

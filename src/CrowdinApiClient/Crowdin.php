@@ -23,6 +23,7 @@ use UnexpectedValueException;
  * @property \CrowdinApiClient\Api\IssueApi issue
  * @property \CrowdinApiClient\Api\ScreenshotApi screenshot
  * @property \CrowdinApiClient\Api\DirectoryApi directory
+ * @property \CrowdinApiClient\Api\LabelApi label
  * @property \CrowdinApiClient\Api\GlossaryApi glossary
  * @property \CrowdinApiClient\Api\StringTranslationApi stringTranslation
  * @property \CrowdinApiClient\Api\StringCommentApi stringComment
@@ -92,6 +93,7 @@ class Crowdin
         'stringTranslation',
         'stringComment',
         'directory',
+        'label',
         'user',
         'screenshot',
         'file',
@@ -117,6 +119,7 @@ class Crowdin
         'stringTranslationApproval',
         'stringComment',
         'directory',
+        'label',
         'vendor',
         'user',
         'screenshot',
