@@ -5,7 +5,7 @@ namespace CrowdinApiClient\Api;
 use CrowdinApiClient\Http\ResponseDecorator\ResponseModelDecorator;
 use CrowdinApiClient\Model\Storage;
 use CrowdinApiClient\ModelCollection;
-use SplFileObject;
+use SplFileInfo;
 
 /**
  * Class StorageApi
@@ -35,16 +35,16 @@ class StorageApi extends AbstractApi
      * @link https://support.crowdin.com/api/v2/#operation/api.storages.post API Documentation
      * @link https://support.crowdin.com/enterprise/api/#operation/api.storages.post API Documentation Enterprise
      *
-     * @param SplFileObject $fileObject
+     * @param SplFileInfo $fileInfo
      * @return Storage|null
      */
-    public function create(SplFileObject $fileObject): ?Storage
+    public function create(SplFileInfo $fileInfo): ?Storage
     {
         $options = [
             'headers' => [
-                'Crowdin-API-FileName' => $fileObject->getFilename(),
+                'Crowdin-API-FileName' => $fileInfo->getFilename(),
             ],
-            'body' => file_get_contents($fileObject->getRealPath())
+            'body' => file_get_contents($fileInfo->getRealPath())
         ];
 
         return $this->client->apiRequest('post', 'storages', new ResponseModelDecorator(Storage::class), $options);
