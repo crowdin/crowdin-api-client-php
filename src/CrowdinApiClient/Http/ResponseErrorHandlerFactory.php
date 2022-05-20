@@ -7,6 +7,7 @@ use InvalidArgumentException;
 /**
  * Class ResponseErrorHandlerFactory
  * @package CrowdinApiClient\Http
+ * @internal
  */
 class ResponseErrorHandlerFactory
 {

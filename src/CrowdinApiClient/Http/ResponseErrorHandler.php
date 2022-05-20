@@ -8,6 +8,7 @@ use CrowdinApiClient\Exceptions\ApiValidationException;
 /**
  * Class ResponseErrorHandler
  * @package Crowdin\Http
+ * @internal
  */
 class ResponseErrorHandler implements ResponseErrorHandlerInterface
 {

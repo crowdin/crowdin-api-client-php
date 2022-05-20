@@ -6,7 +6,8 @@ use CrowdinApiClient\Model\User;
 use CrowdinApiClient\ModelCollection;
 
 /**
- * Class UserApi
+ * Users API gives you the possibility to get profile information about the currently authenticated user.
+ *
  * @package Crowdin\Api
  */
 class UserApi extends AbstractApi

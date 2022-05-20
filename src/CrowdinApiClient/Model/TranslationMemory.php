@@ -3,7 +3,6 @@
 namespace CrowdinApiClient\Model;
 
 /**
- * Class TranslationMemory
  * @package Crowdin\Model
  */
 class TranslationMemory extends BaseModel

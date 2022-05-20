@@ -6,7 +6,8 @@ use CrowdinApiClient\Model\Directory;
 use CrowdinApiClient\ModelCollection;
 
 /**
- * Class DirectoryApi
+ * Manage project directories to keep files structure
+ *
  * @package Crowdin\Api
  */
 class DirectoryApi extends AbstractApi

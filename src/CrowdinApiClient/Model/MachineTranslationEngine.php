@@ -3,7 +3,6 @@
 namespace CrowdinApiClient\Model;
 
 /**
- * Class MachineTranslationEngine
  * @package Crowdin\Model
  */
 class MachineTranslationEngine extends BaseModel

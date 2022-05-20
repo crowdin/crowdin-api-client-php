@@ -3,7 +3,6 @@
 namespace CrowdinApiClient\Model;
 
 /**
- * Class PreTranslation
  * @package Crowdin\Model
  */
 class PreTranslation extends BaseModel

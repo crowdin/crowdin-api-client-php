@@ -3,7 +3,6 @@
 namespace CrowdinApiClient\Model;
 
 /**
- * Class Screenshot
  * @package Crowdin\Model
  */
 class Screenshot extends BaseModel

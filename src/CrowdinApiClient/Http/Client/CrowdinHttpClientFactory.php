@@ -6,6 +6,7 @@ use InvalidArgumentException;
 
 /**
  * CrowdinHttpClientFactory
+ * @internal
  */
 class CrowdinHttpClientFactory
 {

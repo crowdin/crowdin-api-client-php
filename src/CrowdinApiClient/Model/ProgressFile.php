@@ -3,7 +3,6 @@
 namespace CrowdinApiClient\Model;
 
 /**
- * Class ProgressFile
  * @package Crowdin\Model
  */
 class ProgressFile extends Progress

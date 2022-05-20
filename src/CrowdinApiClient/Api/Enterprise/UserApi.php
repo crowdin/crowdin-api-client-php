@@ -9,8 +9,10 @@ use CrowdinApiClient\Model\Enterprise\User;
 use CrowdinApiClient\ModelCollection;
 
 /**
- * Class UserApi
- * @package Crowdin\Api
+ * Users are the members of your organization with the defined access levels (e.g. manager, admin, contributor).
+ * Use API to get the list of organization users and to check the information on a specific user.
+ *
+ * @package Crowdin\Api\Enterprise
  */
 class UserApi extends AbstractApi
 {

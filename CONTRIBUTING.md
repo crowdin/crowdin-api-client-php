@@ -64,18 +64,46 @@ Before sending your pull requests, make sure you followed the list below:
 - Ensure that your code adheres to standard conventions, as used in the rest of the project.
 - Ensure that there are unit tests for your code.
 - Run unit tests.
+- Ensure that docs are correctly generating.
+
+##### Running Unit tests
+
+To run all tests use the following command:
+
+```console
+vendor/bin/phpunit
+```
+
+To run a specific test:
+
+```
+vendor/bin/phpunit tests/CrowdinApiClient/Model/ProjectTest.php
+```
+
+##### Generating docs
+
+Docs are generated using the [phpDocumentor](https://www.phpdoc.org/) tool.
+
+- First, yuo need to download the phpDocumentor:
+
+    ```console
+    wget https://phpdoc.org/phpDocumentor.phar
+    ```
+- To generate the docs run the following command:
+
+    ```console
+    php phpDocumentor.phar -d src
+    ```
+
+- Previewing the docs locally:
+
+    ```console
+    php -S 127.0.0.1:8080 -t .phpdoc/build
+    ```
+
+  Open `http://127.0.0.1:8080` in browser.
 
 #### Philosophy of code contribution
 
 - Include unit tests when you contribute new features, as they help to a) prove that your code works correctly, and b) guard against future breaking changes to lower the maintenance cost.
 - Bug fixes also generally require unit tests, because the presence of bugs usually indicates insufficient test coverage.
-
-#### Running Unit tests
-
-To run all tests use the following command:
-
-`vendor/bin/phpunit`
-
-To run a specific test:
-
-`vendor/bin/phpunit tests/CrowdinApiClient/Model/ProjectTest.php`

@@ -139,7 +139,6 @@ class Crowdin
     ];
 
     /**
-     * Crowdin constructor.
      * @param array $config
      * @internal mixed $config[http_client_handler]
      * @internal mixed $config[response_error_handler]
@@ -161,38 +160,6 @@ class Crowdin
 
         $this->client = CrowdinHttpClientFactory::make($config['http_client_handler']);
         $this->responseErrorHandler = ResponseErrorHandlerFactory::make($config['response_error_handler']);
-    }
-
-    /**
-     * @return $this
-     */
-    protected function updateBaseUri()
-    {
-        $this->baseUri = sprintf('https://%s.crowdin.com/api/v2', $this->organization ?? 'api');
-        return $this;
-    }
-
-    /**
-     * @param string $method
-     * @param string $uri
-     * @param array $options
-     * @return mixed
-     */
-    public function request(string $method, string $uri, array $options = [])
-    {
-        $options['body'] = $options['body'] ?? null;
-
-        $options['headers'] = array_merge([
-            'Authorization' => 'Bearer ' . $this->accessToken,
-        ], $options['headers'] ?? []);
-
-        if (!empty($options['params'])) {
-            $uri .= '?' . http_build_query($options['params']);
-            $options['body'] = null;
-        }
-        $response = $this->client->request($method, $uri, $options);
-
-        return $response;
     }
 
     /**
@@ -226,15 +193,7 @@ class Crowdin
     }
 
     /**
-     * @param string $path
-     * @return string
-     */
-    public function getFullUrl(string $path): string
-    {
-        return $this->baseUri . '/' . ltrim($path);
-    }
-
-    /**
+     * @internal
      * @param $name
      * @return mixed
      */
@@ -253,11 +212,89 @@ class Crowdin
         throw new UnexpectedValueException(sprintf('Invalid property: %s', $name));
     }
 
+    public function getBaseUri(): string
+    {
+        return $this->baseUri;
+    }
+
+    public function setBaseUri(string $baseUri): void
+    {
+        $this->baseUri = rtrim($baseUri, '/');
+    }
+
+    public function getClient(): CrowdinHttpClientInterface
+    {
+        return $this->client;
+    }
+
+    public function setClient(CrowdinHttpClientInterface $client): void
+    {
+        $this->client = $client;
+    }
+
+    public function getAccessToken(): string
+    {
+        return $this->accessToken;
+    }
+
+    public function setAccessToken(string $accessToken): void
+    {
+        $this->accessToken = $accessToken;
+    }
+
+    public function getResponseErrorHandler(): ResponseErrorHandlerInterface
+    {
+        return $this->responseErrorHandler;
+    }
+
+    public function setResponseErrorHandler(ResponseErrorHandlerInterface $responseErrorHandler): void
+    {
+        $this->responseErrorHandler = $responseErrorHandler;
+    }
+
+    public function setOrganization(?string $organization): void
+    {
+        $this->organization = $organization;
+        $this->isEnterprise = (bool)$organization;
+        $this->updateBaseUri();
+    }
+
+    protected function updateBaseUri(): self
+    {
+        $this->baseUri = sprintf('https://%s.crowdin.com/api/v2', $this->organization ?? 'api');
+
+        return $this;
+    }
+
     /**
+     * @param string $method
+     * @param string $uri
+     * @param array $options
+     * @return mixed
+     */
+    protected function request(string $method, string $uri, array $options = [])
+    {
+        $options['body'] = $options['body'] ?? null;
+
+        $options['headers'] = array_merge([
+            'Authorization' => 'Bearer ' . $this->accessToken,
+        ], $options['headers'] ?? []);
+
+        if (!empty($options['params'])) {
+            $uri .= '?' . http_build_query($options['params']);
+            $options['body'] = null;
+        }
+        $response = $this->client->request($method, $uri, $options);
+
+        return $response;
+    }
+
+    /**
+     * @internal
      * @param string $name
      * @return ApiInterface
      */
-    public function getApi(string $name): ApiInterface
+    protected function getApi(string $name): ApiInterface
     {
         $class = '\CrowdinApiClient\\Api\\' . ucfirst($name) . 'Api';
 
@@ -276,101 +313,8 @@ class Crowdin
         return $this->apis[$class];
     }
 
-    /**
-     * @return string
-     */
-    public function getBaseUri(): string
+    protected function getFullUrl(string $path): string
     {
-        return $this->baseUri;
-    }
-
-    /**
-     * @param string $baseUri
-     */
-    public function setBaseUri(string $baseUri): void
-    {
-        $this->baseUri = rtrim($baseUri, '/');
-    }
-
-    /**
-     * @return CrowdinHttpClientInterface
-     */
-    public function getClient(): CrowdinHttpClientInterface
-    {
-        return $this->client;
-    }
-
-    /**
-     * @param CrowdinHttpClientInterface $client
-     */
-    public function setClient(CrowdinHttpClientInterface $client): void
-    {
-        $this->client = $client;
-    }
-
-    /**
-     * @return string
-     */
-    public function getAccessToken(): string
-    {
-        return $this->accessToken;
-    }
-
-    /**
-     * @param string $accessToken
-     */
-    public function setAccessToken(string $accessToken): void
-    {
-        $this->accessToken = $accessToken;
-    }
-
-    /**
-     * @return ResponseErrorHandlerInterface
-     */
-    public function getResponseErrorHandler(): ResponseErrorHandlerInterface
-    {
-        return $this->responseErrorHandler;
-    }
-
-    /**
-     * @param ResponseErrorHandlerInterface $responseErrorHandler
-     */
-    public function setResponseErrorHandler(ResponseErrorHandlerInterface $responseErrorHandler): void
-    {
-        $this->responseErrorHandler = $responseErrorHandler;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getOrganization(): ?string
-    {
-        return $this->organization;
-    }
-
-    /**
-     * @param string|null $organization
-     */
-    public function setOrganization(?string $organization): void
-    {
-        $this->organization = $organization;
-        $this->isEnterprise = (bool)$organization;
-        $this->updateBaseUri();
-    }
-
-    /**
-     * @return bool
-     */
-    public function isEnterprise(): bool
-    {
-        return $this->isEnterprise;
-    }
-
-    /**
-     * @param bool $isEnterprise
-     */
-    public function setIsEnterprise(bool $isEnterprise): void
-    {
-        $this->isEnterprise = $isEnterprise;
+        return $this->baseUri . '/' . ltrim($path);
     }
 }

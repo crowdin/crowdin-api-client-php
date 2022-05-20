@@ -7,8 +7,9 @@ use CrowdinApiClient\Model\Enterprise\Group;
 use CrowdinApiClient\ModelCollection;
 
 /**
- * Class GroupApi
- * @package Crowdin\Api
+ * Groups allow you to organize your projects based on specific characteristics
+ *
+ * @package Crowdin\Api\Enterprise
  */
 class GroupApi extends AbstractApi
 {

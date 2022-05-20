@@ -3,3 +3,6 @@ vendor
 composer.lock
 reports
 coverage.xml
+.phpdoc
+phpdoc
+phpDocumentor.phar

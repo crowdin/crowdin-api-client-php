@@ -6,7 +6,8 @@ use CrowdinApiClient\Model\Label;
 use CrowdinApiClient\ModelCollection;
 
 /**
- * Class LabelApi
+ * Use labels in your project for an easy way to add context to the strings or organize them by certain topics.
+ *
  * @package Crowdin\Api
  */
 class LabelApi extends AbstractApi

@@ -7,6 +7,11 @@ use CrowdinApiClient\Model\Enterprise\AddedProjectTeamInfo;
 use CrowdinApiClient\Model\Enterprise\Team;
 use CrowdinApiClient\ModelCollection;
 
+/**
+ * Use API to manage organization teams
+ *
+ * @package Crowdin\Api\Enterprise
+ */
 class TeamApi extends AbstractApi
 {
     /**

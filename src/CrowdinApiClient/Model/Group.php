@@ -3,7 +3,6 @@
 namespace CrowdinApiClient\Model;
 
 /**
- * Class Group
  * @package Crowdin\Model
  */
 class Group extends BaseModel

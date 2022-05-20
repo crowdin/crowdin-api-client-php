@@ -3,8 +3,8 @@
 namespace CrowdinApiClient\Model;
 
 /**
- * Class BaseModel
  * @package Crowdin\Model
+ * @internal
  */
 class BaseModel implements ModelInterface
 {

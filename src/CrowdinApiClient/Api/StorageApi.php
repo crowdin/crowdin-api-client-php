@@ -8,7 +8,12 @@ use CrowdinApiClient\ModelCollection;
 use SplFileInfo;
 
 /**
- * Class StorageApi
+ * Storage is a separate container for each file. You need to use Add Storage method before adding files to your projects via API.
+ * Files that should be uploaded into storage include files for localization, screenshots, Glossaries, and Translation Memories.
+ * Storage id is the identifier of the file uploaded to the Storage.
+ *
+ * Note: Files uploaded to the storage are kept during the next 24 hours
+ *
  * @package Crowdin\Api
  */
 class StorageApi extends AbstractApi

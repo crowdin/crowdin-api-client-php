@@ -3,7 +3,6 @@
 namespace CrowdinApiClient\Model;
 
 /**
- * Class Storage
  * @package Crowdin\Model
  */
 class Storage extends BaseModel

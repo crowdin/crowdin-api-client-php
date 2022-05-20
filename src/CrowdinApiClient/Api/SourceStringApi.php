@@ -6,7 +6,9 @@ use CrowdinApiClient\Model\SourceString;
 use CrowdinApiClient\ModelCollection;
 
 /**
- * Class SourceStringApi
+ * Source strings are the text units for translation. Instead of modifying source files, you can manage source strings one by one.
+ * Use API to add, edit, or delete some specific strings in the source-based and files-based projects.
+ *
  * @package Crowdin\Api
  */
 class SourceStringApi extends AbstractApi

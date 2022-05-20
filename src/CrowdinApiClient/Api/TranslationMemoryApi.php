@@ -9,7 +9,12 @@ use CrowdinApiClient\Model\TranslationMemoryImport;
 use CrowdinApiClient\ModelCollection;
 
 /**
- * Class TranslationMemoryApi
+ * Translation Memory (TM) is a vault of translations that were previously made in other projects.
+ * Those translations can be reused to speed up the translation process.
+ * Every translation made in the project is automatically added to the project Translation Memory.
+ * Use API to create, upload, download, or remove specific TM.
+ * Translation Memory export and import are asynchronous operations and shall be completed with sequence of API methods.
+ *
  * @package Crowdin\Api
  */
 class TranslationMemoryApi extends AbstractApi

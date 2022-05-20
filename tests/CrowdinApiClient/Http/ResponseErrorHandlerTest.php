@@ -15,21 +15,17 @@ class ResponseErrorHandlerTest extends TestCase
         $this->responseErrorHandler = new ResponseErrorHandler();
     }
 
-    /**
-     * @expectedException \CrowdinApiClient\Exceptions\ApiValidationException
-     */
     public function testCheckValidationException()
     {
+        $this->expectException(\CrowdinApiClient\Exceptions\ApiValidationException::class);
         $this->responseErrorHandler->check([
             'errors' => []
         ]);
     }
 
-    /**
-     * @expectedException \CrowdinApiClient\Exceptions\ApiException
-     */
     public function testCheckException()
     {
+        $this->expectException(\CrowdinApiClient\Exceptions\ApiException::class);
         $this->responseErrorHandler->check([
             'error' => [
                 'message' => 'Not found',

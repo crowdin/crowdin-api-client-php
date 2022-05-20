@@ -7,8 +7,9 @@ use CrowdinApiClient\Model\Enterprise\WorkflowStep;
 use CrowdinApiClient\ModelCollection;
 
 /**
- * Class WorkflowStepApi
- * @package Crowdin\Api
+ * Use API to manage workflow steps
+ *
+ * @package Crowdin\Api\Enterprise
  */
 class WorkflowStepApi extends AbstractApi
 {

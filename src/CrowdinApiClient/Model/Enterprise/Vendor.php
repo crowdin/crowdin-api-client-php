@@ -5,8 +5,7 @@ namespace CrowdinApiClient\Model\Enterprise;
 use CrowdinApiClient\Model\BaseModel;
 
 /**
- * Class Vendor
- * @package Crowdin\Model
+ * @package Crowdin\Model\Enterprise
  */
 class Vendor extends BaseModel
 {

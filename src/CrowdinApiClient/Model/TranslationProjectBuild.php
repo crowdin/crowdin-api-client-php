@@ -3,7 +3,6 @@
 namespace CrowdinApiClient\Model;
 
 /**
- * Class TranslationProjectBuild
  * @package Crowdin\Model
  */
 class TranslationProjectBuild extends BaseModel

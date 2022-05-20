@@ -10,7 +10,10 @@ use CrowdinApiClient\Model\Term;
 use CrowdinApiClient\ModelCollection;
 
 /**
- * Class GlossaryApi
+ * Glossaries help to explain some specific terms or the ones often used in the project so that they can be properly and consistently translated.
+ * Use API to manage glossaries or specific terms.
+ * Glossary export and import are asynchronous operations and shall be completed with sequence of API methods.
+ *
  * @package Crowdin\Api
  */
 class GlossaryApi extends AbstractApi

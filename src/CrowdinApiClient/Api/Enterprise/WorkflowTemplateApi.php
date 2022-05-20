@@ -7,8 +7,10 @@ use CrowdinApiClient\Model\Enterprise\WorkflowTemplate;
 use CrowdinApiClient\ModelCollection;
 
 /**
- * Class WorkflowTemplateApi
- * @package Crowdin\Api
+ * Workflows are the sequences of steps that content in your project should go through (e.g. pre-translation, translation, proofreading).
+ * You can use a default template or create the one that works best for you and assign it to the needed projects.
+ * Use API to get the list of workflow templates available in your organization and to check the details of a specific template.
+ * @package Crowdin\Api\Enterprise
  */
 class WorkflowTemplateApi extends AbstractApi
 {

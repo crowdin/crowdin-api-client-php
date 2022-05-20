@@ -22,11 +22,9 @@ class CrowdinHttpClientFactoryTest extends TestCase
         $this->assertInstanceOf(GuzzleHttpClient::class, CrowdinHttpClientFactory::make(new GuzzleHttpClient()));
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testException()
     {
+        $this->expectException(\InvalidArgumentException::class);
         $this->assertInstanceOf(CurlHttpClient::class, CrowdinHttpClientFactory::make('none'));
     }
 }

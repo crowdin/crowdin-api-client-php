@@ -9,6 +9,7 @@ use IteratorAggregate;
 /**
  * Class Collection
  * @package CrowdinApiClient
+ * @internal
  */
 class Collection implements IteratorAggregate, ArrayAccess, Countable
 {

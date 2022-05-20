@@ -9,6 +9,13 @@ use CrowdinApiClient\Model\PreTranslation;
 use CrowdinApiClient\Model\TranslationProjectBuild;
 use CrowdinApiClient\ModelCollection;
 
+/**
+ * Translators can work with entirely untranslated project or you can pre-translate the files to ease the translations process.
+ * Use API to pre-translate files via Machine Translation or Translation Memory, upload your existing translations, and download translations.
+ * Pre-translate and build are asynchronous operations and shall be completed with sequence of API methods.
+ *
+ * @package Crowdin\Api
+ */
 class TranslationApi extends AbstractApi
 {
     /**

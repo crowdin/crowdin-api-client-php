@@ -3,7 +3,6 @@
 namespace CrowdinApiClient\Model;
 
 /**
- * Class DownloadFileTranslation
  * @package Crowdin\Model
  */
 class DownloadFileTranslation extends DownloadFile

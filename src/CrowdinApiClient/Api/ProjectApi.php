@@ -6,7 +6,9 @@ use CrowdinApiClient\Model\Project;
 use CrowdinApiClient\ModelCollection;
 
 /**
- * Class ProjectApi
+ * Using projects, you can keep your source files sorted.
+ * Use API to manage projects, change their settings, or remove them if required.
+ *
  * @package Crowdin\Api
  */
 class ProjectApi extends AbstractApi

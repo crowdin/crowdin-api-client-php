@@ -3,7 +3,6 @@
 namespace CrowdinApiClient\Model;
 
 /**
- * Class FileRevision
  * @package Crowdin\Model
  */
 class FileRevision extends BaseModel

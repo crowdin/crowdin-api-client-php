@@ -23,11 +23,9 @@ class ResponseErrorHandlerFactoryTest extends TestCase
         $this->assertInstanceOf(ResponseErrorHandlerInterface::class, ResponseErrorHandlerFactory::make(new ResponseErrorHandler()));
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testException()
     {
+        $this->expectException(\InvalidArgumentException::class);
         $this->assertInstanceOf(ResponseErrorHandlerInterface::class, ResponseErrorHandlerFactory::make('none'));
     }
 }

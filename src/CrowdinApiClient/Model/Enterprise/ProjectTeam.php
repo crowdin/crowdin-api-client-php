@@ -4,6 +4,9 @@ namespace CrowdinApiClient\Model\Enterprise;
 
 use CrowdinApiClient\Model\BaseModel;
 
+/**
+ * @package Crowdin\Model\Enterprise
+ */
 class ProjectTeam extends BaseModel
 {
     /**

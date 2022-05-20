@@ -10,6 +10,7 @@ use CrowdinApiClient\Model\ModelInterface;
 /**
  * Class AbstractApi
  * @package Crowdin\Api
+ * @internal
  */
 abstract class AbstractApi implements ApiInterface
 {
