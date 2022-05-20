@@ -4,8 +4,6 @@ on:
   push:
     tags:
       - '*'
-    branches: # TODO: drop this later
-      - '*'
 
 jobs:
   build_and_deploy_docs:
