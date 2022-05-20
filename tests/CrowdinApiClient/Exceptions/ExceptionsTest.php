@@ -16,35 +16,27 @@ class ExceptionsTest extends TestCase
         $this->assertEquals([1], $apiValidationException->getErrors());
     }
 
-    /**
-     * @expectedException \CrowdinApiClient\Exceptions\ApiException
-     */
     public function testThrow()
     {
+        $this->expectException(\CrowdinApiClient\Exceptions\ApiException::class);
         throw new \CrowdinApiClient\Exceptions\ApiException();
     }
 
-    /**
-     * @expectedException \CrowdinApiClient\Exceptions\ApiValidationException
-     */
     public function testThrowApiValidationException()
     {
+        $this->expectException(\CrowdinApiClient\Exceptions\ApiValidationException::class);
         throw new \CrowdinApiClient\Exceptions\ApiValidationException();
     }
 
-    /**
-     * @expectedException \CrowdinApiClient\Exceptions\CrowdinClientException
-     */
     public function testThrowCrowdinClientException()
     {
+        $this->expectException(\CrowdinApiClient\Exceptions\CrowdinClientException::class);
         throw new \CrowdinApiClient\Exceptions\CrowdinClientException();
     }
 
-    /**
-     * @expectedException \CrowdinApiClient\Exceptions\HttpException
-     */
     public function testThrowHttpException()
     {
+        $this->expectException(\CrowdinApiClient\Exceptions\HttpException::class);
         throw new \CrowdinApiClient\Exceptions\HttpException();
     }
 }

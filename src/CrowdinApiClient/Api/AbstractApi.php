@@ -33,14 +33,14 @@ abstract class AbstractApi implements ApiInterface
         $this->setHeader('Content-Type', 'application/json');
     }
 
-    public function addHeader($header, $value): self
+    public function addHeader($header, $value)
     {
         $this->headers[strtolower($header)] = $value;
 
         return $this;
     }
 
-    public function addHeaders(array $headers): self
+    public function addHeaders(array $headers)
     {
         foreach ($headers as $key => $value) {
             $this->addHeader($key, $value);
@@ -49,17 +49,17 @@ abstract class AbstractApi implements ApiInterface
         return $this;
     }
 
-    public function getHeader($header): string
+    public function getHeader($header)
     {
         return $this->headers[strtolower($header)];
     }
 
-    public function getHeaders(): array
+    public function getHeaders()
     {
         return $this->headers;
     }
 
-    public function setHeader($header, $value): self
+    public function setHeader($header, $value)
     {
         unset($this->headers[strtolower($header)]);
         $this->addHeader($header, $value);
@@ -67,7 +67,7 @@ abstract class AbstractApi implements ApiInterface
         return $this;
     }
 
-    public function setHeaders(array $headers):  self
+    public function setHeaders(array $headers)
     {
         $this->clearHeaders();
         foreach ($headers as $key => $value) {
@@ -77,17 +77,17 @@ abstract class AbstractApi implements ApiInterface
         return $this;
     }
 
-    public function hasHeader($header): bool
+    public function hasHeader($header)
     {
         return isset($this->headers[strtolower($header)]);
     }
 
-    public function clearHeaders(): void
+    public function clearHeaders()
     {
         $this->headers = [];
     }
 
-    public function removeHeader($header): self
+    public function removeHeader($header)
     {
         unset($this->headers[strtolower($header)]);
 

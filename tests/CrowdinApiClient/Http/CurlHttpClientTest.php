@@ -57,19 +57,15 @@ class CurlHttpClientTest extends TestCase
         $this->assertInstanceOf(CrowdinHttpClientInterface::class, $this->client);
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testArgumentMethod()
     {
+        $this->expectException(\InvalidArgumentException::class);
         $response = $this->client->request('', '', []);
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testArgumentUri()
     {
+        $this->expectException(\InvalidArgumentException::class);
         $response = $this->client->request('post', '', []);
     }
 }

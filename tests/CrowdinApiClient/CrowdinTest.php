@@ -138,31 +138,25 @@ class CrowdinTest extends TestCase
         ];
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testInvalidClientHandler()
     {
+        $this->expectException(\InvalidArgumentException::class);
         $crowdin = new Crowdin([
             'http_client_handler' => 'http_client_handler'
         ]);
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testInvalidResponseErrorHandler()
     {
+        $this->expectException(\InvalidArgumentException::class);
         $crowdin = new Crowdin([
             'response_error_handler' => 'response_error_handler'
         ]);
     }
 
-    /**
-     * @expectedException \UnexpectedValueException
-     */
     public function testGetApiUnexpectedValueException()
     {
+        $this->expectException(\UnexpectedValueException::class);
         $this->app->test;
     }
 
@@ -195,18 +189,5 @@ class CrowdinTest extends TestCase
         $crowdin->setOrganization('organization_name');
 
         $this->assertEquals('https://organization_name.crowdin.com/api/v2', $crowdin->getBaseUri());
-    }
-
-    public function testiSEnterprise()
-    {
-        $crowdin = new Crowdin([
-            'access_token' => 'token',
-        ]);
-
-        $this->assertFalse($crowdin->isEnterprise());
-
-        $crowdin->setIsEnterprise(true);
-
-        $this->assertTrue($crowdin->isEnterprise());
     }
 }
