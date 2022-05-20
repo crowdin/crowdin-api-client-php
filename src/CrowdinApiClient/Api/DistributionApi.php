@@ -8,6 +8,11 @@ use CrowdinApiClient\Model\Distribution;
 use CrowdinApiClient\Model\DistributionRelease;
 use CrowdinApiClient\ModelCollection;
 
+/**
+ * Distribution is a CDN vault that mirrors your project’s translated content and is required for integration with the iOS, Android, or Web apps.
+ *
+ * @package Crowdin\Api
+ */
 class DistributionApi extends AbstractApi
 {
     /**

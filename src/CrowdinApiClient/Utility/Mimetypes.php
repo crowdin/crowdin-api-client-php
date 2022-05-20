@@ -7,7 +7,7 @@ namespace CrowdinApiClient\Utility;
  * @link http://svn.apache.org/repos/asf/httpd/httpd/branches/1.3.x/conf/mime.types
  *
  * Class Mimetypes
- * @package Facebook\FileUpload
+ * @internal
  */
 class Mimetypes
 {

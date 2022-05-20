@@ -7,6 +7,11 @@ use CrowdinApiClient\Model\Enterprise\AddedTeamMembers;
 use CrowdinApiClient\Model\Enterprise\TeamMember;
 use CrowdinApiClient\ModelCollection;
 
+/**
+ * Use API to manage team members
+ *
+ * @package Crowdin\Api\Enterprise
+ */
 class TeamMemberApi extends AbstractApi
 {
     /**

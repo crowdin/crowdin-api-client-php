@@ -5,8 +5,7 @@ namespace CrowdinApiClient\Model\Enterprise;
 use CrowdinApiClient\Model\BaseModel;
 
 /**
- * Class Team
- * @package CrowdinApiClient\Model
+ * @package Crowdin\Model\Enterprise
  */
 class Team extends BaseModel
 {
@@ -26,7 +25,7 @@ class Team extends BaseModel
     protected $totalMembers;
 
     /**
-     * @var string;
+     * @var string
      */
     protected $createdAt;
 

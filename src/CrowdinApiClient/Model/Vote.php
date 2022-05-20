@@ -3,7 +3,6 @@
 namespace CrowdinApiClient\Model;
 
 /**
- * Class Vote
  * @package Crowdin\Model
  */
 class Vote extends BaseModel

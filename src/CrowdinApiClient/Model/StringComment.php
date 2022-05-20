@@ -2,6 +2,9 @@
 
 namespace CrowdinApiClient\Model;
 
+/**
+ * @package Crowdin\Model
+ */
 class StringComment extends BaseModel
 {
     /**

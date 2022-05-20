@@ -5,8 +5,7 @@ namespace CrowdinApiClient\Model\Enterprise;
 use CrowdinApiClient\Model\BaseModel;
 
 /**
- * Class WorkflowTemplate
- * @package Crowdin\Model
+ * @package Crowdin\Model\Enterprise
  */
 class WorkflowTemplate extends BaseModel
 {

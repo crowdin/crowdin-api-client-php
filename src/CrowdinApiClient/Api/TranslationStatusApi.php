@@ -10,7 +10,7 @@ use CrowdinApiClient\ModelCollection;
 
 /**
  * Class TranslationStatusApi
- * @package CrowdinApiClient\Api
+ * @package Crowdin\Api
  */
 class TranslationStatusApi extends AbstractApi
 {

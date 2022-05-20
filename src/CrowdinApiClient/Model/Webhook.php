@@ -3,7 +3,6 @@
 namespace CrowdinApiClient\Model;
 
 /**
- * Class Webhook
  * @package Crowdin\Model
  */
 class Webhook extends BaseModel

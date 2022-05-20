@@ -6,7 +6,9 @@ use CrowdinApiClient\Model\Language;
 use CrowdinApiClient\ModelCollection;
 
 /**
- * Class LanguageApi
+ * Crowdin supports more than 300 world languages and custom languages created in the system.
+ * Use API to get the list of all supported languages and retrieve additional details (e.g. text direction, internal code) on specific language.
+ *
  * @package Crowdin\Api
  */
 class LanguageApi extends AbstractApi

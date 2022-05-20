@@ -8,7 +8,10 @@ use CrowdinApiClient\Model\Tag;
 use CrowdinApiClient\ModelCollection;
 
 /**
- * Class ScreenshotApi
+ * Screenshots provide translators with additional context for the source strings.
+ * Screenshot tags allow specifying which source strings are displayed on each screenshot.
+ * Use API to manage screenshots and their tags.
+ *
  * @package Crowdin\Api
  */
 class ScreenshotApi extends AbstractApi

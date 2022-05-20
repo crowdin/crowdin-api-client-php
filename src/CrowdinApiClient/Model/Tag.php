@@ -3,7 +3,6 @@
 namespace CrowdinApiClient\Model;
 
 /**
- * Class Tag
  * @package Crowdin\Model
  */
 class Tag extends BaseModel

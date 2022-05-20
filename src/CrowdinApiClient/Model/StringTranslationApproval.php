@@ -3,7 +3,6 @@
 namespace CrowdinApiClient\Model;
 
 /**
- * Class StringTranslationApproval
  * @package Crowdin\Model
  */
 class StringTranslationApproval extends BaseModel

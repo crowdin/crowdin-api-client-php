@@ -4,6 +4,7 @@ namespace CrowdinApiClient\Http\Client;
 
 /**
  * CrowdinHttpClientInterface
+ * @internal
  */
 interface CrowdinHttpClientInterface
 {

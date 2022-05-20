@@ -3,8 +3,7 @@
 namespace CrowdinApiClient\Model;
 
 /**
- * Class Issue
- * @package CrowdinApiClient\Model
+ * @package Crowdin\Model
  */
 class Issue extends BaseModel
 {

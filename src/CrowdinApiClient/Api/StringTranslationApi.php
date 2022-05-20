@@ -9,7 +9,8 @@ use CrowdinApiClient\Model\Vote;
 use CrowdinApiClient\ModelCollection;
 
 /**
- * Class StringTranslationApi
+ * Use API to add or remove strings translations, approvals, and votes.
+ *
  * @package Crowdin\Api
  */
 class StringTranslationApi extends AbstractApi

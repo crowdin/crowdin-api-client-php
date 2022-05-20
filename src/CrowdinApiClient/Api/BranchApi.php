@@ -6,7 +6,10 @@ use CrowdinApiClient\Model\Branch;
 use CrowdinApiClient\ModelCollection;
 
 /**
- * Class BranchApi
+ * Manage project branches
+ *
+ * Note: If you use branches, make sure your master branch is the first one you integrate with Crowdin.
+ *
  * @package Crowdin\Api
  */
 class BranchApi extends AbstractApi

@@ -5,6 +5,11 @@ namespace CrowdinApiClient\Api;
 use CrowdinApiClient\Model\StringComment;
 use CrowdinApiClient\ModelCollection;
 
+/**
+ * Use API to add or remove strings translations, approvals, and votes.
+ *
+ * @package Crowdin\Api
+ */
 class StringCommentApi extends AbstractApi
 {
     /**

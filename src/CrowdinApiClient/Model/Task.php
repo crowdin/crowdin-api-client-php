@@ -3,7 +3,6 @@
 namespace CrowdinApiClient\Model;
 
 /**
- * Class Task
  * @package Crowdin\Model
  */
 class Task extends BaseModel

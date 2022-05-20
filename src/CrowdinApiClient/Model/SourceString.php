@@ -3,7 +3,6 @@
 namespace CrowdinApiClient\Model;
 
 /**
- * Class SourceString
  * @package Crowdin\Model
  */
 class SourceString extends BaseModel

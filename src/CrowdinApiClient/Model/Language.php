@@ -3,7 +3,6 @@
 namespace CrowdinApiClient\Model;
 
 /**
- * Class Language
  * @package Crowdin\Model
  */
 class Language extends BaseModel

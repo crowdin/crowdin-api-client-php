@@ -10,6 +10,7 @@ use CrowdinApiClient\Model\ModelInterface;
 /**
  * Class AbstractApi
  * @package Crowdin\Api
+ * @internal
  */
 abstract class AbstractApi implements ApiInterface
 {
@@ -32,14 +33,14 @@ abstract class AbstractApi implements ApiInterface
         $this->setHeader('Content-Type', 'application/json');
     }
 
-    public function addHeader($header, $value)
+    public function addHeader($header, $value): self
     {
         $this->headers[strtolower($header)] = $value;
 
         return $this;
     }
 
-    public function addHeaders(array $headers)
+    public function addHeaders(array $headers): self
     {
         foreach ($headers as $key => $value) {
             $this->addHeader($key, $value);
@@ -48,17 +49,17 @@ abstract class AbstractApi implements ApiInterface
         return $this;
     }
 
-    public function getHeader($header)
+    public function getHeader($header): string
     {
         return $this->headers[strtolower($header)];
     }
 
-    public function getHeaders()
+    public function getHeaders(): array
     {
         return $this->headers;
     }
 
-    public function setHeader($header, $value)
+    public function setHeader($header, $value): self
     {
         unset($this->headers[strtolower($header)]);
         $this->addHeader($header, $value);
@@ -66,7 +67,7 @@ abstract class AbstractApi implements ApiInterface
         return $this;
     }
 
-    public function setHeaders(array $headers)
+    public function setHeaders(array $headers):  self
     {
         $this->clearHeaders();
         foreach ($headers as $key => $value) {
@@ -76,17 +77,17 @@ abstract class AbstractApi implements ApiInterface
         return $this;
     }
 
-    public function hasHeader($header)
+    public function hasHeader($header): bool
     {
         return isset($this->headers[strtolower($header)]);
     }
 
-    public function clearHeaders()
+    public function clearHeaders(): void
     {
         $this->headers = [];
     }
 
-    public function removeHeader($header)
+    public function removeHeader($header): self
     {
         unset($this->headers[strtolower($header)]);
 

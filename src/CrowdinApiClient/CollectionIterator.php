@@ -7,10 +7,10 @@ use Iterator;
 /**
  * Class CollectionIterator
  * @package CrowdinApiClient\Http
+ * @internal
  */
 class CollectionIterator implements Iterator
 {
-
     /**
      * @var array
      */

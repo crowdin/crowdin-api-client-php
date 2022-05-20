@@ -3,8 +3,7 @@
 namespace CrowdinApiClient\Model;
 
 /**
- * Class QaCheck
- * @package CrowdinApiClient\Model
+ * @package Crowdin\Model
  */
 class QaCheck extends BaseModel
 {

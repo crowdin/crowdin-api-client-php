@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace CrowdinApiClient\Model;
 
+/**
+ * @package Crowdin\Model
+ */
 class DistributionRelease extends BaseModel
 {
     /**

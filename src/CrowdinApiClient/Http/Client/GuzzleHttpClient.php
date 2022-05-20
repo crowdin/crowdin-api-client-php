@@ -3,12 +3,15 @@
 namespace CrowdinApiClient\Http\Client;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Psr7\Request;
 use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\StreamInterface;
 
 /**
  * Class GuzzleHttpClient
  * @package Crowdin\Http\Client
+ * @internal
  */
 class GuzzleHttpClient implements CrowdinHttpClientInterface
 {
@@ -45,7 +48,7 @@ class GuzzleHttpClient implements CrowdinHttpClientInterface
     /**
      * Create a new GuzzleHttpClient instance.
      *
-     * @param Client $client GuzzleHttp Client
+     * @param Client|null $client GuzzleHttp Client
      */
     public function __construct(Client $client = null)
     {
@@ -56,10 +59,10 @@ class GuzzleHttpClient implements CrowdinHttpClientInterface
      * @param string $method
      * @param string $uri
      * @param array $options
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     * @return \Psr\Http\Message\StreamInterface
+     * @throws GuzzleException
+     * @return StreamInterface
      */
-    public function request(string $method, string $uri, array $options)
+    public function request(string $method, string $uri, array $options): StreamInterface
     {
         $options = array_merge([
             'headers' => null,

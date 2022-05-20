@@ -3,7 +3,6 @@
 namespace CrowdinApiClient\Model;
 
 /**
- * Class GlossaryExport
  * @package Crowdin\Model
  */
 class GlossaryExport extends BaseModel

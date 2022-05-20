@@ -3,8 +3,6 @@
 namespace CrowdinApiClient\Model;
 
 /**
- * Class Label
- *
  * @package Crowdin\Model
  */
 class Label extends BaseModel

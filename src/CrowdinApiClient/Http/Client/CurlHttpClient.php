@@ -7,6 +7,7 @@ use CrowdinApiClient\Exceptions\HttpException;
 /**
  * Class CurlClient
  * @package Crowdin\Http\Client
+ * @internal
  */
 class CurlHttpClient implements CrowdinHttpClientInterface
 {

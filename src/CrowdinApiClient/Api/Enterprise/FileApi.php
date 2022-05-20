@@ -9,6 +9,11 @@ use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\Enterprise\ReviewedSourceFileBuild;
 use CrowdinApiClient\ModelCollection;
 
+/**
+ * Use API to keep the source files up to date, check on file revisions
+ *
+ * @package Crowdin\Api\Enterprise
+ */
 class FileApi extends CrowdinFileApi
 {
     /**

@@ -8,7 +8,8 @@ use CrowdinApiClient\Model\FileRevision;
 use CrowdinApiClient\ModelCollection;
 
 /**
- * Class FileApi
+ * Use API to keep the source files up to date, check on file revisions
+ *
  * @package Crowdin\Api
  */
 class FileApi extends AbstractApi

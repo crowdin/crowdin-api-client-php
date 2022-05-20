@@ -7,7 +7,8 @@ use CrowdinApiClient\ModelCollection;
 
 /**
  * Class IssueApi
- * @package CrowdinApiClient\Api
+ * @package Crowdin\Api
+ * @deprecated Use StringCommentApi instead
  */
 class IssueApi extends AbstractApi
 {

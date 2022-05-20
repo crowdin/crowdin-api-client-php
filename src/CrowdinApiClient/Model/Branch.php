@@ -3,9 +3,7 @@
 namespace CrowdinApiClient\Model;
 
 /**
- * Class Branch
  * @package Crowdin\Model
- *
  */
 class Branch extends BaseModel
 {

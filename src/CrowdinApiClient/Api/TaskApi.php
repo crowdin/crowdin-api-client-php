@@ -8,7 +8,11 @@ use CrowdinApiClient\Model\TaskForUpdate;
 use CrowdinApiClient\ModelCollection;
 
 /**
- * Class TaskApi
+ * Create and assign tasks to get files translated or proofread by specific people.
+ * You can set the due dates, split words between people, and receive notifications about the changes and updates on tasks.
+ * Tasks are project-specific, so you’ll have to create them within a project.
+ * Use API to create, modify, and delete specific tasks.
+ *
  * @package Crowdin\Api
  */
 class TaskApi extends AbstractApi

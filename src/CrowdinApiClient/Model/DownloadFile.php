@@ -3,7 +3,6 @@
 namespace CrowdinApiClient\Model;
 
 /**
- * Class DownloadFile
  * @package Crowdin\Model
  */
 class DownloadFile extends BaseModel
