@@ -70,7 +70,7 @@ class StorageApiTest extends AbstractTestApi
 
     public function testCreate()
     {
-        $fileObject = new \SplFileObject(__FILE__);
+        $fileObject = new \SplFileInfo(__FILE__);
 
         $this->mockRequest([
             'method' => 'post',
