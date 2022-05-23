@@ -206,6 +206,20 @@ Use API to create, modify, and delete specific tasks.</p>
 <dd>Get Task</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/CrowdinApiClient-Api-TaskApi.html#method_list">list()</a>
+    <span>
+                                &nbsp;: <abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr>    </span>
+</dt>
+<dd>List Tasks</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/CrowdinApiClient-Api-TaskApi.html#method_listUserTasks">listUserTasks()</a>
+    <span>
+                                &nbsp;: <abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr>    </span>
+</dt>
+<dd>List User Tasks</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Api-TaskApi.html#method_update">update()</a>
     <span>
                                 &nbsp;: <a href="classes/CrowdinApiClient-Model-Task.html"><abbr title="\CrowdinApiClient\Model\Task">Task</abbr></a>|null    </span>
@@ -526,6 +540,145 @@ Use API to create, modify, and delete specific tasks.</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_list">
+        list()
+        <a href="classes/CrowdinApiClient-Api-TaskApi.html#method_list" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TaskApi.php"><a href="files/src-crowdinapiclient-api-taskapi.html"><abbr title="src/CrowdinApiClient/Api/TaskApi.php">TaskApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">34</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">List Tasks</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">list</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$projectId</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$params</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>integer $params[limit]  [ 1 .. 500 ] Default: 25<br>
+integer $params[offset]  &gt;= 0 Default: 0<br>
+string $params[status]  Enum: &quot;todo&quot; &quot;in_progress&quot; &quot;done&quot; &quot;closed&quot; Example: status=done<br>
+integer $params[assigneeId]</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/api/v2/#operation/api.projects.tasks.getMany"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/enterprise/api/#operation/api.projects.tasks.getMany"> <p>API Documentation Enterprise</p>
+ </a>
+                    
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_listUserTasks">
+        listUserTasks()
+        <a href="classes/CrowdinApiClient-Api-TaskApi.html#method_listUserTasks" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TaskApi.php"><a href="files/src-crowdinapiclient-api-taskapi.html"><abbr title="src/CrowdinApiClient/Api/TaskApi.php">TaskApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">126</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">List User Tasks</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">listUserTasks</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$params</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>integer $params[limit]  [ 1 .. 500 ] Default: 25<br>
+integer $params[offset]  &gt;= 0 Default: 25<br>
+string $params[status]  Enum: &quot;todo&quot; &quot;in_progress&quot; &quot;done&quot; &quot;closed&quot; Example: status=done<br>
+string $params[isArchived]  Default: 0 Default: 0 Example: isArchived=1</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/enterprise/api/#operation/api.user.tasks.getMany"> <p>API Documentation Enterprise</p>
+ </a>
+                    
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_update">
         update()
         <a href="classes/CrowdinApiClient-Api-TaskApi.html#method_update" class="headerlink"><i class="fas fa-link"></i></a>
@@ -598,7 +751,7 @@ Use API to create, modify, and delete specific tasks.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TaskApi.php"><a href="files/src-crowdinapiclient-api-taskapi.html"><abbr title="src/CrowdinApiClient/Api/TaskApi.php">TaskApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">140</span>
+    <span class="phpdocumentor-element-found-in__line">141</span>
 
     </aside>
 
@@ -644,7 +797,16 @@ Use API to create, modify, and delete specific tasks.</p>
                     <span class="phpdocumentor-tag__name">link</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/enterprise/api/#operation/api.user.tasks.patch"> https://support.crowdin.com/enterprise/api/#operation/api.user.tasks.patch </a>
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/api/v2/#operation/api.user.tasks.patch"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/enterprise/api/#operation/api.user.tasks.patch"> <p>API Documentation Enterprise</p>
+ </a>
                     
                                     </dd>
                         </dl>
