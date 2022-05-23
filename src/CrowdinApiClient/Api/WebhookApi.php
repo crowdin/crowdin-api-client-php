@@ -50,25 +50,14 @@ class WebhookApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $data
-     * @internal string $data[name] required
-     * @internal string $data[url] required
-     * @internal array $data[events] required
-     * Items Enum:
-     * "file.translated"
-     * "file.approved"
-     * "project.translated"
-     * "project.approved"
-     * "translation.updated"
-     * "suggestion.added"
-     * "suggestion.updated"
-     * "suggestion.deleted"
-     * "suggestion.approved"
-     * "suggestion.disapproved"
-     * @internal string $data[requestType] required
-     * @internal boolean $data[isActive]
-     * @internal string $data[contentType]
-     * @internal array $data[headers]
-     * @internal array $data[payload]
+     * string $data[name] required<br>
+     * string $data[url] required<br>
+     * array $data[events] required<br>
+     * string $data[requestType] required<br>
+     * boolean $data[isActive]<br>
+     * string $data[contentType]<br>
+     * array $data[headers]<br>
+     * array $data[payload]
      * @return Webhook|null
      */
     public function create(int $projectId, array $data): ?Webhook

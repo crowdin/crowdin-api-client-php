@@ -24,10 +24,10 @@ class TaskApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $params
-     * @internal integer $params[limit]  [ 1 .. 500 ] Default: 25
-     * @internal integer $params[offset]  >= 0 Default: 0
-     * @internal string $params[status]  Enum: "todo" "in_progress" "done" "closed" Example: status=done
-     * @internal integer $params[assigneeId]
+     * integer $params[limit]  [ 1 .. 500 ] Default: 25<br>
+     * integer $params[offset]  >= 0 Default: 0<br>
+     * string $params[status]  Enum: "todo" "in_progress" "done" "closed" Example: status=done<br>
+     * integer $params[assigneeId]
      *
      * @return ModelCollection
      */
@@ -116,10 +116,10 @@ class TaskApi extends AbstractApi
      * @link https://support.crowdin.com/enterprise/api/#operation/api.user.tasks.getMany API Documentation Enterprise
      *
      * @param array $params
-     * @internal integer $params[limit]  [ 1 .. 500 ] Default: 25
-     * @internal integer $params[offset]  >= 0 Default: 25
-     * @internal string $params[status]  Enum: "todo" "in_progress" "done" "closed" Example: status=done
-     * @internal string $params[isArchived]  Default: 0 Default: 0 Example: isArchived=1
+     * integer $params[limit]  [ 1 .. 500 ] Default: 25<br>
+     * integer $params[offset]  >= 0 Default: 25<br>
+     * string $params[status]  Enum: "todo" "in_progress" "done" "closed" Example: status=done<br>
+     * string $params[isArchived]  Default: 0 Default: 0 Example: isArchived=1
      *
      * @return ModelCollection
      */
@@ -130,7 +130,8 @@ class TaskApi extends AbstractApi
 
     /**
      * Edit Task Archived Status
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.user.tasks.patch
+     * @link https://support.crowdin.com/api/v2/#operation/api.user.tasks.patch API Documentation
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.user.tasks.patch API Documentation Enterprise
      *
      * @param int $taskId
      * @param int $projectId

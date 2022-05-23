@@ -23,8 +23,8 @@ class ScreenshotApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $params
-     * @internal integer $params[limit]
-     * @internal integer $params[offset]
+     * integer $params[limit]<br>
+     * integer $params[offset]
      * @return ModelCollection
      */
     public function list(int $projectId, array $params = []): ModelCollection
@@ -55,9 +55,9 @@ class ScreenshotApi extends AbstractApi
      * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.screenshots.post API Documentation Enterprise
      * @param int $projectId
      * @param array $data
-     * @internal integer $data[storageId] required
-     * @internal string $data[name] required
-     * @internal bool $data[autoTag] Automatically tags screenshot
+     * integer $data[storageId] required<br>
+     * string $data[name] required<br>
+     * bool $data[autoTag] Automatically tags screenshot
      * @return Screenshot|null
      */
     public function create(int $projectId, array $data): ?Screenshot
@@ -124,8 +124,8 @@ class ScreenshotApi extends AbstractApi
      * @param int $projectId
      * @param int $screenshotId
      * @param array $params
-     * @internal integer $params[limit]
-     * @internal integer $params[offset]
+     * integer $params[limit]<br>
+     * integer $params[offset]
      * @return ModelCollection
      */
     public function tags(int $projectId, int $screenshotId, array $params = []): ModelCollection
@@ -164,8 +164,8 @@ class ScreenshotApi extends AbstractApi
      * @param int $projectId
      * @param int $screenshotId
      * @param array $data
-     * @internal integer $data[stringId] required
-     * @internal array $data[position]
+     * integer $data[stringId] required<br>
+     * array $data[position]
      * @return Tag|null
      */
     public function addTag(int $projectId, int $screenshotId, array $data): ?Tag

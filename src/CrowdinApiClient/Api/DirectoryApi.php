@@ -19,11 +19,11 @@ class DirectoryApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $params
-     * @internal integer $params[branchId]
-     * @internal integer $params[directoryId]
-     * @internal integer $params[recursion]
-     * @internal integer $params[limit]
-     * @internal integer $params[offset]
+     * integer $params[branchId]<br>
+     * integer $params[directoryId]<br>
+     * integer $params[recursion]<br>
+     * integer $params[limit]<br>
+     * integer $params[offset]
      * @return ModelCollection
      */
     public function list(int $projectId, array $params = []): ModelCollection
@@ -54,12 +54,12 @@ class DirectoryApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $data
-     * @internal string $data[name] required
-     * @internal integer $data[branchId]
-     * @internal integer $data[directoryId]
-     * @internal string $data[title]
-     * @internal string $data[exportPattern]
-     * @internal string $data[priority] Enum: "low" "normal" "high"
+     * string $data[name] required<br>
+     * integer $data[branchId]<br>
+     * integer $data[directoryId]<br>
+     * string $data[title]<br>
+     * string $data[exportPattern]<br>
+     * string $data[priority] Enum: "low" "normal" "high"
      * @return Directory|null
      */
     public function create(int $projectId, array $data): ?Directory

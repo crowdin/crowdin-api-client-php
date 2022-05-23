@@ -20,11 +20,11 @@ class ProjectApi extends AbstractApi
      * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.getMany API Documentation Enterprise
      *
      * @param array $params
-     * @internal integer $params[groupId] for enterprise only
-     * @internal integer $params[hasManagerAccess] for enterprise only Enum{0,1} (0 -false, 1 true)
-     * @internal integer $params[limit]
-     * @internal integer $params[offset]
-     * @internal integer $params[userId] Get user own projects
+     * integer $params[groupId] for enterprise only<br>
+     * integer $params[hasManagerAccess] for enterprise only Enum{0,1} (0 -false, 1 true)<br>
+     * integer $params[limit]<br>
+     * integer $params[offset]<br>
+     * integer $params[userId] Get user own projects
      * @return ModelCollection
      */
     public function list(array $params = []): ModelCollection
@@ -51,25 +51,25 @@ class ProjectApi extends AbstractApi
      * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.post API Documentation Enterprise
      *
      * @param array $data
-     * @internal string $data[name] required
-     * @internal string $data[identifier]
-     * @internal string $data[type]
-     * @internal string $data[sourceLanguageId] required
-     * @internal integer $data[groupId] required
-     * @internal integer $data[templateId] required
-     * @internal integer $data[groupId]
-     * @internal array $data[targetLanguageIds]
-     * @internal string $data[visibility]
-     * @internal string $data[languageAccessPolicy]
-     * @internal string $data[cname]
-     * @internal integer $data[vendorId]
-     * @internal integer $data[mtEngineId]
-     * @internal string $data[description]
-     * @internal boolean $data[delayedWorkflowStart]
-     * @internal boolean $data[skipUntranslatedStrings]
-     * @internal boolean $data[skipUntranslatedFiles]
-     * @internal integer $data[exportWithMinApprovalsCount]
-     * @internal integer $data[exportApprovedOnly]
+     * string $data[name] required<br>
+     * string $data[identifier]<br>
+     * string $data[type]<br>
+     * string $data[sourceLanguageId] required<br>
+     * integer $data[groupId] required<br>
+     * integer $data[templateId] required<br>
+     * integer $data[groupId]<br>
+     * array $data[targetLanguageIds]<br>
+     * string $data[visibility]<br>
+     * string $data[languageAccessPolicy]<br>
+     * string $data[cname]<br>
+     * integer $data[vendorId]<br>
+     * integer $data[mtEngineId]<br>
+     * string $data[description]<br>
+     * boolean $data[delayedWorkflowStart]<br>
+     * boolean $data[skipUntranslatedStrings]<br>
+     * boolean $data[skipUntranslatedFiles]<br>
+     * integer $data[exportWithMinApprovalsCount]<br>
+     * integer $data[exportApprovedOnly]
      * @return Project|null
      */
     public function create(array $data): ?Project

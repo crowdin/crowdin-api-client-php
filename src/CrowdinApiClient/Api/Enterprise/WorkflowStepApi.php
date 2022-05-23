@@ -20,9 +20,9 @@ class WorkflowStepApi extends AbstractApi
      * @param int $projectId
      * @param array $params
      * @return null|ModelCollection
-     * @internal integer $params[groupId]
-     * @internal integer $params[limit]
-     * @internal integer $params[offset]
+     * integer $params[groupId]<br>
+     * integer $params[limit]<br>
+     * integer $params[offset]
      */
     public function list(int $projectId, array $params = []): ModelCollection
     {

@@ -22,8 +22,8 @@ class TranslationStatusApi extends AbstractApi
      * @param int $projectId
      * @param int $branchId
      * @param array $params
-     * @internal integer $params[limit] default 25
-     * @internal integer $params[offset] default 0
+     * integer $params[limit] default 25<br>
+     * integer $params[offset] default 0
      * @return ModelCollection|null
      */
     public function getBranchProgress(int $projectId, int $branchId, array $params = []): ?ModelCollection
@@ -40,8 +40,8 @@ class TranslationStatusApi extends AbstractApi
      * @param int $projectId
      * @param int $directoryId
      * @param array $params
-     * @internal integer $params[limit] default 25
-     * @internal integer $params[offset] default 0
+     * integer $params[limit] default 25<br>
+     * integer $params[offset] default 0
      * @return ModelCollection|null
      */
     public function getDirectoryProgress(int $projectId, int $directoryId, array $params = []): ?ModelCollection
@@ -58,8 +58,8 @@ class TranslationStatusApi extends AbstractApi
      * @param int $projectId
      * @param int $fileId
      * @param array $params
-     * @internal integer $params[limit] default 25
-     * @internal integer $params[offset] default 0
+     * integer $params[limit] default 25<br>
+     * integer $params[offset] default 0
      * @return ModelCollection|null
      */
     public function getFileProgress(int $projectId, int $fileId, array $params = []): ?ModelCollection
@@ -76,8 +76,8 @@ class TranslationStatusApi extends AbstractApi
      * @param int $projectId
      * @param string $languageId
      * @param array $params
-     * @internal integer $params[limit] default 25
-     * @internal integer $params[offset] default 0
+     * integer $params[limit] default 25<br>
+     * integer $params[offset] default 0
      * @return ModelCollection|null
      */
     public function getLanguageProgress(int $projectId, string $languageId, array $params = []): ?ModelCollection
@@ -93,9 +93,9 @@ class TranslationStatusApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $params
-     * @internal integer $params[limit] default 25
-     * @internal integer $params[offset] default 0
-     * @internal string $params[languageIds]
+     * integer $params[limit] default 25<br>
+     * integer $params[offset] default 0<br>
+     * string $params[languageIds]
      * @return ModelCollection|null
      */
     public function getProjectProgress(int $projectId, array $params = []): ?ModelCollection
@@ -111,11 +111,11 @@ class TranslationStatusApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $params
-     * @internal integer $params[limit] default 25
-     * @internal integer $params[offset] default 0
-     * @internal string $params[category]
-     * @internal string $params[validation]
-     * @internal string $params[languageIds]
+     * integer $params[limit] default 25<br>
+     * integer $params[offset] default 0<br>
+     * string $params[category]<br>
+     * string $params[validation]<br>
+     * string $params[languageIds]
      * @return ModelCollection|null
      */
     public function listQACheckIssues(int $projectId, array $params = []): ?ModelCollection

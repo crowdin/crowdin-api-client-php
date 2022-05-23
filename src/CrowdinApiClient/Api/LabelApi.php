@@ -19,8 +19,8 @@ class LabelApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $params
-     * @internal integer $params[limit]
-     * @internal integer $params[offset]
+     * integer $params[limit]<br>
+     * integer $params[offset]
      * @return ModelCollection
      */
     public function list(int $projectId, array $params = []): ModelCollection
@@ -51,7 +51,7 @@ class LabelApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $data
-     * @internal string $data[title] required
+     * string $data[title] required
      * @return Label|null
      */
     public function create(int $projectId, array $data): ?Label

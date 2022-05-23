@@ -25,15 +25,15 @@ class TranslationApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $params
-     * @internal string[] $params[languageIds] required
-     * @internal int[] $params[fileIds] required
-     * @internal string $params[method]
-     * @internal int $params[engineId]
-     * @internal string $params[autoApproveOption]
-     * @internal boolean $params[duplicateTranslations] Works only with TM pre-translation method
-     * @internal boolean $params[translateUntranslatedOnly] Works only with TM pre-translation method
-     * @internal boolean $params[translateWithPerfectMatchOnly] Works only with TM pre-translation method
-     * @internal boolean $params[markAddedTranslationsAsDone]
+     * string[] $params[languageIds] required<br>
+     * int[] $params[fileIds] required<br>
+     * string $params[method]<br>
+     * int $params[engineId]<br>
+     * string $params[autoApproveOption]<br>
+     * boolean $params[duplicateTranslations] Works only with TM pre-translation method<br>
+     * boolean $params[translateUntranslatedOnly] Works only with TM pre-translation method<br>
+     * boolean $params[translateWithPerfectMatchOnly] Works only with TM pre-translation method<br>
+     * boolean $params[markAddedTranslationsAsDone]
      * @return PreTranslation|null
      */
     public function applyPreTranslation(int $projectId, array $params): ?PreTranslation
@@ -68,11 +68,11 @@ class TranslationApi extends AbstractApi
      * @param array $params
      * @param string|null $ifNoneMatch
      * @return DownloadFile|null
-     * @internal string $params[targetLanguageId]
-     * @internal boolean $params[exportAsXliff]
-     * @internal boolean $params[skipUntranslatedStrings] true value can't be used with skipUntranslatedFiles=true in same request
-     * @internal boolean $params[skipUntranslatedFiles] true value can't be used with skipUntranslatedStrings=true in same request
-     * @internal boolean $params[exportApprovedOnly]
+     * string $params[targetLanguageId]<br>
+     * boolean $params[exportAsXliff]<br>
+     * boolean $params[skipUntranslatedStrings] true value can't be used with skipUntranslatedFiles=true in same request<br>
+     * boolean $params[skipUntranslatedFiles] true value can't be used with skipUntranslatedStrings=true in same request<br>
+     * boolean $params[exportApprovedOnly]
      */
     public function buildProjectFileTranslation(int $projectId, int $fileId, array $params = [], string $ifNoneMatch = null): ?DownloadFile
     {
@@ -92,9 +92,9 @@ class TranslationApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $params
-     * @internal integer $params[branchId]
-     * @internal integer $params[limit]
-     * @internal integer $params[offset]
+     * integer $params[branchId]<br>
+     * integer $params[limit]<br>
+     * integer $params[offset]
      * @return ModelCollection
      */
     public function getProjectBuilds(int $projectId, array $params = []): ModelCollection
@@ -111,12 +111,12 @@ class TranslationApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $params
-     * @internal integer $params[branchId]
-     * @internal array $params[targetLanguageIds]
-     * @internal bool $params[skipUntranslatedStrings] true value can't be used with skipUntranslatedFiles=true in same request
-     * @internal bool $params[skipUntranslatedFiles] true value can't be used with skipUntranslatedStrings=true in same request
-     * @internal bool $params[exportApprovedOnly]
-     * @internal integer $params[exportWithMinApprovalsCount]
+     * integer $params[branchId]<br>
+     * array $params[targetLanguageIds]<br>
+     * bool $params[skipUntranslatedStrings] true value can't be used with skipUntranslatedFiles=true in same request<br>
+     * bool $params[skipUntranslatedFiles] true value can't be used with skipUntranslatedStrings=true in same request<br>
+     * bool $params[exportApprovedOnly]<br>
+     * integer $params[exportWithMinApprovalsCount]
      * @return TranslationProjectBuild|null
      */
     public function buildProject(int $projectId, array $params = []): ?TranslationProjectBuild
@@ -134,11 +134,11 @@ class TranslationApi extends AbstractApi
      * @param int $projectId
      * @param string $languageId
      * @param array $params
-     * @internal  integer $params[storageId] required
-     * @internal  integer $params[fileId] required
-     * @internal  bool $params[importEqSuggestions]
-     * @internal  bool $params[autoApproveImported]
-     * @internal  bool $params[markAddedTranslationsAsDone]
+     *  integer $params[storageId] required<br>
+     *  integer $params[fileId] required<br>
+     *  bool $params[importEqSuggestions]<br>
+     *  bool $params[autoApproveImported]<br>
+     *  bool $params[markAddedTranslationsAsDone]
      * @return array
      */
     public function uploadTranslations(int $projectId, string $languageId, array $params): array
@@ -206,15 +206,15 @@ class TranslationApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $params
-     * @internal string $params[targetLanguageId] required
-     * @internal string $params[format]
-     * @internal int[] $params[branchIds] Note: Can't be used with directoryIds or fileIds in same request
-     * @internal int[] $params[directoryIds] Note: Can't be used with branchIds or fileIds in same request
-     * @internal int[] $params[fileIds] Note: Can't be used with branchIds or directoryIds in same request
-     * @internal bool $params[skipUntranslatedStrings] Note: Can't be used with skipUntranslatedFiles in same request
-     * @internal bool $params[skipUntranslatedFiles] Note: Can't be used with skipUntranslatedStrings in same request
-     * @internal bool $params[exportApprovedOnly]
-     * @internal integer $params[exportWithMinApprovalsCount]
+     * string $params[targetLanguageId] required<br>
+     * string $params[format]<br>
+     * int[] $params[branchIds] Note: Can't be used with directoryIds or fileIds in same request<br>
+     * int[] $params[directoryIds] Note: Can't be used with branchIds or fileIds in same request<br>
+     * int[] $params[fileIds] Note: Can't be used with branchIds or directoryIds in same request<br>
+     * bool $params[skipUntranslatedStrings] Note: Can't be used with skipUntranslatedFiles in same request<br>
+     * bool $params[skipUntranslatedFiles] Note: Can't be used with skipUntranslatedStrings in same request<br>
+     * bool $params[exportApprovedOnly]<br>
+     * integer $params[exportWithMinApprovalsCount]
      *
      * @return DownloadFile
      */

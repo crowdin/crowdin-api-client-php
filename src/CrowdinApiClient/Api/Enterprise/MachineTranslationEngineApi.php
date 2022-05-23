@@ -20,9 +20,9 @@ class MachineTranslationEngineApi extends AbstractApi
      * @link https://support.crowdin.com/enterprise/api/#operation/api.mts.getMany API Documentation
      *
      * @param array $params
-     * @internal integer $params[groupId]
-     * @internal integer $params[limit]
-     * @internal integer $params[offset]
+     * integer $params[groupId]<br>
+     * integer $params[limit]<br>
+     * integer $params[offset]
      * @return ModelCollection
      */
     public function list(array $params = []): ModelCollection
@@ -47,10 +47,10 @@ class MachineTranslationEngineApi extends AbstractApi
      * @link https://support.crowdin.com/enterprise/api/#operation/api.mts.post API Documentation
      *
      * @param array $data
-     * @internal string $data[name] required
-     * @internal string $data[type] required Enum: "google" "google_automl" "microsoft" "yandex" "deepl" "amazon" "watson"
-     * @internal array $data[credentials] required
-     * @internal integer $data[groupId]
+     * string $data[name] required<br>
+     * string $data[type] required<br>
+     * array $data[credentials] required<br>
+     * integer $data[groupId]
      * @return MachineTranslationEngine|null
      */
     public function create(array $data): ?MachineTranslationEngine

@@ -22,9 +22,9 @@ class FileApi extends CrowdinFileApi
      *
      * @param int $projectId
      * @param array $params
-     * @internal integer $params[branchId]
-     * @internal integer $params[limit]
-     * @internal integer $params[offset]
+     * integer $params[branchId]<br>
+     * integer $params[limit]<br>
+     * integer $params[offset]
      * @return ModelCollection
      */
     public function listReviewedSourceFilesBuilds(int $projectId, array $params = []): ModelCollection
@@ -39,7 +39,7 @@ class FileApi extends CrowdinFileApi
      *
      * @param int $projectId
      * @param array $data
-     * @internal integer $data[branchId]
+     * integer $data[branchId]
      * @return ReviewedSourceFileBuild
      */
     public function buildReviewedSourceFiles(int $projectId, array $data = []): ReviewedSourceFileBuild

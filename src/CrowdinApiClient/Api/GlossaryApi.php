@@ -24,10 +24,10 @@ class GlossaryApi extends AbstractApi
      * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.getMany API Documentation Enterprise
      *
      * @param array $params
-     * @internal integer $params[groupId]
-     * @internal integer $params[limit]
-     * @internal integer $params[offset]
-     * @internal integer $params[userId]
+     * integer $params[groupId]<br>
+     * integer $params[limit]<br>
+     * integer $params[offset]<br>
+     * integer $params[userId]
      * @return ModelCollection
      */
     public function list(array $params = []): ModelCollection
@@ -41,8 +41,8 @@ class GlossaryApi extends AbstractApi
      * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.post API Documentation Enterprise
      *
      * @param array $params
-     * @internal string $params[name] required
-     * @internal integer $params[groupId]
+     * string $params[name] required<br>
+     * integer $params[groupId]
      * @return Glossary|null
      */
     public function create(array $params): ?Glossary
@@ -141,9 +141,9 @@ class GlossaryApi extends AbstractApi
      * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.imports.post API Documentation
      * @param int $glossaryId
      * @param array $data
-     * @internal integer $data[storageId] required
-     * @internal array $data[scheme]
-     * @internal boolean $data[firstLineContainsHeader]
+     * integer $data[storageId] required<br>
+     * array $data[scheme]<br>
+     * boolean $data[firstLineContainsHeader]
      * @return GlossaryImport|null
      */
     public function import(int $glossaryId, array $data): ?GlossaryImport
@@ -174,11 +174,11 @@ class GlossaryApi extends AbstractApi
      *
      * @param int $glossaryId
      * @param array $params
-     * @internal integer $params[userId]
-     * @internal string $params[languageId]
-     * @internal integer $params[translationOfTermId]
-     * @internal integer $params[limit]
-     * @internal integer $params[offset]
+     * integer $params[userId]<br>
+     * string $params[languageId]<br>
+     * integer $params[translationOfTermId]<br>
+     * integer $params[limit]<br>
+     * integer $params[offset]
      * @return ModelCollection|null
      */
     public function listTerms(int $glossaryId, array $params = []): ?ModelCollection
@@ -194,11 +194,11 @@ class GlossaryApi extends AbstractApi
      *
      * @param int $glossaryId
      * @param array $data
-     * @internal string $data[languageId] required
-     * @internal string $data[text] required
-     * @internal string $data[description]
-     * @internal string $data[partOfSpeech]
-     * @internal integer $data[translationOfTermId]
+     * string $data[languageId] required<br>
+     * string $data[text] required<br>
+     * string $data[description]<br>
+     * string $data[partOfSpeech]<br>
+     * integer $data[translationOfTermId]
      * @return mixed
      */
     public function createTerm(int $glossaryId, array $data): ?Term
