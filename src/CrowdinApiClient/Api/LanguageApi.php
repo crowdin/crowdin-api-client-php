@@ -19,8 +19,8 @@ class LanguageApi extends AbstractApi
      * @link https://support.crowdin.com/enterprise/api/#operation/api.languages.getMany API Documentation Enterprise
      *
      * @param array $params
-     * @internal integer $params[limit]
-     * @internal integer $params[offset]
+     * integer $params[limit]<br>
+     * integer $params[offset]
      * @return ModelCollection
      */
     public function list(array $params = []): ModelCollection
@@ -34,14 +34,14 @@ class LanguageApi extends AbstractApi
      * @link https://support.crowdin.com/enterprise/api/#operation/api.languages.post API Documentation Enterprise
      *
      * @param array $data
-     * @internal string $data[name] required
-     * @internal string $data[code] required
-     * @internal string $data[localeCode] required
-     * @internal string $data[textDirection] required
-     * @internal string[] $data[pluralCategoryNames] required
-     * @internal string $data[threeLettersCode] required
-     * @internal string $data[twoLettersCode]
-     * @internal string $data[dialectOf]
+     * string $data[name] required<br>
+     * string $data[code] required<br>
+     * string $data[localeCode] required<br>
+     * string $data[textDirection] required<br>
+     * string[] $data[pluralCategoryNames] required<br>
+     * string $data[threeLettersCode] required<br>
+     * string $data[twoLettersCode]<br>
+     * string $data[dialectOf]
      * @return Language|null
      */
     public function create(array $data): ?Language

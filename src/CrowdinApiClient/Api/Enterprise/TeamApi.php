@@ -20,10 +20,10 @@ class TeamApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $data
-     * @internal integer $data[teamId] required
-     * @internal boolean $data[accessToAllWorkflowSteps]
-     * @internal boolean $data[managerAccess]
-     * @internal array $data[permissions] Note: managerAccess, accessToAllWorkflowSteps, and permissions parameters are mutually exclusive
+     * integer $data[teamId] required<br>
+     * boolean $data[accessToAllWorkflowSteps]<br>
+     * boolean $data[managerAccess]<br>
+     * array $data[permissions]
      * @return AddedProjectTeamInfo
      */
     public function addTeamToProject(int $projectId, array $data): AddedProjectTeamInfo
@@ -49,7 +49,7 @@ class TeamApi extends AbstractApi
      * @link https://support.crowdin.com/enterprise/api/#operation/api.teams.post API Documentation
      *
      * @param array $data
-     * @internal string $data[name]
+     * string $data[name]
      * @return Team
      */
     public function create(array $data): Team

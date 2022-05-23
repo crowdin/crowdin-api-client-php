@@ -22,12 +22,12 @@ class StringTranslationApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $params
-     * @internal integer $params[fileId]  Must be used together with languageId
-     * @internal integer $params[stringId] Must be used together with languageId
-     * @internal string $params[languageId] Must be used together with stringId or fileId
-     * @internal integer $params[translationId] If specified, fileId, stringId and languageId are ignored
-     * @internal integer $params[limit]
-     * @internal integer $params[offset]
+     * integer $params[fileId]  Must be used together with languageId<br>
+     * integer $params[stringId] Must be used together with languageId<br>
+     * string $params[languageId] Must be used together with stringId or fileId<br>
+     * integer $params[translationId] If specified, fileId, stringId and languageId are ignored<br>
+     * integer $params[limit]<br>
+     * integer $params[offset]
      * @return ModelCollection
      */
     public function listApprovals(int $projectId, array $params = []): ModelCollection
@@ -43,7 +43,7 @@ class StringTranslationApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $data
-     * @internal integer $data[translationId] required
+     * integer $data[translationId] required
      * @return StringTranslationApproval|null
      */
     public function createApproval(int $projectId, array $data): ?StringTranslationApproval
@@ -91,11 +91,11 @@ class StringTranslationApi extends AbstractApi
      * @param int $projectId
      * @param string $languageId
      * @param array $params
-     * @internal string $params[stringIds]
-     * @internal int $params[fileId]
-     * @internal int $params[denormalizePlaceholders]
-     * @internal int $params[limit]
-     * @internal int $params[offset]
+     * string $params[stringIds]<br>
+     * int $params[fileId]<br>
+     * int $params[denormalizePlaceholders]<br>
+     * int $params[limit]<br>
+     * int $params[offset]
      * @return ModelCollection
      */
     public function listLanguageTranslations(int $projectId, string $languageId, array $params = []): ModelCollection
@@ -115,11 +115,11 @@ class StringTranslationApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $params
-     * @internal integer $params[stringId] required
-     * @internal integer $params[languageId] required
-     * @internal integer $params[denormalizePlaceholders]
-     * @internal integer $params[limit]
-     * @internal integer $params[offset]
+     * integer $params[stringId] required<br>
+     * integer $params[languageId] required<br>
+     * integer $params[denormalizePlaceholders]<br>
+     * integer $params[limit]<br>
+     * integer $params[offset]
      * @return ModelCollection
      */
     public function list(int $projectId, array $params = []): ModelCollection
@@ -135,10 +135,10 @@ class StringTranslationApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $data
-     * @internal integer $data[stringId] required
-     * @internal integer $data[languageId] required
-     * @internal string $data[text] required
-     * @internal string $data[pluralCategoryName]
+     * integer $data[stringId] required<br>
+     * integer $data[languageId] required<br>
+     * string $data[text] required<br>
+     * string $data[pluralCategoryName]
      * @return StringTranslation|null
      */
     public function create(int $projectId, array $data): ?StringTranslation
@@ -221,11 +221,11 @@ class StringTranslationApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $params
-     * @internal integer $params[stringId] Must be used together with languageId
-     * @internal string $params[languageId] Must be used together with stringId
-     * @internal integer $params[translationId] If specified, stringId and languageId are ignored
-     * @internal integer $params[limit]
-     * @internal integer $params[offset]
+     * integer $params[stringId] Must be used together with languageId<br>
+     * string $params[languageId] Must be used together with stringId<br>
+     * integer $params[translationId] If specified, stringId and languageId are ignored<br>
+     * integer $params[limit]<br>
+     * integer $params[offset]
      * @return ModelCollection
      */
     public function listVotes(int $projectId, array $params = []): ModelCollection
@@ -257,8 +257,8 @@ class StringTranslationApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $data
-     * @internal string $data[mark] required
-     * @internal integer $data[translationId] required
+     * string $data[mark] required<br>
+     * integer $data[translationId] required
      * @return Vote|null
      */
     public function createVote(int $projectId, array $data): ?Vote

@@ -25,10 +25,10 @@ class TranslationMemoryApi extends AbstractApi
      * @link https://support.crowdin.com/enterprise/api/#operation/api.tms.getMany API Documentation Enterprise
      *
      * @param array $params
-     * @internal integer $params[userId]
-     * @internal integer $params[groupId]
-     * @internal integer $params[limit]
-     * @internal integer $params[offset]
+     * integer $params[userId]<br>
+     * integer $params[groupId]<br>
+     * integer $params[limit]<br>
+     * integer $params[offset]
      * @return ModelCollection
      */
     public function list(array $params = []): ModelCollection
@@ -55,7 +55,7 @@ class TranslationMemoryApi extends AbstractApi
      * @link https://support.crowdin.com/enterprise/api/#operation/api.tms.post API Documentation Enterprise
      *
      * @param array $data
-     * @internal string $data[name]
+     * string $data[name]
      * @return mixed
      */
     public function create(array $data): ?TranslationMemory
@@ -109,9 +109,9 @@ class TranslationMemoryApi extends AbstractApi
      *
      * @param int $translationMemoryId
      * @param array $params
-     * @internal string $params[sourceLanguageId]
-     * @internal string $params[targetLanguageId]
-     * @internal string $params[format]
+     * string $params[sourceLanguageId]<br>
+     * string $params[targetLanguageId]<br>
+     * string $params[format]
      * @return TranslationMemoryExport|null
      */
     public function export(int $translationMemoryId, array $params = []): ?TranslationMemoryExport

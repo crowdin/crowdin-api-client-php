@@ -19,9 +19,9 @@ class WorkflowTemplateApi extends AbstractApi
      * @link https://support.crowdin.com/enterprise/api/#operation/api.workflow-templates.getMany API Documentation
      *
      * @param array $params
-     * @internal integer $params[groupId]
-     * @internal integer $params[limit]
-     * @internal integer $params[offset]
+     * integer $params[groupId]<br>
+     * integer $params[limit]<br>
+     * integer $params[offset]
      * @return ModelCollection
      */
     public function list(array $params = []): ModelCollection
