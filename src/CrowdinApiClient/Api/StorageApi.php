@@ -48,6 +48,7 @@ class StorageApi extends AbstractApi
         $options = [
             'headers' => [
                 'Crowdin-API-FileName' => $fileInfo->getFilename(),
+                'Content-Type' => 'application/octet-stream',
             ],
             'body' => file_get_contents($fileInfo->getRealPath())
         ];
