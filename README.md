@@ -6,11 +6,11 @@ The Crowdin PHP client is a lightweight interface to the Crowdin API v2. It prov
 
 Our API is a full-featured RESTful API that helps you to integrate localization into your development process. The endpoints that we use allow you to easily make calls to retrieve information and to execute actions needed.
 
-[<p align='center'>:rocket: API Client docs :rocket:</p>](https://crowdin.github.io/crowdin-api-client-php/packages/Crowdin.html)
-[<p align='center'>:green_book: Crowdin API reference :green_book:</p>](https://support.crowdin.com/api/v2/)
-[<p align='center'>:notebook: Crowdin Enterprise API reference :notebook:</p>](https://support.crowdin.com/enterprise/api/)
+<div align="center">
 
-## Status
+[**`API Client Docs`**](https://crowdin.github.io/crowdin-api-client-php/packages/Crowdin.html) &nbsp;|&nbsp;
+[**`Crowdin API`**](https://developer.crowdin.com/api/v2/) &nbsp;|&nbsp;
+[**`Crowdin Enterprise API`**](https://developer.crowdin.com/enterprise/api/v2/)
 
 [![Packagist Version](https://img.shields.io/packagist/v/crowdin/crowdin-api-client?cacheSeconds=3600)](https://packagist.org/packages/crowdin/crowdin-api-client)
 [![Packagist](https://img.shields.io/packagist/dt/crowdin/crowdin-api-client?cacheSeconds=3600)](https://packagist.org/packages/crowdin/crowdin-api-client)
@@ -19,10 +19,11 @@ Our API is a full-featured RESTful API that helps you to integrate localization 
 [![GitHub contributors](https://img.shields.io/github/contributors/crowdin/crowdin-api-client-php?cacheSeconds=3600)](https://github.com/crowdin/crowdin-api-client-php/graphs/contributors)
 [![GitHub](https://img.shields.io/github/license/crowdin/crowdin-api-client-php?cacheSeconds=3600)](https://github.com/crowdin/crowdin-api-client-php/blob/master/LICENSE)
 
-
 [![Azure DevOps builds (branch)](https://img.shields.io/azure-devops/build/crowdin/crowdin-api-client-php/15/master?logo=azure-pipelines&cacheSeconds=800)](https://dev.azure.com/crowdin/crowdin-api-client-php/_build/latest?definitionId=15&branchName=master)
 [![Azure DevOps tests (branch)](https://img.shields.io/azure-devops/tests/crowdin/crowdin-api-client-php/16/master?cacheSeconds=800)](https://dev.azure.com/crowdin/crowdin-api-client-php/_build/latest?definitionId=15&branchName=master)
 [![codecov](https://codecov.io/gh/crowdin/crowdin-api-client-php/branch/master/graph/badge.svg)](https://codecov.io/gh/crowdin/crowdin-api-client-php)
+
+</div>
 
 ## Table of Contents
 * [Requirements](#requirements)
