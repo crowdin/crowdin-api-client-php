@@ -128,4 +128,16 @@ class UserApi extends AbstractApi
     {
         return $this->_post('users', User::class, $data);
     }
+
+    /**
+     * Delete User
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.users.delete API Documentation
+     *
+     * @param int $userId
+     * @return mixed
+     */
+    public function delete(int $userId)
+    {
+        return $this->_delete('users/' . $userId);
+    }
 }

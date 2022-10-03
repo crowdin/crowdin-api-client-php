@@ -290,4 +290,10 @@ class UserApiTest extends AbstractTestApi
         $this->assertInstanceOf(User::class, $user);
         $this->assertEquals(1, $user->getId());
     }
+
+    public function testDeleteUser()
+    {
+        $this->mockRequestDelete('/users/2');
+        $this->crowdin->user->delete(2);
+    }
 }
