@@ -116,4 +116,16 @@ class UserApi extends AbstractApi
     {
         return $this->_get('user', User::class);
     }
+
+    /**
+     * Invite User
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.users.post API Documentation
+     *
+     * @param array $data
+     * @return User
+     */
+    public function invite(array $data): User
+    {
+        return $this->_post('users', User::class, $data);
+    }
 }
