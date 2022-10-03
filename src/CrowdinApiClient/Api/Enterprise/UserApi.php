@@ -116,4 +116,40 @@ class UserApi extends AbstractApi
     {
         return $this->_get('user', User::class);
     }
+
+    /**
+     * Invite User
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.users.post API Documentation
+     *
+     * @param array $data
+     * @return User
+     */
+    public function invite(array $data): User
+    {
+        return $this->_post('users', User::class, $data);
+    }
+
+    /**
+     * Delete User
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.users.delete API Documentation
+     *
+     * @param int $userId
+     * @return mixed
+     */
+    public function delete(int $userId)
+    {
+        return $this->_delete('users/' . $userId);
+    }
+
+    /**
+     * Update User
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.users.patch API Documentation
+     *
+     * @param User $user
+     * @return User
+     */
+    public function update(User $user): User
+    {
+        return $this->_update('users/' . $user->getId(), $user);
+    }
 }
