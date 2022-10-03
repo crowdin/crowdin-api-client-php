@@ -14,8 +14,8 @@ class IssueApi extends AbstractApi
 {
     /**
      * List Reported Issues
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.issues.getMany API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.issues.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.issues.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.issues.getMany API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $params
@@ -32,8 +32,8 @@ class IssueApi extends AbstractApi
 
     /**
      * Edit Issue
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.issues.patch API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.issues.patch API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.issues.patch API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.issues.patch API Documentation Enterprise
      *
      * @param int $projectId
      * @param Issue $issue

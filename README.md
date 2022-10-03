@@ -1,4 +1,4 @@
-[<p align="center"><img src="https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png" data-canonical-src="https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png" width="200" height="200" align="center"/></p>](https://crowdin.com)
+[<p align="center"><img src="https://developer.crowdin.com/assets/logos/crowdin-dark-symbol.png" data-canonical-src="https://developer.crowdin.com/assets/logos/crowdin-dark-symbol.png" width="200" height="200" align="center"/></p>](https://crowdin.com)
 
 # Crowdin PHP client
 
@@ -60,7 +60,7 @@ $crowdin = new Crowdin([
 
 `<organization_domain>` - Organization domain name (for Crowdin Enterprise users only).
 
-For more about Authorization see the [documentation](https://support.crowdin.com/api/v2/#section/Introduction/Authorization).
+For more about Authorization see the [documentation](https://developer.crowdin.com/api/v2/#section/Introduction/Authorization).
 
 #### Running methods
 

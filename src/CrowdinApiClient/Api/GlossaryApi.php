@@ -20,8 +20,8 @@ class GlossaryApi extends AbstractApi
 {
     /**
      * List Glossaries
-     * @link https://support.crowdin.com/api/v2/#operation/api.glossaries.getMany API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.glossaries.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.glossaries.getMany API Documentation Enterprise
      *
      * @param array $params
      * integer $params[groupId]<br>
@@ -37,8 +37,8 @@ class GlossaryApi extends AbstractApi
 
     /**
      * Add Glossary
-     * @link https://support.crowdin.com/api/v2/#operation/api.glossaries.post API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.post API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.glossaries.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.glossaries.post API Documentation Enterprise
      *
      * @param array $params
      * string $params[name] required<br>
@@ -52,8 +52,8 @@ class GlossaryApi extends AbstractApi
 
     /**
      * Get Glossary
-     * @link https://support.crowdin.com/api/api/#operation/api.glossaries.get API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.get API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/api/#operation/api.glossaries.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.glossaries.get API Documentation Enterprise
      *
      * @param int $glossaryId
      * @return Glossary|null
@@ -65,8 +65,8 @@ class GlossaryApi extends AbstractApi
 
     /**
      * Delete Glossary
-     * @link https://support.crowdin.com/api/v2/#operation/api.glossaries.delete API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.delete API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.glossaries.delete API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.glossaries.delete API Documentation Enterprise
      *
      * @param int $glossaryId
      * @return mixed
@@ -78,8 +78,8 @@ class GlossaryApi extends AbstractApi
 
     /**
      * Edit Glossary Info
-     * @link https://support.crowdin.com/api/v2/#operation/api.glossaries.patch API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.patch API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.glossaries.patch API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.glossaries.patch API Documentation Enterprise
      *
      * @param Glossary $glossary
      * @return Glossary|null
@@ -91,8 +91,8 @@ class GlossaryApi extends AbstractApi
 
     /**
      * Export Glossary
-     * @link https://support.crowdin.com/api/v2/#operation/api.glossaries.exports.post API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.exports.post API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.glossaries.exports.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.glossaries.exports.post API Documentation Enterprise
      *
      * @param int $glossaryId
      * @param string $format
@@ -108,8 +108,8 @@ class GlossaryApi extends AbstractApi
 
     /**
      * Check Glossary Export Status
-     * @link https://support.crowdin.com/api/v2/#operation/api.glossaries.exports.get API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.exports.get API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.glossaries.exports.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.glossaries.exports.get API Documentation Enterprise
      *
      * @param int $glossaryId
      * @param string $exportId
@@ -123,8 +123,8 @@ class GlossaryApi extends AbstractApi
 
     /**
      * Download Glossary
-     * @link https://support.crowdin.com/api/v2/#operation/api.glossaries.exports.download.getMany API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.exports.download.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.glossaries.exports.download.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.glossaries.exports.download.getMany API Documentation Enterprise
      *
      * @param int $glossaryId
      * @return DownloadFile|null
@@ -137,8 +137,8 @@ class GlossaryApi extends AbstractApi
 
     /**
      * Import Glossary
-     * @link https://support.crowdin.com/api/v2/#operation/api.glossaries.imports.post API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.imports.post API Documentation
+     * @link https://developer.crowdin.com/api/v2/#operation/api.glossaries.imports.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.glossaries.imports.post API Documentation
      * @param int $glossaryId
      * @param array $data
      * integer $data[storageId] required<br>
@@ -154,8 +154,8 @@ class GlossaryApi extends AbstractApi
 
     /**
      * Check Glossary Import Status
-     * @link https://support.crowdin.com/api/v2/#operation/api.glossaries.imports.get API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.imports.get API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.glossaries.imports.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.glossaries.imports.get API Documentation Enterprise
      *
      * @param int $glossaryId
      * @param string $importId
@@ -169,8 +169,8 @@ class GlossaryApi extends AbstractApi
 
     /**
      * List Terms
-     * @link https://support.crowdin.com/api/v2/#operation/api.glossaries.terms.getMany API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.terms.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.glossaries.terms.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.glossaries.terms.getMany API Documentation Enterprise
      *
      * @param int $glossaryId
      * @param array $params
@@ -189,8 +189,8 @@ class GlossaryApi extends AbstractApi
 
     /**
      * Add Term
-     * @link https://support.crowdin.com/api/v2/#operation/api.glossaries.terms.post API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.terms.post API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.glossaries.terms.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.glossaries.terms.post API Documentation Enterprise
      *
      * @param int $glossaryId
      * @param array $data
@@ -209,8 +209,8 @@ class GlossaryApi extends AbstractApi
 
     /**
      * Clear Glossary
-     * @link https://support.crowdin.com/v2/api/#operation/api.glossaries.terms.deleteMany API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.terms.deleteMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/v2/api/#operation/api.glossaries.terms.deleteMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.glossaries.terms.deleteMany API Documentation Enterprise
      *
      * @param int $glossaryId
      * @return mixed
@@ -223,8 +223,8 @@ class GlossaryApi extends AbstractApi
 
     /**
      * Get Term Info
-     * @link https://support.crowdin.com/api/v2/#operation/api.glossaries.terms.get API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.terms.get API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.glossaries.terms.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.glossaries.terms.get API Documentation Enterprise
      *
      * @param int $glossaryId
      * @param int $termId
@@ -238,8 +238,8 @@ class GlossaryApi extends AbstractApi
 
     /**
      * Delete Term
-     * @link https://support.crowdin.com/api/v2/#operation/api.glossaries.terms.delete API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.terms.delete API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.glossaries.terms.delete API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.glossaries.terms.delete API Documentation Enterprise
      *
      * @param int $glossaryId
      * @param int $termId
@@ -253,8 +253,8 @@ class GlossaryApi extends AbstractApi
 
     /**
      * Edit Term
-     * @link https://support.crowdin.com/api/v2/#operation/api.glossaries.terms.patch API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.glossaries.terms.patch API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.glossaries.terms.patch API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.glossaries.terms.patch API Documentation Enterprise
      * @param Term $term
      * @return Term|null
      */

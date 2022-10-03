@@ -14,8 +14,8 @@ class LabelApi extends AbstractApi
 {
     /**
      * List Labels
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.labels.getMany API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.labels.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.labels.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.labels.getMany API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $params
@@ -31,8 +31,8 @@ class LabelApi extends AbstractApi
 
     /**
      * Get Label Info
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.labels.get  API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.labels.get  API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.labels.get  API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.labels.get  API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $labelId
@@ -46,8 +46,8 @@ class LabelApi extends AbstractApi
 
     /**
      * Add Label
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.labels.post API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.labels.post API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.labels.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.labels.post API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $data
@@ -62,8 +62,8 @@ class LabelApi extends AbstractApi
 
     /**
      * Edit Label
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.labels.patch  API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.labels.patch  API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.labels.patch  API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.labels.patch  API Documentation Enterprise
      *
      * @param Label $label
      * @return Label|null
@@ -76,8 +76,8 @@ class LabelApi extends AbstractApi
 
     /**
      * Delete Label
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.labels.delete  API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.labels.delete  API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.labels.delete  API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.labels.delete  API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $labelId

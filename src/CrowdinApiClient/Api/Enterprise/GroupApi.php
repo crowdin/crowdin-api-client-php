@@ -15,7 +15,7 @@ class GroupApi extends AbstractApi
 {
     /**
      * List Groups
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.groups.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.groups.getMany API Documentation
      *
      * @param array $params
      * integer $params[parentId]<br>
@@ -30,7 +30,7 @@ class GroupApi extends AbstractApi
 
     /**
      * Get Group Info
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.groups.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.groups.get API Documentation
      *
      * @param int $groupID
      * @return Group|null
@@ -42,7 +42,7 @@ class GroupApi extends AbstractApi
 
     /**
      * Add Group
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.groups.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.groups.post API Documentation
      *
      * @param array $data
      * @return Group|null
@@ -57,7 +57,7 @@ class GroupApi extends AbstractApi
 
     /**
      * Edit Group
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.groups.patch API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.groups.patch API Documentation
      *
      * @param Group $group
      * @return Group|mixed
@@ -69,7 +69,7 @@ class GroupApi extends AbstractApi
 
     /**
      * Delete Group
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.groups.delete API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.groups.delete API Documentation
      *
      * @param int $groupID
      * @return mixed

@@ -18,8 +18,8 @@ class ScreenshotApi extends AbstractApi
 {
     /**
      * List Screenshots
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.screenshots.getMany API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.screenshots.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.screenshots.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.screenshots.getMany API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $params
@@ -36,8 +36,8 @@ class ScreenshotApi extends AbstractApi
 
     /**
      * Get Screenshot
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.screenshots.get API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.screenshots.get API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.screenshots.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.screenshots.get API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $screenshotId
@@ -51,8 +51,8 @@ class ScreenshotApi extends AbstractApi
 
     /**
      * Add Screenshot
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.screenshots.post API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.screenshots.post API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.screenshots.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.screenshots.post API Documentation Enterprise
      * @param int $projectId
      * @param array $data
      * integer $data[storageId] required<br>
@@ -68,8 +68,8 @@ class ScreenshotApi extends AbstractApi
 
     /**
      * Edit Screenshot
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.screenshots.patch API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.screenshots.patch API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.screenshots.patch API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.screenshots.patch API Documentation Enterprise
      * @param int $projectId
      * @param Screenshot $screenshot
      * @return Screenshot|null
@@ -82,8 +82,8 @@ class ScreenshotApi extends AbstractApi
 
     /**
      * Update Screenshot
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.screenshots.put API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.screenshots.put API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.screenshots.put API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.screenshots.put API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $screenshotId
@@ -103,8 +103,8 @@ class ScreenshotApi extends AbstractApi
 
     /**
      * Delete Screenshot
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.screenshots.delete API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.screenshots.delete API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.screenshots.delete API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.screenshots.delete API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $screenshotId
@@ -118,8 +118,8 @@ class ScreenshotApi extends AbstractApi
 
     /**
      * List Tags
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.screenshots.tags.getMany API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.screenshots.tags.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.screenshots.tags.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.screenshots.tags.getMany API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $screenshotId
@@ -136,8 +136,8 @@ class ScreenshotApi extends AbstractApi
 
     /**
      * Replace Tags
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.screenshots.tags.putMany API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.screenshots.tags.putMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.screenshots.tags.putMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.screenshots.tags.putMany API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $screenshotId
@@ -158,8 +158,8 @@ class ScreenshotApi extends AbstractApi
 
     /**
      * Add Tag
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.screenshots.tags.post API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.screenshots.tags.post API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.screenshots.tags.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.screenshots.tags.post API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $screenshotId
@@ -176,8 +176,8 @@ class ScreenshotApi extends AbstractApi
 
     /**
      * Clear Tags
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.screenshots.tags.deleteMany API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.screenshots.tags.deleteMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.screenshots.tags.deleteMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.screenshots.tags.deleteMany API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $screenshotId
@@ -191,8 +191,8 @@ class ScreenshotApi extends AbstractApi
 
     /**
      * Get Tag
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.screenshots.tags.get API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.screenshots.tags.get API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.screenshots.tags.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.screenshots.tags.get API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $screenshotId
@@ -207,8 +207,8 @@ class ScreenshotApi extends AbstractApi
 
     /**
      * Delete Tag
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.screenshots.tags.delete API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.screenshots.tags.delete API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.screenshots.tags.delete API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.screenshots.tags.delete API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $screenshotId
@@ -223,8 +223,8 @@ class ScreenshotApi extends AbstractApi
 
     /**
      * Edit Tag
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.screenshots.tags.patch API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.screenshots.tags.patch API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.screenshots.tags.patch API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.screenshots.tags.patch API Documentation Enterprise
      *
      * @param int $projectId
      * @param Tag $tag

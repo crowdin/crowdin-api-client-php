@@ -14,7 +14,7 @@ class UserApi extends AbstractApi
 {
     /**
      * Get Authenticated User
-     * @link https://support.crowdin.com/api/v2/#operation/api.user.get API Documentation
+     * @link https://developer.crowdin.com/api/v2/#operation/api.user.get API Documentation
      *
      * @return User|null
      */
@@ -25,7 +25,7 @@ class UserApi extends AbstractApi
 
     /**
      * List Project Members
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.members.getMany API Documentation
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.members.getMany API Documentation
      *
      * @param int $projectId
      * @param array $params
@@ -38,7 +38,7 @@ class UserApi extends AbstractApi
 
     /**
      * Get Member Info
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.members.get API Documentation
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.members.get API Documentation
      *
      * @param int $projectId
      * @param int $memberId

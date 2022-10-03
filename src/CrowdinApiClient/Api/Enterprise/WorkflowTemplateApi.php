@@ -16,7 +16,7 @@ class WorkflowTemplateApi extends AbstractApi
 {
     /**
      * List Workflow Templates
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.workflow-templates.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.workflow-templates.getMany API Documentation
      *
      * @param array $params
      * integer $params[groupId]<br>
@@ -31,7 +31,7 @@ class WorkflowTemplateApi extends AbstractApi
 
     /**
      * Get Workflow Template Info
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.workflow-templates.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/#operation/api.workflow-templates.get API Documentation
      *
      * @param int $templateId
      * @return WorkflowTemplate|null
