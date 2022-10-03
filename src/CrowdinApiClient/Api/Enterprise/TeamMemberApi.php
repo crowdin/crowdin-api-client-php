@@ -16,7 +16,7 @@ class TeamMemberApi extends AbstractApi
 {
     /**
      * Team Members List
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.teams.members.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.teams.members.getMany API Documentation
      *
      * @param int $teamId
      * @param array $params
@@ -30,7 +30,7 @@ class TeamMemberApi extends AbstractApi
 
     /**
      * Add Team Members
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.teams.members.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.teams.members.post API Documentation
      *
      * @param int $teamId
      * @param array $data
@@ -44,7 +44,7 @@ class TeamMemberApi extends AbstractApi
 
     /**
      * Delete All Team Members
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.teams.members.deleteMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.teams.members.deleteMany API Documentation
      *
      * @param int $teamId
      * @return mixed
@@ -57,7 +57,7 @@ class TeamMemberApi extends AbstractApi
 
     /**
      * Delete Team member
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.teams.members.delete
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.teams.members.delete
      *
      * @param int $teamId
      * @param int $memberId

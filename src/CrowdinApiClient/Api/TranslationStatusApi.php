@@ -17,7 +17,7 @@ class TranslationStatusApi extends AbstractApi
     /**
      * Get Branch Progress
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.branches.languages.progress.getMany API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.branches.languages.progress.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.branches.languages.progress.getMany API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $branchId
@@ -35,7 +35,7 @@ class TranslationStatusApi extends AbstractApi
     /**
      * Get Directory Progress
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.directories.languages.progress.getMany API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.directories.languages.progress.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.directories.languages.progress.getMany API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $directoryId
@@ -53,7 +53,7 @@ class TranslationStatusApi extends AbstractApi
     /**
      * Get File Progress
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.files.languages.progress.getMany API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.files.languages.progress.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.files.languages.progress.getMany API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $fileId
@@ -71,7 +71,7 @@ class TranslationStatusApi extends AbstractApi
     /**
      * Get Language Progress
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.languages.files.progress.getMany API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.files.languages.progress.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.files.languages.progress.getMany API Documentation Enterprise
      *
      * @param int $projectId
      * @param string $languageId
@@ -89,7 +89,7 @@ class TranslationStatusApi extends AbstractApi
     /**
      * Get Project Progress
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.languages.progress.getMany API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.languages.progress.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.languages.progress.getMany API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $params
@@ -107,7 +107,7 @@ class TranslationStatusApi extends AbstractApi
     /**
      * List QA Check Issues
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.qa-check.getMany API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.qa-check.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.qa-check.getMany API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $params

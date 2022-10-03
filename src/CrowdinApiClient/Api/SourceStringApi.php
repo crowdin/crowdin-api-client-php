@@ -16,7 +16,7 @@ class SourceStringApi extends AbstractApi
     /**
      * List Strings
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.strings.getMany API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.strings.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.strings.getMany API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $params
@@ -31,7 +31,7 @@ class SourceStringApi extends AbstractApi
     /**
      * Get String
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.strings.get API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.strings.get API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.strings.get API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $stringId
@@ -46,7 +46,7 @@ class SourceStringApi extends AbstractApi
     /**
      * Add String
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.strings.post API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.strings.post API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.strings.post API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $data
@@ -67,7 +67,7 @@ class SourceStringApi extends AbstractApi
     /**
      * Edit String
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.strings.patch API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.strings.patch API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.strings.patch API Documentation Enterprise
      *
      * @param SourceString $sourceString
      * @return SourceString|null
@@ -81,7 +81,7 @@ class SourceStringApi extends AbstractApi
     /**
      * Delete String
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.strings.delete API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.strings.delete API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.strings.delete API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $stringId

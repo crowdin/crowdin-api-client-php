@@ -17,7 +17,7 @@ class BranchApi extends AbstractApi
     /**
      * List Branches
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.branches.getMany API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.branches.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.branches.getMany API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $params
@@ -35,7 +35,7 @@ class BranchApi extends AbstractApi
     /**
      * Get Branch Info
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.branches.get API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.branches.get API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.branches.get API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $branchId
@@ -50,7 +50,7 @@ class BranchApi extends AbstractApi
     /**
      * Add Branch
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.branches.post API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.branches.post API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.branches.post API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $data
@@ -69,7 +69,7 @@ class BranchApi extends AbstractApi
     /**
      * Edit Branch
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.branches.patch API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.branches.patch API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.branches.patch API Documentation Enterprise
      *
      * @param Branch $branch
      * @return Branch|null
@@ -84,7 +84,7 @@ class BranchApi extends AbstractApi
     /**
      * Delete Branch
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.branches.delete API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.branches.delete API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.branches.delete API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $branchId

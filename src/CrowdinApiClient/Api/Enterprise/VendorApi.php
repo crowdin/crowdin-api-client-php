@@ -17,7 +17,7 @@ class VendorApi extends AbstractApi
 {
     /**
      * List Vendors
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.vendors.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.vendors.getMany API Documentation
      *
      * @param array $params
      * @return ModelCollection

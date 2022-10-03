@@ -15,7 +15,7 @@ class WorkflowStepApi extends AbstractApi
 {
     /**
      * List Workflow Steps
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.workflow-steps.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.workflow-steps.getMany API Documentation
      *
      * @param int $projectId
      * @param array $params
@@ -32,7 +32,7 @@ class WorkflowStepApi extends AbstractApi
 
     /**
      * Get Workflow Step
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.workflow-steps.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.workflow-steps.get API Documentation
      *
      * @param int $projectId
      * @param int $stepId

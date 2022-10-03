@@ -22,7 +22,7 @@ class StorageApi extends AbstractApi
      * List Storages
      *
      * @link https://developer.crowdin.com/api/v2/#operation/api.storages.getMany  API Documentation Enterprise
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.storages.getMany  API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.storages.getMany  API Documentation
      *
      * @param array $params
      * integer $params[limit]<br>
@@ -38,7 +38,7 @@ class StorageApi extends AbstractApi
      * Add Storage
      *
      * @link https://developer.crowdin.com/api/v2/#operation/api.storages.post API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.storages.post API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.storages.post API Documentation Enterprise
      *
      * @param SplFileInfo $fileInfo
      * @return Storage|null
@@ -59,7 +59,7 @@ class StorageApi extends AbstractApi
     /**
      * Get Storage Info
      * @link https://developer.crowdin.com/api/v2/#operation/api.storages.get  API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.storages.get  API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.storages.get  API Documentation Enterprise
      *
      * @param int $storageId
      * @return Storage|null
@@ -72,7 +72,7 @@ class StorageApi extends AbstractApi
     /**
      * Delete Storage
      * @link https://developer.crowdin.com/api/v2/#operation/api.storages.delete  API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.storages.delete  API Documentation Enterprisse
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.storages.delete  API Documentation Enterprisse
      *
      * @param int $storageId
      * @return mixed

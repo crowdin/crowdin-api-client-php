@@ -17,7 +17,7 @@ class ProjectApi extends AbstractApi
     /**
      * List Projects
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.getMany API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.getMany API Documentation Enterprise
      *
      * @param array $params
      * integer $params[groupId] for enterprise only<br>
@@ -35,7 +35,7 @@ class ProjectApi extends AbstractApi
     /**
      * Get Project Info
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.get API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.get API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.get API Documentation Enterprise
      *
      * @param int $projectId
      * @return Project|null
@@ -48,7 +48,7 @@ class ProjectApi extends AbstractApi
     /**
      * Add Project
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.post API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.post API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.post API Documentation Enterprise
      *
      * @param array $data
      * string $data[name] required<br>
@@ -80,7 +80,7 @@ class ProjectApi extends AbstractApi
     /**
      * Edit Project Info
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.patch API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.patch API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.patch API Documentation Enterprise
      *
      * @param Project $project
      * @return mixed
@@ -93,7 +93,7 @@ class ProjectApi extends AbstractApi
     /**
      * Delete Project
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.delete API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/#operation/api.projects.delete API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.delete API Documentation Enterprise
      *
      * @param int $projectId
      * @return mixed
