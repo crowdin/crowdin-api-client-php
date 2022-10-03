@@ -140,4 +140,16 @@ class UserApi extends AbstractApi
     {
         return $this->_delete('users/' . $userId);
     }
+
+    /**
+     * Update User
+     * @link https://support.crowdin.com/enterprise/api/#operation/api.users.patch API Documentation
+     *
+     * @param User $user
+     * @return User
+     */
+    public function update(User $user): User
+    {
+        return $this->_update('users/' . $user->getId(), $user);
+    }
 }

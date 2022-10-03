@@ -296,4 +296,52 @@ class UserApiTest extends AbstractTestApi
         $this->mockRequestDelete('/users/2');
         $this->crowdin->user->delete(2);
     }
+
+    public function testGetAndUpdateUser()
+    {
+        $this->mockRequestGet('/users/1', '{
+              "data": {
+                "id": 1,
+                "username": "john_smith",
+                "email": "jsmith@example.com",
+                "firstName": "John",
+                "lastName": "Smith",
+                "status": "active",
+                "avatarUrl": "",
+                "createdAt": "2019-07-11T07:40:22+00:00",
+                "lastSeen": "2019-10-23T11:44:02+00:00",
+                "twoFactor": "enabled",
+                "isAdmin": true,
+                "timezone": "Europe/Kiev"
+              }
+            }');
+
+        $user = $this->crowdin->user->get(1);
+        $this->assertInstanceOf(User::class, $user);
+        $this->assertEquals(1, $user->getId());
+
+        $user->setFirstName('Joe');
+
+        $this->mockRequestPath('/users/1', '{
+              "data": {
+                "id": 1,
+                "username": "john_smith",
+                "email": "jsmith@example.com",
+                "firstName": "Joe",
+                "lastName": "Smith",
+                "status": "active",
+                "avatarUrl": "",
+                "createdAt": "2019-07-11T07:40:22+00:00",
+                "lastSeen": "2019-10-23T11:44:02+00:00",
+                "twoFactor": "enabled",
+                "isAdmin": true,
+                "timezone": "Europe/Kiev"
+              }
+        }');
+
+        $this->crowdin->user->update($user);
+        $this->assertInstanceOf(User::class, $user);
+        $this->assertEquals(1, $user->getId());
+        $this->assertEquals('Joe', $user->getFirstName());
+    }
 }
