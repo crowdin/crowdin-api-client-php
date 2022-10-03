@@ -16,8 +16,8 @@ class FileApi extends AbstractApi
 {
     /**
      * List Files
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.files.getMany API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.files.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.files.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.files.getMany API Documentation Enterprise
      * @param int $projectId
      * @param array $params
      * integer $params[branchId] Can't be used with directoryId in the same request<br>
@@ -35,8 +35,8 @@ class FileApi extends AbstractApi
 
     /**
      * Add File
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.files.post API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.files.post API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.files.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.files.post API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $data
@@ -58,8 +58,8 @@ class FileApi extends AbstractApi
 
     /**
      * Get File Info
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.files.get API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.files.get API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.files.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.files.get API Documentation Enterprise
      * @param int $projectId
      * @param int $fileId
      * @return File|null
@@ -72,8 +72,8 @@ class FileApi extends AbstractApi
 
     /**
      * Update File
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.files.put API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.files.put API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.files.put API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.files.put API Documentation Enterprise
      * @param int $projectId
      * @param int $fileId
      * @param array $data
@@ -91,8 +91,8 @@ class FileApi extends AbstractApi
 
     /**
      * Restore file to revision
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.files.put API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.files.put API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.files.put API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.files.put API Documentation Enterprise
      * @param int $projectId
      * @param int $fileId
      * @param array $data
@@ -107,8 +107,8 @@ class FileApi extends AbstractApi
 
     /**
      * Download File
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.files.download.get API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.files.download.get API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.files.download.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.files.download.get API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $fileId
@@ -122,8 +122,8 @@ class FileApi extends AbstractApi
 
     /**
      * Edit File
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.files.patch API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.files.patch API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.files.patch API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.files.patch API Documentation Enterprise
      *
      * @param File $file
      * @return File|null
@@ -136,8 +136,8 @@ class FileApi extends AbstractApi
 
     /**
      * Delete File
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.files.delete API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.files.delete API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.files.delete API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.files.delete API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $fileId
@@ -151,8 +151,8 @@ class FileApi extends AbstractApi
 
     /**
      * List File Revisions
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.files.revisions.getMany API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.files.revisions.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.files.revisions.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.files.revisions.getMany API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $fileId
@@ -166,8 +166,8 @@ class FileApi extends AbstractApi
 
     /**
      * Get File Revision
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.files.revisions.get API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.files.revisions.get API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.files.revisions.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.files.revisions.get API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $fileId

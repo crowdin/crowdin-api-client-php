@@ -17,8 +17,8 @@ class ReportApi extends AbstractApi
 {
     /**
      * Generate Report
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.reports.post API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.reports.post API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.reports.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.reports.post API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $data
@@ -34,8 +34,8 @@ class ReportApi extends AbstractApi
 
     /**
      * Check Report Generation Status
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.reports.get API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.reports.get API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.reports.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.reports.get API Documentation Enterprise
      *
      * @param int $projectId
      * @param string $reportId
@@ -49,8 +49,8 @@ class ReportApi extends AbstractApi
 
     /**
      * Download Report
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.reports.download.get API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.reports.download.get API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.reports.download.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.reports.download.get API Documentation Enterprise
      *
      * @param int $projectId
      * @param string $reportId

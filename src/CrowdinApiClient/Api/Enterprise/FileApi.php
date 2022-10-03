@@ -18,7 +18,7 @@ class FileApi extends CrowdinFileApi
 {
     /**
      * List Reviewed Source Files Builds
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.strings.reviewed-builds.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.strings.reviewed-builds.getMany API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $params
@@ -35,7 +35,7 @@ class FileApi extends CrowdinFileApi
 
     /**
      * Build Reviewed Source Files
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.strings.reviewed-builds.post API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.strings.reviewed-builds.post API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $data
@@ -50,7 +50,7 @@ class FileApi extends CrowdinFileApi
 
     /**
      * Check Reviewed Source Files Build Status
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.strings.reviewed-builds.get API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.strings.reviewed-builds.get API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $buildId

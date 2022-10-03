@@ -60,7 +60,7 @@ $crowdin = new Crowdin([
 
 `<organization_domain>` - Organization domain name (for Crowdin Enterprise users only).
 
-For more about Authorization see the [documentation](https://support.crowdin.com/api/v2/#section/Introduction/Authorization).
+For more about Authorization see the [documentation](https://developer.crowdin.com/api/v2/#section/Introduction/Authorization).
 
 #### Running methods
 

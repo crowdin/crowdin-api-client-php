@@ -14,8 +14,8 @@ class DirectoryApi extends AbstractApi
 {
     /**
      * List Directories
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.directories.getMany API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.directories.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.directories.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.directories.getMany API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $params
@@ -34,8 +34,8 @@ class DirectoryApi extends AbstractApi
 
     /**
      * Get Directory Info
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.directories.get  API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.directories.get  API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.directories.get  API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.directories.get  API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $directoryId
@@ -49,8 +49,8 @@ class DirectoryApi extends AbstractApi
 
     /**
      * Add Directory
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.directories.post API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.directories.post API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.directories.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.directories.post API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $data
@@ -70,8 +70,8 @@ class DirectoryApi extends AbstractApi
 
     /**
      * Edit Directory
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.directories.patch  API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.directories.patch  API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.directories.patch  API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.directories.patch  API Documentation Enterprise
      *
      * @param Directory $directory
      * @return Directory|null
@@ -84,8 +84,8 @@ class DirectoryApi extends AbstractApi
 
     /**
      * Delete Directory
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.directories.delete  API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.directories.delete  API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.directories.delete  API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.directories.delete  API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $directoryId

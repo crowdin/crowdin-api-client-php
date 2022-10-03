@@ -17,7 +17,7 @@ class MachineTranslationEngineApi extends AbstractApi
 {
     /**
      * List MTs
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.mts.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.mts.getMany API Documentation
      *
      * @param array $params
      * integer $params[groupId]<br>
@@ -32,7 +32,7 @@ class MachineTranslationEngineApi extends AbstractApi
 
     /**
      * Get MT
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.mts.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.mts.get API Documentation
      *
      * @param int $mtId
      * @return MachineTranslationEngine|null
@@ -44,7 +44,7 @@ class MachineTranslationEngineApi extends AbstractApi
 
     /**
      * Add MT
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.mts.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.mts.post API Documentation
      *
      * @param array $data
      * string $data[name] required<br>
@@ -60,7 +60,7 @@ class MachineTranslationEngineApi extends AbstractApi
 
     /**
      * Edit MT
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.mts.patch API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.mts.patch API Documentation
      *
      * @param MachineTranslationEngine $machineTranslationEngine
      * @return MachineTranslationEngine|null
@@ -72,7 +72,7 @@ class MachineTranslationEngineApi extends AbstractApi
 
     /**
      * Delete MT
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.mts.delete API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.mts.delete API Documentation
      *
      * @param int $mtId
      * @return mixed

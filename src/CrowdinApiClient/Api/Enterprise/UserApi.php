@@ -18,7 +18,7 @@ class UserApi extends AbstractApi
 {
     /**
      * Add Project Member
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.members.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.members.post API Documentation
      *
      * @param int $projectId
      * @param array $data
@@ -31,7 +31,7 @@ class UserApi extends AbstractApi
 
     /**
      * List Project Members
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.members.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.members.getMany API Documentation
      *
      * @param int $projectId
      * @param array $data
@@ -44,7 +44,7 @@ class UserApi extends AbstractApi
 
     /**
      * Get Project Member Permissions
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.members.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.members.post API Documentation
      *
      * @param int $projectId
      * @param int $memberId
@@ -57,7 +57,7 @@ class UserApi extends AbstractApi
 
     /**
      * Replace Project Member Permissions
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.members.put API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.members.put API Documentation
      *
      * @param int $projectId
      * @param int $memberId
@@ -71,7 +71,7 @@ class UserApi extends AbstractApi
 
     /**
      * Delete Member From Project
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.members.delete API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.members.delete API Documentation
      *
      * @param int $projectId
      * @param int $memberId
@@ -84,7 +84,7 @@ class UserApi extends AbstractApi
 
     /**
      * List Users
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.users.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.users.getMany API Documentation
      *
      * @param array $params
      * @return ModelCollection
@@ -96,7 +96,7 @@ class UserApi extends AbstractApi
 
     /**
      * Get User Info
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.users.getById API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.users.getById API Documentation
      *
      * @param int $userId
      * @return User|null
@@ -108,7 +108,7 @@ class UserApi extends AbstractApi
 
     /**
      * Get Authenticated User
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.user.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.user.get API Documentation
      *
      * @return \CrowdinApiClient\Model\User|null
      */
@@ -119,7 +119,7 @@ class UserApi extends AbstractApi
 
     /**
      * Invite User
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.users.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.users.post API Documentation
      *
      * @param array $data
      * @return User
@@ -131,7 +131,7 @@ class UserApi extends AbstractApi
 
     /**
      * Delete User
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.users.delete API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.users.delete API Documentation
      *
      * @param int $userId
      * @return mixed
@@ -143,7 +143,7 @@ class UserApi extends AbstractApi
 
     /**
      * Update User
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.users.patch API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.users.patch API Documentation
      *
      * @param User $user
      * @return User

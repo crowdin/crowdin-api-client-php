@@ -14,8 +14,8 @@ class StringCommentApi extends AbstractApi
 {
     /**
      * List String Comment
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.comments.get API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.comments.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.comments.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.comments.getMany API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $params
@@ -29,8 +29,8 @@ class StringCommentApi extends AbstractApi
 
     /**
      * Get String Comment
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.comments.get API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.comments.get API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.comments.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.comments.get API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $stringCommentId
@@ -44,8 +44,8 @@ class StringCommentApi extends AbstractApi
 
     /**
      * Add String Comment
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.comments.post API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.comments.post API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.comments.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.comments.post API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $data
@@ -59,8 +59,8 @@ class StringCommentApi extends AbstractApi
 
     /**
      * Edit String Comment
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.comments.patch API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.comments.patch API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.comments.patch API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.comments.patch API Documentation Enterprise
      *
      * @param int $projectId
      * @param StringComment $stringComment
@@ -74,8 +74,8 @@ class StringCommentApi extends AbstractApi
 
     /**
      * Delete String Comment
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.comments.delete API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.comments.delete API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.comments.delete API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.comments.delete API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $stringCommentId

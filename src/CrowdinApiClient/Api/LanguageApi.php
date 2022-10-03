@@ -15,8 +15,8 @@ class LanguageApi extends AbstractApi
 {
     /**
      * List Supported Languages
-     * @link https://support.crowdin.com/api/v2/#operation/api.languages.getMany API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.languages.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.languages.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.languages.getMany API Documentation Enterprise
      *
      * @param array $params
      * integer $params[limit]<br>
@@ -30,8 +30,8 @@ class LanguageApi extends AbstractApi
 
     /**
      * Add Custom Language
-     * @link https://support.crowdin.com/api/v2/#operation/api.languages.post API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.languages.post API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.languages.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.languages.post API Documentation Enterprise
      *
      * @param array $data
      * string $data[name] required<br>
@@ -51,8 +51,8 @@ class LanguageApi extends AbstractApi
 
     /**
      * Get Language Info
-     * @link https://support.crowdin.com/api/v2/#operation/api.languages.get API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.languages.get API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.languages.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.languages.get API Documentation Enterprise
      *
      * @param string $languageId
      * @return Language|null
@@ -64,8 +64,8 @@ class LanguageApi extends AbstractApi
 
     /**
      * Delete Custom Language
-     * @link https://support.crowdin.com/api/v2/#operation/api.languages.delete API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.languages.delete API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.languages.delete API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.languages.delete API Documentation Enterprise
      *
      * @param string $languageId
      * @return mixed
@@ -77,8 +77,8 @@ class LanguageApi extends AbstractApi
 
     /**
      * Edit Custom Language
-     * @link https://support.crowdin.com/api/v2/#operation/api.languages.patch API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.languages.patch API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.languages.patch API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.languages.patch API Documentation Enterprise
      *
      * @param Language $language
      * @return Language|mixed

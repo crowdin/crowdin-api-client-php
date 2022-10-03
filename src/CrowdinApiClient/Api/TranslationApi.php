@@ -20,8 +20,8 @@ class TranslationApi extends AbstractApi
 {
     /**
      * Apply Pre-Translation
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.pre-translations.post API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.pre-translations.post API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.pre-translations.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.pre-translations.post API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $params
@@ -44,8 +44,8 @@ class TranslationApi extends AbstractApi
 
     /**
      * Pre-Translation Status
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.pre-translations.get  API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.pre-translations.get  API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.pre-translations.get  API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.pre-translations.get  API Documentation Enterprise
      *
      * @param int $projectId
      * @param string $preTranslationId
@@ -60,8 +60,8 @@ class TranslationApi extends AbstractApi
 
     /**
      * Build Project File Translation
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.translations.builds.files.post API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.translations.builds.files.post API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.builds.files.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.builds.files.post API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $fileId
@@ -87,8 +87,8 @@ class TranslationApi extends AbstractApi
 
     /**
      * List Project Builds
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.translations.builds.getMany  API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.translations.builds.getMany  API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.builds.getMany  API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.builds.getMany  API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $params
@@ -106,8 +106,8 @@ class TranslationApi extends AbstractApi
 
     /**
      * Build Project Translation
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.translations.builds.build API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.translations.builds.build API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.builds.build API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.builds.build API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $params
@@ -128,8 +128,8 @@ class TranslationApi extends AbstractApi
 
     /**
      * Upload Translations
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.translations.post  API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.translations.post  API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.post  API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.post  API Documentation Enterprise
      *
      * @param int $projectId
      * @param string $languageId
@@ -155,8 +155,8 @@ class TranslationApi extends AbstractApi
 
     /**
      * Download Project Translations
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.translations.builds.download.download API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.translations.builds.download.download API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.builds.download.download API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.builds.download.download API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $buildId
@@ -170,8 +170,8 @@ class TranslationApi extends AbstractApi
 
     /**
      * Check Project Build Status
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.translations.builds.get  API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.translations.builds.get  API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.builds.get  API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.builds.get  API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $buildId
@@ -186,8 +186,8 @@ class TranslationApi extends AbstractApi
 
     /**
      * Cancel Build
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.translations.builds.delete  API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.translations.builds.delete  API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.builds.delete  API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.builds.delete  API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $buildId
@@ -201,8 +201,8 @@ class TranslationApi extends AbstractApi
 
     /**
      * Export Project Translation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.translations.exports.post API Documentation
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.translations.exports.post API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.exports.post API Documentation
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.exports.post API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $params

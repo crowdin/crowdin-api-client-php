@@ -19,8 +19,8 @@ class TaskApi extends AbstractApi
 {
     /**
      * List Tasks
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.tasks.getMany API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.tasks.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.getMany API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $params
@@ -39,8 +39,8 @@ class TaskApi extends AbstractApi
 
     /**
      * Get Task
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.tasks.get API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.tasks.get API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.get API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $taskId
@@ -54,8 +54,8 @@ class TaskApi extends AbstractApi
 
     /**
      * Add Task
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.tasks.post API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.tasks.post API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.post API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $data
@@ -69,8 +69,8 @@ class TaskApi extends AbstractApi
 
     /**
      * Edit Task
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.tasks.patch API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.tasks.patch API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.patch API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.patch API Documentation Enterprise
      *
      * @param TaskForUpdate|Task $task
      * @return Task|null
@@ -83,8 +83,8 @@ class TaskApi extends AbstractApi
 
     /**
      * Delete Task
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.tasks.delete API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.tasks.delete API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.delete API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.delete API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $taskId
@@ -98,8 +98,8 @@ class TaskApi extends AbstractApi
 
     /**
      * Export Task Strings
-     * @link https://support.crowdin.com/api/v2/#operation/api.projects.tasks.export.get API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.projects.tasks.export.get API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.export.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.export.get API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $taskId
@@ -113,7 +113,7 @@ class TaskApi extends AbstractApi
 
     /**
      * List User Tasks
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.user.tasks.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.user.tasks.getMany API Documentation Enterprise
      *
      * @param array $params
      * integer $params[limit]  [ 1 .. 500 ] Default: 25<br>
@@ -130,8 +130,8 @@ class TaskApi extends AbstractApi
 
     /**
      * Edit Task Archived Status
-     * @link https://support.crowdin.com/api/v2/#operation/api.user.tasks.patch API Documentation
-     * @link https://support.crowdin.com/enterprise/api/#operation/api.user.tasks.patch API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.user.tasks.patch API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.user.tasks.patch API Documentation Enterprise
      *
      * @param int $taskId
      * @param int $projectId
