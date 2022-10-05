@@ -93,6 +93,7 @@ class CrowdinTest extends TestCase
             ['translation', \CrowdinApiClient\Api\TranslationApi::class],
             ['translationStatus', \CrowdinApiClient\Api\TranslationStatusApi::class],
             ['distribution', \CrowdinApiClient\Api\DistributionApi::class],
+            ['bundle', \CrowdinApiClient\Api\BundleApi::class],
         ];
     }
 
@@ -135,6 +136,7 @@ class CrowdinTest extends TestCase
             ['translationStatus', \CrowdinApiClient\Api\TranslationStatusApi::class],
             ['distribution', \CrowdinApiClient\Api\DistributionApi::class],
             ['team', \CrowdinApiClient\Api\Enterprise\TeamApi::class],
+            ['bundle', \CrowdinApiClient\Api\BundleApi::class],
         ];
     }
 
