@@ -93,6 +93,16 @@ class SourceString extends BaseModel
     protected $updatedAt;
 
     /**
+     * @var bool
+     */
+    protected $isDuplicate = false;
+
+    /**
+     * @var ?integer
+     */
+    protected $masterStringId;
+
+    /**
      * @param array $data
      */
     public function __construct(array $data = [])
@@ -116,6 +126,8 @@ class SourceString extends BaseModel
         $this->labelIds = (array)$this->getDataProperty('labelIds');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
+        $this->isDuplicate = (bool)$this->getDataProperty('isDuplicate');
+        $this->masterStringId = $this->getDataProperty('masterStringId');
     }
 
     /**
@@ -292,5 +304,21 @@ class SourceString extends BaseModel
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isDuplicate(): bool
+    {
+        return $this->isDuplicate;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getMasterStringId(): ?int
+    {
+        return $this->masterStringId;
     }
 }

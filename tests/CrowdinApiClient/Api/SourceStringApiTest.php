@@ -94,7 +94,8 @@ class SourceStringApiTest extends AbstractTestApi
                     "hasPlurals": false,
                     "isIcu": false,
                     "createdAt": "2019-09-20T12:43:57+00:00",
-                    "updatedAt": "2019-09-20T13:24:01+00:00"
+                    "updatedAt": "2019-09-20T13:24:01+00:00",
+                    "isDuplicate": false,
                   }
                 }'
         );

@@ -34,6 +34,8 @@ class SourceStringTest extends TestCase
         'labelIds' => [1],
         'createdAt' => '2019-09-20T12:43:57+00:00',
         'updatedAt' => '2019-09-20T13:24:01+00:00',
+        'isDuplicate' => true,
+        'masterStringId' => 1234
     ];
 
     public function testLoadData()
@@ -76,5 +78,7 @@ class SourceStringTest extends TestCase
         $this->assertEquals($this->data['labelIds'], $this->sourceString->getLabelIds());
         $this->assertEquals($this->data['createdAt'], $this->sourceString->getCreatedAt());
         $this->assertEquals($this->data['updatedAt'], $this->sourceString->getUpdatedAt());
+        $this->assertEquals($this->data['isDuplicate'], $this->sourceString->isDuplicate());
+        $this->assertEquals($this->data['masterStringId'], $this->sourceString->getMasterStringId());
     }
 }
