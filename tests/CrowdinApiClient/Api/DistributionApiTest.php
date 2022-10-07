@@ -20,8 +20,14 @@ class DistributionApiTest extends AbstractTestApi
                     {
                       "data": {
                         "hash": "e-4326c06be14321dd967b161a",
+                        "exportMode": "bundle",
+                        "format": "crowdin-resx",
+                        "exportPattern": "strings-%two_letters_code%.resx",
                         "name": "Test Distribution",
                         "fileIds": [
+                          1
+                        ],
+                        "labelIds": [
                           1
                         ],
                         "createdAt": "2019-09-23T09:04:29+00:00",
@@ -63,7 +69,13 @@ class DistributionApiTest extends AbstractTestApi
               "data": {
                 "hash": "e-4326c06be14321dd967b161a",
                 "name": "Test Distribution",
+                "exportMode": "bundle",
+                "format": "crowdin-resx",
+                "exportPattern": "strings-%two_letters_code%.resx",
                 "fileIds": [
+                  1
+                ],
+                "labelIds": [
                   1
                 ],
                 "createdAt": "2019-09-23T09:04:29+00:00",
@@ -85,7 +97,13 @@ class DistributionApiTest extends AbstractTestApi
               "data": {
                 "hash": "e-4326c06be14321dd967b161a",
                 "name": "Test Distribution",
+                "exportMode": "bundle",
+                "format": "crowdin-resx",
+                "exportPattern": "strings-%two_letters_code%.resx",
                 "fileIds": [
+                  1
+                ],
+                "labelIds": [
                   1
                 ],
                 "createdAt": "2019-09-23T09:04:29+00:00",
@@ -101,7 +119,13 @@ class DistributionApiTest extends AbstractTestApi
               "data": {
                 "hash": "e-4326c06be14321dd967b161a",
                 "name": "test edit",
+                "exportMode": "bundle",
+                "format": "crowdin-resx",
+                "exportPattern": "strings-%two_letters_code%.resx",
                 "fileIds": [
+                  1
+                ],
+                "labelIds": [
                   1
                 ],
                 "createdAt": "2019-09-23T09:04:29+00:00",
