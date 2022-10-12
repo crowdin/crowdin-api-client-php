@@ -86,6 +86,7 @@ class CrowdinTest extends TestCase
             ['stringTranslation', \CrowdinApiClient\Api\StringTranslationApi::class],
             ['user', \CrowdinApiClient\Api\UserApi::class],
             ['file', \CrowdinApiClient\Api\FileApi::class],
+            ['machineTranslationEngine', \CrowdinApiClient\Api\MachineTranslationEngineApi::class],
             ['report', \CrowdinApiClient\Api\ReportApi::class],
             ['sourceString', \CrowdinApiClient\Api\SourceStringApi::class],
             ['translationMemory', \CrowdinApiClient\Api\TranslationMemoryApi::class],

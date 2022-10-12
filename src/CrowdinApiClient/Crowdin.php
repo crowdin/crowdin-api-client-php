@@ -98,6 +98,7 @@ class Crowdin
         'user',
         'screenshot',
         'file',
+        'machineTranslationEngine',
         'report',
         'sourceString',
         'translationMemory',
