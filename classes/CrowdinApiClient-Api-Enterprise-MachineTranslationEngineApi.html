@@ -137,7 +137,7 @@
     MachineTranslationEngineApi
 
         <span class="phpdocumentor-element__extends">
-        extends <abbr title="\CrowdinApiClient\Api\AbstractApi">AbstractApi</abbr>
+        extends <a href="classes/CrowdinApiClient-Api-MachineTranslationEngineApi.html"><abbr title="\CrowdinApiClient\Api\MachineTranslationEngineApi">MachineTranslationEngineApi</abbr></a>
     </span>
     
             <div class="phpdocumentor-element__package">
@@ -155,7 +155,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/MachineTranslationEngineApi.php"><a href="files/src-crowdinapiclient-api-enterprise-machinetranslationengineapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/MachineTranslationEngineApi.php">MachineTranslationEngineApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 
     </aside>
 
@@ -193,18 +193,25 @@ Use API to add, update, and delete specific MTE.</p>
 <dd>Delete MT</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/CrowdinApiClient-Api-Enterprise-MachineTranslationEngineApi.html#method_get">get()</a>
+    <a href="classes/CrowdinApiClient-Api-MachineTranslationEngineApi.html#method_get">get()</a>
     <span>
                                 &nbsp;: <a href="classes/CrowdinApiClient-Model-MachineTranslationEngine.html"><abbr title="\CrowdinApiClient\Model\MachineTranslationEngine">MachineTranslationEngine</abbr></a>|null    </span>
 </dt>
 <dd>Get MT</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/CrowdinApiClient-Api-Enterprise-MachineTranslationEngineApi.html#method_list">list()</a>
+    <a href="classes/CrowdinApiClient-Api-MachineTranslationEngineApi.html#method_list">list()</a>
     <span>
                                 &nbsp;: <abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr>    </span>
 </dt>
 <dd>List MTs</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/CrowdinApiClient-Api-MachineTranslationEngineApi.html#method_translateViaMT">translateViaMT()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-MachineTranslation.html"><abbr title="\CrowdinApiClient\Model\MachineTranslation">MachineTranslation</abbr></a>|null    </span>
+</dt>
+<dd>Translate via MT</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Api-Enterprise-MachineTranslationEngineApi.html#method_update">update()</a>
@@ -239,7 +246,7 @@ Use API to add, update, and delete specific MTE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/MachineTranslationEngineApi.php"><a href="files/src-crowdinapiclient-api-enterprise-machinetranslationengineapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/MachineTranslationEngineApi.php">MachineTranslationEngineApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">56</span>
+    <span class="phpdocumentor-element-found-in__line">28</span>
 
     </aside>
 
@@ -276,7 +283,7 @@ integer $data[groupId]</p>
                     <span class="phpdocumentor-tag__name">link</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/enterprise/api/#operation/api.mts.post"> <p>API Documentation</p>
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.mts.post"> <p>API Documentation</p>
  </a>
                     
                                     </dd>
@@ -301,7 +308,7 @@ integer $data[groupId]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/MachineTranslationEngineApi.php"><a href="files/src-crowdinapiclient-api-enterprise-machinetranslationengineapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/MachineTranslationEngineApi.php">MachineTranslationEngineApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">80</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 
     </aside>
 
@@ -333,7 +340,7 @@ integer $data[groupId]</p>
                     <span class="phpdocumentor-tag__name">link</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/enterprise/api/#operation/api.mts.delete"> <p>API Documentation</p>
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.mts.delete"> <p>API Documentation</p>
  </a>
                     
                                     </dd>
@@ -353,12 +360,12 @@ integer $data[groupId]</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_get">
         get()
-        <a href="classes/CrowdinApiClient-Api-Enterprise-MachineTranslationEngineApi.html#method_get" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CrowdinApiClient-Api-MachineTranslationEngineApi.html#method_get" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/MachineTranslationEngineApi.php"><a href="files/src-crowdinapiclient-api-enterprise-machinetranslationengineapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/MachineTranslationEngineApi.php">MachineTranslationEngineApi.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/MachineTranslationEngineApi.php"><a href="files/src-crowdinapiclient-api-machinetranslationengineapi.html"><abbr title="src/CrowdinApiClient/Api/MachineTranslationEngineApi.php">MachineTranslationEngineApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">41</span>
 
     </aside>
 
@@ -390,7 +397,15 @@ integer $data[groupId]</p>
                     <span class="phpdocumentor-tag__name">link</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/enterprise/api/#operation/api.mts.get"> <p>API Documentation</p>
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.mts.get"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.mts.get"> <p>API Documentation Enterprise</p>
  </a>
                     
                                     </dd>
@@ -410,10 +425,10 @@ integer $data[groupId]</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_list">
         list()
-        <a href="classes/CrowdinApiClient-Api-Enterprise-MachineTranslationEngineApi.html#method_list" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CrowdinApiClient-Api-MachineTranslationEngineApi.html#method_list" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/MachineTranslationEngineApi.php"><a href="files/src-crowdinapiclient-api-enterprise-machinetranslationengineapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/MachineTranslationEngineApi.php">MachineTranslationEngineApi.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/MachineTranslationEngineApi.php"><a href="files/src-crowdinapiclient-api-machinetranslationengineapi.html"><abbr title="src/CrowdinApiClient/Api/MachineTranslationEngineApi.php">MachineTranslationEngineApi.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">28</span>
 
@@ -451,7 +466,15 @@ integer $params[offset]</p>
                     <span class="phpdocumentor-tag__name">link</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/enterprise/api/#operation/api.mts.getMany"> <p>API Documentation</p>
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.mts.getMany"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.mts.getMany"> <p>API Documentation Enterprise</p>
  </a>
                     
                                     </dd>
@@ -469,6 +492,83 @@ integer $params[offset]</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_translateViaMT">
+        translateViaMT()
+        <a href="classes/CrowdinApiClient-Api-MachineTranslationEngineApi.html#method_translateViaMT" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/MachineTranslationEngineApi.php"><a href="files/src-crowdinapiclient-api-machinetranslationengineapi.html"><abbr title="src/CrowdinApiClient/Api/MachineTranslationEngineApi.php">MachineTranslationEngineApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">59</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Translate via MT</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">translateViaMT</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$mtId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-MachineTranslation.html"><abbr title="\CrowdinApiClient\Model\MachineTranslation">MachineTranslation</abbr></a>|null</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$mtId</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$data</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>string $data[languageRecognitionProvider] Enum: &quot;crowdin&quot; &quot;engine&quot; Note: Is required if the source language is not selected<br>
+string $data[sourceLanguageId]<br>
+string $data[targetLanguageId] required<br>
+string[] $data[strings] Note: You can translate up to 100 strings at a time.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.mts.translations.post"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.mts.translations.post"> <p>API Documentation Enterprise</p>
+ </a>
+                    
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-MachineTranslation.html"><abbr title="\CrowdinApiClient\Model\MachineTranslation">MachineTranslation</abbr></a>|null</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_update">
         update()
         <a href="classes/CrowdinApiClient-Api-Enterprise-MachineTranslationEngineApi.html#method_update" class="headerlink"><i class="fas fa-link"></i></a>
@@ -476,7 +576,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/MachineTranslationEngineApi.php"><a href="files/src-crowdinapiclient-api-enterprise-machinetranslationengineapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/MachineTranslationEngineApi.php">MachineTranslationEngineApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">68</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 
     </aside>
 
@@ -508,7 +608,7 @@ integer $params[offset]</p>
                     <span class="phpdocumentor-tag__name">link</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/enterprise/api/#operation/api.mts.patch"> <p>API Documentation</p>
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.mts.patch"> <p>API Documentation</p>
  </a>
                     
                                     </dd>
