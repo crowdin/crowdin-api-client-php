@@ -7,6 +7,7 @@ use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\DownloadFileTranslation;
 use CrowdinApiClient\Model\PreTranslation;
 use CrowdinApiClient\Model\TranslationProjectBuild;
+use CrowdinApiClient\Model\TranslationProjectDirectory;
 use CrowdinApiClient\ModelCollection;
 
 /**
@@ -56,6 +57,28 @@ class TranslationApi extends AbstractApi
         $path = sprintf('projects/%d/pre-translations/%s', $projectId, $preTranslationId);
 
         return $this->_get($path, PreTranslation::class);
+    }
+
+    /**
+     * Build Project Directory Translation
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.builds.directories.post  API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.builds.directories.post  API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param int $directoryId
+     * @param array $params
+     * string[] $params[targetLanguageIds] Leave this field empty to build all target languages<br>
+     * boolean $params[skipUntranslatedStrings] Default: false<br>
+     * boolean $params[skipUntranslatedFiles] Default: false<br>
+     * boolean $params[exportApprovedOnly] Default: false<br>
+     * boolean $params[preserveFolderHierarchy] Default: false<br>
+     * @return TranslationProjectDirectory|null
+     */
+    public function buildProjectDirectoryTranslation(int $projectId, int $directoryId, array $params = []): ?TranslationProjectDirectory
+    {
+        $path = sprintf('projects/%d/translations/builds/directories/%d', $projectId, $directoryId);
+
+        return $this->_post($path, TranslationProjectDirectory::class, $params);
     }
 
     /**

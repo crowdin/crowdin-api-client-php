@@ -5,6 +5,7 @@ namespace CrowdinApiClient\Tests\Api\Enterprise;
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\PreTranslation;
 use CrowdinApiClient\Model\TranslationProjectBuild;
+use CrowdinApiClient\Model\TranslationProjectDirectory;
 use CrowdinApiClient\ModelCollection;
 
 /**
@@ -92,6 +93,30 @@ class TranslationApiTest extends AbstractTestApi
 
         $this->assertInstanceOf(PreTranslation::class, $preTranslation);
         $this->assertEquals('9e7de270-4f83-41cb-b606-2f90631f26e2', $preTranslation->getIdentifier());
+    }
+
+    public function testBuildProjectDirectoryTranslation()
+    {
+        $this->mockRequest([
+            'uri' => 'https://organization_domain.crowdin.com/api/v2/projects/1/translations/builds/directories/2',
+            'method' => 'post',
+            'response' => '{
+              "data": {
+                "id": 2,
+                "projectId": 2,
+                "status": "finished",
+                "progress": 100,
+                "createdAt": "2019-09-19T15:10:43+00:00",
+                "updatedAt": "2019-09-19T15:10:46+00:00",
+                "finishedAt": "2019-09-19T15:10:46+00:00"
+              }
+            }'
+        ]);
+
+        $directory = $this->crowdin->translation->buildProjectDirectoryTranslation(1, 2, ['targetLanguageId' => 'uk']);
+
+        $this->assertInstanceOf(TranslationProjectDirectory::class, $directory);
+        $this->assertEquals('finished', $directory->getStatus());
     }
 
     public function testBuildProjectFileTranslation()
