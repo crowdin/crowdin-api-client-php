@@ -300,7 +300,7 @@ class TranslationApiTest extends AbstractTestApi
                   }
                 }'
             ]
-         );
+        );
 
         $file = $this->crowdin->translation->exportProjectTranslation(2, $params);
         $this->assertInstanceOf(DownloadFile::class, $file);
