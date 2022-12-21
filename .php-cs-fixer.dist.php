@@ -10,7 +10,7 @@ $finder = PhpCsFixer\Finder::create()
     ->name('*.php')
 ;
 
-return PhpCsFixer\Config::create()
+return (new PhpCsFixer\Config())
     ->setRiskyAllowed(true)
     ->setUsingCache(false)
     ->setLineEnding("\n")
@@ -23,7 +23,7 @@ return PhpCsFixer\Config::create()
         'cast_spaces' => ['space' => 'none'],
         'concat_space' => ['spacing' => 'one'],
         'include' => true,
-        'is_null' => ['use_yoda_style' => false],
+        'yoda_style' => false,
         'list_syntax' => ['syntax' => 'short'],
         'method_argument_space' => ['on_multiline' => 'ignore'],
         'no_binary_string' => true,
