@@ -45,7 +45,7 @@ class TranslationStatusApiTest extends AbstractTestApi
                     }
                   ]
                 }'
-            );
+        );
 
         $branchProgress = $this->crowdin->translationStatus->getBranchProgress(1, 1, ['limit' => 10]);
 
