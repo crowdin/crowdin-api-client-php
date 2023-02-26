@@ -1,0 +1,27 @@
+name: App tests
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build_and_deploy_docs:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: ['7.1', '7.2', '7.3', '8.0', '8.1', '8.2']
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+
+      - name: Install dependencies
+        run: composer install
+
+      - name: PhpUnit
+        run: vendor/bin/phpunit
