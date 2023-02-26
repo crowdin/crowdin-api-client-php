@@ -14,6 +14,9 @@ class CollectionTest extends TestCase
     public function testMain()
     {
         $collection = new Collection();
+
+        $this->assertTrue($collection->isEmpty());
+
         $collection->add('test');
 
         $this->assertInstanceOf(IteratorAggregate::class, $collection);
@@ -35,5 +38,16 @@ class CollectionTest extends TestCase
         $this->assertNull($collection->offsetGet(1));
         $this->assertFalse($collection->offsetExists(1));
         $this->assertTrue($collection->offsetExists(0));
+    }
+
+    public function testCollectionToArray()
+    {
+        $collection = new Collection();
+        $collection->add('foo');
+        $collection->add('bar');
+        $collection->add('baz');
+
+        $this->assertIsArray($collection->__toArray());
+        $this->assertCount(3, $collection->__toArray());
     }
 }
