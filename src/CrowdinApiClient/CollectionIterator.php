@@ -40,7 +40,7 @@ class CollectionIterator implements Iterator
     /**
      * Move forward to next element
      * @link https://php.net/manual/en/iterator.next.php
-     * @return void Any returned value is ignored.
+     * @return mixed Next item
      * @since 5.0.0
      */
     public function next()
