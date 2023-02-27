@@ -128,4 +128,12 @@ class Collection implements IteratorAggregate, ArrayAccess, Countable
     {
         $this->_items[] = $item;
     }
+
+    /**
+     * Return collection items as PHP array
+     */
+    public function __toArray(): array
+    {
+        return $this->_items;
+    }
 }
