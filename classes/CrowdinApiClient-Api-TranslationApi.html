@@ -153,7 +153,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
@@ -189,6 +189,13 @@ Pre-translate and build are asynchronous operations and shall be completed with 
                                 &nbsp;: <a href="classes/CrowdinApiClient-Model-TranslationProjectBuild.html"><abbr title="\CrowdinApiClient\Model\TranslationProjectBuild">TranslationProjectBuild</abbr></a>|null    </span>
 </dt>
 <dd>Build Project Translation</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/CrowdinApiClient-Api-TranslationApi.html#method_buildProjectDirectoryTranslation">buildProjectDirectoryTranslation()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-TranslationProjectDirectory.html"><abbr title="\CrowdinApiClient\Model\TranslationProjectDirectory">TranslationProjectDirectory</abbr></a>|null    </span>
+</dt>
+<dd>Build Project Directory Translation</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Api-TranslationApi.html#method_buildProjectFileTranslation">buildProjectFileTranslation()</a>
@@ -272,7 +279,7 @@ Pre-translate and build are asynchronous operations and shall be completed with 
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">39</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 
     </aside>
 
@@ -354,7 +361,7 @@ boolean $params[markAddedTranslationsAsDone]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">122</span>
+    <span class="phpdocumentor-element-found-in__line">145</span>
 
     </aside>
 
@@ -426,6 +433,91 @@ integer $params[exportWithMinApprovalsCount]</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_buildProjectDirectoryTranslation">
+        buildProjectDirectoryTranslation()
+        <a href="classes/CrowdinApiClient-Api-TranslationApi.html#method_buildProjectDirectoryTranslation" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">77</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Build Project Directory Translation</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">buildProjectDirectoryTranslation</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$directoryId</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-TranslationProjectDirectory.html"><abbr title="\CrowdinApiClient\Model\TranslationProjectDirectory">TranslationProjectDirectory</abbr></a>|null</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$projectId</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$directoryId</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$params</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>string[] $params[targetLanguageIds] Leave this field empty to build all target languages<br>
+boolean $params[skipUntranslatedStrings] Default: false<br>
+boolean $params[skipUntranslatedFiles] Default: false<br>
+boolean $params[exportApprovedOnly] Default: false<br>
+boolean $params[preserveFolderHierarchy] Default: false<br></p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.projects.translations.builds.directories.post"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.builds.directories.post"> <p>API Documentation Enterprise</p>
+ </a>
+                    
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-TranslationProjectDirectory.html"><abbr title="\CrowdinApiClient\Model\TranslationProjectDirectory">TranslationProjectDirectory</abbr></a>|null</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_buildProjectFileTranslation">
         buildProjectFileTranslation()
         <a href="classes/CrowdinApiClient-Api-TranslationApi.html#method_buildProjectFileTranslation" class="headerlink"><i class="fas fa-link"></i></a>
@@ -433,7 +525,7 @@ integer $params[exportWithMinApprovalsCount]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">77</span>
+    <span class="phpdocumentor-element-found-in__line">100</span>
 
     </aside>
 
@@ -525,7 +617,7 @@ boolean $params[exportApprovedOnly]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">196</span>
+    <span class="phpdocumentor-element-found-in__line">219</span>
 
     </aside>
 
@@ -597,7 +689,7 @@ boolean $params[exportApprovedOnly]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">165</span>
+    <span class="phpdocumentor-element-found-in__line">188</span>
 
     </aside>
 
@@ -669,7 +761,7 @@ boolean $params[exportApprovedOnly]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">221</span>
+    <span class="phpdocumentor-element-found-in__line">244</span>
 
     </aside>
 
@@ -751,7 +843,7 @@ integer $params[exportWithMinApprovalsCount]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">55</span>
 
     </aside>
 
@@ -823,7 +915,7 @@ integer $params[exportWithMinApprovalsCount]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">100</span>
+    <span class="phpdocumentor-element-found-in__line">123</span>
 
     </aside>
 
@@ -899,7 +991,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">180</span>
+    <span class="phpdocumentor-element-found-in__line">203</span>
 
     </aside>
 
@@ -971,7 +1063,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">144</span>
+    <span class="phpdocumentor-element-found-in__line">167</span>
 
     </aside>
 

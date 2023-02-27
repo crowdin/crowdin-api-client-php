@@ -946,6 +946,11 @@ Search.appendIndex(
             "summary": "Pre\u002DTranslation\u0020Status",
             "url": "classes/CrowdinApiClient-Api-TranslationApi.html#method_getPreTranslation"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\TranslationApi\u003A\u003AbuildProjectDirectoryTranslation\u0028\u0029",
+            "name": "buildProjectDirectoryTranslation",
+            "summary": "Build\u0020Project\u0020Directory\u0020Translation",
+            "url": "classes/CrowdinApiClient-Api-TranslationApi.html#method_buildProjectDirectoryTranslation"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Api\\TranslationApi\u003A\u003AbuildProjectFileTranslation\u0028\u0029",
             "name": "buildProjectFileTranslation",
             "summary": "Build\u0020Project\u0020File\u0020Translation",
@@ -7450,6 +7455,121 @@ Search.appendIndex(
             "name": "attributes",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-TranslationProjectBuild.html#property_attributes"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectDirectory",
+            "name": "TranslationProjectDirectory",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TranslationProjectDirectory.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectDirectory\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TranslationProjectDirectory.html#method___construct"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectDirectory\u003A\u003AgetId\u0028\u0029",
+            "name": "getId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TranslationProjectDirectory.html#method_getId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectDirectory\u003A\u003AsetId\u0028\u0029",
+            "name": "setId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TranslationProjectDirectory.html#method_setId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectDirectory\u003A\u003AgetProjectId\u0028\u0029",
+            "name": "getProjectId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TranslationProjectDirectory.html#method_getProjectId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectDirectory\u003A\u003AsetProjectId\u0028\u0029",
+            "name": "setProjectId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TranslationProjectDirectory.html#method_setProjectId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectDirectory\u003A\u003AgetStatus\u0028\u0029",
+            "name": "getStatus",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TranslationProjectDirectory.html#method_getStatus"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectDirectory\u003A\u003AsetStatus\u0028\u0029",
+            "name": "setStatus",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TranslationProjectDirectory.html#method_setStatus"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectDirectory\u003A\u003AgetProgress\u0028\u0029",
+            "name": "getProgress",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TranslationProjectDirectory.html#method_getProgress"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectDirectory\u003A\u003AsetProgress\u0028\u0029",
+            "name": "setProgress",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TranslationProjectDirectory.html#method_setProgress"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectDirectory\u003A\u003AgetCreatedAt\u0028\u0029",
+            "name": "getCreatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TranslationProjectDirectory.html#method_getCreatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectDirectory\u003A\u003AsetCreatedAt\u0028\u0029",
+            "name": "setCreatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TranslationProjectDirectory.html#method_setCreatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectDirectory\u003A\u003AgetUpdatedAt\u0028\u0029",
+            "name": "getUpdatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TranslationProjectDirectory.html#method_getUpdatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectDirectory\u003A\u003AsetUpdatedAt\u0028\u0029",
+            "name": "setUpdatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TranslationProjectDirectory.html#method_setUpdatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectDirectory\u003A\u003AgetFinishedAt\u0028\u0029",
+            "name": "getFinishedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TranslationProjectDirectory.html#method_getFinishedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectDirectory\u003A\u003AsetFinishedAt\u0028\u0029",
+            "name": "setFinishedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TranslationProjectDirectory.html#method_setFinishedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectDirectory\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TranslationProjectDirectory.html#property_id"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectDirectory\u003A\u003A\u0024projectId",
+            "name": "projectId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TranslationProjectDirectory.html#property_projectId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectDirectory\u003A\u003A\u0024status",
+            "name": "status",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TranslationProjectDirectory.html#property_status"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectDirectory\u003A\u003A\u0024progress",
+            "name": "progress",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TranslationProjectDirectory.html#property_progress"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectDirectory\u003A\u003A\u0024createdAt",
+            "name": "createdAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TranslationProjectDirectory.html#property_createdAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectDirectory\u003A\u003A\u0024updatedAt",
+            "name": "updatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TranslationProjectDirectory.html#property_updatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectDirectory\u003A\u003A\u0024finishedAt",
+            "name": "finishedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TranslationProjectDirectory.html#property_finishedAt"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\User",
             "name": "User",
