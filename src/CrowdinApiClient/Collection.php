@@ -28,6 +28,7 @@ class Collection implements IteratorAggregate, ArrayAccess, Countable
      * The return value is cast to an integer.
      * @since 5.1.0
      */
+    #[\ReturnTypeWillChange]
     public function count()
     {
         return sizeof($this->_items);
@@ -40,6 +41,7 @@ class Collection implements IteratorAggregate, ArrayAccess, Countable
      * <b>Traversable</b>
      * @since 5.0.0
      */
+    #[\ReturnTypeWillChange]
     public function getIterator()
     {
         return new CollectionIterator($this->_items);
@@ -57,6 +59,7 @@ class Collection implements IteratorAggregate, ArrayAccess, Countable
      * The return value will be casted to boolean if non-boolean was returned.
      * @since 5.0.0
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->_items[$offset]);
