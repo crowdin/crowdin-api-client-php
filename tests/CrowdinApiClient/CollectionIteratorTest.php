@@ -16,7 +16,8 @@ class CollectionIteratorTest extends TestCase
         $this->assertEquals('one', $collection->current());
         $this->assertEquals(0, $collection->key());
         $this->assertTrue($collection->valid());
-        $this->assertEquals('two', $collection->next());
+        $collection->next();
+        $this->assertEquals('two', $collection->current());
         $collection->rewind();
         $this->assertEquals('one', $collection->current());
     }
