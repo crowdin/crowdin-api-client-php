@@ -1,7 +1,7 @@
 {
     "name": "crowdin/crowdin-api-client",
     "description": "PHP client library for Crowdin API v2",
-    "version": "1.9.0",
+    "version": "1.9.1",
     "keywords": [
         "crowdin",
         "sdk",
@@ -24,7 +24,7 @@
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.3.0",
-        "phpunit/phpunit": "^7.5 || ^8.5"
+        "phpunit/phpunit": "^7.5 || ^8.5 || ^9.6"
     },
     "autoload": {
         "psr-4": {
