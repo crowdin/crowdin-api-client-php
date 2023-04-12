@@ -31,7 +31,8 @@ class CollectionIterator implements Iterator
      * @return mixed Can return any type.
      * @since 5.0.0
      */
-    public function current(): mixed
+    #[\ReturnTypeWillChange]
+    public function current()
     {
         $var = current($this->_items);
         return $var;
@@ -55,7 +56,8 @@ class CollectionIterator implements Iterator
      * @return mixed scalar on success, or null on failure.
      * @since 5.0.0
      */
-    public function key(): mixed
+    #[\ReturnTypeWillChange]
+    public function key()
     {
         $var = key($this->_items);
         return $var;
