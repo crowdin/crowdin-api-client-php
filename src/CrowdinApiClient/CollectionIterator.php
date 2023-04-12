@@ -31,7 +31,7 @@ class CollectionIterator implements Iterator
      * @return mixed Can return any type.
      * @since 5.0.0
      */
-    public function current()
+    public function current(): mixed
     {
         $var = current($this->_items);
         return $var;
@@ -40,13 +40,13 @@ class CollectionIterator implements Iterator
     /**
      * Move forward to next element
      * @link https://php.net/manual/en/iterator.next.php
-     * @return mixed Next item
+     * @return void Any returned value is ignored.
      * @since 5.0.0
      */
-    public function next()
+    public function next(): void
     {
-        $var = next($this->_items);
-        return $var;
+        next($this->_items);
+
     }
 
     /**
@@ -55,7 +55,7 @@ class CollectionIterator implements Iterator
      * @return mixed scalar on success, or null on failure.
      * @since 5.0.0
      */
-    public function key()
+    public function key(): mixed
     {
         $var = key($this->_items);
         return $var;
@@ -68,7 +68,7 @@ class CollectionIterator implements Iterator
      * Returns true on success or false on failure.
      * @since 5.0.0
      */
-    public function valid()
+    public function valid(): bool
     {
         $key = key($this->_items);
         $var = ($key !== null && $key !== false);
@@ -81,7 +81,7 @@ class CollectionIterator implements Iterator
      * @return void Any returned value is ignored.
      * @since 5.0.0
      */
-    public function rewind()
+    public function rewind(): void
     {
         reset($this->_items);
     }
