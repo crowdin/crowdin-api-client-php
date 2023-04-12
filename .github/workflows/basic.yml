@@ -1,0 +1,61 @@
+name: Tests
+
+on:
+  pull_request:
+    branches:
+      - 'master'
+  push:
+    branches:
+      - '*'
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+      - 'CODE_OF_CONDUCT.md'
+      - 'CONTRIBUTING.md'
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-version: [ 7.4, 8.0, 8.1, 8.2 ]
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+
+      - name: Composer install
+        run: composer install --no-interaction --prefer-dist
+
+      - name: Unit tests
+        run: vendor/bin/phpunit
+
+  validate:
+    runs-on: ubuntu-latest
+    needs: tests
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.0
+
+      - name: Composer install
+        run: composer install --no-interaction --prefer-dist
+
+      - name: Check formatting
+        run: |
+          export PHP_CS_FIXER_IGNORE_ENV=true
+          vendor/bin/php-cs-fixer fix --dry-run
+
+      - name: Generate code coverage report
+        run: vendor/bin/phpunit --coverage-clover=coverage.xml
+
+      - name: Upload coverage report to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
