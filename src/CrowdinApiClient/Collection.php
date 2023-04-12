@@ -74,6 +74,7 @@ class Collection implements IteratorAggregate, ArrayAccess, Countable
      * @return mixed Can return all value types.
      * @since 5.0.0
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         if (isset($this->_items[$offset]) === false) {
@@ -94,6 +95,7 @@ class Collection implements IteratorAggregate, ArrayAccess, Countable
      * @return void
      * @since 5.0.0
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if ($offset === null) {
@@ -111,6 +113,7 @@ class Collection implements IteratorAggregate, ArrayAccess, Countable
      * @return void
      * @since 5.0.0
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->_items[$offset]);
