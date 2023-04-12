@@ -76,7 +76,7 @@ For more about Authorization see the [documentation](https://developer.crowdin.c
 
 If you find any problems or would like to suggest a feature, please read the [How can I contribute](/CONTRIBUTING.md#how-can-i-contribute) section in our contributing guidelines.
 
-Need help working with Crowdin CLI or have a question? Visit our [Community Forum](https://community.crowdin.com/) or contact [Customer Success Service](https://crowdin.com/contacts).
+Need help working with Crowdin PHP Client or have a question? Visit our [Community Forum](https://community.crowdin.com/) or contact [Customer Success Service](https://crowdin.com/contacts).
 
 ## Contributing
 
