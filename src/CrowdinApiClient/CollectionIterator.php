@@ -30,6 +30,7 @@ class CollectionIterator implements Iterator
      * @link https://php.net/manual/en/iterator.current.php
      * @return mixed Can return any type.
      * @since 5.0.0
+     * @TODO Remove the 'ReturnTypeWillChange' suppression on next major version
      */
     #[\ReturnTypeWillChange]
     public function current()
@@ -43,6 +44,7 @@ class CollectionIterator implements Iterator
      * @link https://php.net/manual/en/iterator.next.php
      * @return mixed Next item
      * @since 5.0.0
+     * @TODO Remove the 'ReturnTypeWillChange' suppression on next major version
      */
     #[\ReturnTypeWillChange]
     public function next()
@@ -56,6 +58,7 @@ class CollectionIterator implements Iterator
      * @link https://php.net/manual/en/iterator.key.php
      * @return mixed scalar on success, or null on failure.
      * @since 5.0.0
+     * @TODO Remove the 'ReturnTypeWillChange' suppression on next major version
      */
     #[\ReturnTypeWillChange]
     public function key()
@@ -70,6 +73,7 @@ class CollectionIterator implements Iterator
      * @return bool The return value will be casted to boolean and then evaluated.
      * Returns true on success or false on failure.
      * @since 5.0.0
+     * @TODO Remove the 'ReturnTypeWillChange' suppression on next major version
      */
     #[\ReturnTypeWillChange]
     public function valid()
@@ -84,6 +88,7 @@ class CollectionIterator implements Iterator
      * @link https://php.net/manual/en/iterator.rewind.php
      * @return void Any returned value is ignored.
      * @since 5.0.0
+     * @TODO Remove the 'ReturnTypeWillChange' suppression on next major version
      */
     #[\ReturnTypeWillChange]
     public function rewind()
