@@ -44,7 +44,8 @@ class CollectionIterator implements Iterator
      * @return void Any returned value is ignored.
      * @since 5.0.0
      */
-    public function next(): void
+    #[\ReturnTypeWillChange]
+    public function next()
     {
         next($this->_items);
 
@@ -70,7 +71,8 @@ class CollectionIterator implements Iterator
      * Returns true on success or false on failure.
      * @since 5.0.0
      */
-    public function valid(): bool
+    #[\ReturnTypeWillChange]
+    public function valid()
     {
         $key = key($this->_items);
         $var = ($key !== null && $key !== false);
@@ -83,7 +85,8 @@ class CollectionIterator implements Iterator
      * @return void Any returned value is ignored.
      * @since 5.0.0
      */
-    public function rewind(): void
+    #[\ReturnTypeWillChange]
+    public function rewind()
     {
         reset($this->_items);
     }
