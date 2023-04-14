@@ -27,6 +27,7 @@ class Collection implements IteratorAggregate, ArrayAccess, Countable
      * <p>
      * The return value is cast to an integer.
      * @since 5.1.0
+     * @TODO Remove the 'ReturnTypeWillChange' suppression on next major version
      */
     #[\ReturnTypeWillChange]
     public function count()
@@ -40,6 +41,7 @@ class Collection implements IteratorAggregate, ArrayAccess, Countable
      * @return CollectionIterator
      * <b>Traversable</b>
      * @since 5.0.0
+     * @TODO Remove the 'ReturnTypeWillChange' suppression on next major version
      */
     #[\ReturnTypeWillChange]
     public function getIterator()
@@ -58,6 +60,7 @@ class Collection implements IteratorAggregate, ArrayAccess, Countable
      * <p>
      * The return value will be casted to boolean if non-boolean was returned.
      * @since 5.0.0
+     * @TODO Remove the 'ReturnTypeWillChange' suppression on next major version
      */
     #[\ReturnTypeWillChange]
     public function offsetExists($offset)
@@ -73,7 +76,9 @@ class Collection implements IteratorAggregate, ArrayAccess, Countable
      * </p>
      * @return mixed Can return all value types.
      * @since 5.0.0
+     * @TODO Remove the 'ReturnTypeWillChange' suppression on next major version
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         if (isset($this->_items[$offset]) === false) {
@@ -93,7 +98,9 @@ class Collection implements IteratorAggregate, ArrayAccess, Countable
      * </p>
      * @return void
      * @since 5.0.0
+     * @TODO Remove the 'ReturnTypeWillChange' suppression on next major version
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if ($offset === null) {
@@ -110,7 +117,9 @@ class Collection implements IteratorAggregate, ArrayAccess, Countable
      * </p>
      * @return void
      * @since 5.0.0
+     * @TODO Remove the 'ReturnTypeWillChange' suppression on next major version
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->_items[$offset]);
