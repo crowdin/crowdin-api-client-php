@@ -2,8 +2,8 @@
 
 namespace CrowdinApiClient\Api;
 
-use CrowdinApiClient\Model\DownloadFilePreview;
 use CrowdinApiClient\Model\DownloadFile;
+use CrowdinApiClient\Model\DownloadFilePreview;
 use CrowdinApiClient\Model\File;
 use CrowdinApiClient\Model\FileRevision;
 use CrowdinApiClient\ModelCollection;
@@ -119,7 +119,7 @@ class FileApi extends AbstractApi
     {
         $path = sprintf('projects/%d/files/%d/preview', $projectId, $fileId);
         return $this->_get($path, DownloadFilePreview::class);
-    }    
+    }
 
     /**
      * Download File

@@ -2,8 +2,8 @@
 
 namespace CrowdinApiClient\Tests\Api;
 
-use CrowdinApiClient\Model\DownloadFilePreview;
 use CrowdinApiClient\Model\DownloadFile;
+use CrowdinApiClient\Model\DownloadFilePreview;
 use CrowdinApiClient\Model\File;
 use CrowdinApiClient\Model\FileRevision;
 use CrowdinApiClient\ModelCollection;
