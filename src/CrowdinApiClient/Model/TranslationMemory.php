@@ -33,9 +33,9 @@ class TranslationMemory extends BaseModel
     protected $segmentsCount;
 
     /**
-     * @var integer
+     * @var array
      */
-    protected $defaultProjectId;
+    protected $defaultProjectIds;
 
     /**
      * @var array
@@ -59,7 +59,7 @@ class TranslationMemory extends BaseModel
         $this->name = $this->getDataProperty('name');
         $this->languageIds = $this->getDataProperty('languageIds');
         $this->segmentsCount = $this->getDataProperty('segmentsCount');
-        $this->defaultProjectId = $this->getDataProperty('defaultProjectId');
+        $this->defaultProjectIds = $this->getDataProperty('defaultProjectIds');
         $this->projectIds = $this->getDataProperty('projectIds');
         $this->createdAt = $this->getDataProperty('createdAt');
     }
@@ -113,11 +113,11 @@ class TranslationMemory extends BaseModel
     }
 
     /**
-     * @return int
+     * @return array
      */
-    public function getDefaultProjectId(): int
+    public function getDefaultProjectIds(): array
     {
-        return $this->defaultProjectId;
+        return $this->defaultProjectIds;
     }
 
     /**

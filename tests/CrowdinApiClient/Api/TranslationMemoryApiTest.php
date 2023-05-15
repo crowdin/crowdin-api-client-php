@@ -30,7 +30,7 @@ class TranslationMemoryApiTest extends AbstractTestApi
                       "el"
                     ],
                     "segmentsCount": 21,
-                    "defaultProjectId": 0,
+                    "defaultProjectIds": [0],
                     "projectIds": [
                       2
                     ]
@@ -72,7 +72,7 @@ class TranslationMemoryApiTest extends AbstractTestApi
                   "el"
                 ],
                 "segmentsCount": 21,
-                "defaultProjectId": 0,
+                "defaultProjectIds": [0],
                 "projectIds": [
                   2
                 ],
@@ -97,7 +97,7 @@ class TranslationMemoryApiTest extends AbstractTestApi
                   "el"
                 ],
                 "segmentsCount": 21,
-                "defaultProjectId": 0,
+                "defaultProjectIds": [0],
                 "projectIds": [
                   2
                 ]
@@ -117,7 +117,7 @@ class TranslationMemoryApiTest extends AbstractTestApi
                   "el"
                 ],
                 "segmentsCount": 21,
-                "defaultProjectId": 0,
+                "defaultProjectIds": [0],
                 "projectIds": [
                   2
                 ]
