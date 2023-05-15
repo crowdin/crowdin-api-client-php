@@ -401,6 +401,11 @@ Search.appendIndex(
             "summary": "Restore\u0020file\u0020to\u0020revision",
             "url": "classes/CrowdinApiClient-Api-FileApi.html#method_restore"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\FileApi\u003A\u003AdownloadPreview\u0028\u0029",
+            "name": "downloadPreview",
+            "summary": "Download\u0020Preview\u0020File",
+            "url": "classes/CrowdinApiClient-Api-FileApi.html#method_downloadPreview"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Api\\FileApi\u003A\u003Adownload\u0028\u0029",
             "name": "download",
             "summary": "Download\u0020File",
@@ -1975,6 +1980,46 @@ Search.appendIndex(
             "name": "expireIn",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-DownloadFile.html#property_expireIn"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\DownloadFilePreview",
+            "name": "DownloadFilePreview",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-DownloadFilePreview.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\DownloadFilePreview\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-DownloadFilePreview.html#method___construct"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\DownloadFilePreview\u003A\u003AgetUrl\u0028\u0029",
+            "name": "getUrl",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-DownloadFilePreview.html#method_getUrl"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\DownloadFilePreview\u003A\u003AsetUrl\u0028\u0029",
+            "name": "setUrl",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-DownloadFilePreview.html#method_setUrl"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\DownloadFilePreview\u003A\u003AgetExpireIn\u0028\u0029",
+            "name": "getExpireIn",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-DownloadFilePreview.html#method_getExpireIn"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\DownloadFilePreview\u003A\u003AsetExpireIn\u0028\u0029",
+            "name": "setExpireIn",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-DownloadFilePreview.html#method_setExpireIn"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\DownloadFilePreview\u003A\u003A\u0024url",
+            "name": "url",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-DownloadFilePreview.html#property_url"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\DownloadFilePreview\u003A\u003A\u0024expireIn",
+            "name": "expireIn",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-DownloadFilePreview.html#property_expireIn"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\DownloadFileTranslation",
             "name": "DownloadFileTranslation",
@@ -7051,10 +7096,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-TranslationMemory.html#method_getSegmentsCount"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\TranslationMemory\u003A\u003AgetDefaultProjectId\u0028\u0029",
-            "name": "getDefaultProjectId",
+            "fqsen": "\\CrowdinApiClient\\Model\\TranslationMemory\u003A\u003AgetDefaultProjectIds\u0028\u0029",
+            "name": "getDefaultProjectIds",
             "summary": "",
-            "url": "classes/CrowdinApiClient-Model-TranslationMemory.html#method_getDefaultProjectId"
+            "url": "classes/CrowdinApiClient-Model-TranslationMemory.html#method_getDefaultProjectIds"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\TranslationMemory\u003A\u003AgetProjectIds\u0028\u0029",
             "name": "getProjectIds",
@@ -7096,10 +7141,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-TranslationMemory.html#property_segmentsCount"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\TranslationMemory\u003A\u003A\u0024defaultProjectId",
-            "name": "defaultProjectId",
+            "fqsen": "\\CrowdinApiClient\\Model\\TranslationMemory\u003A\u003A\u0024defaultProjectIds",
+            "name": "defaultProjectIds",
             "summary": "",
-            "url": "classes/CrowdinApiClient-Model-TranslationMemory.html#property_defaultProjectId"
+            "url": "classes/CrowdinApiClient-Model-TranslationMemory.html#property_defaultProjectIds"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\TranslationMemory\u003A\u003A\u0024projectIds",
             "name": "projectIds",
