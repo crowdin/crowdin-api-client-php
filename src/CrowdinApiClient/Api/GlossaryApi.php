@@ -121,17 +121,18 @@ class GlossaryApi extends AbstractApi
         return $this->_get($path, GlossaryExport::class);
     }
 
-    /**
+	/**
      * Download Glossary
      * @link https://developer.crowdin.com/api/v2/#operation/api.glossaries.exports.download.getMany API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.glossaries.exports.download.getMany API Documentation Enterprise
      *
      * @param int $glossaryId
+	 * @param string $exportId
      * @return DownloadFile|null
      */
-    public function download(int $glossaryId): ?DownloadFile
+    public function download(int $glossaryId, string $exportId): ?DownloadFile
     {
-        $path = sprintf('glossaries/%d/exports/download', $glossaryId);
+        $path = sprintf('glossaries/%d/exports/%s/download', $glossaryId, $exportId);
         return $this->_get($path, DownloadFile::class);
     }
 
