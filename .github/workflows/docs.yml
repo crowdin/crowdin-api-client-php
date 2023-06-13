@@ -1,6 +1,7 @@
 name: Documentation
 
 on:
+  workflow_dispatch:
   push:
     tags:
       - '*'
@@ -16,10 +17,8 @@ jobs:
         with:
           php-version: 8.0
 
-      - name: wget
-        uses: wei/wget@v1
-        with:
-          args: -O phpDocumentor.phar https://phpdoc.org/phpDocumentor.phar
+      - name: Download phpDocumentor.phar
+        run: curl -o phpDocumentor.phar https://phpdoc.org/phpDocumentor.phar
 
       - name: Generate the docs locally in CI
         run: php phpDocumentor.phar -d src
