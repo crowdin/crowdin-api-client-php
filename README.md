@@ -2,7 +2,7 @@
 
 # Crowdin PHP client
 
-The Crowdin PHP client is a lightweight interface to the Crowdin API v2. It provides common services for making API requests.
+The Crowdin PHP client is a lightweight interface to the Crowdin API. It provides common services for making API requests.
 
 Our API is a full-featured RESTful API that helps you to integrate localization into your development process. The endpoints that we use allow you to easily make calls to retrieve information and to execute actions needed.
 
@@ -29,7 +29,9 @@ Our API is a full-featured RESTful API that helps you to integrate localization 
 
 Install via Composer
 
-    composer require crowdin/crowdin-api-client
+```console
+composer require crowdin/crowdin-api-client
+```
 
 ### Quick Start
 
@@ -76,13 +78,12 @@ For more about Authorization see the [documentation](https://developer.crowdin.c
 
 If you find any problems or would like to suggest a feature, please read the [How can I contribute](/CONTRIBUTING.md#how-can-i-contribute) section in our contributing guidelines.
 
-Need help working with Crowdin PHP Client or have a question? Visit our [Community Forum](https://community.crowdin.com/) or contact [Customer Success Service](https://crowdin.com/contacts).
-
 ## Contributing
 
 If you would like to contribute, please read the [Contributing Guidelines](/CONTRIBUTING.md).
 
 ### License
+
 <pre>
 The Crowdin PHP client is licensed under the MIT License.
 See the LICENSE file distributed with this work for additional
