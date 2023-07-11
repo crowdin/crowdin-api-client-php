@@ -99,7 +99,7 @@ class GlossaryApi extends AbstractApi
 	 * @param array $exportFields
      * @return GlossaryExport|null
      */
-    public function export(int $glossaryId, $format = 'tbx', $exportFields = ['term', 'description', 'description']): ?GlossaryExport
+    public function export(int $glossaryId, $format = 'tbx', $exportFields = ['term', 'description', 'partOfSpeech']): ?GlossaryExport
     {
         $path = sprintf('glossaries/%d/exports', $glossaryId);
         $params = ['format' => $format, 'exportFields' => $exportFields];
