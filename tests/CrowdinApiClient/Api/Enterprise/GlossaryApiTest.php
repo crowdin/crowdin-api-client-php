@@ -145,7 +145,7 @@ class GlossaryApiTest extends AbstractTestApi
             'method' => 'post',
             'body' => [
                 'format' => 'tbx',
-                'exportFields'	=> [ 'term', 'description', 'partOfSpeech' ],
+                'exportFields' => [ 'term', 'description', 'partOfSpeech' ],
             ],
             'response' => '{
                   "data": {
