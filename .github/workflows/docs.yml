@@ -17,11 +17,9 @@ jobs:
         with:
           php-version: 8.0
 
-      - name: Download phpDocumentor.phar
-        run: curl -o phpDocumentor.phar https://phpdoc.org/phpDocumentor.phar
-
-      - name: Generate the docs locally in CI
-        run: php phpDocumentor.phar -d src
+      - name: Generate documentation
+        run: |
+          docker run --rm -v $(pwd):/data phpdoc/phpdoc:3 -d src -t .phpdoc/build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
