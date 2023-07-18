@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/base.css">
             <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/template.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-highlight/prism-line-highlight.css">
                 <script src="https://cdn.jsdelivr.net/npm/fuse.js@3.4.6"></script>
         <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+        <script src="js/template.js"></script>
         <script src="js/search.js"></script>
         <script defer src="js/searchIndex.js"></script>
     </head>
@@ -52,7 +53,7 @@
 <label class="phpdocumentor-sidebar__menu-icon" for="sidebar-button">
     Menu
 </label>
-<aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+<aside class="phpdocumentor-column -three phpdocumentor-sidebar">
                     <section class="phpdocumentor-sidebar__category">
             <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
@@ -125,8 +126,9 @@
     </section>
 </aside>
 
-            <div class="phpdocumentor-column -eight phpdocumentor-content">
-                    <ul class="phpdocumentor-breadcrumbs">
+            <div class="phpdocumentor-column -nine phpdocumentor-content">
+                                <section>
+                                        <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/crowdinapiclient.html">CrowdinApiClient</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/crowdinapiclient-model.html">Model</a></li>
     </ul>
@@ -150,6 +152,11 @@
     
     </h2>
 
+<div class="phpdocumentor-label-line">
+
+
+</div>
+
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Webhook.php"><a href="files/src-crowdinapiclient-model-webhook.html"><abbr title="src/CrowdinApiClient/Model/Webhook.php">Webhook.php</abbr></a></abbr>
     :
@@ -163,268 +170,252 @@
 
 
 
-
-
-
 <h3 id="toc">
     Table of Contents
-    <a href="#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/CrowdinApiClient-Model-Webhook.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+
 </h3>
 
+
+
+
+
+
+
+
+
+<h4 id="toc-properties">
+    Properties
+    <a href="classes/CrowdinApiClient-Model-Webhook.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
 <dl class="phpdocumentor-table-of-contents">
-                    <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#property_batchingEnabled">$batchingEnabled</a>
     <span>
                         &nbsp;: bool            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#property_contentType">$contentType</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#property_createdAt">$createdAt</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#property_events">$events</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#property_headers">$headers</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#property_id">$id</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#property_isActive">$isActive</a>
     <span>
                         &nbsp;: bool            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#property_name">$name</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#property_payload">$payload</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#property_projectId">$projectId</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#property_requestType">$requestType</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#property_updatedAt">$updatedAt</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#property_url">$url</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
-                <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    </dl>
+
+<h4 id="toc-methods">
+    Methods
+    <a href="classes/CrowdinApiClient-Model-Webhook.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#method_getContentType">getContentType()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#method_getCreatedAt">getCreatedAt()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#method_getEvents">getEvents()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#method_getHeaders">getHeaders()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#method_getId">getId()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#method_getName">getName()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#method_getPayload">getPayload()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#method_getProjectId">getProjectId()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#method_getRequestType">getRequestType()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#method_getUpdatedAt">getUpdatedAt()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#method_getUrl">getUrl()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#method_isActive">isActive()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#method_isBatchingEnabled">isBatchingEnabled()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#method_setBatchingEnabled">setBatchingEnabled()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#method_setContentType">setContentType()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#method_setEvents">setEvents()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#method_setHeaders">setHeaders()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#method_setIsActive">setIsActive()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#method_setName">setName()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#method_setPayload">setPayload()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#method_setRequestType">setRequestType()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Webhook.html#method_setUrl">setUrl()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
-        </dl>
+    </dl>
+
 
 
 
@@ -435,6 +426,7 @@
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
             <a href="classes/CrowdinApiClient-Model-Webhook.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article
         class="
@@ -446,6 +438,7 @@
     <h4 class="phpdocumentor-element__name" id="property_batchingEnabled">
         $batchingEnabled
         <a href="classes/CrowdinApiClient-Model-Webhook.html#property_batchingEnabled" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -478,6 +471,7 @@
     <h4 class="phpdocumentor-element__name" id="property_contentType">
         $contentType
         <a href="classes/CrowdinApiClient-Model-Webhook.html#property_contentType" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -510,6 +504,7 @@
     <h4 class="phpdocumentor-element__name" id="property_createdAt">
         $createdAt
         <a href="classes/CrowdinApiClient-Model-Webhook.html#property_createdAt" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -542,6 +537,7 @@
     <h4 class="phpdocumentor-element__name" id="property_events">
         $events
         <a href="classes/CrowdinApiClient-Model-Webhook.html#property_events" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -574,6 +570,7 @@
     <h4 class="phpdocumentor-element__name" id="property_headers">
         $headers
         <a href="classes/CrowdinApiClient-Model-Webhook.html#property_headers" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -606,6 +603,7 @@
     <h4 class="phpdocumentor-element__name" id="property_id">
         $id
         <a href="classes/CrowdinApiClient-Model-Webhook.html#property_id" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -638,6 +636,7 @@
     <h4 class="phpdocumentor-element__name" id="property_isActive">
         $isActive
         <a href="classes/CrowdinApiClient-Model-Webhook.html#property_isActive" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -670,6 +669,7 @@
     <h4 class="phpdocumentor-element__name" id="property_name">
         $name
         <a href="classes/CrowdinApiClient-Model-Webhook.html#property_name" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -702,6 +702,7 @@
     <h4 class="phpdocumentor-element__name" id="property_payload">
         $payload
         <a href="classes/CrowdinApiClient-Model-Webhook.html#property_payload" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -734,6 +735,7 @@
     <h4 class="phpdocumentor-element__name" id="property_projectId">
         $projectId
         <a href="classes/CrowdinApiClient-Model-Webhook.html#property_projectId" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -766,6 +768,7 @@
     <h4 class="phpdocumentor-element__name" id="property_requestType">
         $requestType
         <a href="classes/CrowdinApiClient-Model-Webhook.html#property_requestType" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -798,6 +801,7 @@
     <h4 class="phpdocumentor-element__name" id="property_updatedAt">
         $updatedAt
         <a href="classes/CrowdinApiClient-Model-Webhook.html#property_updatedAt" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -830,6 +834,7 @@
     <h4 class="phpdocumentor-element__name" id="property_url">
         $url
         <a href="classes/CrowdinApiClient-Model-Webhook.html#property_url" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -858,6 +863,7 @@
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
             <a href="classes/CrowdinApiClient-Model-Webhook.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article
         class="phpdocumentor-element
@@ -868,6 +874,7 @@
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
         <a href="classes/CrowdinApiClient-Model-Webhook.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Webhook.php"><a href="files/src-crowdinapiclient-model-webhook.html"><abbr title="src/CrowdinApiClient/Model/Webhook.php">Webhook.php</abbr></a></abbr>
@@ -881,6 +888,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -895,10 +904,6 @@
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -910,6 +915,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getContentType">
         getContentType()
         <a href="classes/CrowdinApiClient-Model-Webhook.html#method_getContentType" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Webhook.php"><a href="files/src-crowdinapiclient-model-webhook.html"><abbr title="src/CrowdinApiClient/Model/Webhook.php">Webhook.php</abbr></a></abbr>
@@ -923,15 +929,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getContentType</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -942,6 +950,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getCreatedAt">
         getCreatedAt()
         <a href="classes/CrowdinApiClient-Model-Webhook.html#method_getCreatedAt" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Webhook.php"><a href="files/src-crowdinapiclient-model-webhook.html"><abbr title="src/CrowdinApiClient/Model/Webhook.php">Webhook.php</abbr></a></abbr>
@@ -955,15 +964,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getCreatedAt</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -974,6 +985,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getEvents">
         getEvents()
         <a href="classes/CrowdinApiClient-Model-Webhook.html#method_getEvents" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Webhook.php"><a href="files/src-crowdinapiclient-model-webhook.html"><abbr title="src/CrowdinApiClient/Model/Webhook.php">Webhook.php</abbr></a></abbr>
@@ -987,15 +999,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getEvents</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1006,6 +1020,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getHeaders">
         getHeaders()
         <a href="classes/CrowdinApiClient-Model-Webhook.html#method_getHeaders" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Webhook.php"><a href="files/src-crowdinapiclient-model-webhook.html"><abbr title="src/CrowdinApiClient/Model/Webhook.php">Webhook.php</abbr></a></abbr>
@@ -1019,15 +1034,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getHeaders</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1038,6 +1055,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getId">
         getId()
         <a href="classes/CrowdinApiClient-Model-Webhook.html#method_getId" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Webhook.php"><a href="files/src-crowdinapiclient-model-webhook.html"><abbr title="src/CrowdinApiClient/Model/Webhook.php">Webhook.php</abbr></a></abbr>
@@ -1051,15 +1069,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1070,6 +1090,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getName">
         getName()
         <a href="classes/CrowdinApiClient-Model-Webhook.html#method_getName" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Webhook.php"><a href="files/src-crowdinapiclient-model-webhook.html"><abbr title="src/CrowdinApiClient/Model/Webhook.php">Webhook.php</abbr></a></abbr>
@@ -1083,15 +1104,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getName</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1102,6 +1125,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getPayload">
         getPayload()
         <a href="classes/CrowdinApiClient-Model-Webhook.html#method_getPayload" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Webhook.php"><a href="files/src-crowdinapiclient-model-webhook.html"><abbr title="src/CrowdinApiClient/Model/Webhook.php">Webhook.php</abbr></a></abbr>
@@ -1115,15 +1139,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getPayload</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1134,6 +1160,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getProjectId">
         getProjectId()
         <a href="classes/CrowdinApiClient-Model-Webhook.html#method_getProjectId" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Webhook.php"><a href="files/src-crowdinapiclient-model-webhook.html"><abbr title="src/CrowdinApiClient/Model/Webhook.php">Webhook.php</abbr></a></abbr>
@@ -1147,15 +1174,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getProjectId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1166,6 +1195,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getRequestType">
         getRequestType()
         <a href="classes/CrowdinApiClient-Model-Webhook.html#method_getRequestType" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Webhook.php"><a href="files/src-crowdinapiclient-model-webhook.html"><abbr title="src/CrowdinApiClient/Model/Webhook.php">Webhook.php</abbr></a></abbr>
@@ -1179,15 +1209,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getRequestType</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1198,6 +1230,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getUpdatedAt">
         getUpdatedAt()
         <a href="classes/CrowdinApiClient-Model-Webhook.html#method_getUpdatedAt" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Webhook.php"><a href="files/src-crowdinapiclient-model-webhook.html"><abbr title="src/CrowdinApiClient/Model/Webhook.php">Webhook.php</abbr></a></abbr>
@@ -1211,15 +1244,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getUpdatedAt</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1230,6 +1265,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getUrl">
         getUrl()
         <a href="classes/CrowdinApiClient-Model-Webhook.html#method_getUrl" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Webhook.php"><a href="files/src-crowdinapiclient-model-webhook.html"><abbr title="src/CrowdinApiClient/Model/Webhook.php">Webhook.php</abbr></a></abbr>
@@ -1243,15 +1279,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getUrl</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1262,6 +1300,7 @@
     <h4 class="phpdocumentor-element__name" id="method_isActive">
         isActive()
         <a href="classes/CrowdinApiClient-Model-Webhook.html#method_isActive" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Webhook.php"><a href="files/src-crowdinapiclient-model-webhook.html"><abbr title="src/CrowdinApiClient/Model/Webhook.php">Webhook.php</abbr></a></abbr>
@@ -1275,15 +1314,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">isActive</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1294,6 +1335,7 @@
     <h4 class="phpdocumentor-element__name" id="method_isBatchingEnabled">
         isBatchingEnabled()
         <a href="classes/CrowdinApiClient-Model-Webhook.html#method_isBatchingEnabled" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Webhook.php"><a href="files/src-crowdinapiclient-model-webhook.html"><abbr title="src/CrowdinApiClient/Model/Webhook.php">Webhook.php</abbr></a></abbr>
@@ -1307,15 +1349,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">isBatchingEnabled</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1326,6 +1370,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setBatchingEnabled">
         setBatchingEnabled()
         <a href="classes/CrowdinApiClient-Model-Webhook.html#method_setBatchingEnabled" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Webhook.php"><a href="files/src-crowdinapiclient-model-webhook.html"><abbr title="src/CrowdinApiClient/Model/Webhook.php">Webhook.php</abbr></a></abbr>
@@ -1339,6 +1384,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setBatchingEnabled</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$batchingEnabled</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1353,10 +1400,6 @@
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1368,6 +1411,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setContentType">
         setContentType()
         <a href="classes/CrowdinApiClient-Model-Webhook.html#method_setContentType" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Webhook.php"><a href="files/src-crowdinapiclient-model-webhook.html"><abbr title="src/CrowdinApiClient/Model/Webhook.php">Webhook.php</abbr></a></abbr>
@@ -1381,6 +1425,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setContentType</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$contentType</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1395,10 +1441,6 @@
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1410,6 +1452,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setEvents">
         setEvents()
         <a href="classes/CrowdinApiClient-Model-Webhook.html#method_setEvents" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Webhook.php"><a href="files/src-crowdinapiclient-model-webhook.html"><abbr title="src/CrowdinApiClient/Model/Webhook.php">Webhook.php</abbr></a></abbr>
@@ -1423,6 +1466,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setEvents</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$events</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1437,10 +1482,6 @@
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1452,6 +1493,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setHeaders">
         setHeaders()
         <a href="classes/CrowdinApiClient-Model-Webhook.html#method_setHeaders" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Webhook.php"><a href="files/src-crowdinapiclient-model-webhook.html"><abbr title="src/CrowdinApiClient/Model/Webhook.php">Webhook.php</abbr></a></abbr>
@@ -1465,6 +1507,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setHeaders</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$headers</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1479,10 +1523,6 @@
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1494,6 +1534,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setIsActive">
         setIsActive()
         <a href="classes/CrowdinApiClient-Model-Webhook.html#method_setIsActive" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Webhook.php"><a href="files/src-crowdinapiclient-model-webhook.html"><abbr title="src/CrowdinApiClient/Model/Webhook.php">Webhook.php</abbr></a></abbr>
@@ -1507,6 +1548,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setIsActive</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$isActive</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1521,10 +1564,6 @@
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1536,6 +1575,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setName">
         setName()
         <a href="classes/CrowdinApiClient-Model-Webhook.html#method_setName" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Webhook.php"><a href="files/src-crowdinapiclient-model-webhook.html"><abbr title="src/CrowdinApiClient/Model/Webhook.php">Webhook.php</abbr></a></abbr>
@@ -1549,6 +1589,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setName</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1563,10 +1605,6 @@
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1578,6 +1616,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setPayload">
         setPayload()
         <a href="classes/CrowdinApiClient-Model-Webhook.html#method_setPayload" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Webhook.php"><a href="files/src-crowdinapiclient-model-webhook.html"><abbr title="src/CrowdinApiClient/Model/Webhook.php">Webhook.php</abbr></a></abbr>
@@ -1591,6 +1630,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setPayload</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$payload</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1605,10 +1646,6 @@
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1620,6 +1657,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setRequestType">
         setRequestType()
         <a href="classes/CrowdinApiClient-Model-Webhook.html#method_setRequestType" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Webhook.php"><a href="files/src-crowdinapiclient-model-webhook.html"><abbr title="src/CrowdinApiClient/Model/Webhook.php">Webhook.php</abbr></a></abbr>
@@ -1633,6 +1671,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setRequestType</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$requestType</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1647,10 +1687,6 @@
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1662,6 +1698,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setUrl">
         setUrl()
         <a href="classes/CrowdinApiClient-Model-Webhook.html#method_setUrl" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Webhook.php"><a href="files/src-crowdinapiclient-model-webhook.html"><abbr title="src/CrowdinApiClient/Model/Webhook.php">Webhook.php</abbr></a></abbr>
@@ -1675,6 +1712,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setUrl</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$url</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1689,78 +1728,171 @@
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
             </section>
 
-        
+        <div class="phpdocumentor-modal" id="source-view">
+    <div class="phpdocumentor-modal-bg" data-exit-button></div>
+    <div class="phpdocumentor-modal-container">
+        <div class="phpdocumentor-modal-content">
+            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/CrowdinApiClient/Model/Webhook.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
+        </div>
+        <button data-exit-button class="phpdocumentor-modal__close">&times;</button>
+    </div>
+</div>
+
     <script type="text/javascript">
-        function loadExternalCodeSnippets(line) {
-            Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach((pre) => {
-                var src = pre.getAttribute('data-src').replace( /\\/g, '/');
-                var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
-                var language = 'php';
+        (function () {
+            function loadExternalCodeSnippet(el, url, line) {
+                Array.prototype.slice.call(el.querySelectorAll('pre[data-src]')).forEach((pre) => {
+                    const src = url || pre.getAttribute('data-src').replace(/\\/g, '/');
+                    const language = 'php';
 
-                var code = document.createElement('code');
-                code.className = 'language-' + language;
+                    const code = document.createElement('code');
+                    code.className = 'language-' + language;
+                    pre.textContent = '';
+                    pre.setAttribute('data-line', line)
+                    code.textContent = 'Loading…';
+                    pre.appendChild(code);
 
-                pre.textContent = '';
+                    var xhr = new XMLHttpRequest();
 
-                pre.setAttribute('data-line', line)
-                code.textContent = 'Loading…';
+                    xhr.open('GET', src, true);
 
-                pre.appendChild(code);
-
-                var xhr = new XMLHttpRequest();
-
-                xhr.open('GET', src, true);
-
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState == 4) {
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState !== 4) {
+                            return;
+                        }
 
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
-
                             Prism.highlightElement(code);
+                            return;
                         }
-                        else if (xhr.status >= 400) {
+
+                        if (xhr.status === 404) {
+                            code.textContent = '✖ Error: File could not be found';
+                            return;
+                        }
+
+                        if (xhr.status >= 400) {
                             code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                            return;
                         }
-                        else {
-                            code.textContent = '✖ Error: File does not exist, is empty or trying to view from localhost';
-                        }
+
+                        code.textContent = '✖ Error: An unknown error occurred';
+                    };
+
+                    xhr.send(null);
+                });
+            }
+
+            const modalButtons = document.querySelectorAll("[data-modal]");
+            const openedAsLocalFile = window.location.protocol === 'file:';
+            if (modalButtons.length > 0 && openedAsLocalFile) {
+                console.warn(
+                    'Viewing the source code is unavailable because you are opening this page from the file:// scheme; ' +
+                    'browsers block XHR requests when a page is opened this way'
+                );
+            }
+
+            modalButtons.forEach(function (trigger) {
+                if (openedAsLocalFile) {
+                    trigger.setAttribute("hidden", "hidden");
+                }
+
+                trigger.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    const modal = document.getElementById(trigger.dataset.modal);
+                    if (!modal) {
+                        console.error(`Modal with id "${trigger.dataset.modal}" could not be found`);
+                        return;
                     }
-                };
+                    modal.classList.add("phpdocumentor-modal__open");
 
-                xhr.send(null);
-            });
-        }
-
-        var modals = document.querySelectorAll("[data-modal]");
-
-        modals.forEach(function (trigger) {
-            trigger.addEventListener("click", function (event) {
-                //event.preventDefault();
-                const modal = document.getElementById(trigger.dataset.modal);
-                modal.classList.add("phpdocumentor-modal__open");
-                loadExternalCodeSnippets(trigger.dataset.line)
-                const exits = modal.querySelectorAll("[data-exit-button]");
-                exits.forEach(function (exit) {
-                    exit.addEventListener("click", function (event) {
-                        event.preventDefault();
-                        modal.classList.remove("phpdocumentor-modal__open");
+                    loadExternalCodeSnippet(modal, trigger.dataset.src || null, trigger.dataset.line)
+                    const exits = modal.querySelectorAll("[data-exit-button]");
+                    exits.forEach(function (exit) {
+                        exit.addEventListener("click", function (event) {
+                            event.preventDefault();
+                            modal.classList.remove("phpdocumentor-modal__open");
+                        });
                     });
                 });
             });
-        });
+        })();
     </script>
 
     </article>
-                <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
+                                </section>
+                <section class="phpdocumentor-on-this-page__sidebar">
+                                
+    <section class="phpdocumentor-on-this-page__content">
+        <strong class="phpdocumentor-on-this-page__title">On this page</strong>
+
+        <ul class="phpdocumentor-list -clean">
+            <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                                            <li><a href="classes/CrowdinApiClient-Model-Webhook.html#toc-properties">Properties</a></li>
+                                                            <li><a href="classes/CrowdinApiClient-Model-Webhook.html#toc-methods">Methods</a></li>
+                                    </ul>
+            </li>
+            
+                            <li class="phpdocumentor-on-this-page-section__title">Properties</li>
+                <li>
+                    <ul class="phpdocumentor-list -clean">
+                                                    <li><a href="classes/CrowdinApiClient-Model-Webhook.html#property_batchingEnabled">$batchingEnabled<a href="classes/CrowdinApiClient-Model-Webhook.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Webhook.html#property_contentType">$contentType<a href="classes/CrowdinApiClient-Model-Webhook.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Webhook.html#property_createdAt">$createdAt<a href="classes/CrowdinApiClient-Model-Webhook.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Webhook.html#property_events">$events<a href="classes/CrowdinApiClient-Model-Webhook.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Webhook.html#property_headers">$headers<a href="classes/CrowdinApiClient-Model-Webhook.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Webhook.html#property_id">$id<a href="classes/CrowdinApiClient-Model-Webhook.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Webhook.html#property_isActive">$isActive<a href="classes/CrowdinApiClient-Model-Webhook.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Webhook.html#property_name">$name<a href="classes/CrowdinApiClient-Model-Webhook.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Webhook.html#property_payload">$payload<a href="classes/CrowdinApiClient-Model-Webhook.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Webhook.html#property_projectId">$projectId<a href="classes/CrowdinApiClient-Model-Webhook.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Webhook.html#property_requestType">$requestType<a href="classes/CrowdinApiClient-Model-Webhook.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Webhook.html#property_updatedAt">$updatedAt<a href="classes/CrowdinApiClient-Model-Webhook.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Webhook.html#property_url">$url<a href="classes/CrowdinApiClient-Model-Webhook.html"></li>
+                                            </ul>
+                </li>
+            
+                        <li class="phpdocumentor-on-this-page-section__title">Methods</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                            <li><a href="classes/CrowdinApiClient-Model-Webhook.html#method___construct">__construct()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Webhook.html#method_getContentType">getContentType()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Webhook.html#method_getCreatedAt">getCreatedAt()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Webhook.html#method_getEvents">getEvents()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Webhook.html#method_getHeaders">getHeaders()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Webhook.html#method_getId">getId()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Webhook.html#method_getName">getName()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Webhook.html#method_getPayload">getPayload()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Webhook.html#method_getProjectId">getProjectId()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Webhook.html#method_getRequestType">getRequestType()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Webhook.html#method_getUpdatedAt">getUpdatedAt()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Webhook.html#method_getUrl">getUrl()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Webhook.html#method_isActive">isActive()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Webhook.html#method_isBatchingEnabled">isBatchingEnabled()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Webhook.html#method_setBatchingEnabled">setBatchingEnabled()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Webhook.html#method_setContentType">setContentType()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Webhook.html#method_setEvents">setEvents()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Webhook.html#method_setHeaders">setHeaders()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Webhook.html#method_setIsActive">setIsActive()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Webhook.html#method_setName">setName()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Webhook.html#method_setPayload">setPayload()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Webhook.html#method_setRequestType">setRequestType()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Webhook.html#method_setUrl">setUrl()</a></li>
+                                    </ul>
+            </li>
+                    </ul>
+    </section>
+
+                </section>
+                            </div>
+            <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
     <section class="phpdocumentor-search-results__dialog">
         <header class="phpdocumentor-search-results__header">
             <h2 class="phpdocumentor-search-results__title">Search results</h2>
@@ -1771,7 +1903,6 @@
         </section>
     </section>
 </section>
-            </div>
         </div>
         <a href="classes/CrowdinApiClient-Model-Webhook.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 

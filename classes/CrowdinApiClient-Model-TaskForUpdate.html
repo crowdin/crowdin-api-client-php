@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/base.css">
             <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/template.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-highlight/prism-line-highlight.css">
                 <script src="https://cdn.jsdelivr.net/npm/fuse.js@3.4.6"></script>
         <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+        <script src="js/template.js"></script>
         <script src="js/search.js"></script>
         <script defer src="js/searchIndex.js"></script>
     </head>
@@ -52,7 +53,7 @@
 <label class="phpdocumentor-sidebar__menu-icon" for="sidebar-button">
     Menu
 </label>
-<aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+<aside class="phpdocumentor-column -three phpdocumentor-sidebar">
                     <section class="phpdocumentor-sidebar__category">
             <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
@@ -125,8 +126,9 @@
     </section>
 </aside>
 
-            <div class="phpdocumentor-column -eight phpdocumentor-content">
-                    <ul class="phpdocumentor-breadcrumbs">
+            <div class="phpdocumentor-column -nine phpdocumentor-content">
+                                <section>
+                                        <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/crowdinapiclient.html">CrowdinApiClient</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/crowdinapiclient-model.html">Model</a></li>
     </ul>
@@ -150,6 +152,11 @@
     
     </h2>
 
+<div class="phpdocumentor-label-line">
+
+
+</div>
+
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/TaskForUpdate.php"><a href="files/src-crowdinapiclient-model-taskforupdate.html"><abbr title="src/CrowdinApiClient/Model/TaskForUpdate.php">TaskForUpdate.php</abbr></a></abbr>
     :
@@ -163,576 +170,516 @@
 
 
 
-
-
-
 <h3 id="toc">
     Table of Contents
-    <a href="#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+
 </h3>
 
+
+
+
+
+
+
+
+
+<h4 id="toc-properties">
+    Properties
+    <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
 <dl class="phpdocumentor-table-of-contents">
-                    <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Task.html#property_assignedTeams">$assignedTeams</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Task.html#property_assignees">$assignees</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Task.html#property_buyUrl">$buyUrl</a>
     <span>
                         &nbsp;: string|null            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Task.html#property_commentsCount">$commentsCount</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Task.html#property_createdAt">$createdAt</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Task.html#property_creatorId">$creatorId</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#property_dateFrom">$dateFrom</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#property_dateTo">$dateTo</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Task.html#property_deadline">$deadline</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Task.html#property_description">$description</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Task.html#property_fileIds">$fileIds</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Task.html#property_filesCount">$filesCount</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Task.html#property_hash">$hash</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Task.html#property_id">$id</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Task.html#property_isArchived">$isArchived</a>
     <span>
                         &nbsp;: bool            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#property_labelIds">$labelIds</a>
     <span>
                         &nbsp;: array&lt;string|int, int&gt;            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Task.html#property_progress">$progress</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Task.html#property_projectId">$projectId</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#property_skipAssignedStrings">$skipAssignedStrings</a>
     <span>
                         &nbsp;: bool            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Task.html#property_sourceLanguageId">$sourceLanguageId</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#property_splitFiles">$splitFiles</a>
     <span>
                         &nbsp;: bool            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Task.html#property_status">$status</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Task.html#property_targetLanguageId">$targetLanguageId</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Task.html#property_timeRange">$timeRange</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Task.html#property_title">$title</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Task.html#property_translateProgress">$translateProgress</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;|null            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Task.html#property_translationUrl">$translationUrl</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Task.html#property_type">$type</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Task.html#property_updatedAt">$updatedAt</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Task.html#property_vendor">$vendor</a>
     <span>
                         &nbsp;: string|null            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Task.html#property_wordsCount">$wordsCount</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CrowdinApiClient-Model-Task.html#property_workflowStepId">$workflowStepId</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
-                <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    </dl>
+
+<h4 id="toc-methods">
+    Methods
+    <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_getAssignedTeams">getAssignedTeams()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_getAssignees">getAssignees()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_getBuyUrl">getBuyUrl()</a>
     <span>
                                 &nbsp;: string|null    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_getCommentsCount">getCommentsCount()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_getCreatedAt">getCreatedAt()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_getCreatorId">getCreatorId()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_getDateFrom">getDateFrom()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_getDateTo">getDateTo()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_getDeadline">getDeadline()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_getDescription">getDescription()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_getFileIds">getFileIds()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_getFilesCount">getFilesCount()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_getHash">getHash()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_getId">getId()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_getLabelIds">getLabelIds()</a>
     <span>
                                 &nbsp;: array&lt;string|int, int&gt;|null    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_getProgress">getProgress()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_getProjectId">getProjectId()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_getSkipAssignedStrings">getSkipAssignedStrings()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_getSourceLanguageId">getSourceLanguageId()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_getSplitFiles">getSplitFiles()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_getStatus">getStatus()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_getTargetLanguageId">getTargetLanguageId()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_getTimeRange">getTimeRange()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_getTitle">getTitle()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_getTranslateProgress">getTranslateProgress()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;|null    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_getTranslationUrl">getTranslationUrl()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_getType">getType()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_getUpdatedAt">getUpdatedAt()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_getVendor">getVendor()</a>
     <span>
                                 &nbsp;: string|null    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_getWordsCount">getWordsCount()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_getWorkflowStepId">getWorkflowStepId()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_isArchived">isArchived()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_setAssignedTeams">setAssignedTeams()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_setAssignees">setAssignees()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_setBuyUrl">setBuyUrl()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_setDateFrom">setDateFrom()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_setDateTo">setDateTo()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_setDeadline">setDeadline()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_setDescription">setDescription()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_setFileIds">setFileIds()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_setIsArchived">setIsArchived()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_setLabelIds">setLabelIds()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_setSkipAssignedStrings">setSkipAssignedStrings()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_setSplitFiles">setSplitFiles()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_setStatus">setStatus()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_setTitle">setTitle()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Model-Task.html#method_setVendor">setVendor()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
 
-        </dl>
+    </dl>
+
 
 
 
@@ -743,6 +690,7 @@
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
             <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article
         class="
@@ -754,6 +702,7 @@
     <h4 class="phpdocumentor-element__name" id="property_assignedTeams">
         $assignedTeams
         <a href="classes/CrowdinApiClient-Model-Task.html#property_assignedTeams" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -786,6 +735,7 @@
     <h4 class="phpdocumentor-element__name" id="property_assignees">
         $assignees
         <a href="classes/CrowdinApiClient-Model-Task.html#property_assignees" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -818,6 +768,7 @@
     <h4 class="phpdocumentor-element__name" id="property_buyUrl">
         $buyUrl
         <a href="classes/CrowdinApiClient-Model-Task.html#property_buyUrl" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -850,6 +801,7 @@
     <h4 class="phpdocumentor-element__name" id="property_commentsCount">
         $commentsCount
         <a href="classes/CrowdinApiClient-Model-Task.html#property_commentsCount" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -882,6 +834,7 @@
     <h4 class="phpdocumentor-element__name" id="property_createdAt">
         $createdAt
         <a href="classes/CrowdinApiClient-Model-Task.html#property_createdAt" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -914,6 +867,7 @@
     <h4 class="phpdocumentor-element__name" id="property_creatorId">
         $creatorId
         <a href="classes/CrowdinApiClient-Model-Task.html#property_creatorId" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -946,6 +900,7 @@
     <h4 class="phpdocumentor-element__name" id="property_dateFrom">
         $dateFrom
         <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#property_dateFrom" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -978,6 +933,7 @@
     <h4 class="phpdocumentor-element__name" id="property_dateTo">
         $dateTo
         <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#property_dateTo" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1010,6 +966,7 @@
     <h4 class="phpdocumentor-element__name" id="property_deadline">
         $deadline
         <a href="classes/CrowdinApiClient-Model-Task.html#property_deadline" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1042,6 +999,7 @@
     <h4 class="phpdocumentor-element__name" id="property_description">
         $description
         <a href="classes/CrowdinApiClient-Model-Task.html#property_description" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1074,6 +1032,7 @@
     <h4 class="phpdocumentor-element__name" id="property_fileIds">
         $fileIds
         <a href="classes/CrowdinApiClient-Model-Task.html#property_fileIds" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1106,6 +1065,7 @@
     <h4 class="phpdocumentor-element__name" id="property_filesCount">
         $filesCount
         <a href="classes/CrowdinApiClient-Model-Task.html#property_filesCount" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1138,6 +1098,7 @@
     <h4 class="phpdocumentor-element__name" id="property_hash">
         $hash
         <a href="classes/CrowdinApiClient-Model-Task.html#property_hash" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1170,6 +1131,7 @@
     <h4 class="phpdocumentor-element__name" id="property_id">
         $id
         <a href="classes/CrowdinApiClient-Model-Task.html#property_id" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1202,6 +1164,7 @@
     <h4 class="phpdocumentor-element__name" id="property_isArchived">
         $isArchived
         <a href="classes/CrowdinApiClient-Model-Task.html#property_isArchived" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1234,6 +1197,7 @@
     <h4 class="phpdocumentor-element__name" id="property_labelIds">
         $labelIds
         <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#property_labelIds" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1266,6 +1230,7 @@
     <h4 class="phpdocumentor-element__name" id="property_progress">
         $progress
         <a href="classes/CrowdinApiClient-Model-Task.html#property_progress" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1298,6 +1263,7 @@
     <h4 class="phpdocumentor-element__name" id="property_projectId">
         $projectId
         <a href="classes/CrowdinApiClient-Model-Task.html#property_projectId" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1330,6 +1296,7 @@
     <h4 class="phpdocumentor-element__name" id="property_skipAssignedStrings">
         $skipAssignedStrings
         <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#property_skipAssignedStrings" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1362,6 +1329,7 @@
     <h4 class="phpdocumentor-element__name" id="property_sourceLanguageId">
         $sourceLanguageId
         <a href="classes/CrowdinApiClient-Model-Task.html#property_sourceLanguageId" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1394,6 +1362,7 @@
     <h4 class="phpdocumentor-element__name" id="property_splitFiles">
         $splitFiles
         <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#property_splitFiles" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1426,6 +1395,7 @@
     <h4 class="phpdocumentor-element__name" id="property_status">
         $status
         <a href="classes/CrowdinApiClient-Model-Task.html#property_status" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1458,6 +1428,7 @@
     <h4 class="phpdocumentor-element__name" id="property_targetLanguageId">
         $targetLanguageId
         <a href="classes/CrowdinApiClient-Model-Task.html#property_targetLanguageId" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1490,6 +1461,7 @@
     <h4 class="phpdocumentor-element__name" id="property_timeRange">
         $timeRange
         <a href="classes/CrowdinApiClient-Model-Task.html#property_timeRange" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1522,6 +1494,7 @@
     <h4 class="phpdocumentor-element__name" id="property_title">
         $title
         <a href="classes/CrowdinApiClient-Model-Task.html#property_title" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1554,6 +1527,7 @@
     <h4 class="phpdocumentor-element__name" id="property_translateProgress">
         $translateProgress
         <a href="classes/CrowdinApiClient-Model-Task.html#property_translateProgress" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1586,6 +1560,7 @@
     <h4 class="phpdocumentor-element__name" id="property_translationUrl">
         $translationUrl
         <a href="classes/CrowdinApiClient-Model-Task.html#property_translationUrl" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1618,6 +1593,7 @@
     <h4 class="phpdocumentor-element__name" id="property_type">
         $type
         <a href="classes/CrowdinApiClient-Model-Task.html#property_type" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1650,6 +1626,7 @@
     <h4 class="phpdocumentor-element__name" id="property_updatedAt">
         $updatedAt
         <a href="classes/CrowdinApiClient-Model-Task.html#property_updatedAt" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1682,6 +1659,7 @@
     <h4 class="phpdocumentor-element__name" id="property_vendor">
         $vendor
         <a href="classes/CrowdinApiClient-Model-Task.html#property_vendor" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1714,6 +1692,7 @@
     <h4 class="phpdocumentor-element__name" id="property_wordsCount">
         $wordsCount
         <a href="classes/CrowdinApiClient-Model-Task.html#property_wordsCount" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1746,6 +1725,7 @@
     <h4 class="phpdocumentor-element__name" id="property_workflowStepId">
         $workflowStepId
         <a href="classes/CrowdinApiClient-Model-Task.html#property_workflowStepId" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1774,6 +1754,7 @@
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
             <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article
         class="phpdocumentor-element
@@ -1784,6 +1765,7 @@
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
         <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/TaskForUpdate.php"><a href="files/src-crowdinapiclient-model-taskforupdate.html"><abbr title="src/CrowdinApiClient/Model/TaskForUpdate.php">TaskForUpdate.php</abbr></a></abbr>
@@ -1797,8 +1779,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1806,17 +1789,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                  = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1828,6 +1806,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getAssignedTeams">
         getAssignedTeams()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_getAssignedTeams" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -1841,16 +1820,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getAssignedTeams</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1861,6 +1841,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getAssignees">
         getAssignees()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_getAssignees" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -1874,15 +1855,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getAssignees</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1893,6 +1876,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getBuyUrl">
         getBuyUrl()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_getBuyUrl" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -1906,16 +1890,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getBuyUrl</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string|null</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string|null</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1926,6 +1911,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getCommentsCount">
         getCommentsCount()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_getCommentsCount" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -1939,15 +1925,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getCommentsCount</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1958,6 +1946,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getCreatedAt">
         getCreatedAt()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_getCreatedAt" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -1971,15 +1960,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getCreatedAt</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1990,6 +1981,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getCreatorId">
         getCreatorId()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_getCreatorId" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -2003,15 +1995,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getCreatorId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2022,6 +2016,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getDateFrom">
         getDateFrom()
         <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_getDateFrom" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/TaskForUpdate.php"><a href="files/src-crowdinapiclient-model-taskforupdate.html"><abbr title="src/CrowdinApiClient/Model/TaskForUpdate.php">TaskForUpdate.php</abbr></a></abbr>
@@ -2035,15 +2030,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getDateFrom</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2054,6 +2051,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getDateTo">
         getDateTo()
         <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_getDateTo" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/TaskForUpdate.php"><a href="files/src-crowdinapiclient-model-taskforupdate.html"><abbr title="src/CrowdinApiClient/Model/TaskForUpdate.php">TaskForUpdate.php</abbr></a></abbr>
@@ -2067,15 +2065,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getDateTo</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2086,6 +2086,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getDeadline">
         getDeadline()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_getDeadline" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -2099,15 +2100,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getDeadline</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2118,6 +2121,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getDescription">
         getDescription()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_getDescription" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -2131,15 +2135,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getDescription</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2150,6 +2156,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getFileIds">
         getFileIds()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_getFileIds" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -2163,15 +2170,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getFileIds</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2182,6 +2191,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getFilesCount">
         getFilesCount()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_getFilesCount" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -2195,15 +2205,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getFilesCount</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2214,6 +2226,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getHash">
         getHash()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_getHash" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -2227,15 +2240,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getHash</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2246,6 +2261,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getId">
         getId()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_getId" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -2259,15 +2275,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2278,6 +2296,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getLabelIds">
         getLabelIds()
         <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_getLabelIds" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/TaskForUpdate.php"><a href="files/src-crowdinapiclient-model-taskforupdate.html"><abbr title="src/CrowdinApiClient/Model/TaskForUpdate.php">TaskForUpdate.php</abbr></a></abbr>
@@ -2291,15 +2310,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getLabelIds</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, int&gt;|null</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, int&gt;|null</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, int&gt;|null</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2310,6 +2331,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getProgress">
         getProgress()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_getProgress" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -2323,15 +2345,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getProgress</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2342,6 +2366,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getProjectId">
         getProjectId()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_getProjectId" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -2355,15 +2380,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getProjectId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2374,6 +2401,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getSkipAssignedStrings">
         getSkipAssignedStrings()
         <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_getSkipAssignedStrings" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/TaskForUpdate.php"><a href="files/src-crowdinapiclient-model-taskforupdate.html"><abbr title="src/CrowdinApiClient/Model/TaskForUpdate.php">TaskForUpdate.php</abbr></a></abbr>
@@ -2387,15 +2415,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getSkipAssignedStrings</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2406,6 +2436,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getSourceLanguageId">
         getSourceLanguageId()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_getSourceLanguageId" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -2419,15 +2450,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getSourceLanguageId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2438,6 +2471,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getSplitFiles">
         getSplitFiles()
         <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_getSplitFiles" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/TaskForUpdate.php"><a href="files/src-crowdinapiclient-model-taskforupdate.html"><abbr title="src/CrowdinApiClient/Model/TaskForUpdate.php">TaskForUpdate.php</abbr></a></abbr>
@@ -2451,15 +2485,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getSplitFiles</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2470,6 +2506,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getStatus">
         getStatus()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_getStatus" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -2483,15 +2520,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getStatus</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2502,6 +2541,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getTargetLanguageId">
         getTargetLanguageId()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_getTargetLanguageId" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -2515,15 +2555,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getTargetLanguageId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2534,6 +2576,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getTimeRange">
         getTimeRange()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_getTimeRange" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -2547,15 +2590,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getTimeRange</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2566,6 +2611,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getTitle">
         getTitle()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_getTitle" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -2579,15 +2625,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getTitle</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2598,6 +2646,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getTranslateProgress">
         getTranslateProgress()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_getTranslateProgress" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -2611,15 +2660,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getTranslateProgress</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|null</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|null</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|null</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2630,6 +2681,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getTranslationUrl">
         getTranslationUrl()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_getTranslationUrl" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -2643,15 +2695,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getTranslationUrl</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2662,6 +2716,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getType">
         getType()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_getType" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -2675,15 +2730,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getType</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2694,6 +2751,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getUpdatedAt">
         getUpdatedAt()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_getUpdatedAt" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -2707,15 +2765,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getUpdatedAt</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2726,6 +2786,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getVendor">
         getVendor()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_getVendor" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -2739,16 +2800,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getVendor</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string|null</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string|null</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2759,6 +2821,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getWordsCount">
         getWordsCount()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_getWordsCount" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -2772,15 +2835,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getWordsCount</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2791,6 +2856,7 @@
     <h4 class="phpdocumentor-element__name" id="method_getWorkflowStepId">
         getWorkflowStepId()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_getWorkflowStepId" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -2804,15 +2870,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getWorkflowStepId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2823,6 +2891,7 @@
     <h4 class="phpdocumentor-element__name" id="method_isArchived">
         isArchived()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_isArchived" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -2836,15 +2905,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">isArchived</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2855,6 +2926,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setAssignedTeams">
         setAssignedTeams()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_setAssignedTeams" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -2868,8 +2940,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setAssignedTeams</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$assignedTeams</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2877,17 +2950,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -2899,6 +2967,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setAssignees">
         setAssignees()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_setAssignees" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -2912,6 +2981,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setAssignees</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$assignees</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -2926,10 +2997,6 @@
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -2941,6 +3008,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setBuyUrl">
         setBuyUrl()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_setBuyUrl" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -2954,8 +3022,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setBuyUrl</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$buyUrl</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2963,17 +3032,12 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -2985,6 +3049,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setDateFrom">
         setDateFrom()
         <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_setDateFrom" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/TaskForUpdate.php"><a href="files/src-crowdinapiclient-model-taskforupdate.html"><abbr title="src/CrowdinApiClient/Model/TaskForUpdate.php">TaskForUpdate.php</abbr></a></abbr>
@@ -2998,6 +3063,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setDateFrom</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$dateFrom</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -3012,10 +3079,6 @@
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -3027,6 +3090,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setDateTo">
         setDateTo()
         <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_setDateTo" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/TaskForUpdate.php"><a href="files/src-crowdinapiclient-model-taskforupdate.html"><abbr title="src/CrowdinApiClient/Model/TaskForUpdate.php">TaskForUpdate.php</abbr></a></abbr>
@@ -3040,6 +3104,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setDateTo</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$dateTo</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -3054,10 +3120,6 @@
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -3069,6 +3131,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setDeadline">
         setDeadline()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_setDeadline" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -3082,6 +3145,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setDeadline</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deadline</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -3096,10 +3161,6 @@
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -3111,6 +3172,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setDescription">
         setDescription()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_setDescription" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -3124,6 +3186,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setDescription</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$description</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -3138,10 +3202,6 @@
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -3153,6 +3213,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setFileIds">
         setFileIds()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_setFileIds" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -3166,6 +3227,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setFileIds</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fileIds</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -3180,10 +3243,6 @@
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -3195,6 +3254,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setIsArchived">
         setIsArchived()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_setIsArchived" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -3208,6 +3268,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setIsArchived</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$isArchived</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -3222,10 +3284,6 @@
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -3237,6 +3295,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setLabelIds">
         setLabelIds()
         <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_setLabelIds" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/TaskForUpdate.php"><a href="files/src-crowdinapiclient-model-taskforupdate.html"><abbr title="src/CrowdinApiClient/Model/TaskForUpdate.php">TaskForUpdate.php</abbr></a></abbr>
@@ -3250,6 +3309,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setLabelIds</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, int&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$labelIds</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -3264,10 +3325,6 @@
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -3279,6 +3336,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setSkipAssignedStrings">
         setSkipAssignedStrings()
         <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_setSkipAssignedStrings" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/TaskForUpdate.php"><a href="files/src-crowdinapiclient-model-taskforupdate.html"><abbr title="src/CrowdinApiClient/Model/TaskForUpdate.php">TaskForUpdate.php</abbr></a></abbr>
@@ -3292,6 +3350,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setSkipAssignedStrings</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$skipAssignedStrings</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -3306,10 +3366,6 @@
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -3321,6 +3377,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setSplitFiles">
         setSplitFiles()
         <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_setSplitFiles" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/TaskForUpdate.php"><a href="files/src-crowdinapiclient-model-taskforupdate.html"><abbr title="src/CrowdinApiClient/Model/TaskForUpdate.php">TaskForUpdate.php</abbr></a></abbr>
@@ -3334,6 +3391,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setSplitFiles</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$splitFiles</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -3348,10 +3407,6 @@
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -3363,6 +3418,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setStatus">
         setStatus()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_setStatus" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -3376,6 +3432,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setStatus</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$status</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -3390,10 +3448,6 @@
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -3405,6 +3459,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setTitle">
         setTitle()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_setTitle" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -3418,6 +3473,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setTitle</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$title</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -3432,10 +3489,6 @@
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -3447,6 +3500,7 @@
     <h4 class="phpdocumentor-element__name" id="method_setVendor">
         setVendor()
         <a href="classes/CrowdinApiClient-Model-Task.html#method_setVendor" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Task.php"><a href="files/src-crowdinapiclient-model-task.html"><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></a></abbr>
@@ -3460,8 +3514,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setVendor</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$vendor</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -3469,85 +3524,221 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
             </section>
 
-        
+        <div class="phpdocumentor-modal" id="source-view">
+    <div class="phpdocumentor-modal-bg" data-exit-button></div>
+    <div class="phpdocumentor-modal-container">
+        <div class="phpdocumentor-modal-content">
+            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/CrowdinApiClient/Model/TaskForUpdate.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
+        </div>
+        <button data-exit-button class="phpdocumentor-modal__close">&times;</button>
+    </div>
+</div>
+
     <script type="text/javascript">
-        function loadExternalCodeSnippets(line) {
-            Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach((pre) => {
-                var src = pre.getAttribute('data-src').replace( /\\/g, '/');
-                var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
-                var language = 'php';
+        (function () {
+            function loadExternalCodeSnippet(el, url, line) {
+                Array.prototype.slice.call(el.querySelectorAll('pre[data-src]')).forEach((pre) => {
+                    const src = url || pre.getAttribute('data-src').replace(/\\/g, '/');
+                    const language = 'php';
 
-                var code = document.createElement('code');
-                code.className = 'language-' + language;
+                    const code = document.createElement('code');
+                    code.className = 'language-' + language;
+                    pre.textContent = '';
+                    pre.setAttribute('data-line', line)
+                    code.textContent = 'Loading…';
+                    pre.appendChild(code);
 
-                pre.textContent = '';
+                    var xhr = new XMLHttpRequest();
 
-                pre.setAttribute('data-line', line)
-                code.textContent = 'Loading…';
+                    xhr.open('GET', src, true);
 
-                pre.appendChild(code);
-
-                var xhr = new XMLHttpRequest();
-
-                xhr.open('GET', src, true);
-
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState == 4) {
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState !== 4) {
+                            return;
+                        }
 
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
-
                             Prism.highlightElement(code);
+                            return;
                         }
-                        else if (xhr.status >= 400) {
+
+                        if (xhr.status === 404) {
+                            code.textContent = '✖ Error: File could not be found';
+                            return;
+                        }
+
+                        if (xhr.status >= 400) {
                             code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                            return;
                         }
-                        else {
-                            code.textContent = '✖ Error: File does not exist, is empty or trying to view from localhost';
-                        }
+
+                        code.textContent = '✖ Error: An unknown error occurred';
+                    };
+
+                    xhr.send(null);
+                });
+            }
+
+            const modalButtons = document.querySelectorAll("[data-modal]");
+            const openedAsLocalFile = window.location.protocol === 'file:';
+            if (modalButtons.length > 0 && openedAsLocalFile) {
+                console.warn(
+                    'Viewing the source code is unavailable because you are opening this page from the file:// scheme; ' +
+                    'browsers block XHR requests when a page is opened this way'
+                );
+            }
+
+            modalButtons.forEach(function (trigger) {
+                if (openedAsLocalFile) {
+                    trigger.setAttribute("hidden", "hidden");
+                }
+
+                trigger.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    const modal = document.getElementById(trigger.dataset.modal);
+                    if (!modal) {
+                        console.error(`Modal with id "${trigger.dataset.modal}" could not be found`);
+                        return;
                     }
-                };
+                    modal.classList.add("phpdocumentor-modal__open");
 
-                xhr.send(null);
-            });
-        }
-
-        var modals = document.querySelectorAll("[data-modal]");
-
-        modals.forEach(function (trigger) {
-            trigger.addEventListener("click", function (event) {
-                //event.preventDefault();
-                const modal = document.getElementById(trigger.dataset.modal);
-                modal.classList.add("phpdocumentor-modal__open");
-                loadExternalCodeSnippets(trigger.dataset.line)
-                const exits = modal.querySelectorAll("[data-exit-button]");
-                exits.forEach(function (exit) {
-                    exit.addEventListener("click", function (event) {
-                        event.preventDefault();
-                        modal.classList.remove("phpdocumentor-modal__open");
+                    loadExternalCodeSnippet(modal, trigger.dataset.src || null, trigger.dataset.line)
+                    const exits = modal.querySelectorAll("[data-exit-button]");
+                    exits.forEach(function (exit) {
+                        exit.addEventListener("click", function (event) {
+                            event.preventDefault();
+                            modal.classList.remove("phpdocumentor-modal__open");
+                        });
                     });
                 });
             });
-        });
+        })();
     </script>
 
     </article>
-                <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
+                                </section>
+                <section class="phpdocumentor-on-this-page__sidebar">
+                                
+    <section class="phpdocumentor-on-this-page__content">
+        <strong class="phpdocumentor-on-this-page__title">On this page</strong>
+
+        <ul class="phpdocumentor-list -clean">
+            <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                                            <li><a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#toc-properties">Properties</a></li>
+                                                            <li><a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#toc-methods">Methods</a></li>
+                                    </ul>
+            </li>
+            
+                            <li class="phpdocumentor-on-this-page-section__title">Properties</li>
+                <li>
+                    <ul class="phpdocumentor-list -clean">
+                                                    <li><a href="classes/CrowdinApiClient-Model-Task.html#property_assignedTeams">$assignedTeams<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Task.html#property_assignees">$assignees<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Task.html#property_buyUrl">$buyUrl<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Task.html#property_commentsCount">$commentsCount<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Task.html#property_createdAt">$createdAt<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Task.html#property_creatorId">$creatorId<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#property_dateFrom">$dateFrom<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#property_dateTo">$dateTo<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Task.html#property_deadline">$deadline<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Task.html#property_description">$description<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Task.html#property_fileIds">$fileIds<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Task.html#property_filesCount">$filesCount<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Task.html#property_hash">$hash<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Task.html#property_id">$id<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Task.html#property_isArchived">$isArchived<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#property_labelIds">$labelIds<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Task.html#property_progress">$progress<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Task.html#property_projectId">$projectId<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#property_skipAssignedStrings">$skipAssignedStrings<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Task.html#property_sourceLanguageId">$sourceLanguageId<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#property_splitFiles">$splitFiles<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Task.html#property_status">$status<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Task.html#property_targetLanguageId">$targetLanguageId<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Task.html#property_timeRange">$timeRange<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Task.html#property_title">$title<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Task.html#property_translateProgress">$translateProgress<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Task.html#property_translationUrl">$translationUrl<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Task.html#property_type">$type<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Task.html#property_updatedAt">$updatedAt<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Task.html#property_vendor">$vendor<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Task.html#property_wordsCount">$wordsCount<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                                    <li><a href="classes/CrowdinApiClient-Model-Task.html#property_workflowStepId">$workflowStepId<a href="classes/CrowdinApiClient-Model-TaskForUpdate.html"></li>
+                                            </ul>
+                </li>
+            
+                        <li class="phpdocumentor-on-this-page-section__title">Methods</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                            <li><a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method___construct">__construct()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_getAssignedTeams">getAssignedTeams()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_getAssignees">getAssignees()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_getBuyUrl">getBuyUrl()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_getCommentsCount">getCommentsCount()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_getCreatedAt">getCreatedAt()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_getCreatorId">getCreatorId()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_getDateFrom">getDateFrom()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_getDateTo">getDateTo()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_getDeadline">getDeadline()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_getDescription">getDescription()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_getFileIds">getFileIds()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_getFilesCount">getFilesCount()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_getHash">getHash()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_getId">getId()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_getLabelIds">getLabelIds()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_getProgress">getProgress()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_getProjectId">getProjectId()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_getSkipAssignedStrings">getSkipAssignedStrings()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_getSourceLanguageId">getSourceLanguageId()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_getSplitFiles">getSplitFiles()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_getStatus">getStatus()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_getTargetLanguageId">getTargetLanguageId()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_getTimeRange">getTimeRange()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_getTitle">getTitle()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_getTranslateProgress">getTranslateProgress()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_getTranslationUrl">getTranslationUrl()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_getType">getType()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_getUpdatedAt">getUpdatedAt()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_getVendor">getVendor()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_getWordsCount">getWordsCount()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_getWorkflowStepId">getWorkflowStepId()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_isArchived">isArchived()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_setAssignedTeams">setAssignedTeams()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_setAssignees">setAssignees()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_setBuyUrl">setBuyUrl()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_setDateFrom">setDateFrom()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_setDateTo">setDateTo()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_setDeadline">setDeadline()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_setDescription">setDescription()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_setFileIds">setFileIds()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_setIsArchived">setIsArchived()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_setLabelIds">setLabelIds()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_setSkipAssignedStrings">setSkipAssignedStrings()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#method_setSplitFiles">setSplitFiles()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_setStatus">setStatus()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_setTitle">setTitle()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Model-Task.html#method_setVendor">setVendor()</a></li>
+                                    </ul>
+            </li>
+                    </ul>
+    </section>
+
+                </section>
+                            </div>
+            <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
     <section class="phpdocumentor-search-results__dialog">
         <header class="phpdocumentor-search-results__header">
             <h2 class="phpdocumentor-search-results__title">Search results</h2>
@@ -3558,7 +3749,6 @@
         </section>
     </section>
 </section>
-            </div>
         </div>
         <a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
