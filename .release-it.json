@@ -1,0 +1,26 @@
+{
+  "git": {
+    "push": true,
+    "commit": true,
+    "commitMessage": "chore: version ${version} [skip ci]",
+    "requireBranch": "master",
+    "tag": true
+  },
+  "github": {
+    "release": true,
+    "autoGenerate": true,
+    "releaseName": "${version}"
+  },
+  "plugins": {
+    "@j-ulrich/release-it-regex-bumper": {
+      "in": "composer.json",
+      "out": [
+        {
+          "file": "composer.json",
+          "search": "\\d+\\.\\d+\\.\\d+",
+          "replace": "{{versionWithoutPrerelease}}"
+        }
+      ]
+    }
+  }
+}
