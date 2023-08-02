@@ -30,24 +30,18 @@ class Distribution extends BaseModel
     protected $fileIds;
 
     /**
-     * @var string
+     * @var int[]
      */
-    protected $format;
+    protected $bundleIds;
 
     /**
      * @var string
      */
-    protected $exportPattern;
-
-    /**
-     * @var string[]
-     */
-    protected $labelIds;
-
-    /** @var string */
     protected $createdAt;
 
-    /** @var string */
+    /**
+     * @var string
+     */
     protected $updatedAt;
 
     public function __construct(array $data = [])
@@ -58,9 +52,7 @@ class Distribution extends BaseModel
         $this->exportMode = (string)$this->getDataProperty('exportMode');
         $this->name = (string)$this->getDataProperty('name');
         $this->fileIds = (array)$this->getDataProperty('fileIds');
-        $this->format = (string)$this->getDataProperty('format');
-        $this->exportPattern = (string)$this->getDataProperty('exportPattern');
-        $this->labelIds = (array)$this->getDataProperty('labelIds');
+        $this->bundleIds = (array)$this->getDataProperty('bundleIds');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
     }
@@ -73,6 +65,16 @@ class Distribution extends BaseModel
     public function setHash(string $hash): void
     {
         $this->hash = $hash;
+    }
+
+    public function getExportMode(): string
+    {
+        return $this->exportMode;
+    }
+
+    public function setExportMode(string $exportMode): void
+    {
+        $this->exportMode = $exportMode;
     }
 
     public function getName(): string
@@ -95,6 +97,16 @@ class Distribution extends BaseModel
         $this->fileIds = $fileIds;
     }
 
+    public function getBundleIds(): array
+    {
+        return $this->bundleIds;
+    }
+
+    public function setBundleIds(array $bundleIds): void
+    {
+        $this->bundleIds = $bundleIds;
+    }
+
     public function getCreatedAt(): string
     {
         return $this->createdAt;
@@ -113,69 +125,5 @@ class Distribution extends BaseModel
     public function setUpdatedAt(string $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
-    }
-
-    /**
-     * @return string
-     */
-    public function getExportMode(): string
-    {
-        return $this->exportMode;
-    }
-
-    /**
-     * @param string $exportMode
-     */
-    public function setExportMode(string $exportMode): void
-    {
-        $this->exportMode = $exportMode;
-    }
-
-    /**
-     * @return string
-     */
-    public function getFormat(): string
-    {
-        return $this->format;
-    }
-
-    /**
-     * @param string $format
-     */
-    public function setFormat(string $format): void
-    {
-        $this->format = $format;
-    }
-
-    /**
-     * @return array|string
-     */
-    public function getExportPattern()
-    {
-        return $this->exportPattern;
-    }
-
-    /**
-     * @param array|string $exportPattern
-     */
-    public function setExportPattern($exportPattern): void
-    {
-        $this->exportPattern = $exportPattern;
-    }
-
-    /**
-     * @return array|string[]
-     */
-    public function getLabelIds(): array
-    {
-        return $this->labelIds;
-    }
-
-    /**
-     * @param array|string[] $labelIds
-     */
-    public function setLabelIds(array $labelIds): void
-    {
-        $this->labelIds = $labelIds;
     }
 }
