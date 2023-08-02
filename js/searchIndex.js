@@ -1731,6 +1731,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Distribution.html#method_setHash"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003AgetExportMode\u0028\u0029",
+            "name": "getExportMode",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Distribution.html#method_getExportMode"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003AsetExportMode\u0028\u0029",
+            "name": "setExportMode",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Distribution.html#method_setExportMode"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003AgetName\u0028\u0029",
             "name": "getName",
             "summary": "",
@@ -1750,6 +1760,16 @@ Search.appendIndex(
             "name": "setFileIds",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Distribution.html#method_setFileIds"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003AgetBundleIds\u0028\u0029",
+            "name": "getBundleIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Distribution.html#method_getBundleIds"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003AsetBundleIds\u0028\u0029",
+            "name": "setBundleIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Distribution.html#method_setBundleIds"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003AgetCreatedAt\u0028\u0029",
             "name": "getCreatedAt",
@@ -1771,46 +1791,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Distribution.html#method_setUpdatedAt"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003AgetExportMode\u0028\u0029",
-            "name": "getExportMode",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Distribution.html#method_getExportMode"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003AsetExportMode\u0028\u0029",
-            "name": "setExportMode",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Distribution.html#method_setExportMode"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003AgetFormat\u0028\u0029",
-            "name": "getFormat",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Distribution.html#method_getFormat"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003AsetFormat\u0028\u0029",
-            "name": "setFormat",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Distribution.html#method_setFormat"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003AgetExportPattern\u0028\u0029",
-            "name": "getExportPattern",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Distribution.html#method_getExportPattern"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003AsetExportPattern\u0028\u0029",
-            "name": "setExportPattern",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Distribution.html#method_setExportPattern"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003AgetLabelIds\u0028\u0029",
-            "name": "getLabelIds",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Distribution.html#method_getLabelIds"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003AsetLabelIds\u0028\u0029",
-            "name": "setLabelIds",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Distribution.html#method_setLabelIds"
-        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003A\u0024hash",
             "name": "hash",
             "summary": "",
@@ -1831,20 +1811,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Distribution.html#property_fileIds"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003A\u0024format",
-            "name": "format",
+            "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003A\u0024bundleIds",
+            "name": "bundleIds",
             "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Distribution.html#property_format"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003A\u0024exportPattern",
-            "name": "exportPattern",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Distribution.html#property_exportPattern"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003A\u0024labelIds",
-            "name": "labelIds",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Distribution.html#property_labelIds"
+            "url": "classes/CrowdinApiClient-Model-Distribution.html#property_bundleIds"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003A\u0024createdAt",
             "name": "createdAt",
