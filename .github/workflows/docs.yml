@@ -5,6 +5,8 @@ on:
   push:
     tags:
       - '*'
+  repository_dispatch:
+    types: [publish]
 
 jobs:
   build-and-deploy-docs:
