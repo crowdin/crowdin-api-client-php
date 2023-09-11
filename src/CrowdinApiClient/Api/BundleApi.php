@@ -3,6 +3,8 @@
 namespace CrowdinApiClient\Api;
 
 use CrowdinApiClient\Model\Bundle;
+use CrowdinApiClient\Model\BundleExport;
+use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\File;
 use CrowdinApiClient\ModelCollection;
 
@@ -112,5 +114,49 @@ class BundleApi extends AbstractApi
     {
         $path = sprintf('projects/%d/bundles/%d/files', $projectId, $bundleId);
         return $this->_list($path, File::class, $params);
+    }
+
+    /**
+     * Export Bundle
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.bundles.exports.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.bundles.exports.post API Documentation Enterprise
+     * @param int $projectId
+     * @param int $bundleId
+     * @return BundleExport
+     */
+    public function export(int $projectId, int $bundleId): BundleExport
+    {
+        $path = sprintf('projects/%d/bundles/%d/exports', $projectId, $bundleId);
+        return $this->_post($path, BundleExport::class, []);
+    }
+
+    /**
+     * Check Bundle Export Status
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.bundles.exports.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.bundles.exports.get API Documentation Enterprise
+     * @param int $projectId
+     * @param int $bundleId
+     * @param string $exportId
+     * @return BundleExport|null
+     */
+    public function checkExportStatus(int $projectId, int $bundleId, string $exportId): ?BundleExport
+    {
+        $path = sprintf('projects/%d/bundles/%d/exports/%s', $projectId, $bundleId, $exportId);
+        return $this->_get($path, BundleExport::class);
+    }
+
+    /**
+     * Download Bundle
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.bundles.exports.download.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.bundles.exports.download.get API Documentation Enterprise
+     * @param int $projectId
+     * @param int $bundleId
+     * @param string $exportId
+     * @return DownloadFile|null
+     */
+    public function download(int $projectId, int $bundleId, string $exportId): ?DownloadFile
+    {
+        $path = sprintf('projects/%d/bundles/%d/exports/%s/download', $projectId, $bundleId, $exportId);
+        return $this->_get($path, DownloadFile::class);
     }
 }
