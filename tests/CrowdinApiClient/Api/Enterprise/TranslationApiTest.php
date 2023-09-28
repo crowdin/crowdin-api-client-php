@@ -24,7 +24,7 @@ class TranslationApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/projects/2/pre-translations',
             'method' => 'post',
-            'body' => $params,
+            'body' => json_encode($params),
             'response' => '{
                   "data": {
                     "identifier": "9e7de270-4f83-41cb-b606-2f90631f26e2",

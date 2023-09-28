@@ -78,7 +78,7 @@ class StringCommentApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/projects/1/comments',
             'method' => 'post',
-            'body' => $params,
+            'body' => json_encode($params),
             'response' => '{
               "data": {
                 "id": 2,

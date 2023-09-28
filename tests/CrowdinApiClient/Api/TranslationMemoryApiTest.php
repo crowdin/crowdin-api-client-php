@@ -62,7 +62,7 @@ class TranslationMemoryApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/tms',
             'method' => 'post',
-            'body' => $params,
+            'body' => json_encode($params),
             'response' => '{
               "data": {
                 "id": 4,
@@ -161,7 +161,7 @@ class TranslationMemoryApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/tms/4/exports',
             'method' => 'post',
-            'body' => $params,
+            'body' => json_encode($params),
             'response' => '{
               "data": {
                 "identifier": "50fb3506-4127-4ba8-8296-f97dc7e3e0c3",

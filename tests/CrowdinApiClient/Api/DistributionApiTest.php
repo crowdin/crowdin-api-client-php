@@ -62,7 +62,7 @@ class DistributionApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/projects/2/distributions',
             'method' => 'post',
-            'body' => $params,
+            'body' => json_encode($params),
             'response' => '{
               "data": {
                 "hash": "e-4326c06be14321dd967b161a",

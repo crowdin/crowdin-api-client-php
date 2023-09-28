@@ -99,7 +99,7 @@ class DirectoryApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/projects/2/directories',
             'method' => 'post',
-            'body' => $params,
+            'body' => json_encode($params),
             'response' => '{
                   "data": {
                     "id": 34,

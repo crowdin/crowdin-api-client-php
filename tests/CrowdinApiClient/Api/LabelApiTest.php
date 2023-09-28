@@ -79,7 +79,7 @@ class LabelApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/projects/2/labels',
             'method' => 'post',
-            'body' => $params,
+            'body' => json_encode($params),
             'response' => '{
                   "data": {
                     "id": 34,

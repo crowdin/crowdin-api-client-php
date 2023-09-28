@@ -281,7 +281,7 @@ class FileApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/projects/2/files',
             'method' => 'post',
-            'body' => $params,
+            'body' => json_encode($params),
             'response' => '{
               "data": {
                 "id": 44,

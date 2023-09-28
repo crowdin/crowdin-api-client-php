@@ -60,7 +60,7 @@ class GlossaryApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/glossaries',
             'method' => 'post',
-            'body' => $params,
+            'body' => json_encode($params),
             'response' => '{
                   "data": {
                     "id": 2,
@@ -140,13 +140,15 @@ class GlossaryApiTest extends AbstractTestApi
 
     public function testExport()
     {
+        $params = [
+            'format' => 'tbx',
+            'exportFields' => ['term', 'description', 'partOfSpeech'],
+        ];
+
         $this->mockRequest([
             'path' => '/glossaries/2/exports',
             'method' => 'post',
-            'body' => [
-                'format' => 'tbx',
-                'exportFields' => [ 'term', 'description', 'partOfSpeech' ],
-            ],
+            'body' => json_encode($params),
             'response' => '{
                   "data": {
                     "identifier": "5ed2ce93-6d47-4402-9e66-516ca835cb20",
