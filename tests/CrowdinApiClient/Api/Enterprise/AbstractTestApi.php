@@ -50,7 +50,7 @@ abstract class AbstractTestApi extends TestCase
             if (isset($params['header'])) {
                 $this->assertEquals($params['header'], $options['header']);
             }
-            return $params['response'] ?? null;
+            return $params['response'] ?? '';
         }));
     }
 
