@@ -160,15 +160,9 @@ class StringTranslationApiTest extends AbstractTestApi
 
     public function testDeleteStringTranslations()
     {
-        $params = [
-            'stringId' => 1,
-            'languageId' => 'en'
-        ];
-
         $this->mockRequest([
-            'path' => '/projects/1/translations',
+            'path' => '/projects/1/translations?stringId=1&languageId=en',
             'method' => 'delete',
-            'body' => $params,
             'response' => '',
         ]);
 
