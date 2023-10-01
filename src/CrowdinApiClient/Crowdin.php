@@ -25,6 +25,7 @@ use UnexpectedValueException;
  * @property \CrowdinApiClient\Api\DirectoryApi directory
  * @property \CrowdinApiClient\Api\LabelApi label
  * @property \CrowdinApiClient\Api\GlossaryApi glossary
+ * @property \CrowdinApiClient\Api\StringsExporterSettingApi stringsExporterSetting
  * @property \CrowdinApiClient\Api\StringTranslationApi stringTranslation
  * @property \CrowdinApiClient\Api\StringCommentApi stringComment
  * @property \CrowdinApiClient\Api\Enterprise\UserApi|\CrowdinApiClient\Api\UserApi user
@@ -91,6 +92,7 @@ class Crowdin
         'issue',
         'branch',
         'glossary',
+        'stringsExporterSetting',
         'stringTranslation',
         'stringComment',
         'directory',
@@ -118,6 +120,7 @@ class Crowdin
         'issue',
         'branch',
         'glossary',
+        'stringsExporterSetting',
         'stringTranslation',
         'stringTranslationApproval',
         'stringComment',
