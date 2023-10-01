@@ -2,7 +2,9 @@
 
 namespace CrowdinApiClient\Api;
 
+use CrowdinApiClient\Http\ResponseDecorator\ResponseModelListDecorator;
 use CrowdinApiClient\Model\Label;
+use CrowdinApiClient\Model\Screenshot;
 use CrowdinApiClient\ModelCollection;
 
 /**
@@ -87,5 +89,52 @@ class LabelApi extends AbstractApi
     {
         $path = sprintf('projects/%d/labels/%d', $projectId, $labelId);
         return $this->_delete($path);
+    }
+
+    /**
+     * Assign Label to Screenshots
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.labels.screenshots.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.labels.screenshots.post API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param int $labelId
+     * @param array $data
+     * string[] $data[screenshotIds] required
+     * @return ModelCollection
+     */
+    public function assignScreenshots(int $projectId, int $labelId, array $data): ModelCollection
+    {
+        $path = sprintf('projects/%d/labels/%d/screenshots', $projectId, $labelId);
+
+        $options = [
+            'body' => json_encode($data),
+            'headers' => ['Content-Type' => 'application/json']
+        ];
+
+        return $this->client->apiRequest('post', $path, new ResponseModelListDecorator(Screenshot::class), $options);
+    }
+
+    /**
+     * Unassign Label from Screenshots
+     *
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.labels.screenshots.deleteMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.labels.screenshots.deleteMany API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param int $labelId
+     * @param array $data
+     * string[] $data[screenshotIds] required
+     * @return ModelCollection
+     */
+    public function unassignScreenshots(int $projectId, int $labelId, array $data): ModelCollection
+    {
+        $path = sprintf('projects/%d/labels/%d/screenshots', $projectId, $labelId);
+
+        $options = [
+            'body' => json_encode($data),
+            'headers' => ['Content-Type' => 'application/json']
+        ];
+
+        return $this->client->apiRequest('delete', $path, new ResponseModelListDecorator(Screenshot::class), $options);
     }
 }
