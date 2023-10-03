@@ -14,7 +14,7 @@ class NotificationApiTest extends AbstractTestApi
         $this->mockRequest([
             'method' => 'post',
             'uri' => 'https://api.crowdin.com/api/v2/notify',
-            'body' => $params,
+            'body' => json_encode($params),
             'response' => null
         ]);
 
@@ -31,7 +31,7 @@ class NotificationApiTest extends AbstractTestApi
         $this->mockRequest([
             'method' => 'post',
             'uri' => 'https://api.crowdin.com/api/v2/projects/2/notify',
-            'body' => $params,
+            'body' => json_encode($params),
             'response' => null
         ]);
 
