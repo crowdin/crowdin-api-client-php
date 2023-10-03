@@ -16,7 +16,7 @@ class StringsExporterSettingTest extends TestCase
      */
     public $data = [
         "id" => 2,
-        "format"=> "android"
+        "format" => "android"
     ];
 
     /**
