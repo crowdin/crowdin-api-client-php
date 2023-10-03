@@ -23,7 +23,7 @@ class UserApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/projects/1/members',
             'method' => 'post',
-            'body' => $params,
+            'body' => json_encode($params),
             'response' => '{
             "skipped": [],
             "added": [
@@ -133,7 +133,7 @@ class UserApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/projects/1/members/1',
             'method' => 'put',
-            'body' => $params,
+            'body' => json_encode($params),
             'response' => '{
               "data": {
                 "id": 1,

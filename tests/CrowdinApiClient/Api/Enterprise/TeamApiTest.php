@@ -51,7 +51,7 @@ class TeamApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/teams',
             'method' => 'post',
-            'body' => $params,
+            'body' => json_encode($params),
             'response' => '{
                   "data": {
                     "id": 2,
@@ -120,7 +120,7 @@ class TeamApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/projects/2/teams',
             'method' => 'post',
-            'body' => $params,
+            'body' => json_encode($params),
             'response' => '
                 {
                     "data": {

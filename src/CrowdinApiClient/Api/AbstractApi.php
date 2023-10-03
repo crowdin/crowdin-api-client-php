@@ -167,7 +167,13 @@ abstract class AbstractApi implements ApiInterface
      */
     protected function _delete(string $path, array $params = [])
     {
-        return $this->client->apiRequest('delete', $path, null, $params);
+        $options = [];
+
+        if (!empty($params)) {
+            $options['params'] = $params;
+        }
+
+        return $this->client->apiRequest('delete', $path, null, $options);
     }
 
     /**

@@ -98,7 +98,7 @@ class BranchApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/projects/2/branches',
             'method' => 'post',
-            'body' => $params,
+            'body' => json_encode($params),
             'response' => '{
                   "data": {
                     "id": 34,

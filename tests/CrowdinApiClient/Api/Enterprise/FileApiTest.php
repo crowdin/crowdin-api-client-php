@@ -20,7 +20,7 @@ class FileApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/projects/2/strings/reviewed-builds',
             'method' => 'post',
-            'body' => $params,
+            'body' => json_encode($params),
             'response' => '{
                   "data": {
                     "id": 44,

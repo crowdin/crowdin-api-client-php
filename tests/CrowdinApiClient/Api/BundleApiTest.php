@@ -96,7 +96,7 @@ class BundleApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/projects/2/bundles',
             'method' => 'post',
-            'body' => $params,
+            'body' => json_encode($params),
             'response' => '{
                   "data": {
                     "id": 34,
@@ -247,7 +247,7 @@ class BundleApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/projects/1/bundles/2/exports',
             'method' => 'post',
-            'body' => $params,
+            'body' => json_encode($params),
             'response' => '{
               "data": {
                 "identifier": "50fb3506-4127-4ba8-8296-f97dc7e3e0c3",

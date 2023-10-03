@@ -62,7 +62,7 @@ class TranslationMemoryApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/tms',
             'method' => 'post',
-            'body' => $params,
+            'body' => json_encode($params),
             'response' => '{
               "data": {
                 "id": 4,
@@ -161,7 +161,7 @@ class TranslationMemoryApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/tms/4/exports',
             'method' => 'post',
-            'body' => $params,
+            'body' => json_encode($params),
             'response' => '{
               "data": {
                 "identifier": "50fb3506-4127-4ba8-8296-f97dc7e3e0c3",
@@ -182,7 +182,7 @@ class TranslationMemoryApiTest extends AbstractTestApi
             }'
         ]);
 
-        $export = $this->crowdin->translationMemory->export(4);
+        $export = $this->crowdin->translationMemory->export(4, $params);
         $this->assertInstanceOf(TranslationMemoryExport::class, $export);
         $this->assertEquals('50fb3506-4127-4ba8-8296-f97dc7e3e0c3', $export->getIdentifier());
     }
@@ -215,7 +215,7 @@ class TranslationMemoryApiTest extends AbstractTestApi
 
     public function testImport()
     {
-        $params = [
+        $expected_body = [
             'storageId' => 0,
             'firstLineContainsHeader' => false,
             'scheme' =>
@@ -226,11 +226,17 @@ class TranslationMemoryApiTest extends AbstractTestApi
                     'phraseUk' => 4,
                 ],
         ];
+        $params = [
+            'phraseEn' => 0,
+            'phraseDe' => 1,
+            'phrasePl' => 2,
+            'phraseUk' => 4,
+        ];
 
         $this->mockRequest([
             'path' => '/tms/4/imports',
             'method' => 'post',
-            'body' => $params,
+            'body' => json_encode($expected_body),
             'response' => '{
                       "data": {
                         "identifier": "b5215a34-1305-4b21-8054-fc2eb252842f",
@@ -256,7 +262,7 @@ class TranslationMemoryApiTest extends AbstractTestApi
                     }'
         ]);
 
-        $translationMemoryImport = $this->crowdin->translationMemory->import(4, 0, $params);
+        $translationMemoryImport = $this->crowdin->translationMemory->import(4, 0, false, $params);
         $this->assertInstanceOf(TranslationMemoryImport::class, $translationMemoryImport);
         $this->assertEquals('b5215a34-1305-4b21-8054-fc2eb252842f', $translationMemoryImport->getIdentifier());
     }

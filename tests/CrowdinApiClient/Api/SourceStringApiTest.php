@@ -137,7 +137,7 @@ class SourceStringApiTest extends AbstractTestApi
                     "updatedAt": "2019-09-20T13:24:01+00:00"
                   }
                 }',
-            'body' => $params
+            'body' => json_encode($params)
         ]);
 
         $sourceString = $this->crowdin->sourceString->create(2, $params);

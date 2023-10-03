@@ -73,7 +73,7 @@ class ProjectApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/projects',
             'method' => 'post',
-            'body' => $params,
+            'body' => json_encode($params),
             'response' => '{
                   "data": {
                     "id": 8,

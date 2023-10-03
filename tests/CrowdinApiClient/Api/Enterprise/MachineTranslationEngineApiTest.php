@@ -24,7 +24,7 @@ class MachineTranslationEngineApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/mts',
             'method' => 'post',
-            'body' => $params,
+            'body' => json_encode($params),
             'response' => '{
               "data": {
                 "id": 2,

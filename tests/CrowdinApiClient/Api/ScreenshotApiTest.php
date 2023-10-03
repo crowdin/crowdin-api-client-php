@@ -72,7 +72,7 @@ class ScreenshotApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/projects/2/screenshots',
             'method' => 'post',
-            'body' => $params,
+            'body' => json_encode($params),
             'response' => '{
                   "data": {
                     "id": 2,
@@ -193,7 +193,7 @@ class ScreenshotApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/projects/2/screenshots/2',
             'method' => 'put',
-            'body' => $params,
+            'body' => json_encode($params),
             'response' => '{
               "data": {
                 "id": 2,
@@ -255,7 +255,7 @@ class ScreenshotApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/projects/2/screenshots/2/tags',
             'method' => 'post',
-            'body' => $params,
+            'body' => json_encode($params),
             'response' => '{
                   "data": {
                     "id": 98,
@@ -401,7 +401,7 @@ class ScreenshotApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/projects/2/screenshots/2/tags',
             'method' => 'put',
-            'body' => $params
+            'body' => json_encode($params)
         ]);
 
         $this->crowdin->screenshot->replaceTags(2, 2, $params);
