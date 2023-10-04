@@ -66,6 +66,21 @@ Search.appendIndex(
             "summary": "List\u0020Files",
             "url": "classes/CrowdinApiClient-Api-BundleApi.html#method_listFiles"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\BundleApi\u003A\u003Aexport\u0028\u0029",
+            "name": "export",
+            "summary": "Export\u0020Bundle",
+            "url": "classes/CrowdinApiClient-Api-BundleApi.html#method_export"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\BundleApi\u003A\u003AcheckExportStatus\u0028\u0029",
+            "name": "checkExportStatus",
+            "summary": "Check\u0020Bundle\u0020Export\u0020Status",
+            "url": "classes/CrowdinApiClient-Api-BundleApi.html#method_checkExportStatus"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\BundleApi\u003A\u003Adownload\u0028\u0029",
+            "name": "download",
+            "summary": "Download\u0020Bundle",
+            "url": "classes/CrowdinApiClient-Api-BundleApi.html#method_download"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Api\\DirectoryApi",
             "name": "DirectoryApi",
             "summary": "Manage\u0020project\u0020directories\u0020to\u0020keep\u0020files\u0020structure",
@@ -210,6 +225,16 @@ Search.appendIndex(
             "name": "delete",
             "summary": "Delete\u0020MT",
             "url": "classes/CrowdinApiClient-Api-Enterprise-MachineTranslationEngineApi.html#method_delete"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\NotificationApi",
+            "name": "NotificationApi",
+            "summary": "Send\u0020notifications",
+            "url": "classes/CrowdinApiClient-Api-Enterprise-NotificationApi.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\NotificationApi\u003A\u003AsendNotificationToOrganizationMembers\u0028\u0029",
+            "name": "sendNotificationToOrganizationMembers",
+            "summary": "Send\u0020Notification\u0020To\u0020Organization\u0020Members",
+            "url": "classes/CrowdinApiClient-Api-Enterprise-NotificationApi.html#method_sendNotificationToOrganizationMembers"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\TeamApi",
             "name": "TeamApi",
@@ -556,6 +581,16 @@ Search.appendIndex(
             "summary": "Delete\u0020Label",
             "url": "classes/CrowdinApiClient-Api-LabelApi.html#method_delete"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\LabelApi\u003A\u003AassignScreenshots\u0028\u0029",
+            "name": "assignScreenshots",
+            "summary": "Assign\u0020Label\u0020to\u0020Screenshots",
+            "url": "classes/CrowdinApiClient-Api-LabelApi.html#method_assignScreenshots"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\LabelApi\u003A\u003AunassignScreenshots\u0028\u0029",
+            "name": "unassignScreenshots",
+            "summary": "Unassign\u0020Label\u0020from\u0020Screenshots",
+            "url": "classes/CrowdinApiClient-Api-LabelApi.html#method_unassignScreenshots"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Api\\LanguageApi",
             "name": "LanguageApi",
             "summary": "Crowdin\u0020supports\u0020more\u0020than\u0020300\u0020world\u0020languages\u0020and\u0020custom\u0020languages\u0020created\u0020in\u0020the\u0020system.",
@@ -605,6 +640,21 @@ Search.appendIndex(
             "name": "translateViaMT",
             "summary": "Translate\u0020via\u0020MT",
             "url": "classes/CrowdinApiClient-Api-MachineTranslationEngineApi.html#method_translateViaMT"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\NotificationApi",
+            "name": "NotificationApi",
+            "summary": "Send\u0020notifications",
+            "url": "classes/CrowdinApiClient-Api-NotificationApi.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\NotificationApi\u003A\u003AsendToAuthenticatedUser\u0028\u0029",
+            "name": "sendToAuthenticatedUser",
+            "summary": "Send\u0020Notification\u0020to\u0020Authenticated\u0020User",
+            "url": "classes/CrowdinApiClient-Api-NotificationApi.html#method_sendToAuthenticatedUser"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\NotificationApi\u003A\u003AsendNotificationToProjectMembers\u0028\u0029",
+            "name": "sendNotificationToProjectMembers",
+            "summary": "Send\u0020Notification\u0020To\u0020Project\u0020Members",
+            "url": "classes/CrowdinApiClient-Api-NotificationApi.html#method_sendNotificationToProjectMembers"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\ProjectApi",
             "name": "ProjectApi",
@@ -1570,6 +1620,136 @@ Search.appendIndex(
             "name": "updatedAt",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Bundle.html#property_updatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\BundleExport",
+            "name": "BundleExport",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-BundleExport.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\BundleExport\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-BundleExport.html#method___construct"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\BundleExport\u003A\u003AgetIdentifier\u0028\u0029",
+            "name": "getIdentifier",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-BundleExport.html#method_getIdentifier"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\BundleExport\u003A\u003AsetIdentifier\u0028\u0029",
+            "name": "setIdentifier",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-BundleExport.html#method_setIdentifier"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\BundleExport\u003A\u003AgetStatus\u0028\u0029",
+            "name": "getStatus",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-BundleExport.html#method_getStatus"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\BundleExport\u003A\u003AsetStatus\u0028\u0029",
+            "name": "setStatus",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-BundleExport.html#method_setStatus"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\BundleExport\u003A\u003AgetProgress\u0028\u0029",
+            "name": "getProgress",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-BundleExport.html#method_getProgress"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\BundleExport\u003A\u003AsetProgress\u0028\u0029",
+            "name": "setProgress",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-BundleExport.html#method_setProgress"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\BundleExport\u003A\u003AgetAttributes\u0028\u0029",
+            "name": "getAttributes",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-BundleExport.html#method_getAttributes"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\BundleExport\u003A\u003AsetAttributes\u0028\u0029",
+            "name": "setAttributes",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-BundleExport.html#method_setAttributes"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\BundleExport\u003A\u003AgetCreatedAt\u0028\u0029",
+            "name": "getCreatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-BundleExport.html#method_getCreatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\BundleExport\u003A\u003AsetCreatedAt\u0028\u0029",
+            "name": "setCreatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-BundleExport.html#method_setCreatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\BundleExport\u003A\u003AgetUpdatedAt\u0028\u0029",
+            "name": "getUpdatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-BundleExport.html#method_getUpdatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\BundleExport\u003A\u003AsetUpdatedAt\u0028\u0029",
+            "name": "setUpdatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-BundleExport.html#method_setUpdatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\BundleExport\u003A\u003AgetStartedAt\u0028\u0029",
+            "name": "getStartedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-BundleExport.html#method_getStartedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\BundleExport\u003A\u003AsetStartedAt\u0028\u0029",
+            "name": "setStartedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-BundleExport.html#method_setStartedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\BundleExport\u003A\u003AgetFinishedAt\u0028\u0029",
+            "name": "getFinishedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-BundleExport.html#method_getFinishedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\BundleExport\u003A\u003AsetFinishedAt\u0028\u0029",
+            "name": "setFinishedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-BundleExport.html#method_setFinishedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\BundleExport\u003A\u003A\u0024identifier",
+            "name": "identifier",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-BundleExport.html#property_identifier"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\BundleExport\u003A\u003A\u0024status",
+            "name": "status",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-BundleExport.html#property_status"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\BundleExport\u003A\u003A\u0024progress",
+            "name": "progress",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-BundleExport.html#property_progress"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\BundleExport\u003A\u003A\u0024attributes",
+            "name": "attributes",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-BundleExport.html#property_attributes"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\BundleExport\u003A\u003A\u0024createdAt",
+            "name": "createdAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-BundleExport.html#property_createdAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\BundleExport\u003A\u003A\u0024updatedAt",
+            "name": "updatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-BundleExport.html#property_updatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\BundleExport\u003A\u003A\u0024startedAt",
+            "name": "startedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-BundleExport.html#property_startedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\BundleExport\u003A\u003A\u0024finishedAt",
+            "name": "finishedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-BundleExport.html#property_finishedAt"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Directory",
             "name": "Directory",

@@ -160,7 +160,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/LabelApi.php"><a href="files/src-crowdinapiclient-api-labelapi.html"><abbr title="src/CrowdinApiClient/Api/LabelApi.php">LabelApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 
     </aside>
 
@@ -193,6 +193,13 @@
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/CrowdinApiClient-Api-LabelApi.html#method_assignScreenshots">assignScreenshots()</a>
+    <span>
+                                &nbsp;: <abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr>    </span>
+</dt>
+<dd>Assign Label to Screenshots</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Api-LabelApi.html#method_create">create()</a>
     <span>
                                 &nbsp;: <a href="classes/CrowdinApiClient-Model-Label.html"><abbr title="\CrowdinApiClient\Model\Label">Label</abbr></a>|null    </span>
@@ -219,6 +226,13 @@
                                 &nbsp;: <abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr>    </span>
 </dt>
 <dd>List Labels</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/CrowdinApiClient-Api-LabelApi.html#method_unassignScreenshots">unassignScreenshots()</a>
+    <span>
+                                &nbsp;: <abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr>    </span>
+</dt>
+<dd>Unassign Label from Screenshots</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CrowdinApiClient-Api-LabelApi.html#method_update">update()</a>
@@ -248,6 +262,91 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_assignScreenshots">
+        assignScreenshots()
+        <a href="classes/CrowdinApiClient-Api-LabelApi.html#method_assignScreenshots" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/LabelApi.php"><a href="files/src-crowdinapiclient-api-labelapi.html"><abbr title="src/CrowdinApiClient/Api/LabelApi.php">LabelApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">105</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Assign Label to Screenshots</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">assignScreenshots</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$labelId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$projectId</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$labelId</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$data</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>string[] $data[screenshotIds] required</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-LabelApi.html#method_assignScreenshots#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.projects.labels.screenshots.post"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.labels.screenshots.post"> <p>API Documentation Enterprise</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_create">
         create()
         <a href="classes/CrowdinApiClient-Api-LabelApi.html#method_create" class="headerlink"><i class="fas fa-link"></i></a>
@@ -256,7 +355,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/LabelApi.php"><a href="files/src-crowdinapiclient-api-labelapi.html"><abbr title="src/CrowdinApiClient/Api/LabelApi.php">LabelApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">57</span>
+    <span class="phpdocumentor-element-found-in__line">59</span>
 
     </aside>
 
@@ -334,7 +433,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/LabelApi.php"><a href="files/src-crowdinapiclient-api-labelapi.html"><abbr title="src/CrowdinApiClient/Api/LabelApi.php">LabelApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">86</span>
+    <span class="phpdocumentor-element-found-in__line">88</span>
 
     </aside>
 
@@ -406,7 +505,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/LabelApi.php"><a href="files/src-crowdinapiclient-api-labelapi.html"><abbr title="src/CrowdinApiClient/Api/LabelApi.php">LabelApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">43</span>
 
     </aside>
 
@@ -482,7 +581,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/LabelApi.php"><a href="files/src-crowdinapiclient-api-labelapi.html"><abbr title="src/CrowdinApiClient/Api/LabelApi.php">LabelApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">28</span>
 
     </aside>
 
@@ -553,6 +652,91 @@ integer $params[offset]</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_unassignScreenshots">
+        unassignScreenshots()
+        <a href="classes/CrowdinApiClient-Api-LabelApi.html#method_unassignScreenshots" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/LabelApi.php"><a href="files/src-crowdinapiclient-api-labelapi.html"><abbr title="src/CrowdinApiClient/Api/LabelApi.php">LabelApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">129</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Unassign Label from Screenshots</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">unassignScreenshots</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$labelId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$projectId</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$labelId</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$data</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>string[] $data[screenshotIds] required</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-LabelApi.html#method_unassignScreenshots#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.projects.labels.screenshots.deleteMany"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.labels.screenshots.deleteMany"> <p>API Documentation Enterprise</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_update">
         update()
         <a href="classes/CrowdinApiClient-Api-LabelApi.html#method_update" class="headerlink"><i class="fas fa-link"></i></a>
@@ -561,7 +745,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/LabelApi.php"><a href="files/src-crowdinapiclient-api-labelapi.html"><abbr title="src/CrowdinApiClient/Api/LabelApi.php">LabelApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">71</span>
+    <span class="phpdocumentor-element-found-in__line">73</span>
 
     </aside>
 
@@ -729,10 +913,12 @@ integer $params[offset]</p>
                         <li class="phpdocumentor-on-this-page-section__title">Methods</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
+                                            <li><a href="classes/CrowdinApiClient-Api-LabelApi.html#method_assignScreenshots">assignScreenshots()</a></li>
                                             <li><a href="classes/CrowdinApiClient-Api-LabelApi.html#method_create">create()</a></li>
                                             <li><a href="classes/CrowdinApiClient-Api-LabelApi.html#method_delete">delete()</a></li>
                                             <li><a href="classes/CrowdinApiClient-Api-LabelApi.html#method_get">get()</a></li>
                                             <li><a href="classes/CrowdinApiClient-Api-LabelApi.html#method_list">list()</a></li>
+                                            <li><a href="classes/CrowdinApiClient-Api-LabelApi.html#method_unassignScreenshots">unassignScreenshots()</a></li>
                                             <li><a href="classes/CrowdinApiClient-Api-LabelApi.html#method_update">update()</a></li>
                                     </ul>
             </li>
