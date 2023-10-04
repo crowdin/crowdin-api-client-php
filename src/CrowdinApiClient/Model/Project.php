@@ -208,6 +208,11 @@ class Project extends BaseModel
     protected $qaCheckCategories = [];
 
     /**
+     * @var array
+     */
+    protected $qaChecksIgnorableCategories = [];
+
+    /**
      * @var int[]
      */
     protected $customQaCheckIds = [];
@@ -280,6 +285,7 @@ class Project extends BaseModel
         $this->inContextPseudoLanguage = (array)$this->getDataProperty('inContextPseudoLanguage');
         $this->qaCheckIsActive = (bool)$this->getDataProperty('qaCheckIsActive');
         $this->qaCheckCategories = (array)$this->getDataProperty('qaCheckCategories');
+        $this->qaChecksIgnorableCategories = (array)$this->getDataProperty('qaChecksIgnorableCategories');
         $this->customQaCheckIds = (array)$this->getDataProperty('customQaCheckIds');
         $this->languageMapping = (array)$this->getDataProperty('languageMapping');
         $this->glossaryAccess = (bool)$this->getDataProperty('glossaryAccess');
@@ -867,6 +873,22 @@ class Project extends BaseModel
     public function setQaCheckCategories(array $qaCheckCategories): void
     {
         $this->qaCheckCategories = $qaCheckCategories;
+    }
+
+    /**
+     * @return array
+     */
+    public function getQaChecksIgnorableCategories(): array
+    {
+        return $this->qaChecksIgnorableCategories;
+    }
+
+    /**
+     * @param array $qaChecksIgnorableCategories
+     */
+    public function setQaChecksIgnorableCategories(array $qaChecksIgnorableCategories): void
+    {
+        $this->qaChecksIgnorableCategories = $qaChecksIgnorableCategories;
     }
 
     /**
