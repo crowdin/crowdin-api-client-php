@@ -66,6 +66,39 @@ class ProjectApiTest extends AbstractTestApi
             'languageAccessPolicy' => 'moderate',
             'cname' => 'my-custom-domain.crowdin.com',
             'description' => 'Articles and tutorials',
+            'qaCheckIsActive' => true,
+            'qaCheckCategories' =>
+                [
+                    'empty' => true,
+                    'size' => true,
+                    'tags' => true,
+                    'spaces' => true,
+                    'variables' => true,
+                    'punctuation' => true,
+                    'symbolRegister' => true,
+                    'specialSymbols' => true,
+                    'wrongTranslation' => true,
+                    'spellcheck' => true,
+                    'icu' => true,
+                ],
+            'qaChecksIgnorableCategories' =>
+                [
+                    'empty' => false,
+                    'size' => true,
+                    'tags' => true,
+                    'spaces' => true,
+                    'variables' => true,
+                    'punctuation' => true,
+                    'symbolRegister' => true,
+                    'specialSymbols' => true,
+                    'wrongTranslation' => true,
+                    'spellcheck' => true,
+                    'icu' => false,
+                    'terms' => true,
+                    'duplicate' => false,
+                    'ftl' => false,
+                    'android' => true,
+                ],
         ];
 
         $this->mockRequest([
@@ -114,6 +147,37 @@ class ProjectApiTest extends AbstractTestApi
                       "translatorNewStrings": "false",
                       "managerNewStrings": "false",
                       "managerLanguageCompleted": "false"
+                    },
+                    "qaCheckIsActive": true,
+                    "qaCheckCategories": {
+                      "empty": "true",
+                      "size": "true",
+                      "tags": "true",
+                      "spaces": "true",
+                      "variables": "true",
+                      "punctuation": "true",
+                      "symbolRegister": "true",
+                      "specialSymbols": "true",
+                      "wrongTranslation": "true",
+                      "spellcheck": "true",
+                      "icu": "true"
+                    },
+                    "qaChecksIgnorableCategories": {
+                      "empty": "false",
+                      "size": "true",
+                      "tags": "true",
+                      "spaces": "true",
+                      "variables": "true",
+                      "punctuation": "true",
+                      "symbolRegister": "true",
+                      "specialSymbols": "true",
+                      "wrongTranslation": "true",
+                      "spellcheck": "true",
+                      "icu": "false",
+                      "terms": "true",
+                      "duplicate": "false",
+                      "ftl": "false",
+                      "android": "true"
                     },
                     "createdAt": "2019-09-20T11:34:40+00:00",
                     "updatedAt": "2019-09-20T11:34:40+00:00"
@@ -173,6 +237,37 @@ class ProjectApiTest extends AbstractTestApi
                               "managerNewStrings": "false",
                               "managerLanguageCompleted": "false"
                             },
+                            "qaCheckIsActive": true,
+                            "qaCheckCategories": {
+                              "empty": "true",
+                              "size": "true",
+                              "tags": "true",
+                              "spaces": "true",
+                              "variables": "true",
+                              "punctuation": "true",
+                              "symbolRegister": "true",
+                              "specialSymbols": "true",
+                              "wrongTranslation": "true",
+                              "spellcheck": "true",
+                              "icu": "true"
+                            },
+                            "qaChecksIgnorableCategories": {
+                              "empty": "false",
+                              "size": "true",
+                              "tags": "true",
+                              "spaces": "true",
+                              "variables": "true",
+                              "punctuation": "true",
+                              "symbolRegister": "true",
+                              "specialSymbols": "true",
+                              "wrongTranslation": "true",
+                              "spellcheck": "true",
+                              "icu": "false",
+                              "terms": "true",
+                              "duplicate": "false",
+                              "ftl": "false",
+                              "android": "true"
+                            },
                             "createdAt": "2019-09-20T11:34:40+00:00",
                             "updatedAt": "2019-09-20T11:34:40+00:00"
                     }
@@ -225,6 +320,37 @@ class ProjectApiTest extends AbstractTestApi
                               "translatorNewStrings": "false",
                               "managerNewStrings": "false",
                               "managerLanguageCompleted": "false"
+                            },
+                            "qaCheckIsActive": true,
+                            "qaCheckCategories": {
+                              "empty": "true",
+                              "size": "true",
+                              "tags": "true",
+                              "spaces": "true",
+                              "variables": "true",
+                              "punctuation": "true",
+                              "symbolRegister": "true",
+                              "specialSymbols": "true",
+                              "wrongTranslation": "true",
+                              "spellcheck": "true",
+                              "icu": "true"
+                            },
+                            "qaChecksIgnorableCategories": {
+                              "empty": "false",
+                              "size": "true",
+                              "tags": "true",
+                              "spaces": "true",
+                              "variables": "true",
+                              "punctuation": "true",
+                              "symbolRegister": "true",
+                              "specialSymbols": "true",
+                              "wrongTranslation": "true",
+                              "spellcheck": "true",
+                              "icu": "false",
+                              "terms": "true",
+                              "duplicate": "false",
+                              "ftl": "false",
+                              "android": "true"
                             },
                             "createdAt": "2019-09-20T11:34:40+00:00",
                             "updatedAt": "2019-09-20T11:34:40+00:00"
