@@ -87,6 +87,24 @@ class ProjectTest extends TestCase
                 'spellcheck' => true,
                 'icu' => true,
             ],
+        'qaChecksIgnorableCategories' =>
+            [
+                'empty' => false,
+                'size' => true,
+                'tags' => true,
+                'spaces' => true,
+                'variables' => true,
+                'punctuation' => true,
+                'symbolRegister' => true,
+                'specialSymbols' => true,
+                'wrongTranslation' => true,
+                'spellcheck' => true,
+                'icu' => false,
+                'terms' => true,
+                'duplicate' => false,
+                'ftl' => false,
+                'android' => true,
+            ],
         'customQaCheckIds' =>
             [
                 0 => '1',
@@ -191,6 +209,7 @@ class ProjectTest extends TestCase
         $this->assertEquals($this->data['inContextPseudoLanguageId'], $this->project->getInContextPseudoLanguageId());
         $this->assertEquals($this->data['qaCheckIsActive'], $this->project->isQaCheckIsActive());
         $this->assertEquals($this->data['qaCheckCategories'], $this->project->getQaCheckCategories());
+        $this->assertEquals($this->data['qaChecksIgnorableCategories'], $this->project->getQaChecksIgnorableCategories());
         $this->assertEquals($this->data['customQaCheckIds'], $this->project->getCustomQaCheckIds());
         $this->assertEquals($this->data['languageMapping'], $this->project->getLanguageMapping());
         $this->assertEquals($this->data['isSuspended'], $this->project->isSuspended());
