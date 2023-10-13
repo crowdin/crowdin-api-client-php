@@ -5,6 +5,7 @@ namespace CrowdinApiClient\Api;
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\Task;
 use CrowdinApiClient\Model\TaskForUpdate;
+use CrowdinApiClient\Model\TaskSettingsTemplate;
 use CrowdinApiClient\ModelCollection;
 
 /**
@@ -151,5 +152,86 @@ class TaskApi extends AbstractApi
         ];
 
         return $this->_patch($path, Task::class, $body, ['projectId' => $projectId]);
+    }
+
+    /**
+     * List Task Settings template
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.settings-templates.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.settings-templates.getMany API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param array $params
+     * integer $params[limit]  [ 1 .. 500 ] Default: 25<br>
+     * integer $params[offset]  >= 0 Default: 0<br>
+     *
+     * @return ModelCollection
+     */
+    public function listSettingsTemplate(int $projectId, array $params = []): ModelCollection
+    {
+        $path = sprintf('projects/%s/tasks/settings-templates', $projectId);
+        return $this->_list($path, TaskSettingsTemplate::class, $params);
+    }
+
+    /**
+     * Get Task Settings template
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.settings-templates.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.settings-templates.get API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param int $taskSettingsTemplateId
+     * @return TaskSettingsTemplate|null
+     */
+    public function getSettingsTemplate(int $projectId, int $taskSettingsTemplateId): ?TaskSettingsTemplate
+    {
+        $path = sprintf('projects/%d/tasks/settings-templates/%d', $projectId, $taskSettingsTemplateId);
+        return $this->_get($path, TaskSettingsTemplate::class);
+    }
+
+    /**
+     * Add Task Settings Template
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.settings-templates.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.settings-templates.post API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param array $data
+     * string $data[name] required<br>
+     * array $data[config] required<br>
+     * @return TaskSettingsTemplate|null
+     */
+    public function addSettingsTemplate(int $projectId, array $data): ?TaskSettingsTemplate
+    {
+        $path = sprintf('projects/%d/tasks/settings-templates', $projectId);
+        return $this->_create($path, TaskSettingsTemplate::class, $data);
+    }
+
+    /**
+     * Delete Task Settings Template
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.settings-templates.delete API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.settings-templates.delete API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param int $taskSettingsTemplateId
+     * @return mixed
+     */
+    public function deleteSettingsTemplate(int $projectId, int $taskSettingsTemplateId)
+    {
+        $path = sprintf('projects/%d/tasks/settings-templates/%d', $projectId, $taskSettingsTemplateId);
+        return $this->_delete($path);
+    }
+
+    /**
+     * Update Task Settings Template
+     *
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.settings-templates.patch API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.settings-templates.patch API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param TaskSettingsTemplate $taskSettingsTemplate
+     * @return TaskSettingsTemplate|null
+     */
+    public function updateSettingsTemplate(int $projectId, TaskSettingsTemplate $taskSettingsTemplate): ?TaskSettingsTemplate
+    {
+        $path = sprintf('projects/%d/tasks/settings-templates/%d', $projectId, $taskSettingsTemplate->getId());
+        return $this->_update($path, $taskSettingsTemplate);
     }
 }

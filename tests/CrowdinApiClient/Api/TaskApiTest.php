@@ -5,6 +5,7 @@ namespace CrowdinApiClient\Tests\Api;
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\Task;
 use CrowdinApiClient\Model\TaskForUpdate;
+use CrowdinApiClient\Model\TaskSettingsTemplate;
 use CrowdinApiClient\ModelCollection;
 
 class TaskApiTest extends AbstractTestApi
@@ -379,5 +380,162 @@ class TaskApiTest extends AbstractTestApi
         $this->assertInstanceOf(Task::class, $task);
         $this->assertEquals(2, $task->getId());
         $this->assertTrue($task->isArchived());
+    }
+
+    public function testListSettingsTemplate()
+    {
+        $this->mockRequestGet('/projects/2/tasks/settings-templates', '{
+              "data": [
+                {
+                  "data": {
+                    "id": 1,
+                    "name": "Default template",
+                    "config": {
+                      "languages": [
+                        {
+                          "languageId": "uk",
+                          "userIds": [
+                            1
+                          ]
+                        }
+                      ]
+                    },
+                    "createdAt": "2019-09-23T09:35:31+00:00",
+                    "updatedAt": "2020-09-23T09:35:31+00:00"
+                  }
+                }
+              ],
+              "pagination": [
+                {
+                  "offset": 0,
+                  "limit": 25
+                }
+              ]
+            }');
+
+        $taskSettingsTemplates = $this->crowdin->task->listSettingsTemplate(2);
+        $this->assertInstanceOf(ModelCollection::class, $taskSettingsTemplates);
+        $this->assertCount(1, $taskSettingsTemplates);
+        $this->assertInstanceOf(TaskSettingsTemplate::class, $taskSettingsTemplates[0]);
+        $this->assertEquals(1, $taskSettingsTemplates[0]->getId());
+    }
+
+    public function testAddSettingsTemplate()
+    {
+        $params = [
+            'name' => 'string',
+            'config' => [
+                'languages' => [
+                    [
+                        'languageId' => 'uk',
+                        'userIds' => [
+                            1
+                        ]
+                    ]
+                ]
+            ]
+        ];
+
+        $this->mockRequest([
+            'path' => '/projects/2/tasks/settings-templates',
+            'method' => 'post',
+            'body' => json_encode($params),
+            'response' => '{
+              "data": {
+                "id": 1,
+                "name": "Default template",
+                "config": {
+                  "languages": [
+                    {
+                      "languageId": "uk",
+                      "userIds": [
+                        1
+                      ]
+                    }
+                  ]
+                },
+                "createdAt": "2019-09-23T09:35:31+00:00",
+                "updatedAt": "2020-09-23T09:35:31+00:00"
+              }
+            }'
+
+        ]);
+
+        $taskSettingsTemplate = $this->crowdin->task->addSettingsTemplate(2, $params);
+        $this->assertInstanceOf(TaskSettingsTemplate::class, $taskSettingsTemplate);
+        $this->assertEquals(1, $taskSettingsTemplate->getId());
+    }
+
+    public function testGetAndUpdateSettingsTemplate()
+    {
+        $this->mockRequestGet('/projects/2/tasks/settings-templates/1', '{
+                "data": {
+                    "id": 1,
+                    "name": "Default template",
+                    "config": {
+                    "languages": [
+                        {
+                        "languageId": "uk",
+                        "userIds": [
+                            1
+                        ]
+                        }
+                    ]
+                    },
+                    "createdAt": "2019-09-23T09:35:31+00:00",
+                    "updatedAt": "2020-09-23T09:35:31+00:00"
+                }
+                }');
+
+        $taskSettingsTemplate = $this->crowdin->task->getSettingsTemplate(2, 1);
+        $this->assertInstanceOf(TaskSettingsTemplate::class, $taskSettingsTemplate);
+        $this->assertEquals(1, $taskSettingsTemplate->getId());
+
+        $this->mockRequest([
+            'path' => '/projects/2/tasks/settings-templates/1',
+            'method' => 'patch',
+            'response' => '{
+              "data": {
+                "id": 1,
+                "name": "Test template",
+                "config": {
+                  "languages": [
+                    {
+                      "languageId": "fr",
+                      "userIds": [
+                        1
+                      ]
+                    }
+                  ]
+                },
+                "createdAt": "2019-09-23T09:35:31+00:00",
+                "updatedAt": "2020-09-23T09:35:31+00:00"
+              }
+            }'
+
+        ]);
+
+        $params = new TaskSettingsTemplate($taskSettingsTemplate->getData());
+        $params->setName('Test template');
+        $params->setConfig([
+            'languages' => [
+                [
+                    'languageId' => 'fr',
+                    'userIds' => [
+                        1
+                    ]
+                ]
+            ]
+        ]);
+
+        $taskSettingsTemplate = $this->crowdin->task->updateSettingsTemplate(2, $params);
+        $this->assertInstanceOf(TaskSettingsTemplate::class, $taskSettingsTemplate);
+        $this->assertEquals(1, $taskSettingsTemplate->getId());
+    }
+
+    public function testDeleteSettingsTemplate()
+    {
+        $this->mockRequestDelete('/projects/2/tasks/settings-templates/1');
+        $this->crowdin->task->deleteSettingsTemplate(2, 1);
     }
 }
