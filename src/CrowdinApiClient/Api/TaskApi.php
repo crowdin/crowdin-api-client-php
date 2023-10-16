@@ -166,7 +166,7 @@ class TaskApi extends AbstractApi
      *
      * @return ModelCollection
      */
-    public function listSettingsTemplate(int $projectId, array $params = []): ModelCollection
+    public function listSettingsTemplates(int $projectId, array $params = []): ModelCollection
     {
         $path = sprintf('projects/%s/tasks/settings-templates', $projectId);
         return $this->_list($path, TaskSettingsTemplate::class, $params);
