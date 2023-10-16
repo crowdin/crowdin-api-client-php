@@ -413,7 +413,7 @@ class TaskApiTest extends AbstractTestApi
               ]
             }');
 
-        $taskSettingsTemplates = $this->crowdin->task->listSettingsTemplate(2);
+        $taskSettingsTemplates = $this->crowdin->task->listSettingsTemplates(2);
         $this->assertInstanceOf(ModelCollection::class, $taskSettingsTemplates);
         $this->assertCount(1, $taskSettingsTemplates);
         $this->assertInstanceOf(TaskSettingsTemplate::class, $taskSettingsTemplates[0]);
