@@ -44,6 +44,7 @@ use UnexpectedValueException;
  * @property \CrowdinApiClient\Api\Enterprise\TeamMemberApi teamMember
  * @property \CrowdinApiClient\Api\BundleApi bundle
  * @property \CrowdinApiClient\Api\NotificationApi|\CrowdinApiClient\Api\Enterprise\NotificationApi notification
+ * @property \CrowdinApiClient\Api\OrganizationWebhookApi organizationWebhook
  */
 class Crowdin
 {
@@ -110,7 +111,8 @@ class Crowdin
         'translationStatus',
         'distribution',
         'bundle',
-        'notification'
+        'notification',
+        'organizationWebhook'
     ];
 
     protected $servicesEnterprise = [
@@ -145,7 +147,8 @@ class Crowdin
         'team',
         'teamMember',
         'bundle',
-        'notification'
+        'notification',
+        'organizationWebhook'
     ];
 
     /**
