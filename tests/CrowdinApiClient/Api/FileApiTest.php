@@ -14,9 +14,6 @@ use CrowdinApiClient\ModelCollection;
  */
 class FileApiTest extends AbstractTestApi
 {
-    /**
-     * @test
-     */
     public function testList()
     {
         $this->mockRequest([
@@ -66,7 +63,7 @@ class FileApiTest extends AbstractTestApi
             }'
         ]);
 
-        $files = $files = $this->crowdin->file->list(2);
+        $files = $this->crowdin->file->list(2);
 
         $this->assertInstanceOf(ModelCollection::class, $files);
         $this->assertCount(1, $files);
@@ -259,6 +256,7 @@ class FileApiTest extends AbstractTestApi
             'branchId' => 34,
             'directoryId' => 4,
             'title' => 'source_app_info',
+            'context' => 'Context for translators',
             'type' => 'xliff',
             'importOptions' =>
                 [
@@ -290,6 +288,7 @@ class FileApiTest extends AbstractTestApi
                 "directoryId": 4,
                 "name": "umbrella_app.xliff",
                 "title": "source_app_info",
+                "context": "Context for translators",
                 "type": "xliff",
                 "path": "/directory1/directory2/filename.extension",
                 "status": "active",

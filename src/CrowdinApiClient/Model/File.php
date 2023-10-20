@@ -40,6 +40,11 @@ class File extends BaseModel
     /**
      * @var string
      */
+    protected $context;
+
+    /**
+     * @var string
+     */
     protected $type;
 
     /**
@@ -97,6 +102,7 @@ class File extends BaseModel
         $this->directoryId = (integer)$this->getDataProperty('directoryId');
         $this->name = (string)$this->getDataProperty('name');
         $this->title = (string)$this->getDataProperty('title');
+        $this->context = (string)$this->getDataProperty('context');
         $this->type = (string)$this->getDataProperty('type');
         $this->path = (string)$this->getDataProperty('path');
         $this->revisionId = (integer)$this->getDataProperty('revisionId');
@@ -187,6 +193,22 @@ class File extends BaseModel
     public function setTitle(string $title): void
     {
         $this->title = $title;
+    }
+
+    /**
+     * @return string
+     */
+    public function getContext(): string
+    {
+        return $this->context;
+    }
+
+    /**
+     * @param string $context
+     */
+    public function setContext(string $context): void
+    {
+        $this->context = $context;
     }
 
     /**

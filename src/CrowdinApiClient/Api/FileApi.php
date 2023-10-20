@@ -46,6 +46,7 @@ class FileApi extends AbstractApi
      * integer $data[branchId] Can't be used with directoryId in same request<br>
      * integer $data[directoryId] Can't be used with branchId in same request<br>
      * string $data[title]<br>
+     * string $data[context]<br>
      * string $data[type]<br>
      * array $data[importOptions]<br>
      * array $data[exportOptions]
