@@ -26,6 +26,7 @@ class FileTest extends TestCase
         'directoryId' => 4,
         'name' => 'umbrella_app.xliff',
         'title' => 'source_app_info',
+        'context' => 'Context for translators',
         'type' => 'xliff',
         'path' => '/someBranch/someDir/umbrella_app.xliff',
         'revisionId' => 1,
@@ -54,19 +55,20 @@ class FileTest extends TestCase
         'updatedAt' => '2019-09-19T15:10:46+00:00',
     ];
 
-    public function testLoadData()
+    public function testLoadData(): void
     {
         $this->file = new File($this->data);
         $this->checkData();
     }
 
-    public function testSetData()
+    public function testSetData(): void
     {
         $this->file = new File();
         $this->file->setBranchId($this->data['branchId']);
         $this->file->setDirectoryId($this->data['directoryId']);
         $this->file->setName($this->data['name']);
         $this->file->setTitle($this->data['title']);
+        $this->file->setContext($this->data['context']);
         $this->file->setPriority($this->data['priority']);
         $this->file->setImportOptions($this->data['importOptions']);
         $this->file->setExportOptions($this->data['exportOptions']);
@@ -76,13 +78,14 @@ class FileTest extends TestCase
         $this->assertEquals($this->data['directoryId'], $this->file->getDirectoryId());
         $this->assertEquals($this->data['name'], $this->file->getName());
         $this->assertEquals($this->data['title'], $this->file->getTitle());
+        $this->assertEquals($this->data['context'], $this->file->getContext());
         $this->assertEquals($this->data['priority'], $this->file->getPriority());
         $this->assertEquals($this->data['importOptions'], $this->file->getImportOptions());
         $this->assertEquals($this->data['exportOptions'], $this->file->getExportOptions());
         $this->assertEquals($this->data['excludedTargetLanguages'], $this->file->getExcludedTargetLanguages());
     }
 
-    public function checkData()
+    public function checkData(): void
     {
         $this->assertEquals($this->data['id'], $this->file->getId());
         $this->assertEquals($this->data['projectId'], $this->file->getProjectId());
@@ -90,6 +93,7 @@ class FileTest extends TestCase
         $this->assertEquals($this->data['directoryId'], $this->file->getDirectoryId());
         $this->assertEquals($this->data['name'], $this->file->getName());
         $this->assertEquals($this->data['title'], $this->file->getTitle());
+        $this->assertEquals($this->data['context'], $this->file->getContext());
         $this->assertEquals($this->data['type'], $this->file->getType());
         $this->assertEquals($this->data['path'], $this->file->getPath());
         $this->assertEquals($this->data['revisionId'], $this->file->getRevisionId());
