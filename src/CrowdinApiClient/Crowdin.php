@@ -33,7 +33,7 @@ use UnexpectedValueException;
  * @property \CrowdinApiClient\Api\Enterprise\WorkflowTemplateApi workflowTemplate
  * @property \CrowdinApiClient\Api\Enterprise\WorkflowStepApi workflowStep
  * @property \CrowdinApiClient\Api\FileApi|\CrowdinApiClient\Api\Enterprise\FileApi file
- * @property \CrowdinApiClient\Api\ReportApi report
+ * @property \CrowdinApiClient\Api\Enterprise\ReportApi|\CrowdinApiClient\Api\ReportApi report
  * @property \CrowdinApiClient\Api\SourceStringApi sourceString
  * @property \CrowdinApiClient\Api\TranslationMemoryApi translationMemory
  * @property \CrowdinApiClient\Api\WebhookApi webhook

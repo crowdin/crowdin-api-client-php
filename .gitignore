@@ -6,3 +6,4 @@ coverage.xml
 .phpdoc
 phpdoc
 phpDocumentor.phar
+.phpunit.result.cache
