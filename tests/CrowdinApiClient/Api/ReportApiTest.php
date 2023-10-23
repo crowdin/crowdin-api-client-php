@@ -7,7 +7,7 @@ use CrowdinApiClient\Model\Report;
 
 class ReportApiTest extends AbstractTestApi
 {
-    public function testGenerate()
+    public function testGenerate(): void
     {
         $this->mockRequest([
             'path' => '/projects/124/reports',
@@ -17,8 +17,6 @@ class ReportApiTest extends AbstractTestApi
                   "status": "finished",
                   "progress": 100,
                   "attributes": {
-                    "organizationId": 10,
-                    "projectId": 124,
                     "format": "xlsx",
                     "reportName": "costs-estimation",
                     "schema": {}
@@ -32,40 +30,42 @@ class ReportApiTest extends AbstractTestApi
 
         $data = [
             [
-                'name' => 'costs-estimation',
+                'name' => 'costs-estimation-pe',
                 'schema' =>
                     [
                         'unit' => 'words',
                         'currency' => 'USD',
-                        'mode' => 'simple',
-                        'languageId' => 'ach',
                         'format' => 'xlsx',
-                        'regularRates' =>
+                        'baseRates' => [
+                            'fullTranslation' => 0.1,
+                            'proofread' => 0.12,
+                        ],
+                        'individualRates' => [
                             [
-                                0 =>
-                                    [
-                                        'mode' => 'tm_match',
-                                        'value' => 0.1,
-                                    ],
+                                'languageIds' => ['uk'],
+                                'userIds' => [1],
+                                'fullTranslation' => 0.1,
+                                'proofread' => 0.12,
                             ],
-                        'individualRates' =>
-                            [
-                                0 =>
-                                    [
-                                        'languageIds' =>
-                                            [
-                                                0 => 'uk',
-                                            ],
-                                        'rates' =>
-                                            [
-                                                0 =>
-                                                    [
-                                                        'mode' => 'tm_match',
-                                                        'value' => 0.1,
-                                                    ],
-                                            ],
-                                    ],
+                        ],
+                        'netRateSchemes' => [
+                            'tmMatch' => [
+                                [
+                                    'matchType' => 'perfect',
+                                    'price' => 0.1,
+                                ]
                             ],
+                        ],
+                        'calculateInternalMatches' => false,
+                        'includePreTranslatedStrings' => false,
+                        'languageId' => 'ach',
+                        'fileIds' => [138],
+                        'directoryIds' => [11],
+                        'branchIds' => [18],
+                        'dateFrom' => '2019-09-23T07:00:14+00:00',
+                        'dateTo' => '2019-09-27T07:00:14+00:00',
+                        'labelIds' => [13],
+                        'labelIncludeType' => 'strings_with_label',
                     ],
             ]
         ];
@@ -82,8 +82,6 @@ class ReportApiTest extends AbstractTestApi
               "status": "finished",
               "progress": 100,
               "attributes": {
-                "organizationId": 10,
-                "projectId": 124,
                 "format": "xlsx",
                 "reportName": "costs-estimation",
                 "schema": {}

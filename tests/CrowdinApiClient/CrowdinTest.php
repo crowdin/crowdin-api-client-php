@@ -129,7 +129,7 @@ class CrowdinTest extends TestCase
             ['workflowTemplate', \CrowdinApiClient\Api\Enterprise\WorkflowTemplateApi::class],
             ['file', \CrowdinApiClient\Api\Enterprise\FileApi::class],
             ['machineTranslationEngine', \CrowdinApiClient\Api\Enterprise\MachineTranslationEngineApi::class],
-            ['report', \CrowdinApiClient\Api\ReportApi::class],
+            ['report', \CrowdinApiClient\Api\Enterprise\ReportApi::class],
             ['sourceString', \CrowdinApiClient\Api\SourceStringApi::class],
             ['translationMemory', \CrowdinApiClient\Api\TranslationMemoryApi::class],
             ['webhook', \CrowdinApiClient\Api\WebhookApi::class],

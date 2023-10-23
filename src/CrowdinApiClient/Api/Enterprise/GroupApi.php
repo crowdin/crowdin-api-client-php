@@ -4,6 +4,7 @@ namespace CrowdinApiClient\Api\Enterprise;
 
 use CrowdinApiClient\Api\AbstractApi;
 use CrowdinApiClient\Model\Enterprise\Group;
+use CrowdinApiClient\Model\Report;
 use CrowdinApiClient\ModelCollection;
 
 /**
@@ -64,7 +65,7 @@ class GroupApi extends AbstractApi
      */
     public function update(Group $group): Group
     {
-        return  $this->_update('groups/' . $group->getId(), $group);
+        return $this->_update('groups/' . $group->getId(), $group);
     }
 
     /**
@@ -77,5 +78,22 @@ class GroupApi extends AbstractApi
     public function delete(int $groupID)
     {
         return $this->_delete('groups/' . $groupID);
+    }
+
+    /**
+     * Generate Group Report
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.groups.reports.post API Documentation
+     *
+     * @param int $groupID
+     * @param array $data
+     * string $data[name]<br>
+     * array $data[schema]
+     * @return Report|null
+     */
+    public function report(int $groupID, array $data): ?Report
+    {
+        $path = sprintf('groups/%d/reports', $groupID);
+
+        return $this->_post($path, Report::class, $data);
     }
 }
