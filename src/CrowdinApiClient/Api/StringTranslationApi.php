@@ -23,6 +23,8 @@ class StringTranslationApi extends AbstractApi
      * @param int $projectId
      * @param array $params
      * integer $params[fileId]  Must be used together with languageId<br>
+     * string $params[labelIds]<br>
+     * string $params[excludeLabelIds]<br>
      * integer $params[stringId] Must be used together with languageId<br>
      * string $params[languageId] Must be used together with stringId or fileId<br>
      * integer $params[translationId] If specified, fileId, stringId and languageId are ignored<br>
@@ -224,6 +226,8 @@ class StringTranslationApi extends AbstractApi
      * integer $params[stringId] Must be used together with languageId<br>
      * string $params[languageId] Must be used together with stringId<br>
      * integer $params[translationId] If specified, stringId and languageId are ignored<br>
+     * string $params[labelIds]<br>
+     * string $params[excludeLabelIds]<br>
      * integer $params[limit]<br>
      * integer $params[offset]
      * @return ModelCollection
