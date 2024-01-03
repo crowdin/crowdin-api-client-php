@@ -1,6 +1,5 @@
 vendor
 .idea
-composer.lock
 reports
 coverage.xml
 .phpdoc
