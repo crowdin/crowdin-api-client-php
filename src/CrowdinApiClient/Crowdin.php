@@ -45,7 +45,7 @@ use UnexpectedValueException;
  * @property \CrowdinApiClient\Api\BundleApi bundle
  * @property \CrowdinApiClient\Api\NotificationApi|\CrowdinApiClient\Api\Enterprise\NotificationApi notification
  * @property \CrowdinApiClient\Api\OrganizationWebhookApi organizationWebhook
- * @property \CrowdinApiClient\Api\ReportArchiveApi reportArchive
+ * @property \CrowdinApiClient\Api\ReportArchiveApi|\CrowdinApiClient\Api\Enterprise\ReportArchiveApi reportArchive
  */
 class Crowdin
 {
