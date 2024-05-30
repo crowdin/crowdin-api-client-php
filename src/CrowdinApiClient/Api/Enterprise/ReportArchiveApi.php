@@ -8,6 +8,11 @@ use CrowdinApiClient\Model\ReportArchive;
 use CrowdinApiClient\Model\ReportArchiveExport;
 use CrowdinApiClient\ModelCollection;
 
+/**
+ * Use API to manage report archives.
+ *
+ * @package CrowdinApiClient\Api\Enterprise
+ */
 class ReportArchiveApi extends AbstractApi
 {
     /**
