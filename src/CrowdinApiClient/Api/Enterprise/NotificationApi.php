@@ -7,7 +7,7 @@ use CrowdinApiClient\Api\AbstractApi;
 /**
  * Send notifications
  *
- * @package Crowdin\Api\Entreprise
+ * @package Crowdin\Api\Enterprise
  */
 class NotificationApi extends AbstractApi
 {
