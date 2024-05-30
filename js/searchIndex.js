@@ -253,7 +253,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\ReportArchiveApi",
             "name": "ReportArchiveApi",
-            "summary": "",
+            "summary": "Use\u0020API\u0020to\u0020manage\u0020report\u0020archives.",
             "url": "classes/CrowdinApiClient-Api-Enterprise-ReportArchiveApi.html"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\ReportArchiveApi\u003A\u003Alist\u0028\u0029",
@@ -788,7 +788,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\ReportArchiveApi",
             "name": "ReportArchiveApi",
-            "summary": "",
+            "summary": "Use\u0020API\u0020to\u0020manage\u0020report\u0020archives.",
             "url": "classes/CrowdinApiClient-Api-ReportArchiveApi.html"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\ReportArchiveApi\u003A\u003Alist\u0028\u0029",
