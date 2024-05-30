@@ -20,8 +20,7 @@ jobs:
           php-version: 8.0
 
       - name: Generate documentation
-        run: |
-          docker run --rm -v $(pwd):/data phpdoc/phpdoc:3 run -d src -t .phpdoc/build
+        run: docker run --rm -v $(pwd):/data phpdoc/phpdoc:3 -d src -t .phpdoc/build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
