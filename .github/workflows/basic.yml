@@ -59,3 +59,8 @@ jobs:
         uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Generate documentation
+        run: |
+          docker run --rm -v $(pwd):/data phpdoc/phpdoc:3 -d src -t .phpdoc/build
+          ls -la .phpdoc/build
