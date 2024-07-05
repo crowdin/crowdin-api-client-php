@@ -1,7 +1,7 @@
 {
     "name": "crowdin/crowdin-api-client",
     "description": "PHP client library for Crowdin API v2",
-    "version": "1.13.0",
+    "version": "1.13.1",
     "keywords": [
         "crowdin",
         "sdk",
