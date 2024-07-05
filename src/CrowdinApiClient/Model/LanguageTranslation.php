@@ -40,12 +40,12 @@ class LanguageTranslation extends BaseModel
     protected $plurals;
 
     /**
-     * LanguageTranslation constructor
      * @param array $data
      */
     public function __construct(array $data = [])
     {
         parent::__construct($data);
+
         $this->stringId = (int)$this->getDataProperty('stringId');
         $this->contentType = (string)$this->getDataProperty('contentType');
 
@@ -74,7 +74,7 @@ class LanguageTranslation extends BaseModel
         return $this->contentType;
     }
 
-    public function getTranslationId(): int
+    public function getTranslationId(): ?int
     {
         return $this->translationId;
     }
@@ -84,7 +84,7 @@ class LanguageTranslation extends BaseModel
         $this->translationId = $translationId;
     }
 
-    public function getText(): string
+    public function getText(): ?string
     {
         return $this->text;
     }
@@ -99,7 +99,7 @@ class LanguageTranslation extends BaseModel
         $this->text = $text;
     }
 
-    public function getPlurals(): array
+    public function getPlurals(): ?array
     {
         return $this->plurals;
     }
