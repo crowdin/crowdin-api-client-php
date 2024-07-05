@@ -4573,7 +4573,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\LanguageTranslation\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "LanguageTranslation\u0020constructor",
+            "summary": "",
             "url": "classes/CrowdinApiClient-Model-LanguageTranslation.html#method___construct"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\LanguageTranslation\u003A\u003AgetStringId\u0028\u0029",
