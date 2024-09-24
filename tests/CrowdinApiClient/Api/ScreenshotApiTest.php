@@ -41,7 +41,8 @@ class ScreenshotApiTest extends AbstractTestApi
                       }
                     ],
                     "createdAt": "2019-09-23T09:29:19+00:00",
-                    "updatedAt": "2019-09-23T09:29:19+00:00"
+                    "updatedAt": "2019-09-23T09:29:19+00:00",
+                    "labelIds": [100, 200]
                   }
                 }
               ],
@@ -99,7 +100,8 @@ class ScreenshotApiTest extends AbstractTestApi
                       }
                     ],
                     "createdAt": "2019-09-23T09:29:19+00:00",
-                    "updatedAt": "2019-09-23T09:29:19+00:00"
+                    "updatedAt": "2019-09-23T09:29:19+00:00",
+                    "labelIds": [100, 200]
                   }
                 }'
         ]);
@@ -137,7 +139,8 @@ class ScreenshotApiTest extends AbstractTestApi
                   }
                 ],
                 "createdAt": "2019-09-23T09:29:19+00:00",
-                "updatedAt": "2019-09-23T09:29:19+00:00"
+                "updatedAt": "2019-09-23T09:29:19+00:00",
+                "labelIds": [100, 200]
               }
             }');
 
@@ -171,7 +174,8 @@ class ScreenshotApiTest extends AbstractTestApi
                   }
                 ],
                 "createdAt": "2019-09-23T09:29:19+00:00",
-                "updatedAt": "2019-09-23T09:29:19+00:00"
+                "updatedAt": "2019-09-23T09:29:19+00:00",
+                "labelIds": [100, 200]
               }
             }');
 
@@ -220,7 +224,8 @@ class ScreenshotApiTest extends AbstractTestApi
                   }
                 ],
                 "createdAt": "2019-09-23T09:29:19+00:00",
-                "updatedAt": "2019-09-23T09:29:19+00:00"
+                "updatedAt": "2019-09-23T09:29:19+00:00",
+                "labelIds": [100, 200]
               }
             }'
         ]);
