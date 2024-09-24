@@ -52,6 +52,11 @@ class Screenshot extends BaseModel
      */
     protected $updatedAt;
 
+    /**
+     * @var array
+     */
+    protected $labelIds = [];
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -64,6 +69,7 @@ class Screenshot extends BaseModel
         $this->tags = (array)$this->getDataProperty('tags');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
+        $this->labelIds = (array)$this->getDataProperty('labelIds');
     }
 
     /**
@@ -144,5 +150,13 @@ class Screenshot extends BaseModel
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;
+    }
+
+    /**
+     * @return array
+     */
+    public function getLabelIds(): array
+    {
+        return $this->labelIds;
     }
 }
