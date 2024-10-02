@@ -93,8 +93,14 @@ class StringTranslationApi extends AbstractApi
      * @param int $projectId
      * @param string $languageId
      * @param array $params
+     * string $params[orderBy]<br>
      * string $params[stringIds]<br>
+     * string $params[labelIds]<br>
      * int $params[fileId]<br>
+     * int $params[branchId]<br>
+     * int $params[directoryId]<br>
+     * int $params[approvedOnly]<br>
+     * string $params[croql]<br>
      * int $params[denormalizePlaceholders]<br>
      * int $params[limit]<br>
      * int $params[offset]
