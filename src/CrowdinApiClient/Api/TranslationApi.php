@@ -34,7 +34,6 @@ class TranslationApi extends AbstractApi
      * boolean $params[duplicateTranslations] Works only with TM pre-translation method<br>
      * boolean $params[translateUntranslatedOnly] Works only with TM pre-translation method<br>
      * boolean $params[translateWithPerfectMatchOnly] Works only with TM pre-translation method<br>
-     * boolean $params[markAddedTranslationsAsDone]
      * @return PreTranslation|null
      */
     public function applyPreTranslation(int $projectId, array $params): ?PreTranslation
@@ -161,7 +160,6 @@ class TranslationApi extends AbstractApi
      *  integer $params[fileId] required<br>
      *  bool $params[importEqSuggestions]<br>
      *  bool $params[autoApproveImported]<br>
-     *  bool $params[markAddedTranslationsAsDone]
      * @return array
      */
     public function uploadTranslations(int $projectId, string $languageId, array $params): array
