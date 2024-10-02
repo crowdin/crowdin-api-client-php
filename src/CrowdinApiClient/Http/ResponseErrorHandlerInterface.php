@@ -5,7 +5,6 @@ namespace CrowdinApiClient\Http;
 /**
  * Interface ResponseErrorHandlerInterface
  * @package CrowdinApiClient\Http
- * @internal
  */
 interface ResponseErrorHandlerInterface
 {

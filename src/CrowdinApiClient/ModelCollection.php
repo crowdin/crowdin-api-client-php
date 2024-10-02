@@ -3,7 +3,6 @@
 namespace CrowdinApiClient;
 
 /**
- * @internal
  * Class ModelCollection
  * @package CrowdinApiClient
  */

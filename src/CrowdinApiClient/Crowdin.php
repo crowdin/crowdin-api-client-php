@@ -14,38 +14,38 @@ use UnexpectedValueException;
  * Class Crowdin
  * @package Crowdin
  *
- * @property \CrowdinApiClient\Api\StorageApi storage
- * @property \CrowdinApiClient\Api\LanguageApi language
- * @property \CrowdinApiClient\Api\Enterprise\GroupApi group
- * @property \CrowdinApiClient\Api\ProjectApi project
- * @property \CrowdinApiClient\Api\BranchApi branch
- * @property \CrowdinApiClient\Api\TaskApi task
- * @property \CrowdinApiClient\Api\IssueApi issue
- * @property \CrowdinApiClient\Api\ScreenshotApi screenshot
- * @property \CrowdinApiClient\Api\DirectoryApi directory
- * @property \CrowdinApiClient\Api\LabelApi label
- * @property \CrowdinApiClient\Api\GlossaryApi glossary
- * @property \CrowdinApiClient\Api\StringsExporterSettingApi stringsExporterSetting
- * @property \CrowdinApiClient\Api\StringTranslationApi stringTranslation
- * @property \CrowdinApiClient\Api\StringCommentApi stringComment
- * @property \CrowdinApiClient\Api\Enterprise\UserApi|\CrowdinApiClient\Api\UserApi user
- * @property \CrowdinApiClient\Api\Enterprise\VendorApi vendor
- * @property \CrowdinApiClient\Api\Enterprise\WorkflowTemplateApi workflowTemplate
- * @property \CrowdinApiClient\Api\Enterprise\WorkflowStepApi workflowStep
- * @property \CrowdinApiClient\Api\FileApi|\CrowdinApiClient\Api\Enterprise\FileApi file
- * @property \CrowdinApiClient\Api\Enterprise\ReportApi|\CrowdinApiClient\Api\ReportApi report
- * @property \CrowdinApiClient\Api\SourceStringApi sourceString
- * @property \CrowdinApiClient\Api\TranslationMemoryApi translationMemory
- * @property \CrowdinApiClient\Api\WebhookApi webhook
- * @property \CrowdinApiClient\Api\TranslationApi translation
- * @property \CrowdinApiClient\Api\TranslationStatusApi translationStatus
- * @property \CrowdinApiClient\Api\DistributionApi distribution
- * @property \CrowdinApiClient\Api\Enterprise\TeamApi team
- * @property \CrowdinApiClient\Api\Enterprise\TeamMemberApi teamMember
- * @property \CrowdinApiClient\Api\BundleApi bundle
- * @property \CrowdinApiClient\Api\NotificationApi|\CrowdinApiClient\Api\Enterprise\NotificationApi notification
- * @property \CrowdinApiClient\Api\OrganizationWebhookApi organizationWebhook
- * @property \CrowdinApiClient\Api\ReportArchiveApi|\CrowdinApiClient\Api\Enterprise\ReportArchiveApi reportArchive
+ * @property \CrowdinApiClient\Api\StorageApi $storage
+ * @property \CrowdinApiClient\Api\LanguageApi $language
+ * @property \CrowdinApiClient\Api\Enterprise\GroupApi $group
+ * @property \CrowdinApiClient\Api\ProjectApi $project
+ * @property \CrowdinApiClient\Api\BranchApi $branch
+ * @property \CrowdinApiClient\Api\TaskApi $task
+ * @property \CrowdinApiClient\Api\IssueApi $issue
+ * @property \CrowdinApiClient\Api\ScreenshotApi $screenshot
+ * @property \CrowdinApiClient\Api\DirectoryApi $directory
+ * @property \CrowdinApiClient\Api\LabelApi $label
+ * @property \CrowdinApiClient\Api\GlossaryApi $glossary
+ * @property \CrowdinApiClient\Api\StringsExporterSettingApi $stringsExporterSetting
+ * @property \CrowdinApiClient\Api\StringTranslationApi $stringTranslation
+ * @property \CrowdinApiClient\Api\StringCommentApi $stringComment
+ * @property \CrowdinApiClient\Api\Enterprise\UserApi|\CrowdinApiClient\Api\UserApi $user
+ * @property \CrowdinApiClient\Api\Enterprise\VendorApi $vendor
+ * @property \CrowdinApiClient\Api\Enterprise\WorkflowTemplateApi $workflowTemplate
+ * @property \CrowdinApiClient\Api\Enterprise\WorkflowStepApi $workflowStep
+ * @property \CrowdinApiClient\Api\FileApi|\CrowdinApiClient\Api\Enterprise\FileApi $file
+ * @property \CrowdinApiClient\Api\Enterprise\ReportApi|\CrowdinApiClient\Api\ReportApi $report
+ * @property \CrowdinApiClient\Api\SourceStringApi $sourceString
+ * @property \CrowdinApiClient\Api\TranslationMemoryApi $translationMemory
+ * @property \CrowdinApiClient\Api\WebhookApi $webhook
+ * @property \CrowdinApiClient\Api\TranslationApi $translation
+ * @property \CrowdinApiClient\Api\TranslationStatusApi $translationStatus
+ * @property \CrowdinApiClient\Api\DistributionApi $distribution
+ * @property \CrowdinApiClient\Api\Enterprise\TeamApi $team
+ * @property \CrowdinApiClient\Api\Enterprise\TeamMemberApi $teamMember
+ * @property \CrowdinApiClient\Api\BundleApi $bundle
+ * @property \CrowdinApiClient\Api\NotificationApi|\CrowdinApiClient\Api\Enterprise\NotificationApi $notification
+ * @property \CrowdinApiClient\Api\OrganizationWebhookApi $organizationWebhook
+ * @property \CrowdinApiClient\Api\ReportArchiveApi|\CrowdinApiClient\Api\Enterprise\ReportArchiveApi $reportArchive
  */
 class Crowdin
 {
