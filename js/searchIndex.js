@@ -1551,6 +1551,16 @@ Search.appendIndex(
             "summary": "Crowdin\u0020if\u0020loading\u0020of\u0020the\u0020provider\u0020is\u0020deferred.",
             "url": "classes/CrowdinApiClient-FrameworkSupport-Laravel-CrowdinServiceProvider.html#property_defer"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Http\\ResponseErrorHandlerInterface",
+            "name": "ResponseErrorHandlerInterface",
+            "summary": "Interface\u0020ResponseErrorHandlerInterface",
+            "url": "classes/CrowdinApiClient-Http-ResponseErrorHandlerInterface.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Http\\ResponseErrorHandlerInterface\u003A\u003Acheck\u0028\u0029",
+            "name": "check",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Http-ResponseErrorHandlerInterface.html#method_check"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Branch",
             "name": "Branch",
             "summary": "",
@@ -6506,6 +6516,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Screenshot.html#method_getUpdatedAt"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Screenshot\u003A\u003AgetLabelIds\u0028\u0029",
+            "name": "getLabelIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Screenshot.html#method_getLabelIds"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Screenshot\u003A\u003A\u0024id",
             "name": "id",
             "summary": "",
@@ -6550,6 +6565,11 @@ Search.appendIndex(
             "name": "updatedAt",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Screenshot.html#property_updatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Screenshot\u003A\u003A\u0024labelIds",
+            "name": "labelIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Screenshot.html#property_labelIds"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\SourceString",
             "name": "SourceString",
@@ -8900,6 +8920,26 @@ Search.appendIndex(
             "name": "updatedAt",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Webhook.html#property_updatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\ModelCollection",
+            "name": "ModelCollection",
+            "summary": "Class\u0020ModelCollection",
+            "url": "classes/CrowdinApiClient-ModelCollection.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\ModelCollection\u003A\u003AgetPagination\u0028\u0029",
+            "name": "getPagination",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-ModelCollection.html#method_getPagination"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\ModelCollection\u003A\u003AsetPagination\u0028\u0029",
+            "name": "setPagination",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-ModelCollection.html#method_setPagination"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\ModelCollection\u003A\u003A\u0024pagination",
+            "name": "pagination",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-ModelCollection.html#property_pagination"
         },                {
             "fqsen": "\\",
             "name": "\\",
