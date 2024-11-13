@@ -155,4 +155,43 @@ class SourceStringApiTest extends AbstractTestApi
 
         $this->crowdin->sourceString->delete(2, 2814);
     }
+
+    public function testBatch() 
+    {
+        $this->mockRequest([
+          
+            'path' => '/projects/2/strings',
+            'method' => 'patch',
+          ]);
+
+          $batchResult = $this->crowdin->sourceString->batch(2, [
+            [
+              'op' => 'replace',
+              'path' => '/2814/isHidden',
+              'value' => true
+            ],
+            [
+              'op' => 'replace',
+              'path' => '/2814/context',
+              'value' => 'some context'
+            ],
+            [
+              'op' => 'add',
+              'path' => '/-',
+              'value' => [
+                'text' => 'new added string',
+                'identifier' => 'a.b.c',
+                'context' => 'context for new string',
+                'fileId' => 5,
+                'isHidden' => false
+              ]
+             ],
+            [
+              'op' => 'remove',
+              'path' => '/2815'
+            ]
+          ]);
+
+          $this->assertInstanceOf(SourceString::class, $batchResult);
+    }
 }
