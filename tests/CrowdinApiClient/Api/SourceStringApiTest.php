@@ -162,9 +162,9 @@ class SourceStringApiTest extends AbstractTestApi
             'path' => '/projects/2/strings',
             'method' => 'patch',
             'response' => '{
-              "data":[
-                {"data":
-                  {
+              "data":[ 
+                {
+                  "data":{
                     "id":2814,
                     "projectId": 2,
                     "branchId":null,
@@ -185,14 +185,13 @@ class SourceStringApiTest extends AbstractTestApi
                     "fileId":48,
                     "directoryId":null,
                     "revision":1
-                    }
                   }
-                ]
-              }
-            '
+                }
+              ]
+            }'
           ]);
 
-          $batchResult = $this->crowdin->sourceString->batch(2, [
+          $batchResult = $this->crowdin->sourceString->batchOperations(2, [
             [
               'op' => 'replace',
               'path' => '/2814/isHidden',
@@ -220,7 +219,6 @@ class SourceStringApiTest extends AbstractTestApi
             ]
           ]);
 
-          fwrite(STDERR, print_r($batchResult->getData(), TRUE));
           $this->assertInstanceOf(SourceString::class, $batchResult);
     }
 }

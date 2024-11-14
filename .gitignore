@@ -6,3 +6,5 @@ coverage.xml
 phpdoc
 phpDocumentor.phar
 .phpunit.result.cache
+/.ddev
+/.vscode
