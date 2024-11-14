@@ -102,7 +102,7 @@ class SourceStringApi extends AbstractApi
      * @param array $data
      * string $data[op] required Patch operation to perform (replace, add, remove)<br>
      * string <json-pointer> $data[path] required 
-     * value $data[value] required object or string or bool.
+     * value $data[value] required object, string, int, or bool
      * @return mixed
      */
     public function batchOperations(int $projectId, array $data)
