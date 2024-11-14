@@ -105,7 +105,7 @@ class SourceStringApi extends AbstractApi
      * value $data[value] required object or string or bool.
      * @return mixed
      */
-    public function batch(int $projectId, array $data)
+    public function batchOperations(int $projectId, array $data)
     {
         $path = sprintf('projects/%d/strings', $projectId);
         return $this->_patch($path, SourceString::class, $data);
