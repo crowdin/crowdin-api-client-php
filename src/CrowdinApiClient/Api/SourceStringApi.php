@@ -94,7 +94,7 @@ class SourceStringApi extends AbstractApi
     }
 
     /**
-     * Batch Update Strings
+     * String Batch Operations
      * @link https://support.crowdin.com/developer/api/v2/#tag/Source-Strings/operation/api.projects.strings.batchPatch API Documentation
      * @link https://support.crowdin.com/developer/enterprise/api/v2/#tag/Source-Strings/operation/api.projects.strings.batchPatch API Documentation Enterprise
      *
