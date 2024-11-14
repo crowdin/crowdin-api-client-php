@@ -156,7 +156,7 @@ class SourceStringApiTest extends AbstractTestApi
         $this->crowdin->sourceString->delete(2, 2814);
     }
 
-    public function testBatch() 
+    public function testBatch()
     {
         $this->mockRequest([
             'path' => '/projects/2/strings',
@@ -191,7 +191,7 @@ class SourceStringApiTest extends AbstractTestApi
             }'
           ]);
 
-          $batchResult = $this->crowdin->sourceString->batchOperations(2, [
+        $batchResult = $this->crowdin->sourceString->batchOperations(2, [
             [
               'op' => 'replace',
               'path' => '/2814/isHidden',
@@ -219,6 +219,6 @@ class SourceStringApiTest extends AbstractTestApi
             ]
           ]);
 
-          $this->assertInstanceOf(SourceString::class, $batchResult);
+        $this->assertInstanceOf(SourceString::class, $batchResult);
     }
 }
