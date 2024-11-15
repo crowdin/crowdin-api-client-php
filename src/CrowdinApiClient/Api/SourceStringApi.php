@@ -92,4 +92,22 @@ class SourceStringApi extends AbstractApi
         $path = sprintf('projects/%d/strings/%d', $projectId, $stringId);
         return $this->_delete($path);
     }
+
+    /**
+     * String Batch Operations
+     * @link https://support.crowdin.com/developer/api/v2/#tag/Source-Strings/operation/api.projects.strings.batchPatch API Documentation
+     * @link https://support.crowdin.com/developer/enterprise/api/v2/#tag/Source-Strings/operation/api.projects.strings.batchPatch API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param array $data
+     * string $data[op] required Patch operation to perform (replace, add, remove)<br>
+     * string <json-pointer> $data[path] required
+     * value $data[value] required object, string, int, or bool
+     * @return mixed
+     */
+    public function batchOperations(int $projectId, array $data)
+    {
+        $path = sprintf('projects/%d/strings', $projectId);
+        return $this->_patch($path, SourceString::class, $data);
+    }
 }

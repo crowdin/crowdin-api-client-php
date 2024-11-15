@@ -155,4 +155,70 @@ class SourceStringApiTest extends AbstractTestApi
 
         $this->crowdin->sourceString->delete(2, 2814);
     }
+
+    public function testBatch()
+    {
+        $this->mockRequest([
+            'path' => '/projects/2/strings',
+            'method' => 'patch',
+            'response' => '{
+              "data":[ 
+                {
+                  "data":{
+                    "id":2814,
+                    "projectId": 2,
+                    "branchId":null,
+                    "identifier":"a.b.c",
+                    "text":"new added string",
+                    "type":"text",
+                    "context":"a.b.c\ncontext for new string",
+                    "maxLength":0,
+                    "isHidden":false,
+                    "isDuplicate":false,
+                    "masterStringId":null,
+                    "hasPlurals":false,
+                    "isIcu":false,
+                    "labelIds":[],
+                    "webUrl":"https://example.crowdin.com/editor/1/all/en-pl?filter=basic&value=0&view=comfortable#2",
+                    "createdAt":"2024-11-13T16:56:18+00:00",
+                    "updatedAt":null,
+                    "fileId":48,
+                    "directoryId":null,
+                    "revision":1
+                  }
+                }
+              ]
+            }'
+          ]);
+
+        $batchResult = $this->crowdin->sourceString->batchOperations(2, [
+            [
+              'op' => 'replace',
+              'path' => '/2814/isHidden',
+              'value' => true
+            ],
+            [
+              'op' => 'replace',
+              'path' => '/2814/context',
+              'value' => 'some context'
+            ],
+            [
+              'op' => 'add',
+              'path' => '/-',
+              'value' => [
+                'text' => 'new added string',
+                'identifier' => 'a.b.c',
+                'context' => 'context for new string',
+                'fileId' => 8,
+                'isHidden' => false
+              ]
+             ],
+            [
+              'op' => 'remove',
+              'path' => '/2814'
+            ]
+          ]);
+
+        $this->assertInstanceOf(SourceString::class, $batchResult);
+    }
 }
