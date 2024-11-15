@@ -921,6 +921,11 @@ Search.appendIndex(
             "summary": "Delete\u0020String",
             "url": "classes/CrowdinApiClient-Api-SourceStringApi.html#method_delete"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\SourceStringApi\u003A\u003AbatchOperations\u0028\u0029",
+            "name": "batchOperations",
+            "summary": "String\u0020Batch\u0020Operations",
+            "url": "classes/CrowdinApiClient-Api-SourceStringApi.html#method_batchOperations"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Api\\StorageApi",
             "name": "StorageApi",
             "summary": "Storage\u0020is\u0020a\u0020separate\u0020container\u0020for\u0020each\u0020file.\u0020You\u0020need\u0020to\u0020use\u0020Add\u0020Storage\u0020method\u0020before\u0020adding\u0020files\u0020to\u0020your\u0020projects\u0020via\u0020API.",

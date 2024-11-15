@@ -208,6 +208,13 @@
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-SourceStringApi.html#method_batchOperations">batchOperations()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+<dd>String Batch Operations</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Api-SourceStringApi.html#method_create">create()</a>
     <span>
                                 &nbsp;: <a href="classes/CrowdinApiClient-Model-SourceString.html"><abbr title="\CrowdinApiClient\Model\SourceString">SourceString</abbr></a>|null    </span>
@@ -256,6 +263,85 @@
             <a href="classes/CrowdinApiClient-Api-SourceStringApi.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_batchOperations">
+        batchOperations()
+        <a href="classes/CrowdinApiClient-Api-SourceStringApi.html#method_batchOperations" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/SourceStringApi.php"><a href="files/src-crowdinapiclient-api-sourcestringapi.html"><abbr title="src/CrowdinApiClient/Api/SourceStringApi.php">SourceStringApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">108</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">String Batch Operations</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">batchOperations</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$projectId</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$data</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>string $data[op] required Patch operation to perform (replace, add, remove)<br>
+string <json-pointer> $data[path] required
+value $data[value] required object, string, int, or bool</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-SourceStringApi.html#method_batchOperations#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/developer/api/v2/#tag/Source-Strings/operation/api.projects.strings.batchPatch"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/developer/enterprise/api/v2/#tag/Source-Strings/operation/api.projects.strings.batchPatch"> <p>API Documentation Enterprise</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+    
+
+    
+</article>
                     <article
         class="phpdocumentor-element
             -method
@@ -760,6 +846,7 @@ integer $data[maxLength]</p>
                         <li class="phpdocumentor-on-this-page-section__title">Methods</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-SourceStringApi.html#method_batchOperations">batchOperations()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-SourceStringApi.html#method_create">create()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-SourceStringApi.html#method_delete">delete()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-SourceStringApi.html#method_get">get()</a></li>
