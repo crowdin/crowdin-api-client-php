@@ -187,4 +187,24 @@ class TranslationMemoryApi extends AbstractApi
         $path = sprintf('tms/%d/imports/%s', $translationMemoryId, $importId);
         return $this->_get($path, TranslationMemoryImport::class);
     }
+
+    /**
+     * Concordance Search in TMs
+     * @link https://support.crowdin.com/developer/api/v2/#tag/Translation-Memory/operation/api.projects.tms.concordance.post API Documentation
+     * @link https://support.crowdin.com/developer/enterprise/api/v2/#tag/Translation-Memory/operation/api.projects.tms.concordance.post API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param array $params
+     * string $params[sourceLanguageId]<br>
+     * integer $params[targetLanguageId]<br>
+     * boolean $params[autoSubstitution]<br>
+     * integer $params[minRelevant]: 40-100<br>
+     * [string] $params[expressions]
+     * @return TranslationMemory
+     */
+    public function concordanceSearchTM(int $projectId, array $params = []): ?TranslationMemory
+    {
+        $path = sprintf('projects/%d/tms/concordance', $projectId);
+        return $this->_post($path, TranslationMemory::class, $params);
+    }
 }
