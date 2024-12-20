@@ -303,4 +303,49 @@ class TranslationMemoryApiTest extends AbstractTestApi
         $this->mockRequestDelete('/tms/4/segments');
         $this->crowdin->translationMemory->clear(4);
     }
+
+
+    public function testConcordanceSearch()
+    {
+        $params = [
+          'sourceLanguageId' => 'en',
+          'targetLanguageId' => 'ru',
+          'autoSubstitution' => true,
+          'minRelevant' => 50,
+          'expressions' => ['Welcome!']
+        ];
+
+      $this->mockRequest([
+          'path' => '/projects/4/tms/concordance',
+          'method' => 'post',
+          'body' => json_encode($params),
+          'response' => '{
+            "data": [
+                {
+                  "data": {
+                    "tm": {
+                      "id": 4,
+                      "name": "Knowledge Base\'s TM"
+                    },
+                    "recordId": 34,
+                    "source": "Welcome!",
+                    "target": "Ласкаво просимо!",
+                    "relevant": 100,
+                    "substituted": "62→100",
+                    "updatedAt": "2022-09-28T12:29:34+00:00"
+                  }
+                }
+              ],
+              "pagination": [
+                {
+                  "offset": 0,
+                  "limit": 25
+                }
+              ]
+          }'
+      ]);
+
+      $export = $this->crowdin->translationMemory->concordanceSearchTM(4, $params);
+      $this->assertInstanceOf(TranslationMemory::class, $export);
+    }
 }
