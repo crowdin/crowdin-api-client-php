@@ -188,7 +188,6 @@ class TranslationMemoryApi extends AbstractApi
         return $this->_get($path, TranslationMemoryImport::class);
     }
 
-
     /**
      * Concordance Search in TMs
      * @link https://support.crowdin.com/developer/api/v2/#tag/Translation-Memory/operation/api.projects.tms.concordance.post API Documentation
