@@ -51,5 +51,4 @@ class TaskSettingsTemplateTest extends TestCase
         $this->assertEquals($this->data['createdAt'], $this->taskSettingsTemplate->getCreatedAt());
         $this->assertEquals($this->data['updatedAt'], $this->taskSettingsTemplate->getUpdatedAt());
     }
-
 }

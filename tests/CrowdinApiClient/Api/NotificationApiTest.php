@@ -4,7 +4,6 @@ namespace CrowdinApiClient\Tests\Api;
 
 class NotificationApiTest extends AbstractTestApi
 {
-
     public function testSendToAuthenticatedUser()
     {
         $params = [

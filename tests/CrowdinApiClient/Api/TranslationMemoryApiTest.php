@@ -304,7 +304,6 @@ class TranslationMemoryApiTest extends AbstractTestApi
         $this->crowdin->translationMemory->clear(4);
     }
 
-
     public function testConcordanceSearch()
     {
         $params = [
@@ -315,7 +314,7 @@ class TranslationMemoryApiTest extends AbstractTestApi
           'expressions' => ['Welcome!']
         ];
 
-      $this->mockRequest([
+        $this->mockRequest([
           'path' => '/projects/4/tms/concordance',
           'method' => 'post',
           'body' => json_encode($params),
@@ -345,7 +344,7 @@ class TranslationMemoryApiTest extends AbstractTestApi
           }'
       ]);
 
-      $export = $this->crowdin->translationMemory->concordanceSearchTM(4, $params);
-      $this->assertInstanceOf(TranslationMemory::class, $export);
+        $export = $this->crowdin->translationMemory->concordanceSearchTM(4, $params);
+        $this->assertInstanceOf(TranslationMemory::class, $export);
     }
 }

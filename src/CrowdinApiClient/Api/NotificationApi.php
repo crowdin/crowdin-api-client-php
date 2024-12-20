@@ -27,7 +27,6 @@ class NotificationApi extends AbstractApi
         ];
 
         return $this->client->apiRequest('post', $path, null, $options);
-
     }
 
     /**

@@ -10,7 +10,6 @@ use CrowdinApiClient\Tests\Api\Enterprise\AbstractTestApi;
 
 class ReportArchiveApiTest extends AbstractTestApi
 {
-
     public function testList()
     {
         $this->mockRequest([

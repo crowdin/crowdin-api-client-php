@@ -71,7 +71,6 @@ class OrganizationWebhook extends BaseModel
         $this->contentType = (string)$this->getDataProperty('contentType');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
-
     }
 
     /**

@@ -9,7 +9,6 @@ use CrowdinApiClient\ModelCollection;
 
 class ReportArchiveApiTest extends AbstractTestApi
 {
-
     public function testList()
     {
         $this->mockRequest([
