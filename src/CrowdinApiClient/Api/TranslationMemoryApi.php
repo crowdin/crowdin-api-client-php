@@ -202,7 +202,7 @@ class TranslationMemoryApi extends AbstractApi
      * [string] $params[expressions]
      * @return TranslationMemory
      */
-    public function concordanceSearchTM(int $projectId, array $params = []): ?TranslationMemory
+    public function concordanceSearch(int $projectId, array $params = []): ?TranslationMemory
     {
         $path = sprintf('projects/%d/tms/concordance', $projectId);
         return $this->_post($path, TranslationMemory::class, $params);
