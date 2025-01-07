@@ -308,7 +308,7 @@ class TranslationMemoryApiTest extends AbstractTestApi
     {
         $params = [
           'sourceLanguageId' => 'en',
-          'targetLanguageId' => 'ru',
+          'targetLanguageId' => 'uk',
           'autoSubstitution' => true,
           'minRelevant' => 50,
           'expressions' => ['Welcome!']
@@ -344,7 +344,7 @@ class TranslationMemoryApiTest extends AbstractTestApi
           }'
       ]);
 
-        $export = $this->crowdin->translationMemory->concordanceSearchTM(4, $params);
-        $this->assertInstanceOf(TranslationMemory::class, $export);
+        $export = $this->crowdin->translationMemory->concordanceSearch(4, $params);
+        $this->assertInstanceOf(TmConcordanceResultResource::class, $export);
     }
 }
