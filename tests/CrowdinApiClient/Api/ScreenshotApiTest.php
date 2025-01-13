@@ -148,7 +148,7 @@ class ScreenshotApiTest extends AbstractTestApi
         $this->assertInstanceOf(Screenshot::class, $screenshot);
         $this->assertEquals(2, $screenshot->getId());
 
-        $this->mockRequestPath('/projects/2/screenshots/2', '{
+        $this->mockRequestPatch('/projects/2/screenshots/2', '{
               "data": {
                 "id": 2,
                 "userId": 6,
@@ -344,7 +344,7 @@ class ScreenshotApiTest extends AbstractTestApi
         $this->assertInstanceOf(Tag::class, $tag);
         $this->assertEquals(98, $tag->getId());
 
-        $this->mockRequestPath('/projects/2/screenshots/2/tags/98', '{
+        $this->mockRequestPatch('/projects/2/screenshots/2/tags/98', '{
                   "data": {
                     "id": 2,
                     "userId": 6,

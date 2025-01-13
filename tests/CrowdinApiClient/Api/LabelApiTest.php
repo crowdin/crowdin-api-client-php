@@ -57,7 +57,7 @@ class LabelApiTest extends AbstractTestApi
 
         $label->setTitle('edit-test');
 
-        $this->mockRequestPath('/projects/2/labels/34', '{
+        $this->mockRequestPatch('/projects/2/labels/34', '{
                   "data": {
                     "id": 34,
                     "projectId": 2,

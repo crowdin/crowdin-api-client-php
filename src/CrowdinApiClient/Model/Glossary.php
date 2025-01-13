@@ -33,23 +33,35 @@ class Glossary extends BaseModel
     protected $terms;
 
     /**
-     * @var array
+     * @var string
+     */
+    protected $languageId;
+
+    /**
+     * @var string[]
      */
     protected $languageIds;
 
     /**
-     * @var array
+     * @var int[]
+     */
+    protected $defaultProjectIds;
+
+    /**
+     * @var int[]
      */
     protected $projectIds;
 
     /**
      * @var string
      */
-    protected $createdAt;
+    protected $webUrl;
 
     /**
-     * @param array $data
+     * @var string
      */
+    protected $createdAt;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -59,61 +71,51 @@ class Glossary extends BaseModel
         $this->groupId = (integer)$this->getDataProperty('groupId');
         $this->userId = (integer)$this->getDataProperty('userId');
         $this->terms = (integer)$this->getDataProperty('terms');
+        $this->languageId = (string)$this->getDataProperty('languageId');
         $this->languageIds = (array)$this->getDataProperty('languageIds');
+        $this->defaultProjectIds = (array)$this->getDataProperty('defaultProjectIds');
         $this->projectIds = (array)$this->getDataProperty('projectIds');
+        $this->webUrl = (string)$this->getDataProperty('webUrl');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
     }
 
-    /**
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @param string $name
-     */
     public function setName(string $name): void
     {
         $this->name = $name;
     }
 
-    /**
-     * @return int
-     */
     public function getGroupId(): int
     {
         return $this->groupId;
     }
 
-    /**
-     * @return int
-     */
     public function getUserId(): int
     {
         return $this->userId;
     }
 
-    /**
-     * @return int
-     */
     public function getTerms(): int
     {
         return $this->terms;
     }
 
+    public function getLanguageId(): string
+    {
+        return $this->languageId;
+    }
+
     /**
-     * @return array
+     * @return string[]
      */
     public function getLanguageIds(): array
     {
@@ -121,16 +123,26 @@ class Glossary extends BaseModel
     }
 
     /**
-     * @return array
+     * @return int[]
+     */
+    public function getDefaultProjectIds(): array
+    {
+        return $this->defaultProjectIds;
+    }
+
+    /**
+     * @return int[]
      */
     public function getProjectIds(): array
     {
         return $this->projectIds;
     }
 
-    /**
-     * @return string
-     */
+    public function getWebUrl(): string
+    {
+        return $this->webUrl;
+    }
+
     public function getCreatedAt(): string
     {
         return $this->createdAt;

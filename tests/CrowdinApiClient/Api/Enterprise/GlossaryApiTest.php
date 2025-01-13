@@ -109,7 +109,7 @@ class GlossaryApiTest extends AbstractTestApi
 
         $glossary->setName('edit test');
 
-        $this->mockRequestPath('/glossaries/2', '{
+        $this->mockRequestPatch('/glossaries/2', '{
               "data": {
                 "id": 2,
                 "name": "edit test",

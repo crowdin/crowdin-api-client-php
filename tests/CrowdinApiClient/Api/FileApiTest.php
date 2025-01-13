@@ -119,7 +119,7 @@ class FileApiTest extends AbstractTestApi
         $file->setTitle('source_app_info edit');
         $file->setExcludedTargetLanguages(['bg', 'es', 'pl']);
 
-        $this->mockRequestPath('/projects/2/files/44', '{
+        $this->mockRequestPatch('/projects/2/files/44', '{
               "data": {
                 "id": 44,
                 "projectId": 2,

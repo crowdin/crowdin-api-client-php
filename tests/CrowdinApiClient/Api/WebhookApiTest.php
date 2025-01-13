@@ -143,7 +143,7 @@ class WebhookApiTest extends AbstractTestApi
 
         $webhook->setName('test edit');
         $webhook->setBatchingEnabled(false);
-        $this->mockRequestPath('/projects/2/webhooks/4', '{
+        $this->mockRequestPatch('/projects/2/webhooks/4', '{
               "data": {
                 "id": 4,
                 "projectId": 2,

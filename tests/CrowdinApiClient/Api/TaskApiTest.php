@@ -195,7 +195,7 @@ class TaskApiTest extends AbstractTestApi
         $this->assertEquals(2, $task->getId());
         $this->assertEquals("gengo", $task->getVendor());
 
-        $this->mockRequestPath('/projects/2/tasks/2', '{
+        $this->mockRequestPatch('/projects/2/tasks/2', '{
                   "data": {
                     "id": 2,
                     "projectId": 2,
@@ -334,7 +334,7 @@ class TaskApiTest extends AbstractTestApi
 
     public function testUserTaskArchivedStatus()
     {
-        $this->mockRequestPath('/user/tasks/2?projectId=2', '{
+        $this->mockRequestPatch('/user/tasks/2?projectId=2', '{
                   "data": {
                     "id": 2,
                     "projectId": 2,

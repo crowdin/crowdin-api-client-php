@@ -109,7 +109,7 @@ class DistributionApiTest extends AbstractTestApi
         $this->assertInstanceOf(Distribution::class, $distribution);
         $this->assertEquals('e-4326c06be14321dd967b161a', $distribution->getHash());
 
-        $this->mockRequestPath('/projects/2/distributions/e-4326c06be14321dd967b161a', '{
+        $this->mockRequestPatch('/projects/2/distributions/e-4326c06be14321dd967b161a', '{
               "data": {
                 "hash": "e-4326c06be14321dd967b161a",
                 "name": "test edit",

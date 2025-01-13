@@ -144,7 +144,7 @@ class ProjectApiTest extends AbstractTestApi
         $this->assertEquals(8, $project->getId());
 
         $project->setName('edit test');
-        $this->mockRequestPath('/projects/8', '{
+        $this->mockRequestPatch('/projects/8', '{
                   "data": {
                       "id": 8,
                       "groupId": 4,
@@ -265,7 +265,7 @@ class ProjectApiTest extends AbstractTestApi
         $this->assertEquals(8, $project->getId());
 
         $project->setName('edit test');
-        $this->mockRequestPath('/projects/8', '{
+        $this->mockRequestPatch('/projects/8', '{
                   "data": {
                       "id": 8,
                       "groupId": 4,

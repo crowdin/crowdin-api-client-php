@@ -2,8 +2,11 @@
 
 namespace CrowdinApiClient\Api;
 
+use CrowdinApiClient\Http\ResponseDecorator\ResponseModelListDecorator;
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\Glossary;
+use CrowdinApiClient\Model\GlossaryConcept;
+use CrowdinApiClient\Model\GlossaryConcordance;
 use CrowdinApiClient\Model\GlossaryExport;
 use CrowdinApiClient\Model\GlossaryImport;
 use CrowdinApiClient\Model\Term;
@@ -99,8 +102,11 @@ class GlossaryApi extends AbstractApi
      * @param array $exportFields
      * @return GlossaryExport|null
      */
-    public function export(int $glossaryId, $format = 'tbx', $exportFields = ['term', 'description', 'partOfSpeech']): ?GlossaryExport
-    {
+    public function export(
+        int $glossaryId,
+        string $format = 'tbx',
+        array $exportFields = ['term', 'description', 'partOfSpeech']
+    ): ?GlossaryExport {
         $path = sprintf('glossaries/%d/exports', $glossaryId);
         $params = ['format' => $format, 'exportFields' => $exportFields];
 
@@ -141,6 +147,7 @@ class GlossaryApi extends AbstractApi
      * Import Glossary
      * @link https://developer.crowdin.com/api/v2/#operation/api.glossaries.imports.post API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.glossaries.imports.post API Documentation
+     *
      * @param int $glossaryId
      * @param array $data
      * integer $data[storageId] required<br>
@@ -167,6 +174,32 @@ class GlossaryApi extends AbstractApi
     {
         $path = sprintf('glossaries/%d/imports/%s', $glossaryId, $importId);
         return $this->_get($path, GlossaryImport::class);
+    }
+
+    /**
+     * Concordance search in Glossaries
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.glossaries.concordance.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.glossaries.concordance.post API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param array $data
+     * string $data[sourceLanguageId]<br>
+     * string $data[targetLanguageId]<br>
+     * string[] $data[expressions]<br>
+     * string $data[expression]<br>
+     * @return ModelCollection|null
+     */
+    public function concordance(int $projectId, array $data): ?ModelCollection
+    {
+        return $this->client->apiRequest(
+            'post',
+            sprintf('projects/%d/glossaries/concordance', $projectId),
+            new ResponseModelListDecorator(GlossaryConcordance::class),
+            [
+                'body' => json_encode($data),
+                'headers' => $this->getHeaders(),
+            ]
+        );
     }
 
     /**
@@ -257,6 +290,7 @@ class GlossaryApi extends AbstractApi
      * Edit Term
      * @link https://developer.crowdin.com/api/v2/#operation/api.glossaries.terms.patch API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.glossaries.terms.patch API Documentation Enterprise
+     *
      * @param Term $term
      * @return Term|null
      */
@@ -264,5 +298,60 @@ class GlossaryApi extends AbstractApi
     {
         $path = sprintf('glossaries/%d/terms/%d', $term->getGlossaryId(), $term->getId());
         return $this->_update($path, $term);
+    }
+
+    /**
+     * List Concepts
+     * @link https://developer.crowdin.com/api/v2/#operation/api.glossaries.terms.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.glossaries.terms.getMany API Documentation Enterprise
+     */
+    public function listConcepts(int $glossaryId, array $params = []): ?ModelCollection
+    {
+        $path = sprintf('glossaries/%d/concepts', $glossaryId);
+        return $this->_list($path, GlossaryConcept::class, $params);
+    }
+
+    /**
+     * Get Concept
+     * @link https://developer.crowdin.com/api/v2/#operation/api.glossaries.concepts.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.glossaries.concepts.get API Documentation Enterprise
+     */
+    public function getConcept(int $glossaryId, int $conceptId): ?GlossaryConcept
+    {
+        $path = sprintf('glossaries/%d/concepts/%d', $glossaryId, $conceptId);
+        return $this->_get($path, GlossaryConcept::class);
+    }
+
+    /**
+     * Update Concept
+     * @link https://developer.crowdin.com/api/v2/#operation/api.glossaries.concepts.put API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.glossaries.concepts.put API Documentation Enterprise
+     *
+     * @param array $data
+     * string $data[subject]<br>
+     * string $data[definition]<br>
+     * bool $data[translatable]<br>
+     * string $data[note]<br>
+     * string $data[url]<br>
+     * string $data[figure]<br>
+     * array[] $data[languageDetails]<br>
+     */
+    public function updateConcept(int $glossaryId, int $conceptId, array $data): GlossaryConcept
+    {
+        $path = sprintf('glossaries/%d/concepts/%d', $glossaryId, $conceptId);
+        return $this->_put($path, GlossaryConcept::class, $data);
+    }
+
+    /**
+     * Delete Concept
+     * @link https://developer.crowdin.com/api/v2/#operation/api.glossaries.concepts.delete API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.glossaries.concepts.delete API Documentation Enterprise
+     *
+     * @return mixed
+     */
+    public function deleteConcept(int $glossaryId, int $conceptId)
+    {
+        $path = sprintf('glossaries/%d/concepts/%d', $glossaryId, $conceptId);
+        return $this->_delete($path);
     }
 }

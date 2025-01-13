@@ -54,7 +54,7 @@ abstract class AbstractApi implements ApiInterface
         return $this->headers[strtolower($header)];
     }
 
-    public function getHeaders()
+    public function getHeaders(): array
     {
         return $this->headers;
     }
@@ -102,7 +102,6 @@ abstract class AbstractApi implements ApiInterface
     protected function _update(string $path, ModelInterface $model)
     {
         $dataModel = $model->getProperties();
-
         $_data = [];
 
         foreach ($model->getData() as $key => $val) {
@@ -182,7 +181,7 @@ abstract class AbstractApi implements ApiInterface
      * @param array $params
      * @return mixed
      */
-    protected function _get(string $path, string $modelName, $params = [])
+    protected function _get(string $path, string $modelName, array $params = [])
     {
         $options = [
             'params' => $params,

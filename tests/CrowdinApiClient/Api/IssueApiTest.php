@@ -103,7 +103,7 @@ class IssueApiTest extends AbstractTestApi
         $this->assertInstanceOf(Issue::class, $issue);
         $this->assertEquals(2, $issue->getId());
 
-        $this->mockRequestPath('/projects/1/issues/2', '{
+        $this->mockRequestPatch('/projects/1/issues/2', '{
             "data": {
                 "id": 2,
                 "text": "@BeMyEyes  Please provide more details on where the text will be used",

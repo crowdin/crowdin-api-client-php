@@ -68,7 +68,7 @@ class DirectoryApiTest extends AbstractTestApi
 
         $directory->setName('edit test');
 
-        $this->mockRequestPath('/projects/2/directories/34', '{
+        $this->mockRequestPatch('/projects/2/directories/34', '{
                   "data": {
                     "id": 34,
                     "projectId": 2,

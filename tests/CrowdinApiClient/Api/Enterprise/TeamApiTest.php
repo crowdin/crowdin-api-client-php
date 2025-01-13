@@ -85,7 +85,7 @@ class TeamApiTest extends AbstractTestApi
         $this->assertInstanceOf(Team::class, $team);
         $this->assertEquals(2, $team->getId());
 
-        $this->mockRequestPath('/teams/2', '{
+        $this->mockRequestPatch('/teams/2', '{
                   "data": {
                     "id": 2,
                     "name": "test edit",
