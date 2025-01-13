@@ -89,7 +89,7 @@ vendor/bin/phpunit tests/CrowdinApiClient/Model/ProjectTest.php
 
 Docs are generated using the [phpDocumentor](https://www.phpdoc.org/) tool.
 
-- First, yuo need to download the phpDocumentor:
+- First, you need to download the phpDocumentor:
 
     ```console
     wget https://phpdoc.org/phpDocumentor.phar
