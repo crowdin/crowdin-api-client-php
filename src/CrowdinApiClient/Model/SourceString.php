@@ -2,6 +2,8 @@
 
 namespace CrowdinApiClient\Model;
 
+use InvalidArgumentException;
+
 /**
  * @package Crowdin\Model
  */
@@ -38,7 +40,7 @@ class SourceString extends BaseModel
     protected $identifier;
 
     /**
-     * @var string
+     * @var string|array
      */
     protected $text;
 
@@ -102,9 +104,6 @@ class SourceString extends BaseModel
      */
     protected $masterStringId;
 
-    /**
-     * @param array $data
-     */
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -112,10 +111,16 @@ class SourceString extends BaseModel
         $this->id = (integer)$this->getDataProperty('id');
         $this->projectId = (integer)$this->getDataProperty('projectId');
         $this->fileId = (integer)$this->getDataProperty('fileId');
-        $this->branchId = $this->getDataProperty('branchId') ? (integer)$this->getDataProperty('branchId') : null;
-        $this->directoryId = $this->getDataProperty('directoryId') ? (integer)$this->getDataProperty('directoryId') : null;
+        $this->branchId = $this->getDataProperty('branchId')
+            ? (integer)$this->getDataProperty('branchId')
+            : null;
+        $this->directoryId = $this->getDataProperty('directoryId')
+            ? (integer)$this->getDataProperty('directoryId')
+            : null;
         $this->identifier = (string)$this->getDataProperty('identifier');
-        $this->text = (string)$this->getDataProperty('text');
+        $this->text = is_array($this->getDataProperty('text'))
+            ? $this->getDataProperty('text')
+            : (string)$this->getDataProperty('text');
         $this->type = (string)$this->getDataProperty('type');
         $this->context = (string)$this->getDataProperty('context');
         $this->maxLength = (integer)$this->getDataProperty('maxLength');
@@ -179,18 +184,34 @@ class SourceString extends BaseModel
     }
 
     /**
-     * @return string
+     * @return string|array
      */
-    public function getText(): string
+    public function getText()
     {
         return $this->text;
     }
 
     /**
-     * @param string $text
+     * @param string|array $text
      */
-    public function setText(string $text): void
+    public function setText($text): void
     {
+        if (gettype($this->text) !== gettype($text)) {
+            throw new InvalidArgumentException(
+                sprintf(
+                    'Argument "text" must have the same type as the current value. Current value type: %s',
+                    gettype($this->text)
+                )
+            );
+        }
+
+        if (
+            is_array($text) &&
+            (array_diff_key($this->text, $text) !== [] || array_diff_key($text, $this->text) !== [])
+        ) {
+            throw new InvalidArgumentException('Argument "text" must have the same keys as the current value');
+        }
+
         $this->text = $text;
     }
 
@@ -262,6 +283,15 @@ class SourceString extends BaseModel
      * @return bool
      */
     public function isHasPlurals(): bool
+    {
+        return $this->hasPlurals;
+    }
+
+    /**
+     * Alias of isHasPlurals
+     * @return bool
+     */
+    public function isPlural(): bool
     {
         return $this->hasPlurals;
     }
