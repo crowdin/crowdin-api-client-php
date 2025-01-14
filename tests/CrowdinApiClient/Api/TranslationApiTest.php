@@ -7,17 +7,13 @@ use CrowdinApiClient\Model\PreTranslation;
 use CrowdinApiClient\Model\TranslationProjectBuild;
 use CrowdinApiClient\ModelCollection;
 
-/**
- * Class TranslationApiTest
- * @package Crowdin\Tests\Api
- */
 class TranslationApiTest extends AbstractTestApi
 {
     public function testApplyPreTranslation()
     {
         $params = [
             'languageIds' => ['uk'],
-            'fileIds' => [0]
+            'fileIds' => [0],
         ];
 
         $this->mockRequest([
@@ -50,7 +46,7 @@ class TranslationApiTest extends AbstractTestApi
                     "startedAt": "2019-11-13T08:17:22Z",
                     "finishedAt": "2019-11-13T08:17:22Z"
                   }
-                }'
+                }',
         ]);
 
         $preTranslation = $this->crowdin->translation->applyPreTranslation(2, $params);
@@ -60,7 +56,9 @@ class TranslationApiTest extends AbstractTestApi
 
     public function testGetPreTranslation()
     {
-        $this->mockRequestGet('/projects/2/pre-translations/9e7de270-4f83-41cb-b606-2f90631f26e2', '{
+        $this->mockRequestGet(
+            '/projects/2/pre-translations/9e7de270-4f83-41cb-b606-2f90631f26e2',
+            '{
               "data": {
                 "identifier": "9e7de270-4f83-41cb-b606-2f90631f26e2",
                 "status": "created",
@@ -86,7 +84,8 @@ class TranslationApiTest extends AbstractTestApi
                 "startedAt": "2019-11-13T08:17:22Z",
                 "finishedAt": "2019-11-13T08:17:22Z"
               }
-            }');
+            }'
+        );
 
         $preTranslation = $this->crowdin->translation->getPreTranslation(2, '9e7de270-4f83-41cb-b606-2f90631f26e2');
 
@@ -94,20 +93,30 @@ class TranslationApiTest extends AbstractTestApi
         $this->assertEquals('9e7de270-4f83-41cb-b606-2f90631f26e2', $preTranslation->getIdentifier());
     }
 
-    public function testBuildProjectFileTranslation()
+    public function testBuildProjectFileTranslation(): void
     {
         $this->mockRequest([
             'uri' => 'https://api.crowdin.com/api/v2/projects/1/translations/builds/files/2',
             'method' => 'post',
-            'response' => '{
-              "data": {
-                "url": "https://foo.com/file",
-                "expireIn": "2019-09-20T10:31:21+00:00"
-              }
-            }'
+            'headers' => [
+                'content-type' => 'application/json',
+                'if-none-match' => 'bfc13a64729c4290ef5b2c2730249c88ca92d82d',
+                'Authorization' => 'Bearer access_token',
+            ],
+            'response' => json_encode([
+                'data' => [
+                    'url' => 'https://foo.com/file',
+                    'expireIn' => '2019-09-20T10:31:21+00:00',
+                ],
+            ]),
         ]);
 
-        $file = $this->crowdin->translation->buildProjectFileTranslation(1, 2, ['targetLanguageId' => 'uk']);
+        $file = $this->crowdin->translation->buildProjectFileTranslation(
+            1,
+            2,
+            ['targetLanguageId' => 'uk'],
+            'bfc13a64729c4290ef5b2c2730249c88ca92d82d'
+        );
 
         $this->assertInstanceOf(DownloadFile::class, $file);
         $this->assertEquals('https://foo.com/file', $file->getUrl());
@@ -115,7 +124,9 @@ class TranslationApiTest extends AbstractTestApi
 
     public function testListProjectBuilds()
     {
-        $this->mockRequestGet('/projects/2/translations/builds', '{
+        $this->mockRequestGet(
+            '/projects/2/translations/builds',
+            '{
           "data": [
             {
               "data": {
@@ -140,7 +151,8 @@ class TranslationApiTest extends AbstractTestApi
               "limit": 0
             }
           ]
-        }');
+        }'
+        );
 
         $translationProjectBuilds = $this->crowdin->translation->getProjectBuilds(2);
         $this->assertInstanceOf(ModelCollection::class, $translationProjectBuilds);
@@ -173,9 +185,9 @@ class TranslationApiTest extends AbstractTestApi
             'options' => [
                 'body' => [
                     'branchId' => 2,
-                    'targetLanguageIds' => ['uk']
-                ]
-            ]
+                    'targetLanguageIds' => ['uk'],
+                ],
+            ],
         ]);
 
         $params = [
@@ -197,7 +209,9 @@ class TranslationApiTest extends AbstractTestApi
 
     public function testGetProjectBuildStatus()
     {
-        $this->mockRequestGet('/projects/2/translations/builds/2', '{
+        $this->mockRequestGet(
+            '/projects/2/translations/builds/2',
+            '{
               "data": {
                 "id": 2,
                 "projectId": 2,
@@ -212,7 +226,8 @@ class TranslationApiTest extends AbstractTestApi
                   "currentFileId": 1
                 }
               }
-        }');
+        }'
+        );
 
         $projectBuild = $this->crowdin->translation->getProjectBuildStatus(2, 2);
 
@@ -222,16 +237,22 @@ class TranslationApiTest extends AbstractTestApi
 
     public function testDownloadProjectBuild()
     {
-        $this->mockRequestGet('/projects/2/translations/builds/2/download', '{
+        $this->mockRequestGet(
+            '/projects/2/translations/builds/2/download',
+            '{
           "data": {
             "url": "https://production-enterprise-importer.downloads.crowdin.com/992000002/2/14.xliff?response-content-disposition=attachment%3B%20filename%3D%22APP.xliff%22&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIGJKLQV66ZXPMMEA%2F20190920%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190920T093121Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=439ebd69a1b7e4c23e6d17891a491c94f832e0c82e4692dedb35a6cd1e624b62",
             "expireIn": "2019-09-20T10:31:21+00:00"
           }
-        }');
+        }'
+        );
 
         $file = $this->crowdin->translation->downloadProjectBuild(2, 2);
         $this->assertInstanceOf(DownloadFile::class, $file);
-        $this->assertEquals('https://production-enterprise-importer.downloads.crowdin.com/992000002/2/14.xliff?response-content-disposition=attachment%3B%20filename%3D%22APP.xliff%22&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIGJKLQV66ZXPMMEA%2F20190920%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190920T093121Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=439ebd69a1b7e4c23e6d17891a491c94f832e0c82e4692dedb35a6cd1e624b62', $file->getUrl());
+        $this->assertEquals(
+            'https://production-enterprise-importer.downloads.crowdin.com/992000002/2/14.xliff?response-content-disposition=attachment%3B%20filename%3D%22APP.xliff%22&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIGJKLQV66ZXPMMEA%2F20190920%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190920T093121Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=439ebd69a1b7e4c23e6d17891a491c94f832e0c82e4692dedb35a6cd1e624b62',
+            $file->getUrl()
+        );
     }
 
     public function testDeleteProjectBuild()
@@ -266,8 +287,8 @@ class TranslationApiTest extends AbstractTestApi
                 'body' => [
                     'storageId' => 13,
                     'fileId' => 2,
-                ]
-            ]
+                ],
+            ],
         ]);
 
         $data = $this->crowdin->translation->uploadTranslations(8, 'uk', $params);
@@ -278,7 +299,7 @@ class TranslationApiTest extends AbstractTestApi
             'projectId' => 8,
             'storageId' => 34,
             'languageId' => 'uk',
-            'fileId' => 56
+            'fileId' => 56,
         ], $data);
     }
 
@@ -286,7 +307,7 @@ class TranslationApiTest extends AbstractTestApi
     {
         $params = [
             'targetLanguageId' => 'en',
-            'fileIds' => [7, 14, 15]
+            'fileIds' => [7, 14, 15],
         ];
 
         $this->mockRequest(
@@ -298,12 +319,15 @@ class TranslationApiTest extends AbstractTestApi
                     "url": "https://production-enterprise-importer.downloads.crowdin.com/992000002/2/14.xliff?response-content-disposition=attachment%3B%20filename%3D%22APP.xliff%22&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIGJKLQV66ZXPMMEA%2F20190920%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190920T093121Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=439ebd69a1b7e4c23e6d17891a491c94f832e0c82e4692dedb35a6cd1e624b62",
                     "expireIn": "2019-09-20T10:31:21+00:00"
                   }
-                }'
+                }',
             ]
         );
 
         $file = $this->crowdin->translation->exportProjectTranslation(2, $params);
         $this->assertInstanceOf(DownloadFile::class, $file);
-        $this->assertEquals('https://production-enterprise-importer.downloads.crowdin.com/992000002/2/14.xliff?response-content-disposition=attachment%3B%20filename%3D%22APP.xliff%22&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIGJKLQV66ZXPMMEA%2F20190920%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190920T093121Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=439ebd69a1b7e4c23e6d17891a491c94f832e0c82e4692dedb35a6cd1e624b62', $file->getUrl());
+        $this->assertEquals(
+            'https://production-enterprise-importer.downloads.crowdin.com/992000002/2/14.xliff?response-content-disposition=attachment%3B%20filename%3D%22APP.xliff%22&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIGJKLQV66ZXPMMEA%2F20190920%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190920T093121Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=439ebd69a1b7e4c23e6d17891a491c94f832e0c82e4692dedb35a6cd1e624b62',
+            $file->getUrl()
+        );
     }
 }

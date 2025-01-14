@@ -77,7 +77,7 @@ abstract class AbstractApi implements ApiInterface
         return $this;
     }
 
-    public function hasHeader($header)
+    public function hasHeader($header): bool
     {
         return isset($this->headers[strtolower($header)]);
     }
