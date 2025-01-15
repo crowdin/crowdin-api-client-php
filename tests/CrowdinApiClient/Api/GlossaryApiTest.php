@@ -303,7 +303,7 @@ class GlossaryApiTest extends AbstractTestApi
                 'Welcome!',
                 'Save as...',
                 'View',
-                'About...'
+                'About...',
             ],
         ];
 
@@ -543,12 +543,14 @@ class GlossaryApiTest extends AbstractTestApi
                             'url' => 'URL',
                             'figure' => 'Figure',
                             'languagesDetails' => [
-                                'languageId' => 'en',
-                                'userId' => 12,
-                                'definition' => 'Language definition',
-                                'note' => 'Language note',
-                                'createdAt' => '2019-09-19T14:14:00+00:00',
-                                'updatedAt' => '2019-09-19T14:14:00+00:00',
+                                [
+                                    'languageId' => 'en',
+                                    'userId' => 12,
+                                    'definition' => 'Language definition',
+                                    'note' => 'Language note',
+                                    'createdAt' => '2019-09-19T14:14:00+00:00',
+                                    'updatedAt' => '2019-09-19T14:14:00+00:00',
+                                ],
                             ],
                             'createdAt' => '2019-09-16T13:42:04+00:00',
                             'updatedAt' => '2019-09-16T13:42:04+00:00',
@@ -589,12 +591,14 @@ class GlossaryApiTest extends AbstractTestApi
                     'url' => 'URL',
                     'figure' => 'Figure',
                     'languagesDetails' => [
-                        'languageId' => 'en',
-                        'userId' => 12,
-                        'definition' => 'Language definition',
-                        'note' => 'Language note',
-                        'createdAt' => '2019-09-19T14:14:00+00:00',
-                        'updatedAt' => '2019-09-19T14:14:00+00:00',
+                        [
+                            'languageId' => 'en',
+                            'userId' => 12,
+                            'definition' => 'Language definition',
+                            'note' => 'Language note',
+                            'createdAt' => '2019-09-19T14:14:00+00:00',
+                            'updatedAt' => '2019-09-19T14:14:00+00:00',
+                        ],
                     ],
                     'createdAt' => '2019-09-16T13:42:04+00:00',
                     'updatedAt' => '2019-09-16T13:42:04+00:00',
@@ -620,9 +624,11 @@ class GlossaryApiTest extends AbstractTestApi
             'url' => 'URL',
             'figure' => 'Figure',
             'languagesDetails' => [
-                'languageId' => 'en',
-                'definition' => 'Language definition',
-                'note' => 'Language note',
+                [
+                    'languageId' => 'en',
+                    'definition' => 'Language definition',
+                    'note' => 'Language note',
+                ],
             ],
         ];
 
@@ -640,12 +646,14 @@ class GlossaryApiTest extends AbstractTestApi
                     'url' => 'URL',
                     'figure' => 'Figure',
                     'languagesDetails' => [
-                        'languageId' => 'en',
-                        'userId' => 12,
-                        'definition' => 'Language definition',
-                        'note' => 'Language note',
-                        'createdAt' => '2019-09-19T14:14:00+00:00',
-                        'updatedAt' => '2019-09-19T14:14:00+00:00',
+                        [
+                            'languageId' => 'en',
+                            'userId' => 12,
+                            'definition' => 'Language definition',
+                            'note' => 'Language note',
+                            'createdAt' => '2019-09-19T14:14:00+00:00',
+                            'updatedAt' => '2019-09-19T14:14:00+00:00',
+                        ],
                     ],
                     'createdAt' => '2019-09-16T13:42:04+00:00',
                     'updatedAt' => '2019-09-16T13:42:04+00:00',

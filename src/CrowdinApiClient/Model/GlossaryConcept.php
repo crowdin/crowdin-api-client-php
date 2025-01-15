@@ -90,7 +90,6 @@ class GlossaryConcept extends BaseModel
         );
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
-
     }
 
     public function getId(): int
