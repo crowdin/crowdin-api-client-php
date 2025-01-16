@@ -8,10 +8,6 @@ use CrowdinApiClient\Model\TranslationProjectBuild;
 use CrowdinApiClient\Model\TranslationProjectDirectory;
 use CrowdinApiClient\ModelCollection;
 
-/**
- * Class TranslationApiTest
- * @package Crowdin\Tests\Api
- */
 class TranslationApiTest extends AbstractTestApi
 {
     public function testApplyPreTranslation()

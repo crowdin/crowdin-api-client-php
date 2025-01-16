@@ -73,8 +73,11 @@ class TranslationApi extends AbstractApi
      * boolean $params[preserveFolderHierarchy] Default: false<br>
      * @return TranslationProjectDirectory|null
      */
-    public function buildProjectDirectoryTranslation(int $projectId, int $directoryId, array $params = []): ?TranslationProjectDirectory
-    {
+    public function buildProjectDirectoryTranslation(
+        int $projectId,
+        int $directoryId,
+        array $params = []
+    ): ?TranslationProjectDirectory {
         $path = sprintf('projects/%d/translations/builds/directories/%d', $projectId, $directoryId);
 
         return $this->_post($path, TranslationProjectDirectory::class, $params);
@@ -96,12 +99,18 @@ class TranslationApi extends AbstractApi
      * boolean $params[skipUntranslatedFiles] true value can't be used with skipUntranslatedStrings=true in same request<br>
      * boolean $params[exportApprovedOnly]
      */
-    public function buildProjectFileTranslation(int $projectId, int $fileId, array $params = [], string $ifNoneMatch = null): ?DownloadFile
-    {
+    public function buildProjectFileTranslation(
+        int $projectId,
+        int $fileId,
+        array $params = [],
+        ?string $ifNoneMatch = null
+    ): ?DownloadFile {
         $path = sprintf('projects/%d/translations/builds/files/%d', $projectId, $fileId);
 
         if ($ifNoneMatch) {
             $this->setHeader('If-None-Match', $ifNoneMatch);
+        } else {
+            $this->removeHeader('If-None-Match');
         }
 
         return $this->_post($path, DownloadFileTranslation::class, $params);

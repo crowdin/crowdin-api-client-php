@@ -4,7 +4,7 @@ namespace CrowdinApiClient\Tests\Api;
 
 use CrowdinApiClient\Model\Storage;
 use CrowdinApiClient\ModelCollection;
-use CrowdinApiClient\Utility\Mimetypes;
+use SplFileInfo;
 
 class StorageApiTest extends AbstractTestApi
 {
@@ -68,21 +68,22 @@ class StorageApiTest extends AbstractTestApi
         $this->crowdin->storage->delete(1);
     }
 
-    public function testCreate()
+    public function testCreate(): void
     {
-        $fileObject = new \SplFileInfo(__FILE__);
+        $fileObject = new SplFileInfo(__FILE__);
 
         $this->mockRequest([
             'method' => 'post',
             'uri' => 'https://api.crowdin.com/api/v2/storages',
-            'response' => '{
-              "data": {
-                "id": 1
-              }
-            }',
+            'response' => json_encode([
+                'data' => [
+                    'id' => 1
+                ]
+            ]),
             'headers' => [
-                'Content-Type' => Mimetypes::getInstance()->fromFilename($fileObject->getFilename()),
-                'Crowdin-API-FileName' => $fileObject->getFilename(),
+                'Content-Type' => 'application/octet-stream',
+                'Crowdin-API-FileName' => 'StorageApiTest.php',
+                'Authorization' => 'Bearer access_token',
             ],
         ]);
 
