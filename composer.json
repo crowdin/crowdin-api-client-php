@@ -42,5 +42,14 @@
                 "CrowdinApiClient\\FrameworkSupport\\Laravel\\CrowdinServiceProvider"
             ]
         }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "scripts-descriptions": {
+        "test": "Run tests"
     }
 }
