@@ -3,12 +3,9 @@
 namespace CrowdinApiClient\Tests\Model;
 
 use CrowdinApiClient\Model\SourceString;
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class SourceStringTest
- * @package Crowdin\Tests\Model
- */
 class SourceStringTest extends TestCase
 {
     /**
@@ -35,16 +32,16 @@ class SourceStringTest extends TestCase
         'createdAt' => '2019-09-20T12:43:57+00:00',
         'updatedAt' => '2019-09-20T13:24:01+00:00',
         'isDuplicate' => true,
-        'masterStringId' => 1234
+        'masterStringId' => 1234,
     ];
 
-    public function testLoadData()
+    public function testLoadData(): void
     {
         $this->sourceString = new SourceString($this->data);
         $this->checkData();
     }
 
-    public function testSetData()
+    public function testSetData(): void
     {
         $this->sourceString = new SourceString();
         $this->sourceString->setText($this->data['text']);
@@ -59,7 +56,7 @@ class SourceStringTest extends TestCase
         $this->assertEquals($this->data['isHidden'], $this->sourceString->isHidden());
     }
 
-    public function checkData()
+    public function checkData(): void
     {
         $this->assertEquals($this->data['id'], $this->sourceString->getId());
         $this->assertEquals($this->data['projectId'], $this->sourceString->getProjectId());
@@ -74,11 +71,103 @@ class SourceStringTest extends TestCase
         $this->assertEquals($this->data['isHidden'], $this->sourceString->isHidden());
         $this->assertEquals($this->data['revision'], $this->sourceString->getRevision());
         $this->assertEquals($this->data['hasPlurals'], $this->sourceString->isHasPlurals());
+        $this->assertEquals($this->data['hasPlurals'], $this->sourceString->isPlural());
         $this->assertEquals($this->data['isIcu'], $this->sourceString->isIcu());
         $this->assertEquals($this->data['labelIds'], $this->sourceString->getLabelIds());
         $this->assertEquals($this->data['createdAt'], $this->sourceString->getCreatedAt());
         $this->assertEquals($this->data['updatedAt'], $this->sourceString->getUpdatedAt());
         $this->assertEquals($this->data['isDuplicate'], $this->sourceString->isDuplicate());
         $this->assertEquals($this->data['masterStringId'], $this->sourceString->getMasterStringId());
+    }
+
+    public function testSetPlainText(): void
+    {
+        $text = 'Updated plain text';
+
+        $sourceString = new SourceString(['text' => 'Plain text']);
+        $sourceString->setText($text);
+
+        $this->assertSame($text, $sourceString->getText());
+    }
+
+    public function testSetPluralText(): void
+    {
+        $text = [
+            'one' => 'Updated one',
+            'other' => 'Updated other',
+        ];
+
+        $sourceString = new SourceString([
+            'text' => [
+                'one' => 'One',
+                'other' => 'Other',
+            ],
+        ]);
+        $sourceString->setText($text);
+
+        $this->assertSame($text, $sourceString->getText());
+    }
+
+    public function textExceptionDataProvider(): array
+    {
+        return [
+            'typeMismatchA' => [
+                'originalText' => 'Plain text',
+                'updatedText' => [
+                    'one' => 'One',
+                    'other' => 'Other',
+                ],
+                'expectedExceptionMessage' =>
+                    'Argument "text" must have the same type as the current value. ' .
+                    'Current value type: string',
+            ],
+            'typeMismatchB' => [
+                'originalText' => [
+                    'one' => 'One',
+                    'other' => 'Other',
+                ],
+                'updatedText' => 'Plain text',
+                'expectedExceptionMessage' =>
+                    'Argument "text" must have the same type as the current value. ' .
+                    'Current value type: array',
+            ],
+            'extraForm' => [
+                'originalText' => [
+                    'one' => 'One',
+                    'other' => 'Other',
+                ],
+                'updatedText' => [
+                    'one' => 'One',
+                    'many' => 'Many',
+                    'other' => 'Other',
+                ],
+                'expectedExceptionMessage' => 'Argument "text" must have the same keys as the current value',
+            ],
+            'missingForm' => [
+                'originalText' => [
+                    'one' => 'One',
+                    'other' => 'Other',
+                ],
+                'updatedText' => [
+                    'other' => 'Other',
+                ],
+                'expectedExceptionMessage' => 'Argument "text" must have the same keys as the current value',
+            ],
+        ];
+    }
+
+    /**
+     * @dataProvider textExceptionDataProvider
+     * @param string|array $originalText
+     * @param string|array $updatedText
+     * @param string $expectedExceptionMessage
+     */
+    public function testSetTextException($originalText, $updatedText, string $expectedExceptionMessage): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage($expectedExceptionMessage);
+
+        $sourceString = new SourceString(['text' => $originalText]);
+        $sourceString->setText($updatedText);
     }
 }
