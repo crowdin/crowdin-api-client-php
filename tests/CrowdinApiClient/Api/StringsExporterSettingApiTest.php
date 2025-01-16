@@ -137,7 +137,7 @@ class StringsExporterSettingApiTest extends AbstractTestApi
 
         $stringsExporterSetting->setFormat('macosx');
 
-        $this->mockRequestPath('/projects/2/strings-exporter-settings/2', '{
+        $this->mockRequestPatch('/projects/2/strings-exporter-settings/2', '{
       "data": {
         "id": 2,
         "format": "macosx",

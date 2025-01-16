@@ -6,10 +6,6 @@ use CrowdinApiClient\Crowdin;
 use CrowdinApiClient\Http\Client\CurlHttpClient;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class AbstractApiTest
- * @package Crowdin\Tests\Api
- */
 abstract class AbstractTestApi extends TestCase
 {
     /**
@@ -55,7 +51,7 @@ abstract class AbstractTestApi extends TestCase
         }));
     }
 
-    public function mockRequestPath(string $path, string $response, array $options = [])
+    public function mockRequestPatch(string $path, string $response, array $options = [])
     {
         return $this->mockRequest([
             'uri' => 'https://api.crowdin.com/api/v2' . $path,

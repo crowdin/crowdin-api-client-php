@@ -169,7 +169,7 @@ class StringCommentApiTest extends AbstractTestApi
         $this->assertEquals(2, $stringComment->getId());
 
         $stringComment->setText('edit test');
-        $this->mockRequestPath('/projects/8/comments/2', '{
+        $this->mockRequestPatch('/projects/8/comments/2', '{
               "data": {
                 "id": 2,
                 "text": "edit test",

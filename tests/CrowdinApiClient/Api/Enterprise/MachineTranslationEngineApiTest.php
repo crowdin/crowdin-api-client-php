@@ -71,7 +71,7 @@ class MachineTranslationEngineApiTest extends AbstractTestApi
 
         $machineTranslationEngine->setName('test edit');
 
-        $this->mockRequestPath('/mts/2', '{
+        $this->mockRequestPatch('/mts/2', '{
               "data": {
                 "id": 2,
                 "groupId": 2,

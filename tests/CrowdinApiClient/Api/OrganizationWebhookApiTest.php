@@ -137,7 +137,7 @@ class OrganizationWebhookApiTest extends AbstractTestApi
         $webhook->setName('test');
         $webhook->setBatchingEnabled(true);
 
-        $this->mockRequestPath('/webhooks/4', '{
+        $this->mockRequestPatch('/webhooks/4', '{
               "data": {
                 "id": 4,
                 "name": "test",

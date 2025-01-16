@@ -152,7 +152,7 @@ class BundleApiTest extends AbstractTestApi
 
         $bundle->setName('edit test');
 
-        $this->mockRequestPath('/projects/2/bundles/34', '{
+        $this->mockRequestPatch('/projects/2/bundles/34', '{
                   "data": {
                     "id": 34,
                     "name": "edit test",

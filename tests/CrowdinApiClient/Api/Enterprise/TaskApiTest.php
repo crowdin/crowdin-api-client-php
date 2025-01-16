@@ -193,7 +193,7 @@ class TaskApiTest extends AbstractTestApi
         $this->assertInstanceOf(Task::class, $task);
         $this->assertEquals(2, $task->getId());
 
-        $this->mockRequestPath('/projects/2/tasks/2', '{
+        $this->mockRequestPatch('/projects/2/tasks/2', '{
                   "data": {
                     "id": 2,
                     "projectId": 2,

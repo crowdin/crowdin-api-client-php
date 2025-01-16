@@ -45,6 +45,36 @@ class Term extends BaseModel
     /**
      * @var string
      */
+    protected $status;
+
+    /**
+     * @var string
+     */
+    protected $type;
+
+    /**
+     * @var string
+     */
+    protected $gender;
+
+    /**
+     * @var string
+     */
+    protected $note;
+
+    /**
+     * @var string
+     */
+    protected $url;
+
+    /**
+     * @var int
+     */
+    protected $conceptId;
+
+    /**
+     * @var string
+     */
     protected $lemma;
 
     /**
@@ -71,6 +101,12 @@ class Term extends BaseModel
         $this->text = (string)$this->getDataProperty('text');
         $this->description = (string)$this->getDataProperty('description');
         $this->partOfSpeech = (string)$this->getDataProperty('partOfSpeech');
+        $this->status = (string)$this->getDataProperty('status');
+        $this->type = (string)$this->getDataProperty('type');
+        $this->gender = (string)$this->getDataProperty('gender');
+        $this->note = (string)$this->getDataProperty('note');
+        $this->url = (string)$this->getDataProperty('url');
+        $this->conceptId = (int)$this->getDataProperty('conceptId');
         $this->lemma = (string)$this->getDataProperty('lemma');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
@@ -154,6 +190,61 @@ class Term extends BaseModel
     public function setPartOfSpeech(string $partOfSpeech): void
     {
         $this->partOfSpeech = $partOfSpeech;
+    }
+
+    public function getStatus(): string
+    {
+        return $this->status;
+    }
+
+    public function setStatus(string $status): void
+    {
+        $this->status = $status;
+    }
+
+    public function getType(): string
+    {
+        return $this->type;
+    }
+
+    public function setType(string $type): void
+    {
+        $this->type = $type;
+    }
+
+    public function getGender(): string
+    {
+        return $this->gender;
+    }
+
+    public function setGender(string $gender): void
+    {
+        $this->gender = $gender;
+    }
+
+    public function getNote(): string
+    {
+        return $this->note;
+    }
+
+    public function setNote(string $note): void
+    {
+        $this->note = $note;
+    }
+
+    public function getUrl(): string
+    {
+        return $this->url;
+    }
+
+    public function setUrl(string $url): void
+    {
+        $this->url = $url;
+    }
+
+    public function getConceptId(): int
+    {
+        return $this->conceptId;
     }
 
     /**

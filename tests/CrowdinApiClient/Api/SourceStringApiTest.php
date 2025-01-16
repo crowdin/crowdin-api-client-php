@@ -78,7 +78,7 @@ class SourceStringApiTest extends AbstractTestApi
         $this->assertInstanceOf(SourceString::class, $sourceString);
         $this->assertEquals(2814, $sourceString->getId());
 
-        $this->mockRequestPath('/projects/2/strings/2814', '{
+        $this->mockRequestPatch('/projects/2/strings/2814', '{
                   "data": {
                     "id": 2814,
                     "projectId": 2,
@@ -162,7 +162,7 @@ class SourceStringApiTest extends AbstractTestApi
             'path' => '/projects/2/strings',
             'method' => 'patch',
             'response' => '{
-              "data":[ 
+              "data":[
                 {
                   "data":{
                     "id":2814,

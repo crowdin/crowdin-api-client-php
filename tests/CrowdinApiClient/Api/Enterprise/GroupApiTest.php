@@ -101,7 +101,7 @@ class GroupApiTest extends AbstractTestApi
 
         $group->setName('edit test');
 
-        $this->mockRequestPath('/groups/1', '{
+        $this->mockRequestPatch('/groups/1', '{
               "data": {
                 "id": 1,
                 "name": "edit test",

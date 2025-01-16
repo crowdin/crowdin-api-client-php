@@ -322,7 +322,7 @@ class UserApiTest extends AbstractTestApi
 
         $user->setFirstName('Joe');
 
-        $this->mockRequestPath('/users/1', '{
+        $this->mockRequestPatch('/users/1', '{
               "data": {
                 "id": 1,
                 "username": "john_smith",

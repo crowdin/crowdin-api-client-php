@@ -127,7 +127,7 @@ class LanguageApiTest extends AbstractTestApi
 
         $language->setName('edit test');
 
-        $this->mockRequestPath('/languages/es', '{
+        $this->mockRequestPatch('/languages/es', '{
               "data": {
                 "id": "es",
                 "name": "Spanish",

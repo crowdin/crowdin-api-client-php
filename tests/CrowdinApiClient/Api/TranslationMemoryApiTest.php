@@ -108,7 +108,7 @@ class TranslationMemoryApiTest extends AbstractTestApi
         $this->assertInstanceOf(TranslationMemory::class, $translationMemory);
         $this->assertEquals(4, $translationMemory->getId());
 
-        $this->mockRequestPath('/tms/4', '{
+        $this->mockRequestPatch('/tms/4', '{
               "data": {
                 "id": 4,
                 "groupId": 2,
