@@ -8,6 +8,11 @@ namespace CrowdinApiClient\Model;
 class Progress extends BaseModel
 {
     /**
+     * @var Language $language
+     */
+    protected $language;
+
+    /**
      * @var string
      */
     protected $languageId;
@@ -39,11 +44,17 @@ class Progress extends BaseModel
     {
         parent::__construct($data);
 
+        $this->language = new Language($this->getDataProperty('language'));
         $this->languageId = (string)$this->getDataProperty('languageId');
         $this->words = (array)$this->getDataProperty('words');
         $this->phrases = (array)$this->getDataProperty('phrases');
         $this->translationProgress = (integer)$this->getDataProperty('translationProgress');
         $this->approvalProgress = (integer)$this->getDataProperty('approvalProgress');
+    }
+
+    public function getLanguage(): Language
+    {
+        return $this->language;
     }
 
     /**
