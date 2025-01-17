@@ -561,6 +561,11 @@ Search.appendIndex(
             "summary": "Check\u0020Glossary\u0020Import\u0020Status",
             "url": "classes/CrowdinApiClient-Api-GlossaryApi.html#method_getImport"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\GlossaryApi\u003A\u003Aconcordance\u0028\u0029",
+            "name": "concordance",
+            "summary": "Concordance\u0020search\u0020in\u0020Glossaries",
+            "url": "classes/CrowdinApiClient-Api-GlossaryApi.html#method_concordance"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Api\\GlossaryApi\u003A\u003AlistTerms\u0028\u0029",
             "name": "listTerms",
             "summary": "List\u0020Terms",
@@ -590,6 +595,26 @@ Search.appendIndex(
             "name": "updateTerm",
             "summary": "Edit\u0020Term",
             "url": "classes/CrowdinApiClient-Api-GlossaryApi.html#method_updateTerm"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\GlossaryApi\u003A\u003AlistConcepts\u0028\u0029",
+            "name": "listConcepts",
+            "summary": "List\u0020Concepts",
+            "url": "classes/CrowdinApiClient-Api-GlossaryApi.html#method_listConcepts"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\GlossaryApi\u003A\u003AgetConcept\u0028\u0029",
+            "name": "getConcept",
+            "summary": "Get\u0020Concept",
+            "url": "classes/CrowdinApiClient-Api-GlossaryApi.html#method_getConcept"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\GlossaryApi\u003A\u003AupdateConcept\u0028\u0029",
+            "name": "updateConcept",
+            "summary": "Update\u0020Concept",
+            "url": "classes/CrowdinApiClient-Api-GlossaryApi.html#method_updateConcept"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\GlossaryApi\u003A\u003AdeleteConcept\u0028\u0029",
+            "name": "deleteConcept",
+            "summary": "Delete\u0020Concept",
+            "url": "classes/CrowdinApiClient-Api-GlossaryApi.html#method_deleteConcept"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\IssueApi",
             "name": "IssueApi",
@@ -3841,15 +3866,30 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Glossary.html#method_getTerms"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Glossary\u003A\u003AgetLanguageId\u0028\u0029",
+            "name": "getLanguageId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Glossary.html#method_getLanguageId"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Glossary\u003A\u003AgetLanguageIds\u0028\u0029",
             "name": "getLanguageIds",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Glossary.html#method_getLanguageIds"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Glossary\u003A\u003AgetDefaultProjectIds\u0028\u0029",
+            "name": "getDefaultProjectIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Glossary.html#method_getDefaultProjectIds"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Glossary\u003A\u003AgetProjectIds\u0028\u0029",
             "name": "getProjectIds",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Glossary.html#method_getProjectIds"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Glossary\u003A\u003AgetWebUrl\u0028\u0029",
+            "name": "getWebUrl",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Glossary.html#method_getWebUrl"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Glossary\u003A\u003AgetCreatedAt\u0028\u0029",
             "name": "getCreatedAt",
@@ -3881,20 +3921,250 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Glossary.html#property_terms"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Glossary\u003A\u003A\u0024languageId",
+            "name": "languageId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Glossary.html#property_languageId"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Glossary\u003A\u003A\u0024languageIds",
             "name": "languageIds",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Glossary.html#property_languageIds"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Glossary\u003A\u003A\u0024defaultProjectIds",
+            "name": "defaultProjectIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Glossary.html#property_defaultProjectIds"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Glossary\u003A\u003A\u0024projectIds",
             "name": "projectIds",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Glossary.html#property_projectIds"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Glossary\u003A\u003A\u0024webUrl",
+            "name": "webUrl",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Glossary.html#property_webUrl"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Glossary\u003A\u003A\u0024createdAt",
             "name": "createdAt",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Glossary.html#property_createdAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept",
+            "name": "GlossaryConcept",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#method___construct"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003AgetId\u0028\u0029",
+            "name": "getId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#method_getId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003AgetUserId\u0028\u0029",
+            "name": "getUserId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#method_getUserId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003AgetGlossaryId\u0028\u0029",
+            "name": "getGlossaryId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#method_getGlossaryId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003AgetSubject\u0028\u0029",
+            "name": "getSubject",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#method_getSubject"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003AsetSubject\u0028\u0029",
+            "name": "setSubject",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#method_setSubject"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003AgetDefinition\u0028\u0029",
+            "name": "getDefinition",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#method_getDefinition"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003AsetDefinition\u0028\u0029",
+            "name": "setDefinition",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#method_setDefinition"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003AgetTranslatable\u0028\u0029",
+            "name": "getTranslatable",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#method_getTranslatable"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003AsetTranslatable\u0028\u0029",
+            "name": "setTranslatable",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#method_setTranslatable"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003AgetNote\u0028\u0029",
+            "name": "getNote",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#method_getNote"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003AsetNote\u0028\u0029",
+            "name": "setNote",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#method_setNote"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003AgetUrl\u0028\u0029",
+            "name": "getUrl",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#method_getUrl"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003AsetUrl\u0028\u0029",
+            "name": "setUrl",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#method_setUrl"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003AgetFigure\u0028\u0029",
+            "name": "getFigure",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#method_getFigure"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003AsetFigure\u0028\u0029",
+            "name": "setFigure",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#method_setFigure"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003AgetLanguagesDetails\u0028\u0029",
+            "name": "getLanguagesDetails",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#method_getLanguagesDetails"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003AsetLanguagesDetails\u0028\u0029",
+            "name": "setLanguagesDetails",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#method_setLanguagesDetails"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003AgetCreatedAt\u0028\u0029",
+            "name": "getCreatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#method_getCreatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003AgetUpdatedAt\u0028\u0029",
+            "name": "getUpdatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#method_getUpdatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#property_id"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003A\u0024userId",
+            "name": "userId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#property_userId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003A\u0024glossaryId",
+            "name": "glossaryId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#property_glossaryId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003A\u0024subject",
+            "name": "subject",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#property_subject"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003A\u0024definition",
+            "name": "definition",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#property_definition"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003A\u0024translatable",
+            "name": "translatable",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#property_translatable"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003A\u0024note",
+            "name": "note",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#property_note"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003A\u0024url",
+            "name": "url",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#property_url"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003A\u0024figure",
+            "name": "figure",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#property_figure"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003A\u0024languagesDetails",
+            "name": "languagesDetails",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#property_languagesDetails"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003A\u0024createdAt",
+            "name": "createdAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#property_createdAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcept\u003A\u003A\u0024updatedAt",
+            "name": "updatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcept.html#property_updatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcordance",
+            "name": "GlossaryConcordance",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcordance.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcordance\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcordance.html#method___construct"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcordance\u003A\u003AgetGlossary\u0028\u0029",
+            "name": "getGlossary",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcordance.html#method_getGlossary"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcordance\u003A\u003AgetConcept\u0028\u0029",
+            "name": "getConcept",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcordance.html#method_getConcept"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcordance\u003A\u003AgetSourceTerms\u0028\u0029",
+            "name": "getSourceTerms",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcordance.html#method_getSourceTerms"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcordance\u003A\u003AgetTargetTerms\u0028\u0029",
+            "name": "getTargetTerms",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcordance.html#method_getTargetTerms"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcordance\u003A\u003A\u0024glossary",
+            "name": "glossary",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcordance.html#property_glossary"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcordance\u003A\u003A\u0024concept",
+            "name": "concept",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcordance.html#property_concept"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcordance\u003A\u003A\u0024sourceTerms",
+            "name": "sourceTerms",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcordance.html#property_sourceTerms"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryConcordance\u003A\u003A\u0024targetTerms",
+            "name": "targetTerms",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryConcordance.html#property_targetTerms"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\GlossaryExport",
             "name": "GlossaryExport",
@@ -4115,6 +4385,91 @@ Search.appendIndex(
             "name": "finishedAt",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-GlossaryImport.html#property_finishedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryLanguageDetails",
+            "name": "GlossaryLanguageDetails",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryLanguageDetails.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryLanguageDetails\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryLanguageDetails.html#method___construct"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryLanguageDetails\u003A\u003AgetLanguageId\u0028\u0029",
+            "name": "getLanguageId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryLanguageDetails.html#method_getLanguageId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryLanguageDetails\u003A\u003AsetLanguageId\u0028\u0029",
+            "name": "setLanguageId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryLanguageDetails.html#method_setLanguageId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryLanguageDetails\u003A\u003AgetUserId\u0028\u0029",
+            "name": "getUserId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryLanguageDetails.html#method_getUserId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryLanguageDetails\u003A\u003AgetDefinition\u0028\u0029",
+            "name": "getDefinition",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryLanguageDetails.html#method_getDefinition"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryLanguageDetails\u003A\u003AsetDefinition\u0028\u0029",
+            "name": "setDefinition",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryLanguageDetails.html#method_setDefinition"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryLanguageDetails\u003A\u003AgetNote\u0028\u0029",
+            "name": "getNote",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryLanguageDetails.html#method_getNote"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryLanguageDetails\u003A\u003AsetNote\u0028\u0029",
+            "name": "setNote",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryLanguageDetails.html#method_setNote"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryLanguageDetails\u003A\u003AgetCreatedAt\u0028\u0029",
+            "name": "getCreatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryLanguageDetails.html#method_getCreatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryLanguageDetails\u003A\u003AgetUpdatedAt\u0028\u0029",
+            "name": "getUpdatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryLanguageDetails.html#method_getUpdatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryLanguageDetails\u003A\u003A\u0024languageId",
+            "name": "languageId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryLanguageDetails.html#property_languageId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryLanguageDetails\u003A\u003A\u0024userId",
+            "name": "userId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryLanguageDetails.html#property_userId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryLanguageDetails\u003A\u003A\u0024definition",
+            "name": "definition",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryLanguageDetails.html#property_definition"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryLanguageDetails\u003A\u003A\u0024note",
+            "name": "note",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryLanguageDetails.html#property_note"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryLanguageDetails\u003A\u003A\u0024createdAt",
+            "name": "createdAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryLanguageDetails.html#property_createdAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\GlossaryLanguageDetails\u003A\u003A\u0024updatedAt",
+            "name": "updatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-GlossaryLanguageDetails.html#property_updatedAt"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Group",
             "name": "Group",
@@ -5141,6 +5496,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Progress.html#method___construct"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Progress\u003A\u003AgetLanguage\u0028\u0029",
+            "name": "getLanguage",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Progress.html#method_getLanguage"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Progress\u003A\u003AgetLanguageId\u0028\u0029",
             "name": "getLanguageId",
             "summary": "",
@@ -5165,6 +5525,11 @@ Search.appendIndex(
             "name": "getApprovalProgress",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Progress.html#method_getApprovalProgress"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Progress\u003A\u003A\u0024language",
+            "name": "language",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Progress.html#property_language"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Progress\u003A\u003A\u0024languageId",
             "name": "languageId",
@@ -6671,6 +7036,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-SourceString.html#method_isHasPlurals"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\SourceString\u003A\u003AisPlural\u0028\u0029",
+            "name": "isPlural",
+            "summary": "Alias\u0020of\u0020isHasPlurals",
+            "url": "classes/CrowdinApiClient-Model-SourceString.html#method_isPlural"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\SourceString\u003A\u003A\u0024isIcu",
             "name": "isIcu",
             "summary": "",
@@ -7936,6 +8306,61 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Term.html#method_setPartOfSpeech"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Term\u003A\u003AgetStatus\u0028\u0029",
+            "name": "getStatus",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Term.html#method_getStatus"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Term\u003A\u003AsetStatus\u0028\u0029",
+            "name": "setStatus",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Term.html#method_setStatus"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Term\u003A\u003AgetType\u0028\u0029",
+            "name": "getType",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Term.html#method_getType"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Term\u003A\u003AsetType\u0028\u0029",
+            "name": "setType",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Term.html#method_setType"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Term\u003A\u003AgetGender\u0028\u0029",
+            "name": "getGender",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Term.html#method_getGender"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Term\u003A\u003AsetGender\u0028\u0029",
+            "name": "setGender",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Term.html#method_setGender"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Term\u003A\u003AgetNote\u0028\u0029",
+            "name": "getNote",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Term.html#method_getNote"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Term\u003A\u003AsetNote\u0028\u0029",
+            "name": "setNote",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Term.html#method_setNote"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Term\u003A\u003AgetUrl\u0028\u0029",
+            "name": "getUrl",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Term.html#method_getUrl"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Term\u003A\u003AsetUrl\u0028\u0029",
+            "name": "setUrl",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Term.html#method_setUrl"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Term\u003A\u003AgetConceptId\u0028\u0029",
+            "name": "getConceptId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Term.html#method_getConceptId"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Term\u003A\u003AgetLemma\u0028\u0029",
             "name": "getLemma",
             "summary": "",
@@ -7985,6 +8410,36 @@ Search.appendIndex(
             "name": "partOfSpeech",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Term.html#property_partOfSpeech"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Term\u003A\u003A\u0024status",
+            "name": "status",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Term.html#property_status"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Term\u003A\u003A\u0024type",
+            "name": "type",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Term.html#property_type"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Term\u003A\u003A\u0024gender",
+            "name": "gender",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Term.html#property_gender"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Term\u003A\u003A\u0024note",
+            "name": "note",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Term.html#property_note"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Term\u003A\u003A\u0024url",
+            "name": "url",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Term.html#property_url"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Term\u003A\u003A\u0024conceptId",
+            "name": "conceptId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Term.html#property_conceptId"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Term\u003A\u003A\u0024lemma",
             "name": "lemma",
@@ -8981,16 +9436,6 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/crowdinapiclient-frameworksupport.html"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Http\\Client",
-            "name": "Client",
-            "summary": "",
-            "url": "namespaces/crowdinapiclient-http-client.html"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Http\\ResponseDecorator",
-            "name": "ResponseDecorator",
-            "summary": "",
-            "url": "namespaces/crowdinapiclient-http-responsedecorator.html"
-        },                {
             "fqsen": "\\CrowdinApiClient\\Http",
             "name": "Http",
             "summary": "",
@@ -9005,10 +9450,5 @@ Search.appendIndex(
             "name": "Enterprise",
             "summary": "",
             "url": "namespaces/crowdinapiclient-model-enterprise.html"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Utility",
-            "name": "Utility",
-            "summary": "",
-            "url": "namespaces/crowdinapiclient-utility.html"
         }            ]
 );
