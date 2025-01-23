@@ -8,7 +8,6 @@ use CrowdinApiClient\ModelCollection;
 
 /**
  * Machine Translation Engines (MTE) are the sources for pre-translations.
- * You can currently connect Google Translate, Microsoft Translator, DeepL Pro, Amazon Translate, and Watson (IBM) Translate engines.
  *
  * @package Crowdin\Api
  */
