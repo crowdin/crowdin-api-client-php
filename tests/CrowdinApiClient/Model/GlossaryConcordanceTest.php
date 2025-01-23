@@ -2,8 +2,10 @@
 
 declare(strict_types=1);
 
-namespace CrowdinApiClient\Model;
+namespace CrowdinApiClient\Tests\Model;
 
+use CrowdinApiClient\Model\GlossaryConcordance;
+use CrowdinApiClient\Model\Term;
 use PHPUnit\Framework\TestCase;
 
 class GlossaryConcordanceTest extends TestCase
