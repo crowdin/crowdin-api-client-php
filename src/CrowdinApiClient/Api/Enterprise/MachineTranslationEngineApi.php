@@ -7,7 +7,6 @@ use CrowdinApiClient\Model\MachineTranslationEngine;
 
 /**
  * Machine Translation Engines (MTE) are the sources for pre-translations.
- * You can currently connect Google Translate, Microsoft Translator, DeepL Pro, Amazon Translate, and Watson (IBM) Translate engines.
  * Use API to add, update, and delete specific MTE.
  *
  * @package Crowdin\Api\Enterprise
