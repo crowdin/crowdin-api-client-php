@@ -185,7 +185,7 @@ class Crowdin
      * @param array $options
      * @return mixed
      */
-    public function apiRequest(string $method, string $path, ResponseDecoratorInterface $decorator = null, array $options = [])
+    public function apiRequest(string $method, string $path, ?ResponseDecoratorInterface $decorator = null, array $options = [])
     {
         $response = $this->request($method, $this->getFullUrl($path), $options);
 

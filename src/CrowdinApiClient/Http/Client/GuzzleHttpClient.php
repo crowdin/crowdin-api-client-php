@@ -50,7 +50,7 @@ class GuzzleHttpClient implements CrowdinHttpClientInterface
      *
      * @param Client|null $client GuzzleHttp Client
      */
-    public function __construct(Client $client = null)
+    public function __construct(?Client $client = null)
     {
         $this->client = $client ?: new Client();
     }
