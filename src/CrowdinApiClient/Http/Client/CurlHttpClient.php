@@ -3,31 +3,24 @@
 namespace CrowdinApiClient\Http\Client;
 
 use CrowdinApiClient\Exceptions\HttpException;
+use InvalidArgumentException;
 
 /**
- * Class CurlClient
  * @package Crowdin\Http\Client
  * @internal
  */
 class CurlHttpClient implements CrowdinHttpClientInterface
 {
-
     /**
      * @var int
      */
     protected $timeout = 60;
 
-    /**
-     * @return int
-     */
     public function getTimeout(): int
     {
         return $this->timeout;
     }
 
-    /**
-     * @param int $timeout
-     */
     public function setTimeout(int $timeout): void
     {
         $this->timeout = $timeout;
@@ -46,11 +39,11 @@ class CurlHttpClient implements CrowdinHttpClientInterface
     public function request(string $method, string $uri, array $options)
     {
         if (empty($method)) {
-            throw new \InvalidArgumentException('Method cannot be empty');
+            throw new InvalidArgumentException('Method cannot be empty');
         }
 
         if (empty($uri)) {
-            throw new \InvalidArgumentException('Uri cannot be empty');
+            throw new InvalidArgumentException('Uri cannot be empty');
         }
 
         $headers = $options['headers'] ?? [];
@@ -70,6 +63,7 @@ class CurlHttpClient implements CrowdinHttpClientInterface
         $this->curlSetOption($ch, CURLOPT_RETURNTRANSFER, true);
         $this->curlSetOption($ch, CURLOPT_HEADER, false);
         $this->curlSetOption($ch, CURLOPT_HTTPHEADER, $processedHeaders);
+        $this->curlSetOption($ch, CURLOPT_POSTFIELDS, $body);
 
         if (strtolower($method) === 'post') {
             $this->curlSetOption($ch, CURLOPT_POST, true);
@@ -81,7 +75,6 @@ class CurlHttpClient implements CrowdinHttpClientInterface
             $this->curlSetOption($ch, CURLOPT_POSTFIELDS, $body);
         } else {
             $this->curlSetOption($ch, CURLOPT_CUSTOMREQUEST, strtoupper($method));
-            $this->curlSetOption($ch, CURLOPT_POSTFIELDS, $body);
         }
 
         $response = $this->curlExec($ch);
@@ -91,6 +84,7 @@ class CurlHttpClient implements CrowdinHttpClientInterface
         if (false === $response) {
             $errNo = $this->curlErrno($ch);
             $errStr = $this->curlError($ch);
+
             $this->curlClose($ch);
 
             if (empty($errStr)) {
@@ -105,19 +99,19 @@ class CurlHttpClient implements CrowdinHttpClientInterface
         return $response;
     }
 
-    public function curlError($ch)
+    public function curlError($ch): string
     {
         return curl_error($ch);
     }
 
-    public function curlErrno($ch)
+    public function curlErrno($ch): int
     {
         return curl_errno($ch);
     }
 
-    public function curlClose($ch)
+    public function curlClose($ch): void
     {
-        return curl_close($ch);
+        curl_close($ch);
     }
 
     /**

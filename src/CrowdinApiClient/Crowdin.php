@@ -188,7 +188,6 @@ class Crowdin
     public function apiRequest(string $method, string $path, ?ResponseDecoratorInterface $decorator = null, array $options = [])
     {
         $response = $this->request($method, $this->getFullUrl($path), $options);
-
         $response = json_decode($response, true);
 
         $this->responseErrorHandler->check($response);
@@ -300,9 +299,8 @@ class Crowdin
             $uri .= '?' . http_build_query($options['params']);
             $options['body'] = null;
         }
-        $response = $this->client->request($method, $uri, $options);
 
-        return $response;
+        return $this->client->request($method, $uri, $options);
     }
 
     /**

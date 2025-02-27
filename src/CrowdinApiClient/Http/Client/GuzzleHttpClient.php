@@ -9,14 +9,13 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 
 /**
- * Class GuzzleHttpClient
  * @package Crowdin\Http\Client
  * @internal
  */
 class GuzzleHttpClient implements CrowdinHttpClientInterface
 {
     /**
-     * GuzzleHttp client.
+     * GuzzleHttp client
      *
      * @var Client
      */
@@ -38,21 +37,21 @@ class GuzzleHttpClient implements CrowdinHttpClientInterface
     protected $response;
 
     /**
-     * @return ResponseInterface
-     */
-    public function getResponse(): ResponseInterface
-    {
-        return $this->response;
-    }
-
-    /**
-     * Create a new GuzzleHttpClient instance.
-     *
      * @param Client|null $client GuzzleHttp Client
      */
     public function __construct(?Client $client = null)
     {
         $this->client = $client ?: new Client();
+    }
+
+    public function getTimeout(): int
+    {
+        return $this->timeout;
+    }
+
+    public function setTimeout(int $timeout): void
+    {
+        $this->timeout = $timeout;
     }
 
     /**
@@ -64,17 +63,21 @@ class GuzzleHttpClient implements CrowdinHttpClientInterface
      */
     public function request(string $method, string $uri, array $options): StreamInterface
     {
-        $options = array_merge([
-            'headers' => null,
-            'body' => null,
-            'timeout' => $this->timeout,
-            'connect_timeout' => $this->connectTimeout
-        ], $options);
+        $request = new Request($method, $uri, $options['headers'] ?? [], $options['body'] ?? null);
 
-        $request = new Request($method, $uri, $options['headers'], $options['body'], $options);
-
-        $this->response = $this->client->send($request);
+        $this->response = $this->client->send(
+            $request,
+            [
+                'timeout' => $this->timeout,
+                'connect_timeout' => $this->connectTimeout,
+            ]
+        );
 
         return $this->response->getBody();
+    }
+
+    public function getResponse(): ResponseInterface
+    {
+        return $this->response;
     }
 }
