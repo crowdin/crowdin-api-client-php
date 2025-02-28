@@ -1,15 +1,11 @@
 <?php
 
-namespace CrowdinApiClient\Api\Enterprise;
-
-use CrowdinApiClient\Tests\Api\AbstractTestApi;
+namespace CrowdinApiClient\Tests\Api\Enterprise;
 
 class GraphqlApiTest extends AbstractTestApi
 {
     public function testQuery(): void
     {
-        $this->crowdin->setOrganization('nasa');
-
         $query = 'query Test($limit: Int) {
           viewer {
             projects(first: $limit) {
@@ -35,7 +31,7 @@ class GraphqlApiTest extends AbstractTestApi
         $variables = ['limit' => 10];
 
         $this->mockRequest([
-            'uri' => 'https://nasa.api.crowdin.com/api/graphql',
+            'uri' => 'https://organization_domain.api.crowdin.com/api/graphql',
             'method' => 'post',
             'body' => json_encode([
                 'query' => $query,

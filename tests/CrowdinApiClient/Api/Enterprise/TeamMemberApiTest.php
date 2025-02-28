@@ -1,10 +1,9 @@
 <?php
 
-namespace CrowdinApiClient\Api\Enterprise;
+namespace CrowdinApiClient\Tests\Api\Enterprise;
 
 use CrowdinApiClient\Model\Enterprise\TeamMember;
 use CrowdinApiClient\ModelCollection;
-use CrowdinApiClient\Tests\Api\Enterprise\AbstractTestApi;
 
 class TeamMemberApiTest extends AbstractTestApi
 {
@@ -87,6 +86,7 @@ class TeamMemberApiTest extends AbstractTestApi
         ]);
 
         $addedTeamMembers = $this->crowdin->teamMember->create(2, $params);
+
         $this->assertCount(1, $addedTeamMembers->getSkipped());
         $this->assertCount(1, $addedTeamMembers->getAdded());
 

@@ -1,10 +1,9 @@
 <?php
 
-namespace CrowdinApiClient\Api;
+namespace CrowdinApiClient\Tests\Api;
 
 use CrowdinApiClient\Model\OrganizationWebhook;
 use CrowdinApiClient\ModelCollection;
-use CrowdinApiClient\Tests\Api\AbstractTestApi;
 
 class OrganizationWebhookApiTest extends AbstractTestApi
 {

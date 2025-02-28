@@ -1,11 +1,10 @@
 <?php
 
-namespace CrowdinApiClient\Api\Enterprise;
+namespace CrowdinApiClient\Tests\Api\Enterprise;
 
 use CrowdinApiClient\Model\Enterprise\AddedProjectTeamInfo;
 use CrowdinApiClient\Model\Enterprise\Team;
 use CrowdinApiClient\ModelCollection;
-use CrowdinApiClient\Tests\Api\Enterprise\AbstractTestApi;
 
 class TeamApiTest extends AbstractTestApi
 {
@@ -140,10 +139,10 @@ class TeamApiTest extends AbstractTestApi
                     }
                 }
             '
-
         ]);
 
         $addedProjectTeamInfo = $this->crowdin->team->addTeamToProject(2, $params);
+
         $this->assertInstanceOf(AddedProjectTeamInfo::class, $addedProjectTeamInfo);
         $this->assertEquals(3, $addedProjectTeamInfo->getAdded()->getId());
     }

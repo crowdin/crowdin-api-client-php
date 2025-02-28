@@ -1,8 +1,6 @@
 <?php
 
-namespace CrowdinApiClient\Api;
-
-use CrowdinApiClient\Tests\Api\AbstractTestApi;
+namespace CrowdinApiClient\Tests\Api;
 
 class GraphqlApiTest extends AbstractTestApi
 {
