@@ -58,9 +58,9 @@ $crowdin = new Crowdin([
 
 For more about Authorization see the [documentation](https://developer.crowdin.com/api/v2/#section/Introduction/Authorization).
 
-#### Running methods
+#### REST API Examples
 
-* Create
+* Create directory
     ```php
     $directory = $crowdin->directory->create(
         <project_id>,
@@ -68,17 +68,46 @@ For more about Authorization see the [documentation](https://developer.crowdin.c
     );
     ```
 
-* Edit
+* Edit directory
     ```php
     $directory->setTitle('My Title');
 
     $crowdin->directory->update($directory);
     ```
 
-* Delete
+* Delete directory
     ```php
     $crowdin->directory->delete($directory->getProjectId(), $directory->getId());
     ```
+
+#### GraphQL API Example
+
+For more information about GraphQL API see the [documentation](https://support.crowdin.com/developer/graphql-api/).
+
+```php
+$query = 'query($limit: Int) {
+  viewer {
+    projects(first: $limit) {
+      edges {
+        node {
+          name
+          files(first: $limit) {
+            totalCount
+            edges {
+              node {
+                name
+                type
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}';
+
+$response = $crowdin->graphql->query($query, null, ['limit' => 10]);
+```
 
 ## Seeking Assistance
 
