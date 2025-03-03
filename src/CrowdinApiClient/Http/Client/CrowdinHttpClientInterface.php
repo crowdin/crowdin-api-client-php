@@ -3,11 +3,13 @@
 namespace CrowdinApiClient\Http\Client;
 
 /**
- * CrowdinHttpClientInterface
  * @internal
  */
 interface CrowdinHttpClientInterface
 {
+    public function getTimeout(): int;
+    public function setTimeout(int $timeout): void;
+
     /**
      * @param string $method
      * @param string $uri

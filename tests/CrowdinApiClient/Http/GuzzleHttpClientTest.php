@@ -16,9 +16,20 @@ class GuzzleHttpClientTest extends TestCase
         $this->client = new GuzzleHttpClient();
     }
 
-    public function testInit()
+    public function testInit(): void
     {
         $this->assertInstanceOf(GuzzleHttpClient::class, $this->client);
         $this->assertInstanceOf(CrowdinHttpClientInterface::class, $this->client);
+    }
+
+    public function testSetTimeout(): void
+    {
+        $this->client->setTimeout(120);
+        $this->assertEquals(120, $this->client->getTimeout());
+    }
+
+    public function testGetTimeout(): void
+    {
+        $this->assertEquals(30, $this->client->getTimeout());
     }
 }

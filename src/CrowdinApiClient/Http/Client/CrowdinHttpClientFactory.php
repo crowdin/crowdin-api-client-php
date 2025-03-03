@@ -5,7 +5,6 @@ namespace CrowdinApiClient\Http\Client;
 use InvalidArgumentException;
 
 /**
- * CrowdinHttpClientFactory
  * @internal
  */
 class CrowdinHttpClientFactory
@@ -21,13 +20,15 @@ class CrowdinHttpClientFactory
         }
 
         if ($handler instanceof CrowdinHttpClientInterface) {
-            return  $handler;
+            return $handler;
         }
+
         if ($handler == 'guzzle') {
-            return  new GuzzleHttpClient();
+            return new GuzzleHttpClient();
         }
+
         if ($handler == 'curl') {
-            return  new CurlHttpClient();
+            return new CurlHttpClient();
         }
 
         throw new InvalidArgumentException('Http handler error');
