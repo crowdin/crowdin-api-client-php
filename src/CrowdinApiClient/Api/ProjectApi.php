@@ -2,6 +2,8 @@
 
 namespace CrowdinApiClient\Api;
 
+use CrowdinApiClient\Model\DownloadFile;
+use CrowdinApiClient\Model\FileFormatSettings;
 use CrowdinApiClient\Model\Project;
 use CrowdinApiClient\ModelCollection;
 
@@ -13,7 +15,6 @@ use CrowdinApiClient\ModelCollection;
  */
 class ProjectApi extends AbstractApi
 {
-
     /**
      * List Projects
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.getMany API Documentation
@@ -36,9 +37,6 @@ class ProjectApi extends AbstractApi
      * Get Project Info
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.get API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.get API Documentation Enterprise
-     *
-     * @param int $projectId
-     * @return Project|null
      */
     public function get(int $projectId): ?Project
     {
@@ -81,9 +79,6 @@ class ProjectApi extends AbstractApi
      * Edit Project Info
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.patch API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.patch API Documentation Enterprise
-     *
-     * @param Project $project
-     * @return mixed
      */
     public function update(Project $project): ?Project
     {
@@ -101,5 +96,86 @@ class ProjectApi extends AbstractApi
     public function delete(int $projectId)
     {
         return $this->client->apiRequest('delete', 'projects/' . $projectId);
+    }
+
+    /**
+     * Download Project File Format Settings Custom Segmentation
+     * @link https://support.crowdin.com/developer/api/v2/#tag/Projects/operation/api.projects.file-format-settings.custom-segmentations.get
+     * @link https://support.crowdin.com/developer/enterprise/api/v2/#tag/Projects-and-Groups/operation/api.projects.file-format-settings.custom-segmentations.get
+     */
+    public function downloadFileFormatSettingsCustomSegmentation(
+        int $projectId,
+        int $fileFormatSettingsId
+    ): ?DownloadFile {
+        $path = sprintf('projects/%d/file-format-settings/%d/custom-segmentations', $projectId, $fileFormatSettingsId);
+        return $this->_get($path, DownloadFile::class);
+    }
+
+    /**
+     * Reset Project File Format Settings Custom Segmentation
+     * @link https://support.crowdin.com/developer/api/v2/#tag/Projects/operation/api.projects.file-format-settings.custom-segmentations.delete
+     * @link https://support.crowdin.com/developer/enterprise/api/v2/#tag/Projects-and-Groups/operation/api.projects.file-format-settings.custom-segmentations.delete
+     */
+    public function resetFileFormatSettingsCustomSegmentation(int $projectId, int $fileFormatSettingsId): void
+    {
+        $this->_delete(
+            sprintf('projects/%d/file-format-settings/%d/custom-segmentations', $projectId, $fileFormatSettingsId)
+        );
+    }
+
+    /**
+     * List Project File Format Settings
+     * @link https://support.crowdin.com/developer/api/v2/#tag/Projects/operation/api.projects.file-format-settings.getMany
+     * @link https://support.crowdin.com/developer/enterprise/api/v2/#tag/Projects-and-Groups/operation/api.projects.file-format-settings.getMany
+     */
+    public function listFileFormatSettings(int $projectId, array $params = []): ModelCollection
+    {
+        $path = sprintf('projects/%d/file-format-settings', $projectId);
+        return $this->_list($path, FileFormatSettings::class, $params);
+    }
+
+    /**
+     * Add Project File Format Settings
+     * @link https://support.crowdin.com/developer/api/v2/#tag/Projects/operation/api.projects.file-format-settings.post
+     * @link https://support.crowdin.com/developer/enterprise/api/v2/#tag/Projects-and-Groups/operation/api.projects.file-format-settings.post
+     */
+    public function createFileFormatSettings(int $projectId, array $data): ?FileFormatSettings
+    {
+        $path = sprintf('projects/%d/file-format-settings', $projectId);
+        return $this->_create($path, FileFormatSettings::class, $data);
+    }
+
+    /**
+     * Get Project File Format Settings
+     * @link https://support.crowdin.com/developer/api/v2/#tag/Projects/operation/api.projects.file-format-settings.get
+     * @link https://support.crowdin.com/developer/enterprise/api/v2/#tag/Projects-and-Groups/operation/api.projects.file-format-settings.get
+     */
+    public function getFileFormatSettings(int $projectId, int $fileFormatSettingsId): ?FileFormatSettings
+    {
+        $path = sprintf('projects/%d/file-format-settings/%d', $projectId, $fileFormatSettingsId);
+        return $this->_get($path, FileFormatSettings::class);
+    }
+
+    /**
+     * Delete Project File Format Settings
+     * @link https://support.crowdin.com/developer/api/v2/#tag/Projects/operation/api.projects.file-format-settings.delete
+     * @link https://support.crowdin.com/developer/enterprise/api/v2/#tag/Projects-and-Groups/operation/api.projects.file-format-settings.delete
+     */
+    public function deleteFileFormatSettings(int $projectId, int $fileFormatSettingsId): void
+    {
+        $this->_delete(sprintf('projects/%d/file-format-settings/%d', $projectId, $fileFormatSettingsId));
+    }
+
+    /**
+     * Edit Project File Format Settings
+     * @link https://support.crowdin.com/developer/api/v2/#tag/Projects/operation/api.projects.file-format-settings.patch
+     * @link https://support.crowdin.com/developer/enterprise/api/v2/#tag/Projects-and-Groups/operation/api.projects.file-format-settings.patch
+     */
+    public function updateFileFormatSettings(
+        int $projectId,
+        FileFormatSettings $fileFormatSettings
+    ): ?FileFormatSettings {
+        $path = sprintf('projects/%d/file-format-settings/%d', $projectId, $fileFormatSettings->getId());
+        return $this->_update($path, $fileFormatSettings);
     }
 }
