@@ -169,8 +169,7 @@
 
     </aside>
 
-            <p class="phpdocumentor-summary">Class Crowdin</p>
-
+        
 
 
 
@@ -233,6 +232,12 @@
     <a class="" href="classes/CrowdinApiClient-Crowdin.html#property_glossary">$glossary</a>
     <span>
                         &nbsp;: <a href="classes/CrowdinApiClient-Api-GlossaryApi.html"><abbr title="\CrowdinApiClient\Api\GlossaryApi">GlossaryApi</abbr></a>            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a class="" href="classes/CrowdinApiClient-Crowdin.html#property_graphql">$graphql</a>
+    <span>
+                        &nbsp;: <a href="classes/CrowdinApiClient-Api-GraphqlApi.html"><abbr title="\CrowdinApiClient\Api\GraphqlApi">GraphqlApi</abbr></a>            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
@@ -430,7 +435,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CrowdinApiClient-Crowdin.html#property_organization">$organization</a>
     <span>
-                        &nbsp;: string            </span>
+                        &nbsp;: string|null            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
@@ -478,9 +483,21 @@
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Crowdin.html#method_getOrganization">getOrganization()</a>
+    <span>
+                                &nbsp;: string|null    </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Crowdin.html#method_getResponseErrorHandler">getResponseErrorHandler()</a>
     <span>
                                 &nbsp;: <a href="classes/CrowdinApiClient-Http-ResponseErrorHandlerInterface.html"><abbr title="\CrowdinApiClient\Http\ResponseErrorHandlerInterface">ResponseErrorHandlerInterface</abbr></a>    </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Crowdin.html#method_isEnterprise">isEnterprise()</a>
+    <span>
+                                &nbsp;: bool    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
@@ -523,12 +540,6 @@
     <a class="" href="classes/CrowdinApiClient-Crowdin.html#method_request">request()</a>
     <span>
                                 &nbsp;: mixed    </span>
-</dt>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a class="" href="classes/CrowdinApiClient-Crowdin.html#method_updateBaseUri">updateBaseUri()</a>
-    <span>
-                                &nbsp;: self    </span>
 </dt>
 
     </dl>
@@ -751,6 +762,42 @@
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type"><a href="classes/CrowdinApiClient-Api-GlossaryApi.html"><abbr title="\CrowdinApiClient\Api\GlossaryApi">GlossaryApi</abbr></a></span>
     <span class="phpdocumentor-signature__name">$glossary</span>
+    </code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_graphql">
+        $graphql
+        <a href="classes/CrowdinApiClient-Crowdin.html#property_graphql" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Crowdin.php"><a href="files/src-crowdinapiclient-crowdin.html"><abbr title="src/CrowdinApiClient/Crowdin.php">Crowdin.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">0</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/CrowdinApiClient-Api-GraphqlApi.html"><abbr title="\CrowdinApiClient\Api\GraphqlApi">GraphqlApi</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$graphql</span>
     </code>
 
     
@@ -1937,7 +1984,7 @@
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">string</span>
+        <span class="phpdocumentor-signature__type">string|null</span>
     <span class="phpdocumentor-signature__name">$organization</span>
     </code>
 
@@ -1975,7 +2022,7 @@
     <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$services</span>
-     = <span class="phpdocumentor-signature__default-value">[&#039;storage&#039;, &#039;language&#039;, &#039;project&#039;, &#039;task&#039;, &#039;issue&#039;, &#039;branch&#039;, &#039;glossary&#039;, &#039;stringsExporterSetting&#039;, &#039;stringTranslation&#039;, &#039;stringComment&#039;, &#039;directory&#039;, &#039;label&#039;, &#039;user&#039;, &#039;screenshot&#039;, &#039;file&#039;, &#039;machineTranslationEngine&#039;, &#039;report&#039;, &#039;sourceString&#039;, &#039;translationMemory&#039;, &#039;webhook&#039;, &#039;translation&#039;, &#039;translationStatus&#039;, &#039;distribution&#039;, &#039;bundle&#039;, &#039;notification&#039;, &#039;organizationWebhook&#039;, &#039;reportArchive&#039;]</span></code>
+     = <span class="phpdocumentor-signature__default-value">[&#039;storage&#039;, &#039;language&#039;, &#039;project&#039;, &#039;task&#039;, &#039;issue&#039;, &#039;branch&#039;, &#039;glossary&#039;, &#039;stringsExporterSetting&#039;, &#039;stringTranslation&#039;, &#039;stringComment&#039;, &#039;directory&#039;, &#039;label&#039;, &#039;user&#039;, &#039;screenshot&#039;, &#039;file&#039;, &#039;machineTranslationEngine&#039;, &#039;report&#039;, &#039;sourceString&#039;, &#039;translationMemory&#039;, &#039;webhook&#039;, &#039;translation&#039;, &#039;translationStatus&#039;, &#039;distribution&#039;, &#039;bundle&#039;, &#039;notification&#039;, &#039;organizationWebhook&#039;, &#039;reportArchive&#039;, &#039;graphql&#039;]</span></code>
 
     
     
@@ -2001,7 +2048,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Crowdin.php"><a href="files/src-crowdinapiclient-crowdin.html"><abbr title="src/CrowdinApiClient/Crowdin.php">Crowdin.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">120</span>
+    <span class="phpdocumentor-element-found-in__line">121</span>
 
     </aside>
 
@@ -2011,7 +2058,7 @@
     <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">mixed</span>
     <span class="phpdocumentor-signature__name">$servicesEnterprise</span>
-     = <span class="phpdocumentor-signature__default-value">[&#039;storage&#039;, &#039;language&#039;, &#039;group&#039;, &#039;project&#039;, &#039;task&#039;, &#039;issue&#039;, &#039;branch&#039;, &#039;glossary&#039;, &#039;stringsExporterSetting&#039;, &#039;stringTranslation&#039;, &#039;stringTranslationApproval&#039;, &#039;stringComment&#039;, &#039;directory&#039;, &#039;label&#039;, &#039;vendor&#039;, &#039;user&#039;, &#039;screenshot&#039;, &#039;workflowTemplate&#039;, &#039;workflowStep&#039;, &#039;file&#039;, &#039;machineTranslationEngine&#039;, &#039;report&#039;, &#039;sourceString&#039;, &#039;translationMemory&#039;, &#039;webhook&#039;, &#039;translation&#039;, &#039;translationStatus&#039;, &#039;distribution&#039;, &#039;team&#039;, &#039;teamMember&#039;, &#039;bundle&#039;, &#039;notification&#039;, &#039;organizationWebhook&#039;, &#039;reportArchive&#039;]</span></code>
+     = <span class="phpdocumentor-signature__default-value">[&#039;storage&#039;, &#039;language&#039;, &#039;group&#039;, &#039;project&#039;, &#039;task&#039;, &#039;issue&#039;, &#039;branch&#039;, &#039;glossary&#039;, &#039;stringsExporterSetting&#039;, &#039;stringTranslation&#039;, &#039;stringTranslationApproval&#039;, &#039;stringComment&#039;, &#039;directory&#039;, &#039;label&#039;, &#039;vendor&#039;, &#039;user&#039;, &#039;screenshot&#039;, &#039;workflowTemplate&#039;, &#039;workflowStep&#039;, &#039;file&#039;, &#039;machineTranslationEngine&#039;, &#039;report&#039;, &#039;sourceString&#039;, &#039;translationMemory&#039;, &#039;webhook&#039;, &#039;translation&#039;, &#039;translationStatus&#039;, &#039;distribution&#039;, &#039;team&#039;, &#039;teamMember&#039;, &#039;bundle&#039;, &#039;notification&#039;, &#039;organizationWebhook&#039;, &#039;reportArchive&#039;, &#039;graphql&#039;]</span></code>
 
     
     
@@ -2042,7 +2089,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Crowdin.php"><a href="files/src-crowdinapiclient-crowdin.html"><abbr title="src/CrowdinApiClient/Crowdin.php">Crowdin.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">188</span>
+    <span class="phpdocumentor-element-found-in__line">186</span>
 
     </aside>
 
@@ -2107,7 +2154,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Crowdin.php"><a href="files/src-crowdinapiclient-crowdin.html"><abbr title="src/CrowdinApiClient/Crowdin.php">Crowdin.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">251</span>
+    <span class="phpdocumentor-element-found-in__line">252</span>
 
     </aside>
 
@@ -2145,7 +2192,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Crowdin.php"><a href="files/src-crowdinapiclient-crowdin.html"><abbr title="src/CrowdinApiClient/Crowdin.php">Crowdin.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">231</span>
+    <span class="phpdocumentor-element-found-in__line">232</span>
 
     </aside>
 
@@ -2183,7 +2230,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Crowdin.php"><a href="files/src-crowdinapiclient-crowdin.html"><abbr title="src/CrowdinApiClient/Crowdin.php">Crowdin.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">241</span>
+    <span class="phpdocumentor-element-found-in__line">242</span>
 
     </aside>
 
@@ -2213,6 +2260,44 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getOrganization">
+        getOrganization()
+        <a href="classes/CrowdinApiClient-Crowdin.html#method_getOrganization" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Crowdin.php"><a href="files/src-crowdinapiclient-crowdin.html"><abbr title="src/CrowdinApiClient/Crowdin.php">Crowdin.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">279</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getOrganization</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_getResponseErrorHandler">
         getResponseErrorHandler()
         <a href="classes/CrowdinApiClient-Crowdin.html#method_getResponseErrorHandler" class="headerlink"><i class="fas fa-link"></i></a>
@@ -2221,7 +2306,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Crowdin.php"><a href="files/src-crowdinapiclient-crowdin.html"><abbr title="src/CrowdinApiClient/Crowdin.php">Crowdin.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">261</span>
+    <span class="phpdocumentor-element-found-in__line">262</span>
 
     </aside>
 
@@ -2251,6 +2336,44 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_isEnterprise">
+        isEnterprise()
+        <a href="classes/CrowdinApiClient-Crowdin.html#method_isEnterprise" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Crowdin.php"><a href="files/src-crowdinapiclient-crowdin.html"><abbr title="src/CrowdinApiClient/Crowdin.php">Crowdin.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">284</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">isEnterprise</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_setAccessToken">
         setAccessToken()
         <a href="classes/CrowdinApiClient-Crowdin.html#method_setAccessToken" class="headerlink"><i class="fas fa-link"></i></a>
@@ -2259,7 +2382,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Crowdin.php"><a href="files/src-crowdinapiclient-crowdin.html"><abbr title="src/CrowdinApiClient/Crowdin.php">Crowdin.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">256</span>
+    <span class="phpdocumentor-element-found-in__line">257</span>
 
     </aside>
 
@@ -2303,7 +2426,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Crowdin.php"><a href="files/src-crowdinapiclient-crowdin.html"><abbr title="src/CrowdinApiClient/Crowdin.php">Crowdin.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">236</span>
+    <span class="phpdocumentor-element-found-in__line">237</span>
 
     </aside>
 
@@ -2347,7 +2470,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Crowdin.php"><a href="files/src-crowdinapiclient-crowdin.html"><abbr title="src/CrowdinApiClient/Crowdin.php">Crowdin.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">246</span>
+    <span class="phpdocumentor-element-found-in__line">247</span>
 
     </aside>
 
@@ -2391,7 +2514,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Crowdin.php"><a href="files/src-crowdinapiclient-crowdin.html"><abbr title="src/CrowdinApiClient/Crowdin.php">Crowdin.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">271</span>
+    <span class="phpdocumentor-element-found-in__line">272</span>
 
     </aside>
 
@@ -2435,7 +2558,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Crowdin.php"><a href="files/src-crowdinapiclient-crowdin.html"><abbr title="src/CrowdinApiClient/Crowdin.php">Crowdin.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">266</span>
+    <span class="phpdocumentor-element-found-in__line">267</span>
 
     </aside>
 
@@ -2479,7 +2602,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Crowdin.php"><a href="files/src-crowdinapiclient-crowdin.html"><abbr title="src/CrowdinApiClient/Crowdin.php">Crowdin.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">332</span>
+    <span class="phpdocumentor-element-found-in__line">329</span>
 
     </aside>
 
@@ -2527,7 +2650,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Crowdin.php"><a href="files/src-crowdinapiclient-crowdin.html"><abbr title="src/CrowdinApiClient/Crowdin.php">Crowdin.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">291</span>
+    <span class="phpdocumentor-element-found-in__line">292</span>
 
     </aside>
 
@@ -2570,44 +2693,6 @@
     
 
     
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_updateBaseUri">
-        updateBaseUri()
-        <a href="classes/CrowdinApiClient-Crowdin.html#method_updateBaseUri" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Crowdin.php"><a href="files/src-crowdinapiclient-crowdin.html"><abbr title="src/CrowdinApiClient/Crowdin.php">Crowdin.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">278</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">updateBaseUri</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-    
-    
-
-    
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">self</span>
-            </section>
-
 </article>
             </section>
 
@@ -2728,6 +2813,7 @@
                                                     <li class=""><a href="classes/CrowdinApiClient-Crowdin.html#property_distribution">$distribution</a></li>
                                                     <li class=""><a href="classes/CrowdinApiClient-Crowdin.html#property_file">$file</a></li>
                                                     <li class=""><a href="classes/CrowdinApiClient-Crowdin.html#property_glossary">$glossary</a></li>
+                                                    <li class=""><a href="classes/CrowdinApiClient-Crowdin.html#property_graphql">$graphql</a></li>
                                                     <li class=""><a href="classes/CrowdinApiClient-Crowdin.html#property_group">$group</a></li>
                                                     <li class=""><a href="classes/CrowdinApiClient-Crowdin.html#property_issue">$issue</a></li>
                                                     <li class=""><a href="classes/CrowdinApiClient-Crowdin.html#property_label">$label</a></li>
@@ -2773,7 +2859,9 @@
                                             <li class=""><a href="classes/CrowdinApiClient-Crowdin.html#method_getAccessToken">getAccessToken()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Crowdin.html#method_getBaseUri">getBaseUri()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Crowdin.html#method_getClient">getClient()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Crowdin.html#method_getOrganization">getOrganization()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Crowdin.html#method_getResponseErrorHandler">getResponseErrorHandler()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Crowdin.html#method_isEnterprise">isEnterprise()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Crowdin.html#method_setAccessToken">setAccessToken()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Crowdin.html#method_setBaseUri">setBaseUri()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Crowdin.html#method_setClient">setClient()</a></li>
@@ -2781,7 +2869,6 @@
                                             <li class=""><a href="classes/CrowdinApiClient-Crowdin.html#method_setResponseErrorHandler">setResponseErrorHandler()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Crowdin.html#method_getFullUrl">getFullUrl()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Crowdin.html#method_request">request()</a></li>
-                                            <li class=""><a href="classes/CrowdinApiClient-Crowdin.html#method_updateBaseUri">updateBaseUri()</a></li>
                                     </ul>
             </li>
                     </ul>
