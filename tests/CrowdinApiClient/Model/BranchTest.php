@@ -5,10 +5,6 @@ namespace CrowdinApiClient\Tests\Model;
 use CrowdinApiClient\Model\Branch;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class BranchTest
- * @package Crowdin\Tests\Model
- */
 class BranchTest extends TestCase
 {
     /**
@@ -30,15 +26,7 @@ class BranchTest extends TestCase
      */
     public $branch;
 
-    public function setUp(): void
-    {
-        parent::setUp();
-    }
-
-    /**
-     * @test
-     */
-    public function testLoadData()
+    public function testLoadData(): void
     {
         $this->branch = new Branch($this->data);
         $this->checkData();
@@ -47,7 +35,7 @@ class BranchTest extends TestCase
     /**
      * @depends testLoadData
      */
-    public function testSetData()
+    public function testSetData(): void
     {
         $this->branch = new Branch();
         $this->branch->setName($this->data['name']);
@@ -61,7 +49,7 @@ class BranchTest extends TestCase
         $this->assertEquals($this->data['priority'], $this->branch->getPriority());
     }
 
-    public function checkData()
+    public function checkData(): void
     {
         $this->assertEquals($this->data['id'], $this->branch->getId());
         $this->assertEquals($this->data['projectId'], $this->branch->getProjectId());

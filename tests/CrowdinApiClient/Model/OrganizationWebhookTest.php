@@ -1,7 +1,9 @@
 <?php
 
-namespace CrowdinApiClient\Model;
+namespace CrowdinApiClient\Tests\Model;
 
+use CrowdinApiClient\Model\OrganizationWebhook;
+use CrowdinApiClient\Model\Webhook;
 use PHPUnit\Framework\TestCase;
 
 class OrganizationWebhookTest extends TestCase
@@ -18,7 +20,7 @@ class OrganizationWebhookTest extends TestCase
             ],
         'headers' =>
             [
-                "Accept" => "application/xml",
+                'Accept' => 'application/xml',
             ],
         'payload' =>
             [
@@ -32,13 +34,13 @@ class OrganizationWebhookTest extends TestCase
         'updatedAt' => '2019-09-23T09:19:07+00:00',
     ];
 
-    public function testLoadData()
+    public function testLoadData(): void
     {
         $this->webhook = new OrganizationWebhook($this->data);
         $this->checkData();
     }
 
-    public function testSetData()
+    public function testSetData(): void
     {
         $this->webhook = new Webhook();
         $this->webhook->setName($this->data['name']);
@@ -62,7 +64,7 @@ class OrganizationWebhookTest extends TestCase
         $this->assertEquals($this->data['contentType'], $this->webhook->getContentType());
     }
 
-    public function checkData()
+    public function checkData(): void
     {
         $this->assertEquals($this->data['id'], $this->webhook->getId());
         $this->assertEquals($this->data['name'], $this->webhook->getName());

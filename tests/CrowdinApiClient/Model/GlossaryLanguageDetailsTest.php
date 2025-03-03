@@ -1,7 +1,8 @@
 <?php
 
-namespace CrowdinApiClient\Model;
+namespace CrowdinApiClient\Tests\Model;
 
+use CrowdinApiClient\Model\GlossaryLanguageDetails;
 use PHPUnit\Framework\TestCase;
 
 class GlossaryLanguageDetailsTest extends TestCase

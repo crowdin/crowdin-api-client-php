@@ -2,8 +2,10 @@
 
 declare(strict_types=1);
 
-namespace CrowdinApiClient\Model;
+namespace CrowdinApiClient\Tests\Model;
 
+use CrowdinApiClient\Model\GlossaryConcept;
+use CrowdinApiClient\Model\GlossaryLanguageDetails;
 use PHPUnit\Framework\TestCase;
 
 class GlossaryConceptTest extends TestCase

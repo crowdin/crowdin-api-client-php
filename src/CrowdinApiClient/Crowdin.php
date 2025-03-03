@@ -11,7 +11,6 @@ use CrowdinApiClient\Http\ResponseErrorHandlerInterface;
 use UnexpectedValueException;
 
 /**
- * Class Crowdin
  * @package Crowdin
  *
  * @property \CrowdinApiClient\Api\StorageApi $storage
@@ -114,7 +113,7 @@ class Crowdin
         'bundle',
         'notification',
         'organizationWebhook',
-        'reportArchive'
+        'reportArchive',
     ];
 
     protected $servicesEnterprise = [
@@ -151,7 +150,7 @@ class Crowdin
         'bundle',
         'notification',
         'organizationWebhook',
-        'reportArchive'
+        'reportArchive',
     ];
 
     /**
@@ -167,7 +166,7 @@ class Crowdin
             'http_client_handler' => null,
             'response_error_handler' => null,
             'access_token' => null,
-            'organization' => null
+            'organization' => null,
         ], $config);
 
         $this->accessToken = $config['access_token'];
@@ -179,16 +178,15 @@ class Crowdin
     }
 
     /**
-     * @param string $method
-     * @param string $path
-     * @param ResponseDecoratorInterface|null $decorator
-     * @param array $options
      * @return mixed
      */
-    public function apiRequest(string $method, string $path, ?ResponseDecoratorInterface $decorator = null, array $options = [])
-    {
+    public function apiRequest(
+        string $method,
+        string $path,
+        ?ResponseDecoratorInterface $decorator = null,
+        array $options = []
+    ) {
         $response = $this->request($method, $this->getFullUrl($path), $options);
-
         $response = json_decode($response, true);
 
         $this->responseErrorHandler->check($response);
@@ -209,9 +207,9 @@ class Crowdin
     }
 
     /**
-     * @internal
      * @param $name
      * @return mixed
+     * @internal
      */
     public function __get($name)
     {
@@ -272,6 +270,7 @@ class Crowdin
     {
         $this->organization = $organization;
         $this->isEnterprise = (bool)$organization;
+
         $this->updateBaseUri();
     }
 
@@ -283,15 +282,11 @@ class Crowdin
     }
 
     /**
-     * @param string $method
-     * @param string $uri
-     * @param array $options
      * @return mixed
      */
     protected function request(string $method, string $uri, array $options = [])
     {
         $options['body'] = $options['body'] ?? null;
-
         $options['headers'] = array_merge([
             'Authorization' => 'Bearer ' . $this->accessToken,
         ], $options['headers'] ?? []);
@@ -300,15 +295,12 @@ class Crowdin
             $uri .= '?' . http_build_query($options['params']);
             $options['body'] = null;
         }
-        $response = $this->client->request($method, $uri, $options);
 
-        return $response;
+        return $this->client->request($method, $uri, $options);
     }
 
     /**
      * @internal
-     * @param string $name
-     * @return ApiInterface
      */
     protected function getApi(string $name): ApiInterface
     {
