@@ -57,7 +57,7 @@ abstract class AbstractTestApi extends TestCase
             'uri' => 'https://api.crowdin.com/api/v2' . $path,
             'method' => 'patch',
             'response' => $response,
-            'options' => $options
+            'options' => $options,
         ]);
     }
 
@@ -67,7 +67,7 @@ abstract class AbstractTestApi extends TestCase
             'uri' => 'https://api.crowdin.com/api/v2' . $path,
             'method' => 'put',
             'response' => $response,
-            'options' => $options
+            'options' => $options,
         ]);
     }
 
@@ -77,7 +77,17 @@ abstract class AbstractTestApi extends TestCase
             'uri' => 'https://api.crowdin.com/api/v2' . $path,
             'method' => 'get',
             'response' => $response,
-            'options' => $options
+            'options' => $options,
+        ]);
+    }
+
+    public function mockRequestPost(string $path, string $body, string $response)
+    {
+        return $this->mockRequest([
+            'uri' => 'https://api.crowdin.com/api/v2' . $path,
+            'method' => 'post',
+            'body' => $body,
+            'response' => $response,
         ]);
     }
 
