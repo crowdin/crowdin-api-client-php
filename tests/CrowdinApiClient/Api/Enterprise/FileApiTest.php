@@ -2,12 +2,11 @@
 
 declare(strict_types=1);
 
-namespace CrowdinApiClient\Api\Enterprise;
+namespace CrowdinApiClient\Tests\Api\Enterprise;
 
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\Enterprise\ReviewedSourceFileBuild;
 use CrowdinApiClient\ModelCollection;
-use CrowdinApiClient\Tests\Api\Enterprise\AbstractTestApi;
 
 class FileApiTest extends AbstractTestApi
 {

@@ -45,6 +45,7 @@ use UnexpectedValueException;
  * @property \CrowdinApiClient\Api\NotificationApi|\CrowdinApiClient\Api\Enterprise\NotificationApi $notification
  * @property \CrowdinApiClient\Api\OrganizationWebhookApi $organizationWebhook
  * @property \CrowdinApiClient\Api\ReportArchiveApi|\CrowdinApiClient\Api\Enterprise\ReportArchiveApi $reportArchive
+ * @property \CrowdinApiClient\Api\GraphqlApi $graphql
  */
 class Crowdin
 {
@@ -74,7 +75,7 @@ class Crowdin
     public $responseErrorHandler;
 
     /**
-     * @var string
+     * @var string|null
      */
     protected $organization;
 
@@ -114,6 +115,7 @@ class Crowdin
         'notification',
         'organizationWebhook',
         'reportArchive',
+        'graphql',
     ];
 
     protected $servicesEnterprise = [
@@ -151,6 +153,7 @@ class Crowdin
         'notification',
         'organizationWebhook',
         'reportArchive',
+        'graphql',
     ];
 
     /**
@@ -270,15 +273,17 @@ class Crowdin
     {
         $this->organization = $organization;
         $this->isEnterprise = (bool)$organization;
-
-        $this->updateBaseUri();
+        $this->baseUri = sprintf('https://%s.crowdin.com/api/v2', $this->organization ?? 'api');
     }
 
-    protected function updateBaseUri(): self
+    public function getOrganization(): ?string
     {
-        $this->baseUri = sprintf('https://%s.crowdin.com/api/v2', $this->organization ?? 'api');
+        return $this->organization;
+    }
 
-        return $this;
+    public function isEnterprise(): bool
+    {
+        return $this->isEnterprise;
     }
 
     /**

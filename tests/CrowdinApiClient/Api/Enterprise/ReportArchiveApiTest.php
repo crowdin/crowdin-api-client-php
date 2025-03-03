@@ -1,12 +1,11 @@
 <?php
 
-namespace CrowdinApiClient\Api\Enterprise;
+namespace CrowdinApiClient\Tests\Api\Enterprise;
 
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\ReportArchive;
 use CrowdinApiClient\Model\ReportArchiveExport;
 use CrowdinApiClient\ModelCollection;
-use CrowdinApiClient\Tests\Api\Enterprise\AbstractTestApi;
 
 class ReportArchiveApiTest extends AbstractTestApi
 {
