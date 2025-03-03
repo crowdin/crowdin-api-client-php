@@ -83,6 +83,11 @@ class File extends BaseModel
     protected $excludedTargetLanguages;
 
     /**
+     * @var int
+     */
+    protected $parserVersion;
+
+    /**
      * @var string
      */
     protected $createdAt;
@@ -105,218 +110,144 @@ class File extends BaseModel
         $this->context = (string)$this->getDataProperty('context');
         $this->type = (string)$this->getDataProperty('type');
         $this->path = (string)$this->getDataProperty('path');
-        $this->revisionId = (integer)$this->getDataProperty('revisionId');
         $this->status = (string)$this->getDataProperty('status');
+        $this->revisionId = (integer)$this->getDataProperty('revisionId');
         $this->priority = (string)$this->getDataProperty('priority');
-        $this->createdAt = (string)$this->getDataProperty('createdAt');
-        $this->updatedAt = (string)$this->getDataProperty('updatedAt');
         $this->importOptions = (array)$this->getDataProperty('importOptions');
         $this->exportOptions = (array)$this->getDataProperty('exportOptions');
         $this->excludedTargetLanguages = $this->getDataProperty('excludedTargetLanguages') ? (array)$this->getDataProperty('excludedTargetLanguages') : null;
+        $this->parserVersion = (int)$this->getDataProperty('parserVersion');
+        $this->createdAt = (string)$this->getDataProperty('createdAt');
+        $this->updatedAt = (string)$this->getDataProperty('updatedAt');
     }
 
-    /**
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return int
-     */
     public function getProjectId(): int
     {
         return $this->projectId;
     }
 
-    /**
-     * @return int
-     */
     public function getBranchId(): int
     {
         return $this->branchId;
     }
 
-    /**
-     * @param int $branchId
-     */
     public function setBranchId(int $branchId): void
     {
         $this->branchId = $branchId;
     }
 
-    /**
-     * @return int
-     */
     public function getDirectoryId(): int
     {
         return $this->directoryId;
     }
 
-    /**
-     * @param int $directoryId
-     */
     public function setDirectoryId(int $directoryId): void
     {
         $this->directoryId = $directoryId;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @param string $name
-     */
     public function setName(string $name): void
     {
         $this->name = $name;
     }
 
-    /**
-     * @return string
-     */
     public function getTitle(): string
     {
         return $this->title;
     }
 
-    /**
-     * @param string $title
-     */
     public function setTitle(string $title): void
     {
         $this->title = $title;
     }
 
-    /**
-     * @return string
-     */
     public function getContext(): string
     {
         return $this->context;
     }
 
-    /**
-     * @param string $context
-     */
     public function setContext(string $context): void
     {
         $this->context = $context;
     }
 
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return $this->type;
     }
 
-    /**
-     * @return string
-     */
     public function getPath(): string
     {
         return $this->path;
     }
 
-    /**
-     * @param string $path
-     */
     public function setPath(string $path): void
     {
         $this->path = $path;
     }
 
-    /**
-     * @return int
-     */
     public function getRevisionId(): int
     {
         return $this->revisionId;
     }
 
-    /**
-     * @return string
-     */
     public function getStatus(): string
     {
         return $this->status;
     }
 
-    /**
-     * @return string
-     */
     public function getPriority(): string
     {
         return $this->priority;
     }
 
-    /**
-     * @param string $priority
-     */
     public function setPriority(string $priority): void
     {
         $this->priority = $priority;
     }
 
-    /**
-     * @return string
-     */
     public function getCreatedAt(): string
     {
         return $this->createdAt;
     }
 
-    /**
-     * @return string
-     */
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;
     }
 
-    /**
-     * @return array
-     */
     public function getImportOptions(): array
     {
         return $this->importOptions;
     }
 
-    /**
-     * @param array $importOptions
-     */
     public function setImportOptions(array $importOptions): void
     {
         $this->importOptions = $importOptions;
     }
 
-    /**
-     * @return array
-     */
     public function getExportOptions(): array
     {
         return $this->exportOptions;
     }
 
-    /**
-     * @param array $exportOptions
-     */
     public function setExportOptions(array $exportOptions): void
     {
         $this->exportOptions = $exportOptions;
     }
 
     /**
-     * @return array|null
+     * @return string[]|null
      */
     public function getExcludedTargetLanguages(): ?array
     {
@@ -324,10 +255,15 @@ class File extends BaseModel
     }
 
     /**
-     * @param array|null $excludedTargetLanguages
+     * @param string[]|null $excludedTargetLanguages
      */
     public function setExcludedTargetLanguages(?array $excludedTargetLanguages): void
     {
         $this->excludedTargetLanguages = $excludedTargetLanguages;
+    }
+
+    public function getParserVersion(): int
+    {
+        return $this->parserVersion;
     }
 }

@@ -5,10 +5,6 @@ namespace CrowdinApiClient\Tests\Model;
 use CrowdinApiClient\Model\File;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class FileTest
- * @package Crowdin\Tests\Model
- */
 class FileTest extends TestCase
 {
     /**
@@ -29,28 +25,26 @@ class FileTest extends TestCase
         'context' => 'Context for translators',
         'type' => 'xliff',
         'path' => '/someBranch/someDir/umbrella_app.xliff',
-        'revisionId' => 1,
         'status' => 'active',
+        'revisionId' => 1,
         'priority' => 'normal',
-        'importOptions' =>
-            [
-                'firstLineContainsHeader' => true,
-                'scheme' =>
-                    [
-                        'identifier' => 0,
-                        'sourcePhrase' => 1,
-                        'en' => 2,
-                        'de' => 3,
-                    ],
+        'importOptions' => [
+            'firstLineContainsHeader' => true,
+            'scheme' => [
+                'identifier' => 0,
+                'sourcePhrase' => 1,
+                'en' => 2,
+                'de' => 3,
             ],
-        'exportOptions' =>
-            [
-                'escapeQuotes' => 3,
-            ],
-        'excludedTargetLanguages' => [
-            "es",
-            "pl"
         ],
+        'exportOptions' => [
+            'escapeQuotes' => 3,
+        ],
+        'excludedTargetLanguages' => [
+            'es',
+            'pl',
+        ],
+        'parserVersion' => 2,
         'createdAt' => '2019-09-19T15:10:43+00:00',
         'updatedAt' => '2019-09-19T15:10:46+00:00',
     ];
@@ -104,5 +98,6 @@ class FileTest extends TestCase
         $this->assertEquals($this->data['importOptions'], $this->file->getImportOptions());
         $this->assertEquals($this->data['exportOptions'], $this->file->getExportOptions());
         $this->assertEquals($this->data['excludedTargetLanguages'], $this->file->getExcludedTargetLanguages());
+        $this->assertEquals($this->data['parserVersion'], $this->file->getParserVersion());
     }
 }
