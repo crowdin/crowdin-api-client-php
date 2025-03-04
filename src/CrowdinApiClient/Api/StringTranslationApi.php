@@ -59,15 +59,10 @@ class StringTranslationApi extends AbstractApi
      * Approval Info
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.approvals.get API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.approvals.get API Documentation Enterprise
-     *
-     * @param int $projectId
-     * @param int $approvalId
-     * @return StringTranslationApproval|null
      */
     public function getApproval(int $projectId, int $approvalId): ?StringTranslationApproval
     {
         $path = sprintf('projects/%d/approvals/%d', $projectId, $approvalId);
-
         return $this->_get($path, StringTranslationApproval::class);
     }
 
@@ -87,9 +82,20 @@ class StringTranslationApi extends AbstractApi
     }
 
     /**
+     * Remove String Approvals
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.approvals.deleteMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.approvals.deleteMany API Documentation Enterprise
+     */
+    public function deleteStringApprovals(int $projectId, int $stringId): void
+    {
+        $this->_delete(sprintf('projects/%d/approvals', $projectId), ['stringId' => $stringId]);
+    }
+
+    /**
      * List Language Translations
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.languages.translations.getMany API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.languages.translations.getMany API Documentation Enterprise
+     *
      * @param int $projectId
      * @param string $languageId
      * @param array $params
@@ -162,28 +168,26 @@ class StringTranslationApi extends AbstractApi
      *
      * @param int $projectId
      * @param int $stringId
-     * @param string $languageId
+     * @param null|string $languageId
      * @return mixed
      */
-    public function deleteStringTranslations(int $projectId, int $stringId, string $languageId)
+    public function deleteStringTranslations(int $projectId, int $stringId, ?string $languageId = null)
     {
-        $path = sprintf('projects/%d/translations', $projectId);
         $params = [
             'stringId' => $stringId,
-            'languageId' => $languageId,
         ];
 
-        return $this->_delete($path, $params);
+        if ($languageId !== null) {
+            $params['languageId'] = $languageId;
+        }
+
+        return $this->_delete(sprintf('projects/%d/translations', $projectId), $params);
     }
 
     /**
      * Get Translation
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.get API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.get API Documentation Enterprise
-     *
-     * @param int $projectId
-     * @param int $translationId
-     * @return StringTranslation|null
      */
     public function get(int $projectId, int $translationId): ?StringTranslation
     {
@@ -195,15 +199,10 @@ class StringTranslationApi extends AbstractApi
      * Restore Translation
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.put  API Documentation Enterprise
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.put  API Documentation Enterprise
-     *
-     * @param int $projectId
-     * @param int $translationId
-     * @return StringTranslation|null
      */
     public function restore(int $projectId, int $translationId): ?StringTranslation
     {
         $path = sprintf('projects/%d/translations/%d', $projectId, $translationId);
-
         return $this->_put($path, StringTranslation::class, []);
     }
 
@@ -248,16 +247,11 @@ class StringTranslationApi extends AbstractApi
      * Get Vote
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.votes.get API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.votes.get API Documentation Enterprise
-     *
-     * @param int $projectId
-     * @param int $voteId
-     * @return Vote|null
      */
     public function getVote(int $projectId, int $voteId): ?Vote
     {
         $path = sprintf('projects/%d/votes/%d', $projectId, $voteId);
-
-        return  $this->_get($path, Vote::class);
+        return $this->_get($path, Vote::class);
     }
 
     /**
