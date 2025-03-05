@@ -31,25 +31,29 @@ abstract class AbstractTestApi extends TestCase
 
     public function mockRequest(array $params)
     {
-        return $this->mockClient->will($this->returnCallback(function ($method, $uri, $options) use ($params) {
-            $this->assertEquals($params['method'], $method);
+        return $this->mockClient->will(
+            $this->returnCallback(
+                function (string $method, string $uri, array $options) use ($params): string {
+                    $this->assertEquals($params['method'], $method);
 
-            if (isset($params['path'])) {
-                $this->assertEquals('https://organization_domain.crowdin.com/api/v2' . $params['path'], $uri);
-            } else {
-                $this->assertEquals($params['uri'], $uri);
-            }
+                    if (isset($params['path'])) {
+                        $this->assertEquals('https://organization_domain.crowdin.com/api/v2' . $params['path'], $uri);
+                    } else {
+                        $this->assertEquals($params['uri'], $uri);
+                    }
 
-            if (isset($params['body'])) {
-                $this->assertEquals($params['body'], $options['body']);
-            }
+                    if (isset($params['body'])) {
+                        $this->assertEquals($params['body'], $options['body']);
+                    }
 
-            if (isset($params['headers'])) {
-                $this->assertEquals($params['headers'], $options['headers']);
-            }
+                    if (isset($params['headers'])) {
+                        $this->assertEquals($params['headers'], $options['headers']);
+                    }
 
-            return $params['response'] ?? '';
-        }));
+                    return $params['response'] ?? '';
+                }
+            )
+        );
     }
 
     public function mockRequestPatch(string $path, string $response, array $options = [])
@@ -58,7 +62,7 @@ abstract class AbstractTestApi extends TestCase
             'uri' => 'https://organization_domain.crowdin.com/api/v2' . $path,
             'method' => 'patch',
             'response' => $response,
-            'options' => $options
+            'options' => $options,
         ]);
     }
 
@@ -68,7 +72,7 @@ abstract class AbstractTestApi extends TestCase
             'uri' => 'https://organization_domain.crowdin.com/api/v2' . $path,
             'method' => 'get',
             'response' => $response,
-            'options' => $options
+            'options' => $options,
         ]);
     }
 

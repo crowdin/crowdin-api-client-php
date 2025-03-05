@@ -4,6 +4,7 @@ namespace CrowdinApiClient\Api\Enterprise;
 
 use CrowdinApiClient\Api\AbstractApi;
 use CrowdinApiClient\Model\Enterprise\WorkflowStep;
+use CrowdinApiClient\Model\SourceString;
 use CrowdinApiClient\ModelCollection;
 
 /**
@@ -33,14 +34,20 @@ class WorkflowStepApi extends AbstractApi
     /**
      * Get Workflow Step
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.workflow-steps.get API Documentation
-     *
-     * @param int $projectId
-     * @param int $stepId
-     * @return WorkflowStep|null
      */
-    public function get(int $projectId, int $stepId): WorkflowStep
+    public function get(int $projectId, int $stepId): ?WorkflowStep
     {
         $path = sprintf('projects/%d/workflow-steps/%d', $projectId, $stepId);
         return $this->_get($path, WorkflowStep::class);
+    }
+
+    /**
+     * List Strings on the Workflow Step
+     * @link https://support.crowdin.com/developer/enterprise/api/v2/#tag/Workflows/operation/api.projects.workflow-steps.get API Documentation
+     */
+    public function listStrings(int $projectId, int $stepId, array $params = []): ModelCollection
+    {
+        $path = sprintf('projects/%d/workflow-steps/%d/strings', $projectId, $stepId);
+        return $this->_list($path, SourceString::class, $params);
     }
 }

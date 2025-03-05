@@ -32,11 +32,11 @@ class ProjectTeamMemberAddedStatisticsTest extends TestCase
                     ],
                     'accessToAllWorkflowSteps' => false,
                     'permissions' => [
-                        'it' => ['workflowStepIds' => [313]]
+                        'it' => ['workflowStepIds' => [313]],
                     ],
-                    'lastSeen' => '2019-10-23T11:44:02+00:00'
-                ]
-            ]
+                    'lastSeen' => '2019-10-23T11:44:02+00:00',
+                ],
+            ],
         ],
         'added' => [
             [
@@ -52,25 +52,25 @@ class ProjectTeamMemberAddedStatisticsTest extends TestCase
                     ],
                     'accessToAllWorkflowSteps' => false,
                     'permissions' => [
-                        'it' => ['workflowStepIds' => [313]]
+                        'it' => ['workflowStepIds' => [313]],
                     ],
-                    'lastSeen' => '2019-10-23T11:44:02+00:00'
-                ]
-            ]
+                    'lastSeen' => '2019-10-23T11:44:02+00:00',
+                ],
+            ],
         ],
         'pagination' => [
             'offset' => 0,
             'limit' => 25,
-        ]
+        ],
     ];
 
-    public function testLoadData()
+    public function testLoadData(): void
     {
         $this->projectTeamMemberAddedStatistics = new ProjectTeamMemberAddedStatistics($this->data);
         $this->checkData();
     }
 
-    public function testSetData()
+    public function testSetData(): void
     {
         $this->projectTeamMemberAddedStatistics = new ProjectTeamMemberAddedStatistics();
         $this->projectTeamMemberAddedStatistics->setSkipped($this->data['skipped']);
@@ -82,7 +82,7 @@ class ProjectTeamMemberAddedStatisticsTest extends TestCase
         $this->assertEquals($this->data['pagination'], $this->projectTeamMemberAddedStatistics->getPagination());
     }
 
-    public function checkData()
+    public function checkData(): void
     {
         $this->assertEquals($this->data['skipped'], $this->projectTeamMemberAddedStatistics->getSkipped());
         $this->assertEquals($this->data['added'], $this->projectTeamMemberAddedStatistics->getAdded());

@@ -5,10 +5,6 @@ namespace CrowdinApiClient\Tests\Model\Enterprise;
 use CrowdinApiClient\Model\Enterprise\Group;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class GroupTest
- * @package Crowdin\Tests\Model
- */
 class GroupTest extends TestCase
 {
     /**
@@ -32,13 +28,13 @@ class GroupTest extends TestCase
         'updatedAt' => '2019-09-20T12:22:20+00:00',
     ];
 
-    public function testLoadData()
+    public function testLoadData(): void
     {
         $this->group = new Group($this->data);
         $this->checkData();
     }
 
-    public function testSetData()
+    public function testSetData(): void
     {
         $this->group = new Group();
         $this->group->setName($this->data['name']);
@@ -50,7 +46,7 @@ class GroupTest extends TestCase
         $this->assertEquals($this->data['parentId'], $this->group->getParentId());
     }
 
-    public function checkData()
+    public function checkData(): void
     {
         $this->assertEquals($this->data['id'], $this->group->getId());
         $this->assertEquals($this->data['name'], $this->group->getName());

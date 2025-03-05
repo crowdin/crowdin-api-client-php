@@ -1,34 +1,33 @@
 <?php
 
-namespace CrowdinApiClient\Tests\Model;
+namespace CrowdinApiClient\Tests\Model\Enterprise;
 
 use CrowdinApiClient\Model\Enterprise\WorkflowStep;
 use PHPUnit\Framework\TestCase;
 
 class WorkflowStepTest extends TestCase
 {
-    public $workflowStep;
-
     public $data = [
         'id' => 2,
         'title' => 'In-house + Machine Translation',
         'type' => 'Translation',
         'languages' => ['uk', 'pl'],
         'config' => [
-            "assignees" => [
-                "uk" => [1],
-                "pl" => [2, 3]
-            ]
+            'assignees' => [
+                'uk' => [1],
+                'pl' => [2, 3],
+            ],
         ],
     ];
 
-    public function testLoadData()
+    public function testLoadData(): void
     {
-        $this->workflowStep = new WorkflowStep($this->data);
-        $this->assertEquals($this->data['id'], $this->workflowStep->getId());
-        $this->assertEquals($this->data['title'], $this->workflowStep->getTitle());
-        $this->assertEquals($this->data['type'], $this->workflowStep->getType());
-        $this->assertEquals($this->data['languages'], $this->workflowStep->getLanguages());
-        $this->assertEquals($this->data['config'], $this->workflowStep->getConfig());
+        $workflowStep = new WorkflowStep($this->data);
+
+        $this->assertEquals($this->data['id'], $workflowStep->getId());
+        $this->assertEquals($this->data['title'], $workflowStep->getTitle());
+        $this->assertEquals($this->data['type'], $workflowStep->getType());
+        $this->assertEquals($this->data['languages'], $workflowStep->getLanguages());
+        $this->assertEquals($this->data['config'], $workflowStep->getConfig());
     }
 }

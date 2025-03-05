@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace CrowdinApiClient\Model\Enterprise;
+namespace CrowdinApiClient\Tests\Model\Enterprise;
 
+use CrowdinApiClient\Model\Enterprise\TeamMember;
 use PHPUnit\Framework\TestCase;
 
 class TeamMemberTest extends TestCase
@@ -19,16 +20,16 @@ class TeamMemberTest extends TestCase
         'firstName' => 'John',
         'lastName' => 'Doe',
         'avatarUrl' => '',
-        'addedAt' => '2019-09-23T09:04:29+00:00'
+        'addedAt' => '2019-09-23T09:04:29+00:00',
     ];
 
-    public function testLoadData()
+    public function testLoadData(): void
     {
         $this->teamMember = new TeamMember($this->data);
         $this->checkData();
     }
 
-    public function testSetData()
+    public function testSetData(): void
     {
         $this->teamMember = new TeamMember();
 
@@ -45,7 +46,7 @@ class TeamMemberTest extends TestCase
         $this->assertEquals($this->teamMember->getAddedAt(), $this->data['addedAt']);
     }
 
-    public function checkData()
+    public function checkData(): void
     {
         $this->assertEquals($this->data['id'], $this->teamMember->getId());
         $this->assertEquals($this->data['username'], $this->teamMember->getUsername());

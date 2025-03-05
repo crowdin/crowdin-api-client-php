@@ -20,13 +20,13 @@ class TeamTest extends TestCase
         'updatedAt' => '2019-09-23T09:04:29+00:00',
     ];
 
-    public function testLoadData()
+    public function testLoadData(): void
     {
         $this->team = new Team($this->data);
         $this->checkData();
     }
 
-    public function testSetData()
+    public function testSetData(): void
     {
         $this->team = new Team();
 
@@ -40,7 +40,7 @@ class TeamTest extends TestCase
         $this->assertEquals($this->team->getCreatedAt(), $this->data['createdAt']);
     }
 
-    public function checkData()
+    public function checkData(): void
     {
         $this->assertEquals($this->data['id'], $this->team->getId());
         $this->assertEquals($this->data['name'], $this->team->getName());
