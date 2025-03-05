@@ -14,6 +14,7 @@ class DistributionTest extends TestCase
      */
     public $data = [
         'hash' => 'e-4326c06be14321dd967b161a',
+        'manifestUrl' => 'https://distributions.crowdin.net/e-4326c06be14321dd967b161a/manifest.json',
         'exportMode' => 'bundle',
         'name' => 'Test Distribution',
         'fileIds' => [1, 2, 3],
@@ -27,36 +28,31 @@ class DistributionTest extends TestCase
      */
     public $distribution;
 
-    public function testLoadData()
+    public function testLoadData(): void
     {
         $this->distribution = new Distribution($this->data);
-        $this->checkData();
-    }
-
-    public function testSetData()
-    {
-        $this->distribution = new Distribution();
-        $this->distribution->setHash($this->data['hash']);
-        $this->distribution->setName($this->data['name']);
-        $this->distribution->setFileIds($this->data['fileIds']);
-        $this->distribution->setExportMode($this->data['exportMode']);
-        $this->distribution->setBundleIds($this->data['bundleIds']);
 
         $this->assertEquals($this->data['hash'], $this->distribution->getHash());
-        $this->assertEquals($this->data['name'], $this->distribution->getName());
-        $this->assertEquals($this->data['fileIds'], $this->distribution->getFileIds());
-        $this->assertEquals($this->data['exportMode'], $this->distribution->getExportMode());
-        $this->assertEquals($this->data['bundleIds'], $this->distribution->getBundleIds());
-    }
-
-    public function checkData()
-    {
-        $this->assertEquals($this->data['hash'], $this->distribution->getHash());
+        $this->assertEquals($this->data['manifestUrl'], $this->distribution->getManifestUrl());
         $this->assertEquals($this->data['name'], $this->distribution->getName());
         $this->assertEquals($this->data['fileIds'], $this->distribution->getFileIds());
         $this->assertEquals($this->data['exportMode'], $this->distribution->getExportMode());
         $this->assertEquals($this->data['bundleIds'], $this->distribution->getBundleIds());
         $this->assertEquals($this->data['createdAt'], $this->distribution->getCreatedAt());
         $this->assertEquals($this->data['updatedAt'], $this->distribution->getUpdatedAt());
+    }
+
+    public function testSetData(): void
+    {
+        $this->distribution = new Distribution();
+        $this->distribution->setName($this->data['name']);
+        $this->distribution->setFileIds($this->data['fileIds']);
+        $this->distribution->setExportMode($this->data['exportMode']);
+        $this->distribution->setBundleIds($this->data['bundleIds']);
+
+        $this->assertEquals($this->data['name'], $this->distribution->getName());
+        $this->assertEquals($this->data['fileIds'], $this->distribution->getFileIds());
+        $this->assertEquals($this->data['exportMode'], $this->distribution->getExportMode());
+        $this->assertEquals($this->data['bundleIds'], $this->distribution->getBundleIds());
     }
 }

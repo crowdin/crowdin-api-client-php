@@ -17,6 +17,11 @@ class Distribution extends BaseModel
     /**
      * @var string
      */
+    private $manifestUrl;
+
+    /**
+     * @var string
+     */
     protected $exportMode;
 
     /**
@@ -49,10 +54,11 @@ class Distribution extends BaseModel
         parent::__construct($data);
 
         $this->hash = (string)$this->getDataProperty('hash');
-        $this->exportMode = (string)$this->getDataProperty('exportMode');
+        $this->manifestUrl = (string)$this->getDataProperty('manifestUrl');
         $this->name = (string)$this->getDataProperty('name');
-        $this->fileIds = (array)$this->getDataProperty('fileIds');
+        $this->exportMode = (string)$this->getDataProperty('exportMode');
         $this->bundleIds = (array)$this->getDataProperty('bundleIds');
+        $this->fileIds = (array)$this->getDataProperty('fileIds');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
     }
@@ -62,9 +68,9 @@ class Distribution extends BaseModel
         return $this->hash;
     }
 
-    public function setHash(string $hash): void
+    public function getManifestUrl(): string
     {
-        $this->hash = $hash;
+        return $this->manifestUrl;
     }
 
     public function getExportMode(): string
@@ -112,18 +118,8 @@ class Distribution extends BaseModel
         return $this->createdAt;
     }
 
-    public function setCreatedAt(string $createdAt): void
-    {
-        $this->createdAt = $createdAt;
-    }
-
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;
-    }
-
-    public function setUpdatedAt(string $updatedAt): void
-    {
-        $this->updatedAt = $updatedAt;
     }
 }
