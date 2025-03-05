@@ -20,6 +20,17 @@ use CrowdinApiClient\ModelCollection;
 class TranslationApi extends AbstractApi
 {
     /**
+     * List Pre-Translations
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.pre-translations.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.pre-translations.getMany API Documentation Enterprise
+     */
+    public function listPreTranslations(int $projectId, array $params = []): ModelCollection
+    {
+        $path = sprintf('projects/%d/pre-translations', $projectId);
+        return $this->_list($path, PreTranslation::class, $params);
+    }
+
+    /**
      * Apply Pre-Translation
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.pre-translations.post API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.pre-translations.post API Documentation Enterprise
@@ -44,24 +55,30 @@ class TranslationApi extends AbstractApi
 
     /**
      * Pre-Translation Status
-     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.pre-translations.get  API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.pre-translations.get  API Documentation Enterprise
-     *
-     * @param int $projectId
-     * @param string $preTranslationId
-     * @return PreTranslation|null
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.pre-translations.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.pre-translations.get API Documentation Enterprise
      */
     public function getPreTranslation(int $projectId, string $preTranslationId): ?PreTranslation
     {
         $path = sprintf('projects/%d/pre-translations/%s', $projectId, $preTranslationId);
-
         return $this->_get($path, PreTranslation::class);
     }
 
     /**
+     * Edit Pre-Translation
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.pre-translations.patch API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.pre-translations.patch API Documentation Enterprise
+     */
+    public function updatePreTranslation(int $projectId, PreTranslation $preTranslation): ?PreTranslation
+    {
+        $path = sprintf('projects/%d/pre-translations/%s', $projectId, $preTranslation->getIdentifier());
+        return $this->_update($path, $preTranslation);
+    }
+
+    /**
      * Build Project Directory Translation
-     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.builds.directories.post  API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.builds.directories.post  API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.builds.directories.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.builds.directories.post API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $directoryId
@@ -118,8 +135,8 @@ class TranslationApi extends AbstractApi
 
     /**
      * List Project Builds
-     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.builds.getMany  API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.builds.getMany  API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.builds.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.builds.getMany API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $params
@@ -131,7 +148,6 @@ class TranslationApi extends AbstractApi
     public function getProjectBuilds(int $projectId, array $params = []): ModelCollection
     {
         $path = sprintf('projects/%d/translations/builds', $projectId);
-
         return $this->_list($path, TranslationProjectBuild::class, $params);
     }
 
@@ -159,8 +175,8 @@ class TranslationApi extends AbstractApi
 
     /**
      * Upload Translations
-     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.post  API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.post  API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.post API Documentation Enterprise
      *
      * @param int $projectId
      * @param string $languageId
@@ -200,8 +216,8 @@ class TranslationApi extends AbstractApi
 
     /**
      * Check Project Build Status
-     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.builds.get  API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.builds.get  API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.builds.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.builds.get API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $buildId
@@ -216,8 +232,8 @@ class TranslationApi extends AbstractApi
 
     /**
      * Cancel Build
-     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.builds.delete  API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.builds.delete  API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.builds.delete API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.builds.delete API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $buildId
