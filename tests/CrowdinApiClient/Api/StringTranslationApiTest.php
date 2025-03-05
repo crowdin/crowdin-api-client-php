@@ -8,125 +8,99 @@ use CrowdinApiClient\ModelCollection;
 
 class StringTranslationApiTest extends AbstractTestApi
 {
-    public function testList()
+    public function testList(): void
     {
         $this->mockRequest([
             'path' => '/projects/2/translations',
             'method' => 'get',
-            'response' => '{
-              "data": [
-                {
-                  "data": {
-                    "id": 190695,
-                    "text": "Цю стрічку перекладено",
-                    "pluralCategoryName": "few",
-                    "user": {
-                      "id": 19,
-                      "login": "john_doe"
-                    },
-                    "rating": 10
-                  }
-                }
-              ],
-              "pagination": [
-                {
-                  "offset": 0,
-                  "limit": 0
-                }
-              ]
-            }'
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 190695,
+                            'text' => 'Цю стрічку перекладено',
+                            'pluralCategoryName' => 'few',
+                            'user' => [
+                                'id' => 19,
+                                'login' => 'john_doe',
+                            ],
+                            'rating' => 10,
+                        ],
+                    ],
+                ],
+                'pagination' => [
+                    [
+                        'offset' => 0,
+                        'limit' => 0,
+                    ],
+                ],
+            ]),
         ]);
 
         $stringTranslations = $this->crowdin->stringTranslation->list(2);
+
         $this->assertInstanceOf(ModelCollection::class, $stringTranslations);
         $this->assertCount(1, $stringTranslations);
         $this->assertInstanceOf(StringTranslation::class, $stringTranslations[0]);
         $this->assertEquals(190695, $stringTranslations[0]->getId());
     }
 
-    public function testGet()
+    public function testGet(): void
     {
-        $this->mockRequestGet('/projects/2/translations/190695', '{
-              "data": {
-                "id": 190695,
-                "text": "Цю стрічку перекладено",
-                "pluralCategoryName": "few",
-                "user": {
-                  "id": 19,
-                  "login": "john_doe"
-                },
-                "rating": 10
-              }
-            }');
+        $this->mockRequestGet(
+            '/projects/2/translations/190695',
+            json_encode([
+                'data' => [
+                    'id' => 190695,
+                    'text' => 'Цю стрічку перекладено',
+                    'pluralCategoryName' => 'few',
+                    'user' => [
+                        'id' => 19,
+                        'login' => 'john_doe',
+                    ],
+                    'rating' => 10,
+                ],
+            ])
+        );
 
         $stringTranslation = $this->crowdin->stringTranslation->get(2, 190695);
+
         $this->assertInstanceOf(StringTranslation::class, $stringTranslation);
         $this->assertEquals(190695, $stringTranslation->getId());
     }
 
-    public function testDelete()
+    public function testDelete(): void
     {
         $this->mockRequestDelete('/projects/2/translations/190695');
         $this->crowdin->stringTranslation->delete(2, 190695);
     }
 
-    public function create()
-    {
-        $params = [
-            'stringId' => 35434,
-            'languageId' => 'uk',
-            'text' => 'Цю стрічку перекладено',
-            'pluralCategoryName' => 'few',
-        ];
-
-        $this->mockRequest([
-            'path' => '',
-            'method' => 'post',
-            'body' => $params,
-            'response' => '{
-              "data": {
-                "id": 190695,
-                "text": "Цю стрічку перекладено",
-                "pluralCategoryName": "few",
-                "user": {
-                  "id": 19,
-                  "login": "john_doe"
-                },
-                "rating": 10
-              }
-            }'
-        ]);
-
-        $stringTranslation = $this->crowdin->stringTranslation->create(2, $params);
-        $this->assertInstanceOf(StringTranslation::class, $stringTranslation);
-        $this->assertEquals(190695, $stringTranslation->getId());
-    }
-
-    public function testRestore()
+    public function testRestore(): void
     {
         $this->mockRequest([
-           'path' => '/projects/2/translations/190695',
-           'method' => 'put',
-           'response' => '{
-                  "data": {
-                    "id": 190695,
-                    "text": "Цю стрічку перекладено",
-                    "pluralCategoryName": "few",
-                    "user": {
-                      "id": 19,
-                      "login": "john_doe"
-                    },
-                    "rating": 10
-                  }
-                }'
+            'path' => '/projects/2/translations/190695',
+            'method' => 'put',
+            'response' => json_encode([
+                'data' => [
+                    'id' => 190695,
+                    'text' => 'Цю стрічку перекладено',
+                    'pluralCategoryName' => 'few',
+                    'user' => [
+                        'id' => 19,
+                        'login' => 'john_doe',
+                    ],
+                    'rating' => 10,
+                ],
+            ]),
         ]);
 
         $stringTranslation = $this->crowdin->stringTranslation->restore(2, 190695);
+
         $this->assertInstanceOf(StringTranslation::class, $stringTranslation);
         $this->assertEquals(190695, $stringTranslation->getId());
     }
 
-    public function testCreate()
+    public function testCreate(): void
     {
         $params = [
             'stringId' => 35434,
@@ -139,78 +113,102 @@ class StringTranslationApiTest extends AbstractTestApi
             'path' => '/projects/2/translations',
             'method' => 'post',
             'body' => json_encode($params),
-            'response' => '{
-                  "data": {
-                    "id": 190695,
-                    "text": "Цю стрічку перекладено",
-                    "pluralCategoryName": "few",
-                    "user": {
-                      "id": 19,
-                      "login": "john_doe"
-                    },
-                    "rating": 10
-                  }
-                }',
+            'response' => json_encode([
+                'data' => [
+                    'id' => 190695,
+                    'text' => 'Цю стрічку перекладено',
+                    'pluralCategoryName' => 'few',
+                    'user' => [
+                        'id' => 19,
+                        'login' => 'john_doe',
+                    ],
+                    'rating' => 10,
+                ],
+            ]),
         ]);
 
         $stringTranslation = $this->crowdin->stringTranslation->create(2, $params);
+
         $this->assertInstanceOf(StringTranslation::class, $stringTranslation);
         $this->assertEquals(190695, $stringTranslation->getId());
     }
 
-    public function testDeleteStringTranslations()
+    public function deleteStringTranslationsDataProvider(): array
     {
-        $this->mockRequest([
-            'path' => '/projects/1/translations?stringId=1&languageId=en',
-            'method' => 'delete',
-            'response' => '',
-        ]);
-
-        $this->crowdin->stringTranslation->deleteStringTranslations(1, 1, 'en');
+        return [
+            'withLanguageId' => [
+                'path' => '/projects/1/translations?stringId=1&languageId=en',
+                'projectId' => 1,
+                'stringId' => 1,
+                'languageId' => 'en',
+            ],
+            'withoutLanguageId' => [
+                'path' => '/projects/1/translations?stringId=1',
+                'projectId' => 1,
+                'stringId' => 1,
+                'languageId' => null,
+            ],
+        ];
     }
 
-    public function testListLanguageTranslations()
+    /**
+     * @dataProvider deleteStringTranslationsDataProvider
+     */
+    public function testDeleteStringTranslations(string $path, int $projectId, int $stringId, ?string $languageId): void
+    {
+        $this->mockRequestDelete($path);
+        $this->crowdin->stringTranslation->deleteStringTranslations($projectId, $stringId, $languageId);
+    }
+
+    public function testDeleteStringApprovals(): void
+    {
+        $this->mockRequestDelete('/projects/2/approvals?stringId=12');
+        $this->crowdin->stringTranslation->deleteStringApprovals(2, 12);
+    }
+
+    public function testListLanguageTranslations(): void
     {
         $this->mockRequest([
             'path' => '/projects/2/languages/en/translations',
             'method' => 'get',
-            'response' => '{
-              "data": [
-                {
-                  "data": {
-                    "stringId": 12,
-                    "contentType": "text/plain",
-                    "translationId": 1,
-                    "text": "Confirm New Password"
-                  }
-                },
-                {
-                  "data": {
-                    "stringId": 7815,
-                    "contentType": "application/vnd.crowdin.text+plural",
-                    "translationId": 2,
-                    "text": "Confirm New Password"
-                  }
-                },
-                {
-                  "data": {
-                    "stringId": 9011,
-                    "contentType": "application/vnd.crowdin.text+icu",
-                    "translationId": 3,
-                    "text": "Confirm New Password"
-                  }
-                }
-              ],
-              "pagination": [
-                {
-                  "offset": 0,
-                  "limit": 0
-                }
-              ]
-            }'
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'stringId' => 12,
+                            'contentType' => 'text/plain',
+                            'translationId' => 1,
+                            'text' => 'Confirm New Password',
+                        ],
+                    ],
+                    [
+                        'data' => [
+                            'stringId' => 7815,
+                            'contentType' => 'application/vnd.crowdin.text+plural',
+                            'translationId' => 2,
+                            'text' => 'Confirm New Password',
+                        ],
+                    ],
+                    [
+                        'data' => [
+                            'stringId' => 9011,
+                            'contentType' => 'application/vnd.crowdin.text+icu',
+                            'translationId' => 3,
+                            'text' => 'Confirm New Password',
+                        ],
+                    ],
+                ],
+                'pagination' => [
+                    [
+                        'offset' => 0,
+                        'limit' => 0,
+                    ],
+                ],
+            ]),
         ]);
 
         $stringTranslations = $this->crowdin->stringTranslation->listLanguageTranslations(2, 'en');
+
         $this->assertInstanceOf(ModelCollection::class, $stringTranslations);
         $this->assertCount(3, $stringTranslations);
         $this->assertInstanceOf(LanguageTranslation::class, $stringTranslations[0]);
