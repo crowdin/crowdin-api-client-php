@@ -40,9 +40,6 @@ class TranslationMemoryApi extends AbstractApi
      * Get TM Info
      * @link https://developer.crowdin.com/api/v2/#operation/api.tms.get API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.get API Documentation Enterprise
-     *
-     * @param int $translationMemoryId
-     * @return TranslationMemory|null
      */
     public function get(int $translationMemoryId): ?TranslationMemory
     {
@@ -66,9 +63,6 @@ class TranslationMemoryApi extends AbstractApi
     /**
      * Edit TM Info
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.patch API Documentation Enterprise
-     *
-     * @param TranslationMemory $translationMemory
-     * @return TranslationMemory|null
      */
     public function update(TranslationMemory $translationMemory): ?TranslationMemory
     {
@@ -80,8 +74,7 @@ class TranslationMemoryApi extends AbstractApi
      * @link https://developer.crowdin.com/api/v2/#operation/api.tms.delete API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.delete API Documentation Enterprise
      *
-     * @param int $translationMemoryId
-     * @return mixed
+     * @return null
      */
     public function delete(int $translationMemoryId)
     {
@@ -93,8 +86,7 @@ class TranslationMemoryApi extends AbstractApi
      * @link https://developer.crowdin.com/api/v2/#operation/api.tms.segments.clear API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.segments.clear API Documentation Enterprise
      *
-     * @param int $translationMemoryId
-     * @return mixed
+     * @return null
      */
     public function clear(int $translationMemoryId)
     {
@@ -124,10 +116,6 @@ class TranslationMemoryApi extends AbstractApi
      * Check TM Export Status
      * @link https://developer.crowdin.com/api/v2/#operation/api.tms.exports.get API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.exports.get API Documentation Enterprise
-     *
-     * @param int $translationMemoryId
-     * @param string $exportId
-     * @return TranslationMemoryExport|null
      */
     public function checkExportStatus(int $translationMemoryId, string $exportId): ?TranslationMemoryExport
     {
@@ -139,10 +127,6 @@ class TranslationMemoryApi extends AbstractApi
      * Download TM
      * @link https://developer.crowdin.com/api/v2/#operation/api.tms.exports.getMany API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.exports.getMany API Documentation Enterprise
-     *
-     * @param int $translationMemoryId
-     * @param string $exportId
-     * @return DownloadFile|null
      */
     public function download(int $translationMemoryId, string $exportId): ?DownloadFile
     {
@@ -154,20 +138,18 @@ class TranslationMemoryApi extends AbstractApi
      * Import TM
      * @link https://developer.crowdin.com/api/v2/#operation/api.tms.imports.post API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.imports.post API Documentation Enterprise
-     *
-     * @param int $translationMemoryId
-     * @param int $storageId
-     * @param bool $firstLineContainsHeader
-     * @param array $scheme
-     * @return TranslationMemoryImport|null
      */
-    public function import(int $translationMemoryId, int $storageId, $firstLineContainsHeader = false, array $scheme = []): ?TranslationMemoryImport
-    {
+    public function import(
+        int $translationMemoryId,
+        int $storageId,
+        bool $firstLineContainsHeader = false,
+        array $scheme = []
+    ): ?TranslationMemoryImport {
         $path = sprintf('tms/%d/imports', $translationMemoryId);
         $params = [
             'storageId' => $storageId,
             'firstLineContainsHeader' => $firstLineContainsHeader,
-            'scheme' => $scheme
+            'scheme' => $scheme,
         ];
 
         return $this->_create($path, TranslationMemoryImport::class, $params);
@@ -177,10 +159,6 @@ class TranslationMemoryApi extends AbstractApi
      * Check TM Import Status
      * @link https://developer.crowdin.com/api/v2/#operation/api.tms.imports.get API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.imports.get API Documentation Enterprise
-     *
-     * @param int $translationMemoryId
-     * @param string $importId
-     * @return TranslationMemoryImport|null
      */
     public function checkImportStatus(int $translationMemoryId, string $importId): ?TranslationMemoryImport
     {
