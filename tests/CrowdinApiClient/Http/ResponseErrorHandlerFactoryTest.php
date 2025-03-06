@@ -7,10 +7,6 @@ use CrowdinApiClient\Http\ResponseErrorHandlerFactory;
 use CrowdinApiClient\Http\ResponseErrorHandlerInterface;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class ResponseErrorHandlerFactoryTest
- * @package CrowdinApiClient\Tests\Http
- */
 class ResponseErrorHandlerFactoryTest extends TestCase
 {
     /**

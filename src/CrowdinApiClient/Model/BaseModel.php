@@ -4,7 +4,7 @@ namespace CrowdinApiClient\Model;
 
 /**
  * @package Crowdin\Model
- * @internal
+ * @ignore No documentation will be generated for this class
  */
 class BaseModel implements ModelInterface
 {

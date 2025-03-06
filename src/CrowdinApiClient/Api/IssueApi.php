@@ -6,7 +6,6 @@ use CrowdinApiClient\Model\Issue;
 use CrowdinApiClient\ModelCollection;
 
 /**
- * Class IssueApi
  * @package Crowdin\Api
  * @deprecated Use StringCommentApi instead
  */
@@ -17,11 +16,6 @@ class IssueApi extends AbstractApi
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.issues.getMany API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.issues.getMany API Documentation Enterprise
      *
-     * @param int $projectId
-     * @param array $params
-     * @internal integer $params[limit] default 25
-     * @internal integer $params[offset] default 0
-     * @return Issue|null
      * @deprecated Use StringCommentApi::list() instead
      */
     public function listReportedIssues(int $projectId, array $params = []): ?ModelCollection
@@ -35,12 +29,9 @@ class IssueApi extends AbstractApi
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.issues.patch API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.issues.patch API Documentation Enterprise
      *
-     * @param int $projectId
-     * @param Issue $issue
-     * @return Issue
      * @deprecated Use StringCommentApi::update() instead
      */
-    public function update(int $projectId, Issue $issue): Issue
+    public function update(int $projectId, Issue $issue): ?Issue
     {
         $path = sprintf('projects/%d/issues/%d', $projectId, $issue->getId());
         return $this->_update($path, $issue);

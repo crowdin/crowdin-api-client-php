@@ -5,10 +5,6 @@ namespace CrowdinApiClient\Tests\Model;
 use CrowdinApiClient\Model\Language;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class LanguageTest
- * @package Crowdin\Tests\Model
- */
 class LanguageTest extends TestCase
 {
     /**

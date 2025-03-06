@@ -5,15 +5,13 @@ namespace CrowdinApiClient\Http;
 use InvalidArgumentException;
 
 /**
- * Class ResponseErrorHandlerFactory
  * @package CrowdinApiClient\Http
- * @internal
+ * @ignore No documentation will be generated for this class
  */
 class ResponseErrorHandlerFactory
 {
     /**
      * @param ResponseErrorHandlerInterface|null|mixed $handler
-     * @return ResponseErrorHandlerInterface
      */
     public static function make($handler = null): ResponseErrorHandlerInterface
     {
@@ -22,7 +20,7 @@ class ResponseErrorHandlerFactory
         }
 
         if ($handler instanceof ResponseErrorHandlerInterface) {
-            return  $handler;
+            return $handler;
         }
 
         throw new InvalidArgumentException('Response error handler not instanceof ResponseErrorHandlerInterface');

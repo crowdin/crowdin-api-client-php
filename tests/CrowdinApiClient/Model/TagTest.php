@@ -5,10 +5,6 @@ namespace CrowdinApiClient\Tests\Model;
 use CrowdinApiClient\Model\Tag;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class TagTest
- * @package CrowdinApiClient\Tests\Model
- */
 class TagTest extends TestCase
 {
     /**

@@ -5,14 +5,10 @@ namespace CrowdinApiClient\Http\Client;
 use InvalidArgumentException;
 
 /**
- * @internal
+ * @ignore No documentation will be generated for this class
  */
 class CrowdinHttpClientFactory
 {
-    /**
-     * @param $handler
-     * @return CrowdinHttpClientInterface
-     */
     public static function make($handler = null): CrowdinHttpClientInterface
     {
         if ($handler === null) {

@@ -5,10 +5,6 @@ namespace CrowdinApiClient\Tests\Model;
 use CrowdinApiClient\Model\StringTranslationApproval;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class StringTranslationApprovalTest
- * @package Crowdin\Tests\Model
- */
 class StringTranslationApprovalTest extends TestCase
 {
     public $stringTranslationApproval;

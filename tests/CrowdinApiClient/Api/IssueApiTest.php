@@ -9,9 +9,6 @@ use CrowdinApiClient\ModelCollection;
 
 class IssueApiTest extends AbstractTestApi
 {
-    /**
-     * @test
-     */
     public function testListReportedIssues()
     {
         $this->mockRequestGet('/projects/1/issues', '{

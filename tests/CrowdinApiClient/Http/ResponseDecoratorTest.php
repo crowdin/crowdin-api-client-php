@@ -10,10 +10,6 @@ use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\ModelCollection;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class ResponseDecoratorTest
- * @package CrowdinApiClient\Tests\Http
- */
 class ResponseDecoratorTest extends TestCase
 {
     /**

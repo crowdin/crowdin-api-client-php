@@ -2,6 +2,8 @@
 
 namespace CrowdinApiClient\Tests\Http;
 
+use CrowdinApiClient\Exceptions\ApiException;
+use CrowdinApiClient\Exceptions\ApiValidationException;
 use CrowdinApiClient\Http\ResponseErrorHandler;
 use PHPUnit\Framework\TestCase;
 
@@ -17,7 +19,7 @@ class ResponseErrorHandlerTest extends TestCase
 
     public function testCheckValidationException()
     {
-        $this->expectException(\CrowdinApiClient\Exceptions\ApiValidationException::class);
+        $this->expectException(ApiValidationException::class);
         $this->responseErrorHandler->check([
             'errors' => []
         ]);
@@ -25,7 +27,7 @@ class ResponseErrorHandlerTest extends TestCase
 
     public function testCheckException()
     {
-        $this->expectException(\CrowdinApiClient\Exceptions\ApiException::class);
+        $this->expectException(ApiException::class);
         $this->responseErrorHandler->check([
             'error' => [
                 'message' => 'Not found',

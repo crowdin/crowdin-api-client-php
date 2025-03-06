@@ -156,13 +156,6 @@ class Crowdin
         'graphql',
     ];
 
-    /**
-     * @param array $config
-     * @internal mixed $config[http_client_handler]
-     * @internal mixed $config[response_error_handler]
-     * @internal string $config[access_token]
-     * @internal string $config[base_uri]
-     */
     public function __construct(array $config)
     {
         $config = array_merge([
@@ -209,12 +202,7 @@ class Crowdin
         return $response;
     }
 
-    /**
-     * @param $name
-     * @return mixed
-     * @internal
-     */
-    public function __get($name)
+    public function __get(string $name): ApiInterface
     {
         if ($this->isEnterprise) {
             $services = $this->servicesEnterprise;
@@ -304,9 +292,6 @@ class Crowdin
         return $this->client->request($method, $uri, $options);
     }
 
-    /**
-     * @internal
-     */
     protected function getApi(string $name): ApiInterface
     {
         $class = '\CrowdinApiClient\\Api\\' . ucfirst($name) . 'Api';

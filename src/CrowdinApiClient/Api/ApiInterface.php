@@ -3,9 +3,8 @@
 namespace CrowdinApiClient\Api;
 
 /**
- * Interface ApiInterface
  * @package Crowdin\Api
- * @internal
+ * @ignore No documentation will be generated for this class
  */
 interface ApiInterface
 {

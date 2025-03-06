@@ -5,10 +5,6 @@ namespace CrowdinApiClient\Tests\Model;
 use CrowdinApiClient\Model\GlossaryExport;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class GlossaryExportTest
- * @package Crowdin\Tests\Model
- */
 class GlossaryExportTest extends TestCase
 {
     /**

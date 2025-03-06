@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 
 class CollectionTest extends TestCase
 {
-    public function testMain()
+    public function testMain(): void
     {
         $collection = new Collection();
 
@@ -40,7 +40,7 @@ class CollectionTest extends TestCase
         $this->assertTrue($collection->offsetExists(0));
     }
 
-    public function testCollectionToArray()
+    public function testCollectionToArray(): void
     {
         $collection = new Collection();
         $collection->add('foo');

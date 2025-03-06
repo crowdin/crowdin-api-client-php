@@ -5,10 +5,6 @@ namespace CrowdinApiClient\Tests\Model;
 use CrowdinApiClient\Model\StringsExporterSetting;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class StringsExporterSettingTest
- * @package Crowdin\Tests\Model
- */
 class StringsExporterSettingTest extends TestCase
 {
     /**
