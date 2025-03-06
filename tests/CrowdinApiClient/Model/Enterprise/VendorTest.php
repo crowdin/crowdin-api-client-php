@@ -1,14 +1,10 @@
 <?php
 
-namespace CrowdinApiClient\Tests\Model;
+namespace CrowdinApiClient\Tests\Model\Enterprise;
 
 use CrowdinApiClient\Model\Enterprise\Vendor;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class VendorTest
- * @package Crowdin\Tests\Model
- */
 class VendorTest extends TestCase
 {
     public $vendor;
@@ -20,13 +16,13 @@ class VendorTest extends TestCase
         'status' => 'pending',
     ];
 
-    public function testLoadData()
+    public function testLoadData(): void
     {
         $this->vendor = new Vendor($this->data);
         $this->checkData();
     }
 
-    public function testSetData()
+    public function testSetData(): void
     {
         $this->vendor = new Vendor();
         $this->vendor->setId($this->data['id']);
@@ -36,7 +32,7 @@ class VendorTest extends TestCase
         $this->checkData();
     }
 
-    public function checkData()
+    public function checkData(): void
     {
         $this->assertEquals($this->data['id'], $this->vendor->getId());
         $this->assertEquals($this->data['name'], $this->vendor->getName());

@@ -5,10 +5,6 @@ namespace CrowdinApiClient\Tests\Model\Enterprise;
 use CrowdinApiClient\Model\Enterprise\User;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class UserTest
- * @package CrowdinApiClient\Tests\Model\Enterprise
- */
 class UserTest extends TestCase
 {
     public $user;
@@ -28,13 +24,13 @@ class UserTest extends TestCase
         'timezone' => 'Europe/Kiev',
     ];
 
-    public function testLoadData()
+    public function testLoadData(): void
     {
         $this->user = new User($this->data);
         $this->checkData();
     }
 
-    public function testSetData()
+    public function testSetData(): void
     {
         $this->user = new User();
         $this->user->setId($this->data['id']);
@@ -52,7 +48,7 @@ class UserTest extends TestCase
         $this->checkData();
     }
 
-    public function checkData()
+    public function checkData(): void
     {
         $this->assertEquals($this->data['id'], $this->user->getId());
         $this->assertEquals($this->data['username'], $this->user->getUsername());

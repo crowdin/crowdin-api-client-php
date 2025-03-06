@@ -1,14 +1,10 @@
 <?php
 
-namespace CrowdinApiClient\Tests\Model;
+namespace CrowdinApiClient\Tests\Model\Enterprise;
 
 use CrowdinApiClient\Model\Enterprise\WorkflowTemplate;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class WorkflowTemplateTest
- * @package CrowdinApiClient\Tests\Model
- */
 class WorkflowTemplateTest extends TestCase
 {
     public $workflowTemplate;
@@ -21,7 +17,7 @@ class WorkflowTemplateTest extends TestCase
         'isDefault' => true,
     ];
 
-    public function testLoadData()
+    public function testLoadData(): void
     {
         $this->workflowTemplate = new WorkflowTemplate($this->data);
         $this->assertEquals($this->data['id'], $this->workflowTemplate->getId());

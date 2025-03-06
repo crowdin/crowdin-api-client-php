@@ -1,8 +1,10 @@
 <?php
 
-namespace CrowdinApiClient\Model\Enterprise;
+namespace CrowdinApiClient\Tests\Model\Enterprise;
 
 use CrowdinApiClient\Collection;
+use CrowdinApiClient\Model\Enterprise\AddedTeamMembers;
+use CrowdinApiClient\Model\Enterprise\TeamMember;
 use PHPUnit\Framework\TestCase;
 
 class AddedTeamMembersTest extends TestCase
@@ -21,9 +23,9 @@ class AddedTeamMembersTest extends TestCase
                     'firstName' => 'John',
                     'lastName' => 'Doe',
                     'avatarUrl' => '',
-                    'addedAt' => '2019-09-23T09:04:29+00:00'
-                ]
-            ]
+                    'addedAt' => '2019-09-23T09:04:29+00:00',
+                ],
+            ],
         ],
         'added' => [
             [
@@ -33,20 +35,20 @@ class AddedTeamMembersTest extends TestCase
                     'firstName' => 'John',
                     'lastName' => 'Doe',
                     'avatarUrl' => '',
-                    'addedAt' => '2019-09-23T09:04:29+00:00'
-                ]
-            ]
+                    'addedAt' => '2019-09-23T09:04:29+00:00',
+                ],
+            ],
         ],
 
     ];
 
-    public function testLoadData()
+    public function testLoadData(): void
     {
         $this->addedTeamMembers = new AddedTeamMembers($this->data);
         $this->checkData();
     }
 
-    public function testSetData()
+    public function testSetData(): void
     {
         $this->addedTeamMembers = new AddedTeamMembers();
 
@@ -58,25 +60,70 @@ class AddedTeamMembersTest extends TestCase
         $collection->add(new TeamMember($this->data['skipped'][0]['data']));
         $this->addedTeamMembers->setSkipped($collection);
 
-        $this->assertEquals($this->addedTeamMembers->getSkipped()[0]->getUsername(), $this->data['skipped'][0]['data']['username']);
-        $this->assertEquals($this->addedTeamMembers->getSkipped()[0]->getFirstName(), $this->data['skipped'][0]['data']['firstName']);
-        $this->assertEquals($this->addedTeamMembers->getSkipped()[0]->getLastName(), $this->data['skipped'][0]['data']['lastName']);
-        $this->assertEquals($this->addedTeamMembers->getSkipped()[0]->getAvatarUrl(), $this->data['skipped'][0]['data']['avatarUrl']);
-        $this->assertEquals($this->addedTeamMembers->getSkipped()[0]->getAddedAt(), $this->data['skipped'][0]['data']['addedAt']);
+        $this->assertEquals(
+            $this->addedTeamMembers->getSkipped()[0]->getUsername(),
+            $this->data['skipped'][0]['data']['username']
+        );
+        $this->assertEquals(
+            $this->addedTeamMembers->getSkipped()[0]->getFirstName(),
+            $this->data['skipped'][0]['data']['firstName']
+        );
+        $this->assertEquals(
+            $this->addedTeamMembers->getSkipped()[0]->getLastName(),
+            $this->data['skipped'][0]['data']['lastName']
+        );
+        $this->assertEquals(
+            $this->addedTeamMembers->getSkipped()[0]->getAvatarUrl(),
+            $this->data['skipped'][0]['data']['avatarUrl']
+        );
+        $this->assertEquals(
+            $this->addedTeamMembers->getSkipped()[0]->getAddedAt(),
+            $this->data['skipped'][0]['data']['addedAt']
+        );
     }
 
-    public function checkData()
+    public function checkData(): void
     {
-        $this->assertEquals($this->data['added'][0]['data']['username'], $this->addedTeamMembers->getAdded()[0]->getUsername());
-        $this->assertEquals($this->data['added'][0]['data']['firstName'], $this->addedTeamMembers->getAdded()[0]->getFirstName());
-        $this->assertEquals($this->data['added'][0]['data']['lastName'], $this->addedTeamMembers->getAdded()[0]->getLastName());
-        $this->assertEquals($this->data['added'][0]['data']['avatarUrl'], $this->addedTeamMembers->getAdded()[0]->getAvatarUrl());
-        $this->assertEquals($this->data['added'][0]['data']['addedAt'], $this->addedTeamMembers->getAdded()[0]->getAddedAt());
+        $this->assertEquals(
+            $this->data['added'][0]['data']['username'],
+            $this->addedTeamMembers->getAdded()[0]->getUsername()
+        );
+        $this->assertEquals(
+            $this->data['added'][0]['data']['firstName'],
+            $this->addedTeamMembers->getAdded()[0]->getFirstName()
+        );
+        $this->assertEquals(
+            $this->data['added'][0]['data']['lastName'],
+            $this->addedTeamMembers->getAdded()[0]->getLastName()
+        );
+        $this->assertEquals(
+            $this->data['added'][0]['data']['avatarUrl'],
+            $this->addedTeamMembers->getAdded()[0]->getAvatarUrl()
+        );
+        $this->assertEquals(
+            $this->data['added'][0]['data']['addedAt'],
+            $this->addedTeamMembers->getAdded()[0]->getAddedAt()
+        );
 
-        $this->assertEquals($this->data['skipped'][0]['data']['username'], $this->addedTeamMembers->getSkipped()[0]->getUsername());
-        $this->assertEquals($this->data['skipped'][0]['data']['firstName'], $this->addedTeamMembers->getSkipped()[0]->getFirstName());
-        $this->assertEquals($this->data['skipped'][0]['data']['lastName'], $this->addedTeamMembers->getSkipped()[0]->getLastName());
-        $this->assertEquals($this->data['skipped'][0]['data']['avatarUrl'], $this->addedTeamMembers->getSkipped()[0]->getAvatarUrl());
-        $this->assertEquals($this->data['skipped'][0]['data']['addedAt'], $this->addedTeamMembers->getSkipped()[0]->getAddedAt());
+        $this->assertEquals(
+            $this->data['skipped'][0]['data']['username'],
+            $this->addedTeamMembers->getSkipped()[0]->getUsername()
+        );
+        $this->assertEquals(
+            $this->data['skipped'][0]['data']['firstName'],
+            $this->addedTeamMembers->getSkipped()[0]->getFirstName()
+        );
+        $this->assertEquals(
+            $this->data['skipped'][0]['data']['lastName'],
+            $this->addedTeamMembers->getSkipped()[0]->getLastName()
+        );
+        $this->assertEquals(
+            $this->data['skipped'][0]['data']['avatarUrl'],
+            $this->addedTeamMembers->getSkipped()[0]->getAvatarUrl()
+        );
+        $this->assertEquals(
+            $this->data['skipped'][0]['data']['addedAt'],
+            $this->addedTeamMembers->getSkipped()[0]->getAddedAt()
+        );
     }
 }

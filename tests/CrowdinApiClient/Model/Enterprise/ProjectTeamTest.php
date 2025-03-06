@@ -1,7 +1,8 @@
 <?php
 
-namespace CrowdinApiClient\Model\Enterprise;
+namespace CrowdinApiClient\Tests\Model\Enterprise;
 
+use CrowdinApiClient\Model\Enterprise\ProjectTeam;
 use PHPUnit\Framework\TestCase;
 
 class ProjectTeamTest extends TestCase
@@ -16,17 +17,17 @@ class ProjectTeamTest extends TestCase
         'hasManagerAccess' => true,
         'hasAccessToAllWorkflowSteps' => false,
         'permissions' => [
-            'it' => ['workflowStepIds' => 313]
-        ]
+            'it' => ['workflowStepIds' => 313],
+        ],
     ];
 
-    public function testLoadData()
+    public function testLoadData(): void
     {
         $this->projectTeam = new ProjectTeam($this->data);
         $this->checkData();
     }
 
-    public function testSetData()
+    public function testSetData(): void
     {
         $this->projectTeam = new ProjectTeam();
         $this->projectTeam->setHasManagerAccess($this->data['hasManagerAccess']);
@@ -34,14 +35,20 @@ class ProjectTeamTest extends TestCase
         $this->projectTeam->setPermissions($this->data['permissions']);
 
         $this->assertEquals($this->data['hasManagerAccess'], $this->projectTeam->getHasManagerAccess());
-        $this->assertEquals($this->data['hasAccessToAllWorkflowSteps'], $this->projectTeam->getHasAccessToAllWorkflowSteps());
+        $this->assertEquals(
+            $this->data['hasAccessToAllWorkflowSteps'],
+            $this->projectTeam->getHasAccessToAllWorkflowSteps()
+        );
         $this->assertEquals($this->data['permissions'], $this->projectTeam->getPermissions());
     }
 
-    public function checkData()
+    public function checkData(): void
     {
         $this->assertEquals($this->data['hasManagerAccess'], $this->projectTeam->getHasManagerAccess());
-        $this->assertEquals($this->data['hasAccessToAllWorkflowSteps'], $this->projectTeam->getHasAccessToAllWorkflowSteps());
+        $this->assertEquals(
+            $this->data['hasAccessToAllWorkflowSteps'],
+            $this->projectTeam->getHasAccessToAllWorkflowSteps()
+        );
         $this->assertEquals($this->data['permissions'], $this->projectTeam->getPermissions());
     }
 }
