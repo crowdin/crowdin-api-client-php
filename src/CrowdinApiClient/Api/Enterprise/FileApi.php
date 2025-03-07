@@ -40,9 +40,9 @@ class FileApi extends CrowdinFileApi
      * @param int $projectId
      * @param array $data
      * integer $data[branchId]
-     * @return ReviewedSourceFileBuild
+     * @return ReviewedSourceFileBuild|null
      */
-    public function buildReviewedSourceFiles(int $projectId, array $data = []): ReviewedSourceFileBuild
+    public function buildReviewedSourceFiles(int $projectId, array $data = []): ?ReviewedSourceFileBuild
     {
         $path = sprintf('projects/%d/strings/reviewed-builds', $projectId);
         return $this->_create($path, ReviewedSourceFileBuild::class, $data);
@@ -51,18 +51,18 @@ class FileApi extends CrowdinFileApi
     /**
      * Check Reviewed Source Files Build Status
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.strings.reviewed-builds.get API Documentation Enterprise
-     *
-     * @param int $projectId
-     * @param int $buildId
-     * @return ReviewedSourceFileBuild
      */
-    public function checkReviewedSourceFilesBuildStatus(int $projectId, int $buildId): ReviewedSourceFileBuild
+    public function checkReviewedSourceFilesBuildStatus(int $projectId, int $buildId): ?ReviewedSourceFileBuild
     {
         $path = sprintf('projects/%d/strings/reviewed-builds/%d', $projectId, $buildId);
         return $this->_get($path, ReviewedSourceFileBuild::class);
     }
 
-    public function downloadReviewedSourceFiles(int $projectId, int $buildId): DownloadFile
+    /**
+     * Download Reviewed Source Files
+     * @link https://support.crowdin.com/developer/enterprise/api/v2/#tag/Source-Files/operation/api.projects.strings.reviewed-builds.download.download API Documentation Enterprise
+     */
+    public function downloadReviewedSourceFiles(int $projectId, int $buildId): ?DownloadFile
     {
         $path = sprintf('projects/%d/strings/reviewed-builds/%d/download', $projectId, $buildId);
         return $this->_get($path, DownloadFile::class);
