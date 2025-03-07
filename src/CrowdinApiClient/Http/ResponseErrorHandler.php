@@ -6,9 +6,8 @@ use CrowdinApiClient\Exceptions\ApiException;
 use CrowdinApiClient\Exceptions\ApiValidationException;
 
 /**
- * Class ResponseErrorHandler
  * @package Crowdin\Http
- * @internal
+ * @ignore No documentation will be generated for this class
  */
 class ResponseErrorHandler implements ResponseErrorHandlerInterface
 {

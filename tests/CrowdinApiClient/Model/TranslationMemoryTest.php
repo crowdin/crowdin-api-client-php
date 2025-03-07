@@ -5,10 +5,6 @@ namespace CrowdinApiClient\Tests\Model;
 use CrowdinApiClient\Model\TranslationMemory;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class TranslationMemoryTest
- * @package CrowdinApiClient\Tests\Model
- */
 class TranslationMemoryTest extends TestCase
 {
     public $translationMemory;

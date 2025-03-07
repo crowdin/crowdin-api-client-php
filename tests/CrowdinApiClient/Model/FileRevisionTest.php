@@ -5,10 +5,6 @@ namespace CrowdinApiClient\Tests\Model;
 use CrowdinApiClient\Model\FileRevision;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class FileRevisionTest
- * @package CrowdinApiClient\Tests\Model
- */
 class FileRevisionTest extends TestCase
 {
     /**

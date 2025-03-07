@@ -5,10 +5,6 @@ namespace CrowdinApiClient\Tests\Model;
 use CrowdinApiClient\Model\DownloadFilePreview;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class DownloadFilePreviewModel
- * @package Crowdin\Tests\Model
- */
 class DownloadFilePreviewTest extends TestCase
 {
     /**

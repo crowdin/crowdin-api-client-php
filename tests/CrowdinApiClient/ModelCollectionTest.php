@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class ModelCollectionTest extends TestCase
 {
-    public function test()
+    public function test(): void
     {
         $modelCollection = new ModelCollection();
         $this->assertInstanceOf(Collection::class, $modelCollection);

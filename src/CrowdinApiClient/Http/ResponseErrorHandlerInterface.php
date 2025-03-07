@@ -3,8 +3,8 @@
 namespace CrowdinApiClient\Http;
 
 /**
- * Interface ResponseErrorHandlerInterface
  * @package CrowdinApiClient\Http
+ * @ignore No documentation will be generated for this class
  */
 interface ResponseErrorHandlerInterface
 {

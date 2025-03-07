@@ -8,10 +8,6 @@ use CrowdinApiClient\Model\TranslationMemoryExport;
 use CrowdinApiClient\Model\TranslationMemoryImport;
 use CrowdinApiClient\ModelCollection;
 
-/**
- * Class TranslationMemoryApiTest
- * @package CrowdinApiClient\Tests\Api
- */
 class TranslationMemoryApiTest extends AbstractTestApi
 {
     public function testList()

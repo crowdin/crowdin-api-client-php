@@ -5,10 +5,6 @@ namespace CrowdinApiClient\Tests\Model;
 use CrowdinApiClient\Model\Screenshot;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class ScreenshotTest
- * @package Crowdin\Tests\Model
- */
 class ScreenshotTest extends TestCase
 {
     /**

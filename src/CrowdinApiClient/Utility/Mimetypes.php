@@ -6,8 +6,7 @@ namespace CrowdinApiClient\Utility;
  * Provides mappings of file extensions to mimetypes
  * @link http://svn.apache.org/repos/asf/httpd/httpd/branches/1.3.x/conf/mime.types
  *
- * Class Mimetypes
- * @internal
+ * @ignore No documentation will be generated for this class
  */
 class Mimetypes
 {

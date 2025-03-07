@@ -8,10 +8,6 @@ use CrowdinApiClient\Model\File;
 use CrowdinApiClient\Model\FileRevision;
 use CrowdinApiClient\ModelCollection;
 
-/**
- * Class FileApiTest
- * @package Crowdin\Tests\Api
- */
 class FileApiTest extends AbstractTestApi
 {
     public function testList()

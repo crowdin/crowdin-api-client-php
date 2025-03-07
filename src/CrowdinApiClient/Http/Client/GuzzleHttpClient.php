@@ -10,13 +10,11 @@ use Psr\Http\Message\StreamInterface;
 
 /**
  * @package Crowdin\Http\Client
- * @internal
+ * @ignore No documentation will be generated for this class
  */
 class GuzzleHttpClient implements CrowdinHttpClientInterface
 {
     /**
-     * GuzzleHttp client
-     *
      * @var Client
      */
     protected $client;
@@ -36,9 +34,6 @@ class GuzzleHttpClient implements CrowdinHttpClientInterface
      */
     protected $response;
 
-    /**
-     * @param Client|null $client GuzzleHttp Client
-     */
     public function __construct(?Client $client = null)
     {
         $this->client = $client ?: new Client();
@@ -55,11 +50,7 @@ class GuzzleHttpClient implements CrowdinHttpClientInterface
     }
 
     /**
-     * @param string $method
-     * @param string $uri
-     * @param array $options
      * @throws GuzzleException
-     * @return StreamInterface
      */
     public function request(string $method, string $uri, array $options): StreamInterface
     {

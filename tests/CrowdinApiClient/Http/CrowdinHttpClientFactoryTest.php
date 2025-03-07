@@ -9,9 +9,6 @@ use PHPUnit\Framework\TestCase;
 
 class CrowdinHttpClientFactoryTest extends TestCase
 {
-    /**
-     * @test
-     */
     public function testFactory()
     {
         $this->assertInstanceOf(CurlHttpClient::class, CrowdinHttpClientFactory::make());

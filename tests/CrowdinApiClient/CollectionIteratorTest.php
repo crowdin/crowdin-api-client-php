@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class CollectionIteratorTest extends TestCase
 {
-    public function testInit()
+    public function testInit(): void
     {
         $collection = new CollectionIterator(['one', 'two']);
 

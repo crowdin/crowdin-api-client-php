@@ -5,10 +5,6 @@ namespace CrowdinApiClient\Tests\Utility;
 use CrowdinApiClient\Utility\Mimetypes;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class MimetypesTest
- * @package CrowdinApiClient\Tests\Utility
- */
 class MimetypesTest extends TestCase
 {
     public function testInstance()

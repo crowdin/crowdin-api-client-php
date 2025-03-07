@@ -3,7 +3,7 @@
 namespace CrowdinApiClient\Http\Client;
 
 /**
- * @internal
+ * @ignore No documentation will be generated for this class
  */
 interface CrowdinHttpClientInterface
 {

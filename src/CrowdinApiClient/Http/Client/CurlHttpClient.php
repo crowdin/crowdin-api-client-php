@@ -7,7 +7,7 @@ use InvalidArgumentException;
 
 /**
  * @package Crowdin\Http\Client
- * @internal
+ * @ignore No documentation will be generated for this class
  */
 class CurlHttpClient implements CrowdinHttpClientInterface
 {
@@ -27,14 +27,8 @@ class CurlHttpClient implements CrowdinHttpClientInterface
     }
 
     /**
-     * @param string $method
-     * @param string $uri
-     * @param array $options
-     *
      * @throws HttpException
-     * @return mixed
-     * @internal param array $body
-     * @internal param array $headers
+     * @return bool|string
      */
     public function request(string $method, string $uri, array $options)
     {
@@ -115,7 +109,6 @@ class CurlHttpClient implements CrowdinHttpClientInterface
     }
 
     /**
-     * @param $ch
      * @return bool|string
      */
     public function curlExec($ch)
@@ -124,7 +117,6 @@ class CurlHttpClient implements CrowdinHttpClientInterface
     }
 
     /**
-     * @param $ch
      * @return mixed
      */
     public function curlGetInfo($ch)
@@ -132,12 +124,6 @@ class CurlHttpClient implements CrowdinHttpClientInterface
         return curl_getinfo($ch, CURLINFO_HTTP_CODE);
     }
 
-    /**
-     * @param $ch
-     * @param $option
-     * @param $value
-     * @return bool
-     */
     public function curlSetOption($ch, $option, $value): bool
     {
         return curl_setopt($ch, $option, $value);
@@ -151,11 +137,6 @@ class CurlHttpClient implements CrowdinHttpClientInterface
         return curl_init();
     }
 
-    /**
-     * @param $ch
-     * @param $uri
-     * @return bool
-     */
     public function curlSetUrl($ch, $uri): bool
     {
         return curl_setopt($ch, CURLOPT_URL, $uri);

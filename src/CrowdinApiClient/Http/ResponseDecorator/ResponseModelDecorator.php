@@ -6,7 +6,7 @@ use CrowdinApiClient\Model\ModelInterface;
 
 /**
  * @package Crowdin\Http\ResponseDecorator
- * @internal
+ * @ignore No documentation will be generated for this class
  */
 class ResponseModelDecorator implements ResponseDecoratorInterface
 {

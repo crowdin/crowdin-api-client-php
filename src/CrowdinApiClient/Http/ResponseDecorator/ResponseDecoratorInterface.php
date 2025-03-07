@@ -4,7 +4,7 @@ namespace CrowdinApiClient\Http\ResponseDecorator;
 
 /**
  * @package Crowdin\Http\ResponseDecorator
- * @internal
+ * @ignore No documentation will be generated for this class
  */
 interface ResponseDecoratorInterface
 {

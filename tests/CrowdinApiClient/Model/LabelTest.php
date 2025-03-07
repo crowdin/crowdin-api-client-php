@@ -5,10 +5,6 @@ namespace CrowdinApiClient\Tests\Model;
 use CrowdinApiClient\Model\Label;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class LabelTest
- * @package Crowdin\Tests\Model
- */
 class LabelTest extends TestCase
 {
     /**

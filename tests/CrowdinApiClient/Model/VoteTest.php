@@ -5,10 +5,6 @@ namespace CrowdinApiClient\Tests\Model;
 use CrowdinApiClient\Model\Vote;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class VoteTest
- * @package Crowdin\Tests\Model
- */
 class VoteTest extends TestCase
 {
     public $vote;

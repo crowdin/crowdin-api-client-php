@@ -5,10 +5,6 @@ namespace CrowdinApiClient\Tests\Model;
 use CrowdinApiClient\Model\Storage;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class StorageTest
- * @package Crowdin\Tests\Model
- */
 class StorageTest extends TestCase
 {
     /**
