@@ -169,7 +169,6 @@ class TranslationApi extends AbstractApi
     public function buildProject(int $projectId, array $params = []): ?TranslationProjectBuild
     {
         $path = sprintf('projects/%d/translations/builds', $projectId);
-
         return $this->_post($path, TranslationProjectBuild::class, $params);
     }
 
@@ -203,10 +202,6 @@ class TranslationApi extends AbstractApi
      * Download Project Translations
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.builds.download.download API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.builds.download.download API Documentation Enterprise
-     *
-     * @param int $projectId
-     * @param int $buildId
-     * @return DownloadFile|null
      */
     public function downloadProjectBuild(int $projectId, int $buildId): ?DownloadFile
     {
@@ -218,15 +213,10 @@ class TranslationApi extends AbstractApi
      * Check Project Build Status
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.builds.get API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.builds.get API Documentation Enterprise
-     *
-     * @param int $projectId
-     * @param int $buildId
-     * @return TranslationProjectBuild|null
      */
     public function getProjectBuildStatus(int $projectId, int $buildId): ?TranslationProjectBuild
     {
         $path = sprintf('projects/%d/translations/builds/%d', $projectId, $buildId);
-
         return $this->_get($path, TranslationProjectBuild::class);
     }
 
@@ -235,8 +225,6 @@ class TranslationApi extends AbstractApi
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.builds.delete API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.builds.delete API Documentation Enterprise
      *
-     * @param int $projectId
-     * @param int $buildId
      * @return mixed
      */
     public function deleteProjectBuild(int $projectId, int $buildId)

@@ -140,7 +140,7 @@ class GlossaryApiTest extends AbstractTestApi
             'path' => '/glossaries/2/exports',
             'method' => 'post',
             'body' => json_encode([
-                'format' => 'tbx',
+                'format' => 'csv',
                 'exportFields' => ['term', 'description', 'partOfSpeech'],
             ]),
             'response' => json_encode([
@@ -150,8 +150,8 @@ class GlossaryApiTest extends AbstractTestApi
                     'progress' => 0,
                     'attributes' => [
                         'format' => 'csv',
-                        'organizationId' => 200000299,
-                        'glossaryId' => 6,
+                        'exportFields' => ['term', 'description', 'partOfSpeech'],
+                        'glossaryId' => 2,
                     ],
                     'createdAt' => '2019-09-23T07:06:43+00:00',
                     'updatedAt' => '2019-09-23T07:06:43+00:00',
@@ -161,7 +161,7 @@ class GlossaryApiTest extends AbstractTestApi
             ]),
         ]);
 
-        $glossaryExport = $this->crowdin->glossary->export(2);
+        $glossaryExport = $this->crowdin->glossary->export(2, 'csv', ['term', 'description', 'partOfSpeech']);
 
         $this->assertInstanceOf(GlossaryExport::class, $glossaryExport);
         $this->assertEquals('5ed2ce93-6d47-4402-9e66-516ca835cb20', $glossaryExport->getIdentifier());

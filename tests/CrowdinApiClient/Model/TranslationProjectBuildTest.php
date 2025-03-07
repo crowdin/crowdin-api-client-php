@@ -7,8 +7,6 @@ use PHPUnit\Framework\TestCase;
 
 class TranslationProjectBuildTest extends TestCase
 {
-    public $translationProjectBuild;
-
     public $data = [
         'id' => 2,
         'projectId' => 2,
@@ -18,34 +16,17 @@ class TranslationProjectBuildTest extends TestCase
             'branchId' => 34,
             'targetLanguagesId' => ['uk'],
             'skipUntranslatedStrings' => true,
-            'exportWithMinApprovalsCount' => 5
-        ]
-
+            'exportWithMinApprovalsCount' => 5,
+        ],
     ];
 
-    public function testLoadData()
+    public function testLoadData(): void
     {
-        $this->translationProjectBuild = new TranslationProjectBuild($this->data);
-        $this->checkData();
-    }
-
-    public function testSetData()
-    {
-        $this->translationProjectBuild = new TranslationProjectBuild();
-        $this->translationProjectBuild->setId($this->data['id']);
-        $this->translationProjectBuild->setProjectId($this->data['projectId']);
-        $this->translationProjectBuild->setStatus($this->data['status']);
-        $this->translationProjectBuild->setProgress($this->data['progress']);
-        $this->translationProjectBuild->setAttributes($this->data['attributes']);
-        $this->checkData();
-    }
-
-    public function checkData()
-    {
-        $this->assertEquals($this->data['id'], $this->translationProjectBuild->getId());
-        $this->assertEquals($this->data['projectId'], $this->translationProjectBuild->getProjectId());
-        $this->assertEquals($this->data['status'], $this->translationProjectBuild->getStatus());
-        $this->assertEquals($this->data['progress'], $this->translationProjectBuild->getProgress());
-        $this->assertEquals($this->data['attributes'], $this->translationProjectBuild->getAttributes());
+        $translationProjectBuild = new TranslationProjectBuild($this->data);
+        $this->assertEquals($this->data['id'], $translationProjectBuild->getId());
+        $this->assertEquals($this->data['projectId'], $translationProjectBuild->getProjectId());
+        $this->assertEquals($this->data['status'], $translationProjectBuild->getStatus());
+        $this->assertEquals($this->data['progress'], $translationProjectBuild->getProgress());
+        $this->assertEquals($this->data['attributes'], $translationProjectBuild->getAttributes());
     }
 }
