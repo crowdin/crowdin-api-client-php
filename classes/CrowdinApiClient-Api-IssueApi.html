@@ -73,10 +73,6 @@
                 
             </li>
                     <li>
-                <a href="namespaces/crowdinapiclient-http.html" class="">Http</a>
-                
-            </li>
-                    <li>
                 <a href="namespaces/crowdinapiclient-model.html" class="">Model</a>
                 
             </li>
@@ -113,10 +109,6 @@
     <ul class="phpdocumentor-list">
                     <li>
                 <a href="packages/CrowdinApiClient-Api.html" class="">Api</a>
-                
-            </li>
-                    <li>
-                <a href="packages/CrowdinApiClient-Http.html" class="">Http</a>
                 
             </li>
             </ul>
@@ -170,12 +162,11 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/IssueApi.php"><a href="files/src-crowdinapiclient-api-issueapi.html"><abbr title="src/CrowdinApiClient/Api/IssueApi.php">IssueApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">12</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Class IssueApi</p>
-
+        
             <div class="phpdocumentor-admonition">
         <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
             <article>
@@ -213,9 +204,16 @@
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="-deprecated" href="classes/CrowdinApiClient-Api-IssueApi.html#method_listReportedIssues">listReportedIssues()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>|null    </span>
+</dt>
+<dd>List Reported Issues</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="-deprecated" href="classes/CrowdinApiClient-Api-IssueApi.html#method_update">update()</a>
     <span>
-                                &nbsp;: <a href="classes/CrowdinApiClient-Model-Issue.html"><abbr title="\CrowdinApiClient\Model\Issue">Issue</abbr></a>    </span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-Issue.html"><abbr title="\CrowdinApiClient\Model\Issue">Issue</abbr></a>|null    </span>
 </dt>
 <dd>Edit Issue</dd>
 
@@ -239,6 +237,92 @@
             -public
             -deprecated                                            "
 >
+    <h4 class="phpdocumentor-element__name" id="method_listReportedIssues">
+        listReportedIssues()
+        <a href="classes/CrowdinApiClient-Api-IssueApi.html#method_listReportedIssues" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/IssueApi.php"><a href="files/src-crowdinapiclient-api-issueapi.html"><abbr title="src/CrowdinApiClient/Api/IssueApi.php">IssueApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">21</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">List Reported Issues</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">listReportedIssues</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+                <div class="phpdocumentor-admonition">
+        <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+            <article>
+                <p>Use StringCommentApi::list() instead</p>
+
+            </article>
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$projectId</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$params</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-IssueApi.html#method_listReportedIssues#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.projects.issues.getMany"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.issues.getMany"> <p>API Documentation Enterprise</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+            -deprecated                                            "
+>
     <h4 class="phpdocumentor-element__name" id="method_update">
         update()
         <a href="classes/CrowdinApiClient-Api-IssueApi.html#method_update" class="headerlink"><i class="fas fa-link"></i></a>
@@ -247,7 +331,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/IssueApi.php"><a href="files/src-crowdinapiclient-api-issueapi.html"><abbr title="src/CrowdinApiClient/Api/IssueApi.php">IssueApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">34</span>
 
     </aside>
 
@@ -255,7 +339,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/CrowdinApiClient-Model-Issue.html"><abbr title="\CrowdinApiClient\Model\Issue">Issue</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$issue</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Issue.html"><abbr title="\CrowdinApiClient\Model\Issue">Issue</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/CrowdinApiClient-Model-Issue.html"><abbr title="\CrowdinApiClient\Model\Issue">Issue</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$issue</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Issue.html"><abbr title="\CrowdinApiClient\Model\Issue">Issue</abbr></a>|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -315,7 +399,7 @@
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Issue.html"><abbr title="\CrowdinApiClient\Model\Issue">Issue</abbr></a></span>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Issue.html"><abbr title="\CrowdinApiClient\Model\Issue">Issue</abbr></a>|null</span>
             </section>
 
 </article>
@@ -432,6 +516,7 @@
                         <li class="phpdocumentor-on-this-page-section__title">Methods</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
+                                            <li class="-deprecated"><a href="classes/CrowdinApiClient-Api-IssueApi.html#method_listReportedIssues">listReportedIssues()</a></li>
                                             <li class="-deprecated"><a href="classes/CrowdinApiClient-Api-IssueApi.html#method_update">update()</a></li>
                                     </ul>
             </li>

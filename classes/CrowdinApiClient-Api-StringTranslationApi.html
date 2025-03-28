@@ -73,10 +73,6 @@
                 
             </li>
                     <li>
-                <a href="namespaces/crowdinapiclient-http.html" class="">Http</a>
-                
-            </li>
-                    <li>
                 <a href="namespaces/crowdinapiclient-model.html" class="">Model</a>
                 
             </li>
@@ -113,10 +109,6 @@
     <ul class="phpdocumentor-list">
                     <li>
                 <a href="packages/CrowdinApiClient-Api.html" class="">Api</a>
-                
-            </li>
-                    <li>
-                <a href="packages/CrowdinApiClient-Http.html" class="">Http</a>
                 
             </li>
             </ul>
@@ -241,6 +233,13 @@
 <dd>Remove Approval</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-StringTranslationApi.html#method_deleteStringApprovals">deleteStringApprovals()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Remove String Approvals</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Api-StringTranslationApi.html#method_deleteStringTranslations">deleteStringTranslations()</a>
     <span>
                                 &nbsp;: mixed    </span>
@@ -338,7 +337,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">152</span>
+    <span class="phpdocumentor-element-found-in__line">158</span>
 
     </aside>
 
@@ -503,7 +502,7 @@ string $data[pluralCategoryName]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">274</span>
+    <span class="phpdocumentor-element-found-in__line">268</span>
 
     </aside>
 
@@ -585,7 +584,7 @@ integer $data[translationId] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">219</span>
+    <span class="phpdocumentor-element-found-in__line">218</span>
 
     </aside>
 
@@ -660,7 +659,7 @@ integer $data[translationId] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">83</span>
+    <span class="phpdocumentor-element-found-in__line">78</span>
 
     </aside>
 
@@ -727,6 +726,81 @@ integer $data[translationId] required</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_deleteStringApprovals">
+        deleteStringApprovals()
+        <a href="classes/CrowdinApiClient-Api-StringTranslationApi.html#method_deleteStringApprovals" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">89</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Remove String Approvals</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">deleteStringApprovals</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$stringId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$projectId</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$stringId</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-StringTranslationApi.html#method_deleteStringApprovals#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.projects.approvals.deleteMany"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.approvals.deleteMany"> <p>API Documentation Enterprise</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+    
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_deleteStringTranslations">
         deleteStringTranslations()
         <a href="classes/CrowdinApiClient-Api-StringTranslationApi.html#method_deleteStringTranslations" class="headerlink"><i class="fas fa-link"></i></a>
@@ -735,7 +809,7 @@ integer $data[translationId] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">168</span>
+    <span class="phpdocumentor-element-found-in__line">174</span>
 
     </aside>
 
@@ -743,7 +817,7 @@ integer $data[translationId] required</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">deleteStringTranslations</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$stringId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$languageId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">deleteStringTranslations</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$stringId</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">null|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$languageId</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -767,8 +841,8 @@ integer $data[translationId] required</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$languageId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
+                : <span class="phpdocumentor-signature__argument__return-type">null|string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
@@ -817,7 +891,7 @@ integer $data[translationId] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">288</span>
+    <span class="phpdocumentor-element-found-in__line">282</span>
 
     </aside>
 
@@ -892,7 +966,7 @@ integer $data[translationId] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">188</span>
+    <span class="phpdocumentor-element-found-in__line">192</span>
 
     </aside>
 
@@ -971,7 +1045,7 @@ integer $data[translationId] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">67</span>
+    <span class="phpdocumentor-element-found-in__line">63</span>
 
     </aside>
 
@@ -1050,7 +1124,7 @@ integer $data[translationId] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">256</span>
+    <span class="phpdocumentor-element-found-in__line">251</span>
 
     </aside>
 
@@ -1129,7 +1203,7 @@ integer $data[translationId] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">133</span>
+    <span class="phpdocumentor-element-found-in__line">139</span>
 
     </aside>
 
@@ -1302,7 +1376,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">109</span>
+    <span class="phpdocumentor-element-found-in__line">115</span>
 
     </aside>
 
@@ -1400,7 +1474,7 @@ int $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">241</span>
+    <span class="phpdocumentor-element-found-in__line">240</span>
 
     </aside>
 
@@ -1670,6 +1744,7 @@ integer $params[offset]</p>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-StringTranslationApi.html#method_createVote">createVote()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-StringTranslationApi.html#method_delete">delete()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-StringTranslationApi.html#method_deleteApproval">deleteApproval()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-StringTranslationApi.html#method_deleteStringApprovals">deleteStringApprovals()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-StringTranslationApi.html#method_deleteStringTranslations">deleteStringTranslations()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-StringTranslationApi.html#method_deleteVote">deleteVote()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-StringTranslationApi.html#method_get">get()</a></li>

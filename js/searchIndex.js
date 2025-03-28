@@ -431,6 +431,11 @@ Search.appendIndex(
             "summary": "Get\u0020Workflow\u0020Step",
             "url": "classes/CrowdinApiClient-Api-Enterprise-WorkflowStepApi.html#method_get"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\WorkflowStepApi\u003A\u003AlistStrings\u0028\u0029",
+            "name": "listStrings",
+            "summary": "List\u0020Strings\u0020on\u0020the\u0020Workflow\u0020Step",
+            "url": "classes/CrowdinApiClient-Api-Enterprise-WorkflowStepApi.html#method_listStrings"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\WorkflowTemplateApi",
             "name": "WorkflowTemplateApi",
             "summary": "Workflows\u0020are\u0020the\u0020sequences\u0020of\u0020steps\u0020that\u0020content\u0020in\u0020your\u0020project\u0020should\u0020go\u0020through\u0020\u0028e.g.\u0020pre\u002Dtranslation,\u0020translation,\u0020proofreading\u0029.",
@@ -633,8 +638,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\IssueApi",
             "name": "IssueApi",
-            "summary": "Class\u0020IssueApi",
+            "summary": "",
             "url": "classes/CrowdinApiClient-Api-IssueApi.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\IssueApi\u003A\u003AlistReportedIssues\u0028\u0029",
+            "name": "listReportedIssues",
+            "summary": "List\u0020Reported\u0020Issues",
+            "url": "classes/CrowdinApiClient-Api-IssueApi.html#method_listReportedIssues"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\IssueApi\u003A\u003Aupdate\u0028\u0029",
             "name": "update",
@@ -1101,6 +1111,11 @@ Search.appendIndex(
             "summary": "Remove\u0020Approval",
             "url": "classes/CrowdinApiClient-Api-StringTranslationApi.html#method_deleteApproval"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\StringTranslationApi\u003A\u003AdeleteStringApprovals\u0028\u0029",
+            "name": "deleteStringApprovals",
+            "summary": "Remove\u0020String\u0020Approvals",
+            "url": "classes/CrowdinApiClient-Api-StringTranslationApi.html#method_deleteStringApprovals"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Api\\StringTranslationApi\u003A\u003AlistLanguageTranslations\u0028\u0029",
             "name": "listLanguageTranslations",
             "summary": "List\u0020Language\u0020Translations",
@@ -1231,6 +1246,11 @@ Search.appendIndex(
             "summary": "Translators\u0020can\u0020work\u0020with\u0020entirely\u0020untranslated\u0020project\u0020or\u0020you\u0020can\u0020pre\u002Dtranslate\u0020the\u0020files\u0020to\u0020ease\u0020the\u0020translations\u0020process.",
             "url": "classes/CrowdinApiClient-Api-TranslationApi.html"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\TranslationApi\u003A\u003AlistPreTranslations\u0028\u0029",
+            "name": "listPreTranslations",
+            "summary": "List\u0020Pre\u002DTranslations",
+            "url": "classes/CrowdinApiClient-Api-TranslationApi.html#method_listPreTranslations"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Api\\TranslationApi\u003A\u003AapplyPreTranslation\u0028\u0029",
             "name": "applyPreTranslation",
             "summary": "Apply\u0020Pre\u002DTranslation",
@@ -1240,6 +1260,11 @@ Search.appendIndex(
             "name": "getPreTranslation",
             "summary": "Pre\u002DTranslation\u0020Status",
             "url": "classes/CrowdinApiClient-Api-TranslationApi.html#method_getPreTranslation"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\TranslationApi\u003A\u003AupdatePreTranslation\u0028\u0029",
+            "name": "updatePreTranslation",
+            "summary": "Edit\u0020Pre\u002DTranslation",
+            "url": "classes/CrowdinApiClient-Api-TranslationApi.html#method_updatePreTranslation"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\TranslationApi\u003A\u003AbuildProjectDirectoryTranslation\u0028\u0029",
             "name": "buildProjectDirectoryTranslation",
@@ -1436,10 +1461,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Crowdin.html"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Crowdin\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Crowdin.html#method___construct"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Crowdin\u003A\u003AapiRequest\u0028\u0029",
             "name": "apiRequest",
             "summary": "",
             "url": "classes/CrowdinApiClient-Crowdin.html#method_apiRequest"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Crowdin\u003A\u003A__get\u0028\u0029",
+            "name": "__get",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Crowdin.html#method___get"
         },                {
             "fqsen": "\\CrowdinApiClient\\Crowdin\u003A\u003AgetBaseUri\u0028\u0029",
             "name": "getBaseUri",
@@ -1500,6 +1535,11 @@ Search.appendIndex(
             "name": "request",
             "summary": "",
             "url": "classes/CrowdinApiClient-Crowdin.html#method_request"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Crowdin\u003A\u003AgetApi\u0028\u0029",
+            "name": "getApi",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Crowdin.html#method_getApi"
         },                {
             "fqsen": "\\CrowdinApiClient\\Crowdin\u003A\u003AgetFullUrl\u0028\u0029",
             "name": "getFullUrl",
@@ -1620,16 +1660,6 @@ Search.appendIndex(
             "name": "defer",
             "summary": "Crowdin\u0020if\u0020loading\u0020of\u0020the\u0020provider\u0020is\u0020deferred.",
             "url": "classes/CrowdinApiClient-FrameworkSupport-Laravel-CrowdinServiceProvider.html#property_defer"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Http\\ResponseErrorHandlerInterface",
-            "name": "ResponseErrorHandlerInterface",
-            "summary": "Interface\u0020ResponseErrorHandlerInterface",
-            "url": "classes/CrowdinApiClient-Http-ResponseErrorHandlerInterface.html"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Http\\ResponseErrorHandlerInterface\u003A\u003Acheck\u0028\u0029",
-            "name": "check",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Http-ResponseErrorHandlerInterface.html#method_check"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\BaseRates",
             "name": "BaseRates",
@@ -2271,10 +2301,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Distribution.html#method_getHash"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003AsetHash\u0028\u0029",
-            "name": "setHash",
+            "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003AgetManifestUrl\u0028\u0029",
+            "name": "getManifestUrl",
             "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Distribution.html#method_setHash"
+            "url": "classes/CrowdinApiClient-Model-Distribution.html#method_getManifestUrl"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003AgetExportMode\u0028\u0029",
             "name": "getExportMode",
@@ -2321,25 +2351,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Distribution.html#method_getCreatedAt"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003AsetCreatedAt\u0028\u0029",
-            "name": "setCreatedAt",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Distribution.html#method_setCreatedAt"
-        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003AgetUpdatedAt\u0028\u0029",
             "name": "getUpdatedAt",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Distribution.html#method_getUpdatedAt"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003AsetUpdatedAt\u0028\u0029",
-            "name": "setUpdatedAt",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Distribution.html#method_setUpdatedAt"
-        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003A\u0024hash",
             "name": "hash",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Distribution.html#property_hash"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003A\u0024manifestUrl",
+            "name": "manifestUrl",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Distribution.html#property_manifestUrl"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Distribution\u003A\u003A\u0024exportMode",
             "name": "exportMode",
@@ -5723,18 +5748,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\PreTranslation\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "PreTranslation\u0020constructor.",
+            "summary": "",
             "url": "classes/CrowdinApiClient-Model-PreTranslation.html#method___construct"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\PreTranslation\u003A\u003AgetIdentifier\u0028\u0029",
             "name": "getIdentifier",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-PreTranslation.html#method_getIdentifier"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\PreTranslation\u003A\u003AsetIdentifier\u0028\u0029",
-            "name": "setIdentifier",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-PreTranslation.html#method_setIdentifier"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\PreTranslation\u003A\u003AgetStatus\u0028\u0029",
             "name": "getStatus",
@@ -5751,60 +5771,30 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-PreTranslation.html#method_getProgress"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\PreTranslation\u003A\u003AsetProgress\u0028\u0029",
-            "name": "setProgress",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-PreTranslation.html#method_setProgress"
-        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\PreTranslation\u003A\u003AgetAttributes\u0028\u0029",
             "name": "getAttributes",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-PreTranslation.html#method_getAttributes"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\PreTranslation\u003A\u003AsetAttributes\u0028\u0029",
-            "name": "setAttributes",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-PreTranslation.html#method_setAttributes"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\PreTranslation\u003A\u003AgetCreatedAt\u0028\u0029",
             "name": "getCreatedAt",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-PreTranslation.html#method_getCreatedAt"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\PreTranslation\u003A\u003AsetCreatedAt\u0028\u0029",
-            "name": "setCreatedAt",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-PreTranslation.html#method_setCreatedAt"
-        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\PreTranslation\u003A\u003AgetUpdatedAt\u0028\u0029",
             "name": "getUpdatedAt",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-PreTranslation.html#method_getUpdatedAt"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\PreTranslation\u003A\u003AsetUpdatedAt\u0028\u0029",
-            "name": "setUpdatedAt",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-PreTranslation.html#method_setUpdatedAt"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\PreTranslation\u003A\u003AgetStartedAt\u0028\u0029",
             "name": "getStartedAt",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-PreTranslation.html#method_getStartedAt"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\PreTranslation\u003A\u003AsetStartedAt\u0028\u0029",
-            "name": "setStartedAt",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-PreTranslation.html#method_setStartedAt"
-        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\PreTranslation\u003A\u003AgetFinishedAt\u0028\u0029",
             "name": "getFinishedAt",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-PreTranslation.html#method_getFinishedAt"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\PreTranslation\u003A\u003AsetFinishedAt\u0028\u0029",
-            "name": "setFinishedAt",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-PreTranslation.html#method_setFinishedAt"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\PreTranslation\u003A\u003A\u0024identifier",
             "name": "identifier",
@@ -9518,7 +9508,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectBuild\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "TranslationProjectBuild\u0020constructor.",
+            "summary": "",
             "url": "classes/CrowdinApiClient-Model-TranslationProjectBuild.html#method___construct"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectBuild\u003A\u003AgetId\u0028\u0029",
@@ -9526,50 +9516,25 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-TranslationProjectBuild.html#method_getId"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectBuild\u003A\u003AsetId\u0028\u0029",
-            "name": "setId",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-TranslationProjectBuild.html#method_setId"
-        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectBuild\u003A\u003AgetProjectId\u0028\u0029",
             "name": "getProjectId",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-TranslationProjectBuild.html#method_getProjectId"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectBuild\u003A\u003AsetProjectId\u0028\u0029",
-            "name": "setProjectId",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-TranslationProjectBuild.html#method_setProjectId"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectBuild\u003A\u003AgetStatus\u0028\u0029",
             "name": "getStatus",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-TranslationProjectBuild.html#method_getStatus"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectBuild\u003A\u003AsetStatus\u0028\u0029",
-            "name": "setStatus",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-TranslationProjectBuild.html#method_setStatus"
-        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectBuild\u003A\u003AgetProgress\u0028\u0029",
             "name": "getProgress",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-TranslationProjectBuild.html#method_getProgress"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectBuild\u003A\u003AsetProgress\u0028\u0029",
-            "name": "setProgress",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-TranslationProjectBuild.html#method_setProgress"
-        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectBuild\u003A\u003AgetAttributes\u0028\u0029",
             "name": "getAttributes",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-TranslationProjectBuild.html#method_getAttributes"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectBuild\u003A\u003AsetAttributes\u0028\u0029",
-            "name": "setAttributes",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-TranslationProjectBuild.html#method_setAttributes"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\TranslationProjectBuild\u003A\u003A\u0024id",
             "name": "id",
@@ -10078,7 +10043,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CrowdinApiClient\\ModelCollection",
             "name": "ModelCollection",
-            "summary": "Class\u0020ModelCollection",
+            "summary": "",
             "url": "classes/CrowdinApiClient-ModelCollection.html"
         },                {
             "fqsen": "\\CrowdinApiClient\\ModelCollection\u003A\u003AgetPagination\u0028\u0029",
@@ -10130,11 +10095,6 @@ Search.appendIndex(
             "name": "FrameworkSupport",
             "summary": "",
             "url": "namespaces/crowdinapiclient-frameworksupport.html"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Http",
-            "name": "Http",
-            "summary": "",
-            "url": "namespaces/crowdinapiclient-http.html"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model",
             "name": "Model",

@@ -73,10 +73,6 @@
                 
             </li>
                     <li>
-                <a href="namespaces/crowdinapiclient-http.html" class="">Http</a>
-                
-            </li>
-                    <li>
                 <a href="namespaces/crowdinapiclient-model.html" class="">Model</a>
                 
             </li>
@@ -113,10 +109,6 @@
     <ul class="phpdocumentor-list">
                     <li>
                 <a href="packages/CrowdinApiClient-Api.html" class="">Api</a>
-                
-            </li>
-                    <li>
-                <a href="packages/CrowdinApiClient-Http.html" class="">Http</a>
                 
             </li>
             </ul>
@@ -172,7 +164,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/WorkflowStepApi.php"><a href="files/src-crowdinapiclient-api-enterprise-workflowstepapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/WorkflowStepApi.php">WorkflowStepApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 
     </aside>
 
@@ -221,6 +213,13 @@
 </dt>
 <dd>List Workflow Steps</dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-Enterprise-WorkflowStepApi.html#method_listStrings">listStrings()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>    </span>
+</dt>
+<dd>List Strings on the Workflow Step</dd>
+
     </dl>
 
 
@@ -249,7 +248,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/WorkflowStepApi.php"><a href="files/src-crowdinapiclient-api-enterprise-workflowstepapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/WorkflowStepApi.php">WorkflowStepApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">38</span>
 
     </aside>
 
@@ -320,7 +319,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/WorkflowStepApi.php"><a href="files/src-crowdinapiclient-api-enterprise-workflowstepapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/WorkflowStepApi.php">WorkflowStepApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">27</span>
+    <span class="phpdocumentor-element-found-in__line">28</span>
 
     </aside>
 
@@ -380,6 +379,84 @@ integer $params[limit]<br>
 integer $params[offset]</p>
 </section>
 
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_listStrings">
+        listStrings()
+        <a href="classes/CrowdinApiClient-Api-Enterprise-WorkflowStepApi.html#method_listStrings" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/WorkflowStepApi.php"><a href="files/src-crowdinapiclient-api-enterprise-workflowstepapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/WorkflowStepApi.php">WorkflowStepApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">48</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">List Strings on the Workflow Step</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">listStrings</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$stepId</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$projectId</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$stepId</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$params</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-Enterprise-WorkflowStepApi.html#method_listStrings#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/developer/enterprise/api/v2/#tag/Workflows/operation/api.projects.workflow-steps.get"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a></span>
             </section>
 
 </article>
@@ -498,6 +575,7 @@ integer $params[offset]</p>
                 <ul class="phpdocumentor-list -clean">
                                             <li class=""><a href="classes/CrowdinApiClient-Api-Enterprise-WorkflowStepApi.html#method_get">get()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-Enterprise-WorkflowStepApi.html#method_list">list()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-Enterprise-WorkflowStepApi.html#method_listStrings">listStrings()</a></li>
                                     </ul>
             </li>
                     </ul>
