@@ -6,6 +6,7 @@ use CrowdinApiClient\Http\ResponseDecorator\ResponseArrayDecorator;
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\DownloadFileTranslation;
 use CrowdinApiClient\Model\PreTranslation;
+use CrowdinApiClient\Model\PreTranslationReport;
 use CrowdinApiClient\Model\TranslationProjectBuild;
 use CrowdinApiClient\Model\TranslationProjectDirectory;
 use CrowdinApiClient\ModelCollection;
@@ -73,6 +74,17 @@ class TranslationApi extends AbstractApi
     {
         $path = sprintf('projects/%d/pre-translations/%s', $projectId, $preTranslation->getIdentifier());
         return $this->_update($path, $preTranslation);
+    }
+
+    /**
+     * Pre-Translation Report
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.pre-translations.patch API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.pre-translations.patch API Documentation Enterprise
+     */
+    public function getPreTranslationReport(int $projectId, string $preTranslationId): ?PreTranslationReport
+    {
+        $path = sprintf('projects/%d/pre-translations/%s/report', $projectId, $preTranslationId);
+        return $this->_get($path, PreTranslationReport::class);
     }
 
     /**

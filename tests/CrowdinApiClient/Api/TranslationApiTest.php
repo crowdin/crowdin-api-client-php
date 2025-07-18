@@ -4,6 +4,9 @@ namespace CrowdinApiClient\Tests\Api;
 
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\PreTranslation;
+use CrowdinApiClient\Model\PreTranslationReport;
+use CrowdinApiClient\Model\PreTranslationReportFile;
+use CrowdinApiClient\Model\PreTranslationReportLanguage;
 use CrowdinApiClient\Model\TranslationProjectBuild;
 use CrowdinApiClient\ModelCollection;
 
@@ -146,7 +149,7 @@ class TranslationApiTest extends AbstractTestApi
                     'op' => 'replace',
                     'path' => '/status',
                     'value' => 'canceled',
-                ]
+                ],
             ]),
             'response' => json_encode([
                 'data' => [
@@ -162,7 +165,7 @@ class TranslationApiTest extends AbstractTestApi
                     'startedAt' => '2019-11-13T08:17:22Z',
                     'finishedAt' => '2019-11-13T08:17:22Z',
                 ],
-            ])
+            ]),
         ]);
 
         $preTranslation = new PreTranslation([
@@ -185,6 +188,59 @@ class TranslationApiTest extends AbstractTestApi
         $this->assertInstanceOf(PreTranslation::class, $actual);
         $this->assertSame('canceled', $actual->getStatus());
         $this->assertSame(0, $actual->getProgress());
+    }
+
+    public function testGetPreTranslationReport(): void
+    {
+        $this->mockRequestGet(
+            '/projects/2/pre-translations/9e7de270-4f83-41cb-b606-2f90631f26e2/report',
+            json_encode([
+                'data' => [
+                    'languages' => [
+                        [
+                            'id' => 'es',
+                            'files' => [
+                                [
+                                    'id' => '10191',
+                                    'statistics' => [
+                                        'phrases' => 6,
+                                        'words' => 13,
+                                    ],
+                                ],
+                            ],
+                            'skipped' => [
+                                'translation_eq_source' => 2,
+                                'qa_check' => 1,
+                                'hidden_strings' => 0,
+                                'ai_error' => 6,
+                            ],
+                            'skippedQaCheckCategories' => [
+                                'duplicate' => 1,
+                                'spellcheck' => 1,
+                            ],
+                        ],
+                    ],
+                    'preTranslateType' => 'ai',
+                ],
+            ])
+        );
+
+        $preTranslationReport = $this->crowdin->translation->getPreTranslationReport(
+            2,
+            '9e7de270-4f83-41cb-b606-2f90631f26e2'
+        );
+
+        $this->assertInstanceOf(PreTranslationReport::class, $preTranslationReport);
+        $this->assertEquals('ai', $preTranslationReport->getPreTranslationType());
+        $this->assertIsArray($preTranslationReport->getLanguages());
+        $this->assertInstanceOf(PreTranslationReportLanguage::class, $preTranslationReport->getLanguages()[0]);
+        $this->assertSame('es', $preTranslationReport->getLanguages()[0]->getId());
+        $this->assertInstanceOf(
+            PreTranslationReportFile::class,
+            $preTranslationReport->getLanguages()[0]->getFiles()[0]
+        );
+        $this->assertIsArray($preTranslationReport->getLanguages()[0]->getSkippedInfo());
+        $this->assertIsArray($preTranslationReport->getLanguages()[0]->getSkippedQaCheckCategories());
     }
 
     public function testBuildProjectFileTranslation(): void
