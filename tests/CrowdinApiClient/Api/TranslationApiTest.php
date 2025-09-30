@@ -2,12 +2,15 @@
 
 namespace CrowdinApiClient\Tests\Api;
 
+use CrowdinApiClient\Model\Alignment;
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\PreTranslation;
 use CrowdinApiClient\Model\PreTranslationReport;
 use CrowdinApiClient\Model\PreTranslationReportFile;
 use CrowdinApiClient\Model\PreTranslationReportLanguage;
+use CrowdinApiClient\Model\TranslationAlignment;
 use CrowdinApiClient\Model\TranslationProjectBuild;
+use CrowdinApiClient\Model\WordAlignment;
 use CrowdinApiClient\ModelCollection;
 
 class TranslationApiTest extends AbstractTestApi
@@ -475,5 +478,57 @@ class TranslationApiTest extends AbstractTestApi
             'https://production-enterprise-importer.downloads.crowdin.com/992000002/2/14.xliff',
             $file->getUrl()
         );
+    }
+
+    public function testAlignment(): void
+    {
+        $params = [
+            'sourceLanguageId' => 'en',
+            'targetLanguageId' => 'de',
+            'text' => 'Your password has been reset successfully!',
+        ];
+
+        $this->mockRequest([
+            'path' => '/projects/8/translations/alignment',
+            'method' => 'post',
+            'response' => json_encode([
+                'data' => [
+                    'words' => [
+                        [
+                            'text' => 'password',
+                            'alignments' => [
+                                [
+                                    'sourceWord' => 'Password',
+                                    'sourceLemma' => 'password',
+                                    'targetWord' => 'Пароль',
+                                    'targetLemma' => 'пароль',
+                                    'match' => 2,
+                                    'probability' => 2.0,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ]),
+            'options' => [
+                'body' => [
+                    'sourceLanguageId' => 'en',
+                    'targetLanguageId' => 'de',
+                    'text' => 'Your password has been reset successfully!',
+                ],
+            ],
+        ]);
+
+        $alignment = $this->crowdin->translation->alignment(8, $params);
+
+        $this->assertInstanceOf(TranslationAlignment::class, $alignment);
+        $this->assertIsArray($alignment->getWords());
+        $this->assertCount(1, $alignment->getWords());
+        $this->assertInstanceOf(WordAlignment::class, $alignment->getWords()[0]);
+        $this->assertEquals('password', $alignment->getWords()[0]->getText());
+        $this->assertCount(1, $alignment->getWords()[0]->getAlignments());
+        $this->assertInstanceOf(Alignment::class, $alignment->getWords()[0]->getAlignments()[0]);
+        $this->assertEquals('Password', $alignment->getWords()[0]->getAlignments()[0]->getSourceWord());
+        $this->assertEquals('Пароль', $alignment->getWords()[0]->getAlignments()[0]->getTargetWord());
     }
 }

@@ -7,6 +7,7 @@ use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\DownloadFileTranslation;
 use CrowdinApiClient\Model\PreTranslation;
 use CrowdinApiClient\Model\PreTranslationReport;
+use CrowdinApiClient\Model\TranslationAlignment;
 use CrowdinApiClient\Model\TranslationProjectBuild;
 use CrowdinApiClient\Model\TranslationProjectDirectory;
 use CrowdinApiClient\ModelCollection;
@@ -268,5 +269,24 @@ class TranslationApi extends AbstractApi
     {
         $path = sprintf('projects/%d/translations/exports', $projectId);
         return $this->_post($path, DownloadFile::class, $params);
+    }
+
+    /**
+     * Translation Alignment
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.alignment.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.alignment.post API Documentation Enterprise
+     *
+     * @param int   $projectId
+     * @param array $params
+     * string $params[sourceLanguageId] required<br>
+     * string $params[targetLanguageId] required<br>
+     * string $params[text] required
+     *
+     * @return TranslationAlignment|null
+     */
+    public function alignment(int $projectId, array $params): ?TranslationAlignment
+    {
+        $path = sprintf('projects/%d/translations/alignment', $projectId);
+        return $this->_post($path, TranslationAlignment::class, $params);
     }
 }
