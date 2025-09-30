@@ -46,7 +46,7 @@ use UnexpectedValueException;
  * @property \CrowdinApiClient\Api\OrganizationWebhookApi $organizationWebhook
  * @property \CrowdinApiClient\Api\ReportArchiveApi|\CrowdinApiClient\Api\Enterprise\ReportArchiveApi $reportArchive
  * @property \CrowdinApiClient\Api\GraphqlApi $graphql
- * @property \CrowdinApiClient\Api\SecurityLogApi $securityLog
+ * @property \CrowdinApiClient\Api\SecurityLogApi|\CrowdinApiClient\Api\Enterprise\SecurityLogApi $securityLog
  */
 class Crowdin
 {
