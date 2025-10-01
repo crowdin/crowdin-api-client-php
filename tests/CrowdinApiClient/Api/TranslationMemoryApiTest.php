@@ -417,4 +417,43 @@ class TranslationMemoryApiTest extends AbstractTestApi
         $this->assertInstanceOf(TranslationMemorySegment::class, $segment);
         $this->assertEquals(4, $segment->getId());
     }
+
+    public function testCreateSegment()
+    {
+        $params = [
+            'records' => [
+                [
+                    'languageId' => 'uk',
+                    'text' => 'Перекладений текст',
+                ],
+            ],
+        ];
+
+        $this->mockRequest([
+            'path' => '/tms/4/segments',
+            'method' => 'post',
+            'body' => json_encode($params),
+            'response' => '{
+              "data": {
+                "id": 4,
+                "records": [
+                  {
+                    "id": 1,
+                    "languageId": "uk",
+                    "text": "Перекладений текст",
+                    "usageCount": 13,
+                    "createdBy": 1,
+                    "updatedBy": 1,
+                    "createdAt": "2019-09-16T13:48:04+00:00",
+                    "updatedAt": "2019-09-16T13:48:04+00:00"
+                  }
+                ]
+              }
+            }'
+        ]);
+
+        $segment = $this->crowdin->translationMemory->createSegment(4, $params);
+        $this->assertInstanceOf(TranslationMemorySegment::class, $segment);
+        $this->assertEquals(4, $segment->getId());
+    }
 }

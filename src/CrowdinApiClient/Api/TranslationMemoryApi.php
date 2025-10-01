@@ -132,6 +132,24 @@ class TranslationMemoryApi extends AbstractApi
     }
 
     /**
+     * Create TM Segment
+     * @link https://developer.crowdin.com/api/v2/#operation/api.tms.segments.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.segments.post API Documentation Enterprise
+     *
+     * @param int $tmId
+     * @param array $data
+     * array $data[records]<br>
+     * string $data[records][][languageId]<br>
+     * string $data[records][][text]
+     * @return TranslationMemorySegment|null
+     */
+    public function createSegment(int $tmId, array $data): ?TranslationMemorySegment
+    {
+        $path = sprintf('tms/%d/segments', $tmId);
+        return $this->_create($path, TranslationMemorySegment::class, $data);
+    }
+
+    /**
      * Export TM
      * @link https://developer.crowdin.com/api/v2/#operation/api.tms.exports.post API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.exports.post API Documentation Enterprise
