@@ -135,4 +135,10 @@ class TaskCommentApiTest extends AbstractTestApi
         $this->assertInstanceOf(TaskComment::class, $taskComment);
         $this->assertEquals('updated comment', $taskComment->getText());
     }
+
+    public function testDelete()
+    {
+        $this->mockRequestDelete('/projects/2/tasks/203/comments/1233');
+        $this->crowdin->taskComment->delete(2, 203, 1233);
+    }
 }

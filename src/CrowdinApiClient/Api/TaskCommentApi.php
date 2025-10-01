@@ -81,4 +81,20 @@ class TaskCommentApi extends AbstractApi
         $path = sprintf('projects/%d/tasks/%d/comments/%d', $projectId, $taskId, $taskComment->getId());
         return $this->_update($path, $taskComment);
     }
+
+    /**
+     * Delete Task Comment
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.comments.delete API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.comments.delete API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param int $taskId
+     * @param int $commentId
+     * @return mixed
+     */
+    public function delete(int $projectId, int $taskId, int $commentId)
+    {
+        $path = sprintf('projects/%d/tasks/%d/comments/%d', $projectId, $taskId, $commentId);
+        return $this->_delete($path);
+    }
 }
