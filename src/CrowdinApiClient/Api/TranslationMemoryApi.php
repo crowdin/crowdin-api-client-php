@@ -8,6 +8,7 @@ use CrowdinApiClient\Model\TranslationMemory;
 use CrowdinApiClient\Model\TranslationMemoryConcordance;
 use CrowdinApiClient\Model\TranslationMemoryExport;
 use CrowdinApiClient\Model\TranslationMemoryImport;
+use CrowdinApiClient\Model\TranslationMemorySegment;
 use CrowdinApiClient\ModelCollection;
 
 /**
@@ -94,6 +95,25 @@ class TranslationMemoryApi extends AbstractApi
     {
         $path = sprintf('tms/%d/segments', $translationMemoryId);
         return $this->_delete($path);
+    }
+
+    /**
+     * List TM Segments
+     * @link https://developer.crowdin.com/api/v2/#operation/api.tms.segments.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.segments.getMany API Documentation Enterprise
+     *
+     * @param int $tmId
+     * @param array $params
+     * string $params[orderBy]<br>
+     * string $params[croql]<br>
+     * integer $params[limit]<br>
+     * integer $params[offset]
+     * @return ModelCollection
+     */
+    public function listSegments(int $tmId, array $params = []): ModelCollection
+    {
+        $path = sprintf('tms/%d/segments', $tmId);
+        return $this->_list($path, TranslationMemorySegment::class, $params);
     }
 
     /**
