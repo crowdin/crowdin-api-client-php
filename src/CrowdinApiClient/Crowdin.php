@@ -19,6 +19,7 @@ use UnexpectedValueException;
  * @property \CrowdinApiClient\Api\ProjectApi $project
  * @property \CrowdinApiClient\Api\BranchApi $branch
  * @property \CrowdinApiClient\Api\TaskApi $task
+ * @property \CrowdinApiClient\Api\TaskCommentApi $taskComment
  * @property \CrowdinApiClient\Api\IssueApi $issue
  * @property \CrowdinApiClient\Api\ScreenshotApi $screenshot
  * @property \CrowdinApiClient\Api\DirectoryApi $directory
@@ -92,6 +93,7 @@ class Crowdin
         'language',
         'project',
         'task',
+        'taskComment',
         'issue',
         'branch',
         'glossary',
@@ -124,6 +126,7 @@ class Crowdin
         'group',
         'project',
         'task',
+        'taskComment',
         'issue',
         'branch',
         'glossary',
