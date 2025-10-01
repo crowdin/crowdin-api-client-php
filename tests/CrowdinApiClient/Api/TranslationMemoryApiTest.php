@@ -456,4 +456,10 @@ class TranslationMemoryApiTest extends AbstractTestApi
         $this->assertInstanceOf(TranslationMemorySegment::class, $segment);
         $this->assertEquals(4, $segment->getId());
     }
+
+    public function testDeleteSegment()
+    {
+        $this->mockRequestDelete('/tms/4/segments/1');
+        $this->crowdin->translationMemory->deleteSegment(4, 1);
+    }
 }

@@ -150,6 +150,21 @@ class TranslationMemoryApi extends AbstractApi
     }
 
     /**
+     * Delete TM Segment
+     * @link https://developer.crowdin.com/api/v2/#operation/api.tms.segments.delete API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.segments.delete API Documentation Enterprise
+     *
+     * @param int $tmId
+     * @param int $segmentId
+     * @return null
+     */
+    public function deleteSegment(int $tmId, int $segmentId)
+    {
+        $path = sprintf('tms/%d/segments/%d', $tmId, $segmentId);
+        return $this->_delete($path);
+    }
+
+    /**
      * Export TM
      * @link https://developer.crowdin.com/api/v2/#operation/api.tms.exports.post API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.exports.post API Documentation Enterprise
