@@ -30,4 +30,20 @@ class TaskCommentApi extends AbstractApi
         $path = sprintf('projects/%d/tasks/%d/comments', $projectId, $taskId);
         return $this->_list($path, TaskComment::class, $params);
     }
+
+    /**
+     * Get Task Comment
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.comments.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.comments.get API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param int $taskId
+     * @param int $commentId
+     * @return TaskComment|null
+     */
+    public function get(int $projectId, int $taskId, int $commentId): ?TaskComment
+    {
+        $path = sprintf('projects/%d/tasks/%d/comments/%d', $projectId, $taskId, $commentId);
+        return $this->_get($path, TaskComment::class);
+    }
 }
