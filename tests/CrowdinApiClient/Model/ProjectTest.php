@@ -168,7 +168,7 @@ class ProjectTest extends TestCase
         $this->assertEquals(['uk'], $this->project->getTargetLanguageIds());
         $this->assertEquals('moderate', $this->project->getLanguageAccessPolicy());
         $this->assertEquals($this->data['defaultTmId'], $this->project->getDefaultTmId());
-        $this->assertEquals($this->data['defaultGlossaryId'], $this->project->setDefaultGlossaryId());
+        $this->assertEquals($this->data['defaultGlossaryId'], $this->project->getDefaultGlossaryId());
     }
 
     public function checkData()
