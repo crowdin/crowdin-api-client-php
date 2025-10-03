@@ -132,4 +132,10 @@ class StringCorrectionApiTest extends AbstractTestApi
         $this->assertInstanceOf(StringCorrection::class, $correction);
         $this->assertEquals(190695, $correction->getId());
     }
+
+    public function testDelete(): void
+    {
+        $this->mockRequestDelete('/projects/2/corrections/190695');
+        $this->crowdin->stringCorrection->delete(2, 190695);
+    }
 }
