@@ -138,4 +138,10 @@ class StringCorrectionApiTest extends AbstractTestApi
         $this->mockRequestDelete('/projects/2/corrections/190695');
         $this->crowdin->stringCorrection->delete(2, 190695);
     }
+
+    public function testDeleteAll(): void
+    {
+        $this->mockRequestDelete('/projects/2/corrections?stringId=123');
+        $this->crowdin->stringCorrection->deleteAll(2, 123);
+    }
 }

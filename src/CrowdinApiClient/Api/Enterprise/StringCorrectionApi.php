@@ -95,4 +95,18 @@ class StringCorrectionApi extends AbstractApi
         $path = sprintf('projects/%d/corrections/%d', $projectId, $correctionId);
         return $this->_delete($path);
     }
+
+    /**
+     * Delete Corrections
+     * @link https://support.crowdin.com/developer/enterprise/api/v2/#tag/String-Corrections/operation/api.projects.corrections.deleteMany API Documentation
+     *
+     * @param int $projectId
+     * @param int $stringId
+     * @return mixed
+     */
+    public function deleteAll(int $projectId, int $stringId)
+    {
+        $path = sprintf('projects/%d/corrections', $projectId);
+        return $this->_delete($path, ['stringId' => $stringId]);
+    }
 }
