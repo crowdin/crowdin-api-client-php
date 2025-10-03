@@ -32,4 +32,21 @@ class StringCorrectionApi extends AbstractApi
         $path = sprintf('projects/%d/corrections', $projectId);
         return $this->_list($path, StringCorrection::class, $params);
     }
+
+    /**
+     * Get Correction
+     * @link https://support.crowdin.com/developer/enterprise/api/v2/#tag/String-Corrections/operation/api.projects.corrections.get API Documentation
+     *
+     * @param int $projectId
+     * @param int $correctionId
+     * @param array $params
+     * integer $params[denormalizePlaceholders] default: 0
+     *
+     * @return StringCorrection|null
+     */
+    public function get(int $projectId, int $correctionId, array $params = []): ?StringCorrection
+    {
+        $path = sprintf('projects/%d/corrections/%d', $projectId, $correctionId);
+        return $this->_get($path, StringCorrection::class, $params);
+    }
 }
