@@ -159,12 +159,16 @@ class ProjectTest extends TestCase
         $this->project->setTargetLanguageIds(['uk']);
         $this->project->setLanguageAccessPolicy('moderate');
         $this->project->setDescription($this->data['description']);
+        $this->project->setDefaultTmId($this->data['defaultTmId']);
+        $this->project->setDefaultGlossaryId($this->data['defaultGlossaryId']);
 
         $this->assertEquals($this->data['name'], $this->project->getName());
         $this->assertEquals($this->data['cname'], $this->project->getCname());
         $this->assertEquals($this->data['description'], $this->project->getDescription());
         $this->assertEquals(['uk'], $this->project->getTargetLanguageIds());
         $this->assertEquals('moderate', $this->project->getLanguageAccessPolicy());
+        $this->assertEquals($this->data['defaultTmId'], $this->project->getDefaultTmId());
+        $this->assertEquals($this->data['defaultGlossaryId'], $this->project->setDefaultGlossaryId());
     }
 
     public function checkData()
