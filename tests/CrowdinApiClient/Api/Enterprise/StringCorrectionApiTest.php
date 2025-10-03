@@ -105,4 +105,31 @@ class StringCorrectionApiTest extends AbstractTestApi
         $this->assertEquals(190696, $correction->getId());
         $this->assertEquals('Corrected string text', $correction->getText());
     }
+
+    public function testRestore(): void
+    {
+        $this->mockRequest([
+            'path' => '/projects/2/corrections/190695',
+            'method' => 'put',
+            'response' => '{
+              "data": {
+                "id": 190695,
+                "text": "This string has been corrected",
+                "pluralCategoryName": "few",
+                "user": {
+                  "id": 19,
+                  "username": "john_doe",
+                  "fullName": "John Smith",
+                  "avatarUrl": ""
+                },
+                "createdAt": "2019-09-23T11:26:54+00:00"
+              }
+            }',
+        ]);
+
+        $correction = $this->crowdin->stringCorrection->restore(2, 190695);
+
+        $this->assertInstanceOf(StringCorrection::class, $correction);
+        $this->assertEquals(190695, $correction->getId());
+    }
 }
