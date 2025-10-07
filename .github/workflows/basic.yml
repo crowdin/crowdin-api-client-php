@@ -1,66 +1,79 @@
 name: Tests
 
 on:
-  pull_request:
-    branches:
-      - 'master'
-  push:
-    branches:
-      - '*'
-    paths-ignore:
-      - 'README.md'
-      - 'LICENSE'
-      - 'CODE_OF_CONDUCT.md'
-      - 'CONTRIBUTING.md'
+pull_request:
+branches:
+- 'master'
+push:
+branches:
+- '*'
+paths-ignore:
+- 'README.md'
+- 'LICENSE'
+- 'CODE_OF_CONDUCT.md'
+- 'CONTRIBUTING.md'
 
 jobs:
-  tests:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        php-version: [ 7.4, 8.0, 8.1, 8.2 ]
-    steps:
-      - uses: actions/checkout@v4
+tests:
+runs-on: ubuntu-latest
+strategy:
+matrix:
+# Dropped PHP 7.4 as it is EOL. Added 8.3 for forward compatibility.
+php-version: [ 8.0, 8.1, 8.2, 8.3 ]
+steps:
+- name: Checkout Code
+uses: actions/checkout@v4
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: ${{ matrix.php-version }}
+  - name: Setup PHP
+    uses: shivammathur/setup-php@v2
+    with:
+      php-version: ${{ matrix.php-version }}
+      # Enable necessary extensions for PHP development if required (example: json)
+      extensions: mbstring, json, curl
 
-      - name: Composer install
-        run: composer install --no-interaction --prefer-dist
+  - name: Composer install
+    run: composer install --no-interaction --prefer-dist
 
-      - name: Unit tests
-        run: vendor/bin/phpunit
+  - name: Run Unit Tests
+    run: vendor/bin/phpunit
 
-  validate:
-    runs-on: ubuntu-latest
-    needs: tests
-    steps:
-      - uses: actions/checkout@v4
+validate:
+runs-on: ubuntu-latest
+needs: tests
+steps:
+- name: Checkout Code
+uses: actions/checkout@v4
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: 8.0
+  - name: Setup PHP 8.2 for Validation Tools
+    # Using a single, modern PHP version for validation tools is more efficient
+    uses: shivammathur/setup-php@v2
+    with:
+      php-version: 8.2
+      extensions: mbstring, json, curl
 
-      - name: Composer install
-        run: composer install --no-interaction --prefer-dist
+  - name: Composer install
+    run: composer install --no-interaction --prefer-dist
+    
+  - name: Check Formatting (Dry Run)
+    run: |
+      # Use a modern tool to check coding standards against PSR-12/PSR-4
+      vendor/bin/php-cs-fixer fix --dry-run --allow-risky=yes --stop-on-violation
 
-      - name: Check formatting
-        run: |
-          export PHP_CS_FIXER_IGNORE_ENV=true
-          vendor/bin/php-cs-fixer fix --dry-run
+  - name: Run PHPUnit for Coverage
+    # Generate coverage report using the same test runner
+    run: vendor/bin/phpunit --coverage-clover=coverage.xml
 
-      - name: Generate code coverage report
-        run: vendor/bin/phpunit --coverage-clover=coverage.xml
+  - name: Upload coverage report to Codecov
+    uses: codecov/codecov-action@v4
+    with:
+      token: ${{ secrets.CODECOV_TOKEN }}
+      # Specify files to include/exclude if necessary for accurate coverage reporting
+      fail_ci_if_error: true # Ensure CI fails if Codecov upload encounters an error
 
-      - name: Upload coverage report to Codecov
-        uses: codecov/codecov-action@v4
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
+  - name: Generate Documentation
+    # Ensure Docker is available if running Docker commands in the CI
+    # The use of the shell pipe | ensures correct multi-line execution
+    run: |
+      docker run --rm -v $(pwd):/data phpdoc/phpdoc:3 -d src -t .phpdoc/build
+      ls -la .phpdoc/build
 
-      - name: Generate documentation
-        run: |
-          docker run --rm -v $(pwd):/data phpdoc/phpdoc:3 -d src -t .phpdoc/build
-          ls -la .phpdoc/build
