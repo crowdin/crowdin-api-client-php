@@ -46,6 +46,7 @@ use UnexpectedValueException;
  * @property \CrowdinApiClient\Api\OrganizationWebhookApi $organizationWebhook
  * @property \CrowdinApiClient\Api\ReportArchiveApi|\CrowdinApiClient\Api\Enterprise\ReportArchiveApi $reportArchive
  * @property \CrowdinApiClient\Api\GraphqlApi $graphql
+ * @property \CrowdinApiClient\Api\SecurityLogApi|\CrowdinApiClient\Api\Enterprise\SecurityLogApi $securityLog
  */
 class Crowdin
 {
@@ -116,6 +117,7 @@ class Crowdin
         'organizationWebhook',
         'reportArchive',
         'graphql',
+        'securityLog',
     ];
 
     protected $servicesEnterprise = [
@@ -154,6 +156,7 @@ class Crowdin
         'organizationWebhook',
         'reportArchive',
         'graphql',
+        'securityLog',
     ];
 
     public function __construct(array $config)
