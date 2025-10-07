@@ -33,6 +33,19 @@ class BranchApi extends AbstractApi
     }
 
     /**
+     * List All Branches (Handles Pagination)
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.branches.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.branches.getMany API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @return ModelCollection
+     */
+    public function listAll(int $projectId): ModelCollection
+    {
+        return $this->_listAll('projects/' . $projectId . '/branches', Branch::class);
+    }
+    
+    /**
      * Get Branch Info
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.branches.get API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.branches.get API Documentation Enterprise
