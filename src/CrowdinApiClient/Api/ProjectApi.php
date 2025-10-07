@@ -69,7 +69,9 @@ class ProjectApi extends AbstractApi
      * boolean $data[skipUntranslatedStrings]<br>
      * boolean $data[skipUntranslatedFiles]<br>
      * integer $data[exportWithMinApprovalsCount]<br>
-     * integer $data[exportApprovedOnly]
+     * integer $data[exportApprovedOnly]<br>
+     * integer $data[defaultTmId]<br>
+     * integer $data[defaultGlossaryId]
      * @return Project|null
      */
     public function create(array $data): ?Project

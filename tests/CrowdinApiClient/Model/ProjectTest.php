@@ -141,6 +141,8 @@ class ProjectTest extends TestCase
         ],
         'joinPolicy' => null,
         'visibility' => null,
+        'defaultTmId' => 10,
+        'defaultGlossaryId' => 20,
     ];
 
     public function testLoadData()
@@ -157,12 +159,16 @@ class ProjectTest extends TestCase
         $this->project->setTargetLanguageIds(['uk']);
         $this->project->setLanguageAccessPolicy('moderate');
         $this->project->setDescription($this->data['description']);
+        $this->project->setDefaultTmId($this->data['defaultTmId']);
+        $this->project->setDefaultGlossaryId($this->data['defaultGlossaryId']);
 
         $this->assertEquals($this->data['name'], $this->project->getName());
         $this->assertEquals($this->data['cname'], $this->project->getCname());
         $this->assertEquals($this->data['description'], $this->project->getDescription());
         $this->assertEquals(['uk'], $this->project->getTargetLanguageIds());
         $this->assertEquals('moderate', $this->project->getLanguageAccessPolicy());
+        $this->assertEquals($this->data['defaultTmId'], $this->project->getDefaultTmId());
+        $this->assertEquals($this->data['defaultGlossaryId'], $this->project->getDefaultGlossaryId());
     }
 
     public function checkData()
@@ -214,5 +220,7 @@ class ProjectTest extends TestCase
         $this->assertEquals($this->data['normalizePlaceholder'], $this->project->isNormalizePlaceholder());
         $this->assertEquals($this->data['saveMetaInfoInSource'], $this->project->isSaveMetaInfoInSource());
         $this->assertEquals($this->data['notificationSettings'], $this->project->getNotificationSettings());
+        $this->assertEquals($this->data['defaultTmId'], $this->project->getDefaultTmId());
+        $this->assertEquals($this->data['defaultGlossaryId'], $this->project->getDefaultGlossaryId());
     }
 }
