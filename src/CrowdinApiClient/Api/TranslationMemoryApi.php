@@ -8,6 +8,7 @@ use CrowdinApiClient\Model\TranslationMemory;
 use CrowdinApiClient\Model\TranslationMemoryConcordance;
 use CrowdinApiClient\Model\TranslationMemoryExport;
 use CrowdinApiClient\Model\TranslationMemoryImport;
+use CrowdinApiClient\Model\TranslationMemorySegment;
 use CrowdinApiClient\ModelCollection;
 
 /**
@@ -93,6 +94,73 @@ class TranslationMemoryApi extends AbstractApi
     public function clear(int $translationMemoryId)
     {
         $path = sprintf('tms/%d/segments', $translationMemoryId);
+        return $this->_delete($path);
+    }
+
+    /**
+     * List TM Segments
+     * @link https://developer.crowdin.com/api/v2/#operation/api.tms.segments.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.segments.getMany API Documentation Enterprise
+     *
+     * @param int $tmId
+     * @param array $params
+     * string $params[orderBy]<br>
+     * string $params[croql]<br>
+     * integer $params[limit]<br>
+     * integer $params[offset]
+     * @return ModelCollection
+     */
+    public function listSegments(int $tmId, array $params = []): ModelCollection
+    {
+        $path = sprintf('tms/%d/segments', $tmId);
+        return $this->_list($path, TranslationMemorySegment::class, $params);
+    }
+
+    /**
+     * Get TM Segment
+     * @link https://developer.crowdin.com/api/v2/#operation/api.tms.segments.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.segments.get API Documentation Enterprise
+     *
+     * @param int $tmId
+     * @param int $segmentId
+     * @return TranslationMemorySegment|null
+     */
+    public function getSegment(int $tmId, int $segmentId): ?TranslationMemorySegment
+    {
+        $path = sprintf('tms/%d/segments/%d', $tmId, $segmentId);
+        return $this->_get($path, TranslationMemorySegment::class);
+    }
+
+    /**
+     * Create TM Segment
+     * @link https://developer.crowdin.com/api/v2/#operation/api.tms.segments.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.segments.post API Documentation Enterprise
+     *
+     * @param int $tmId
+     * @param array $data
+     * array $data[records]<br>
+     * string $data[records][][languageId]<br>
+     * string $data[records][][text]
+     * @return TranslationMemorySegment|null
+     */
+    public function createSegment(int $tmId, array $data): ?TranslationMemorySegment
+    {
+        $path = sprintf('tms/%d/segments', $tmId);
+        return $this->_create($path, TranslationMemorySegment::class, $data);
+    }
+
+    /**
+     * Delete TM Segment
+     * @link https://developer.crowdin.com/api/v2/#operation/api.tms.segments.delete API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.segments.delete API Documentation Enterprise
+     *
+     * @param int $tmId
+     * @param int $segmentId
+     * @return null
+     */
+    public function deleteSegment(int $tmId, int $segmentId)
+    {
+        $path = sprintf('tms/%d/segments/%d', $tmId, $segmentId);
         return $this->_delete($path);
     }
 

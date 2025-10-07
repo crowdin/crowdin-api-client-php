@@ -7,6 +7,7 @@ use CrowdinApiClient\Model\TranslationMemory;
 use CrowdinApiClient\Model\TranslationMemoryConcordance;
 use CrowdinApiClient\Model\TranslationMemoryExport;
 use CrowdinApiClient\Model\TranslationMemoryImport;
+use CrowdinApiClient\Model\TranslationMemorySegment;
 use CrowdinApiClient\ModelCollection;
 
 class TranslationMemoryApiTest extends AbstractTestApi
@@ -351,5 +352,114 @@ class TranslationMemoryApiTest extends AbstractTestApi
         $this->assertCount(1, $concordance);
         $this->assertInstanceOf(TranslationMemoryConcordance::class, $concordance[0]);
         $this->assertEquals(4, $concordance[0]->getTm()->getId());
+    }
+
+    public function testListSegments()
+    {
+        $this->mockRequest([
+            'path' => '/tms/4/segments',
+            'method' => 'get',
+            'response' => '{
+              "data": [
+                {
+                  "data": {
+                    "id": 4,
+                    "records": [
+                      {
+                        "id": 1,
+                        "languageId": "uk",
+                        "text": "Перекладений текст",
+                        "usageCount": 13,
+                        "createdBy": 1,
+                        "updatedBy": 1,
+                        "createdAt": "2019-09-16T13:48:04+00:00",
+                        "updatedAt": "2019-09-16T13:48:04+00:00"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "pagination": {
+                "offset": 0,
+                "limit": 25
+              }
+            }'
+        ]);
+
+        $segments = $this->crowdin->translationMemory->listSegments(4);
+        $this->assertInstanceOf(ModelCollection::class, $segments);
+        $this->assertCount(1, $segments);
+        $this->assertInstanceOf(TranslationMemorySegment::class, $segments[0]);
+        $this->assertEquals(4, $segments[0]->getId());
+    }
+
+    public function testGetSegment()
+    {
+        $this->mockRequestGet('/tms/4/segments/1', '{
+          "data": {
+            "id": 4,
+            "records": [
+              {
+                "id": 1,
+                "languageId": "uk",
+                "text": "Перекладений текст",
+                "usageCount": 13,
+                "createdBy": 1,
+                "updatedBy": 1,
+                "createdAt": "2019-09-16T13:48:04+00:00",
+                "updatedAt": "2019-09-16T13:48:04+00:00"
+              }
+            ]
+          }
+        }');
+
+        $segment = $this->crowdin->translationMemory->getSegment(4, 1);
+        $this->assertInstanceOf(TranslationMemorySegment::class, $segment);
+        $this->assertEquals(4, $segment->getId());
+    }
+
+    public function testCreateSegment()
+    {
+        $params = [
+            'records' => [
+                [
+                    'languageId' => 'uk',
+                    'text' => 'Перекладений текст',
+                ],
+            ],
+        ];
+
+        $this->mockRequest([
+            'path' => '/tms/4/segments',
+            'method' => 'post',
+            'body' => json_encode($params),
+            'response' => '{
+              "data": {
+                "id": 4,
+                "records": [
+                  {
+                    "id": 1,
+                    "languageId": "uk",
+                    "text": "Перекладений текст",
+                    "usageCount": 13,
+                    "createdBy": 1,
+                    "updatedBy": 1,
+                    "createdAt": "2019-09-16T13:48:04+00:00",
+                    "updatedAt": "2019-09-16T13:48:04+00:00"
+                  }
+                ]
+              }
+            }'
+        ]);
+
+        $segment = $this->crowdin->translationMemory->createSegment(4, $params);
+        $this->assertInstanceOf(TranslationMemorySegment::class, $segment);
+        $this->assertEquals(4, $segment->getId());
+    }
+
+    public function testDeleteSegment()
+    {
+        $this->mockRequestDelete('/tms/4/segments/1');
+        $this->crowdin->translationMemory->deleteSegment(4, 1);
     }
 }
