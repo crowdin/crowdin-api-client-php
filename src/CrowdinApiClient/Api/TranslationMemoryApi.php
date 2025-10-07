@@ -2,8 +2,10 @@
 
 namespace CrowdinApiClient\Api;
 
+use CrowdinApiClient\Http\ResponseDecorator\ResponseModelListDecorator;
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\TranslationMemory;
+use CrowdinApiClient\Model\TranslationMemoryConcordance;
 use CrowdinApiClient\Model\TranslationMemoryExport;
 use CrowdinApiClient\Model\TranslationMemoryImport;
 use CrowdinApiClient\ModelCollection;
@@ -164,5 +166,33 @@ class TranslationMemoryApi extends AbstractApi
     {
         $path = sprintf('tms/%d/imports/%s', $translationMemoryId, $importId);
         return $this->_get($path, TranslationMemoryImport::class);
+    }
+
+    /**
+     * Concordance search in TMs
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tms.concordance.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tms.concordance.post API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param array $params
+     * string $params[sourceLanguageId] required<br>
+     * string $params[targetLanguageId] required<br>
+     * bool $params[autoSubstitution] required Improves TM suggestions<br>
+     * int $params[minRelevant] required Show TM suggestions with specified minimum match (1-100)<br>
+     * string[] $params[expressions] required Note: Can't be used with expression in same request<br>
+     * string $params[expression] Deprecated Note: Can't be used with expressions in same request
+     * @return ModelCollection|null
+     */
+    public function concordance(int $projectId, array $params): ?ModelCollection
+    {
+        return $this->client->apiRequest(
+            'post',
+            sprintf('projects/%d/tms/concordance', $projectId),
+            new ResponseModelListDecorator(TranslationMemoryConcordance::class),
+            [
+                'body' => json_encode($params),
+                'headers' => $this->getHeaders(),
+            ]
+        );
     }
 }

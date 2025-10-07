@@ -4,6 +4,7 @@ namespace CrowdinApiClient\Tests\Api;
 
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\TranslationMemory;
+use CrowdinApiClient\Model\TranslationMemoryConcordance;
 use CrowdinApiClient\Model\TranslationMemoryExport;
 use CrowdinApiClient\Model\TranslationMemoryImport;
 use CrowdinApiClient\ModelCollection;
@@ -298,5 +299,57 @@ class TranslationMemoryApiTest extends AbstractTestApi
     {
         $this->mockRequestDelete('/tms/4/segments');
         $this->crowdin->translationMemory->clear(4);
+    }
+
+    public function testConcordance(): void
+    {
+        $params = [
+            'sourceLanguageId' => 'en',
+            'targetLanguageId' => 'de',
+            'autoSubstitution' => true,
+            'minRelevant' => 60,
+            'expressions' => [
+                'Welcome!',
+                'Save as...',
+                'View',
+                'About...',
+            ],
+        ];
+
+        $this->mockRequest([
+            'path' => '/projects/4/tms/concordance',
+            'method' => 'post',
+            'body' => json_encode($params),
+            'response' => '{
+              "data": [
+                {
+                  "data": {
+                    "tm": {
+                      "id": 4,
+                      "name": "Knowledge Base TM"
+                    },
+                    "recordId": 34,
+                    "source": "Welcome!",
+                    "target": "Ласкаво просимо!",
+                    "relevant": 100,
+                    "substituted": "62→100",
+                    "updatedAt": "2022-09-28T12:29:34+00:00"
+                  }
+                }
+              ],
+              "pagination": {
+                "offset": 0,
+                "limit": 25
+              }
+            }',
+        ]);
+
+        /** @var TranslationMemoryConcordance[] $concordance */
+        $concordance = $this->crowdin->translationMemory->concordance(4, $params);
+
+        $this->assertInstanceOf(ModelCollection::class, $concordance);
+        $this->assertCount(1, $concordance);
+        $this->assertInstanceOf(TranslationMemoryConcordance::class, $concordance[0]);
+        $this->assertEquals(4, $concordance[0]->getTm()->getId());
     }
 }
