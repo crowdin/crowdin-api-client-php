@@ -137,14 +137,12 @@
         <h2 class="phpdocumentor-content__title">LabelApi.php</h2>
 
         
+        
+        
+        
 
 
-
-
-
-
-
-
+        
 <h3 id="toc">
     Table of Contents
     <a href="files/src-crowdinapiclient-api-labelapi.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
@@ -161,7 +159,6 @@
     </h4>
     <dl class="phpdocumentor-table-of-contents">
                     <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/CrowdinApiClient-Api-LabelApi.html"><abbr title="\CrowdinApiClient\Api\LabelApi">LabelApi</abbr></a></dt><dd>Use labels in your project for an easy way to add context to the strings or organize them by certain topics.</dd>    </dl>
-
 
 
 
@@ -210,6 +207,8 @@
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
                             Prism.highlightElement(code);
+                            d=document.getElementsByClassName("line-numbers");
+                            d[0].scrollTop = d[0].children[1].offsetTop;
                             return;
                         }
 

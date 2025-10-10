@@ -237,14 +237,14 @@
             phpdocumentor-element
             -property
             -protected
-                                                        "
+                                                                    "
 >
     <h4 class="phpdocumentor-element__name" id="property_pagination">
         $pagination
         <a href="classes/CrowdinApiClient-ModelCollection.html#property_pagination" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                                            </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/ModelCollection.php"><a href="files/src-crowdinapiclient-modelcollection.html"><abbr title="src/CrowdinApiClient/ModelCollection.php">ModelCollection.php</abbr></a></abbr>
@@ -256,13 +256,15 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$pagination</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
     
     
+    
+
     
 
     
@@ -396,6 +398,8 @@
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
                             Prism.highlightElement(code);
+                            d=document.getElementsByClassName("line-numbers");
+                            d[0].scrollTop = d[0].children[1].offsetTop;
                             return;
                         }
 

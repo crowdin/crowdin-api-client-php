@@ -262,7 +262,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/ProjectApi.php"><a href="files/src-crowdinapiclient-api-projectapi.html"><abbr title="src/CrowdinApiClient/Api/ProjectApi.php">ProjectApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">75</span>
+    <span class="phpdocumentor-element-found-in__line">77</span>
 
     </aside>
 
@@ -301,7 +301,9 @@ boolean $data[delayedWorkflowStart]<br>
 boolean $data[skipUntranslatedStrings]<br>
 boolean $data[skipUntranslatedFiles]<br>
 integer $data[exportWithMinApprovalsCount]<br>
-integer $data[exportApprovedOnly]</p>
+integer $data[exportApprovedOnly]<br>
+integer $data[defaultTmId]<br>
+integer $data[defaultGlossaryId]</p>
 </section>
 
             </dd>
@@ -354,7 +356,7 @@ integer $data[exportApprovedOnly]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/ProjectApi.php"><a href="files/src-crowdinapiclient-api-projectapi.html"><abbr title="src/CrowdinApiClient/Api/ProjectApi.php">ProjectApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">101</span>
+    <span class="phpdocumentor-element-found-in__line">103</span>
 
     </aside>
 
@@ -572,7 +574,7 @@ integer $params[userId] Get user own projects</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/ProjectApi.php"><a href="files/src-crowdinapiclient-api-projectapi.html"><abbr title="src/CrowdinApiClient/Api/ProjectApi.php">ProjectApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">88</span>
+    <span class="phpdocumentor-element-found-in__line">90</span>
 
     </aside>
 
@@ -664,6 +666,8 @@ integer $params[userId] Get user own projects</p>
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
                             Prism.highlightElement(code);
+                            d=document.getElementsByClassName("line-numbers");
+                            d[0].scrollTop = d[0].children[1].offsetTop;
                             return;
                         }
 

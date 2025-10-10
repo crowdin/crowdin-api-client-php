@@ -287,14 +287,14 @@
             phpdocumentor-element
             -property
             -protected
-                                                        "
+                                                                    "
 >
     <h4 class="phpdocumentor-element__name" id="property_baseRates">
         $baseRates
         <a href="classes/CrowdinApiClient-Model-ReportSettingsTemplateConfig.html#property_baseRates" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                                            </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/ReportSettingsTemplateConfig.php"><a href="files/src-crowdinapiclient-model-reportsettingstemplateconfig.html"><abbr title="src/CrowdinApiClient/Model/ReportSettingsTemplateConfig.php">ReportSettingsTemplateConfig.php</abbr></a></abbr>
@@ -306,13 +306,15 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type"><a href="classes/CrowdinApiClient-Model-BaseRates.html"><abbr title="\CrowdinApiClient\Model\BaseRates">BaseRates</abbr></a></span>
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type"><a href="classes/CrowdinApiClient-Model-BaseRates.html"><abbr title="\CrowdinApiClient\Model\BaseRates">BaseRates</abbr></a></span>
     <span class="phpdocumentor-signature__name">$baseRates</span>
     </code>
 
     
     
+    
+
     
 
     
@@ -323,14 +325,14 @@
             phpdocumentor-element
             -property
             -protected
-                                                        "
+                                                                    "
 >
     <h4 class="phpdocumentor-element__name" id="property_individualRates">
         $individualRates
         <a href="classes/CrowdinApiClient-Model-ReportSettingsTemplateConfig.html#property_individualRates" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                                            </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/ReportSettingsTemplateConfig.php"><a href="files/src-crowdinapiclient-model-reportsettingstemplateconfig.html"><abbr title="src/CrowdinApiClient/Model/ReportSettingsTemplateConfig.php">ReportSettingsTemplateConfig.php</abbr></a></abbr>
@@ -342,13 +344,15 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, <a href="classes/CrowdinApiClient-Model-IndividualRates.html"><abbr title="\CrowdinApiClient\Model\IndividualRates">IndividualRates</abbr></a>&gt;</span>
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type">array&lt;string|int, <a href="classes/CrowdinApiClient-Model-IndividualRates.html"><abbr title="\CrowdinApiClient\Model\IndividualRates">IndividualRates</abbr></a>&gt;</span>
     <span class="phpdocumentor-signature__name">$individualRates</span>
     </code>
 
     
     
+    
+
     
 
     
@@ -359,14 +363,14 @@
             phpdocumentor-element
             -property
             -protected
-                                                        "
+                                                                    "
 >
     <h4 class="phpdocumentor-element__name" id="property_netRateSchemes">
         $netRateSchemes
         <a href="classes/CrowdinApiClient-Model-ReportSettingsTemplateConfig.html#property_netRateSchemes" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                                            </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/ReportSettingsTemplateConfig.php"><a href="files/src-crowdinapiclient-model-reportsettingstemplateconfig.html"><abbr title="src/CrowdinApiClient/Model/ReportSettingsTemplateConfig.php">ReportSettingsTemplateConfig.php</abbr></a></abbr>
@@ -378,13 +382,15 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type"><a href="classes/CrowdinApiClient-Model-NetRateSchemes.html"><abbr title="\CrowdinApiClient\Model\NetRateSchemes">NetRateSchemes</abbr></a></span>
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type"><a href="classes/CrowdinApiClient-Model-NetRateSchemes.html"><abbr title="\CrowdinApiClient\Model\NetRateSchemes">NetRateSchemes</abbr></a></span>
     <span class="phpdocumentor-signature__name">$netRateSchemes</span>
     </code>
 
     
     
+    
+
     
 
     
@@ -764,6 +770,8 @@
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
                             Prism.highlightElement(code);
+                            d=document.getElementsByClassName("line-numbers");
+                            d[0].scrollTop = d[0].children[1].offsetTop;
                             return;
                         }
 

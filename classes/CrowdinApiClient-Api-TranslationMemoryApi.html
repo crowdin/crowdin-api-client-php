@@ -162,7 +162,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
@@ -224,6 +224,13 @@ Translation Memory export and import are asynchronous operations and shall be co
 <dd>Clear TM</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_concordance">concordance()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>|null    </span>
+</dt>
+<dd>Concordance search in TMs</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_create">create()</a>
     <span>
                                 &nbsp;: mixed    </span>
@@ -231,11 +238,25 @@ Translation Memory export and import are asynchronous operations and shall be co
 <dd>Add TM</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_createSegment">createSegment()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-TranslationMemorySegment.html"><abbr title="\CrowdinApiClient\Model\TranslationMemorySegment">TranslationMemorySegment</abbr></a>|null    </span>
+</dt>
+<dd>Create TM Segment</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_delete">delete()</a>
     <span>
                                 &nbsp;: null    </span>
 </dt>
 <dd>Delete TM</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_deleteSegment">deleteSegment()</a>
+    <span>
+                                &nbsp;: null    </span>
+</dt>
+<dd>Delete TM Segment</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_download">download()</a>
@@ -259,6 +280,13 @@ Translation Memory export and import are asynchronous operations and shall be co
 <dd>Get TM Info</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_getSegment">getSegment()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-TranslationMemorySegment.html"><abbr title="\CrowdinApiClient\Model\TranslationMemorySegment">TranslationMemorySegment</abbr></a>|null    </span>
+</dt>
+<dd>Get TM Segment</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_import">import()</a>
     <span>
                                 &nbsp;: <a href="classes/CrowdinApiClient-Model-TranslationMemoryImport.html"><abbr title="\CrowdinApiClient\Model\TranslationMemoryImport">TranslationMemoryImport</abbr></a>|null    </span>
@@ -271,6 +299,13 @@ Translation Memory export and import are asynchronous operations and shall be co
                                 &nbsp;: <a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>    </span>
 </dt>
 <dd>List TMs</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_listSegments">listSegments()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>    </span>
+</dt>
+<dd>List TM Segments</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_update">update()</a>
@@ -307,7 +342,7 @@ Translation Memory export and import are asynchronous operations and shall be co
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">120</span>
+    <span class="phpdocumentor-element-found-in__line">190</span>
 
     </aside>
 
@@ -386,7 +421,7 @@ Translation Memory export and import are asynchronous operations and shall be co
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">163</span>
+    <span class="phpdocumentor-element-found-in__line">233</span>
 
     </aside>
 
@@ -465,7 +500,7 @@ Translation Memory export and import are asynchronous operations and shall be co
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">91</span>
+    <span class="phpdocumentor-element-found-in__line">94</span>
 
     </aside>
 
@@ -529,6 +564,92 @@ Translation Memory export and import are asynchronous operations and shall be co
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_concordance">
+        concordance()
+        <a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_concordance" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">254</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Concordance search in TMs</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">concordance</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$projectId</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$params</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>string $params[sourceLanguageId] required<br>
+string $params[targetLanguageId] required<br>
+bool $params[autoSubstitution] required Improves TM suggestions<br>
+int $params[minRelevant] required Show TM suggestions with specified minimum match (1-100)<br>
+string[] $params[expressions] required Note: Can't be used with expression in same request<br>
+string $params[expression] Deprecated Note: Can't be used with expressions in same request</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_concordance#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.projects.tms.concordance.post"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tms.concordance.post"> <p>API Documentation Enterprise</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_create">
         create()
         <a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_create" class="headerlink"><i class="fas fa-link"></i></a>
@@ -537,7 +658,7 @@ Translation Memory export and import are asynchronous operations and shall be co
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">61</span>
 
     </aside>
 
@@ -599,6 +720,89 @@ Translation Memory export and import are asynchronous operations and shall be co
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_createSegment">
+        createSegment()
+        <a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_createSegment" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">146</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Create TM Segment</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">createSegment</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$tmId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-TranslationMemorySegment.html"><abbr title="\CrowdinApiClient\Model\TranslationMemorySegment">TranslationMemorySegment</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$tmId</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$data</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>array $data[records]<br>
+string $data[records][][languageId]<br>
+string $data[records][][text]</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_createSegment#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.tms.segments.post"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.segments.post"> <p>API Documentation Enterprise</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-TranslationMemorySegment.html"><abbr title="\CrowdinApiClient\Model\TranslationMemorySegment">TranslationMemorySegment</abbr></a>|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_delete">
         delete()
         <a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_delete" class="headerlink"><i class="fas fa-link"></i></a>
@@ -607,7 +811,7 @@ Translation Memory export and import are asynchronous operations and shall be co
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">79</span>
+    <span class="phpdocumentor-element-found-in__line">82</span>
 
     </aside>
 
@@ -671,6 +875,85 @@ Translation Memory export and import are asynchronous operations and shall be co
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_deleteSegment">
+        deleteSegment()
+        <a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_deleteSegment" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">161</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Delete TM Segment</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">deleteSegment</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$tmId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$segmentId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$tmId</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$segmentId</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_deleteSegment#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.tms.segments.delete"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.segments.delete"> <p>API Documentation Enterprise</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_download">
         download()
         <a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_download" class="headerlink"><i class="fas fa-link"></i></a>
@@ -679,7 +962,7 @@ Translation Memory export and import are asynchronous operations and shall be co
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">131</span>
+    <span class="phpdocumentor-element-found-in__line">201</span>
 
     </aside>
 
@@ -758,7 +1041,7 @@ Translation Memory export and import are asynchronous operations and shall be co
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">109</span>
+    <span class="phpdocumentor-element-found-in__line">179</span>
 
     </aside>
 
@@ -841,7 +1124,7 @@ string $params[format]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">47</span>
 
     </aside>
 
@@ -905,6 +1188,85 @@ string $params[format]</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getSegment">
+        getSegment()
+        <a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_getSegment" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">128</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get TM Segment</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getSegment</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$tmId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$segmentId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-TranslationMemorySegment.html"><abbr title="\CrowdinApiClient\Model\TranslationMemorySegment">TranslationMemorySegment</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$tmId</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$segmentId</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_getSegment#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.tms.segments.get"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.segments.get"> <p>API Documentation Enterprise</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-TranslationMemorySegment.html"><abbr title="\CrowdinApiClient\Model\TranslationMemorySegment">TranslationMemorySegment</abbr></a>|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_import">
         import()
         <a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_import" class="headerlink"><i class="fas fa-link"></i></a>
@@ -913,7 +1275,7 @@ string $params[format]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">142</span>
+    <span class="phpdocumentor-element-found-in__line">212</span>
 
     </aside>
 
@@ -1006,7 +1368,7 @@ string $params[format]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">34</span>
+    <span class="phpdocumentor-element-found-in__line">37</span>
 
     </aside>
 
@@ -1075,6 +1437,90 @@ integer $params[offset]</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_listSegments">
+        listSegments()
+        <a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_listSegments" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">113</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">List TM Segments</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">listSegments</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$tmId</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$tmId</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$params</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>string $params[orderBy]<br>
+string $params[croql]<br>
+integer $params[limit]<br>
+integer $params[offset]</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_listSegments#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.tms.segments.getMany"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.segments.getMany"> <p>API Documentation Enterprise</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_update">
         update()
         <a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_update" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1083,7 +1529,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">67</span>
+    <span class="phpdocumentor-element-found-in__line">70</span>
 
     </aside>
 
@@ -1171,6 +1617,8 @@ integer $params[offset]</p>
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
                             Prism.highlightElement(code);
+                            d=document.getElementsByClassName("line-numbers");
+                            d[0].scrollTop = d[0].children[1].offsetTop;
                             return;
                         }
 
@@ -1249,13 +1697,18 @@ integer $params[offset]</p>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_checkExportStatus">checkExportStatus()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_checkImportStatus">checkImportStatus()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_clear">clear()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_concordance">concordance()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_create">create()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_createSegment">createSegment()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_delete">delete()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_deleteSegment">deleteSegment()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_download">download()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_export">export()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_get">get()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_getSegment">getSegment()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_import">import()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_list">list()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_listSegments">listSegments()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_update">update()</a></li>
                                     </ul>
             </li>

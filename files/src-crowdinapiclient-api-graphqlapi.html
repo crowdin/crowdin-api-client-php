@@ -137,14 +137,12 @@
         <h2 class="phpdocumentor-content__title">GraphqlApi.php</h2>
 
         
+        
+        
+        
 
 
-
-
-
-
-
-
+        
 <h3 id="toc">
     Table of Contents
     <a href="files/src-crowdinapiclient-api-graphqlapi.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
@@ -161,7 +159,6 @@
     </h4>
     <dl class="phpdocumentor-table-of-contents">
                     <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/CrowdinApiClient-Api-GraphqlApi.html"><abbr title="\CrowdinApiClient\Api\GraphqlApi">GraphqlApi</abbr></a></dt><dd>GraphQL API is a tool that allows you to retrieve exactly the data you need using more specific and flexible queries.</dd>    </dl>
-
 
 
 
@@ -210,6 +207,8 @@
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
                             Prism.highlightElement(code);
+                            d=document.getElementsByClassName("line-numbers");
+                            d[0].scrollTop = d[0].children[1].offsetTop;
                             return;
                         }
 

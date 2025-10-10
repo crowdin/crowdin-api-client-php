@@ -301,14 +301,14 @@
             phpdocumentor-element
             -property
             -protected
-                                                        "
+                                                                    "
 >
     <h4 class="phpdocumentor-element__name" id="property_hasAccessToAllWorkflowSteps">
         $hasAccessToAllWorkflowSteps
         <a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeam.html#property_hasAccessToAllWorkflowSteps" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                                            </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeam.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteam.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeam.php">ProjectTeam.php</abbr></a></abbr>
@@ -320,13 +320,15 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">bool</span>
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type">bool</span>
     <span class="phpdocumentor-signature__name">$hasAccessToAllWorkflowSteps</span>
      = <span class="phpdocumentor-signature__default-value">false</span></code>
 
     
     
+    
+
     
 
     
@@ -337,14 +339,14 @@
             phpdocumentor-element
             -property
             -protected
-                                                        "
+                                                                    "
 >
     <h4 class="phpdocumentor-element__name" id="property_hasManagerAccess">
         $hasManagerAccess
         <a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeam.html#property_hasManagerAccess" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                                            </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeam.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteam.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeam.php">ProjectTeam.php</abbr></a></abbr>
@@ -356,13 +358,15 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">bool</span>
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type">bool</span>
     <span class="phpdocumentor-signature__name">$hasManagerAccess</span>
      = <span class="phpdocumentor-signature__default-value">false</span></code>
 
     
     
+    
+
     
 
     
@@ -373,14 +377,14 @@
             phpdocumentor-element
             -property
             -protected
-                                                        "
+                                                                    "
 >
     <h4 class="phpdocumentor-element__name" id="property_id">
         $id
         <a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeam.html#property_id" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                                            </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeam.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteam.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeam.php">ProjectTeam.php</abbr></a></abbr>
@@ -392,13 +396,15 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">int</span>
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type">int</span>
     <span class="phpdocumentor-signature__name">$id</span>
     </code>
 
     
     
+    
+
     
 
     
@@ -409,14 +415,14 @@
             phpdocumentor-element
             -property
             -protected
-                                                        "
+                                                                    "
 >
     <h4 class="phpdocumentor-element__name" id="property_permissions">
         $permissions
         <a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeam.html#property_permissions" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                                            </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeam.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteam.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeam.php">ProjectTeam.php</abbr></a></abbr>
@@ -428,13 +434,15 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$permissions</span>
     </code>
 
     
     
+    
+
     
 
     
@@ -858,6 +866,8 @@
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
                             Prism.highlightElement(code);
+                            d=document.getElementsByClassName("line-numbers");
+                            d[0].scrollTop = d[0].children[1].offsetTop;
                             return;
                         }
 

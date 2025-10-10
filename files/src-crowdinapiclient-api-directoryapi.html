@@ -137,14 +137,12 @@
         <h2 class="phpdocumentor-content__title">DirectoryApi.php</h2>
 
         
+        
+        
+        
 
 
-
-
-
-
-
-
+        
 <h3 id="toc">
     Table of Contents
     <a href="files/src-crowdinapiclient-api-directoryapi.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
@@ -161,7 +159,6 @@
     </h4>
     <dl class="phpdocumentor-table-of-contents">
                     <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/CrowdinApiClient-Api-DirectoryApi.html"><abbr title="\CrowdinApiClient\Api\DirectoryApi">DirectoryApi</abbr></a></dt><dd>Manage project directories to keep files structure</dd>    </dl>
-
 
 
 
@@ -210,6 +207,8 @@
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
                             Prism.highlightElement(code);
+                            d=document.getElementsByClassName("line-numbers");
+                            d[0].scrollTop = d[0].children[1].offsetTop;
                             return;
                         }
 

@@ -281,14 +281,14 @@
             phpdocumentor-element
             -property
             -protected
-                                                        "
+                                                                    "
 >
     <h4 class="phpdocumentor-element__name" id="property_etag">
         $etag
         <a href="classes/CrowdinApiClient-Model-DownloadFileTranslation.html#property_etag" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                                            </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/DownloadFileTranslation.php"><a href="files/src-crowdinapiclient-model-downloadfiletranslation.html"><abbr title="src/CrowdinApiClient/Model/DownloadFileTranslation.php">DownloadFileTranslation.php</abbr></a></abbr>
@@ -300,13 +300,15 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">string|null</span>
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type">string|null</span>
     <span class="phpdocumentor-signature__name">$etag</span>
     </code>
 
     
     
+    
+
     
 
     
@@ -317,14 +319,14 @@
             phpdocumentor-element
             -property
             -protected
-                                                        "
+                                                                    "
 >
     <h4 class="phpdocumentor-element__name" id="property_expireIn">
         $expireIn
         <a href="classes/CrowdinApiClient-Model-DownloadFile.html#property_expireIn" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                                            </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/DownloadFile.php"><a href="files/src-crowdinapiclient-model-downloadfile.html"><abbr title="src/CrowdinApiClient/Model/DownloadFile.php">DownloadFile.php</abbr></a></abbr>
@@ -336,13 +338,15 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">string</span>
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$expireIn</span>
     </code>
 
     
     
+    
+
     
 
     
@@ -353,14 +357,14 @@
             phpdocumentor-element
             -property
             -protected
-                                                        "
+                                                                    "
 >
     <h4 class="phpdocumentor-element__name" id="property_url">
         $url
         <a href="classes/CrowdinApiClient-Model-DownloadFile.html#property_url" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                                            </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/DownloadFile.php"><a href="files/src-crowdinapiclient-model-downloadfile.html"><abbr title="src/CrowdinApiClient/Model/DownloadFile.php">DownloadFile.php</abbr></a></abbr>
@@ -372,13 +376,15 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">string</span>
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$url</span>
     </code>
 
     
     
+    
+
     
 
     
@@ -720,6 +726,8 @@
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
                             Prism.highlightElement(code);
+                            d=document.getElementsByClassName("line-numbers");
+                            d[0].scrollTop = d[0].children[1].offsetTop;
                             return;
                         }
 
