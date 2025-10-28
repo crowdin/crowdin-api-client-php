@@ -7,6 +7,7 @@
 - [Export and download TM](#export-and-download-tm)
 - [Create and upload glossary](#create-and-upload-glossary)
 - [Export and download glossary](#export-and-download-glossary)
+- [Manage file references](#manage-file-references)
 
 ---
 
@@ -159,4 +160,37 @@ while ($glossaryImport->getStatus() !== 'finished') {
 $tbxFile = $crowdin->glossary->download($glossaryId, $glossaryExport->getIdentifier());
 
 print_r($tbxFile->getData());
+```
+
+## Manage file references
+
+```php
+use CrowdinApiClient\Crowdin;
+
+$crowdin = new Crowdin([
+    'access_token' => '<access_token>',
+    'organization' => '<organization_domain>', // if you use Crowdin Enterprise
+]);
+
+$projectId = '<project-id>';
+$fileId = '<file-id>';
+
+// List all file references
+$references = $crowdin->file->listReferences($projectId, $fileId);
+print_r($references->getData());
+
+// Get a specific file reference
+$reference = $crowdin->file->getReference($projectId, $fileId, '<reference-id>');
+print_r($reference->getData());
+
+// Add a new file reference
+$newReference = $crowdin->file->addReference($projectId, $fileId, [
+    'name' => 'Asset Reference',
+    'type' => 'image',
+    'url' => 'https://your-cdn.com/assets/image.png'
+]);
+print_r($newReference->getData());
+
+// Delete a file reference
+$crowdin->file->deleteReference($projectId, $fileId, '<reference-id>');
 ```

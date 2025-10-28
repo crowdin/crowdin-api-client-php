@@ -5,6 +5,7 @@ namespace CrowdinApiClient\Api;
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\DownloadFilePreview;
 use CrowdinApiClient\Model\File;
+use CrowdinApiClient\Model\FileReference;
 use CrowdinApiClient\Model\FileRevision;
 use CrowdinApiClient\ModelCollection;
 
@@ -195,5 +196,74 @@ class FileApi extends AbstractApi
     {
         $path = sprintf('projects/%d/files/%d/revisions/%d', $projectId, $fileId, $revision);
         return $this->_get($path, FileRevision::class);
+    }
+
+    /**
+     * List File References
+     * @link https://support.crowdin.com/developer/api/v2/#operation/api.projects.files.references.getMany API Documentation
+     * @link https://support.crowdin.com/developer/api/v2/#operation/api.projects.files.references.getMany API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param int $fileId
+     * @param array $params
+     * integer $params[limit]<br>
+     * integer $params[offset]
+     * @return ModelCollection
+     */
+    public function listReferences(int $projectId, int $fileId, array $params = []): ModelCollection
+    {
+        $path = sprintf('projects/%d/files/%d/references', $projectId, $fileId);
+        return $this->_list($path, FileReference::class, $params);
+    }
+
+    /**
+     * Get File Reference
+     * @link https://support.crowdin.com/developer/api/v2/#operation/api.projects.files.references.get API Documentation
+     * @link https://support.crowdin.com/developer/api/v2/#operation/api.projects.files.references.get API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param int $fileId
+     * @param int $referenceId
+     * @return FileReference|null
+     */
+    public function getReference(int $projectId, int $fileId, int $referenceId): ?FileReference
+    {
+        $path = sprintf('projects/%d/files/%d/references/%d', $projectId, $fileId, $referenceId);
+        return $this->_get($path, FileReference::class);
+    }
+
+    /**
+     * Add File Reference
+     * @link https://support.crowdin.com/developer/api/v2/#operation/api.projects.files.references.post API Documentation
+     * @link https://support.crowdin.com/developer/api/v2/#operation/api.projects.files.references.post API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param int $fileId
+     * @param array $data
+     * string $data[name] required<br>
+     * string $data[type] required<br>
+     * string $data[url] required
+     * @return FileReference
+     */
+    public function addReference(int $projectId, int $fileId, array $data): FileReference
+    {
+        $path = sprintf('projects/%d/files/%d/references', $projectId, $fileId);
+        return $this->_create($path, FileReference::class, $data);
+    }
+
+    /**
+     * Delete File Reference
+     * @link https://support.crowdin.com/developer/api/v2/#operation/api.projects.files.references.delete API Documentation
+     * @link https://support.crowdin.com/developer/api/v2/#operation/api.projects.files.references.delete API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param int $fileId
+     * @param int $referenceId
+     * @return mixed
+     */
+    public function deleteReference(int $projectId, int $fileId, int $referenceId)
+    {
+        $path = sprintf('projects/%d/files/%d/references/%d', $projectId, $fileId, $referenceId);
+        return $this->_delete($path);
     }
 }
