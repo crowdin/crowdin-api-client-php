@@ -284,4 +284,40 @@ class StringTranslationApi extends AbstractApi
         $path = sprintf('projects/%d/votes/%d', $projectId, $voteId);
         return $this->_delete($path);
     }
+
+    /**
+     * Approval Batch Operations
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.approvals.patch API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.approvals.patch API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param array $data
+     * string $data[op] required Patch operation to perform (replace, test)<br>
+     * string <json-pointer> $data[path] required A JSON Pointer as defined in RFC 6901<br>
+     * value $data[value] required The value to be used within the operation (string, int, bool, or object)
+     * @return mixed
+     */
+    public function batchOperationsForApprovals(int $projectId, array $data)
+    {
+        $path = sprintf('projects/%d/approvals', $projectId);
+        return $this->_patch($path, StringTranslationApproval::class, $data);
+    }
+
+    /**
+     * Translation Batch Operations
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.patch API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.patch API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param array $data
+     * string $data[op] required Patch operation to perform (replace, test)<br>
+     * string <json-pointer> $data[path] required A JSON Pointer as defined in RFC 6901<br>
+     * value $data[value] required The value to be used within the operation (string, int, bool, or object)
+     * @return mixed
+     */
+    public function batchOperationsForTranslations(int $projectId, array $data)
+    {
+        $path = sprintf('projects/%d/translations', $projectId);
+        return $this->_patch($path, StringTranslation::class, $data);
+    }
 }

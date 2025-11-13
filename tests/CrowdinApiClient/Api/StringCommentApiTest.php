@@ -218,4 +218,67 @@ class StringCommentApiTest extends AbstractTestApi
         $this->mockRequestDelete('/projects/1/comments/1');
         $this->crowdin->stringComment->delete(1, 1);
     }
+
+    public function testBatchOperations()
+    {
+        $this->mockRequest([
+            'path' => '/projects/1/comments',
+            'method' => 'patch',
+            'response' => '{
+              "data": [
+                {
+                  "data": {
+                    "id": 2,
+                    "text": "Updated comment text",
+                    "userId": 6,
+                    "stringId": 742,
+                    "user": {
+                      "id": 12,
+                      "username": "john_smith",
+                      "fullName": "John Smith",
+                      "avatarUrl": ""
+                    },
+                    "string": {
+                      "id": 123,
+                      "text": "HTML page example",
+                      "type": "text",
+                      "hasPlurals": false,
+                      "isIcu": false,
+                      "context": "Document Title\\r\\nXPath: /html/head/title",
+                      "fileId": 22
+                    },
+                    "languageId": "bg",
+                    "type": "issue",
+                    "issueType": "source_mistake",
+                    "issueStatus": "resolved",
+                    "resolverId": 6,
+                    "resolver": {
+                      "id": 12,
+                      "username": "john_smith",
+                      "fullName": "John Smith",
+                      "avatarUrl": ""
+                    },
+                    "resolvedAt": "2019-09-20T11:05:24+00:00",
+                    "createdAt": "2019-09-20T11:05:24+00:00"
+                  }
+                }
+              ]
+            }'
+        ]);
+
+        $batchResult = $this->crowdin->stringComment->batchOperations(1, [
+            [
+                'op' => 'replace',
+                'path' => '/2/text',
+                'value' => 'Updated comment text'
+            ],
+            [
+                'op' => 'replace',
+                'path' => '/2/issueStatus',
+                'value' => 'resolved'
+            ]
+        ]);
+
+        $this->assertInstanceOf(StringComment::class, $batchResult);
+    }
 }
