@@ -246,7 +246,7 @@ class StringTranslationApiTest extends AbstractTestApi
             ])
         ]);
 
-        $batchResult = $this->crowdin->stringTranslation->batchOperationsForApprovals(2, [
+        $batchResult = $this->crowdin->stringTranslation->approvalsBatchOperations(2, [
             [
                 'op' => 'replace',
                 'path' => '/12/workflowStepId',
@@ -280,7 +280,7 @@ class StringTranslationApiTest extends AbstractTestApi
             ])
         ]);
 
-        $batchResult = $this->crowdin->stringTranslation->batchOperationsForTranslations(2, [
+        $batchResult = $this->crowdin->stringTranslation->translationsBatchOperations(2, [
             [
                 'op' => 'replace',
                 'path' => '/190695/text',

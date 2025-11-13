@@ -297,7 +297,7 @@ class StringTranslationApi extends AbstractApi
      * value $data[value] required The value to be used within the operation (string, int, bool, or object)
      * @return mixed
      */
-    public function batchOperationsForApprovals(int $projectId, array $data)
+    public function approvalsBatchOperations(int $projectId, array $data)
     {
         $path = sprintf('projects/%d/approvals', $projectId);
         return $this->_patch($path, StringTranslationApproval::class, $data);
@@ -315,7 +315,7 @@ class StringTranslationApi extends AbstractApi
      * value $data[value] required The value to be used within the operation (string, int, bool, or object)
      * @return mixed
      */
-    public function batchOperationsForTranslations(int $projectId, array $data)
+    public function translationsBatchOperations(int $projectId, array $data)
     {
         $path = sprintf('projects/%d/translations', $projectId);
         return $this->_patch($path, StringTranslation::class, $data);
