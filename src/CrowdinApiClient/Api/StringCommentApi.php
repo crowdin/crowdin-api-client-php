@@ -86,4 +86,22 @@ class StringCommentApi extends AbstractApi
         $path = sprintf('projects/%d/comments/%d', $projectId, $stringCommentId);
         return $this->_delete($path);
     }
+
+    /**
+     * String Comment Batch Operations
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.comments.batchPatch API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.comments.batchPatch API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param array $data
+     * string $data[op] required Patch operation to perform (replace, test)<br>
+     * string <json-pointer> $data[path] required A JSON Pointer as defined in RFC 6901<br>
+     * value $data[value] required The value to be used within the operation (string, int, bool, or object)
+     * @return mixed
+     */
+    public function batchOperations(int $projectId, array $data)
+    {
+        $path = sprintf('projects/%d/comments', $projectId);
+        return $this->_patch($path, StringComment::class, $data);
+    }
 }

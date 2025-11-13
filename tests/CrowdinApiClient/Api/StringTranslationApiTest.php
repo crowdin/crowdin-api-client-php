@@ -218,4 +218,76 @@ class StringTranslationApiTest extends AbstractTestApi
         $this->assertEquals(7815, $stringTranslations[1]->getStringId());
         $this->assertEquals(9011, $stringTranslations[2]->getStringId());
     }
+
+    public function testBatchOperationsForApprovals(): void
+    {
+        $this->mockRequest([
+            'path' => '/projects/2/approvals',
+            'method' => 'patch',
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 12,
+                            'user' => [
+                                'id' => 12,
+                                'username' => 'john_smith',
+                                'fullName' => 'John Smith',
+                                'userType' => 'translator'
+                            ],
+                            'translationId' => 190695,
+                            'stringId' => 35434,
+                            'languageId' => 'uk',
+                            'workflowStepId' => 10,
+                            'createdAt' => '2019-09-20T11:05:24+00:00'
+                        ]
+                    ]
+                ]
+            ])
+        ]);
+
+        $batchResult = $this->crowdin->stringTranslation->approvalsBatchOperations(2, [
+            [
+                'op' => 'replace',
+                'path' => '/12/workflowStepId',
+                'value' => 10
+            ]
+        ]);
+
+        $this->assertInstanceOf(\CrowdinApiClient\Model\StringTranslationApproval::class, $batchResult);
+    }
+
+    public function testBatchOperationsForTranslations(): void
+    {
+        $this->mockRequest([
+            'path' => '/projects/2/translations',
+            'method' => 'patch',
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 190695,
+                            'text' => 'Updated translation text',
+                            'pluralCategoryName' => 'few',
+                            'user' => [
+                                'id' => 19,
+                                'login' => 'john_doe',
+                            ],
+                            'rating' => 10,
+                        ]
+                    ]
+                ]
+            ])
+        ]);
+
+        $batchResult = $this->crowdin->stringTranslation->translationsBatchOperations(2, [
+            [
+                'op' => 'replace',
+                'path' => '/190695/text',
+                'value' => 'Updated translation text'
+            ]
+        ]);
+
+        $this->assertInstanceOf(StringTranslation::class, $batchResult);
+    }
 }
