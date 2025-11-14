@@ -5,6 +5,7 @@ namespace CrowdinApiClient\Tests\Api;
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\DownloadFilePreview;
 use CrowdinApiClient\Model\File;
+use CrowdinApiClient\Model\FileReference;
 use CrowdinApiClient\Model\FileRevision;
 use CrowdinApiClient\ModelCollection;
 
@@ -487,5 +488,106 @@ class FileApiTest extends AbstractTestApi
 
         $this->assertInstanceOf(FileRevision::class, $fileRevision);
         $this->assertEquals(16, $fileRevision->getId());
+    }
+
+    public function testListReferences()
+    {
+        $this->mockRequest([
+            'path' => '/projects/2/files/44/references',
+            'method' => 'get',
+            'response' => '{
+              "data": [
+                {
+                  "data": {
+                    "id": 1,
+                    "projectId": 2,
+                    "fileId": 44,
+                    "name": "Asset Reference",
+                    "type": "image",
+                    "url": "https://cdn.example.com/assets/image.png",
+                    "createdAt": "2019-09-19T15:10:43+00:00",
+                    "updatedAt": "2019-09-19T15:10:46+00:00"
+                  }
+                }
+              ],
+              "pagination": {
+                "offset": 0,
+                "limit": 25
+              }
+            }'
+        ]);
+
+        $references = $this->crowdin->file->listReferences(2, 44);
+
+        $this->assertInstanceOf(ModelCollection::class, $references);
+        $this->assertCount(1, $references);
+        $this->assertInstanceOf(FileReference::class, $references[0]);
+        $this->assertEquals(1, $references[0]->getId());
+        $this->assertEquals('Asset Reference', $references[0]->getName());
+        $this->assertEquals('image', $references[0]->getType());
+        $this->assertEquals('https://cdn.example.com/assets/image.png', $references[0]->getUrl());
+    }
+
+    public function testGetReference()
+    {
+        $this->mockRequestGet('/projects/2/files/44/references/1', '{
+          "data": {
+            "id": 1,
+            "projectId": 2,
+            "fileId": 44,
+            "name": "Asset Reference",
+            "type": "image",
+            "url": "https://cdn.example.com/assets/image.png",
+            "createdAt": "2019-09-19T15:10:43+00:00",
+            "updatedAt": "2019-09-19T15:10:46+00:00"
+          }
+        }');
+
+        $reference = $this->crowdin->file->getReference(2, 44, 1);
+
+        $this->assertInstanceOf(FileReference::class, $reference);
+        $this->assertEquals(1, $reference->getId());
+        $this->assertEquals(2, $reference->getProjectId());
+        $this->assertEquals(44, $reference->getFileId());
+        $this->assertEquals('Asset Reference', $reference->getName());
+        $this->assertEquals('image', $reference->getType());
+        $this->assertEquals('https://cdn.example.com/assets/image.png', $reference->getUrl());
+    }
+
+    public function testAddReference()
+    {
+        $this->mockRequestPost('/projects/2/files/44/references', '{
+          "data": {
+            "id": 1,
+            "projectId": 2,
+            "fileId": 44,
+            "name": "New Asset Reference",
+            "type": "document",
+            "url": "https://docs.example.com/assets/document.pdf",
+            "createdAt": "2019-09-19T15:10:43+00:00",
+            "updatedAt": "2019-09-19T15:10:46+00:00"
+          }
+        }');
+
+        $reference = $this->crowdin->file->addReference(2, 44, [
+            'name' => 'New Asset Reference',
+            'type' => 'document',
+            'url' => 'https://docs.example.com/assets/document.pdf'
+        ]);
+
+        $this->assertInstanceOf(FileReference::class, $reference);
+        $this->assertEquals(1, $reference->getId());
+        $this->assertEquals('New Asset Reference', $reference->getName());
+        $this->assertEquals('document', $reference->getType());
+        $this->assertEquals('https://docs.example.com/assets/document.pdf', $reference->getUrl());
+    }
+
+    public function testDeleteReference()
+    {
+        $this->mockRequestDelete('/projects/2/files/44/references/1');
+
+        $result = $this->crowdin->file->deleteReference(2, 44, 1);
+
+        $this->assertNull($result);
     }
 }

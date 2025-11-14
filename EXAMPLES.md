@@ -7,6 +7,7 @@
 - [Export and download TM](#export-and-download-tm)
 - [Create and upload glossary](#create-and-upload-glossary)
 - [Export and download glossary](#export-and-download-glossary)
+ 
 
 ---
 
@@ -160,3 +161,5 @@ $tbxFile = $crowdin->glossary->download($glossaryId, $glossaryExport->getIdentif
 
 print_r($tbxFile->getData());
 ```
+
+ 
