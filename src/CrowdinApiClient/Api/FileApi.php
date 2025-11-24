@@ -19,6 +19,7 @@ class FileApi extends AbstractApi
      * List Files
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.files.getMany API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.files.getMany API Documentation Enterprise
+     *
      * @param int $projectId
      * @param array $params
      * integer $params[branchId] Can't be used with directoryId in the same request<br>
@@ -62,9 +63,6 @@ class FileApi extends AbstractApi
      * Get File Info
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.files.get API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.files.get API Documentation Enterprise
-     * @param int $projectId
-     * @param int $fileId
-     * @return File|null
      */
     public function get(int $projectId, int $fileId): ?File
     {
@@ -76,6 +74,7 @@ class FileApi extends AbstractApi
      * Update File
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.files.put API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.files.put API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $fileId
      * @param array $data
@@ -95,6 +94,7 @@ class FileApi extends AbstractApi
      * Restore file to revision
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.files.put API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.files.put API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $fileId
      * @param array $data
@@ -111,10 +111,6 @@ class FileApi extends AbstractApi
      * Download Preview File
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.files.preview.get API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.files.preview.get API Documentation Enterprise
-     *
-     * @param int $projectId
-     * @param int $fileId
-     * @return DownloadFilePreview|null
      */
     public function downloadPreview(int $projectId, int $fileId): ?DownloadFilePreview
     {
@@ -126,10 +122,6 @@ class FileApi extends AbstractApi
      * Download File
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.files.download.get API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.files.download.get API Documentation Enterprise
-     *
-     * @param int $projectId
-     * @param int $fileId
-     * @return DownloadFile|null
      */
     public function download(int $projectId, int $fileId): ?DownloadFile
     {
@@ -141,9 +133,6 @@ class FileApi extends AbstractApi
      * Edit File
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.files.patch API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.files.patch API Documentation Enterprise
-     *
-     * @param File $file
-     * @return File|null
      */
     public function edit(File $file): ?File
     {
@@ -156,9 +145,7 @@ class FileApi extends AbstractApi
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.files.delete API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.files.delete API Documentation Enterprise
      *
-     * @param int $projectId
-     * @param int $fileId
-     * @return mixed
+     * @return null
      */
     public function delete(int $projectId, int $fileId)
     {
@@ -170,10 +157,6 @@ class FileApi extends AbstractApi
      * List File Revisions
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.files.revisions.getMany API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.files.revisions.getMany API Documentation Enterprise
-     *
-     * @param int $projectId
-     * @param int $fileId
-     * @return ModelCollection
      */
     public function revisions(int $projectId, int $fileId): ModelCollection
     {
@@ -185,11 +168,6 @@ class FileApi extends AbstractApi
      * Get File Revision
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.files.revisions.get API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.files.revisions.get API Documentation Enterprise
-     *
-     * @param int $projectId
-     * @param int $fileId
-     * @param int $revision
-     * @return FileRevision|null
      */
     public function getRevision(int $projectId, int $fileId, int $revision): ?FileRevision
     {

@@ -8,22 +8,22 @@ namespace CrowdinApiClient\Model;
 class FileRevision extends BaseModel
 {
     /**
-     * @var integer
+     * @var int
      */
     protected $id;
 
     /**
-     * @var integer
+     * @var int
      */
     protected $projectId;
 
     /**
-     * @var integer
+     * @var int
      */
     protected $fileId;
 
     /**
-     * @var integer
+     * @var int|null
      */
     protected $restoreToRevision;
 
@@ -37,82 +37,47 @@ class FileRevision extends BaseModel
      */
     protected $date;
 
-    /**
-     * FileRevision constructor.
-     * @param array $data
-     */
     public function __construct(array $data = [])
     {
         parent::__construct($data);
-        $this->id = (integer)$this->getDataProperty('id');
-        $this->projectId = (integer)$this->getDataProperty('projectId');
-        $this->restoreToRevision = (integer)$this->getDataProperty('restoreToRevision');
-        $this->fileId = (integer)$this->getDataProperty('fileId');
+
+        $this->id = (int)$this->getDataProperty('id');
+        $this->projectId = (int)$this->getDataProperty('projectId');
+        $this->fileId = (int)$this->getDataProperty('fileId');
+        $this->restoreToRevision = $this->getDataProperty('restoreToRevision')
+            ? (int)$this->getDataProperty('restoreToRevision')
+            : null;
         $this->info = (array)$this->getDataProperty('info');
         $this->date = (string)$this->getDataProperty('date');
     }
 
-    /**
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return int
-     */
     public function getProjectId(): int
     {
         return $this->projectId;
     }
 
-    /**
-     * @param int $projectId
-     */
-    public function setProjectId(int $projectId): void
-    {
-        $this->projectId = $projectId;
-    }
-
-    /**
-     * @return array
-     */
-    public function getInfo(): array
-    {
-        return $this->info;
-    }
-
-    /**
-     * @param array $info
-     */
-    public function setInfo(array $info): void
-    {
-        $this->info = $info;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDate(): string
-    {
-        return $this->date;
-    }
-
-    /**
-     * @return int
-     */
     public function getFileId(): int
     {
         return $this->fileId;
     }
 
-    /**
-     * @return int
-     */
-    public function getRestoreToRevision(): int
+    public function getRestoreToRevision(): ?int
     {
         return $this->restoreToRevision;
+    }
+
+    public function getInfo(): array
+    {
+        return $this->info;
+    }
+
+    public function getDate(): string
+    {
+        return $this->date;
     }
 }
