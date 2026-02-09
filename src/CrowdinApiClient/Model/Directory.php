@@ -61,10 +61,10 @@ class Directory extends BaseModel
     {
         parent::__construct($data);
 
-        $this->id = (integer)$this->getDataProperty('id');
-        $this->projectId = (integer)$this->getDataProperty('projectId');
-        $this->branchId = (integer)$this->getDataProperty('branchId');
-        $this->directoryId = (integer)$this->getDataProperty('directoryId');
+        $this->id = (int)$this->getDataProperty('id');
+        $this->projectId = (int)$this->getDataProperty('projectId');
+        $this->branchId = (int)$this->getDataProperty('branchId');
+        $this->directoryId = (int)$this->getDataProperty('directoryId');
         $this->name = (string)$this->getDataProperty('name');
         $this->title = (string)$this->getDataProperty('title');
         $this->exportPattern = (string)$this->getDataProperty('exportPattern');

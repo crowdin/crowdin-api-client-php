@@ -40,10 +40,10 @@ class ReportArchive extends BaseModel
     public function __construct(array $data = [])
     {
         parent::__construct($data);
-        $this->id = (integer)$this->getDataProperty('id');
+        $this->id = (int)$this->getDataProperty('id');
         $this->scopeType = (string)$this->getDataProperty('scopeType');
-        $this->scopeId = (integer)$this->getDataProperty('scopeId');
-        $this->userId = (integer)$this->getDataProperty('userId');
+        $this->scopeId = (int)$this->getDataProperty('scopeId');
+        $this->userId = (int)$this->getDataProperty('userId');
         $this->name = (string)$this->getDataProperty('name');
         $this->webUrl = (string)$this->getDataProperty('webUrl');
         $this->scheme = (array)$this->getDataProperty('scheme');

@@ -51,8 +51,8 @@ class Branch extends BaseModel
     {
         parent::__construct($data);
 
-        $this->id = (integer)$this->getDataProperty('id');
-        $this->projectId = (integer)$this->getDataProperty('projectId');
+        $this->id = (int)$this->getDataProperty('id');
+        $this->projectId = (int)$this->getDataProperty('projectId');
         $this->name = (string)$this->getDataProperty('name');
         $this->title = (string)$this->getDataProperty('title');
         $this->exportPattern = (string)$this->getDataProperty('exportPattern');

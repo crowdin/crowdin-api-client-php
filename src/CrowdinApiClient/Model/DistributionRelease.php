@@ -39,9 +39,9 @@ class DistributionRelease extends BaseModel
         parent::__construct($data);
 
         $this->status = (string)$this->getDataProperty('status');
-        $this->progress = (integer)$this->getDataProperty('progress');
+        $this->progress = (int)$this->getDataProperty('progress');
         $this->currentLanguageId = (string)$this->getDataProperty('currentLanguageId');
-        $this->currentFileId = (integer)$this->getDataProperty('currentFileId');
+        $this->currentFileId = (int)$this->getDataProperty('currentFileId');
         $this->date = (string)$this->getDataProperty('date');
     }
 

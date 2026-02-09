@@ -94,9 +94,9 @@ class Term extends BaseModel
     {
         parent::__construct($data);
 
-        $this->id = (integer)$this->getDataProperty('id');
-        $this->userId = (integer)$this->getDataProperty('userId');
-        $this->glossaryId = (integer)$this->getDataProperty('glossaryId');
+        $this->id = (int)$this->getDataProperty('id');
+        $this->userId = (int)$this->getDataProperty('userId');
+        $this->glossaryId = (int)$this->getDataProperty('glossaryId');
         $this->languageId = (string)$this->getDataProperty('languageId');
         $this->text = (string)$this->getDataProperty('text');
         $this->description = (string)$this->getDataProperty('description');

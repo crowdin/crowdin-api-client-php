@@ -32,7 +32,7 @@ class TaskSettingsTemplate extends BaseModel
     public function __construct(array $data = [])
     {
         parent::__construct($data);
-        $this->id = (integer)$this->getDataProperty('id');
+        $this->id = (int)$this->getDataProperty('id');
         $this->name = (string)$this->getDataProperty('name');
         $this->config = (array)$this->getDataProperty('config');
         $this->createdAt = (string)$this->getDataProperty('createdAt');

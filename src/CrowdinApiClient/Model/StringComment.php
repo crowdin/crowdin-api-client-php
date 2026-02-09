@@ -80,17 +80,17 @@ class StringComment extends BaseModel
     public function __construct(array $data = [])
     {
         parent::__construct($data);
-        $this->id = (integer)$this->getDataProperty('id');
+        $this->id = (int)$this->getDataProperty('id');
         $this->text = (string)$this->getDataProperty('text');
-        $this->userId = (integer)$this->getDataProperty('userId');
-        $this->stringId = (integer)$this->getDataProperty('stringId');
+        $this->userId = (int)$this->getDataProperty('userId');
+        $this->stringId = (int)$this->getDataProperty('stringId');
         $this->user = (array)$this->getDataProperty('user');
         $this->string = (array)$this->getDataProperty('string');
         $this->languageId = (string)$this->getDataProperty('languageId');
         $this->type = (string)$this->getDataProperty('type');
         $this->issueType = (string)$this->getDataProperty('issueType');
         $this->issueStatus = (string)$this->getDataProperty('issueStatus');
-        $this->resolverId = (integer)$this->getDataProperty('resolverId');
+        $this->resolverId = (int)$this->getDataProperty('resolverId');
         $this->resolver = (array)$this->getDataProperty('resolver');
         $this->resolvedAt = (string)$this->getDataProperty('resolvedAt');
         $this->createdAt = (string)$this->getDataProperty('createdAt');

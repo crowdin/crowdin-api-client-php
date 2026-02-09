@@ -63,14 +63,14 @@ class Group extends BaseModel
     {
         parent::__construct($data);
 
-        $this->id = (integer)$this->getDataProperty('id');
+        $this->id = (int)$this->getDataProperty('id');
         $this->name = (string)$this->getDataProperty('name');
         $this->description = (string)$this->getDataProperty('description');
-        $this->parentId = (integer)$this->getDataProperty('parentId');
-        $this->organizationId = (integer)$this->getDataProperty('organizationId');
-        $this->userId = (integer)$this->getDataProperty('userId');
-        $this->subgroupsCount = (integer)$this->getDataProperty('subgroupsCount');
-        $this->projectsCount = (integer)$this->getDataProperty('projectsCount');
+        $this->parentId = (int)$this->getDataProperty('parentId');
+        $this->organizationId = (int)$this->getDataProperty('organizationId');
+        $this->userId = (int)$this->getDataProperty('userId');
+        $this->subgroupsCount = (int)$this->getDataProperty('subgroupsCount');
+        $this->projectsCount = (int)$this->getDataProperty('projectsCount');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
     }

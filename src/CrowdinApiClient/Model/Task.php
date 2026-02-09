@@ -146,9 +146,9 @@ class Task extends BaseModel
     {
         parent::__construct($data);
 
-        $this->id = (integer)$this->getDataProperty('id');
-        $this->projectId = (integer)$this->getDataProperty('projectId');
-        $this->creatorId = (integer)$this->getDataProperty('creatorId');
+        $this->id = (int)$this->getDataProperty('id');
+        $this->projectId = (int)$this->getDataProperty('projectId');
+        $this->creatorId = (int)$this->getDataProperty('creatorId');
         $this->type = (string)$this->getDataProperty('type');
         $this->vendor = $this->getDataProperty('vendor') ? (string)$this->getDataProperty('vendor') : null;
         $this->status = (string)$this->getDataProperty('status');
@@ -163,12 +163,12 @@ class Task extends BaseModel
         $this->description = (string)$this->getDataProperty('description');
         $this->hash = (string)$this->getDataProperty('hash');
         $this->translationUrl = (string)$this->getDataProperty('translationUrl');
-        $this->wordsCount = (integer)$this->getDataProperty('wordsCount');
-        $this->filesCount = (integer)$this->getDataProperty('filesCount');
-        $this->commentsCount = (integer)$this->getDataProperty('commentsCount');
+        $this->wordsCount = (int)$this->getDataProperty('wordsCount');
+        $this->filesCount = (int)$this->getDataProperty('filesCount');
+        $this->commentsCount = (int)$this->getDataProperty('commentsCount');
         $this->deadline = (string)$this->getDataProperty('deadline');
         $this->timeRange = (string)$this->getDataProperty('timeRange');
-        $this->workflowStepId = (integer)$this->getDataProperty('workflowStepId');
+        $this->workflowStepId = (int)$this->getDataProperty('workflowStepId');
         $this->buyUrl = $this->getDataProperty('buyUrl') ? (string)$this->getDataProperty('buyUrl') : null;
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');

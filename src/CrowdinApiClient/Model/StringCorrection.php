@@ -36,7 +36,7 @@ class StringCorrection extends BaseModel
     {
         parent::__construct($data);
 
-        $this->id = (integer)$this->getDataProperty('id');
+        $this->id = (int)$this->getDataProperty('id');
         $this->text = (string)$this->getDataProperty('text');
         $this->pluralCategoryName = (string)$this->getDataProperty('pluralCategoryName');
         $this->user = (array)$this->getDataProperty('user');

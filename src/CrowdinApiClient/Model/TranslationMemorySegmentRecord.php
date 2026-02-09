@@ -50,12 +50,12 @@ class TranslationMemorySegmentRecord extends BaseModel
     public function __construct(array $data = [])
     {
         parent::__construct($data);
-        $this->id = (integer)$this->getDataProperty('id');
+        $this->id = (int)$this->getDataProperty('id');
         $this->languageId = (string)$this->getDataProperty('languageId');
         $this->text = (string)$this->getDataProperty('text');
-        $this->usageCount = (integer)$this->getDataProperty('usageCount');
-        $this->createdBy = (integer)$this->getDataProperty('createdBy');
-        $this->updatedBy = (integer)$this->getDataProperty('updatedBy');
+        $this->usageCount = (int)$this->getDataProperty('usageCount');
+        $this->createdBy = (int)$this->getDataProperty('createdBy');
+        $this->updatedBy = (int)$this->getDataProperty('updatedBy');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
     }
