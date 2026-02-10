@@ -175,10 +175,8 @@ Glossary export and import are asynchronous operations and shall be completed wi
 
 
 
-
-
-
-
+    
+    
 <h3 id="toc">
     Table of Contents
     <a href="classes/CrowdinApiClient-Api-GlossaryApi.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
@@ -383,7 +381,7 @@ Glossary export and import are asynchronous operations and shall be completed wi
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">clearTerms</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">clearTerms</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -392,8 +390,8 @@ Glossary export and import are asynchronous operations and shall be completed wi
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$glossaryId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                <span class="phpdocumentor-argument-list__argument__name">$glossaryId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -425,8 +423,8 @@ Glossary export and import are asynchronous operations and shall be completed wi
                                     </dd>
                                             </dl>
 
+        
     
-
     
 </article>
                     <article
@@ -451,7 +449,7 @@ Glossary export and import are asynchronous operations and shall be completed wi
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">concordance</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>|null</span></code>
+                    <span class="phpdocumentor-signature__name">concordance</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -460,15 +458,15 @@ Glossary export and import are asynchronous operations and shall be completed wi
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$projectId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                <span class="phpdocumentor-argument-list__argument__name">$projectId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                <span class="phpdocumentor-argument-list__argument__name">$data</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>string $data[sourceLanguageId]<br>
@@ -505,8 +503,8 @@ string $data[expression]<br></p>
                                     </dd>
                                             </dl>
 
+        
     
-
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>|null</span>
@@ -535,7 +533,7 @@ string $data[expression]<br></p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">create</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Glossary.html"><abbr title="\CrowdinApiClient\Model\Glossary">Glossary</abbr></a>|null</span></code>
+                    <span class="phpdocumentor-signature__name">create</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Glossary.html"><abbr title="\CrowdinApiClient\Model\Glossary">Glossary</abbr></a>|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -544,8 +542,8 @@ string $data[expression]<br></p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$params</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                <span class="phpdocumentor-argument-list__argument__name">$params</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>string $params[name] required<br>
@@ -580,8 +578,8 @@ integer $params[groupId]</p>
                                     </dd>
                                             </dl>
 
+        
     
-
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Glossary.html"><abbr title="\CrowdinApiClient\Model\Glossary">Glossary</abbr></a>|null</span>
@@ -610,7 +608,7 @@ integer $params[groupId]</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">createTerm</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">createTerm</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -619,15 +617,15 @@ integer $params[groupId]</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$glossaryId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                <span class="phpdocumentor-argument-list__argument__name">$glossaryId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                <span class="phpdocumentor-argument-list__argument__name">$data</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>string $data[languageId] required<br>
@@ -665,8 +663,8 @@ integer $data[translationOfTermId]</p>
                                     </dd>
                                             </dl>
 
+        
     
-
     
 </article>
                     <article
@@ -691,7 +689,7 @@ integer $data[translationOfTermId]</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">delete</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">delete</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -700,8 +698,8 @@ integer $data[translationOfTermId]</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$glossaryId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                <span class="phpdocumentor-argument-list__argument__name">$glossaryId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -733,8 +731,8 @@ integer $data[translationOfTermId]</p>
                                     </dd>
                                             </dl>
 
+        
     
-
     
 </article>
                     <article
@@ -759,7 +757,7 @@ integer $data[translationOfTermId]</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">deleteConcept</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$conceptId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">deleteConcept</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$conceptId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -768,15 +766,15 @@ integer $data[translationOfTermId]</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$glossaryId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                <span class="phpdocumentor-argument-list__argument__name">$glossaryId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$conceptId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                <span class="phpdocumentor-argument-list__argument__name">$conceptId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -808,8 +806,8 @@ integer $data[translationOfTermId]</p>
                                     </dd>
                                             </dl>
 
+        
     
-
     
 </article>
                     <article
@@ -834,7 +832,7 @@ integer $data[translationOfTermId]</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">deleteTerm</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$termId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">deleteTerm</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$termId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -843,15 +841,15 @@ integer $data[translationOfTermId]</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$glossaryId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                <span class="phpdocumentor-argument-list__argument__name">$glossaryId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$termId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                <span class="phpdocumentor-argument-list__argument__name">$termId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -883,8 +881,8 @@ integer $data[translationOfTermId]</p>
                                     </dd>
                                             </dl>
 
+        
     
-
     
 </article>
                     <article
@@ -909,7 +907,7 @@ integer $data[translationOfTermId]</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">download</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$exportId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-DownloadFile.html"><abbr title="\CrowdinApiClient\Model\DownloadFile">DownloadFile</abbr></a>|null</span></code>
+                    <span class="phpdocumentor-signature__name">download</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$exportId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-DownloadFile.html"><abbr title="\CrowdinApiClient\Model\DownloadFile">DownloadFile</abbr></a>|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -918,15 +916,15 @@ integer $data[translationOfTermId]</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$glossaryId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                <span class="phpdocumentor-argument-list__argument__name">$glossaryId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$exportId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                <span class="phpdocumentor-argument-list__argument__name">$exportId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -958,8 +956,8 @@ integer $data[translationOfTermId]</p>
                                     </dd>
                                             </dl>
 
+        
     
-
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-DownloadFile.html"><abbr title="\CrowdinApiClient\Model\DownloadFile">DownloadFile</abbr></a>|null</span>
@@ -988,7 +986,7 @@ integer $data[translationOfTermId]</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">export</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$format</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;tbx&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$exportFields</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-GlossaryExport.html"><abbr title="\CrowdinApiClient\Model\GlossaryExport">GlossaryExport</abbr></a>|null</span></code>
+                    <span class="phpdocumentor-signature__name">export</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$format</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'tbx'</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$exportFields</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-GlossaryExport.html"><abbr title="\CrowdinApiClient\Model\GlossaryExport">GlossaryExport</abbr></a>|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -997,23 +995,23 @@ integer $data[translationOfTermId]</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$glossaryId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                <span class="phpdocumentor-argument-list__argument__name">$glossaryId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$format</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">&#039;tbx&#039;</span>            </dt>
+                <span class="phpdocumentor-argument-list__argument__name">$format</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">'tbx'</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$exportFields</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+                <span class="phpdocumentor-argument-list__argument__name">$exportFields</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">[]</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
@@ -1044,8 +1042,8 @@ integer $data[translationOfTermId]</p>
                                     </dd>
                                             </dl>
 
+        
     
-
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-GlossaryExport.html"><abbr title="\CrowdinApiClient\Model\GlossaryExport">GlossaryExport</abbr></a>|null</span>
@@ -1074,7 +1072,7 @@ integer $data[translationOfTermId]</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">get</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Glossary.html"><abbr title="\CrowdinApiClient\Model\Glossary">Glossary</abbr></a>|null</span></code>
+                    <span class="phpdocumentor-signature__name">get</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Glossary.html"><abbr title="\CrowdinApiClient\Model\Glossary">Glossary</abbr></a>|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1083,8 +1081,8 @@ integer $data[translationOfTermId]</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$glossaryId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                <span class="phpdocumentor-argument-list__argument__name">$glossaryId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -1116,8 +1114,8 @@ integer $data[translationOfTermId]</p>
                                     </dd>
                                             </dl>
 
+        
     
-
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Glossary.html"><abbr title="\CrowdinApiClient\Model\Glossary">Glossary</abbr></a>|null</span>
@@ -1146,7 +1144,7 @@ integer $data[translationOfTermId]</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getConcept</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$conceptId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-GlossaryConcept.html"><abbr title="\CrowdinApiClient\Model\GlossaryConcept">GlossaryConcept</abbr></a>|null</span></code>
+                    <span class="phpdocumentor-signature__name">getConcept</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$conceptId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-GlossaryConcept.html"><abbr title="\CrowdinApiClient\Model\GlossaryConcept">GlossaryConcept</abbr></a>|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1155,15 +1153,15 @@ integer $data[translationOfTermId]</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$glossaryId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                <span class="phpdocumentor-argument-list__argument__name">$glossaryId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$conceptId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                <span class="phpdocumentor-argument-list__argument__name">$conceptId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -1195,8 +1193,8 @@ integer $data[translationOfTermId]</p>
                                     </dd>
                                             </dl>
 
+        
     
-
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-GlossaryConcept.html"><abbr title="\CrowdinApiClient\Model\GlossaryConcept">GlossaryConcept</abbr></a>|null</span>
@@ -1225,7 +1223,7 @@ integer $data[translationOfTermId]</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getExport</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$exportId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-GlossaryExport.html"><abbr title="\CrowdinApiClient\Model\GlossaryExport">GlossaryExport</abbr></a>|null</span></code>
+                    <span class="phpdocumentor-signature__name">getExport</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$exportId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-GlossaryExport.html"><abbr title="\CrowdinApiClient\Model\GlossaryExport">GlossaryExport</abbr></a>|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1234,15 +1232,15 @@ integer $data[translationOfTermId]</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$glossaryId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                <span class="phpdocumentor-argument-list__argument__name">$glossaryId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$exportId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                <span class="phpdocumentor-argument-list__argument__name">$exportId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -1274,8 +1272,8 @@ integer $data[translationOfTermId]</p>
                                     </dd>
                                             </dl>
 
+        
     
-
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-GlossaryExport.html"><abbr title="\CrowdinApiClient\Model\GlossaryExport">GlossaryExport</abbr></a>|null</span>
@@ -1304,7 +1302,7 @@ integer $data[translationOfTermId]</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getImport</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$importId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-GlossaryImport.html"><abbr title="\CrowdinApiClient\Model\GlossaryImport">GlossaryImport</abbr></a>|null</span></code>
+                    <span class="phpdocumentor-signature__name">getImport</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$importId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-GlossaryImport.html"><abbr title="\CrowdinApiClient\Model\GlossaryImport">GlossaryImport</abbr></a>|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1313,15 +1311,15 @@ integer $data[translationOfTermId]</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$glossaryId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                <span class="phpdocumentor-argument-list__argument__name">$glossaryId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$importId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                <span class="phpdocumentor-argument-list__argument__name">$importId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -1353,8 +1351,8 @@ integer $data[translationOfTermId]</p>
                                     </dd>
                                             </dl>
 
+        
     
-
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-GlossaryImport.html"><abbr title="\CrowdinApiClient\Model\GlossaryImport">GlossaryImport</abbr></a>|null</span>
@@ -1383,7 +1381,7 @@ integer $data[translationOfTermId]</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getTerm</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$termId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Term.html"><abbr title="\CrowdinApiClient\Model\Term">Term</abbr></a>|null</span></code>
+                    <span class="phpdocumentor-signature__name">getTerm</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$termId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Term.html"><abbr title="\CrowdinApiClient\Model\Term">Term</abbr></a>|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1392,15 +1390,15 @@ integer $data[translationOfTermId]</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$glossaryId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                <span class="phpdocumentor-argument-list__argument__name">$glossaryId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$termId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                <span class="phpdocumentor-argument-list__argument__name">$termId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -1432,8 +1430,8 @@ integer $data[translationOfTermId]</p>
                                     </dd>
                                             </dl>
 
+        
     
-
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Term.html"><abbr title="\CrowdinApiClient\Model\Term">Term</abbr></a>|null</span>
@@ -1462,7 +1460,7 @@ integer $data[translationOfTermId]</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">import</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-GlossaryImport.html"><abbr title="\CrowdinApiClient\Model\GlossaryImport">GlossaryImport</abbr></a>|null</span></code>
+                    <span class="phpdocumentor-signature__name">import</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-GlossaryImport.html"><abbr title="\CrowdinApiClient\Model\GlossaryImport">GlossaryImport</abbr></a>|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1471,15 +1469,15 @@ integer $data[translationOfTermId]</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$glossaryId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                <span class="phpdocumentor-argument-list__argument__name">$glossaryId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                <span class="phpdocumentor-argument-list__argument__name">$data</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>integer $data[storageId] required<br>
@@ -1515,8 +1513,8 @@ boolean $data[firstLineContainsHeader]</p>
                                     </dd>
                                             </dl>
 
+        
     
-
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-GlossaryImport.html"><abbr title="\CrowdinApiClient\Model\GlossaryImport">GlossaryImport</abbr></a>|null</span>
@@ -1545,7 +1543,7 @@ boolean $data[firstLineContainsHeader]</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">list</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">list</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1554,9 +1552,9 @@ boolean $data[firstLineContainsHeader]</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$params</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+                <span class="phpdocumentor-argument-list__argument__name">$params</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">[]</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>integer $params[groupId]<br>
 integer $params[limit]<br>
@@ -1592,8 +1590,8 @@ integer $params[userId]</p>
                                     </dd>
                                             </dl>
 
+        
     
-
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a></span>
@@ -1622,7 +1620,7 @@ integer $params[userId]</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">listConcepts</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>|null</span></code>
+                    <span class="phpdocumentor-signature__name">listConcepts</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1631,16 +1629,16 @@ integer $params[userId]</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$glossaryId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                <span class="phpdocumentor-argument-list__argument__name">$glossaryId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$params</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+                <span class="phpdocumentor-argument-list__argument__name">$params</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">[]</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
@@ -1671,8 +1669,8 @@ integer $params[userId]</p>
                                     </dd>
                                             </dl>
 
+        
     
-
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>|null</span>
@@ -1701,7 +1699,7 @@ integer $params[userId]</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">listTerms</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>|null</span></code>
+                    <span class="phpdocumentor-signature__name">listTerms</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1710,16 +1708,16 @@ integer $params[userId]</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$glossaryId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                <span class="phpdocumentor-argument-list__argument__name">$glossaryId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$params</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+                <span class="phpdocumentor-argument-list__argument__name">$params</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">[]</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>integer $params[userId]<br>
 string $params[languageId]<br>
@@ -1756,8 +1754,8 @@ integer $params[offset]</p>
                                     </dd>
                                             </dl>
 
+        
     
-
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>|null</span>
@@ -1786,7 +1784,7 @@ integer $params[offset]</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/CrowdinApiClient-Model-Glossary.html"><abbr title="\CrowdinApiClient\Model\Glossary">Glossary</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossary</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Glossary.html"><abbr title="\CrowdinApiClient\Model\Glossary">Glossary</abbr></a>|null</span></code>
+                    <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type"><a href="classes/CrowdinApiClient-Model-Glossary.html"><abbr title="\CrowdinApiClient\Model\Glossary">Glossary</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossary</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Glossary.html"><abbr title="\CrowdinApiClient\Model\Glossary">Glossary</abbr></a>|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1795,8 +1793,8 @@ integer $params[offset]</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$glossary</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/CrowdinApiClient-Model-Glossary.html"><abbr title="\CrowdinApiClient\Model\Glossary">Glossary</abbr></a></span>
+                <span class="phpdocumentor-argument-list__argument__name">$glossary</span>
+                : <span class="phpdocumentor-argument-list__argument__type"><a href="classes/CrowdinApiClient-Model-Glossary.html"><abbr title="\CrowdinApiClient\Model\Glossary">Glossary</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -1828,8 +1826,8 @@ integer $params[offset]</p>
                                     </dd>
                                             </dl>
 
+        
     
-
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Glossary.html"><abbr title="\CrowdinApiClient\Model\Glossary">Glossary</abbr></a>|null</span>
@@ -1858,7 +1856,7 @@ integer $params[offset]</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">updateConcept</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$conceptId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-GlossaryConcept.html"><abbr title="\CrowdinApiClient\Model\GlossaryConcept">GlossaryConcept</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">updateConcept</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$conceptId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-GlossaryConcept.html"><abbr title="\CrowdinApiClient\Model\GlossaryConcept">GlossaryConcept</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1867,22 +1865,22 @@ integer $params[offset]</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$glossaryId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                <span class="phpdocumentor-argument-list__argument__name">$glossaryId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$conceptId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                <span class="phpdocumentor-argument-list__argument__name">$conceptId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                <span class="phpdocumentor-argument-list__argument__name">$data</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>string $data[subject]<br>
@@ -1922,8 +1920,8 @@ array[] $data[languageDetails]<br></p>
                                     </dd>
                                             </dl>
 
+        
     
-
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-GlossaryConcept.html"><abbr title="\CrowdinApiClient\Model\GlossaryConcept">GlossaryConcept</abbr></a></span>
@@ -1952,7 +1950,7 @@ array[] $data[languageDetails]<br></p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">updateTerm</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/CrowdinApiClient-Model-Term.html"><abbr title="\CrowdinApiClient\Model\Term">Term</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$term</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Term.html"><abbr title="\CrowdinApiClient\Model\Term">Term</abbr></a>|null</span></code>
+                    <span class="phpdocumentor-signature__name">updateTerm</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type"><a href="classes/CrowdinApiClient-Model-Term.html"><abbr title="\CrowdinApiClient\Model\Term">Term</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$term</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Term.html"><abbr title="\CrowdinApiClient\Model\Term">Term</abbr></a>|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1961,8 +1959,8 @@ array[] $data[languageDetails]<br></p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$term</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/CrowdinApiClient-Model-Term.html"><abbr title="\CrowdinApiClient\Model\Term">Term</abbr></a></span>
+                <span class="phpdocumentor-argument-list__argument__name">$term</span>
+                : <span class="phpdocumentor-argument-list__argument__type"><a href="classes/CrowdinApiClient-Model-Term.html"><abbr title="\CrowdinApiClient\Model\Term">Term</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -1994,8 +1992,8 @@ array[] $data[languageDetails]<br></p>
                                     </dd>
                                             </dl>
 
+        
     
-
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Term.html"><abbr title="\CrowdinApiClient\Model\Term">Term</abbr></a>|null</span>

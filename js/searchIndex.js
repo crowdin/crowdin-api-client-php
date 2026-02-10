@@ -1121,6 +1121,11 @@ Search.appendIndex(
             "summary": "Delete\u0020String\u0020Comment",
             "url": "classes/CrowdinApiClient-Api-StringCommentApi.html#method_delete"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\StringCommentApi\u003A\u003AbatchOperations\u0028\u0029",
+            "name": "batchOperations",
+            "summary": "String\u0020Comment\u0020Batch\u0020Operations",
+            "url": "classes/CrowdinApiClient-Api-StringCommentApi.html#method_batchOperations"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Api\\StringsExporterSettingApi",
             "name": "StringsExporterSettingApi",
             "summary": "Manage\u0020project\u0020strings\u0020exporter\u0020settings",
@@ -1235,6 +1240,16 @@ Search.appendIndex(
             "name": "deleteVote",
             "summary": "Cancel\u0020Vote",
             "url": "classes/CrowdinApiClient-Api-StringTranslationApi.html#method_deleteVote"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\StringTranslationApi\u003A\u003AapprovalsBatchOperations\u0028\u0029",
+            "name": "approvalsBatchOperations",
+            "summary": "Approval\u0020Batch\u0020Operations",
+            "url": "classes/CrowdinApiClient-Api-StringTranslationApi.html#method_approvalsBatchOperations"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\StringTranslationApi\u003A\u003AtranslationsBatchOperations\u0028\u0029",
+            "name": "translationsBatchOperations",
+            "summary": "Translation\u0020Batch\u0020Operations",
+            "url": "classes/CrowdinApiClient-Api-StringTranslationApi.html#method_translationsBatchOperations"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\TaskApi",
             "name": "TaskApi",
