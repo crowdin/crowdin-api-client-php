@@ -26,8 +26,8 @@ class Label extends BaseModel
     {
         parent::__construct($data);
 
-        $this->id = (integer)$this->getDataProperty('id');
-        $this->projectId = (integer)$this->getDataProperty('projectId');
+        $this->id = (int)$this->getDataProperty('id');
+        $this->projectId = (int)$this->getDataProperty('projectId');
         $this->title = (string)$this->getDataProperty('title');
     }
 

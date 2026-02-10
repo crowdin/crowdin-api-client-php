@@ -37,7 +37,7 @@ class WorkflowStep extends BaseModel
     public function __construct(array $data = [])
     {
         parent::__construct($data);
-        $this->id = (integer)$this->getDataProperty('id');
+        $this->id = (int)$this->getDataProperty('id');
         $this->title = (string)$this->getDataProperty('title');
         $this->type = (string)$this->getDataProperty('type');
         $this->languages = (array)$this->getDataProperty('languages');

@@ -81,7 +81,7 @@ class Bundle extends BaseModel
     {
         parent::__construct($data);
 
-        $this->id = (integer)$this->getDataProperty('id');
+        $this->id = (int)$this->getDataProperty('id');
         $this->name = (string)$this->getDataProperty('name');
         $this->format = (string)$this->getDataProperty('format');
         $this->sourcePatterns = (array)$this->getDataProperty('sourcePatterns');

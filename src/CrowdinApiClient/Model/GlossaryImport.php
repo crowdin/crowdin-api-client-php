@@ -53,7 +53,7 @@ class GlossaryImport extends BaseModel
 
         $this->identifier = (string)$this->getDataProperty('identifier');
         $this->status = (string)$this->getDataProperty('status');
-        $this->progress = (integer)$this->getDataProperty('progress');
+        $this->progress = (int)$this->getDataProperty('progress');
         $this->attributes = (array)$this->getDataProperty('attributes');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');

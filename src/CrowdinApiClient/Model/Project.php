@@ -256,9 +256,9 @@ class Project extends BaseModel
     {
         parent::__construct($data);
 
-        $this->id = (integer)$this->getDataProperty('id');
-        $this->groupId = (integer)$this->getDataProperty('groupId');
-        $this->userId = (integer)$this->getDataProperty('userId');
+        $this->id = (int)$this->getDataProperty('id');
+        $this->groupId = (int)$this->getDataProperty('groupId');
+        $this->userId = (int)$this->getDataProperty('userId');
         $this->sourceLanguageId = (string)$this->getDataProperty('sourceLanguageId');
         $this->targetLanguageIds = (array)$this->getDataProperty('targetLanguageIds');
         $this->targetLanguages = (array)$this->getDataProperty('targetLanguages');
@@ -272,18 +272,18 @@ class Project extends BaseModel
         $this->background = (string)$this->getDataProperty('background');
         $this->isExternal = (bool)$this->getDataProperty('isExternal');
         $this->externalType = (string)$this->getDataProperty('externalType');
-        $this->workflowId = (integer)$this->getDataProperty('workflowId');
+        $this->workflowId = (int)$this->getDataProperty('workflowId');
         $this->hasCrowdsourcing = (bool)$this->getDataProperty('hasCrowdsourcing');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
         $this->lastActivity = (string)$this->getDataProperty('lastActivity');
 
-        $this->translateDuplicates = (integer)$this->getDataProperty('translateDuplicates');
+        $this->translateDuplicates = (int)$this->getDataProperty('translateDuplicates');
         $this->isMtAllowed = (bool)$this->getDataProperty('isMtAllowed');
         $this->autoSubstitution = (bool)$this->getDataProperty('autoSubstitution');
         $this->skipUntranslatedStrings = (bool)$this->getDataProperty('skipUntranslatedStrings');
         $this->skipUntranslatedFiles = (bool)$this->getDataProperty('skipUntranslatedFiles');
-        $this->exportWithMinApprovalsCount = (integer)$this->getDataProperty('exportWithMinApprovalsCount');
+        $this->exportWithMinApprovalsCount = (int)$this->getDataProperty('exportWithMinApprovalsCount');
         $this->exportApprovedOnly = (bool)$this->getDataProperty('exportApprovedOnly');
         $this->autoTranslateDialects = (bool)$this->getDataProperty('autoTranslateDialects');
         $this->publicDownloads = (bool)$this->getDataProperty('publicDownloads');
@@ -303,8 +303,8 @@ class Project extends BaseModel
         $this->normalizePlaceholder = (bool)$this->getDataProperty('normalizePlaceholder');
         $this->saveMetaInfoInSource = (bool)$this->getDataProperty('saveMetaInfoInSource');
         $this->notificationSettings = (array)$this->getDataProperty('notificationSettings');
-        $this->defaultTmId = (integer)$this->getDataProperty('defaultTmId');
-        $this->defaultGlossaryId = (integer)$this->getDataProperty('defaultGlossaryId');
+        $this->defaultTmId = (int)$this->getDataProperty('defaultTmId');
+        $this->defaultGlossaryId = (int)$this->getDataProperty('defaultGlossaryId');
     }
 
     /**

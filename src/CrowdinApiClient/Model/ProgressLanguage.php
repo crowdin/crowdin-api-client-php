@@ -48,9 +48,9 @@ class ProgressLanguage extends BaseModel
 
         $this->words = (array)$this->getDataProperty('words');
         $this->phrases = (array)$this->getDataProperty('phrases');
-        $this->translationProgress = (integer)$this->getDataProperty('translationProgress');
-        $this->approvalProgress = (integer)$this->getDataProperty('approvalProgress');
-        $this->fileId = (integer)$this->getDataProperty('fileId');
+        $this->translationProgress = (int)$this->getDataProperty('translationProgress');
+        $this->approvalProgress = (int)$this->getDataProperty('approvalProgress');
+        $this->fileId = (int)$this->getDataProperty('fileId');
         $this->etag = (string)$this->getDataProperty('eTag');
     }
 

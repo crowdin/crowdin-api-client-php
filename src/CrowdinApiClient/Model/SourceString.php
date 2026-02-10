@@ -108,14 +108,14 @@ class SourceString extends BaseModel
     {
         parent::__construct($data);
 
-        $this->id = (integer)$this->getDataProperty('id');
-        $this->projectId = (integer)$this->getDataProperty('projectId');
-        $this->fileId = (integer)$this->getDataProperty('fileId');
+        $this->id = (int)$this->getDataProperty('id');
+        $this->projectId = (int)$this->getDataProperty('projectId');
+        $this->fileId = (int)$this->getDataProperty('fileId');
         $this->branchId = $this->getDataProperty('branchId')
-            ? (integer)$this->getDataProperty('branchId')
+            ? (int)$this->getDataProperty('branchId')
             : null;
         $this->directoryId = $this->getDataProperty('directoryId')
-            ? (integer)$this->getDataProperty('directoryId')
+            ? (int)$this->getDataProperty('directoryId')
             : null;
         $this->identifier = (string)$this->getDataProperty('identifier');
         $this->text = is_array($this->getDataProperty('text'))
@@ -123,9 +123,9 @@ class SourceString extends BaseModel
             : (string)$this->getDataProperty('text');
         $this->type = (string)$this->getDataProperty('type');
         $this->context = (string)$this->getDataProperty('context');
-        $this->maxLength = (integer)$this->getDataProperty('maxLength');
+        $this->maxLength = (int)$this->getDataProperty('maxLength');
         $this->isHidden = (bool)$this->getDataProperty('isHidden');
-        $this->revision = (integer)$this->getDataProperty('revision');
+        $this->revision = (int)$this->getDataProperty('revision');
         $this->hasPlurals = (bool)$this->getDataProperty('hasPlurals');
         $this->isIcu = (bool)$this->getDataProperty('isIcu');
         $this->labelIds = (array)$this->getDataProperty('labelIds');

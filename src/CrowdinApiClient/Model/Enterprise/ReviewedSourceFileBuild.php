@@ -40,10 +40,10 @@ class ReviewedSourceFileBuild extends BaseModel
     {
         parent::__construct($data);
 
-        $this->id = (integer)$this->getDataProperty('id');
-        $this->projectId = (integer)$this->getDataProperty('projectId');
+        $this->id = (int)$this->getDataProperty('id');
+        $this->projectId = (int)$this->getDataProperty('projectId');
         $this->status = (string)$this->getDataProperty('status');
-        $this->progress = (integer)$this->getDataProperty('progress');
+        $this->progress = (int)$this->getDataProperty('progress');
         $this->attributes = (array)$this->getDataProperty('attributes');
     }
 

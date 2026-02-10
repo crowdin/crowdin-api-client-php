@@ -46,12 +46,12 @@ class StringTranslationApproval extends BaseModel
     {
         parent::__construct($data);
 
-        $this->id = (integer)$this->getDataProperty('id');
+        $this->id = (int)$this->getDataProperty('id');
         $this->user = (array)$this->getDataProperty('user');
-        $this->translationId = (integer)$this->getDataProperty('translationId');
-        $this->stringId = (integer)$this->getDataProperty('stringId');
+        $this->translationId = (int)$this->getDataProperty('translationId');
+        $this->stringId = (int)$this->getDataProperty('stringId');
         $this->languageId = (string)$this->getDataProperty('languageId');
-        $this->workflowStepId = (integer)$this->getDataProperty('workflowStepId');
+        $this->workflowStepId = (int)$this->getDataProperty('workflowStepId');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
     }
 

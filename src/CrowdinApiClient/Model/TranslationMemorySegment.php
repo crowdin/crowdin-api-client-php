@@ -21,7 +21,7 @@ class TranslationMemorySegment extends BaseModel
     {
         parent::__construct($data);
 
-        $this->id = (integer)$this->getDataProperty('id');
+        $this->id = (int)$this->getDataProperty('id');
         $this->records = array_map(static function (array $record): TranslationMemorySegmentRecord {
             return new TranslationMemorySegmentRecord($record);
         }, (array)$this->getDataProperty('records'));

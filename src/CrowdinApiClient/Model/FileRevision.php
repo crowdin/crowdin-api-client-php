@@ -44,10 +44,10 @@ class FileRevision extends BaseModel
     public function __construct(array $data = [])
     {
         parent::__construct($data);
-        $this->id = (integer)$this->getDataProperty('id');
-        $this->projectId = (integer)$this->getDataProperty('projectId');
-        $this->restoreToRevision = (integer)$this->getDataProperty('restoreToRevision');
-        $this->fileId = (integer)$this->getDataProperty('fileId');
+        $this->id = (int)$this->getDataProperty('id');
+        $this->projectId = (int)$this->getDataProperty('projectId');
+        $this->restoreToRevision = (int)$this->getDataProperty('restoreToRevision');
+        $this->fileId = (int)$this->getDataProperty('fileId');
         $this->info = (array)$this->getDataProperty('info');
         $this->date = (string)$this->getDataProperty('date');
     }

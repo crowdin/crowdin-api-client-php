@@ -46,11 +46,11 @@ class TaskComment extends BaseModel
     {
         parent::__construct($data);
 
-        $this->id = (integer)$this->getDataProperty('id');
-        $this->userId = (integer)$this->getDataProperty('userId');
-        $this->taskId = (integer)$this->getDataProperty('taskId');
+        $this->id = (int)$this->getDataProperty('id');
+        $this->userId = (int)$this->getDataProperty('userId');
+        $this->taskId = (int)$this->getDataProperty('taskId');
         $this->text = (string)$this->getDataProperty('text');
-        $this->timeSpent = $this->getDataProperty('timeSpent') ? (integer)$this->getDataProperty('timeSpent') : null;
+        $this->timeSpent = $this->getDataProperty('timeSpent') ? (int)$this->getDataProperty('timeSpent') : null;
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
     }

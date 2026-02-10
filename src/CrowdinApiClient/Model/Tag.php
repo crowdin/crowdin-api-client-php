@@ -35,9 +35,9 @@ class Tag extends BaseModel
     public function __construct(array $data = [])
     {
         parent::__construct($data);
-        $this->id = (integer)$this->getDataProperty('id');
-        $this->screenshotId = (integer)$this->getDataProperty('screenshotId');
-        $this->stringId = (integer)$this->getDataProperty('stringId');
+        $this->id = (int)$this->getDataProperty('id');
+        $this->screenshotId = (int)$this->getDataProperty('screenshotId');
+        $this->stringId = (int)$this->getDataProperty('stringId');
         $this->position = (array)$this->getDataProperty('position');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
     }

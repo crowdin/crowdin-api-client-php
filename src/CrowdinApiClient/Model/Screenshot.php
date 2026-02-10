@@ -60,12 +60,12 @@ class Screenshot extends BaseModel
     public function __construct(array $data = [])
     {
         parent::__construct($data);
-        $this->id = (integer)$this->getDataProperty('id');
-        $this->userId = (integer)$this->getDataProperty('userId');
+        $this->id = (int)$this->getDataProperty('id');
+        $this->userId = (int)$this->getDataProperty('userId');
         $this->url = (string)$this->getDataProperty('url');
         $this->name = (string)$this->getDataProperty('name');
         $this->size = (array)$this->getDataProperty('size');
-        $this->tagsCount = (integer)$this->getDataProperty('tagsCount');
+        $this->tagsCount = (int)$this->getDataProperty('tagsCount');
         $this->tags = (array)$this->getDataProperty('tags');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');

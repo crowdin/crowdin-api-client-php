@@ -60,10 +60,10 @@ class Issue extends BaseModel
     public function __construct(array $data = [])
     {
         parent::__construct($data);
-        $this->id = (integer)$this->getDataProperty('id');
+        $this->id = (int)$this->getDataProperty('id');
         $this->text = (string)$this->getDataProperty('text');
-        $this->userId = (integer)$this->getDataProperty('userId');
-        $this->stringId = (integer)$this->getDataProperty('stringId');
+        $this->userId = (int)$this->getDataProperty('userId');
+        $this->stringId = (int)$this->getDataProperty('stringId');
         $this->user = (array)$this->getDataProperty('user');
         $this->string = (array)$this->getDataProperty('string');
         $this->languageId = (string)$this->getDataProperty('languageId');

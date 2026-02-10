@@ -32,7 +32,7 @@ class Vendor extends BaseModel
     public function __construct(array $data = [])
     {
         parent::__construct($data);
-        $this->id = (integer)$this->getDataProperty('id');
+        $this->id = (int)$this->getDataProperty('id');
         $this->name = (string)$this->getDataProperty('name');
         $this->description = (string)$this->getDataProperty('description');
         $this->status = (string)$this->getDataProperty('status');

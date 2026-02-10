@@ -50,13 +50,13 @@ class QaCheck extends BaseModel
     public function __construct(array $data = [])
     {
         parent::__construct($data);
-        $this->stringId = (integer)$this->getDataProperty('stringId');
+        $this->stringId = (int)$this->getDataProperty('stringId');
         $this->languageId = (string)$this->getDataProperty('languageId');
         $this->category = (string)$this->getDataProperty('category');
         $this->categoryDescription = (string)$this->getDataProperty('categoryDescription');
         $this->validation = (string)$this->getDataProperty('validation');
         $this->validationDescription = (string)$this->getDataProperty('validationDescription');
-        $this->pluralId = (integer)$this->getDataProperty('pluralId');
+        $this->pluralId = (int)$this->getDataProperty('pluralId');
         $this->text = (string)$this->getDataProperty('text');
     }
 

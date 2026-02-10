@@ -77,10 +77,10 @@ class WorkflowTemplate extends BaseModel
     public function __construct(array $data = [])
     {
         parent::__construct($data);
-        $this->id = (integer)$this->getDataProperty('id');
+        $this->id = (int)$this->getDataProperty('id');
         $this->title = (string)$this->getDataProperty('title');
         $this->description = (string)$this->getDataProperty('description');
-        $this->groupId = (integer)$this->getDataProperty('groupId');
+        $this->groupId = (int)$this->getDataProperty('groupId');
         $this->isDefault = (bool)$this->getDataProperty('isDefault');
     }
 }

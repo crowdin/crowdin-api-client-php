@@ -44,8 +44,8 @@ class MachineTranslationEngine extends BaseModel
     {
         parent::__construct($data);
 
-        $this->id = (integer)$this->getDataProperty('id');
-        $this->groupId = (integer)$this->getDataProperty('groupId');
+        $this->id = (int)$this->getDataProperty('id');
+        $this->groupId = (int)$this->getDataProperty('groupId');
         $this->name = (string)$this->getDataProperty('name');
         $this->type = (string)$this->getDataProperty('type');
         $this->credentials = (array)$this->getDataProperty('credentials');

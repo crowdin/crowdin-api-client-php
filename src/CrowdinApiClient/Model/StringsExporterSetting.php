@@ -36,7 +36,7 @@ class StringsExporterSetting extends BaseModel
     {
         parent::__construct($data);
 
-        $this->id = (integer)$this->getDataProperty('id');
+        $this->id = (int)$this->getDataProperty('id');
         $this->format = (string)$this->getDataProperty('format');
         $this->settings = (array)$this->getDataProperty('settings');
         $this->createdAt = (string)$this->getDataProperty('createdAt');

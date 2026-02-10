@@ -66,11 +66,11 @@ class Glossary extends BaseModel
     {
         parent::__construct($data);
 
-        $this->id = (integer)$this->getDataProperty('id');
+        $this->id = (int)$this->getDataProperty('id');
         $this->name = (string)$this->getDataProperty('name');
-        $this->groupId = (integer)$this->getDataProperty('groupId');
-        $this->userId = (integer)$this->getDataProperty('userId');
-        $this->terms = (integer)$this->getDataProperty('terms');
+        $this->groupId = (int)$this->getDataProperty('groupId');
+        $this->userId = (int)$this->getDataProperty('userId');
+        $this->terms = (int)$this->getDataProperty('terms');
         $this->languageId = (string)$this->getDataProperty('languageId');
         $this->languageIds = (array)$this->getDataProperty('languageIds');
         $this->defaultProjectIds = (array)$this->getDataProperty('defaultProjectIds');
