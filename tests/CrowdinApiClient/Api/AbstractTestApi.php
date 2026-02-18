@@ -85,6 +85,16 @@ abstract class AbstractTestApi extends TestCase
         ]);
     }
 
+    public function mockRequestPost(string $path, string $body, string $response)
+    {
+        return $this->mockRequest([
+            'uri' => 'https://api.crowdin.com/api/v2' . $path,
+            'method' => 'post',
+            'body' => $body,
+            'response' => $response,
+        ]);
+    }
+
     public function mockRequestDelete(string $path)
     {
         return $this->mockRequest([
