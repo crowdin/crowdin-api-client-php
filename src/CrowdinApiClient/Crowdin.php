@@ -49,6 +49,7 @@ use UnexpectedValueException;
  * @property \CrowdinApiClient\Api\GraphqlApi $graphql
  * @property \CrowdinApiClient\Api\SecurityLogApi|\CrowdinApiClient\Api\Enterprise\SecurityLogApi $securityLog
  * @property \CrowdinApiClient\Api\Enterprise\StringCorrectionApi $stringCorrection
+ * @property \CrowdinApiClient\Api\AiApi|\CrowdinApiClient\Api\Enterprise\AiApi $ai
  */
 class Crowdin
 {
@@ -121,6 +122,7 @@ class Crowdin
         'reportArchive',
         'graphql',
         'securityLog',
+        'ai',
     ];
 
     protected $servicesEnterprise = [
@@ -162,6 +164,7 @@ class Crowdin
         'graphql',
         'securityLog',
         'stringCorrection',
+        'ai',
     ];
 
     public function __construct(array $config)
