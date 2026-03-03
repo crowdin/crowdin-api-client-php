@@ -1,0 +1,42 @@
+# AGENTS.md
+
+## Project Overview
+
+Crowdin PHP client library for Crowdin API v2 and Crowdin Enterprise API v2.
+
+Main namespace and structure:
+- `CrowdinApiClient\` => `src/CrowdinApiClient`
+- Tests => `tests/CrowdinApiClient`
+
+## Setup Commands
+
+- Install dependencies: `composer install --no-interaction --prefer-dist`
+- Run tests: `composer test` (alias for `vendor/bin/phpunit`)
+- Run one test file: `vendor/bin/phpunit tests/CrowdinApiClient/...Test.php`
+- Check formatting: `PHP_CS_FIXER_IGNORE_ENV=true vendor/bin/php-cs-fixer fix --dry-run`
+
+## Code And Testing Expectations
+
+- Add or update unit tests for behavior changes.
+- Keep public API and model changes backward compatible unless explicitly intended.
+- Follow existing coding style (`php-cs-fixer` in CI).
+- Prefer small, focused changes; keep docs/examples aligned when behavior changes.
+
+## Notes For API Details
+
+Always use Crowdin/Crowdin Enterprise `llms.txt` index files for API method details. Choose the correct index by environment first, then project type.
+
+Use these URLs:
+
+- https://support.crowdin.com/_llms-txt/api/crowdin/file-based.txt - Crowdin API (file-based projects, preferred first)
+- https://support.crowdin.com/_llms-txt/api/crowdin/string-based.txt - Crowdin API (string-based projects)
+- https://support.crowdin.com/_llms-txt/api/enterprise/file-based.txt - Crowdin Enterprise API (file-based projects)
+- https://support.crowdin.com/_llms-txt/api/enterprise/string-based.txt - Crowdin Enterprise API (string-based projects)
+
+Each index contains a list of links to the API method details (e.g. https://support.crowdin.com/_llms-txt/api/enterprise/file-based/api.projects.strings.get.txt).
+
+## Pull Requests And Commits
+
+- Target branch: `master`.
+- Use Conventional Commits for commit messages and PR titles.
+- Before opening a PR, run tests and formatting checks locally.
