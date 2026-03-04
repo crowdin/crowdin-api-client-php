@@ -5,6 +5,7 @@ namespace CrowdinApiClient\Tests\Api;
 use CrowdinApiClient\Model\Progress;
 use CrowdinApiClient\Model\ProgressLanguage;
 use CrowdinApiClient\Model\QaCheck;
+use CrowdinApiClient\Model\QaCheckRevalidation;
 use CrowdinApiClient\ModelCollection;
 
 class TranslationStatusApiTest extends AbstractTestApi
@@ -313,5 +314,84 @@ class TranslationStatusApiTest extends AbstractTestApi
         $this->assertCount(1, $qaCheckIssues);
         $this->assertInstanceOf(QaCheck::class, $qaCheckIssues[0]);
         $this->assertEquals(1, $qaCheckIssues[0]->getStringId());
+    }
+
+    public function testStartQaChecksRevalidation(): void
+    {
+        $this->mockRequestPost(
+            '/projects/1/qa-checks/revalidate',
+            json_encode([
+                'qaCheckCategories' => ['ai'],
+                'languageIds' => ['uk', 'fr'],
+                'failedOnly' => true,
+            ]),
+            json_encode([
+                'data' => [
+                    'identifier' => 'b5215a34-1305-4b21-8054-fc2eb252842f',
+                    'status' => 'created',
+                    'progress' => 0,
+                    'attributes' => [
+                        'languageIds' => ['uk', 'fr'],
+                        'qaCheckCategories' => ['ai'],
+                        'failedOnly' => true,
+                    ],
+                    'createdAt' => '2025-09-23T11:51:08+00:00',
+                    'updatedAt' => '2025-09-23T11:51:08+00:00',
+                    'startedAt' => null,
+                    'finishedAt' => null,
+                ],
+            ])
+        );
+
+        $revalidation = $this->crowdin->translationStatus->startQaChecksRevalidation(1, [
+            'qaCheckCategories' => ['ai'],
+            'languageIds' => ['uk', 'fr'],
+            'failedOnly' => true,
+        ]);
+
+        $this->assertInstanceOf(QaCheckRevalidation::class, $revalidation);
+        $this->assertEquals('b5215a34-1305-4b21-8054-fc2eb252842f', $revalidation->getIdentifier());
+        $this->assertEquals('created', $revalidation->getStatus());
+        $this->assertEquals(0, $revalidation->getProgress());
+    }
+
+    public function testGetQaChecksRevalidation(): void
+    {
+        $this->mockRequestGet(
+            '/projects/1/qa-checks/revalidate/b5215a34-1305-4b21-8054-fc2eb252842f',
+            json_encode([
+                'data' => [
+                    'identifier' => 'b5215a34-1305-4b21-8054-fc2eb252842f',
+                    'status' => 'finished',
+                    'progress' => 100,
+                    'attributes' => [
+                        'languageIds' => ['uk', 'fr'],
+                        'qaCheckCategories' => ['ai'],
+                        'failedOnly' => false,
+                    ],
+                    'createdAt' => '2025-09-23T11:51:08+00:00',
+                    'updatedAt' => '2025-09-23T11:51:08+00:00',
+                    'startedAt' => '2025-09-23T11:51:08+00:00',
+                    'finishedAt' => '2025-09-23T11:52:00+00:00',
+                ],
+            ])
+        );
+
+        $revalidation = $this->crowdin->translationStatus->getQaChecksRevalidation(
+            1,
+            'b5215a34-1305-4b21-8054-fc2eb252842f'
+        );
+
+        $this->assertInstanceOf(QaCheckRevalidation::class, $revalidation);
+        $this->assertEquals('b5215a34-1305-4b21-8054-fc2eb252842f', $revalidation->getIdentifier());
+        $this->assertEquals('finished', $revalidation->getStatus());
+        $this->assertEquals(100, $revalidation->getProgress());
+    }
+
+    public function testCancelQaChecksRevalidation(): void
+    {
+        $this->mockRequestDelete('/projects/1/qa-checks/revalidate/b5215a34-1305-4b21-8054-fc2eb252842f');
+
+        $this->crowdin->translationStatus->cancelQaChecksRevalidation(1, 'b5215a34-1305-4b21-8054-fc2eb252842f');
     }
 }

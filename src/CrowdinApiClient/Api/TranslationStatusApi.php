@@ -6,6 +6,7 @@ use CrowdinApiClient\Model\Progress;
 use CrowdinApiClient\Model\ProgressFile;
 use CrowdinApiClient\Model\ProgressLanguage;
 use CrowdinApiClient\Model\QaCheck;
+use CrowdinApiClient\Model\QaCheckRevalidation;
 use CrowdinApiClient\ModelCollection;
 
 /**
@@ -122,5 +123,53 @@ class TranslationStatusApi extends AbstractApi
     {
         $path = sprintf('projects/%d/qa-checks', $projectId);
         return $this->_list($path, QaCheck::class, $params);
+    }
+
+    /**
+     * Start QA Checks Revalidation
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.qa-checks.revalidate.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.qa-checks.revalidate.post API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param array $params
+     * string[] $params[qaCheckCategories]<br>
+     * string[] $params[languageIds]<br>
+     * boolean $params[failedOnly]
+     * @return QaCheckRevalidation|null
+     */
+    public function startQaChecksRevalidation(int $projectId, array $params = []): ?QaCheckRevalidation
+    {
+        $path = sprintf('projects/%d/qa-checks/revalidate', $projectId);
+        return $this->_post($path, QaCheckRevalidation::class, $params);
+    }
+
+    /**
+     * Get QA Checks Revalidation Status
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.qa-checks.revalidate.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.qa-checks.revalidate.get API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param string $revalidationId
+     * @return QaCheckRevalidation|null
+     */
+    public function getQaChecksRevalidation(int $projectId, string $revalidationId): ?QaCheckRevalidation
+    {
+        $path = sprintf('projects/%d/qa-checks/revalidate/%s', $projectId, $revalidationId);
+        return $this->_get($path, QaCheckRevalidation::class);
+    }
+
+    /**
+     * Cancel QA Checks Revalidation
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.qa-checks.revalidate.delete API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.qa-checks.revalidate.delete API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param string $revalidationId
+     * @return mixed
+     */
+    public function cancelQaChecksRevalidation(int $projectId, string $revalidationId)
+    {
+        $path = sprintf('projects/%d/qa-checks/revalidate/%s', $projectId, $revalidationId);
+        return $this->_delete($path);
     }
 }
