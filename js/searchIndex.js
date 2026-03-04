@@ -1,6 +1,41 @@
 Search.appendIndex(
     [
                 {
+            "fqsen": "\\CrowdinApiClient\\Api\\AiApi",
+            "name": "AiApi",
+            "summary": "Use\u0020API\u0020to\u0020leverage\u0020AI\u002Dpowered\u0020translation\u0020of\u0020strings.",
+            "url": "classes/CrowdinApiClient-Api-AiApi.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\AiApi\u003A\u003AtranslateStrings\u0028\u0029",
+            "name": "translateStrings",
+            "summary": "AI\u0020Translate\u0020Strings",
+            "url": "classes/CrowdinApiClient-Api-AiApi.html#method_translateStrings"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\AiApi\u003A\u003AcreateFileTranslation\u0028\u0029",
+            "name": "createFileTranslation",
+            "summary": "AI\u0020File\u0020Translations",
+            "url": "classes/CrowdinApiClient-Api-AiApi.html#method_createFileTranslation"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\AiApi\u003A\u003AgetFileTranslation\u0028\u0029",
+            "name": "getFileTranslation",
+            "summary": "Get\u0020File\u0020Translations\u0020Status",
+            "url": "classes/CrowdinApiClient-Api-AiApi.html#method_getFileTranslation"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\AiApi\u003A\u003AdeleteFileTranslation\u0028\u0029",
+            "name": "deleteFileTranslation",
+            "summary": "Cancel\u0020File\u0020Translations",
+            "url": "classes/CrowdinApiClient-Api-AiApi.html#method_deleteFileTranslation"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\AiApi\u003A\u003AdownloadFileTranslation\u0028\u0029",
+            "name": "downloadFileTranslation",
+            "summary": "Download\u0020Translated\u0020File",
+            "url": "classes/CrowdinApiClient-Api-AiApi.html#method_downloadFileTranslation"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\AiApi\u003A\u003AdownloadFileTranslationStrings\u0028\u0029",
+            "name": "downloadFileTranslationStrings",
+            "summary": "Download\u0020Translated\u0020File\u0020Strings",
+            "url": "classes/CrowdinApiClient-Api-AiApi.html#method_downloadFileTranslationStrings"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Api\\BranchApi",
             "name": "BranchApi",
             "summary": "Manage\u0020project\u0020branches",
@@ -151,6 +186,71 @@ Search.appendIndex(
             "summary": "Get\u0020Distribution\u0020Release",
             "url": "classes/CrowdinApiClient-Api-DistributionApi.html#method_getRelease"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\AiApi",
+            "name": "AiApi",
+            "summary": "Use\u0020API\u0020to\u0020leverage\u0020AI\u002Dpowered\u0020translation\u0020of\u0020strings.",
+            "url": "classes/CrowdinApiClient-Api-Enterprise-AiApi.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\AiApi\u003A\u003AtranslateStrings\u0028\u0029",
+            "name": "translateStrings",
+            "summary": "AI\u0020Translate\u0020Strings",
+            "url": "classes/CrowdinApiClient-Api-Enterprise-AiApi.html#method_translateStrings"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\AiApi\u003A\u003AcreateFileTranslation\u0028\u0029",
+            "name": "createFileTranslation",
+            "summary": "AI\u0020File\u0020Translations",
+            "url": "classes/CrowdinApiClient-Api-Enterprise-AiApi.html#method_createFileTranslation"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\AiApi\u003A\u003AgetFileTranslation\u0028\u0029",
+            "name": "getFileTranslation",
+            "summary": "Get\u0020File\u0020Translations\u0020Status",
+            "url": "classes/CrowdinApiClient-Api-Enterprise-AiApi.html#method_getFileTranslation"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\AiApi\u003A\u003AdeleteFileTranslation\u0028\u0029",
+            "name": "deleteFileTranslation",
+            "summary": "Cancel\u0020File\u0020Translations",
+            "url": "classes/CrowdinApiClient-Api-Enterprise-AiApi.html#method_deleteFileTranslation"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\AiApi\u003A\u003AdownloadFileTranslation\u0028\u0029",
+            "name": "downloadFileTranslation",
+            "summary": "Download\u0020Translated\u0020File",
+            "url": "classes/CrowdinApiClient-Api-Enterprise-AiApi.html#method_downloadFileTranslation"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\AiApi\u003A\u003AdownloadFileTranslationStrings\u0028\u0029",
+            "name": "downloadFileTranslationStrings",
+            "summary": "Download\u0020File\u0020Strings",
+            "url": "classes/CrowdinApiClient-Api-Enterprise-AiApi.html#method_downloadFileTranslationStrings"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\FieldApi",
+            "name": "FieldApi",
+            "summary": "Use\u0020API\u0020to\u0020manage\u0020custom\u0020fields\u0020for\u0020projects,\u0020tasks,\u0020users,\u0020files,\u0020strings,\u0020and\u0020translations.",
+            "url": "classes/CrowdinApiClient-Api-Enterprise-FieldApi.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\FieldApi\u003A\u003Alist\u0028\u0029",
+            "name": "list",
+            "summary": "List\u0020Fields",
+            "url": "classes/CrowdinApiClient-Api-Enterprise-FieldApi.html#method_list"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\FieldApi\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "Get\u0020Field",
+            "url": "classes/CrowdinApiClient-Api-Enterprise-FieldApi.html#method_get"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\FieldApi\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "Add\u0020Field",
+            "url": "classes/CrowdinApiClient-Api-Enterprise-FieldApi.html#method_create"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\FieldApi\u003A\u003Aupdate\u0028\u0029",
+            "name": "update",
+            "summary": "Edit\u0020Field",
+            "url": "classes/CrowdinApiClient-Api-Enterprise-FieldApi.html#method_update"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\FieldApi\u003A\u003Adelete\u0028\u0029",
+            "name": "delete",
+            "summary": "Delete\u0020Field",
+            "url": "classes/CrowdinApiClient-Api-Enterprise-FieldApi.html#method_delete"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\FileApi",
             "name": "FileApi",
             "summary": "Use\u0020API\u0020to\u0020keep\u0020the\u0020source\u0020files\u0020up\u0020to\u0020date,\u0020check\u0020on\u0020file\u0020revisions",
@@ -173,7 +273,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\FileApi\u003A\u003AdownloadReviewedSourceFiles\u0028\u0029",
             "name": "downloadReviewedSourceFiles",
-            "summary": "",
+            "summary": "Download\u0020Reviewed\u0020Source\u0020Files",
             "url": "classes/CrowdinApiClient-Api-Enterprise-FileApi.html#method_downloadReviewedSourceFiles"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\GroupApi",
@@ -865,6 +965,41 @@ Search.appendIndex(
             "name": "delete",
             "summary": "Delete\u0020Project",
             "url": "classes/CrowdinApiClient-Api-ProjectApi.html#method_delete"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\ProjectApi\u003A\u003AdownloadFileFormatSettingsCustomSegmentation\u0028\u0029",
+            "name": "downloadFileFormatSettingsCustomSegmentation",
+            "summary": "Download\u0020Project\u0020File\u0020Format\u0020Settings\u0020Custom\u0020Segmentation",
+            "url": "classes/CrowdinApiClient-Api-ProjectApi.html#method_downloadFileFormatSettingsCustomSegmentation"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\ProjectApi\u003A\u003AresetFileFormatSettingsCustomSegmentation\u0028\u0029",
+            "name": "resetFileFormatSettingsCustomSegmentation",
+            "summary": "Reset\u0020Project\u0020File\u0020Format\u0020Settings\u0020Custom\u0020Segmentation",
+            "url": "classes/CrowdinApiClient-Api-ProjectApi.html#method_resetFileFormatSettingsCustomSegmentation"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\ProjectApi\u003A\u003AlistFileFormatSettings\u0028\u0029",
+            "name": "listFileFormatSettings",
+            "summary": "List\u0020Project\u0020File\u0020Format\u0020Settings",
+            "url": "classes/CrowdinApiClient-Api-ProjectApi.html#method_listFileFormatSettings"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\ProjectApi\u003A\u003AcreateFileFormatSettings\u0028\u0029",
+            "name": "createFileFormatSettings",
+            "summary": "Add\u0020Project\u0020File\u0020Format\u0020Settings",
+            "url": "classes/CrowdinApiClient-Api-ProjectApi.html#method_createFileFormatSettings"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\ProjectApi\u003A\u003AgetFileFormatSettings\u0028\u0029",
+            "name": "getFileFormatSettings",
+            "summary": "Get\u0020Project\u0020File\u0020Format\u0020Settings",
+            "url": "classes/CrowdinApiClient-Api-ProjectApi.html#method_getFileFormatSettings"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\ProjectApi\u003A\u003AdeleteFileFormatSettings\u0028\u0029",
+            "name": "deleteFileFormatSettings",
+            "summary": "Delete\u0020Project\u0020File\u0020Format\u0020Settings",
+            "url": "classes/CrowdinApiClient-Api-ProjectApi.html#method_deleteFileFormatSettings"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\ProjectApi\u003A\u003AupdateFileFormatSettings\u0028\u0029",
+            "name": "updateFileFormatSettings",
+            "summary": "Edit\u0020Project\u0020File\u0020Format\u0020Settings",
+            "url": "classes/CrowdinApiClient-Api-ProjectApi.html#method_updateFileFormatSettings"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\ReportApi",
             "name": "ReportApi",
@@ -1805,6 +1940,136 @@ Search.appendIndex(
             "name": "defer",
             "summary": "Crowdin\u0020if\u0020loading\u0020of\u0020the\u0020provider\u0020is\u0020deferred.",
             "url": "classes/CrowdinApiClient-FrameworkSupport-Laravel-CrowdinServiceProvider.html#property_defer"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AiFileTranslation",
+            "name": "AiFileTranslation",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AiFileTranslation.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AiFileTranslation\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AiFileTranslation.html#method___construct"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AiFileTranslation\u003A\u003AgetIdentifier\u0028\u0029",
+            "name": "getIdentifier",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AiFileTranslation.html#method_getIdentifier"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AiFileTranslation\u003A\u003AgetStatus\u0028\u0029",
+            "name": "getStatus",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AiFileTranslation.html#method_getStatus"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AiFileTranslation\u003A\u003AgetProgress\u0028\u0029",
+            "name": "getProgress",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AiFileTranslation.html#method_getProgress"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AiFileTranslation\u003A\u003AgetAttributes\u0028\u0029",
+            "name": "getAttributes",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AiFileTranslation.html#method_getAttributes"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AiFileTranslation\u003A\u003AgetCreatedAt\u0028\u0029",
+            "name": "getCreatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AiFileTranslation.html#method_getCreatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AiFileTranslation\u003A\u003AgetUpdatedAt\u0028\u0029",
+            "name": "getUpdatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AiFileTranslation.html#method_getUpdatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AiFileTranslation\u003A\u003AgetStartedAt\u0028\u0029",
+            "name": "getStartedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AiFileTranslation.html#method_getStartedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AiFileTranslation\u003A\u003AgetFinishedAt\u0028\u0029",
+            "name": "getFinishedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AiFileTranslation.html#method_getFinishedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AiFileTranslation\u003A\u003A\u0024identifier",
+            "name": "identifier",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AiFileTranslation.html#property_identifier"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AiFileTranslation\u003A\u003A\u0024status",
+            "name": "status",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AiFileTranslation.html#property_status"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AiFileTranslation\u003A\u003A\u0024progress",
+            "name": "progress",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AiFileTranslation.html#property_progress"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AiFileTranslation\u003A\u003A\u0024attributes",
+            "name": "attributes",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AiFileTranslation.html#property_attributes"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AiFileTranslation\u003A\u003A\u0024createdAt",
+            "name": "createdAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AiFileTranslation.html#property_createdAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AiFileTranslation\u003A\u003A\u0024updatedAt",
+            "name": "updatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AiFileTranslation.html#property_updatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AiFileTranslation\u003A\u003A\u0024startedAt",
+            "name": "startedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AiFileTranslation.html#property_startedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AiFileTranslation\u003A\u003A\u0024finishedAt",
+            "name": "finishedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AiFileTranslation.html#property_finishedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AiTranslation",
+            "name": "AiTranslation",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AiTranslation.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AiTranslation\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AiTranslation.html#method___construct"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AiTranslation\u003A\u003AgetSourceLanguageId\u0028\u0029",
+            "name": "getSourceLanguageId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AiTranslation.html#method_getSourceLanguageId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AiTranslation\u003A\u003AgetTargetLanguageId\u0028\u0029",
+            "name": "getTargetLanguageId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AiTranslation.html#method_getTargetLanguageId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AiTranslation\u003A\u003AgetTranslations\u0028\u0029",
+            "name": "getTranslations",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AiTranslation.html#method_getTranslations"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AiTranslation\u003A\u003A\u0024sourceLanguageId",
+            "name": "sourceLanguageId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AiTranslation.html#property_sourceLanguageId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AiTranslation\u003A\u003A\u0024targetLanguageId",
+            "name": "targetLanguageId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AiTranslation.html#property_targetLanguageId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AiTranslation\u003A\u003A\u0024translations",
+            "name": "translations",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AiTranslation.html#property_translations"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Alignment",
             "name": "Alignment",
@@ -2880,6 +3145,126 @@ Search.appendIndex(
             "name": "added",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-AddedTeamMembers.html#property_added"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Field",
+            "name": "Field",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Field.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Field\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Field.html#method___construct"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Field\u003A\u003AgetId\u0028\u0029",
+            "name": "getId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Field.html#method_getId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Field\u003A\u003AgetName\u0028\u0029",
+            "name": "getName",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Field.html#method_getName"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Field\u003A\u003AsetName\u0028\u0029",
+            "name": "setName",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Field.html#method_setName"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Field\u003A\u003AgetSlug\u0028\u0029",
+            "name": "getSlug",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Field.html#method_getSlug"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Field\u003A\u003AgetDescription\u0028\u0029",
+            "name": "getDescription",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Field.html#method_getDescription"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Field\u003A\u003AsetDescription\u0028\u0029",
+            "name": "setDescription",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Field.html#method_setDescription"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Field\u003A\u003AgetType\u0028\u0029",
+            "name": "getType",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Field.html#method_getType"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Field\u003A\u003AgetEntities\u0028\u0029",
+            "name": "getEntities",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Field.html#method_getEntities"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Field\u003A\u003AsetEntities\u0028\u0029",
+            "name": "setEntities",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Field.html#method_setEntities"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Field\u003A\u003AgetConfig\u0028\u0029",
+            "name": "getConfig",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Field.html#method_getConfig"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Field\u003A\u003AsetConfig\u0028\u0029",
+            "name": "setConfig",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Field.html#method_setConfig"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Field\u003A\u003AgetCreatedAt\u0028\u0029",
+            "name": "getCreatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Field.html#method_getCreatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Field\u003A\u003AgetUpdatedAt\u0028\u0029",
+            "name": "getUpdatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Field.html#method_getUpdatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Field\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Field.html#property_id"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Field\u003A\u003A\u0024name",
+            "name": "name",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Field.html#property_name"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Field\u003A\u003A\u0024slug",
+            "name": "slug",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Field.html#property_slug"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Field\u003A\u003A\u0024description",
+            "name": "description",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Field.html#property_description"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Field\u003A\u003A\u0024type",
+            "name": "type",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Field.html#property_type"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Field\u003A\u003A\u0024entities",
+            "name": "entities",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Field.html#property_entities"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Field\u003A\u003A\u0024config",
+            "name": "config",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Field.html#property_config"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Field\u003A\u003A\u0024createdAt",
+            "name": "createdAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Field.html#property_createdAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Field\u003A\u003A\u0024updatedAt",
+            "name": "updatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Field.html#property_updatedAt"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Group",
             "name": "Group",
@@ -4151,6 +4536,96 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-File.html#property_updatedAt"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\FileFormatSettings",
+            "name": "FileFormatSettings",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-FileFormatSettings.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\FileFormatSettings\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-FileFormatSettings.html#method___construct"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\FileFormatSettings\u003A\u003AgetId\u0028\u0029",
+            "name": "getId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-FileFormatSettings.html#method_getId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\FileFormatSettings\u003A\u003AgetName\u0028\u0029",
+            "name": "getName",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-FileFormatSettings.html#method_getName"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\FileFormatSettings\u003A\u003AgetFormat\u0028\u0029",
+            "name": "getFormat",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-FileFormatSettings.html#method_getFormat"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\FileFormatSettings\u003A\u003AsetFormat\u0028\u0029",
+            "name": "setFormat",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-FileFormatSettings.html#method_setFormat"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\FileFormatSettings\u003A\u003AgetExtensions\u0028\u0029",
+            "name": "getExtensions",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-FileFormatSettings.html#method_getExtensions"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\FileFormatSettings\u003A\u003AgetSettings\u0028\u0029",
+            "name": "getSettings",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-FileFormatSettings.html#method_getSettings"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\FileFormatSettings\u003A\u003AsetSettings\u0028\u0029",
+            "name": "setSettings",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-FileFormatSettings.html#method_setSettings"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\FileFormatSettings\u003A\u003AgetCreatedAt\u0028\u0029",
+            "name": "getCreatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-FileFormatSettings.html#method_getCreatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\FileFormatSettings\u003A\u003AgetUpdatedAt\u0028\u0029",
+            "name": "getUpdatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-FileFormatSettings.html#method_getUpdatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\FileFormatSettings\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-FileFormatSettings.html#property_id"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\FileFormatSettings\u003A\u003A\u0024name",
+            "name": "name",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-FileFormatSettings.html#property_name"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\FileFormatSettings\u003A\u003A\u0024format",
+            "name": "format",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-FileFormatSettings.html#property_format"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\FileFormatSettings\u003A\u003A\u0024extensions",
+            "name": "extensions",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-FileFormatSettings.html#property_extensions"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\FileFormatSettings\u003A\u003A\u0024settings",
+            "name": "settings",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-FileFormatSettings.html#property_settings"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\FileFormatSettings\u003A\u003A\u0024createdAt",
+            "name": "createdAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-FileFormatSettings.html#property_createdAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\FileFormatSettings\u003A\u003A\u0024updatedAt",
+            "name": "updatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-FileFormatSettings.html#property_updatedAt"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\FileRevision",
             "name": "FileRevision",
             "summary": "",
@@ -4158,7 +4633,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\FileRevision\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "FileRevision\u0020constructor.",
+            "summary": "",
             "url": "classes/CrowdinApiClient-Model-FileRevision.html#method___construct"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\FileRevision\u003A\u003AgetId\u0028\u0029",
@@ -4171,26 +4646,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-FileRevision.html#method_getProjectId"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\FileRevision\u003A\u003AsetProjectId\u0028\u0029",
-            "name": "setProjectId",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-FileRevision.html#method_setProjectId"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\FileRevision\u003A\u003AgetInfo\u0028\u0029",
-            "name": "getInfo",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-FileRevision.html#method_getInfo"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\FileRevision\u003A\u003AsetInfo\u0028\u0029",
-            "name": "setInfo",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-FileRevision.html#method_setInfo"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\FileRevision\u003A\u003AgetDate\u0028\u0029",
-            "name": "getDate",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-FileRevision.html#method_getDate"
-        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\FileRevision\u003A\u003AgetFileId\u0028\u0029",
             "name": "getFileId",
             "summary": "",
@@ -4200,6 +4655,16 @@ Search.appendIndex(
             "name": "getRestoreToRevision",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-FileRevision.html#method_getRestoreToRevision"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\FileRevision\u003A\u003AgetInfo\u0028\u0029",
+            "name": "getInfo",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-FileRevision.html#method_getInfo"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\FileRevision\u003A\u003AgetDate\u0028\u0029",
+            "name": "getDate",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-FileRevision.html#method_getDate"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\FileRevision\u003A\u003A\u0024id",
             "name": "id",

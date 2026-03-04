@@ -162,7 +162,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/ProjectApi.php"><a href="files/src-crowdinapiclient-api-projectapi.html"><abbr title="src/CrowdinApiClient/Api/ProjectApi.php">ProjectApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">16</span>
 
     </aside>
 
@@ -205,11 +205,32 @@
 <dd>Add Project</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-ProjectApi.html#method_createFileFormatSettings">createFileFormatSettings()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-FileFormatSettings.html"><abbr title="\CrowdinApiClient\Model\FileFormatSettings">FileFormatSettings</abbr></a>|null    </span>
+</dt>
+<dd>Add Project File Format Settings</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Api-ProjectApi.html#method_delete">delete()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
 <dd>Delete Project</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-ProjectApi.html#method_deleteFileFormatSettings">deleteFileFormatSettings()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Delete Project File Format Settings</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-ProjectApi.html#method_downloadFileFormatSettingsCustomSegmentation">downloadFileFormatSettingsCustomSegmentation()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-DownloadFile.html"><abbr title="\CrowdinApiClient\Model\DownloadFile">DownloadFile</abbr></a>|null    </span>
+</dt>
+<dd>Download Project File Format Settings Custom Segmentation</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Api-ProjectApi.html#method_get">get()</a>
@@ -219,6 +240,13 @@
 <dd>Get Project Info</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-ProjectApi.html#method_getFileFormatSettings">getFileFormatSettings()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-FileFormatSettings.html"><abbr title="\CrowdinApiClient\Model\FileFormatSettings">FileFormatSettings</abbr></a>|null    </span>
+</dt>
+<dd>Get Project File Format Settings</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Api-ProjectApi.html#method_list">list()</a>
     <span>
                                 &nbsp;: <a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>    </span>
@@ -226,11 +254,32 @@
 <dd>List Projects</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-ProjectApi.html#method_listFileFormatSettings">listFileFormatSettings()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>    </span>
+</dt>
+<dd>List Project File Format Settings</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-ProjectApi.html#method_resetFileFormatSettingsCustomSegmentation">resetFileFormatSettingsCustomSegmentation()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Reset Project File Format Settings Custom Segmentation</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Api-ProjectApi.html#method_update">update()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-Project.html"><abbr title="\CrowdinApiClient\Model\Project">Project</abbr></a>|null    </span>
 </dt>
 <dd>Edit Project Info</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-ProjectApi.html#method_updateFileFormatSettings">updateFileFormatSettings()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-FileFormatSettings.html"><abbr title="\CrowdinApiClient\Model\FileFormatSettings">FileFormatSettings</abbr></a>|null    </span>
+</dt>
+<dd>Edit Project File Format Settings</dd>
 
     </dl>
 
@@ -260,7 +309,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/ProjectApi.php"><a href="files/src-crowdinapiclient-api-projectapi.html"><abbr title="src/CrowdinApiClient/Api/ProjectApi.php">ProjectApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">77</span>
+    <span class="phpdocumentor-element-found-in__line">75</span>
 
     </aside>
 
@@ -346,6 +395,83 @@ integer $data[defaultGlossaryId]</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_createFileFormatSettings">
+        createFileFormatSettings()
+        <a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_createFileFormatSettings" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/ProjectApi.php"><a href="files/src-crowdinapiclient-api-projectapi.html"><abbr title="src/CrowdinApiClient/Api/ProjectApi.php">ProjectApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">144</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Add Project File Format Settings</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">createFileFormatSettings</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-FileFormatSettings.html"><abbr title="\CrowdinApiClient\Model\FileFormatSettings">FileFormatSettings</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$projectId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$data</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_createFileFormatSettings#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/developer/api/v2/#tag/Projects/operation/api.projects.file-format-settings.post"> https://support.crowdin.com/developer/api/v2/#tag/Projects/operation/api.projects.file-format-settings.post </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/developer/enterprise/api/v2/#tag/Projects-and-Groups/operation/api.projects.file-format-settings.post"> https://support.crowdin.com/developer/enterprise/api/v2/#tag/Projects-and-Groups/operation/api.projects.file-format-settings.post </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-FileFormatSettings.html"><abbr title="\CrowdinApiClient\Model\FileFormatSettings">FileFormatSettings</abbr></a>|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_delete">
         delete()
         <a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_delete" class="headerlink"><i class="fas fa-link"></i></a>
@@ -354,7 +480,7 @@ integer $data[defaultGlossaryId]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/ProjectApi.php"><a href="files/src-crowdinapiclient-api-projectapi.html"><abbr title="src/CrowdinApiClient/Api/ProjectApi.php">ProjectApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">103</span>
+    <span class="phpdocumentor-element-found-in__line">98</span>
 
     </aside>
 
@@ -414,6 +540,156 @@ integer $data[defaultGlossaryId]</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_deleteFileFormatSettings">
+        deleteFileFormatSettings()
+        <a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_deleteFileFormatSettings" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/ProjectApi.php"><a href="files/src-crowdinapiclient-api-projectapi.html"><abbr title="src/CrowdinApiClient/Api/ProjectApi.php">ProjectApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">166</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Delete Project File Format Settings</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">deleteFileFormatSettings</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fileFormatSettingsId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$projectId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$fileFormatSettingsId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_deleteFileFormatSettings#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/developer/api/v2/#tag/Projects/operation/api.projects.file-format-settings.delete"> https://support.crowdin.com/developer/api/v2/#tag/Projects/operation/api.projects.file-format-settings.delete </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/developer/enterprise/api/v2/#tag/Projects-and-Groups/operation/api.projects.file-format-settings.delete"> https://support.crowdin.com/developer/enterprise/api/v2/#tag/Projects-and-Groups/operation/api.projects.file-format-settings.delete </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_downloadFileFormatSettingsCustomSegmentation">
+        downloadFileFormatSettingsCustomSegmentation()
+        <a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_downloadFileFormatSettingsCustomSegmentation" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/ProjectApi.php"><a href="files/src-crowdinapiclient-api-projectapi.html"><abbr title="src/CrowdinApiClient/Api/ProjectApi.php">ProjectApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">108</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Download Project File Format Settings Custom Segmentation</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">downloadFileFormatSettingsCustomSegmentation</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fileFormatSettingsId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-DownloadFile.html"><abbr title="\CrowdinApiClient\Model\DownloadFile">DownloadFile</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$projectId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$fileFormatSettingsId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_downloadFileFormatSettingsCustomSegmentation#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/developer/api/v2/#tag/Projects/operation/api.projects.file-format-settings.custom-segmentations.get"> https://support.crowdin.com/developer/api/v2/#tag/Projects/operation/api.projects.file-format-settings.custom-segmentations.get </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/developer/enterprise/api/v2/#tag/Projects-and-Groups/operation/api.projects.file-format-settings.custom-segmentations.get"> https://support.crowdin.com/developer/enterprise/api/v2/#tag/Projects-and-Groups/operation/api.projects.file-format-settings.custom-segmentations.get </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-DownloadFile.html"><abbr title="\CrowdinApiClient\Model\DownloadFile">DownloadFile</abbr></a>|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_get">
         get()
         <a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_get" class="headerlink"><i class="fas fa-link"></i></a>
@@ -422,7 +698,7 @@ integer $data[defaultGlossaryId]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/ProjectApi.php"><a href="files/src-crowdinapiclient-api-projectapi.html"><abbr title="src/CrowdinApiClient/Api/ProjectApi.php">ProjectApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">41</span>
 
     </aside>
 
@@ -486,6 +762,83 @@ integer $data[defaultGlossaryId]</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getFileFormatSettings">
+        getFileFormatSettings()
+        <a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_getFileFormatSettings" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/ProjectApi.php"><a href="files/src-crowdinapiclient-api-projectapi.html"><abbr title="src/CrowdinApiClient/Api/ProjectApi.php">ProjectApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">155</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get Project File Format Settings</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getFileFormatSettings</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fileFormatSettingsId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-FileFormatSettings.html"><abbr title="\CrowdinApiClient\Model\FileFormatSettings">FileFormatSettings</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$projectId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$fileFormatSettingsId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_getFileFormatSettings#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/developer/api/v2/#tag/Projects/operation/api.projects.file-format-settings.get"> https://support.crowdin.com/developer/api/v2/#tag/Projects/operation/api.projects.file-format-settings.get </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/developer/enterprise/api/v2/#tag/Projects-and-Groups/operation/api.projects.file-format-settings.get"> https://support.crowdin.com/developer/enterprise/api/v2/#tag/Projects-and-Groups/operation/api.projects.file-format-settings.get </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-FileFormatSettings.html"><abbr title="\CrowdinApiClient\Model\FileFormatSettings">FileFormatSettings</abbr></a>|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_list">
         list()
         <a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_list" class="headerlink"><i class="fas fa-link"></i></a>
@@ -494,7 +847,7 @@ integer $data[defaultGlossaryId]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/ProjectApi.php"><a href="files/src-crowdinapiclient-api-projectapi.html"><abbr title="src/CrowdinApiClient/Api/ProjectApi.php">ProjectApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">31</span>
 
     </aside>
 
@@ -564,6 +917,156 @@ integer $params[userId] Get user own projects</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_listFileFormatSettings">
+        listFileFormatSettings()
+        <a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_listFileFormatSettings" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/ProjectApi.php"><a href="files/src-crowdinapiclient-api-projectapi.html"><abbr title="src/CrowdinApiClient/Api/ProjectApi.php">ProjectApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">133</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">List Project File Format Settings</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">listFileFormatSettings</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$projectId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$params</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_listFileFormatSettings#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/developer/api/v2/#tag/Projects/operation/api.projects.file-format-settings.getMany"> https://support.crowdin.com/developer/api/v2/#tag/Projects/operation/api.projects.file-format-settings.getMany </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/developer/enterprise/api/v2/#tag/Projects-and-Groups/operation/api.projects.file-format-settings.getMany"> https://support.crowdin.com/developer/enterprise/api/v2/#tag/Projects-and-Groups/operation/api.projects.file-format-settings.getMany </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_resetFileFormatSettingsCustomSegmentation">
+        resetFileFormatSettingsCustomSegmentation()
+        <a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_resetFileFormatSettingsCustomSegmentation" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/ProjectApi.php"><a href="files/src-crowdinapiclient-api-projectapi.html"><abbr title="src/CrowdinApiClient/Api/ProjectApi.php">ProjectApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">121</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Reset Project File Format Settings Custom Segmentation</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">resetFileFormatSettingsCustomSegmentation</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fileFormatSettingsId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$projectId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$fileFormatSettingsId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_resetFileFormatSettingsCustomSegmentation#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/developer/api/v2/#tag/Projects/operation/api.projects.file-format-settings.custom-segmentations.delete"> https://support.crowdin.com/developer/api/v2/#tag/Projects/operation/api.projects.file-format-settings.custom-segmentations.delete </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/developer/enterprise/api/v2/#tag/Projects-and-Groups/operation/api.projects.file-format-settings.custom-segmentations.delete"> https://support.crowdin.com/developer/enterprise/api/v2/#tag/Projects-and-Groups/operation/api.projects.file-format-settings.custom-segmentations.delete </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_update">
         update()
         <a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_update" class="headerlink"><i class="fas fa-link"></i></a>
@@ -572,7 +1075,7 @@ integer $params[userId] Get user own projects</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/ProjectApi.php"><a href="files/src-crowdinapiclient-api-projectapi.html"><abbr title="src/CrowdinApiClient/Api/ProjectApi.php">ProjectApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">90</span>
+    <span class="phpdocumentor-element-found-in__line">85</span>
 
     </aside>
 
@@ -580,7 +1083,7 @@ integer $params[userId] Get user own projects</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type"><a href="classes/CrowdinApiClient-Model-Project.html"><abbr title="\CrowdinApiClient\Model\Project">Project</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$project</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type"><a href="classes/CrowdinApiClient-Model-Project.html"><abbr title="\CrowdinApiClient\Model\Project">Project</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$project</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Project.html"><abbr title="\CrowdinApiClient\Model\Project">Project</abbr></a>|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -624,7 +1127,88 @@ integer $params[userId] Get user own projects</p>
 
         
     
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Project.html"><abbr title="\CrowdinApiClient\Model\Project">Project</abbr></a>|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_updateFileFormatSettings">
+        updateFileFormatSettings()
+        <a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_updateFileFormatSettings" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/ProjectApi.php"><a href="files/src-crowdinapiclient-api-projectapi.html"><abbr title="src/CrowdinApiClient/Api/ProjectApi.php">ProjectApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">176</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Edit Project File Format Settings</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">updateFileFormatSettings</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type"><a href="classes/CrowdinApiClient-Model-FileFormatSettings.html"><abbr title="\CrowdinApiClient\Model\FileFormatSettings">FileFormatSettings</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fileFormatSettings</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-FileFormatSettings.html"><abbr title="\CrowdinApiClient\Model\FileFormatSettings">FileFormatSettings</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
     
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$projectId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$fileFormatSettings</span>
+                : <span class="phpdocumentor-argument-list__argument__type"><a href="classes/CrowdinApiClient-Model-FileFormatSettings.html"><abbr title="\CrowdinApiClient\Model\FileFormatSettings">FileFormatSettings</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_updateFileFormatSettings#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/developer/api/v2/#tag/Projects/operation/api.projects.file-format-settings.patch"> https://support.crowdin.com/developer/api/v2/#tag/Projects/operation/api.projects.file-format-settings.patch </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/developer/enterprise/api/v2/#tag/Projects-and-Groups/operation/api.projects.file-format-settings.patch"> https://support.crowdin.com/developer/enterprise/api/v2/#tag/Projects-and-Groups/operation/api.projects.file-format-settings.patch </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-FileFormatSettings.html"><abbr title="\CrowdinApiClient\Model\FileFormatSettings">FileFormatSettings</abbr></a>|null</span>
+            </section>
+
 </article>
             </section>
 
@@ -742,10 +1326,17 @@ integer $params[userId] Get user own projects</p>
             <li>
                 <ul class="phpdocumentor-list -clean">
                                             <li class=""><a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_create">create()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_createFileFormatSettings">createFileFormatSettings()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_delete">delete()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_deleteFileFormatSettings">deleteFileFormatSettings()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_downloadFileFormatSettingsCustomSegmentation">downloadFileFormatSettingsCustomSegmentation()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_get">get()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_getFileFormatSettings">getFileFormatSettings()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_list">list()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_listFileFormatSettings">listFileFormatSettings()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_resetFileFormatSettingsCustomSegmentation">resetFileFormatSettingsCustomSegmentation()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_update">update()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-ProjectApi.html#method_updateFileFormatSettings">updateFileFormatSettings()</a></li>
                                     </ul>
             </li>
                     </ul>

@@ -200,14 +200,14 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Api-Enterprise-FileApi.html#method_buildReviewedSourceFiles">buildReviewedSourceFiles()</a>
     <span>
-                                &nbsp;: <a href="classes/CrowdinApiClient-Model-Enterprise-ReviewedSourceFileBuild.html"><abbr title="\CrowdinApiClient\Model\Enterprise\ReviewedSourceFileBuild">ReviewedSourceFileBuild</abbr></a>    </span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-Enterprise-ReviewedSourceFileBuild.html"><abbr title="\CrowdinApiClient\Model\Enterprise\ReviewedSourceFileBuild">ReviewedSourceFileBuild</abbr></a>|null    </span>
 </dt>
 <dd>Build Reviewed Source Files</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Api-Enterprise-FileApi.html#method_checkReviewedSourceFilesBuildStatus">checkReviewedSourceFilesBuildStatus()</a>
     <span>
-                                &nbsp;: <a href="classes/CrowdinApiClient-Model-Enterprise-ReviewedSourceFileBuild.html"><abbr title="\CrowdinApiClient\Model\Enterprise\ReviewedSourceFileBuild">ReviewedSourceFileBuild</abbr></a>    </span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-Enterprise-ReviewedSourceFileBuild.html"><abbr title="\CrowdinApiClient\Model\Enterprise\ReviewedSourceFileBuild">ReviewedSourceFileBuild</abbr></a>|null    </span>
 </dt>
 <dd>Check Reviewed Source Files Build Status</dd>
 
@@ -221,7 +221,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Api-FileApi.html#method_delete">delete()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: null    </span>
 </dt>
 <dd>Delete File</dd>
 
@@ -242,8 +242,9 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Api-Enterprise-FileApi.html#method_downloadReviewedSourceFiles">downloadReviewedSourceFiles()</a>
     <span>
-                                &nbsp;: <a href="classes/CrowdinApiClient-Model-DownloadFile.html"><abbr title="\CrowdinApiClient\Model\DownloadFile">DownloadFile</abbr></a>    </span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-DownloadFile.html"><abbr title="\CrowdinApiClient\Model\DownloadFile">DownloadFile</abbr></a>|null    </span>
 </dt>
+<dd>Download Reviewed Source Files</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Api-FileApi.html#method_edit">edit()</a>
@@ -337,7 +338,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">buildReviewedSourceFiles</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Enterprise-ReviewedSourceFileBuild.html"><abbr title="\CrowdinApiClient\Model\Enterprise\ReviewedSourceFileBuild">ReviewedSourceFileBuild</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">buildReviewedSourceFiles</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Enterprise-ReviewedSourceFileBuild.html"><abbr title="\CrowdinApiClient\Model\Enterprise\ReviewedSourceFileBuild">ReviewedSourceFileBuild</abbr></a>|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -384,7 +385,7 @@
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Enterprise-ReviewedSourceFileBuild.html"><abbr title="\CrowdinApiClient\Model\Enterprise\ReviewedSourceFileBuild">ReviewedSourceFileBuild</abbr></a></span>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Enterprise-ReviewedSourceFileBuild.html"><abbr title="\CrowdinApiClient\Model\Enterprise\ReviewedSourceFileBuild">ReviewedSourceFileBuild</abbr></a>|null</span>
             </section>
 
 </article>
@@ -402,7 +403,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/FileApi.php"><a href="files/src-crowdinapiclient-api-enterprise-fileapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/FileApi.php">FileApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">59</span>
+    <span class="phpdocumentor-element-found-in__line">55</span>
 
     </aside>
 
@@ -410,7 +411,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">checkReviewedSourceFilesBuildStatus</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$buildId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Enterprise-ReviewedSourceFileBuild.html"><abbr title="\CrowdinApiClient\Model\Enterprise\ReviewedSourceFileBuild">ReviewedSourceFileBuild</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">checkReviewedSourceFilesBuildStatus</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$buildId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Enterprise-ReviewedSourceFileBuild.html"><abbr title="\CrowdinApiClient\Model\Enterprise\ReviewedSourceFileBuild">ReviewedSourceFileBuild</abbr></a>|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -455,7 +456,7 @@
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Enterprise-ReviewedSourceFileBuild.html"><abbr title="\CrowdinApiClient\Model\Enterprise\ReviewedSourceFileBuild">ReviewedSourceFileBuild</abbr></a></span>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Enterprise-ReviewedSourceFileBuild.html"><abbr title="\CrowdinApiClient\Model\Enterprise\ReviewedSourceFileBuild">ReviewedSourceFileBuild</abbr></a>|null</span>
             </section>
 
 </article>
@@ -473,7 +474,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/FileApi.php"><a href="files/src-crowdinapiclient-api-fileapi.html"><abbr title="src/CrowdinApiClient/Api/FileApi.php">FileApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">55</span>
+    <span class="phpdocumentor-element-found-in__line">56</span>
 
     </aside>
 
@@ -562,7 +563,7 @@ array $data[exportOptions]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/FileApi.php"><a href="files/src-crowdinapiclient-api-fileapi.html"><abbr title="src/CrowdinApiClient/Api/FileApi.php">FileApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">163</span>
+    <span class="phpdocumentor-element-found-in__line">150</span>
 
     </aside>
 
@@ -570,7 +571,7 @@ array $data[exportOptions]</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">delete</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fileId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">delete</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fileId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -621,7 +622,11 @@ array $data[exportOptions]</p>
 
         
     
-    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">null</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -637,7 +642,7 @@ array $data[exportOptions]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/FileApi.php"><a href="files/src-crowdinapiclient-api-fileapi.html"><abbr title="src/CrowdinApiClient/Api/FileApi.php">FileApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">134</span>
+    <span class="phpdocumentor-element-found-in__line">126</span>
 
     </aside>
 
@@ -716,7 +721,7 @@ array $data[exportOptions]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/FileApi.php"><a href="files/src-crowdinapiclient-api-fileapi.html"><abbr title="src/CrowdinApiClient/Api/FileApi.php">FileApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">119</span>
+    <span class="phpdocumentor-element-found-in__line">115</span>
 
     </aside>
 
@@ -799,10 +804,11 @@ array $data[exportOptions]</p>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Download Reviewed Source Files</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">downloadReviewedSourceFiles</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$buildId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-DownloadFile.html"><abbr title="\CrowdinApiClient\Model\DownloadFile">DownloadFile</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">downloadReviewedSourceFiles</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$buildId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-DownloadFile.html"><abbr title="\CrowdinApiClient\Model\DownloadFile">DownloadFile</abbr></a>|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -827,12 +833,27 @@ array $data[exportOptions]</p>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-Enterprise-FileApi.html#method_downloadReviewedSourceFiles#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://support.crowdin.com/developer/enterprise/api/v2/#tag/Source-Files/operation/api.projects.strings.reviewed-builds.download.download"> <p>API Documentation Enterprise</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
 
         
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-DownloadFile.html"><abbr title="\CrowdinApiClient\Model\DownloadFile">DownloadFile</abbr></a></span>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-DownloadFile.html"><abbr title="\CrowdinApiClient\Model\DownloadFile">DownloadFile</abbr></a>|null</span>
             </section>
 
 </article>
@@ -850,7 +871,7 @@ array $data[exportOptions]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/FileApi.php"><a href="files/src-crowdinapiclient-api-fileapi.html"><abbr title="src/CrowdinApiClient/Api/FileApi.php">FileApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">148</span>
+    <span class="phpdocumentor-element-found-in__line">137</span>
 
     </aside>
 
@@ -922,7 +943,7 @@ array $data[exportOptions]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/FileApi.php"><a href="files/src-crowdinapiclient-api-fileapi.html"><abbr title="src/CrowdinApiClient/Api/FileApi.php">FileApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">69</span>
+    <span class="phpdocumentor-element-found-in__line">67</span>
 
     </aside>
 
@@ -1001,7 +1022,7 @@ array $data[exportOptions]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/FileApi.php"><a href="files/src-crowdinapiclient-api-fileapi.html"><abbr title="src/CrowdinApiClient/Api/FileApi.php">FileApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">194</span>
+    <span class="phpdocumentor-element-found-in__line">172</span>
 
     </aside>
 
@@ -1087,7 +1108,7 @@ array $data[exportOptions]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/FileApi.php"><a href="files/src-crowdinapiclient-api-fileapi.html"><abbr title="src/CrowdinApiClient/Api/FileApi.php">FileApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 
     </aside>
 
@@ -1335,7 +1356,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/FileApi.php"><a href="files/src-crowdinapiclient-api-fileapi.html"><abbr title="src/CrowdinApiClient/Api/FileApi.php">FileApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">178</span>
+    <span class="phpdocumentor-element-found-in__line">161</span>
 
     </aside>
 
@@ -1414,7 +1435,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/FileApi.php"><a href="files/src-crowdinapiclient-api-fileapi.html"><abbr title="src/CrowdinApiClient/Api/FileApi.php">FileApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">88</span>
+    <span class="phpdocumentor-element-found-in__line">87</span>
 
     </aside>
 
