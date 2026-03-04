@@ -77,6 +77,11 @@ class StringComment extends BaseModel
      */
     protected $createdAt;
 
+    /**
+     * @var array
+     */
+    protected $attachments;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -94,6 +99,7 @@ class StringComment extends BaseModel
         $this->resolver = (array)$this->getDataProperty('resolver');
         $this->resolvedAt = (string)$this->getDataProperty('resolvedAt');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
+        $this->attachments = (array)$this->getDataProperty('attachments');
     }
 
     /**
@@ -318,5 +324,21 @@ class StringComment extends BaseModel
     public function setCreatedAt(string $createdAt): void
     {
         $this->createdAt = $createdAt;
+    }
+
+    /**
+     * @return array
+     */
+    public function getAttachments(): array
+    {
+        return $this->attachments;
+    }
+
+    /**
+     * @param array $attachments
+     */
+    public function setAttachments(array $attachments): void
+    {
+        $this->attachments = $attachments;
     }
 }
