@@ -8,6 +8,8 @@ use CrowdinApiClient\Model\DownloadFileTranslation;
 use CrowdinApiClient\Model\PreTranslation;
 use CrowdinApiClient\Model\PreTranslationReport;
 use CrowdinApiClient\Model\TranslationAlignment;
+use CrowdinApiClient\Model\TranslationImport;
+use CrowdinApiClient\Model\TranslationImportReport;
 use CrowdinApiClient\Model\TranslationProjectBuild;
 use CrowdinApiClient\Model\TranslationProjectDirectory;
 use CrowdinApiClient\ModelCollection;
@@ -186,9 +188,56 @@ class TranslationApi extends AbstractApi
     }
 
     /**
+     * Import Translations
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.imports API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.imports API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param array $params
+     *  integer $params[storageId] required<br>
+     *  integer $params[branchId] required for string-based projects<br>
+     *  string[] $params[languageIds]<br>
+     *  integer $params[fileId] required for file-based projects (except XLIFF format)<br>
+     *  bool $params[importEqSuggestions]<br>
+     *  bool $params[autoApproveImported]<br>
+     *  bool $params[translateHidden]<br>
+     *  bool $params[addToTm]<br>
+     * @return TranslationImport|null
+     */
+    public function importTranslations(int $projectId, array $params): ?TranslationImport
+    {
+        $path = sprintf('projects/%d/translations/imports', $projectId);
+        return $this->_post($path, TranslationImport::class, $params);
+    }
+
+    /**
+     * Check Translation Import Status
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.imports.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.imports.get API Documentation Enterprise
+     */
+    public function getTranslationImportStatus(int $projectId, string $importTranslationId): ?TranslationImport
+    {
+        $path = sprintf('projects/%d/translations/imports/%s', $projectId, $importTranslationId);
+        return $this->_get($path, TranslationImport::class);
+    }
+
+    /**
+     * Download Translation Import Report
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.imports.report.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.imports.report.get API Documentation Enterprise
+     */
+    public function downloadTranslationImportReport(int $projectId, string $importTranslationId): ?TranslationImportReport
+    {
+        $path = sprintf('projects/%d/translations/imports/%s/report', $projectId, $importTranslationId);
+        return $this->_get($path, TranslationImportReport::class);
+    }
+
+    /**
      * Upload Translations
-     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.post API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.post API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.postOnLanguage API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.postOnLanguage API Documentation Enterprise
+     *
+     * @deprecated Use importTranslations() instead.
      *
      * @param int $projectId
      * @param string $languageId

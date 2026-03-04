@@ -9,6 +9,8 @@ use CrowdinApiClient\Model\PreTranslationReport;
 use CrowdinApiClient\Model\PreTranslationReportFile;
 use CrowdinApiClient\Model\PreTranslationReportLanguage;
 use CrowdinApiClient\Model\TranslationAlignment;
+use CrowdinApiClient\Model\TranslationImport;
+use CrowdinApiClient\Model\TranslationImportReport;
 use CrowdinApiClient\Model\TranslationProjectBuild;
 use CrowdinApiClient\Model\WordAlignment;
 use CrowdinApiClient\ModelCollection;
@@ -530,5 +532,129 @@ class TranslationApiTest extends AbstractTestApi
         $this->assertInstanceOf(Alignment::class, $alignment->getWords()[0]->getAlignments()[0]);
         $this->assertEquals('Password', $alignment->getWords()[0]->getAlignments()[0]->getSourceWord());
         $this->assertEquals('Пароль', $alignment->getWords()[0]->getAlignments()[0]->getTargetWord());
+    }
+
+    public function testImportTranslations(): void
+    {
+        $params = [
+            'storageId' => 13,
+            'branchId' => 34,
+            'languageIds' => ['uk'],
+            'fileId' => 2,
+        ];
+
+        $this->mockRequest([
+            'path' => '/projects/8/translations/imports',
+            'method' => 'post',
+            'body' => json_encode($params),
+            'response' => json_encode([
+                'data' => [
+                    'identifier' => 'b5215a34-1305-4b21-8054-fc2eb252842f',
+                    'status' => 'created',
+                    'progress' => 0,
+                    'attributes' => [
+                        'storageId' => 13,
+                        'fileId' => 2,
+                        'importEqSuggestions' => false,
+                        'autoApproveImported' => false,
+                        'translateHidden' => false,
+                        'addToTm' => true,
+                        'languageIds' => ['uk'],
+                    ],
+                    'createdAt' => '2025-09-23T11:51:08+00:00',
+                    'updatedAt' => '2025-09-23T11:51:08+00:00',
+                    'startedAt' => null,
+                    'finishedAt' => null,
+                ],
+            ]),
+        ]);
+
+        $translationImport = $this->crowdin->translation->importTranslations(8, $params);
+
+        $this->assertInstanceOf(TranslationImport::class, $translationImport);
+        $this->assertEquals('b5215a34-1305-4b21-8054-fc2eb252842f', $translationImport->getIdentifier());
+        $this->assertEquals('created', $translationImport->getStatus());
+        $this->assertEquals(0, $translationImport->getProgress());
+    }
+
+    public function testGetTranslationImportStatus(): void
+    {
+        $this->mockRequestGet(
+            '/projects/8/translations/imports/b5215a34-1305-4b21-8054-fc2eb252842f',
+            json_encode([
+                'data' => [
+                    'identifier' => 'b5215a34-1305-4b21-8054-fc2eb252842f',
+                    'status' => 'finished',
+                    'progress' => 100,
+                    'attributes' => [
+                        'storageId' => 13,
+                        'fileId' => 2,
+                        'importEqSuggestions' => false,
+                        'autoApproveImported' => false,
+                        'translateHidden' => false,
+                        'addToTm' => true,
+                        'languageIds' => ['uk'],
+                    ],
+                    'createdAt' => '2025-09-23T11:51:08+00:00',
+                    'updatedAt' => '2025-09-23T11:51:08+00:00',
+                    'startedAt' => '2025-09-23T11:51:09+00:00',
+                    'finishedAt' => '2025-09-23T11:51:20+00:00',
+                ],
+            ])
+        );
+
+        $translationImport = $this->crowdin->translation->getTranslationImportStatus(
+            8,
+            'b5215a34-1305-4b21-8054-fc2eb252842f'
+        );
+
+        $this->assertInstanceOf(TranslationImport::class, $translationImport);
+        $this->assertEquals('b5215a34-1305-4b21-8054-fc2eb252842f', $translationImport->getIdentifier());
+        $this->assertEquals('finished', $translationImport->getStatus());
+        $this->assertEquals(100, $translationImport->getProgress());
+    }
+
+    public function testDownloadTranslationImportReport(): void
+    {
+        $this->mockRequestGet(
+            '/projects/8/translations/imports/b5215a34-1305-4b21-8054-fc2eb252842f/report',
+            json_encode([
+                'data' => [
+                    'languages' => [
+                        [
+                            'id' => 'uk',
+                            'files' => [
+                                [
+                                    'id' => '10191',
+                                    'statistics' => [
+                                        'phrases' => 6,
+                                        'words' => 45,
+                                    ],
+                                ],
+                            ],
+                            'skipped' => [
+                                'translationEqSource' => 0,
+                                'hiddenStrings' => 0,
+                                'qaCheck' => 647,
+                            ],
+                            'skippedQaCheckCategories' => [
+                                'size' => 1,
+                                'duplicate' => 648,
+                            ],
+                        ],
+                    ],
+                ],
+            ])
+        );
+
+        $report = $this->crowdin->translation->downloadTranslationImportReport(
+            8,
+            'b5215a34-1305-4b21-8054-fc2eb252842f'
+        );
+
+        $this->assertInstanceOf(TranslationImportReport::class, $report);
+        $this->assertIsArray($report->getLanguages());
+        $this->assertInstanceOf(PreTranslationReportLanguage::class, $report->getLanguages()[0]);
+        $this->assertSame('uk', $report->getLanguages()[0]->getId());
     }
 }
