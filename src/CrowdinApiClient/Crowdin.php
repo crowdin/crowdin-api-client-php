@@ -50,6 +50,7 @@ use UnexpectedValueException;
  * @property \CrowdinApiClient\Api\SecurityLogApi|\CrowdinApiClient\Api\Enterprise\SecurityLogApi $securityLog
  * @property \CrowdinApiClient\Api\Enterprise\StringCorrectionApi $stringCorrection
  * @property \CrowdinApiClient\Api\AiApi|\CrowdinApiClient\Api\Enterprise\AiApi $ai
+ * @property \CrowdinApiClient\Api\Enterprise\FieldApi $field
  */
 class Crowdin
 {
@@ -165,6 +166,7 @@ class Crowdin
         'securityLog',
         'stringCorrection',
         'ai',
+        'field',
     ];
 
     public function __construct(array $config)
