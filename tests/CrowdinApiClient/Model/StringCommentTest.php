@@ -48,6 +48,16 @@ class StringCommentTest extends TestCase
         ],
         'resolvedAt' => "2019-09-20T11:05:24+00:00",
         'createdAt' => "2019-09-10T10:07:21+00:00",
+        'attachments' => [
+            [
+                'id' => 1,
+                'name' => 'attachment.png',
+                'url' => 'https://example.com/attachment.png',
+                'mimeType' => 'image/png',
+                'size' => 1024,
+                'createdAt' => '2019-09-20T11:05:24+00:00',
+            ],
+        ],
     ];
 
     public function testLoadData()
@@ -94,5 +104,6 @@ class StringCommentTest extends TestCase
         $this->assertEquals($this->data['resolver'], $this->stringComment->getResolver());
         $this->assertEquals($this->data['resolvedAt'], $this->stringComment->getResolvedAt());
         $this->assertEquals($this->data['createdAt'], $this->stringComment->getCreatedAt());
+        $this->assertEquals($this->data['attachments'], $this->stringComment->getAttachments());
     }
 }

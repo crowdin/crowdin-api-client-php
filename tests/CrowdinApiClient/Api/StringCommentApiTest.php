@@ -219,6 +219,51 @@ class StringCommentApiTest extends AbstractTestApi
         $this->crowdin->stringComment->delete(1, 1);
     }
 
+    public function testDeleteAttachment()
+    {
+        $this->mockRequest([
+            'path' => '/projects/1/comments/2/attachments/10',
+            'method' => 'delete',
+            'response' => '{
+              "data": {
+                "id": 2,
+                "text": "@BeMyEyes  Please provide more details on where the text will be used",
+                "userId": 6,
+                "stringId": 742,
+                "user": {
+                  "id": 12,
+                  "username": "john_smith",
+                  "fullName": "John Smith",
+                  "avatarUrl": ""
+                },
+                "string": {
+                  "id": 123,
+                  "text": "HTML page example",
+                  "type": "text",
+                  "hasPlurals": false,
+                  "isIcu": false,
+                  "context": "Document Title\\r\\nXPath: /html/head/title",
+                  "fileId": 22
+                },
+                "languageId": "bg",
+                "type": "comment",
+                "issueType": null,
+                "issueStatus": null,
+                "resolverId": null,
+                "resolver": {},
+                "resolvedAt": null,
+                "createdAt": "2019-09-20T11:05:24+00:00",
+                "attachments": []
+              }
+            }'
+        ]);
+
+        $stringComment = $this->crowdin->stringComment->deleteAttachment(1, 2, 10);
+        $this->assertInstanceOf(StringComment::class, $stringComment);
+        $this->assertEquals(2, $stringComment->getId());
+        $this->assertEquals([], $stringComment->getAttachments());
+    }
+
     public function testBatchOperations()
     {
         $this->mockRequest([

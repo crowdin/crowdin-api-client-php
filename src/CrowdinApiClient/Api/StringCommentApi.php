@@ -2,6 +2,7 @@
 
 namespace CrowdinApiClient\Api;
 
+use CrowdinApiClient\Http\ResponseDecorator\ResponseModelDecorator;
 use CrowdinApiClient\Model\StringComment;
 use CrowdinApiClient\ModelCollection;
 
@@ -85,6 +86,22 @@ class StringCommentApi extends AbstractApi
     {
         $path = sprintf('projects/%d/comments/%d', $projectId, $stringCommentId);
         return $this->_delete($path);
+    }
+
+    /**
+     * Delete String Comment Attachment
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.comments.attachments.delete API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.comments.attachments.delete API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param int $commentId
+     * @param int $attachmentId
+     * @return StringComment|null
+     */
+    public function deleteAttachment(int $projectId, int $commentId, int $attachmentId): ?StringComment
+    {
+        $path = sprintf('projects/%d/comments/%d/attachments/%d', $projectId, $commentId, $attachmentId);
+        return $this->client->apiRequest('delete', $path, new ResponseModelDecorator(StringComment::class));
     }
 
     /**
