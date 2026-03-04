@@ -5,6 +5,7 @@ namespace CrowdinApiClient\Tests\Api;
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\DownloadFilePreview;
 use CrowdinApiClient\Model\File;
+use CrowdinApiClient\Model\FileReference;
 use CrowdinApiClient\Model\FileRevision;
 use CrowdinApiClient\ModelCollection;
 
@@ -499,5 +500,112 @@ class FileApiTest extends AbstractTestApi
 
         $this->assertInstanceOf(FileRevision::class, $fileRevision);
         $this->assertEquals(16, $fileRevision->getId());
+    }
+
+    public function testListReferences(): void
+    {
+        $this->mockRequestGet(
+            '/projects/2/files/44/references',
+            json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 123,
+                            'name' => 'design_reference.png',
+                            'url' => 'https://example.com/reference/design_reference.png',
+                            'user' => [
+                                'id' => 1,
+                                'username' => 'john_doe',
+                                'fullName' => 'John Smith',
+                                'avatarUrl' => '',
+                            ],
+                            'createdAt' => '2019-09-20T11:05:24+00:00',
+                            'mimeType' => 'image/png',
+                        ],
+                    ],
+                ],
+                'pagination' => [
+                    'offset' => 0,
+                    'limit' => 25,
+                ],
+            ])
+        );
+
+        $references = $this->crowdin->file->listReferences(2, 44);
+
+        $this->assertInstanceOf(ModelCollection::class, $references);
+        $this->assertCount(1, $references);
+        $this->assertInstanceOf(FileReference::class, $references[0]);
+        $this->assertEquals(123, $references[0]->getId());
+    }
+
+    public function testGetReference(): void
+    {
+        $this->mockRequestGet(
+            '/projects/2/files/44/references/123',
+            json_encode([
+                'data' => [
+                    'id' => 123,
+                    'name' => 'design_reference.png',
+                    'url' => 'https://example.com/reference/design_reference.png',
+                    'user' => [
+                        'id' => 1,
+                        'username' => 'john_doe',
+                        'fullName' => 'John Smith',
+                        'avatarUrl' => '',
+                    ],
+                    'createdAt' => '2019-09-20T11:05:24+00:00',
+                    'mimeType' => 'image/png',
+                ],
+            ])
+        );
+
+        $reference = $this->crowdin->file->getReference(2, 44, 123);
+
+        $this->assertInstanceOf(FileReference::class, $reference);
+        $this->assertEquals(123, $reference->getId());
+        $this->assertEquals('design_reference.png', $reference->getName());
+        $this->assertEquals('image/png', $reference->getMimeType());
+    }
+
+    public function testCreateReference(): void
+    {
+        $params = [
+            'storageId' => 67890,
+            'name' => 'design_reference.png',
+        ];
+
+        $this->mockRequest([
+            'path' => '/projects/2/files/44/references',
+            'method' => 'post',
+            'body' => json_encode($params),
+            'response' => json_encode([
+                'data' => [
+                    'id' => 123,
+                    'name' => 'design_reference.png',
+                    'url' => 'https://example.com/reference/design_reference.png',
+                    'user' => [
+                        'id' => 1,
+                        'username' => 'john_doe',
+                        'fullName' => 'John Smith',
+                        'avatarUrl' => '',
+                    ],
+                    'createdAt' => '2019-09-20T11:05:24+00:00',
+                    'mimeType' => 'image/png',
+                ],
+            ]),
+        ]);
+
+        $reference = $this->crowdin->file->createReference(2, 44, $params);
+
+        $this->assertInstanceOf(FileReference::class, $reference);
+        $this->assertEquals(123, $reference->getId());
+        $this->assertEquals('design_reference.png', $reference->getName());
+    }
+
+    public function testDeleteReference(): void
+    {
+        $this->mockRequestDelete('/projects/2/files/44/references/123');
+        $this->crowdin->file->deleteReference(2, 44, 123);
     }
 }
