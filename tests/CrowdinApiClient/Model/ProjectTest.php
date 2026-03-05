@@ -7,20 +7,12 @@ use PHPUnit\Framework\TestCase;
 
 class ProjectTest extends TestCase
 {
-    /**
-     * @var Project
-     */
-    public $project;
-
     public $data = [
         'id' => 8,
         'groupId' => 4,
         'userId' => 6,
         'sourceLanguageId' => 'uk',
-        'targetLanguageIds' =>
-            [
-                0 => 'es',
-            ],
+        'targetLanguageIds' => ['es'],
         'targetLanguages' => [
             [
                 'id' => 'es',
@@ -36,8 +28,8 @@ class ProjectTest extends TestCase
                 'pluralRules' => '(n != 1)',
                 'pluralExamples' => ['0, 2-999; 1.2, 2.07...'],
                 'textDirection' => 'ltr',
-                'dialectOf' => 'string'
-            ]
+                'dialectOf' => 'string',
+            ],
         ],
         'languageAccessPolicy' => 'moderate',
         'name' => 'Knowledge Base',
@@ -67,69 +59,61 @@ class ProjectTest extends TestCase
         'inContext' => true,
         'inContextProcessHiddenStrings' => true,
         'inContextPseudoLanguageId' => 'uk',
-        "isSuspended" => false,
+        'isSuspended' => false,
         'qaCheckIsActive' => true,
-        'qaCheckCategories' =>
-            [
-                'empty' => true,
-                'size' => true,
-                'tags' => true,
-                'spaces' => true,
-                'variables' => true,
-                'punctuation' => true,
-                'symbolRegister' => true,
-                'specialSymbols' => true,
-                'wrongTranslation' => true,
-                'spellcheck' => true,
-                'icu' => true,
+        'qaCheckCategories' => [
+            'empty' => true,
+            'size' => true,
+            'tags' => true,
+            'spaces' => true,
+            'variables' => true,
+            'punctuation' => true,
+            'symbolRegister' => true,
+            'specialSymbols' => true,
+            'wrongTranslation' => true,
+            'spellcheck' => true,
+            'icu' => true,
+        ],
+        'qaChecksIgnorableCategories' => [
+            'empty' => false,
+            'size' => true,
+            'tags' => true,
+            'spaces' => true,
+            'variables' => true,
+            'punctuation' => true,
+            'symbolRegister' => true,
+            'specialSymbols' => true,
+            'wrongTranslation' => true,
+            'spellcheck' => true,
+            'icu' => false,
+            'terms' => true,
+            'duplicate' => false,
+            'ftl' => false,
+            'android' => true,
+        ],
+        'customQaCheckIds' => ['1'],
+        'languageMapping' => [
+            'uk' => [
+                'name' => 'Ukrainian',
+                'two_letters_code' => 'ua',
+                'three_letters_code' => 'ukr',
+                'locale' => 'uk-UA',
+                'locale_with_underscore' => 'uk_UA',
+                'android_code' => 'uk-rUA',
+                'osx_code' => 'ua.lproj',
+                'osx_locale' => 'ua',
             ],
-        'qaChecksIgnorableCategories' =>
-            [
-                'empty' => false,
-                'size' => true,
-                'tags' => true,
-                'spaces' => true,
-                'variables' => true,
-                'punctuation' => true,
-                'symbolRegister' => true,
-                'specialSymbols' => true,
-                'wrongTranslation' => true,
-                'spellcheck' => true,
-                'icu' => false,
-                'terms' => true,
-                'duplicate' => false,
-                'ftl' => false,
-                'android' => true,
+            'es' => [
+                'name' => 'Spanish',
+                'two_letters_code' => 'es',
+                'three_letters_code' => 'es',
+                'locale' => 'es-ES',
+                'locale_with_underscore' => 'es_ES',
+                'android_code' => 'es-rES',
+                'osx_code' => 'es.lproj',
+                'osx_locale' => 'es',
             ],
-        'customQaCheckIds' =>
-            [
-                0 => '1',
-            ],
-        'languageMapping' =>
-            [
-                'uk' =>
-                    [
-                        'name' => 'Ukranian',
-                        'two_letters_code' => 'ua',
-                        'three_letters_code' => 'ukr',
-                        'locale' => 'uk-UA',
-                        'locale_with_underscore' => 'uk_UA',
-                        'android_code' => 'uk-rUA',
-                        'osx_code' => 'ua.lproj',
-                        'osx_locale' => 'ua',
-                    ],
-                'es' =>
-                    [
-                        'name' => 'Spanish',
-                        'two_letters_code' => 'es',
-                        'three_letters_code' => 'es',
-                        'locale' => 'es-ES',
-                        'locale_with_underscore' => 'es_ES',
-                        'android_code' => 'es-rES',
-                        'osx_code' => 'es.lproj',
-                        'osx_locale' => 'es',
-                    ]
-            ],
+        ],
 
         'glossaryAccess' => true,
         'normalizePlaceholder' => false,
@@ -143,84 +127,101 @@ class ProjectTest extends TestCase
         'visibility' => null,
         'defaultTmId' => 10,
         'defaultGlossaryId' => 20,
+        'fields' => [
+            'client-company-task' => 'ACME Corp',
+        ],
     ];
 
-    public function testLoadData()
+    public function testLoadData(): void
     {
-        $this->project = new Project($this->data);
-        $this->checkData();
+        $project = new Project($this->data);
+        $this->assertEquals($this->data['id'], $project->getId());
+        $this->assertEquals($this->data['groupId'], $project->getGroupId());
+        $this->assertEquals($this->data['userId'], $project->getUserId());
+        $this->assertEquals($this->data['sourceLanguageId'], $project->getSourceLanguageId());
+        $this->assertEquals($this->data['targetLanguageIds'], $project->getTargetLanguageIds());
+        $this->assertEquals($this->data['targetLanguages'], $project->getTargetLanguages());
+        $this->assertEquals($this->data['languageAccessPolicy'], $project->getLanguageAccessPolicy());
+        $this->assertEquals($this->data['name'], $project->getName());
+        $this->assertEquals($this->data['cname'], $project->getCname());
+        $this->assertEquals($this->data['identifier'], $project->getIdentifier());
+        $this->assertEquals($this->data['description'], $project->getDescription());
+        $this->assertEquals($this->data['visibility'], $project->getVisibility());
+        $this->assertEquals($this->data['logo'], $project->getLogo());
+        $this->assertEquals($this->data['background'], $project->getBackground());
+        $this->assertEquals($this->data['isExternal'], $project->isExternal());
+        $this->assertEquals($this->data['externalType'], $project->getExternalType());
+        $this->assertEquals($this->data['workflowId'], $project->getWorkflowId());
+        $this->assertEquals($this->data['hasCrowdsourcing'], $project->isHasCrowdsourcing());
+        $this->assertEquals(
+            $this->data['hiddenStringsProofreadersAccess'],
+            $project->isHiddenStringsProofreadersAccess()
+        );
+        $this->assertEquals($this->data['createdAt'], $project->getCreatedAt());
+        $this->assertEquals($this->data['updatedAt'], $project->getUpdatedAt());
+        $this->assertEquals($this->data['lastActivity'], $project->getLastActivity());
+
+        $this->assertEquals($this->data['translateDuplicates'], $project->getTranslateDuplicates());
+        $this->assertEquals($this->data['isMtAllowed'], $project->isMtAllowed());
+        $this->assertEquals($this->data['autoSubstitution'], $project->isAutoSubstitution());
+        $this->assertEquals($this->data['skipUntranslatedStrings'], $project->isSkipUntranslatedStrings());
+        $this->assertEquals($this->data['skipUntranslatedFiles'], $project->isSkipUntranslatedFiles());
+        $this->assertEquals(
+            $this->data['exportWithMinApprovalsCount'],
+            $project->getExportWithMinApprovalsCount()
+        );
+        $this->assertEquals($this->data['exportApprovedOnly'], $project->isExportApprovedOnly());
+        $this->assertEquals($this->data['autoTranslateDialects'], $project->isAutoTranslateDialects());
+        $this->assertEquals($this->data['publicDownloads'], $project->isPublicDownloads());
+        $this->assertEquals($this->data['useGlobalTm'], $project->isUseGlobalTm());
+        $this->assertEquals($this->data['inContext'], $project->isInContext());
+        $this->assertEquals(
+            $this->data['inContextProcessHiddenStrings'],
+            $project->isInContextProcessHiddenStrings()
+        );
+        $this->assertEquals($this->data['inContextPseudoLanguageId'], $project->getInContextPseudoLanguageId());
+        $this->assertEquals($this->data['qaCheckIsActive'], $project->isQaCheckIsActive());
+        $this->assertEquals($this->data['qaCheckCategories'], $project->getQaCheckCategories());
+        $this->assertEquals(
+            $this->data['qaChecksIgnorableCategories'],
+            $project->getQaChecksIgnorableCategories()
+        );
+        $this->assertEquals($this->data['customQaCheckIds'], $project->getCustomQaCheckIds());
+        $this->assertEquals($this->data['languageMapping'], $project->getLanguageMapping());
+        $this->assertEquals($this->data['isSuspended'], $project->isSuspended());
+
+        $this->assertEquals($this->data['glossaryAccess'], $project->isGlossaryAccess());
+        $this->assertEquals($this->data['normalizePlaceholder'], $project->isNormalizePlaceholder());
+        $this->assertEquals($this->data['saveMetaInfoInSource'], $project->isSaveMetaInfoInSource());
+        $this->assertEquals($this->data['notificationSettings'], $project->getNotificationSettings());
+        $this->assertEquals($this->data['defaultTmId'], $project->getDefaultTmId());
+        $this->assertEquals($this->data['defaultGlossaryId'], $project->getDefaultGlossaryId());
+        $this->assertEquals($this->data['fields'], $project->getFields());
     }
 
-    public function testSetData()
+    public function testSetData(): void
     {
-        $this->project = new Project();
-        $this->project->setName($this->data['name']);
-        $this->project->setCname($this->data['cname']);
-        $this->project->setTargetLanguageIds(['uk']);
-        $this->project->setLanguageAccessPolicy('moderate');
-        $this->project->setDescription($this->data['description']);
-        $this->project->setDefaultTmId($this->data['defaultTmId']);
-        $this->project->setDefaultGlossaryId($this->data['defaultGlossaryId']);
+        $targetLanguageIds = ['uk'];
+        $languageAccessPolicy = 'moderate';
+        $fields = ['test' => 'test'];
 
-        $this->assertEquals($this->data['name'], $this->project->getName());
-        $this->assertEquals($this->data['cname'], $this->project->getCname());
-        $this->assertEquals($this->data['description'], $this->project->getDescription());
-        $this->assertEquals(['uk'], $this->project->getTargetLanguageIds());
-        $this->assertEquals('moderate', $this->project->getLanguageAccessPolicy());
-        $this->assertEquals($this->data['defaultTmId'], $this->project->getDefaultTmId());
-        $this->assertEquals($this->data['defaultGlossaryId'], $this->project->getDefaultGlossaryId());
-    }
+        $project = new Project();
+        $project->setName($this->data['name']);
+        $project->setCname($this->data['cname']);
+        $project->setTargetLanguageIds($targetLanguageIds);
+        $project->setLanguageAccessPolicy($languageAccessPolicy);
+        $project->setDescription($this->data['description']);
+        $project->setDefaultTmId($this->data['defaultTmId']);
+        $project->setDefaultGlossaryId($this->data['defaultGlossaryId']);
+        $project->setFields($fields);
 
-    public function checkData()
-    {
-        $this->assertEquals($this->data['id'], $this->project->getId());
-        $this->assertEquals($this->data['groupId'], $this->project->getGroupId());
-        $this->assertEquals($this->data['userId'], $this->project->getUserId());
-        $this->assertEquals($this->data['sourceLanguageId'], $this->project->getSourceLanguageId());
-        $this->assertEquals($this->data['targetLanguageIds'], $this->project->getTargetLanguageIds());
-        $this->assertEquals($this->data['targetLanguages'], $this->project->getTargetLanguages());
-        $this->assertEquals($this->data['languageAccessPolicy'], $this->project->getLanguageAccessPolicy());
-        $this->assertEquals($this->data['name'], $this->project->getName());
-        $this->assertEquals($this->data['cname'], $this->project->getCname());
-        $this->assertEquals($this->data['identifier'], $this->project->getIdentifier());
-        $this->assertEquals($this->data['description'], $this->project->getDescription());
-        $this->assertEquals($this->data['visibility'], $this->project->getVisibility());
-        $this->assertEquals($this->data['logo'], $this->project->getLogo());
-        $this->assertEquals($this->data['background'], $this->project->getBackground());
-        $this->assertEquals($this->data['isExternal'], $this->project->isExternal());
-        $this->assertEquals($this->data['externalType'], $this->project->getExternalType());
-        $this->assertEquals($this->data['workflowId'], $this->project->getWorkflowId());
-        $this->assertEquals($this->data['hasCrowdsourcing'], $this->project->isHasCrowdsourcing());
-        $this->assertEquals($this->data['hiddenStringsProofreadersAccess'], $this->project->isHiddenStringsProofreadersAccess());
-        $this->assertEquals($this->data['createdAt'], $this->project->getCreatedAt());
-        $this->assertEquals($this->data['updatedAt'], $this->project->getUpdatedAt());
-        $this->assertEquals($this->data['lastActivity'], $this->project->getLastActivity());
-
-        $this->assertEquals($this->data['translateDuplicates'], $this->project->getTranslateDuplicates());
-        $this->assertEquals($this->data['isMtAllowed'], $this->project->isMtAllowed());
-        $this->assertEquals($this->data['autoSubstitution'], $this->project->isAutoSubstitution());
-        $this->assertEquals($this->data['skipUntranslatedStrings'], $this->project->isSkipUntranslatedStrings());
-        $this->assertEquals($this->data['skipUntranslatedFiles'], $this->project->isSkipUntranslatedFiles());
-        $this->assertEquals($this->data['exportWithMinApprovalsCount'], $this->project->getExportWithMinApprovalsCount());
-        $this->assertEquals($this->data['exportApprovedOnly'], $this->project->isExportApprovedOnly());
-        $this->assertEquals($this->data['autoTranslateDialects'], $this->project->isAutoTranslateDialects());
-        $this->assertEquals($this->data['publicDownloads'], $this->project->isPublicDownloads());
-        $this->assertEquals($this->data['useGlobalTm'], $this->project->isUseGlobalTm());
-        $this->assertEquals($this->data['inContext'], $this->project->isInContext());
-        $this->assertEquals($this->data['inContextProcessHiddenStrings'], $this->project->isInContextProcessHiddenStrings());
-        $this->assertEquals($this->data['inContextPseudoLanguageId'], $this->project->getInContextPseudoLanguageId());
-        $this->assertEquals($this->data['qaCheckIsActive'], $this->project->isQaCheckIsActive());
-        $this->assertEquals($this->data['qaCheckCategories'], $this->project->getQaCheckCategories());
-        $this->assertEquals($this->data['qaChecksIgnorableCategories'], $this->project->getQaChecksIgnorableCategories());
-        $this->assertEquals($this->data['customQaCheckIds'], $this->project->getCustomQaCheckIds());
-        $this->assertEquals($this->data['languageMapping'], $this->project->getLanguageMapping());
-        $this->assertEquals($this->data['isSuspended'], $this->project->isSuspended());
-
-        $this->assertEquals($this->data['glossaryAccess'], $this->project->isGlossaryAccess());
-        $this->assertEquals($this->data['normalizePlaceholder'], $this->project->isNormalizePlaceholder());
-        $this->assertEquals($this->data['saveMetaInfoInSource'], $this->project->isSaveMetaInfoInSource());
-        $this->assertEquals($this->data['notificationSettings'], $this->project->getNotificationSettings());
-        $this->assertEquals($this->data['defaultTmId'], $this->project->getDefaultTmId());
-        $this->assertEquals($this->data['defaultGlossaryId'], $this->project->getDefaultGlossaryId());
+        $this->assertEquals($this->data['name'], $project->getName());
+        $this->assertEquals($this->data['cname'], $project->getCname());
+        $this->assertEquals($this->data['description'], $project->getDescription());
+        $this->assertEquals($targetLanguageIds, $project->getTargetLanguageIds());
+        $this->assertEquals($languageAccessPolicy, $project->getLanguageAccessPolicy());
+        $this->assertEquals($this->data['defaultTmId'], $project->getDefaultTmId());
+        $this->assertEquals($this->data['defaultGlossaryId'], $project->getDefaultGlossaryId());
+        $this->assertEquals($fields, $project->getFields());
     }
 }
