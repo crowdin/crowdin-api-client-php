@@ -104,6 +104,11 @@ class SourceString extends BaseModel
      */
     protected $masterStringId;
 
+    /**
+     * @var array
+     */
+    protected $fields = [];
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -133,6 +138,7 @@ class SourceString extends BaseModel
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
         $this->isDuplicate = (bool)$this->getDataProperty('isDuplicate');
         $this->masterStringId = $this->getDataProperty('masterStringId');
+        $this->fields = (array)$this->getDataProperty('fields');
     }
 
     /**
@@ -350,5 +356,21 @@ class SourceString extends BaseModel
     public function getMasterStringId(): ?int
     {
         return $this->masterStringId;
+    }
+
+    /**
+     * @return array
+     */
+    public function getFields(): array
+    {
+        return $this->fields;
+    }
+
+    /**
+     * @param array $fields
+     */
+    public function setFields(array $fields): void
+    {
+        $this->fields = $fields;
     }
 }

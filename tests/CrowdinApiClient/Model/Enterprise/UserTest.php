@@ -7,6 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class UserTest extends TestCase
 {
+    /**
+     * @var User
+     */
     public $user;
 
     public $data = [
@@ -22,6 +25,9 @@ class UserTest extends TestCase
         'twoFactor' => 'enabled',
         'isAdmin' => true,
         'timezone' => 'Europe/Kiev',
+        'fields' => [
+            'client-company' => 'ACME Corp',
+        ],
     ];
 
     public function testLoadData(): void
@@ -45,6 +51,7 @@ class UserTest extends TestCase
         $this->user->setTwoFactor($this->data['twoFactor']);
         $this->user->setIsAdmin($this->data['isAdmin']);
         $this->user->setTimezone($this->data['timezone']);
+        $this->user->setFields($this->data['fields']);
         $this->checkData();
     }
 
@@ -62,5 +69,6 @@ class UserTest extends TestCase
         $this->assertEquals($this->data['twoFactor'], $this->user->getTwoFactor());
         $this->assertEquals($this->data['isAdmin'], $this->user->isAdmin());
         $this->assertEquals($this->data['timezone'], $this->user->getTimezone());
+        $this->assertEquals($this->data['fields'], $this->user->getFields());
     }
 }

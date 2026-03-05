@@ -142,6 +142,11 @@ class Task extends BaseModel
      */
     protected $isArchived;
 
+    /**
+     * @var array
+     */
+    protected $fields = [];
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -173,6 +178,7 @@ class Task extends BaseModel
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
         $this->isArchived = (bool)$this->getDataProperty('isArchived');
+        $this->fields = (array)$this->getDataProperty('fields');
     }
 
     /**
@@ -451,5 +457,21 @@ class Task extends BaseModel
     public function setIsArchived(?bool $isArchived): void
     {
         $this->isArchived = $isArchived;
+    }
+
+    /**
+     * @return array
+     */
+    public function getFields(): array
+    {
+        return $this->fields;
+    }
+
+    /**
+     * @param array $fields
+     */
+    public function setFields(array $fields): void
+    {
+        $this->fields = $fields;
     }
 }

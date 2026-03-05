@@ -8,11 +8,6 @@ use PHPUnit\Framework\TestCase;
 
 class SourceStringTest extends TestCase
 {
-    /**
-     * @var SourceString
-     */
-    public $sourceString;
-
     public $data = [
         'id' => 2814,
         'projectId' => 2,
@@ -33,51 +28,52 @@ class SourceStringTest extends TestCase
         'updatedAt' => '2019-09-20T13:24:01+00:00',
         'isDuplicate' => true,
         'masterStringId' => 1234,
+        'fields' => [
+            'client-company' => 'ACME Corp',
+        ],
     ];
 
     public function testLoadData(): void
     {
-        $this->sourceString = new SourceString($this->data);
-        $this->checkData();
+        $sourceString = new SourceString($this->data);
+        $this->assertEquals($this->data['id'], $sourceString->getId());
+        $this->assertEquals($this->data['projectId'], $sourceString->getProjectId());
+        $this->assertEquals($this->data['fileId'], $sourceString->getFileId());
+        $this->assertEquals($this->data['branchId'], $sourceString->getBranchId());
+        $this->assertEquals($this->data['directoryId'], $sourceString->getDirectoryId());
+        $this->assertEquals($this->data['identifier'], $sourceString->getIdentifier());
+        $this->assertEquals($this->data['text'], $sourceString->getText());
+        $this->assertEquals($this->data['type'], $sourceString->getType());
+        $this->assertEquals($this->data['context'], $sourceString->getContext());
+        $this->assertEquals($this->data['maxLength'], $sourceString->getMaxLength());
+        $this->assertEquals($this->data['isHidden'], $sourceString->isHidden());
+        $this->assertEquals($this->data['revision'], $sourceString->getRevision());
+        $this->assertEquals($this->data['hasPlurals'], $sourceString->isHasPlurals());
+        $this->assertEquals($this->data['hasPlurals'], $sourceString->isPlural());
+        $this->assertEquals($this->data['isIcu'], $sourceString->isIcu());
+        $this->assertEquals($this->data['labelIds'], $sourceString->getLabelIds());
+        $this->assertEquals($this->data['createdAt'], $sourceString->getCreatedAt());
+        $this->assertEquals($this->data['updatedAt'], $sourceString->getUpdatedAt());
+        $this->assertEquals($this->data['isDuplicate'], $sourceString->isDuplicate());
+        $this->assertEquals($this->data['masterStringId'], $sourceString->getMasterStringId());
+        $this->assertEquals($this->data['fields'], $sourceString->getFields());
     }
 
     public function testSetData(): void
     {
-        $this->sourceString = new SourceString();
-        $this->sourceString->setText($this->data['text']);
-        $this->sourceString->setContext($this->data['context']);
-        $this->sourceString->setMaxLength($this->data['maxLength']);
-        $this->sourceString->setIsHidden($this->data['isHidden']);
-        $this->sourceString->setLabelIds($this->data['labelIds']);
+        $sourceString = new SourceString();
+        $sourceString->setText($this->data['text']);
+        $sourceString->setContext($this->data['context']);
+        $sourceString->setMaxLength($this->data['maxLength']);
+        $sourceString->setIsHidden($this->data['isHidden']);
+        $sourceString->setLabelIds($this->data['labelIds']);
+        $sourceString->setFields($this->data['fields']);
 
-        $this->assertEquals($this->data['text'], $this->sourceString->getText());
-        $this->assertEquals($this->data['context'], $this->sourceString->getContext());
-        $this->assertEquals($this->data['maxLength'], $this->sourceString->getMaxLength());
-        $this->assertEquals($this->data['isHidden'], $this->sourceString->isHidden());
-    }
-
-    public function checkData(): void
-    {
-        $this->assertEquals($this->data['id'], $this->sourceString->getId());
-        $this->assertEquals($this->data['projectId'], $this->sourceString->getProjectId());
-        $this->assertEquals($this->data['fileId'], $this->sourceString->getFileId());
-        $this->assertEquals($this->data['branchId'], $this->sourceString->getBranchId());
-        $this->assertEquals($this->data['directoryId'], $this->sourceString->getDirectoryId());
-        $this->assertEquals($this->data['identifier'], $this->sourceString->getIdentifier());
-        $this->assertEquals($this->data['text'], $this->sourceString->getText());
-        $this->assertEquals($this->data['type'], $this->sourceString->getType());
-        $this->assertEquals($this->data['context'], $this->sourceString->getContext());
-        $this->assertEquals($this->data['maxLength'], $this->sourceString->getMaxLength());
-        $this->assertEquals($this->data['isHidden'], $this->sourceString->isHidden());
-        $this->assertEquals($this->data['revision'], $this->sourceString->getRevision());
-        $this->assertEquals($this->data['hasPlurals'], $this->sourceString->isHasPlurals());
-        $this->assertEquals($this->data['hasPlurals'], $this->sourceString->isPlural());
-        $this->assertEquals($this->data['isIcu'], $this->sourceString->isIcu());
-        $this->assertEquals($this->data['labelIds'], $this->sourceString->getLabelIds());
-        $this->assertEquals($this->data['createdAt'], $this->sourceString->getCreatedAt());
-        $this->assertEquals($this->data['updatedAt'], $this->sourceString->getUpdatedAt());
-        $this->assertEquals($this->data['isDuplicate'], $this->sourceString->isDuplicate());
-        $this->assertEquals($this->data['masterStringId'], $this->sourceString->getMasterStringId());
+        $this->assertEquals($this->data['text'], $sourceString->getText());
+        $this->assertEquals($this->data['context'], $sourceString->getContext());
+        $this->assertEquals($this->data['maxLength'], $sourceString->getMaxLength());
+        $this->assertEquals($this->data['isHidden'], $sourceString->isHidden());
+        $this->assertEquals($this->data['fields'], $sourceString->getFields());
     }
 
     public function testSetPlainText(): void

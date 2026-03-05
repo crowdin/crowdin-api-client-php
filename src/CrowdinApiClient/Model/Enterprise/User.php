@@ -69,6 +69,11 @@ class User extends BaseModel
      */
     protected $timezone;
 
+    /**
+     * @var array
+     */
+    protected $fields = [];
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -85,6 +90,7 @@ class User extends BaseModel
         $this->twoFactor = (string)$this->getDataProperty('twoFactor');
         $this->isAdmin = (bool)$this->getDataProperty('isAdmin');
         $this->timezone = (string)$this->getDataProperty('timezone');
+        $this->fields = (array)$this->getDataProperty('fields');
     }
 
     /**
@@ -277,5 +283,21 @@ class User extends BaseModel
     public function setTimezone(string $timezone): void
     {
         $this->timezone = $timezone;
+    }
+
+    /**
+     * @return array
+     */
+    public function getFields(): array
+    {
+        return $this->fields;
+    }
+
+    /**
+     * @param array $fields
+     */
+    public function setFields(array $fields): void
+    {
+        $this->fields = $fields;
     }
 }
