@@ -162,7 +162,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 
     </aside>
 
@@ -248,6 +248,13 @@ Pre-translate and build are asynchronous operations and shall be completed with 
 <dd>Download Project Translations</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-TranslationApi.html#method_downloadTranslationImportReport">downloadTranslationImportReport()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-TranslationImportReport.html"><abbr title="\CrowdinApiClient\Model\TranslationImportReport">TranslationImportReport</abbr></a>|null    </span>
+</dt>
+<dd>Download Translation Import Report</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Api-TranslationApi.html#method_exportProjectTranslation">exportProjectTranslation()</a>
     <span>
                                 &nbsp;: <a href="classes/CrowdinApiClient-Model-DownloadFile.html"><abbr title="\CrowdinApiClient\Model\DownloadFile">DownloadFile</abbr></a>    </span>
@@ -283,6 +290,20 @@ Pre-translate and build are asynchronous operations and shall be completed with 
 <dd>Check Project Build Status</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-TranslationApi.html#method_getTranslationImportStatus">getTranslationImportStatus()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-TranslationImport.html"><abbr title="\CrowdinApiClient\Model\TranslationImport">TranslationImport</abbr></a>|null    </span>
+</dt>
+<dd>Check Translation Import Status</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-TranslationApi.html#method_importTranslations">importTranslations()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-TranslationImport.html"><abbr title="\CrowdinApiClient\Model\TranslationImport">TranslationImport</abbr></a>|null    </span>
+</dt>
+<dd>Import Translations</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Api-TranslationApi.html#method_listPreTranslations">listPreTranslations()</a>
     <span>
                                 &nbsp;: <a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>    </span>
@@ -297,7 +318,7 @@ Pre-translate and build are asynchronous operations and shall be completed with 
 <dd>Edit Pre-Translation</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/CrowdinApiClient-Api-TranslationApi.html#method_uploadTranslations">uploadTranslations()</a>
+    <a class="-deprecated" href="classes/CrowdinApiClient-Api-TranslationApi.html#method_uploadTranslations">uploadTranslations()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
@@ -331,7 +352,7 @@ Pre-translate and build are asynchronous operations and shall be completed with 
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">287</span>
+    <span class="phpdocumentor-element-found-in__line">336</span>
 
     </aside>
 
@@ -414,7 +435,7 @@ string $params[text] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">52</span>
+    <span class="phpdocumentor-element-found-in__line">54</span>
 
     </aside>
 
@@ -502,7 +523,7 @@ boolean $params[translateWithPerfectMatchOnly] Works only with TM pre-translatio
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">182</span>
+    <span class="phpdocumentor-element-found-in__line">184</span>
 
     </aside>
 
@@ -588,7 +609,7 @@ integer $params[exportWithMinApprovalsCount]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">106</span>
+    <span class="phpdocumentor-element-found-in__line">108</span>
 
     </aside>
 
@@ -680,7 +701,7 @@ boolean $params[preserveFolderHierarchy] Default: false<br></p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">132</span>
+    <span class="phpdocumentor-element-found-in__line">134</span>
 
     </aside>
 
@@ -781,7 +802,7 @@ boolean $params[exportApprovedOnly]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">243</span>
+    <span class="phpdocumentor-element-found-in__line">292</span>
 
     </aside>
 
@@ -856,7 +877,7 @@ boolean $params[exportApprovedOnly]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">219</span>
+    <span class="phpdocumentor-element-found-in__line">268</span>
 
     </aside>
 
@@ -927,6 +948,85 @@ boolean $params[exportApprovedOnly]</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_downloadTranslationImportReport">
+        downloadTranslationImportReport()
+        <a href="classes/CrowdinApiClient-Api-TranslationApi.html#method_downloadTranslationImportReport" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">229</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Download Translation Import Report</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">downloadTranslationImportReport</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$importTranslationId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-TranslationImportReport.html"><abbr title="\CrowdinApiClient\Model\TranslationImportReport">TranslationImportReport</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$projectId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$importTranslationId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-TranslationApi.html#method_downloadTranslationImportReport#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.projects.translations.imports.report.get"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.imports.report.get"> <p>API Documentation Enterprise</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-TranslationImportReport.html"><abbr title="\CrowdinApiClient\Model\TranslationImportReport">TranslationImportReport</abbr></a>|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_exportProjectTranslation">
         exportProjectTranslation()
         <a href="classes/CrowdinApiClient-Api-TranslationApi.html#method_exportProjectTranslation" class="headerlink"><i class="fas fa-link"></i></a>
@@ -935,7 +1035,7 @@ boolean $params[exportApprovedOnly]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">268</span>
+    <span class="phpdocumentor-element-found-in__line">317</span>
 
     </aside>
 
@@ -1024,7 +1124,7 @@ integer $params[exportWithMinApprovalsCount]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">63</span>
+    <span class="phpdocumentor-element-found-in__line">65</span>
 
     </aside>
 
@@ -1103,7 +1203,7 @@ integer $params[exportWithMinApprovalsCount]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">85</span>
+    <span class="phpdocumentor-element-found-in__line">87</span>
 
     </aside>
 
@@ -1182,7 +1282,7 @@ integer $params[exportWithMinApprovalsCount]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">161</span>
+    <span class="phpdocumentor-element-found-in__line">163</span>
 
     </aside>
 
@@ -1265,7 +1365,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">230</span>
+    <span class="phpdocumentor-element-found-in__line">279</span>
 
     </aside>
 
@@ -1336,6 +1436,173 @@ integer $params[offset]</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getTranslationImportStatus">
+        getTranslationImportStatus()
+        <a href="classes/CrowdinApiClient-Api-TranslationApi.html#method_getTranslationImportStatus" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">218</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Check Translation Import Status</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getTranslationImportStatus</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$importTranslationId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-TranslationImport.html"><abbr title="\CrowdinApiClient\Model\TranslationImport">TranslationImport</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$projectId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$importTranslationId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-TranslationApi.html#method_getTranslationImportStatus#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.projects.translations.imports.get"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.imports.get"> <p>API Documentation Enterprise</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-TranslationImport.html"><abbr title="\CrowdinApiClient\Model\TranslationImport">TranslationImport</abbr></a>|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_importTranslations">
+        importTranslations()
+        <a href="classes/CrowdinApiClient-Api-TranslationApi.html#method_importTranslations" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">207</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Import Translations</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">importTranslations</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-TranslationImport.html"><abbr title="\CrowdinApiClient\Model\TranslationImport">TranslationImport</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$projectId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$params</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>integer $params[storageId] required<br>
+integer $params[branchId] required for string-based projects<br>
+string[] $params[languageIds]<br>
+integer $params[fileId] required for file-based projects (except XLIFF format)<br>
+bool $params[importEqSuggestions]<br>
+bool $params[autoApproveImported]<br>
+bool $params[translateHidden]<br>
+bool $params[addToTm]<br></p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-TranslationApi.html#method_importTranslations#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.projects.translations.imports"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.imports"> <p>API Documentation Enterprise</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-TranslationImport.html"><abbr title="\CrowdinApiClient\Model\TranslationImport">TranslationImport</abbr></a>|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_listPreTranslations">
         listPreTranslations()
         <a href="classes/CrowdinApiClient-Api-TranslationApi.html#method_listPreTranslations" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1344,7 +1611,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">29</span>
+    <span class="phpdocumentor-element-found-in__line">31</span>
 
     </aside>
 
@@ -1423,7 +1690,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">74</span>
+    <span class="phpdocumentor-element-found-in__line">76</span>
 
     </aside>
 
@@ -1492,7 +1759,7 @@ integer $params[offset]</p>
         class="phpdocumentor-element
             -method
             -public
-                                                        "
+            -deprecated                                            "
 >
     <h4 class="phpdocumentor-element__name" id="method_uploadTranslations">
         uploadTranslations()
@@ -1502,17 +1769,24 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">202</span>
+    <span class="phpdocumentor-element-found-in__line">251</span>
 
     </aside>
 
         <p class="phpdocumentor-summary">Upload Translations</p>
 
-    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">uploadTranslations</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$languageId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
+        </div>
+                <div class="phpdocumentor-admonition">
+        <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+            <article>
+                <p>Use importTranslations() instead.</p>
+
+            </article>
         </div>
     
     
@@ -1557,7 +1831,7 @@ bool $params[autoApproveImported]<br></p>
                     <span class="phpdocumentor-tag__name">link</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.projects.translations.post"> <p>API Documentation</p>
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.projects.translations.postOnLanguage"> <p>API Documentation</p>
  </a>
                     
                                     </dd>
@@ -1565,7 +1839,7 @@ bool $params[autoApproveImported]<br></p>
                     <span class="phpdocumentor-tag__name">link</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.post"> <p>API Documentation Enterprise</p>
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.postOnLanguage"> <p>API Documentation Enterprise</p>
  </a>
                     
                                     </dd>
@@ -1701,14 +1975,17 @@ bool $params[autoApproveImported]<br></p>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-TranslationApi.html#method_buildProjectFileTranslation">buildProjectFileTranslation()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-TranslationApi.html#method_deleteProjectBuild">deleteProjectBuild()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-TranslationApi.html#method_downloadProjectBuild">downloadProjectBuild()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-TranslationApi.html#method_downloadTranslationImportReport">downloadTranslationImportReport()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-TranslationApi.html#method_exportProjectTranslation">exportProjectTranslation()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-TranslationApi.html#method_getPreTranslation">getPreTranslation()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-TranslationApi.html#method_getPreTranslationReport">getPreTranslationReport()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-TranslationApi.html#method_getProjectBuilds">getProjectBuilds()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-TranslationApi.html#method_getProjectBuildStatus">getProjectBuildStatus()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-TranslationApi.html#method_getTranslationImportStatus">getTranslationImportStatus()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-TranslationApi.html#method_importTranslations">importTranslations()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-TranslationApi.html#method_listPreTranslations">listPreTranslations()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-TranslationApi.html#method_updatePreTranslation">updatePreTranslation()</a></li>
-                                            <li class=""><a href="classes/CrowdinApiClient-Api-TranslationApi.html#method_uploadTranslations">uploadTranslations()</a></li>
+                                            <li class="-deprecated"><a href="classes/CrowdinApiClient-Api-TranslationApi.html#method_uploadTranslations">uploadTranslations()</a></li>
                                     </ul>
             </li>
                     </ul>
