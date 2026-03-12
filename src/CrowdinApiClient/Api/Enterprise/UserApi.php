@@ -22,9 +22,9 @@ class UserApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $data
-     * @return ProjectTeamMemberAddedStatistics
+     * @return ProjectTeamMemberAddedStatistics|null
      */
-    public function addProjectTeamMember(int $projectId, array $data): ProjectTeamMemberAddedStatistics
+    public function addProjectTeamMember(int $projectId, array $data): ?ProjectTeamMemberAddedStatistics
     {
         return $this->_post(sprintf('projects/%d/members', $projectId), ProjectTeamMemberAddedStatistics::class, $data);
     }
@@ -37,7 +37,7 @@ class UserApi extends AbstractApi
      * @param array $data
      * @return ModelCollection
      */
-    public function listProjectMembers(int $projectId, array $data): ModelCollection
+    public function listProjectMembers(int $projectId, array $data = []): ModelCollection
     {
         return $this->_list(sprintf('projects/%d/members', $projectId), ProjectTeamMemberResource::class, $data);
     }
@@ -48,9 +48,9 @@ class UserApi extends AbstractApi
      *
      * @param int $projectId
      * @param int $memberId
-     * @return ProjectTeamMemberResource
+     * @return ProjectTeamMemberResource|null
      */
-    public function getProjectMemberPermissions(int $projectId, int $memberId): ProjectTeamMemberResource
+    public function getProjectMemberPermissions(int $projectId, int $memberId): ?ProjectTeamMemberResource
     {
         return $this->_get(sprintf('projects/%d/members/%d', $projectId, $memberId), ProjectTeamMemberResource::class);
     }
@@ -62,11 +62,18 @@ class UserApi extends AbstractApi
      * @param int $projectId
      * @param int $memberId
      * @param array $data
-     * @return ProjectTeamMemberResource
+     * @return ProjectTeamMemberResource|null
      */
-    public function replaceProjectMemberPermissions(int $projectId, int $memberId, array $data): ProjectTeamMemberResource
-    {
-        return $this->_put(sprintf('projects/%d/members/%d', $projectId, $memberId), ProjectTeamMemberResource::class, $data);
+    public function replaceProjectMemberPermissions(
+        int $projectId,
+        int $memberId,
+        array $data
+    ): ?ProjectTeamMemberResource {
+        return $this->_put(
+            sprintf('projects/%d/members/%d', $projectId, $memberId),
+            ProjectTeamMemberResource::class,
+            $data
+        );
     }
 
     /**
@@ -78,8 +85,7 @@ class UserApi extends AbstractApi
      */
     public function deleteMemberFromProject(int $projectId, int $memberId): void
     {
-        $path = sprintf('projects/%d/members/%s', $projectId, $memberId);
-        $this->_delete($path);
+        $this->_delete(sprintf('projects/%d/members/%s', $projectId, $memberId));
     }
 
     /**
@@ -110,7 +116,7 @@ class UserApi extends AbstractApi
      * Get Authenticated User
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.user.get API Documentation
      *
-     * @return \CrowdinApiClient\Model\User|null
+     * @return User|null
      */
     public function getAuthenticatedUser(): ?User
     {
@@ -122,9 +128,9 @@ class UserApi extends AbstractApi
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.users.post API Documentation
      *
      * @param array $data
-     * @return User
+     * @return User|null
      */
-    public function invite(array $data): User
+    public function invite(array $data): ?User
     {
         return $this->_post('users', User::class, $data);
     }
@@ -146,9 +152,9 @@ class UserApi extends AbstractApi
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.users.patch API Documentation
      *
      * @param User $user
-     * @return User
+     * @return User|null
      */
-    public function update(User $user): User
+    public function update(User $user): ?User
     {
         return $this->_update('users/' . $user->getId(), $user);
     }

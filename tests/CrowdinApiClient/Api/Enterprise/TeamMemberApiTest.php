@@ -12,26 +12,26 @@ class TeamMemberApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/teams/2/members',
             'method' => 'get',
-            'response' => '{
-                  "data": [
-                    {
-                      "data": {
-                        "id": 2,
-                        "username": "john.doe",
-                        "firstName": "John",
-                        "lastName": "Doe",
-                        "avatarUrl": "",
-                        "addedAt": "2019-09-23T09:04:29+00:00"
-                      }
-                    }
-                  ],
-                  "pagination": [
-                    {
-                      "offset": 0,
-                      "limit": 0
-                    }
-                  ]
-                }'
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 2,
+                            'username' => 'john.doe',
+                            'firstName' => 'John',
+                            'lastName' => 'Doe',
+                            'avatarUrl' => '',
+                            'addedAt' => '2019-09-23T09:04:29+00:00',
+                        ],
+                    ],
+                ],
+                'pagination' => [
+                    [
+                        'offset' => 0,
+                        'limit' => 0,
+                    ],
+                ],
+            ]),
         ]);
 
         $teamMember = $this->crowdin->teamMember->list(2);
@@ -51,38 +51,38 @@ class TeamMemberApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/teams/2/members',
             'method' => 'post',
-            'response' => '{
-                  "skipped": [
-                    {
-                      "data": {
-                        "id": 2,
-                        "username": "john.doe",
-                        "firstName": "John",
-                        "lastName": "Doe",
-                        "avatarUrl": "",
-                        "addedAt": "2019-09-23T09:04:29+00:00"
-                      }
-                    }
-                  ],
-                  "added": [
-                    {
-                      "data": {
-                        "id": 2,
-                        "username": "john.doe",
-                        "firstName": "John",
-                        "lastName": "Doe",
-                        "avatarUrl": "",
-                        "addedAt": "2019-09-23T09:04:29+00:00"
-                      }
-                    }
-                  ],
-                  "pagination": [
-                    {
-                      "offset": 0,
-                      "limit": 0
-                    }
-                  ]
-                }'
+            'response' => json_encode([
+                'skipped' => [
+                    [
+                        'data' => [
+                            'id' => 2,
+                            'username' => 'john.doe',
+                            'firstName' => 'John',
+                            'lastName' => 'Doe',
+                            'avatarUrl' => '',
+                            'addedAt' => '2019-09-23T09:04:29+00:00',
+                        ],
+                    ],
+                ],
+                'added' => [
+                    [
+                        'data' => [
+                            'id' => 2,
+                            'username' => 'john.doe',
+                            'firstName' => 'John',
+                            'lastName' => 'Doe',
+                            'avatarUrl' => '',
+                            'addedAt' => '2019-09-23T09:04:29+00:00',
+                        ],
+                    ],
+                ],
+                'pagination' => [
+                    [
+                        'offset' => 0,
+                        'limit' => 0,
+                    ],
+                ],
+            ]),
         ]);
 
         $addedTeamMembers = $this->crowdin->teamMember->create(2, $params);

@@ -24,8 +24,7 @@ class TeamMemberApi extends AbstractApi
      */
     public function list(int $teamId, array $params = []): ModelCollection
     {
-        $path = sprintf('teams/%d/members', $teamId);
-        return $this->_list($path, TeamMember::class, $params);
+        return $this->_list(sprintf('teams/%d/members', $teamId), TeamMember::class, $params);
     }
 
     /**
@@ -38,8 +37,7 @@ class TeamMemberApi extends AbstractApi
      */
     public function create(int $teamId, array $data): AddedTeamMembers
     {
-        $path = sprintf('teams/%d/members', $teamId);
-        return $this->_post($path, AddedTeamMembers::class, $data);
+        return $this->_post(sprintf('teams/%d/members', $teamId), AddedTeamMembers::class, $data);
     }
 
     /**
@@ -51,8 +49,7 @@ class TeamMemberApi extends AbstractApi
      */
     public function clear(int $teamId)
     {
-        $path = sprintf('teams/%d/members', $teamId);
-        return $this->_delete($path);
+        return $this->_delete(sprintf('teams/%d/members', $teamId));
     }
 
     /**
@@ -65,7 +62,6 @@ class TeamMemberApi extends AbstractApi
      */
     public function delete(int $teamId, int $memberId)
     {
-        $path = sprintf('teams/%d/members/%d', $teamId, $memberId);
-        return $this->_delete($path);
+        return $this->_delete(sprintf('teams/%d/members/%d', $teamId, $memberId));
     }
 }

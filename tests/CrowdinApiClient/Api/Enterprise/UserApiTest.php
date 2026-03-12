@@ -16,45 +16,36 @@ class UserApiTest extends AbstractTestApi
             'accessToAllWorkflowSteps' => false,
             'managerAccess' => false,
             'permissions' => [
-                'it' => ['workflowStepIds' => [313]]
-            ]
+                'it' => ['workflowStepIds' => [313]],
+            ],
         ];
 
         $this->mockRequest([
             'path' => '/projects/1/members',
             'method' => 'post',
             'body' => json_encode($params),
-            'response' => '{
-            "skipped": [],
-            "added": [
-                {
-                    "data": {
-                        "id": 1,
-                        "username": "john_smith",
-                        "firstName": "John",
-                        "lastName": "Smith",
-                        "isManager": false,
-                        "managerOfGroup": {
-                            "id": 1,
-                            "name": "KB materials"
-                        },
-                        "accessToAllWorkflowSteps": false,
-                        "permissions": {
-                            "it": {
-                                "workflowStepIds": [
-                                    313
-                                ]
-                            }
-                        },
-                        "givenAccessAt": "2019-10-23T11:44:02+00:00"
-                    }
-                }
-            ],
-            "pagination": {
-                "offset": 0,
-                "limit": 25
-            }
-        }'
+            'response' => json_encode([
+                'skipped' => [],
+                'added' => [
+                    [
+                        'data' => [
+                            'id' => 1,
+                            'username' => 'john_smith',
+                            'firstName' => 'John',
+                            'lastName' => 'Smith',
+                            'isManager' => false,
+                            'managerOfGroup' => ['id' => 1, 'name' => 'KB materials'],
+                            'accessToAllWorkflowSteps' => false,
+                            'permissions' => ['it' => ['workflowStepIds' => [313]]],
+                            'givenAccessAt' => '2019-10-23T11:44:02+00:00',
+                        ],
+                    ],
+                ],
+                'pagination' => [
+                    'offset' => 0,
+                    'limit' => 25,
+                ],
+            ]),
         ]);
 
         $projectTeamMemberAddedStatistics = $this->crowdin->user->addProjectTeamMember(1, $params);
@@ -64,29 +55,31 @@ class UserApiTest extends AbstractTestApi
 
     public function testListProjectMembers()
     {
-        $this->mockRequestGet('/projects/1/members', '{
-                  "data": [
-                    {
-                      "data": {
-                        "id": 1,
-                        "username": "john_smith",
-                        "firstName": "John",
-                        "lastName": "Smith",
-                        "isManager": true,
-                        "managerOfGroup": {"id": 1, "name": "Marketing materials"},
-                        "accessToAllWorkflowSteps": true,
-                        "permissions": {"it": {"workflowStepIds": [313]}},
-                        "givenAccessAt": "2019-10-23T11:44:02+00:00"
-                      }
-                    }
-                  ],
-                  "pagination": [
-                    {
-                      "offset": 0,
-                      "limit": 0
-                    }
-                  ]
-                }'
+        $this->mockRequestGet(
+            '/projects/1/members',
+            json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 1,
+                            'username' => 'john_smith',
+                            'firstName' => 'John',
+                            'lastName' => 'Smith',
+                            'isManager' => true,
+                            'managerOfGroup' => ['id' => 1, 'name' => 'Marketing materials'],
+                            'accessToAllWorkflowSteps' => true,
+                            'permissions' => ['it' => ['workflowStepIds' => [313]]],
+                            'givenAccessAt' => '2019-10-23T11:44:02+00:00',
+                        ],
+                    ],
+                ],
+                'pagination' => [
+                    [
+                        'offset' => 0,
+                        'limit' => 0,
+                    ],
+                ],
+            ])
         );
 
         $members = $this->crowdin->user->listProjectMembers(1, []);
@@ -99,20 +92,22 @@ class UserApiTest extends AbstractTestApi
 
     public function testGetProjectMemberPermissions()
     {
-        $this->mockRequestGet('/projects/1/members/1', '{
-              "data": {
-                "id": 1,
-                "username": "john_smith",
-                "firstName": "John",
-                "lastName": "Smith",
-                "isManager": true,
-                "managerOfGroup": {"id": 1, "name": "Marketing materials"},
-                "accessToAllWorkflowSteps": true,
-                "permissions": {"it": {"workflowStepIds": [313]}},
-                "givenAccessAt": "2019-10-23T11:44:02+00:00"
-              }
-        }');
-
+        $this->mockRequestGet(
+            '/projects/1/members/1',
+            json_encode([
+                'data' => [
+                    'id' => 1,
+                    'username' => 'john_smith',
+                    'firstName' => 'John',
+                    'lastName' => 'Smith',
+                    'isManager' => true,
+                    'managerOfGroup' => ['id' => 1, 'name' => 'Marketing materials'],
+                    'accessToAllWorkflowSteps' => true,
+                    'permissions' => ['it' => ['workflowStepIds' => [313]]],
+                    'givenAccessAt' => '2019-10-23T11:44:02+00:00',
+                ],
+            ])
+        );
         $member = $this->crowdin->user->getProjectMemberPermissions(1, 1);
 
         $this->assertInstanceOf(ProjectTeamMemberResource::class, $member);
@@ -134,19 +129,19 @@ class UserApiTest extends AbstractTestApi
             'path' => '/projects/1/members/1',
             'method' => 'put',
             'body' => json_encode($params),
-            'response' => '{
-              "data": {
-                "id": 1,
-                "username": "john_smith",
-                "firstName": "John",
-                "lastName": "Smith",
-                "isManager": true,
-                "managerOfGroup": {"id": 1, "name": "Marketing materials"},
-                "accessToAllWorkflowSteps": true,
-                "permissions": {"it": {"workflowStepIds": [1,2,3]}},
-                "givenAccessAt": "2019-10-23T11:44:02+00:00"
-              }
-            }'
+            'response' => json_encode([
+                'data' => [
+                    'id' => 1,
+                    'username' => 'john_smith',
+                    'firstName' => 'John',
+                    'lastName' => 'Smith',
+                    'isManager' => true,
+                    'managerOfGroup' => ['id' => 1, 'name' => 'Marketing materials'],
+                    'accessToAllWorkflowSteps' => true,
+                    'permissions' => ['it' => ['workflowStepIds' => [1, 2, 3]]],
+                    'givenAccessAt' => '2019-10-23T11:44:02+00:00',
+                ],
+            ]),
         ]);
 
         $member = $this->crowdin->user->replaceProjectMemberPermissions(1, 1, $params);
@@ -171,32 +166,32 @@ class UserApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/users',
             'method' => 'get',
-            'response' => '{
-                  "data": [
-                    {
-                      "data": {
-                        "id": 1,
-                        "username": "john_smith",
-                        "email": "jsmith@example.com",
-                        "firstName": "John",
-                        "lastName": "Smith",
-                        "status": "active",
-                        "avatarUrl": "",
-                        "createdAt": "2019-07-11T07:40:22+00:00",
-                        "lastSeen": "2019-10-23T11:44:02+00:00",
-                        "twoFactor": "enabled",
-                        "isAdmin": true,
-                        "timezone": "Europe/Kiev"
-                      }
-                    }
-                  ],
-                  "pagination": [
-                    {
-                      "offset": 0,
-                      "limit": 0
-                    }
-                  ]
-                }'
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 1,
+                            'username' => 'john_smith',
+                            'email' => 'jsmith@example.com',
+                            'firstName' => 'John',
+                            'lastName' => 'Smith',
+                            'status' => 'active',
+                            'avatarUrl' => '',
+                            'createdAt' => '2019-07-11T07:40:22+00:00',
+                            'lastSeen' => '2019-10-23T11:44:02+00:00',
+                            'twoFactor' => 'enabled',
+                            'isAdmin' => true,
+                            'timezone' => 'Europe/Kyiv',
+                        ],
+                    ],
+                ],
+                'pagination' => [
+                    [
+                        'offset' => 0,
+                        'limit' => 0,
+                    ],
+                ],
+            ]),
         ]);
 
         $users = $this->crowdin->user->list();
@@ -209,22 +204,25 @@ class UserApiTest extends AbstractTestApi
 
     public function testGetUser()
     {
-        $this->mockRequestGet('/users/1', '{
-              "data": {
-                "id": 1,
-                "username": "john_smith",
-                "email": "jsmith@example.com",
-                "firstName": "John",
-                "lastName": "Smith",
-                "status": "active",
-                "avatarUrl": "",
-                "createdAt": "2019-07-11T07:40:22+00:00",
-                "lastSeen": "2019-10-23T11:44:02+00:00",
-                "twoFactor": "enabled",
-                "isAdmin": true,
-                "timezone": "Europe/Kiev"
-              }
-            }');
+        $this->mockRequestGet(
+            '/users/1',
+            json_encode([
+                'data' => [
+                    'id' => 1,
+                    'username' => 'john_smith',
+                    'email' => 'jsmith@example.com',
+                    'firstName' => 'John',
+                    'lastName' => 'Smith',
+                    'status' => 'active',
+                    'avatarUrl' => '',
+                    'createdAt' => '2019-07-11T07:40:22+00:00',
+                    'lastSeen' => '2019-10-23T11:44:02+00:00',
+                    'twoFactor' => 'enabled',
+                    'isAdmin' => true,
+                    'timezone' => 'Europe/Kyiv',
+                ],
+            ])
+        );
 
         $user = $this->crowdin->user->get(1);
 
@@ -234,22 +232,25 @@ class UserApiTest extends AbstractTestApi
 
     public function testGetAuthenticatedUser()
     {
-        $this->mockRequestGet('/user', '{
-              "data": {
-                "id": 1,
-                "username": "john_smith",
-                "email": "jsmith@example.com",
-                "firstName": "John",
-                "lastName": "Smith",
-                "status": "active",
-                "avatarUrl": "",
-                "createdAt": "2019-07-11T07:40:22+00:00",
-                "lastSeen": "2019-10-23T11:44:02+00:00",
-                "twoFactor": "enabled",
-                "isAdmin": true,
-                "timezone": "Europe/Kiev"
-              }
-            }');
+        $this->mockRequestGet(
+            '/user',
+            json_encode([
+                'data' => [
+                    'id' => 1,
+                    'username' => 'john_smith',
+                    'email' => 'jsmith@example.com',
+                    'firstName' => 'John',
+                    'lastName' => 'Smith',
+                    'status' => 'active',
+                    'avatarUrl' => '',
+                    'createdAt' => '2019-07-11T07:40:22+00:00',
+                    'lastSeen' => '2019-10-23T11:44:02+00:00',
+                    'twoFactor' => 'enabled',
+                    'isAdmin' => true,
+                    'timezone' => 'Europe/Kyiv',
+                ],
+            ])
+        );
 
         $user = $this->crowdin->user->getAuthenticatedUser();
 
@@ -262,29 +263,29 @@ class UserApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/users',
             'method' => 'post',
-            'response' => '{
-                  "data": {
-                    "id": 1,
-                    "username": "john_smith",
-                    "email": "jsmith@example.com",
-                    "firstName": "John",
-                    "lastName": "Smith",
-                    "status": "active",
-                    "avatarUrl": "",
-                    "createdAt": "2019-07-11T07:40:22+00:00",
-                    "lastSeen": "2019-10-23T11:44:02+00:00",
-                    "twoFactor": "enabled",
-                    "isAdmin": true,
-                    "timezone": "Europe/Kiev"
-                  }
-                }'
+            'response' => json_encode([
+                'data' => [
+                    'id' => 1,
+                    'username' => 'john_smith',
+                    'email' => 'jsmith@example.com',
+                    'firstName' => 'John',
+                    'lastName' => 'Smith',
+                    'status' => 'active',
+                    'avatarUrl' => '',
+                    'createdAt' => '2019-07-11T07:40:22+00:00',
+                    'lastSeen' => '2019-10-23T11:44:02+00:00',
+                    'twoFactor' => 'enabled',
+                    'isAdmin' => true,
+                    'timezone' => 'Europe/Kyiv',
+                ],
+            ]),
         ]);
 
         $user = $this->crowdin->user->invite([
             'email' => 'jsmith@example.com',
             'firstname' => 'John',
             'lastname' => 'Smith',
-            'timezone' => 'Europe/Kiev'
+            'timezone' => 'Europe/Kyiv',
         ]);
 
         $this->assertInstanceOf(User::class, $user);
@@ -299,22 +300,25 @@ class UserApiTest extends AbstractTestApi
 
     public function testGetAndUpdateUser()
     {
-        $this->mockRequestGet('/users/1', '{
-              "data": {
-                "id": 1,
-                "username": "john_smith",
-                "email": "jsmith@example.com",
-                "firstName": "John",
-                "lastName": "Smith",
-                "status": "active",
-                "avatarUrl": "",
-                "createdAt": "2019-07-11T07:40:22+00:00",
-                "lastSeen": "2019-10-23T11:44:02+00:00",
-                "twoFactor": "enabled",
-                "isAdmin": true,
-                "timezone": "Europe/Kiev"
-              }
-            }');
+        $this->mockRequestGet(
+            '/users/1',
+            json_encode([
+                'data' => [
+                    'id' => 1,
+                    'username' => 'john_smith',
+                    'email' => 'jsmith@example.com',
+                    'firstName' => 'John',
+                    'lastName' => 'Smith',
+                    'status' => 'active',
+                    'avatarUrl' => '',
+                    'createdAt' => '2019-07-11T07:40:22+00:00',
+                    'lastSeen' => '2019-10-23T11:44:02+00:00',
+                    'twoFactor' => 'enabled',
+                    'isAdmin' => true,
+                    'timezone' => 'Europe/Kyiv',
+                ],
+            ])
+        );
 
         $user = $this->crowdin->user->get(1);
         $this->assertInstanceOf(User::class, $user);
@@ -322,23 +326,25 @@ class UserApiTest extends AbstractTestApi
 
         $user->setFirstName('Joe');
 
-        $this->mockRequestPatch('/users/1', '{
-              "data": {
-                "id": 1,
-                "username": "john_smith",
-                "email": "jsmith@example.com",
-                "firstName": "Joe",
-                "lastName": "Smith",
-                "status": "active",
-                "avatarUrl": "",
-                "createdAt": "2019-07-11T07:40:22+00:00",
-                "lastSeen": "2019-10-23T11:44:02+00:00",
-                "twoFactor": "enabled",
-                "isAdmin": true,
-                "timezone": "Europe/Kiev"
-              }
-        }');
-
+        $this->mockRequestPatch(
+            '/users/1',
+            json_encode([
+                'data' => [
+                    'id' => 1,
+                    'username' => 'john_smith',
+                    'email' => 'jsmith@example.com',
+                    'firstName' => 'Joe',
+                    'lastName' => 'Smith',
+                    'status' => 'active',
+                    'avatarUrl' => '',
+                    'createdAt' => '2019-07-11T07:40:22+00:00',
+                    'lastSeen' => '2019-10-23T11:44:02+00:00',
+                    'twoFactor' => 'enabled',
+                    'isAdmin' => true,
+                    'timezone' => 'Europe/Kyiv',
+                ],
+            ])
+        );
         $this->crowdin->user->update($user);
         $this->assertInstanceOf(User::class, $user);
         $this->assertEquals(1, $user->getId());

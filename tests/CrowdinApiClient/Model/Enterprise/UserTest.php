@@ -24,7 +24,7 @@ class UserTest extends TestCase
         'lastSeen' => '2019-10-23T11:44:02+00:00',
         'twoFactor' => 'enabled',
         'isAdmin' => true,
-        'timezone' => 'Europe/Kiev',
+        'timezone' => 'Europe/Kyiv',
         'fields' => [
             'client-company' => 'ACME Corp',
         ],
