@@ -97,6 +97,11 @@ class File extends BaseModel
      */
     protected $updatedAt;
 
+    /**
+     * @var array
+     */
+    protected $fields = [];
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -119,6 +124,7 @@ class File extends BaseModel
         $this->parserVersion = (int)$this->getDataProperty('parserVersion');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
+        $this->fields = (array)$this->getDataProperty('fields');
     }
 
     public function getId(): int
@@ -265,5 +271,21 @@ class File extends BaseModel
     public function getParserVersion(): int
     {
         return $this->parserVersion;
+    }
+
+    /**
+     * @return array
+     */
+    public function getFields(): array
+    {
+        return $this->fields;
+    }
+
+    /**
+     * @param array $fields
+     */
+    public function setFields(array $fields): void
+    {
+        $this->fields = $fields;
     }
 }

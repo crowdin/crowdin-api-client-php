@@ -252,6 +252,11 @@ class Project extends BaseModel
      */
     protected $defaultGlossaryId;
 
+    /**
+     * @var array
+     */
+    protected $fields = [];
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -305,6 +310,7 @@ class Project extends BaseModel
         $this->notificationSettings = (array)$this->getDataProperty('notificationSettings');
         $this->defaultTmId = (int)$this->getDataProperty('defaultTmId');
         $this->defaultGlossaryId = (int)$this->getDataProperty('defaultGlossaryId');
+        $this->fields = (array)$this->getDataProperty('fields');
     }
 
     /**
@@ -1077,5 +1083,21 @@ class Project extends BaseModel
     public function setDefaultGlossaryId(?int $defaultGlossaryId): void
     {
         $this->defaultGlossaryId = $defaultGlossaryId;
+    }
+
+    /**
+     * @return array
+     */
+    public function getFields(): array
+    {
+        return $this->fields;
+    }
+
+    /**
+     * @param array $fields
+     */
+    public function setFields(array $fields): void
+    {
+        $this->fields = $fields;
     }
 }
