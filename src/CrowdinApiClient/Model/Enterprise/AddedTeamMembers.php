@@ -23,6 +23,7 @@ class AddedTeamMembers extends BaseModel
     public function __construct(array $data = [])
     {
         parent::__construct($data);
+
         $this->skipped = new Collection();
         $this->added = new Collection();
 
@@ -50,18 +51,8 @@ class AddedTeamMembers extends BaseModel
         return $this->skipped;
     }
 
-    public function setSkipped(Collection $skipped): void
-    {
-        $this->skipped = $skipped;
-    }
-
     public function getAdded(): ?Collection
     {
         return $this->added;
-    }
-
-    public function setAdded(Collection $added): void
-    {
-        $this->added = $added;
     }
 }

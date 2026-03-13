@@ -23,6 +23,11 @@ class User extends BaseModel
     protected $email;
 
     /**
+     * @var bool
+     */
+    protected $emailVerified;
+
+    /**
      * @var string
      */
     protected $fullName;
@@ -59,6 +64,7 @@ class User extends BaseModel
         $this->id = (int)$this->getDataProperty('id');
         $this->username = (string)$this->getDataProperty('username');
         $this->email = (string)$this->getDataProperty('email');
+        $this->emailVerified = (bool)$this->getDataProperty('emailVerified');
         $this->fullName = (string)$this->getDataProperty('fullName');
         $this->avatarUrl = (string)$this->getDataProperty('avatarUrl');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
@@ -83,6 +89,11 @@ class User extends BaseModel
         return $this->username;
     }
 
+    public function setUsername(string $username): void
+    {
+        $this->username = $username;
+    }
+
     /**
      * @return string
      */
@@ -92,11 +103,24 @@ class User extends BaseModel
     }
 
     /**
+     * @return bool
+     */
+    public function getEmailVerified(): bool
+    {
+        return $this->emailVerified;
+    }
+
+    /**
      * @return string
      */
     public function getFullName(): string
     {
         return $this->fullName;
+    }
+
+    public function setFullName(string $fullName): void
+    {
+        $this->fullName = $fullName;
     }
 
     /**
@@ -137,5 +161,10 @@ class User extends BaseModel
     public function getTimezone(): string
     {
         return $this->timezone;
+    }
+
+    public function setTimezone(string $timezone): void
+    {
+        $this->timezone = $timezone;
     }
 }

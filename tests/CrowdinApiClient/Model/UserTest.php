@@ -7,39 +7,47 @@ use PHPUnit\Framework\TestCase;
 
 class UserTest extends TestCase
 {
-    /**
-     * @var User
-     */
-    public $user;
-
     public $data = [
         'id' => 1,
         'username' => 'john_smith',
         'email' => 'jsmith@example.com',
+        'emailVerified' => true,
         'fullName' => 'John Smith',
         'avatarUrl' => '',
         'createdAt' => '2019-07-11T07:40:22+00:00',
         'lastSeen' => '2019-10-23T11:44:02+00:00',
         'twoFactor' => 'enabled',
-        'timezone' => 'Europe/Kiev',
+        'timezone' => 'Europe/Kyiv',
     ];
 
     public function testLoadData()
     {
-        $this->user = new User($this->data);
-        $this->checkData();
+        $user = new User($this->data);
+        $this->assertEquals($this->data['id'], $user->getId());
+        $this->assertEquals($this->data['username'], $user->getUsername());
+        $this->assertEquals($this->data['email'], $user->getEmail());
+        $this->assertEquals($this->data['emailVerified'], $user->getEmailVerified());
+        $this->assertEquals($this->data['fullName'], $user->getFullName());
+        $this->assertEquals($this->data['avatarUrl'], $user->getAvatarUrl());
+        $this->assertEquals($this->data['createdAt'], $user->getCreatedAt());
+        $this->assertEquals($this->data['lastSeen'], $user->getLastSeen());
+        $this->assertEquals($this->data['twoFactor'], $user->getTwoFactor());
+        $this->assertEquals($this->data['timezone'], $user->getTimezone());
     }
 
-    public function checkData()
+    public function testSetData()
     {
-        $this->assertEquals($this->data['id'], $this->user->getId());
-        $this->assertEquals($this->data['username'], $this->user->getUsername());
-        $this->assertEquals($this->data['email'], $this->user->getEmail());
-        $this->assertEquals($this->data['fullName'], $this->user->getFullName());
-        $this->assertEquals($this->data['avatarUrl'], $this->user->getAvatarUrl());
-        $this->assertEquals($this->data['createdAt'], $this->user->getCreatedAt());
-        $this->assertEquals($this->data['lastSeen'], $this->user->getLastSeen());
-        $this->assertEquals($this->data['twoFactor'], $this->user->getTwoFactor());
-        $this->assertEquals($this->data['timezone'], $this->user->getTimezone());
+        $newUsername = 'john.smith';
+        $newFullName = 'John Blacksmith';
+        $newTimezone = 'Europe/London';
+
+        $user = new User($this->data);
+        $user->setUsername($newUsername);
+        $user->setFullName($newFullName);
+        $user->setTimezone($newTimezone);
+
+        $this->assertEquals($newUsername, $user->getUsername());
+        $this->assertEquals($newFullName, $user->getFullName());
+        $this->assertEquals($newTimezone, $user->getTimezone());
     }
 }

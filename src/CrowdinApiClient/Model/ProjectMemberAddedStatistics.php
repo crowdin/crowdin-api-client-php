@@ -1,13 +1,13 @@
 <?php
 
-namespace CrowdinApiClient\Model\Enterprise;
+declare(strict_types=1);
 
-use CrowdinApiClient\Model\BaseModel;
+namespace CrowdinApiClient\Model;
 
 /**
- * @package Crowdin\Model\Enterprise
+ * @package Crowdin\Model
  */
-class ProjectTeamMemberAddedStatistics extends BaseModel
+class ProjectMemberAddedStatistics extends BaseModel
 {
     /**
      * @var array

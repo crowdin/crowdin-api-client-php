@@ -58,19 +58,9 @@ class TeamMember extends BaseModel
         return $this->id;
     }
 
-    public function setId(int $id): void
-    {
-        $this->id = $id;
-    }
-
     public function getUsername(): string
     {
         return $this->username;
-    }
-
-    public function setUsername(string $username): void
-    {
-        $this->username = $username;
     }
 
     public function getFirstName(): string
@@ -78,19 +68,9 @@ class TeamMember extends BaseModel
         return $this->firstName;
     }
 
-    public function setFirstName(string $firstName): void
-    {
-        $this->firstName = $firstName;
-    }
-
     public function getLastName(): string
     {
         return $this->lastName;
-    }
-
-    public function setLastName(string $lastName): void
-    {
-        $this->lastName = $lastName;
     }
 
     public function getAvatarUrl(): string
@@ -98,18 +78,8 @@ class TeamMember extends BaseModel
         return $this->avatarUrl;
     }
 
-    public function setAvatarUrl(string $avatarUrl): void
-    {
-        $this->avatarUrl = $avatarUrl;
-    }
-
     public function getAddedAt(): string
     {
         return $this->addedAt;
-    }
-
-    public function setAddedAt(string $addedAt): void
-    {
-        $this->addedAt = $addedAt;
     }
 }

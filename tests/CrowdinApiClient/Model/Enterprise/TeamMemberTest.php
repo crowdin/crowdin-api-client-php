@@ -9,11 +9,6 @@ use PHPUnit\Framework\TestCase;
 
 class TeamMemberTest extends TestCase
 {
-    /**
-     * @var TeamMember
-     */
-    public $teamMember;
-
     public $data = [
         'id' => 1,
         'username' => 'john.doe',
@@ -25,34 +20,12 @@ class TeamMemberTest extends TestCase
 
     public function testLoadData(): void
     {
-        $this->teamMember = new TeamMember($this->data);
-        $this->checkData();
-    }
-
-    public function testSetData(): void
-    {
-        $this->teamMember = new TeamMember();
-
-        $this->teamMember->setUsername($this->data['username']);
-        $this->teamMember->setFirstName($this->data['firstName']);
-        $this->teamMember->setLastName($this->data['lastName']);
-        $this->teamMember->setAvatarUrl($this->data['avatarUrl']);
-        $this->teamMember->setAddedAt($this->data['addedAt']);
-
-        $this->assertEquals($this->teamMember->getUsername(), $this->data['username']);
-        $this->assertEquals($this->teamMember->getFirstName(), $this->data['firstName']);
-        $this->assertEquals($this->teamMember->getLastName(), $this->data['lastName']);
-        $this->assertEquals($this->teamMember->getAvatarUrl(), $this->data['avatarUrl']);
-        $this->assertEquals($this->teamMember->getAddedAt(), $this->data['addedAt']);
-    }
-
-    public function checkData(): void
-    {
-        $this->assertEquals($this->data['id'], $this->teamMember->getId());
-        $this->assertEquals($this->data['username'], $this->teamMember->getUsername());
-        $this->assertEquals($this->data['firstName'], $this->teamMember->getFirstName());
-        $this->assertEquals($this->data['lastName'], $this->teamMember->getLastName());
-        $this->assertEquals($this->data['avatarUrl'], $this->teamMember->getAvatarUrl());
-        $this->assertEquals($this->data['addedAt'], $this->teamMember->getAddedAt());
+        $teamMember = new TeamMember($this->data);
+        $this->assertEquals($this->data['id'], $teamMember->getId());
+        $this->assertEquals($this->data['username'], $teamMember->getUsername());
+        $this->assertEquals($this->data['firstName'], $teamMember->getFirstName());
+        $this->assertEquals($this->data['lastName'], $teamMember->getLastName());
+        $this->assertEquals($this->data['avatarUrl'], $teamMember->getAvatarUrl());
+        $this->assertEquals($this->data['addedAt'], $teamMember->getAddedAt());
     }
 }

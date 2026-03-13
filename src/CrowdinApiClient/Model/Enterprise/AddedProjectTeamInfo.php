@@ -36,26 +36,10 @@ class AddedProjectTeamInfo extends BaseModel
     }
 
     /**
-     * @param ProjectTeam $skipped
-     */
-    public function setSkipped(ProjectTeam $skipped): void
-    {
-        $this->skipped = $skipped;
-    }
-
-    /**
      * @return array|ProjectTeam
      */
     public function getAdded()
     {
         return $this->added;
-    }
-
-    /**
-     * @param ProjectTeam $added
-     */
-    public function setAdded(ProjectTeam $added): void
-    {
-        $this->added = $added;
     }
 }
