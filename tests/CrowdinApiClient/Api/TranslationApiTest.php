@@ -657,4 +657,59 @@ class TranslationApiTest extends AbstractTestApi
         $this->assertInstanceOf(PreTranslationReportLanguage::class, $report->getLanguages()[0]);
         $this->assertSame('uk', $report->getLanguages()[0]->getId());
     }
+
+    public function testUpdatePreTranslations(): void
+    {
+        $this->mockRequest([
+            'uri' => 'https://api.crowdin.com/api/v2/projects/1/pre-translations',
+            'method' => 'patch',
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'identifier' => '9e7de270-4f83-41cb-b606-2f90631f26e2',
+                            'status' => 'canceled',
+                            'progress' => 50,
+                            'attributes' => [
+                                'languageIds' => ['uk'],
+                                'fileIds' => [742],
+                                'method' => 'tm',
+                                'autoApproveOption' => 'all',
+                                'duplicateTranslations' => true,
+                                'skipApprovedTranslations' => true,
+                                'translateUntranslatedOnly' => true,
+                                'translateWithPerfectMatchOnly' => true,
+                                'priority' => 'high',
+                            ],
+                            'createdAt' => '2019-09-20T14:05:50+00:00',
+                            'updatedAt' => '2019-09-20T14:05:50+00:00',
+                            'startedAt' => '2019-09-20T14:05:50+00:00',
+                            'finishedAt' => '2019-09-20T14:06:50+00:00',
+                        ],
+                    ],
+                ],
+            ]),
+        ]);
+
+        $data = [
+            [
+                'op' => 'replace',
+                'path' => '/9e7de270-4f83-41cb-b606-2f90631f26e2/status',
+                'value' => 'canceled',
+            ],
+            [
+                'op' => 'replace',
+                'path' => '/9e7de270-4f83-41cb-b606-2f90631f26e2/priority',
+                'value' => 'high',
+            ],
+        ];
+
+        $preTranslations = $this->crowdin->translation->updatePreTranslations(1, $data);
+
+        $this->assertInstanceOf(ModelCollection::class, $preTranslations);
+        $this->assertCount(1, $preTranslations);
+        $this->assertInstanceOf(PreTranslation::class, $preTranslations[0]);
+        $this->assertEquals('9e7de270-4f83-41cb-b606-2f90631f26e2', $preTranslations[0]->getIdentifier());
+        $this->assertEquals('canceled', $preTranslations[0]->getStatus());
+    }
 }

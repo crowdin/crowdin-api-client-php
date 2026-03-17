@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Api;
 
 use CrowdinApiClient\Http\ResponseDecorator\ResponseArrayDecorator;
+use CrowdinApiClient\Http\ResponseDecorator\ResponseModelListDecorator;
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\DownloadFileTranslation;
 use CrowdinApiClient\Model\PreTranslation;
@@ -88,6 +89,31 @@ class TranslationApi extends AbstractApi
     {
         $path = sprintf('projects/%d/pre-translations/%s/report', $projectId, $preTranslationId);
         return $this->_get($path, PreTranslationReport::class);
+    }
+
+    /**
+     * Batch Update Pre-Translations
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.pre-translations.patchBatch API Documentation
+     *
+     * @param int $projectId
+     * @param array $data JSON Patch array with operations (replace)
+     * @return ModelCollection
+     */
+    public function updatePreTranslations(int $projectId, array $data): ModelCollection
+    {
+        $path = sprintf('projects/%d/pre-translations', $projectId);
+
+        $options = [
+            'body' => json_encode($data),
+            'headers' => $this->getHeaders(),
+        ];
+
+        return $this->client->apiRequest(
+            'patch',
+            $path,
+            new ResponseModelListDecorator(PreTranslation::class),
+            $options
+        );
     }
 
     /**
@@ -226,8 +252,10 @@ class TranslationApi extends AbstractApi
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.imports.report.get API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.imports.report.get API Documentation Enterprise
      */
-    public function downloadTranslationImportReport(int $projectId, string $importTranslationId): ?TranslationImportReport
-    {
+    public function downloadTranslationImportReport(
+        int $projectId,
+        string $importTranslationId
+    ): ?TranslationImportReport {
         $path = sprintf('projects/%d/translations/imports/%s/report', $projectId, $importTranslationId);
         return $this->_get($path, TranslationImportReport::class);
     }
@@ -325,7 +353,7 @@ class TranslationApi extends AbstractApi
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.alignment.post API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.alignment.post API Documentation Enterprise
      *
-     * @param int   $projectId
+     * @param int $projectId
      * @param array $params
      * string $params[sourceLanguageId] required<br>
      * string $params[targetLanguageId] required<br>
