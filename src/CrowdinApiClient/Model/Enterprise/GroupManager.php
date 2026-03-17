@@ -31,7 +31,7 @@ class GroupManager extends BaseModel
         parent::__construct($data);
 
         $this->id = (int)$this->getDataProperty('id');
-        $this->user = new User($this->getDataProperty('user'));
+        $this->user = new User((array)$this->getDataProperty('user'));
 
         foreach ($this->getDataProperty('teams') ?? [] as $team) {
             $this->teams[] = new Team($team);

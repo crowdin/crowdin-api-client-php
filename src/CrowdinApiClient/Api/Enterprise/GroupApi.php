@@ -6,8 +6,8 @@ use CrowdinApiClient\Api\AbstractApi;
 use CrowdinApiClient\Http\ResponseDecorator\ResponseModelListDecorator;
 use CrowdinApiClient\Model\Enterprise\Group;
 use CrowdinApiClient\Model\Enterprise\GroupManager;
+use CrowdinApiClient\Model\Enterprise\GroupTeam;
 use CrowdinApiClient\Model\Report;
-use CrowdinApiClient\Model\Screenshot;
 use CrowdinApiClient\ModelCollection;
 
 /**
@@ -149,5 +149,55 @@ class GroupApi extends AbstractApi
     public function getManager(int $groupId, int $userId): ?GroupManager
     {
         return $this->_get(sprintf('groups/%d/managers/%d', $groupId, $userId), GroupManager::class);
+    }
+
+    /**
+     * List Group Teams
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.groups.teams.getMany API Documentation
+     *
+     * @param int $groupId
+     * @param array $params
+     * integer $params[limit]<br>
+     * integer $params[offset]<br>
+     * string $params[orderBy]
+     * @return ModelCollection
+     */
+    public function listTeams(int $groupId, array $params = []): ModelCollection
+    {
+        return $this->_list(sprintf('groups/%d/teams', $groupId), GroupTeam::class, $params);
+    }
+
+    /**
+     * Add or Remove Group Teams
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.groups.teams.patch API Documentation
+     *
+     * @param int $groupId
+     * @param array $data JSON Patch array with operations (add, remove)
+     * @return ModelCollection
+     */
+    public function updateTeams(int $groupId, array $data): ModelCollection
+    {
+        return $this->client->apiRequest(
+            'patch',
+            sprintf('groups/%d/teams', $groupId),
+            new ResponseModelListDecorator(GroupTeam::class),
+            [
+                'body' => json_encode($data),
+                'headers' => $this->getHeaders(),
+            ]
+        );
+    }
+
+    /**
+     * Get Group Team
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.groups.teams.get API Documentation
+     *
+     * @param int $groupId
+     * @param int $teamId
+     * @return GroupTeam|null
+     */
+    public function getTeam(int $groupId, int $teamId): ?GroupTeam
+    {
+        return $this->_get(sprintf('groups/%d/teams/%d', $groupId, $teamId), GroupTeam::class);
     }
 }

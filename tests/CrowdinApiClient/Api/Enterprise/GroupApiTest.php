@@ -4,6 +4,8 @@ namespace CrowdinApiClient\Tests\Api\Enterprise;
 
 use CrowdinApiClient\Model\Enterprise\Group;
 use CrowdinApiClient\Model\Enterprise\GroupManager;
+use CrowdinApiClient\Model\Enterprise\GroupTeam;
+use CrowdinApiClient\Model\Enterprise\Team;
 use CrowdinApiClient\Model\Enterprise\User;
 use CrowdinApiClient\Model\Report;
 use CrowdinApiClient\ModelCollection;
@@ -372,5 +374,117 @@ class GroupApiTest extends AbstractTestApi
         $this->assertEquals('john_smith', $manager->getUser()->getUsername());
         $this->assertCount(1, $manager->getTeams());
         $this->assertEquals('Translators Team', $manager->getTeams()[0]->getName());
+    }
+
+    public function testListTeams(): void
+    {
+        $this->mockRequest([
+            'uri' => 'https://organization_domain.crowdin.com/api/v2/groups/1/teams',
+            'method' => 'get',
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 27,
+                            'team' => [
+                                'id' => 2,
+                                'name' => 'Translators Team',
+                                'totalMembers' => 8,
+                                'webUrl' => 'https://example.crowdin.com/u/teams/1',
+                                'createdAt' => '2019-09-23T09:04:29+00:00',
+                                'updatedAt' => '2019-09-23T09:04:29+00:00',
+                            ],
+                        ],
+                    ],
+                ],
+                'pagination' => [
+                    'offset' => 0,
+                    'limit' => 25,
+                ],
+            ]),
+        ]);
+
+        $teams = $this->crowdin->group->listTeams(1);
+
+        $this->assertInstanceOf(ModelCollection::class, $teams);
+        $this->assertCount(1, $teams);
+        $this->assertInstanceOf(GroupTeam::class, $teams[0]);
+        $this->assertEquals(27, $teams[0]->getId());
+        $this->assertInstanceOf(Team::class, $teams[0]->getTeam());
+        $this->assertEquals('Translators Team', $teams[0]->getTeam()->getName());
+    }
+
+    public function testUpdateTeams(): void
+    {
+        $this->mockRequest([
+            'uri' => 'https://organization_domain.crowdin.com/api/v2/groups/1/teams',
+            'method' => 'patch',
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 27,
+                            'team' => [
+                                'id' => 2,
+                                'name' => 'Translators Team',
+                                'totalMembers' => 8,
+                                'webUrl' => 'https://example.crowdin.com/u/teams/1',
+                                'createdAt' => '2019-09-23T09:04:29+00:00',
+                                'updatedAt' => '2019-09-23T09:04:29+00:00',
+                            ],
+                        ],
+                    ],
+                ],
+            ]),
+        ]);
+
+        $data = [
+            [
+                'op' => 'add',
+                'path' => '/-',
+                'value' => [
+                    'teamId' => 18,
+                ],
+            ],
+            [
+                'op' => 'remove',
+                'path' => '/24',
+            ],
+        ];
+
+        $teams = $this->crowdin->group->updateTeams(1, $data);
+
+        $this->assertInstanceOf(ModelCollection::class, $teams);
+        $this->assertCount(1, $teams);
+        $this->assertInstanceOf(GroupTeam::class, $teams[0]);
+        $this->assertEquals(27, $teams[0]->getId());
+    }
+
+    public function testGetTeam(): void
+    {
+        $this->mockRequest([
+            'uri' => 'https://organization_domain.crowdin.com/api/v2/groups/1/teams/2',
+            'method' => 'get',
+            'response' => json_encode([
+                'data' => [
+                    'id' => 27,
+                    'team' => [
+                        'id' => 2,
+                        'name' => 'Translators Team',
+                        'totalMembers' => 8,
+                        'webUrl' => 'https://example.crowdin.com/u/teams/1',
+                        'createdAt' => '2019-09-23T09:04:29+00:00',
+                        'updatedAt' => '2019-09-23T09:04:29+00:00',
+                    ],
+                ],
+            ]),
+        ]);
+
+        $team = $this->crowdin->group->getTeam(1, 2);
+
+        $this->assertInstanceOf(GroupTeam::class, $team);
+        $this->assertEquals(27, $team->getId());
+        $this->assertInstanceOf(Team::class, $team->getTeam());
+        $this->assertEquals('Translators Team', $team->getTeam()->getName());
     }
 }
