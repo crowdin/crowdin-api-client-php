@@ -22,6 +22,6 @@ class ResponseModelDecorator implements ResponseDecoratorInterface
 
     public function decorate($data): ModelInterface
     {
-        return new $this->modelName($data);
+        return new $this->modelName($data['data']);
     }
 }

@@ -531,17 +531,19 @@ class ProjectApiTest extends AbstractTestApi
                 ],
             ]),
             'response' => json_encode([
-                'id' => 10,
-                'name' => 'Android XML',
-                'format' => 'android',
-                'extensions' => [
-                    'xml',
+                'data' => [
+                    'id' => 10,
+                    'name' => 'Android XML',
+                    'format' => 'android',
+                    'extensions' => [
+                        'xml',
+                    ],
+                    'settings' => [
+                        'exportPattern' => 'android.test.xml',
+                    ],
+                    'createdAt' => '2025-03-03T15:36:18+00:00',
+                    'updatedAt' => '2025-03-03T15:36:18+00:00',
                 ],
-                'settings' => [
-                    'exportPattern' => 'android.test.xml',
-                ],
-                'createdAt' => '2025-03-03T15:36:18+00:00',
-                'updatedAt' => '2025-03-03T15:36:18+00:00',
             ]),
         ]);
 

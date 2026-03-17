@@ -201,15 +201,11 @@ class Crowdin
         $this->responseErrorHandler->check($response);
 
         if ($decorator instanceof ResponseDecoratorInterface) {
-            if (isset($response['data']) && isset($response['pagination'])) {
-                $response = $decorator->decorate($response);
-            } elseif (isset($response['data'])) {
-                $response = $decorator->decorate($response['data']);
-            } elseif (is_array($response)) {
-                $response = $decorator->decorate($response);
-            } else {
-                $response = null;
+            if (is_array($response) && isset($response['data'])) {
+                return $decorator->decorate($response);
             }
+
+            return null;
         }
 
         return $response;

@@ -16,18 +16,20 @@ class ReportApiTest extends AbstractTestApi
             'path' => '/projects/124/reports',
             'method' => 'post',
             'response' => json_encode([
-                'identifier' => '50fb3506-4127-4ba8-8296-f97dc7e3e0c3',
-                'status' => 'finished',
-                'progress' => 100,
-                'attributes' => [
-                    'format' => 'xlsx',
-                    'reportName' => 'costs-estimation',
-                    'schema' => [],
+                'data' => [
+                    'identifier' => '50fb3506-4127-4ba8-8296-f97dc7e3e0c3',
+                    'status' => 'finished',
+                    'progress' => 100,
+                    'attributes' => [
+                        'format' => 'xlsx',
+                        'reportName' => 'costs-estimation',
+                        'schema' => [],
+                    ],
+                    'createdAt' => '2019-09-23T11:26:54+00:00',
+                    'updatedAt' => '2019-09-23T11:26:54+00:00',
+                    'startedAt' => '2019-09-23T11:26:54+00:00',
+                    'finishedAt' => '2019-09-23T11:26:54+00:00',
                 ],
-                'createdAt' => '2019-09-23T11:26:54+00:00',
-                'updatedAt' => '2019-09-23T11:26:54+00:00',
-                'startedAt' => '2019-09-23T11:26:54+00:00',
-                'finishedAt' => '2019-09-23T11:26:54+00:00',
             ]),
         ]);
 
@@ -83,18 +85,20 @@ class ReportApiTest extends AbstractTestApi
         $this->mockRequestGet(
             '/projects/124/reports/50fb3506-4127-4ba8-8296-f97dc7e3e0c3',
             json_encode([
-                'identifier' => '50fb3506-4127-4ba8-8296-f97dc7e3e0c3',
-                'status' => 'finished',
-                'progress' => 100,
-                'attributes' => [
-                    'format' => 'xlsx',
-                    'reportName' => 'costs-estimation',
-                    'schema' => [],
+                'data' => [
+                    'identifier' => '50fb3506-4127-4ba8-8296-f97dc7e3e0c3',
+                    'status' => 'finished',
+                    'progress' => 100,
+                    'attributes' => [
+                        'format' => 'xlsx',
+                        'reportName' => 'costs-estimation',
+                        'schema' => [],
+                    ],
+                    'createdAt' => '2019-09-23T11:26:54+00:00',
+                    'updatedAt' => '2019-09-23T11:26:54+00:00',
+                    'startedAt' => '2019-09-23T11:26:54+00:00',
+                    'finishedAt' => '2019-09-23T11:26:54+00:00',
                 ],
-                'createdAt' => '2019-09-23T11:26:54+00:00',
-                'updatedAt' => '2019-09-23T11:26:54+00:00',
-                'startedAt' => '2019-09-23T11:26:54+00:00',
-                'finishedAt' => '2019-09-23T11:26:54+00:00',
             ])
         );
 
@@ -398,58 +402,60 @@ class ReportApiTest extends AbstractTestApi
             'path' => '/projects/87/reports/settings-templates/12',
             'method' => 'patch',
             'response' => json_encode([
-                'id' => 12,
-                'name' => 'New name',
-                'currency' => 'UAH',
-                'unit' => 'words',
-                'config' => [
-                    'baseRates' => [
-                        'fullTranslation' => 0.1,
-                        'proofread' => 0.12,
-                    ],
-                    'individualRates' => [
-                        [
-                            'languageIds' => ['uk'],
-                            'userIds' => [8],
+                'data' => [
+                    'id' => 12,
+                    'name' => 'New name',
+                    'currency' => 'UAH',
+                    'unit' => 'words',
+                    'config' => [
+                        'baseRates' => [
                             'fullTranslation' => 0.1,
                             'proofread' => 0.12,
                         ],
+                        'individualRates' => [
+                            [
+                                'languageIds' => ['uk'],
+                                'userIds' => [8],
+                                'fullTranslation' => 0.1,
+                                'proofread' => 0.12,
+                            ],
+                        ],
+                        'netRateSchemes' => [
+                            'tmMatch' => [
+                                [
+                                    'matchType' => 'perfect',
+                                    'price' => 0.1,
+                                ],
+                                [
+                                    'matchType' => '100',
+                                    'price' => 0.2,
+                                ],
+                            ],
+                            'mtMatch' => [
+                                [
+                                    'matchType' => '100',
+                                    'price' => 0.1,
+                                ],
+                            ],
+                            'aiMatch' => [
+                                [
+                                    'matchType' => '100',
+                                    'price' => 0.1,
+                                ],
+                            ],
+                            'suggestionMatch' => [
+                                [
+                                    'matchType' => '100',
+                                    'price' => 0.1,
+                                ],
+                            ],
+                        ],
                     ],
-                    'netRateSchemes' => [
-                        'tmMatch' => [
-                            [
-                                'matchType' => 'perfect',
-                                'price' => 0.1,
-                            ],
-                            [
-                                'matchType' => '100',
-                                'price' => 0.2,
-                            ],
-                        ],
-                        'mtMatch' => [
-                            [
-                                'matchType' => '100',
-                                'price' => 0.1,
-                            ],
-                        ],
-                        'aiMatch' => [
-                            [
-                                'matchType' => '100',
-                                'price' => 0.1,
-                            ],
-                        ],
-                        'suggestionMatch' => [
-                            [
-                                'matchType' => '100',
-                                'price' => 0.1,
-                            ],
-                        ],
-                    ],
+                    'isPublic' => true,
+                    'isGlobal' => true,
+                    'createdAt' => '2025-01-23T15:23:11+00:00',
+                    'updatedAt' => '2025-01-23T15:35:49+00:00',
                 ],
-                'isPublic' => true,
-                'isGlobal' => true,
-                'createdAt' => '2025-01-23T15:23:11+00:00',
-                'updatedAt' => '2025-01-23T15:35:49+00:00',
             ]),
         ]);
 

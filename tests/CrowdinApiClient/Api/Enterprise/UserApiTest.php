@@ -25,25 +25,27 @@ class UserApiTest extends AbstractTestApi
             'method' => 'post',
             'body' => json_encode($params),
             'response' => json_encode([
-                'skipped' => [],
-                'added' => [
-                    [
-                        'data' => [
-                            'id' => 1,
-                            'username' => 'john_smith',
-                            'firstName' => 'John',
-                            'lastName' => 'Smith',
-                            'isManager' => false,
-                            'managerOfGroup' => ['id' => 1, 'name' => 'KB materials'],
-                            'accessToAllWorkflowSteps' => false,
-                            'permissions' => ['it' => ['workflowStepIds' => [313]]],
-                            'givenAccessAt' => '2019-10-23T11:44:02+00:00',
+                'data' => [
+                    'skipped' => [],
+                    'added' => [
+                        [
+                            'data' => [
+                                'id' => 1,
+                                'username' => 'john_smith',
+                                'firstName' => 'John',
+                                'lastName' => 'Smith',
+                                'isManager' => false,
+                                'managerOfGroup' => ['id' => 1, 'name' => 'KB materials'],
+                                'accessToAllWorkflowSteps' => false,
+                                'permissions' => ['it' => ['workflowStepIds' => [313]]],
+                                'givenAccessAt' => '2019-10-23T11:44:02+00:00',
+                            ],
                         ],
                     ],
-                ],
-                'pagination' => [
-                    'offset' => 0,
-                    'limit' => 25,
+                    'pagination' => [
+                        'offset' => 0,
+                        'limit' => 25,
+                    ],
                 ],
             ]),
         ]);

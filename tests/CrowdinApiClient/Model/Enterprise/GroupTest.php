@@ -7,14 +7,6 @@ use PHPUnit\Framework\TestCase;
 
 class GroupTest extends TestCase
 {
-    /**
-     * @var Group
-     */
-    public $group;
-
-    /**
-     * @var array
-     */
     public $data = [
         'id' => 1,
         'name' => 'KB materials',
@@ -24,39 +16,38 @@ class GroupTest extends TestCase
         'userId' => 6,
         'subgroupsCount' => 0,
         'projectsCount' => 1,
+        'webUrl' => 'https://example.crowdin.com/groups/1',
+        'savingsReportSettingsTemplateId' => 10,
         'createdAt' => '2019-09-20T11:11:05+00:00',
         'updatedAt' => '2019-09-20T12:22:20+00:00',
     ];
 
     public function testLoadData(): void
     {
-        $this->group = new Group($this->data);
-        $this->checkData();
+        $group = new Group($this->data);
+        $this->assertEquals($this->data['id'], $group->getId());
+        $this->assertEquals($this->data['name'], $group->getName());
+        $this->assertEquals($this->data['description'], $group->getDescription());
+        $this->assertEquals($this->data['parentId'], $group->getParentId());
+        $this->assertEquals($this->data['organizationId'], $group->getOrganizationId());
+        $this->assertEquals($this->data['userId'], $group->getUserId());
+        $this->assertEquals($this->data['subgroupsCount'], $group->getSubgroupsCount());
+        $this->assertEquals($this->data['projectsCount'], $group->getProjectsCount());
+        $this->assertEquals($this->data['webUrl'], $group->getWebUrl());
+        $this->assertEquals($this->data['savingsReportSettingsTemplateId'], $group->getSavingsReportSettingsTemplateId());
+        $this->assertEquals($this->data['createdAt'], $group->getCreatedAt());
+        $this->assertEquals($this->data['updatedAt'], $group->getUpdatedAt());
     }
 
     public function testSetData(): void
     {
-        $this->group = new Group();
-        $this->group->setName($this->data['name']);
-        $this->group->setDescription($this->data['description']);
-        $this->group->setParentId($this->data['parentId']);
+        $group = new Group();
+        $group->setName($this->data['name']);
+        $group->setDescription($this->data['description']);
+        $group->setParentId($this->data['parentId']);
 
-        $this->assertEquals($this->data['name'], $this->group->getName());
-        $this->assertEquals($this->data['description'], $this->group->getDescription());
-        $this->assertEquals($this->data['parentId'], $this->group->getParentId());
-    }
-
-    public function checkData(): void
-    {
-        $this->assertEquals($this->data['id'], $this->group->getId());
-        $this->assertEquals($this->data['name'], $this->group->getName());
-        $this->assertEquals($this->data['description'], $this->group->getDescription());
-        $this->assertEquals($this->data['parentId'], $this->group->getParentId());
-        $this->assertEquals($this->data['organizationId'], $this->group->getOrganizationId());
-        $this->assertEquals($this->data['userId'], $this->group->getUserId());
-        $this->assertEquals($this->data['subgroupsCount'], $this->group->getSubgroupsCount());
-        $this->assertEquals($this->data['projectsCount'], $this->group->getProjectsCount());
-        $this->assertEquals($this->data['createdAt'], $this->group->getCreatedAt());
-        $this->assertEquals($this->data['updatedAt'], $this->group->getUpdatedAt());
+        $this->assertEquals($this->data['name'], $group->getName());
+        $this->assertEquals($this->data['description'], $group->getDescription());
+        $this->assertEquals($this->data['parentId'], $group->getParentId());
     }
 }

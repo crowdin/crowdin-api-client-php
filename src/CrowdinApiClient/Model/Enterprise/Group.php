@@ -10,7 +10,7 @@ use CrowdinApiClient\Model\BaseModel;
 class Group extends BaseModel
 {
     /**
-     * @var integer
+     * @var int
      */
     protected $id;
 
@@ -25,29 +25,39 @@ class Group extends BaseModel
     protected $description;
 
     /**
-     * @var integer
+     * @var int
      */
     protected $parentId;
 
     /**
-     * @var integer
+     * @var int
      */
     protected $organizationId;
 
     /**
-     * @var integer
+     * @var int
      */
     protected $userId;
 
     /**
-     * @var integer
+     * @var int
      */
     protected $subgroupsCount = 0;
 
     /**
-     * @var integer
+     * @var int
      */
     protected $projectsCount = 0;
+
+    /**
+     * @var string
+     */
+    protected $webUrl;
+
+    /**
+     * @var int
+     */
+    protected $savingsReportSettingsTemplateId;
 
     /**
      * @var string
@@ -71,8 +81,12 @@ class Group extends BaseModel
         $this->userId = (int)$this->getDataProperty('userId');
         $this->subgroupsCount = (int)$this->getDataProperty('subgroupsCount');
         $this->projectsCount = (int)$this->getDataProperty('projectsCount');
+        $this->webUrl = (string)$this->getDataProperty('webUrl');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
+
+        // This information is available only for managers and admins
+        $this->savingsReportSettingsTemplateId = (int)$this->getDataProperty('savingsReportSettingsTemplateId');
     }
 
     /**
@@ -177,5 +191,21 @@ class Group extends BaseModel
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;
+    }
+
+    /**
+     * @return string
+     */
+    public function getWebUrl(): string
+    {
+        return $this->webUrl;
+    }
+
+    /**
+     * @return int
+     */
+    public function getSavingsReportSettingsTemplateId(): int
+    {
+        return $this->savingsReportSettingsTemplateId;
     }
 }

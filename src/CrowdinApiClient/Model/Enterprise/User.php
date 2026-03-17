@@ -74,23 +74,67 @@ class User extends BaseModel
      */
     protected $fields = [];
 
+    /**
+     * @var bool
+     */
+    protected $emailVerified;
+
+    /**
+     * @var array
+     */
+    protected $joinDetails;
+
+    /**
+     * @var string
+     */
+    protected $deviceVerification;
+
+    /**
+     * @var int
+     */
+    protected $trustedDevicesCount;
+
+    /**
+     * @var int
+     */
+    protected $apiTokensCount;
+
+    /**
+     * @var string[]
+     */
+    protected $loginMethods;
+
+    /**
+     * @var string[]
+     */
+    protected $mfaMethods;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
 
         $this->id = (int)$this->getDataProperty('id');
         $this->username = (string)$this->getDataProperty('username');
-        $this->email = (string)$this->getDataProperty('email');
         $this->firstName = (string)$this->getDataProperty('firstName');
         $this->lastName = (string)$this->getDataProperty('lastName');
-        $this->status = (string)$this->getDataProperty('status');
         $this->avatarUrl = (string)$this->getDataProperty('avatarUrl');
+        $this->fields = (array)$this->getDataProperty('fields');
+        $this->isAdmin = (bool)$this->getDataProperty('isAdmin');
+        $this->status = (string)$this->getDataProperty('status');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->lastSeen = (string)$this->getDataProperty('lastSeen');
+
+        // This information is only available for admins
+        $this->email = (string)$this->getDataProperty('email');
+        $this->emailVerified = (bool)$this->getDataProperty('emailVerified');
         $this->twoFactor = (string)$this->getDataProperty('twoFactor');
-        $this->isAdmin = (bool)$this->getDataProperty('isAdmin');
         $this->timezone = (string)$this->getDataProperty('timezone');
-        $this->fields = (array)$this->getDataProperty('fields');
+        $this->joinDetails = (array)$this->getDataProperty('joinDetails');
+        $this->deviceVerification = (string)$this->getDataProperty('deviceVerification');
+        $this->trustedDevicesCount = (int)$this->getDataProperty('trustedDevicesCount');
+        $this->apiTokensCount = (int)$this->getDataProperty('apiTokensCount');
+        $this->loginMethods = (array)$this->getDataProperty('loginMethods');
+        $this->mfaMethods = (array)$this->getDataProperty('mfaMethods');
     }
 
     /**
@@ -299,5 +343,61 @@ class User extends BaseModel
     public function setFields(array $fields): void
     {
         $this->fields = $fields;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isEmailVerified(): bool
+    {
+        return $this->emailVerified;
+    }
+
+    /**
+     * @return array
+     */
+    public function getJoinDetails(): array
+    {
+        return $this->joinDetails;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDeviceVerification(): string
+    {
+        return $this->deviceVerification;
+    }
+
+    /**
+     * @return int
+     */
+    public function getTrustedDevicesCount(): int
+    {
+        return $this->trustedDevicesCount;
+    }
+
+    /**
+     * @return int
+     */
+    public function getApiTokensCount(): int
+    {
+        return $this->apiTokensCount;
+    }
+
+    /**
+     * @return string[]
+     */
+    public function getLoginMethods(): array
+    {
+        return $this->loginMethods;
+    }
+
+    /**
+     * @return string[]
+     */
+    public function getMfaMethods(): array
+    {
+        return $this->mfaMethods;
     }
 }

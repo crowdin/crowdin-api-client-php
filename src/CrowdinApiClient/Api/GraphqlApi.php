@@ -37,7 +37,7 @@ class GraphqlApi extends AbstractApi
 
         $this->client->getResponseErrorHandler()->check($response);
 
-        return (new ResponseArrayDecorator())->decorate($response['data']);
+        return (new ResponseArrayDecorator())->decorate($response);
     }
 
     private function getFullUrl(): string

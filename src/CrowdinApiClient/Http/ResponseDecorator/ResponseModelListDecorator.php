@@ -28,7 +28,9 @@ class ResponseModelListDecorator implements ResponseDecoratorInterface
             $modelCollection->add(new $this->modelName($item['data']));
         }
 
-        $modelCollection->setPagination($data['pagination']);
+        if (isset($data['pagination'])) {
+            $modelCollection->setPagination($data['pagination']);
+        }
 
         return $modelCollection;
     }

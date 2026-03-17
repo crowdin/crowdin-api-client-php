@@ -10,6 +10,6 @@ class ResponseArrayDecorator implements ResponseDecoratorInterface
 {
     public function decorate($data): array
     {
-        return $data;
+        return $data['data'] ?? $data;
     }
 }
