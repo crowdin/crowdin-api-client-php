@@ -56,17 +56,45 @@ class ReportSettingsTemplateConfigTest extends TestCase
                 ],
             ],
         ],
+        'calculateInternalMatches' => true,
+        'includePreTranslatedStrings' => false,
+        'excludeApprovalsForEditedTranslations' => true,
+        'preTranslatedStringsCategorizationAdjustment' => false,
     ];
-
-    /**
-     * @var ReportSettingsTemplateConfig
-     */
-    public $reportSettingsTemplateConfig;
 
     public function testLoadData(): void
     {
-        $this->reportSettingsTemplateConfig = new ReportSettingsTemplateConfig($this->data);
-        $this->checkData();
+        $reportSettingsTemplateConfig = new ReportSettingsTemplateConfig($this->data);
+        $this->assertEquals(
+            $this->data['baseRates'],
+            $reportSettingsTemplateConfig->getBaseRates()->toArray()
+        );
+        $this->assertEquals(
+            $this->data['individualRates'],
+            array_map(static function (IndividualRates $individualRates): array {
+                return $individualRates->toArray();
+            }, $reportSettingsTemplateConfig->getIndividualRates())
+        );
+        $this->assertEquals(
+            $this->data['netRateSchemes'],
+            $reportSettingsTemplateConfig->getNetRateSchemes()->toArray()
+        );
+        $this->assertEquals(
+            $this->data['calculateInternalMatches'],
+            $reportSettingsTemplateConfig->getCalculateInternalMatches()
+        );
+        $this->assertEquals(
+            $this->data['includePreTranslatedStrings'],
+            $reportSettingsTemplateConfig->getIncludePreTranslatedStrings()
+        );
+        $this->assertEquals(
+            $this->data['excludeApprovalsForEditedTranslations'],
+            $reportSettingsTemplateConfig->getExcludeApprovalsForEditedTranslations()
+        );
+        $this->assertEquals(
+            $this->data['preTranslatedStringsCategorizationAdjustment'],
+            $reportSettingsTemplateConfig->getPreTranslatedStringsCategorizationAdjustment()
+        );
     }
 
     /**
@@ -74,46 +102,52 @@ class ReportSettingsTemplateConfigTest extends TestCase
      */
     public function testSetData(): void
     {
-        $this->reportSettingsTemplateConfig = new ReportSettingsTemplateConfig();
-        $this->reportSettingsTemplateConfig->setBaseRates(new BaseRates($this->data['baseRates']));
-        $this->reportSettingsTemplateConfig->setIndividualRates(
+        $reportSettingsTemplateConfig = new ReportSettingsTemplateConfig();
+        $reportSettingsTemplateConfig->setBaseRates(new BaseRates($this->data['baseRates']));
+        $reportSettingsTemplateConfig->setIndividualRates(
             array_map(static function (array $individualRates): IndividualRates {
                 return new IndividualRates($individualRates);
             }, $this->data['individualRates'])
         );
-        $this->reportSettingsTemplateConfig->setNetRateSchemes(new NetRateSchemes($this->data['netRateSchemes']));
+        $reportSettingsTemplateConfig->setNetRateSchemes(new NetRateSchemes($this->data['netRateSchemes']));
+        $reportSettingsTemplateConfig->setCalculateInternalMatches($this->data['calculateInternalMatches']);
+        $reportSettingsTemplateConfig->setIncludePreTranslatedStrings($this->data['includePreTranslatedStrings']);
+        $reportSettingsTemplateConfig->setExcludeApprovalsForEditedTranslations(
+            $this->data['excludeApprovalsForEditedTranslations']
+        );
+        $reportSettingsTemplateConfig->setPreTranslatedStringsCategorizationAdjustment(
+            $this->data['preTranslatedStringsCategorizationAdjustment']
+        );
 
         $this->assertEquals(
             $this->data['baseRates'],
-            $this->reportSettingsTemplateConfig->getBaseRates()->toArray()
+            $reportSettingsTemplateConfig->getBaseRates()->toArray()
         );
         $this->assertEquals(
             $this->data['individualRates'],
             array_map(static function (IndividualRates $individualRates): array {
                 return $individualRates->toArray();
-            }, $this->reportSettingsTemplateConfig->getIndividualRates())
+            }, $reportSettingsTemplateConfig->getIndividualRates())
         );
         $this->assertEquals(
             $this->data['netRateSchemes'],
-            $this->reportSettingsTemplateConfig->getNetRateSchemes()->toArray()
-        );
-    }
-
-    public function checkData(): void
-    {
-        $this->assertEquals(
-            $this->data['baseRates'],
-            $this->reportSettingsTemplateConfig->getBaseRates()->toArray()
+            $reportSettingsTemplateConfig->getNetRateSchemes()->toArray()
         );
         $this->assertEquals(
-            $this->data['individualRates'],
-            array_map(static function (IndividualRates $individualRates): array {
-                return $individualRates->toArray();
-            }, $this->reportSettingsTemplateConfig->getIndividualRates())
+            $this->data['calculateInternalMatches'],
+            $reportSettingsTemplateConfig->getCalculateInternalMatches()
         );
         $this->assertEquals(
-            $this->data['netRateSchemes'],
-            $this->reportSettingsTemplateConfig->getNetRateSchemes()->toArray()
+            $this->data['includePreTranslatedStrings'],
+            $reportSettingsTemplateConfig->getIncludePreTranslatedStrings()
+        );
+        $this->assertEquals(
+            $this->data['excludeApprovalsForEditedTranslations'],
+            $reportSettingsTemplateConfig->getExcludeApprovalsForEditedTranslations()
+        );
+        $this->assertEquals(
+            $this->data['preTranslatedStringsCategorizationAdjustment'],
+            $reportSettingsTemplateConfig->getPreTranslatedStringsCategorizationAdjustment()
         );
     }
 

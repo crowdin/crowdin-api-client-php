@@ -26,6 +26,26 @@ class ReportSettingsTemplateConfig extends BaseModel
      */
     protected $netRateSchemes;
 
+    /**
+     * @var bool
+     */
+    protected $calculateInternalMatches;
+
+    /**
+     * @var bool
+     */
+    protected $includePreTranslatedStrings;
+
+    /**
+     * @var bool
+     */
+    protected $excludeApprovalsForEditedTranslations;
+
+    /**
+     * @var bool
+     */
+    protected $preTranslatedStringsCategorizationAdjustment;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -35,6 +55,14 @@ class ReportSettingsTemplateConfig extends BaseModel
             return new IndividualRates($individualRates);
         }, $this->getDataProperty('individualRates') ?? []);
         $this->netRateSchemes = new NetRateSchemes($this->getDataProperty('netRateSchemes') ?? []);
+        $this->calculateInternalMatches = (bool)$this->getDataProperty('calculateInternalMatches');
+        $this->includePreTranslatedStrings = (bool)$this->getDataProperty('includePreTranslatedStrings');
+        $this->excludeApprovalsForEditedTranslations = (bool)$this->getDataProperty(
+            'excludeApprovalsForEditedTranslations'
+        );
+        $this->preTranslatedStringsCategorizationAdjustment = (bool)$this->getDataProperty(
+            'preTranslatedStringsCategorizationAdjustment'
+        );
     }
 
     public function getBaseRates(): BaseRates
@@ -85,6 +113,47 @@ class ReportSettingsTemplateConfig extends BaseModel
         $this->netRateSchemes = $netRateSchemes;
     }
 
+    public function getCalculateInternalMatches(): bool
+    {
+        return $this->calculateInternalMatches;
+    }
+
+    public function setCalculateInternalMatches(bool $calculateInternalMatches): void
+    {
+        $this->calculateInternalMatches = $calculateInternalMatches;
+    }
+
+    public function getIncludePreTranslatedStrings(): bool
+    {
+        return $this->includePreTranslatedStrings;
+    }
+
+    public function setIncludePreTranslatedStrings(bool $includePreTranslatedStrings): void
+    {
+        $this->includePreTranslatedStrings = $includePreTranslatedStrings;
+    }
+
+    public function getExcludeApprovalsForEditedTranslations(): bool
+    {
+        return $this->excludeApprovalsForEditedTranslations;
+    }
+
+    public function setExcludeApprovalsForEditedTranslations(bool $excludeApprovalsForEditedTranslations): void
+    {
+        $this->excludeApprovalsForEditedTranslations = $excludeApprovalsForEditedTranslations;
+    }
+
+    public function getPreTranslatedStringsCategorizationAdjustment(): bool
+    {
+        return $this->preTranslatedStringsCategorizationAdjustment;
+    }
+
+    public function setPreTranslatedStringsCategorizationAdjustment(
+        bool $preTranslatedStringsCategorizationAdjustment
+    ): void {
+        $this->preTranslatedStringsCategorizationAdjustment = $preTranslatedStringsCategorizationAdjustment;
+    }
+
     public function toArray(): array
     {
         return [
@@ -93,6 +162,10 @@ class ReportSettingsTemplateConfig extends BaseModel
                 return $individualRate->toArray();
             }, $this->individualRates),
             'netRateSchemes' => $this->netRateSchemes->toArray(),
+            'calculateInternalMatches' => $this->calculateInternalMatches,
+            'includePreTranslatedStrings' => $this->includePreTranslatedStrings,
+            'excludeApprovalsForEditedTranslations' => $this->excludeApprovalsForEditedTranslations,
+            'preTranslatedStringsCategorizationAdjustment' => $this->preTranslatedStringsCategorizationAdjustment,
         ];
     }
 }

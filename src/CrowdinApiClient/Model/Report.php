@@ -61,12 +61,14 @@ class Report extends BaseModel
     public const UNIT_WORDS = 'words';
     public const UNIT_CHARS = 'chars';
     public const UNIT_CHARS_WITH_SPACES = 'chars_with_spaces';
+    public const UNIT_HOURS = 'hours';
 
     public const UNITS = [
         self::UNIT_STRINGS,
         self::UNIT_WORDS,
         self::UNIT_CHARS,
         self::UNIT_CHARS_WITH_SPACES,
+        self::UNIT_HOURS,
     ];
 
     /**

@@ -9,7 +9,7 @@ use InvalidArgumentException;
 /**
  * @package Crowdin\Model
  */
-class IndividualRates extends BaseModel
+class HourlyIndividualRates extends BaseModel
 {
     /**
      * @var string[]
@@ -24,12 +24,7 @@ class IndividualRates extends BaseModel
     /**
      * @var float
      */
-    protected $fullTranslation;
-
-    /**
-     * @var float
-     */
-    protected $proofread;
+    protected $hourly;
 
     public function __construct(array $data = [])
     {
@@ -41,8 +36,7 @@ class IndividualRates extends BaseModel
         $this->userIds = array_map(static function ($userId): int {
             return (int)$userId;
         }, $this->getDataProperty('userIds') ?? []);
-        $this->fullTranslation = (float)$this->getDataProperty('fullTranslation');
-        $this->proofread = (float)$this->getDataProperty('proofread');
+        $this->hourly = (float)$this->getDataProperty('hourly');
     }
 
     /**
@@ -97,24 +91,14 @@ class IndividualRates extends BaseModel
         $this->userIds = $userIds;
     }
 
-    public function getFullTranslation(): float
+    public function getHourly(): float
     {
-        return $this->fullTranslation;
+        return $this->hourly;
     }
 
-    public function setFullTranslation(float $fullTranslation): void
+    public function setHourly(float $hourly): void
     {
-        $this->fullTranslation = $fullTranslation;
-    }
-
-    public function getProofread(): float
-    {
-        return $this->proofread;
-    }
-
-    public function setProofread(float $proofread): void
-    {
-        $this->proofread = $proofread;
+        $this->hourly = $hourly;
     }
 
     public function toArray(): array
@@ -122,8 +106,7 @@ class IndividualRates extends BaseModel
         return [
             'languageIds' => $this->languageIds,
             'userIds' => $this->userIds,
-            'fullTranslation' => $this->fullTranslation,
-            'proofread' => $this->proofread,
+            'hourly' => $this->hourly,
         ];
     }
 }

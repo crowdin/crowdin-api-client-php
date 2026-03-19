@@ -59,6 +59,10 @@ class ReportSettingsTemplateTest extends TestCase
                     ],
                 ],
             ],
+            'calculateInternalMatches' => true,
+            'includePreTranslatedStrings' => true,
+            'excludeApprovalsForEditedTranslations' => true,
+            'preTranslatedStringsCategorizationAdjustment' => true,
         ],
         'isPublic' => true,
         'isGlobal' => true,
@@ -74,7 +78,15 @@ class ReportSettingsTemplateTest extends TestCase
     public function testLoadData(): void
     {
         $this->reportSettingsTemplate = new ReportSettingsTemplate($this->data);
-        $this->checkData();
+        $this->assertEquals($this->data['id'], $this->reportSettingsTemplate->getId());
+        $this->assertEquals($this->data['name'], $this->reportSettingsTemplate->getName());
+        $this->assertEquals($this->data['currency'], $this->reportSettingsTemplate->getCurrency());
+        $this->assertEquals($this->data['unit'], $this->reportSettingsTemplate->getUnit());
+        $this->assertEquals($this->data['config'], $this->reportSettingsTemplate->getConfig()->toArray());
+        $this->assertEquals($this->data['isPublic'], $this->reportSettingsTemplate->getIsPublic());
+        $this->assertEquals($this->data['isGlobal'], $this->reportSettingsTemplate->getIsGlobal());
+        $this->assertEquals($this->data['createdAt'], $this->reportSettingsTemplate->getCreatedAt());
+        $this->assertEquals($this->data['updatedAt'], $this->reportSettingsTemplate->getUpdatedAt());
     }
 
     /**
@@ -94,19 +106,6 @@ class ReportSettingsTemplateTest extends TestCase
         $this->assertEquals($this->data['unit'], $this->reportSettingsTemplate->getUnit());
         $this->assertEquals($this->data['config'], $this->reportSettingsTemplate->getConfig()->toArray());
         $this->assertEquals($this->data['isPublic'], $this->reportSettingsTemplate->getIsPublic());
-    }
-
-    public function checkData(): void
-    {
-        $this->assertEquals($this->data['id'], $this->reportSettingsTemplate->getId());
-        $this->assertEquals($this->data['name'], $this->reportSettingsTemplate->getName());
-        $this->assertEquals($this->data['currency'], $this->reportSettingsTemplate->getCurrency());
-        $this->assertEquals($this->data['unit'], $this->reportSettingsTemplate->getUnit());
-        $this->assertEquals($this->data['config'], $this->reportSettingsTemplate->getConfig()->toArray());
-        $this->assertEquals($this->data['isPublic'], $this->reportSettingsTemplate->getIsPublic());
-        $this->assertEquals($this->data['isGlobal'], $this->reportSettingsTemplate->getIsGlobal());
-        $this->assertEquals($this->data['createdAt'], $this->reportSettingsTemplate->getCreatedAt());
-        $this->assertEquals($this->data['updatedAt'], $this->reportSettingsTemplate->getUpdatedAt());
     }
 
     public function testSetCurrencyException(): void

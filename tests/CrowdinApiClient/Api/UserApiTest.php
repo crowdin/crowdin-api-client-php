@@ -4,7 +4,10 @@ namespace CrowdinApiClient\Tests\Api;
 
 use CrowdinApiClient\Model\ProjectMember;
 use CrowdinApiClient\Model\ProjectMemberAddedStatistics;
+use CrowdinApiClient\Model\ReportSettingsTemplateConfig;
 use CrowdinApiClient\Model\User;
+use CrowdinApiClient\Model\UserReportSettingsTemplate;
+use CrowdinApiClient\ModelCollection;
 
 class UserApiTest extends AbstractTestApi
 {
@@ -264,7 +267,7 @@ class UserApiTest extends AbstractTestApi
             'name' => 'translator',
             'permissions' => [
                 'allLanguages' => true,
-                'languageAccess' => []
+                'languageAccess' => [],
             ],
         ];
 
@@ -285,7 +288,7 @@ class UserApiTest extends AbstractTestApi
                         'name' => 'translator',
                         'permissions' => [
                             'allLanguages' => true,
-                            'languageAccess' => []
+                            'languageAccess' => [],
                         ],
                     ],
                     'avatarUrl' => '',
@@ -309,5 +312,360 @@ class UserApiTest extends AbstractTestApi
         $this->mockRequestDelete('/projects/1/members/1');
 
         $this->crowdin->user->deleteMemberFromProject(1, 1);
+    }
+
+    public function testListReportsSettingsTemplates(): void
+    {
+        $this->mockRequestGet(
+            '/users/1/reports/settings-templates',
+            json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 1,
+                            'name' => 'Default template',
+                            'currency' => 'USD',
+                            'unit' => 'words',
+                            'config' => [
+                                'baseRates' => [
+                                    'fullTranslation' => 0.1,
+                                    'proofread' => 0.12,
+                                ],
+                                'individualRates' => [
+                                    [
+                                        'languageIds' => ['uk'],
+                                        'userIds' => [],
+                                        'fullTranslation' => 0.1,
+                                        'proofread' => 0.12,
+                                    ],
+                                ],
+                                'netRateSchemes' => [
+                                    'tmMatch' => [
+                                        [
+                                            'matchType' => '100',
+                                            'price' => 0.1,
+                                        ],
+                                    ],
+                                    'mtMatch' => [
+                                        [
+                                            'matchType' => '100-82',
+                                            'price' => 0.1,
+                                        ],
+                                    ],
+                                    'aiMatch' => [
+                                        [
+                                            'matchType' => '100-74',
+                                            'price' => 0.1,
+                                        ],
+                                    ],
+                                    'suggestionMatch' => [
+                                        [
+                                            'matchType' => 'perfect',
+                                            'price' => 0.1,
+                                        ],
+                                    ],
+                                ],
+                                'calculateInternalMatches' => false,
+                                'includePreTranslatedStrings' => false,
+                                'excludeApprovalsForEditedTranslations' => false,
+                                'preTranslatedStringsCategorizationAdjustment' => false,
+                            ],
+                            'createdAt' => '2019-09-23T11:26:54+00:00',
+                            'updatedAt' => '2019-09-23T11:26:54+00:00',
+                        ],
+                    ],
+                ],
+                'pagination' => [
+                    'offset' => 0,
+                    'limit' => 25,
+                ],
+            ])
+        );
+
+        $templates = $this->crowdin->user->listReportSettingsTemplates(1);
+
+        $this->assertInstanceOf(ModelCollection::class, $templates);
+        $this->assertCount(1, $templates);
+        $this->assertInstanceOf(UserReportSettingsTemplate::class, $templates[0]);
+        $this->assertEquals(1, $templates[0]->getId());
+        $this->assertEquals('Default template', $templates[0]->getName());
+        $this->assertEquals('USD', $templates[0]->getCurrency());
+        $this->assertEquals('words', $templates[0]->getUnit());
+        $this->assertInstanceOf(ReportSettingsTemplateConfig::class, $templates[0]->getConfig());
+    }
+
+    public function testCreateReportSettingsTemplate(): void
+    {
+        $this->mockRequestPost(
+            '/users/1/reports/settings-templates',
+            json_encode([
+                'name' => 'Default template',
+                'currency' => 'USD',
+                'unit' => 'words',
+                'config' => [
+                    'baseRates' => [
+                        'fullTranslation' => 0.1,
+                        'proofread' => 0.12,
+                    ],
+                    'individualRates' => [],
+                    'netRateSchemes' => [
+                        'tmMatch' => [],
+                        'mtMatch' => [],
+                        'aiMatch' => [],
+                        'suggestionMatch' => [],
+                    ],
+                ],
+            ]),
+            json_encode([
+                'data' => [
+                    'id' => 1,
+                    'name' => 'Default template',
+                    'currency' => 'USD',
+                    'unit' => 'words',
+                    'config' => [
+                        'baseRates' => [
+                            'fullTranslation' => 0.1,
+                            'proofread' => 0.12,
+                        ],
+                        'individualRates' => [],
+                        'netRateSchemes' => [
+                            'tmMatch' => [],
+                            'mtMatch' => [],
+                            'aiMatch' => [],
+                            'suggestionMatch' => [],
+                        ],
+                    ],
+                    'isPublic' => false,
+                    'isGlobal' => false,
+                    'createdAt' => '2019-09-23T11:26:54+00:00',
+                    'updatedAt' => null,
+                ],
+            ])
+        );
+
+        $params = [
+            'name' => 'Default template',
+            'currency' => 'USD',
+            'unit' => 'words',
+            'config' => [
+                'baseRates' => [
+                    'fullTranslation' => 0.1,
+                    'proofread' => 0.12,
+                ],
+                'individualRates' => [],
+                'netRateSchemes' => [
+                    'tmMatch' => [],
+                    'mtMatch' => [],
+                    'aiMatch' => [],
+                    'suggestionMatch' => [],
+                ],
+            ],
+        ];
+
+        $template = $this->crowdin->user->createReportSettingsTemplate(1, $params);
+
+        $this->assertInstanceOf(UserReportSettingsTemplate::class, $template);
+        $this->assertEquals(1, $template->getId());
+        $this->assertEquals('Default template', $template->getName());
+        $this->assertEquals('USD', $template->getCurrency());
+    }
+
+    public function testGetReportSettingsTemplate(): void
+    {
+        $this->mockRequestGet(
+            '/users/1/reports/settings-templates/1',
+            json_encode([
+                'data' => [
+                    'id' => 1,
+                    'name' => 'Default template',
+                    'currency' => 'USD',
+                    'unit' => 'words',
+                    'config' => [
+                        'baseRates' => [
+                            'fullTranslation' => 0.1,
+                            'proofread' => 0.12,
+                        ],
+                        'individualRates' => [
+                            [
+                                'languageIds' => ['uk'],
+                                'userIds' => [],
+                                'fullTranslation' => 0.1,
+                                'proofread' => 0.12,
+                            ],
+                        ],
+                        'netRateSchemes' => [
+                            'tmMatch' => [
+                                [
+                                    'matchType' => '100',
+                                    'price' => 0.1,
+                                ],
+                            ],
+                            'mtMatch' => [
+                                [
+                                    'matchType' => '100-82',
+                                    'price' => 0.1,
+                                ],
+                            ],
+                            'aiMatch' => [
+                                [
+                                    'matchType' => '100-74',
+                                    'price' => 0.1,
+                                ],
+                            ],
+                            'suggestionMatch' => [
+                                [
+                                    'matchType' => 'perfect',
+                                    'price' => 0.1,
+                                ],
+                            ],
+                        ],
+                        'calculateInternalMatches' => false,
+                        'includePreTranslatedStrings' => false,
+                        'excludeApprovalsForEditedTranslations' => false,
+                        'preTranslatedStringsCategorizationAdjustment' => false,
+                    ],
+                    'createdAt' => '2019-09-23T11:26:54+00:00',
+                    'updatedAt' => '2019-09-23T11:26:54+00:00',
+                ],
+            ])
+        );
+
+        $template = $this->crowdin->user->getReportSettingsTemplate(1, 1);
+
+        $this->assertInstanceOf(UserReportSettingsTemplate::class, $template);
+        $this->assertEquals(1, $template->getId());
+        $this->assertEquals('Default template', $template->getName());
+        $this->assertEquals('USD', $template->getCurrency());
+        $this->assertInstanceOf(ReportSettingsTemplateConfig::class, $template->getConfig());
+    }
+
+    public function testDeleteReportSettingsTemplate(): void
+    {
+        $this->mockRequestDelete('/users/1/reports/settings-templates/1');
+
+        $this->crowdin->user->deleteReportSettingsTemplate(1, 1);
+    }
+
+    public function testUpdateReportSettingsTemplate(): void
+    {
+        $this->mockRequestPatch(
+            '/users/1/reports/settings-templates/1',
+            json_encode([
+                'data' => [
+                    'id' => 1,
+                    'name' => 'Updated template name',
+                    'currency' => 'EUR',
+                    'unit' => 'words',
+                    'config' => [
+                        'baseRates' => [
+                            'fullTranslation' => 0.1,
+                            'proofread' => 0.12,
+                        ],
+                        'individualRates' => [
+                            [
+                                'languageIds' => ['uk'],
+                                'userIds' => [],
+                                'fullTranslation' => 0.1,
+                                'proofread' => 0.12,
+                            ],
+                        ],
+                        'netRateSchemes' => [
+                            'tmMatch' => [
+                                [
+                                    'matchType' => '100',
+                                    'price' => 0.1,
+                                ],
+                            ],
+                            'mtMatch' => [
+                                [
+                                    'matchType' => '100-82',
+                                    'price' => 0.1,
+                                ],
+                            ],
+                            'aiMatch' => [
+                                [
+                                    'matchType' => '100-74',
+                                    'price' => 0.1,
+                                ],
+                            ],
+                            'suggestionMatch' => [
+                                [
+                                    'matchType' => 'perfect',
+                                    'price' => 0.1,
+                                ],
+                            ],
+                        ],
+                        'calculateInternalMatches' => false,
+                        'includePreTranslatedStrings' => false,
+                        'excludeApprovalsForEditedTranslations' => false,
+                        'preTranslatedStringsCategorizationAdjustment' => false,
+                    ],
+                    'createdAt' => '2019-09-23T11:26:54+00:00',
+                    'updatedAt' => '2019-09-23T11:26:54+00:00',
+                ],
+            ])
+        );
+
+        $template = new UserReportSettingsTemplate([
+            'id' => 1,
+            'name' => 'Default template',
+            'currency' => 'USD',
+            'unit' => 'words',
+            'config' => [
+                'baseRates' => [
+                    'fullTranslation' => 0.1,
+                    'proofread' => 0.12,
+                ],
+                'individualRates' => [
+                    [
+                        'languageIds' => ['uk'],
+                        'userIds' => [],
+                        'fullTranslation' => 0.1,
+                        'proofread' => 0.12,
+                    ],
+                ],
+                'netRateSchemes' => [
+                    'tmMatch' => [
+                        [
+                            'matchType' => '100',
+                            'price' => 0.1,
+                        ],
+                    ],
+                    'mtMatch' => [
+                        [
+                            'matchType' => '100-82',
+                            'price' => 0.1,
+                        ],
+                    ],
+                    'aiMatch' => [
+                        [
+                            'matchType' => '100-74',
+                            'price' => 0.1,
+                        ],
+                    ],
+                    'suggestionMatch' => [
+                        [
+                            'matchType' => 'perfect',
+                            'price' => 0.1,
+                        ],
+                    ],
+                ],
+                'calculateInternalMatches' => false,
+                'includePreTranslatedStrings' => false,
+                'excludeApprovalsForEditedTranslations' => false,
+                'preTranslatedStringsCategorizationAdjustment' => false,
+            ],
+            'createdAt' => '2019-09-23T11:26:54+00:00',
+            'updatedAt' => '2019-09-23T11:26:54+00:00',
+        ]);
+        $template->setName('Updated template name');
+        $template->setCurrency('EUR');
+
+        $result = $this->crowdin->user->updateReportSettingsTemplate(1, $template);
+
+        $this->assertInstanceOf(UserReportSettingsTemplate::class, $result);
+        $this->assertEquals(1, $result->getId());
+        $this->assertEquals('Updated template name', $result->getName());
+        $this->assertEquals('EUR', $result->getCurrency());
     }
 }

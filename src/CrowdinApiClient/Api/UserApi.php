@@ -5,6 +5,7 @@ namespace CrowdinApiClient\Api;
 use CrowdinApiClient\Model\ProjectMember;
 use CrowdinApiClient\Model\ProjectMemberAddedStatistics;
 use CrowdinApiClient\Model\User;
+use CrowdinApiClient\Model\UserReportSettingsTemplate;
 use CrowdinApiClient\ModelCollection;
 
 /**
@@ -137,5 +138,96 @@ class UserApi extends AbstractApi
     public function deleteMemberFromProject(int $projectId, int $memberId): void
     {
         $this->_delete(sprintf('projects/%d/members/%s', $projectId, $memberId));
+    }
+
+    /**
+     * List User Report Settings Templates
+     * @link https://developer.crowdin.com/api/v2/#operation/api.users.reports.settings-templates.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.users.reports.settings-templates.getMany API Documentation Enterprise
+     *
+     * @param int $userId
+     * @param array $params
+     * integer $params[limit]<br>
+     * integer $params[offset]
+     * @return ModelCollection
+     */
+    public function listReportSettingsTemplates(int $userId, array $params = []): ModelCollection
+    {
+        return $this->_list(
+            sprintf('users/%d/reports/settings-templates', $userId),
+            UserReportSettingsTemplate::class,
+            $params
+        );
+    }
+
+    /**
+     * Create User Report Settings Template
+     * @link https://developer.crowdin.com/api/v2/#operation/api.users.reports.settings-templates.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.users.reports.settings-templates.post API Documentation Enterprise
+     *
+     * @param int $userId
+     * @param array $data
+     * string $data[name] required<br>
+     * string $data[currency] required<br>
+     * string $data[unit] required<br>
+     * array $data[config] required
+     * @return UserReportSettingsTemplate|null
+     */
+    public function createReportSettingsTemplate(int $userId, array $data): ?UserReportSettingsTemplate
+    {
+        return $this->_create(
+            sprintf('users/%d/reports/settings-templates', $userId),
+            UserReportSettingsTemplate::class,
+            $data
+        );
+    }
+
+    /**
+     * Get User Report Settings Template
+     * @link https://developer.crowdin.com/api/v2/#operation/api.users.reports.settings-templates.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.users.reports.settings-templates.get API Documentation Enterprise
+     *
+     * @param int $userId
+     * @param int $reportSettingsTemplateId
+     * @return UserReportSettingsTemplate|null
+     */
+    public function getReportSettingsTemplate(int $userId, int $reportSettingsTemplateId): ?UserReportSettingsTemplate
+    {
+        return $this->_get(
+            sprintf('users/%d/reports/settings-templates/%d', $userId, $reportSettingsTemplateId),
+            UserReportSettingsTemplate::class
+        );
+    }
+
+    /**
+     * Delete User Report Settings Template
+     * @link https://developer.crowdin.com/api/v2/#operation/api.users.reports.settings-templates.delete API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.users.reports.settings-templates.delete API Documentation Enterprise
+     *
+     * @param int $userId
+     * @param int $reportSettingsTemplateId
+     */
+    public function deleteReportSettingsTemplate(int $userId, int $reportSettingsTemplateId): void
+    {
+        $this->_delete(sprintf('users/%d/reports/settings-templates/%d', $userId, $reportSettingsTemplateId));
+    }
+
+    /**
+     * Update User Report Settings Template
+     * @link https://developer.crowdin.com/api/v2/#operation/api.users.reports.settings-templates.patch API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.users.reports.settings-templates.patch API Documentation Enterprise
+     *
+     * @param int $userId
+     * @param UserReportSettingsTemplate $reportSettingsTemplate
+     * @return UserReportSettingsTemplate|null
+     */
+    public function updateReportSettingsTemplate(
+        int $userId,
+        UserReportSettingsTemplate $reportSettingsTemplate
+    ): ?UserReportSettingsTemplate {
+        return $this->_update(
+            sprintf('users/%d/reports/settings-templates/%d', $userId, $reportSettingsTemplate->getId()),
+            $reportSettingsTemplate
+        );
     }
 }
