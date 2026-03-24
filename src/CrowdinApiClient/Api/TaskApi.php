@@ -19,15 +19,16 @@ use CrowdinApiClient\ModelCollection;
 class TaskApi extends AbstractApi
 {
     /**
-     * List Tasks
+     * List Project Tasks
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.getMany API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.getMany API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $params
-     * integer $params[limit]  [ 1 .. 500 ] Default: 25<br>
-     * integer $params[offset]  >= 0 Default: 0<br>
-     * string $params[status]  Enum: "todo" "in_progress" "done" "closed" Example: status=done<br>
+     * string $params[orderBy]<br>
+     * integer $params[limit] [1 .. 500] Default: 25<br>
+     * integer $params[offset] >= 0 Default: 0<br>
+     * string $params[status] Enum: "todo" "in_progress" "done" "closed"<br>
      * integer $params[assigneeId]
      *
      * @return ModelCollection
@@ -39,7 +40,7 @@ class TaskApi extends AbstractApi
     }
 
     /**
-     * Get Task
+     * Get Project Task
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.get API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.get API Documentation Enterprise
      *
@@ -54,7 +55,7 @@ class TaskApi extends AbstractApi
     }
 
     /**
-     * Add Task
+     * Add Project Task
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.post API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.post API Documentation Enterprise
      *
@@ -69,7 +70,7 @@ class TaskApi extends AbstractApi
     }
 
     /**
-     * Edit Task
+     * Edit Project Task
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.patch API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.patch API Documentation Enterprise
      *
@@ -83,7 +84,7 @@ class TaskApi extends AbstractApi
     }
 
     /**
-     * Delete Task
+     * Delete Project Task
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.delete API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.delete API Documentation Enterprise
      *
@@ -98,7 +99,7 @@ class TaskApi extends AbstractApi
     }
 
     /**
-     * Export Task Strings
+     * Export Project Task Strings
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.export.get API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.export.get API Documentation Enterprise
      *
@@ -113,20 +114,52 @@ class TaskApi extends AbstractApi
     }
 
     /**
+     * List Tasks
+     * @link https://developer.crowdin.com/api/v2/#operation/api.users.tasks.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.users.tasks.getMany API Documentation Enterprise
+     *
+     * @param int $userId
+     * @param array $params
+     * string $params[orderBy]<br>
+     * integer $params[limit] [1 .. 500] Default: 25<br>
+     * integer $params[offset] >= 0 Default: 0<br>
+     * string $params[status] Enum: "todo" "in_progress" "done" "closed"<br>
+     * string $params[type] Enum: 0 1 2 3<br>
+     * string $params[projectIds]<br>
+     * string $params[assigneeIds]<br>
+     * string $params[creatorIds]<br>
+     * string $params[targetLanguageIds]<br>
+     * string $params[sourceLanguageIds]<br>
+     * string $params[createdAtFrom]<br>
+     * string $params[createdAtTo]<br>
+     * string $params[deadlineFrom]<br>
+     * string $params[deadlineTo]
+     *
+     * @return ModelCollection|null
+     */
+    public function listTasks(int $userId, array $params = []): ?ModelCollection
+    {
+        $path = sprintf('users/%d/tasks', $userId);
+        return $this->_list($path, Task::class, $params);
+    }
+
+    /**
      * List User Tasks
+     * @link https://developer.crowdin.com/api/v2/#operation/api.user.tasks.getMany API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.user.tasks.getMany API Documentation Enterprise
      *
      * @param array $params
-     * integer $params[limit]  [ 1 .. 500 ] Default: 25<br>
-     * integer $params[offset]  >= 0 Default: 25<br>
-     * string $params[status]  Enum: "todo" "in_progress" "done" "closed" Example: status=done<br>
-     * string $params[isArchived]  Default: 0 Default: 0 Example: isArchived=1
+     * string $params[orderBy]<br>
+     * integer $params[limit] [1 .. 500] Default: 25<br>
+     * integer $params[offset] >= 0 Default: 0<br>
+     * string $params[status] Enum: "todo" "in_progress" "done" "closed"<br>
+     * string $params[isArchived] Enum: "0" "1"
      *
-     * @return ModelCollection
+     * @return ModelCollection|null
      */
     public function listUserTasks(array $params = []): ?ModelCollection
     {
-        return  $this->_list('user/tasks', Task::class, $params);
+        return $this->_list('user/tasks', Task::class, $params);
     }
 
     /**
@@ -148,21 +181,21 @@ class TaskApi extends AbstractApi
                 'op' => 'replace',
                 'path' => '/isArchived',
                 'value' => $isArchived,
-            ]
+            ],
         ];
 
         return $this->_patch($path, Task::class, $body, ['projectId' => $projectId]);
     }
 
     /**
-     * List Task Settings template
+     * List Project Task Settings Templates
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.settings-templates.getMany API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.settings-templates.getMany API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $params
-     * integer $params[limit]  [ 1 .. 500 ] Default: 25<br>
-     * integer $params[offset]  >= 0 Default: 0<br>
+     * integer $params[limit] [1 .. 500] Default: 25<br>
+     * integer $params[offset] >= 0 Default: 0<br>
      *
      * @return ModelCollection
      */
@@ -173,7 +206,7 @@ class TaskApi extends AbstractApi
     }
 
     /**
-     * Get Task Settings template
+     * Get Task Settings Template
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.settings-templates.get API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.settings-templates.get API Documentation Enterprise
      *
@@ -188,7 +221,7 @@ class TaskApi extends AbstractApi
     }
 
     /**
-     * Add Task Settings Template
+     * Add Project Task Settings Template
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.settings-templates.post API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.settings-templates.post API Documentation Enterprise
      *
@@ -205,7 +238,7 @@ class TaskApi extends AbstractApi
     }
 
     /**
-     * Delete Task Settings Template
+     * Delete Project Task Settings Template
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.settings-templates.delete API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.settings-templates.delete API Documentation Enterprise
      *
@@ -220,7 +253,7 @@ class TaskApi extends AbstractApi
     }
 
     /**
-     * Update Task Settings Template
+     * Update Project Task Settings Template
      *
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.settings-templates.patch API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.settings-templates.patch API Documentation Enterprise
@@ -229,8 +262,10 @@ class TaskApi extends AbstractApi
      * @param TaskSettingsTemplate $taskSettingsTemplate
      * @return TaskSettingsTemplate|null
      */
-    public function updateSettingsTemplate(int $projectId, TaskSettingsTemplate $taskSettingsTemplate): ?TaskSettingsTemplate
-    {
+    public function updateSettingsTemplate(
+        int $projectId,
+        TaskSettingsTemplate $taskSettingsTemplate
+    ): ?TaskSettingsTemplate {
         $path = sprintf('projects/%d/tasks/settings-templates/%d', $projectId, $taskSettingsTemplate->getId());
         return $this->_update($path, $taskSettingsTemplate);
     }

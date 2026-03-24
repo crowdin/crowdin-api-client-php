@@ -7,11 +7,6 @@ use PHPUnit\Framework\TestCase;
 
 class TaskCommentTest extends TestCase
 {
-    /**
-     * @var TaskComment
-     */
-    public $taskComment;
-
     public $data = [
         'id' => 1233,
         'userId' => 5,
@@ -24,28 +19,27 @@ class TaskCommentTest extends TestCase
 
     public function testLoadData()
     {
-        $this->taskComment = new TaskComment($this->data);
-        $this->checkData();
+        $taskComment = new TaskComment($this->data);
+
+        $this->assertEquals($this->data['id'], $taskComment->getId());
+        $this->assertEquals($this->data['userId'], $taskComment->getUserId());
+        $this->assertEquals($this->data['taskId'], $taskComment->getTaskId());
+        $this->assertEquals($this->data['text'], $taskComment->getText());
+        $this->assertEquals($this->data['timeSpent'], $taskComment->getTimeSpent());
+        $this->assertEquals($this->data['createdAt'], $taskComment->getCreatedAt());
+        $this->assertEquals($this->data['updatedAt'], $taskComment->getUpdatedAt());
     }
 
     public function testSetData()
     {
-        $this->taskComment = new TaskComment();
-        $this->taskComment->setText($this->data['text']);
-        $this->taskComment->setTimeSpent($this->data['timeSpent']);
+        $text = 'New task comment text';
+        $timeSpent = 7200;
 
-        $this->assertEquals($this->data['text'], $this->taskComment->getText());
-        $this->assertEquals($this->data['timeSpent'], $this->taskComment->getTimeSpent());
-    }
+        $taskComment = new TaskComment();
+        $taskComment->setText($text);
+        $taskComment->setTimeSpent($timeSpent);
 
-    public function checkData()
-    {
-        $this->assertEquals($this->data['id'], $this->taskComment->getId());
-        $this->assertEquals($this->data['userId'], $this->taskComment->getUserId());
-        $this->assertEquals($this->data['taskId'], $this->taskComment->getTaskId());
-        $this->assertEquals($this->data['text'], $this->taskComment->getText());
-        $this->assertEquals($this->data['timeSpent'], $this->taskComment->getTimeSpent());
-        $this->assertEquals($this->data['createdAt'], $this->taskComment->getCreatedAt());
-        $this->assertEquals($this->data['updatedAt'], $this->taskComment->getUpdatedAt());
+        $this->assertEquals($text, $taskComment->getText());
+        $this->assertEquals($timeSpent, $taskComment->getTimeSpent());
     }
 }

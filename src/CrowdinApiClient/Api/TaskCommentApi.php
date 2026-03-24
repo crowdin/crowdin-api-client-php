@@ -13,7 +13,7 @@ use CrowdinApiClient\ModelCollection;
 class TaskCommentApi extends AbstractApi
 {
     /**
-     * List Task Comments
+     * List Project Task Comments
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.comments.getMany API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.comments.getMany API Documentation Enterprise
      *
@@ -32,7 +32,7 @@ class TaskCommentApi extends AbstractApi
     }
 
     /**
-     * Get Task Comment
+     * Get Project Task Comment
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.comments.get API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.comments.get API Documentation Enterprise
      *
@@ -48,7 +48,7 @@ class TaskCommentApi extends AbstractApi
     }
 
     /**
-     * Add Task Comment
+     * Add Project Task Comment
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.comments.post API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.comments.post API Documentation Enterprise
      *
@@ -67,7 +67,7 @@ class TaskCommentApi extends AbstractApi
     }
 
     /**
-     * Edit Task Comment
+     * Edit Project Task Comment
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.comments.patch API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.comments.patch API Documentation Enterprise
      *
@@ -83,7 +83,7 @@ class TaskCommentApi extends AbstractApi
     }
 
     /**
-     * Delete Task Comment
+     * Delete Project Task Comment
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.comments.delete API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.comments.delete API Documentation Enterprise
      *
