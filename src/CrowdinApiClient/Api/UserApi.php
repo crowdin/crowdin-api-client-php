@@ -2,8 +2,10 @@
 
 namespace CrowdinApiClient\Api;
 
+use CrowdinApiClient\Model\HourlyUserReportSettingsTemplate;
 use CrowdinApiClient\Model\ProjectMember;
 use CrowdinApiClient\Model\ProjectMemberAddedStatistics;
+use CrowdinApiClient\Model\Report;
 use CrowdinApiClient\Model\User;
 use CrowdinApiClient\Model\UserReportSettingsTemplate;
 use CrowdinApiClient\ModelCollection;
@@ -153,11 +155,22 @@ class UserApi extends AbstractApi
      */
     public function listReportSettingsTemplates(int $userId, array $params = []): ModelCollection
     {
-        return $this->_list(
-            sprintf('users/%d/reports/settings-templates', $userId),
-            UserReportSettingsTemplate::class,
-            $params
-        );
+        $options = [];
+        if ($params !== []) {
+            $options['params'] = $params;
+        }
+
+        $path = sprintf('users/%d/reports/settings-templates', $userId);
+        $response = $this->client->apiRequest('get', $path, null, $options);
+
+        $modelCollection = new ModelCollection();
+        $modelCollection->setPagination($response['pagination']);
+
+        foreach ($response['data'] as $item) {
+            $modelCollection->add($this->makeUserReportSettingsTemplate($item['data']));
+        }
+
+        return $modelCollection;
     }
 
     /**
@@ -171,15 +184,15 @@ class UserApi extends AbstractApi
      * string $data[currency] required<br>
      * string $data[unit] required<br>
      * array $data[config] required
-     * @return UserReportSettingsTemplate|null
+     * @return UserReportSettingsTemplate|HourlyUserReportSettingsTemplate|null
      */
-    public function createReportSettingsTemplate(int $userId, array $data): ?UserReportSettingsTemplate
+    public function createReportSettingsTemplate(int $userId, array $data)
     {
-        return $this->_create(
-            sprintf('users/%d/reports/settings-templates', $userId),
-            UserReportSettingsTemplate::class,
-            $data
-        );
+        $path = sprintf('users/%d/reports/settings-templates', $userId);
+        $options = ['body' => json_encode($data), 'headers' => $this->getHeaders()];
+        $response = $this->client->apiRequest('post', $path, null, $options);
+
+        return $this->makeUserReportSettingsTemplate($response['data']);
     }
 
     /**
@@ -189,14 +202,14 @@ class UserApi extends AbstractApi
      *
      * @param int $userId
      * @param int $reportSettingsTemplateId
-     * @return UserReportSettingsTemplate|null
+     * @return UserReportSettingsTemplate|HourlyUserReportSettingsTemplate|null
      */
-    public function getReportSettingsTemplate(int $userId, int $reportSettingsTemplateId): ?UserReportSettingsTemplate
+    public function getReportSettingsTemplate(int $userId, int $reportSettingsTemplateId)
     {
-        return $this->_get(
-            sprintf('users/%d/reports/settings-templates/%d', $userId, $reportSettingsTemplateId),
-            UserReportSettingsTemplate::class
-        );
+        $path = sprintf('users/%d/reports/settings-templates/%d', $userId, $reportSettingsTemplateId);
+        $response = $this->client->apiRequest('get', $path);
+
+        return $this->makeUserReportSettingsTemplate($response['data']);
     }
 
     /**
@@ -218,16 +231,26 @@ class UserApi extends AbstractApi
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.users.reports.settings-templates.patch API Documentation Enterprise
      *
      * @param int $userId
-     * @param UserReportSettingsTemplate $reportSettingsTemplate
-     * @return UserReportSettingsTemplate|null
+     * @param UserReportSettingsTemplate|HourlyUserReportSettingsTemplate $reportSettingsTemplate
+     * @return UserReportSettingsTemplate|HourlyUserReportSettingsTemplate|null
      */
-    public function updateReportSettingsTemplate(
-        int $userId,
-        UserReportSettingsTemplate $reportSettingsTemplate
-    ): ?UserReportSettingsTemplate {
+    public function updateReportSettingsTemplate(int $userId, $reportSettingsTemplate)
+    {
         return $this->_update(
             sprintf('users/%d/reports/settings-templates/%d', $userId, $reportSettingsTemplate->getId()),
             $reportSettingsTemplate
         );
+    }
+
+    /**
+     * @return HourlyUserReportSettingsTemplate|UserReportSettingsTemplate
+     */
+    private function makeUserReportSettingsTemplate(array $data)
+    {
+        if (($data['unit'] ?? '') === Report::UNIT_HOURS) {
+            return new HourlyUserReportSettingsTemplate($data);
+        }
+
+        return new UserReportSettingsTemplate($data);
     }
 }

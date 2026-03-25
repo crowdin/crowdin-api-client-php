@@ -61,7 +61,7 @@ class HourlyReportSettingsTemplateConfig extends BaseModel
         foreach ($individualRates as $individualRate) {
             if (!$individualRate instanceof HourlyIndividualRates) {
                 throw new InvalidArgumentException(
-                    'Argument "individualRates" must contain only IndividualRates objects'
+                    'Argument "individualRates" must contain only HourlyIndividualRates objects'
                 );
             }
         }

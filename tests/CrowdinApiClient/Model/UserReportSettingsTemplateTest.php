@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace CrowdinApiClient\Tests\Model;
 
-use CrowdinApiClient\Model\HourlyReportSettingsTemplateConfig;
 use CrowdinApiClient\Model\ReportSettingsTemplateConfig;
 use CrowdinApiClient\Model\UserReportSettingsTemplate;
 use InvalidArgumentException;
@@ -69,54 +68,18 @@ class UserReportSettingsTemplateTest extends TestCase
         'updatedAt' => '2025-01-23T15:35:49+00:00',
     ];
 
-    public function userReportSettingsTemplateDataProvider(): array
+    public function testLoadData(): void
     {
-        return [
-            'userReportSettingsTemplateForPostEditing' => [
-                'data' => $this->data,
-                'expectedConfigClass' => ReportSettingsTemplateConfig::class,
-            ],
-            'userReportSettingsTemplateForHours' => [
-                'data' => [
-                    'id' => 12,
-                    'name' => 'Default template',
-                    'currency' => 'UAH',
-                    'unit' => 'hours',
-                    'config' => [
-                        'baseRates' => [
-                            'hourly' => 0.1,
-                        ],
-                        'individualRates' => [
-                            [
-                                'languageIds' => ['uk'],
-                                'userIds' => [8],
-                                'hourly' => 0.1,
-                            ],
-                        ],
-                    ],
-                    'createdAt' => '2025-01-23T15:23:11+00:00',
-                    'updatedAt' => '2025-01-23T15:35:49+00:00',
-                ],
-                'expectedConfigClass' => HourlyReportSettingsTemplateConfig::class,
-            ],
-        ];
-    }
+        $template = new UserReportSettingsTemplate($this->data);
 
-    /**
-     * @dataProvider userReportSettingsTemplateDataProvider
-     */
-    public function testLoadData(array $data, string $expectedConfigClass): void
-    {
-        $template = new UserReportSettingsTemplate($data);
-
-        $this->assertEquals($data['id'], $template->getId());
-        $this->assertEquals($data['name'], $template->getName());
-        $this->assertEquals($data['currency'], $template->getCurrency());
-        $this->assertEquals($data['unit'], $template->getUnit());
-        $this->assertInstanceOf($expectedConfigClass, $template->getConfig());
-        $this->assertEquals($data['config'], $template->getConfig()->toArray());
-        $this->assertEquals($data['createdAt'], $template->getCreatedAt());
-        $this->assertEquals($data['updatedAt'], $template->getUpdatedAt());
+        $this->assertEquals($this->data['id'], $template->getId());
+        $this->assertEquals($this->data['name'], $template->getName());
+        $this->assertEquals($this->data['currency'], $template->getCurrency());
+        $this->assertEquals($this->data['unit'], $template->getUnit());
+        $this->assertInstanceOf(ReportSettingsTemplateConfig::class, $template->getConfig());
+        $this->assertEquals($this->data['config'], $template->getConfig()->toArray());
+        $this->assertEquals($this->data['createdAt'], $template->getCreatedAt());
+        $this->assertEquals($this->data['updatedAt'], $template->getUpdatedAt());
     }
 
     public function testSetData(): void

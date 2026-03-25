@@ -46,11 +46,9 @@ class HourlyReportSettingsTemplateConfigTest extends TestCase
         $baseRates = new HourlyBaseRates(['hourly' => 0.2]);
         $individualRates = [
             new HourlyIndividualRates([
-                [
-                    'languageIds' => ['uk', 'en', 'jp'],
-                    'userIds' => [8],
-                    'hourly' => 0.3,
-                ],
+                'languageIds' => ['uk', 'en', 'jp'],
+                'userIds' => [8],
+                'hourly' => 0.3,
             ]),
         ];
 
@@ -83,7 +81,7 @@ class HourlyReportSettingsTemplateConfigTest extends TestCase
                 'individualRates' => [
                     [],
                 ],
-                'exceptionMessage' => 'Argument "individualRates" must contain only IndividualRates objects',
+                'exceptionMessage' => 'Argument "individualRates" must contain only HourlyIndividualRates objects',
             ],
         ];
     }

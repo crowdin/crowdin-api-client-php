@@ -70,7 +70,7 @@ class HourlyIndividualRatesTest extends TestCase
     /**
      * @dataProvider languageIdsExceptionDataProvider
      */
-    public function testSetLanguageIdsEmptyThrowsException(array $languageIds, string $exceptionMessage): void
+    public function testSetLanguageIdsException(array $languageIds, string $exceptionMessage): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage($exceptionMessage);
