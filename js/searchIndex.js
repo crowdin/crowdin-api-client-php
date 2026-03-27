@@ -311,6 +311,36 @@ Search.appendIndex(
             "summary": "Generate\u0020Group\u0020Report",
             "url": "classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_report"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\GroupApi\u003A\u003AlistManagers\u0028\u0029",
+            "name": "listManagers",
+            "summary": "List\u0020Group\u0020Managers",
+            "url": "classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_listManagers"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\GroupApi\u003A\u003AupdateManagers\u0028\u0029",
+            "name": "updateManagers",
+            "summary": "Add\u0020or\u0020Remove\u0020Group\u0020Managers",
+            "url": "classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_updateManagers"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\GroupApi\u003A\u003AgetManager\u0028\u0029",
+            "name": "getManager",
+            "summary": "Get\u0020Group\u0020Manager",
+            "url": "classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_getManager"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\GroupApi\u003A\u003AlistTeams\u0028\u0029",
+            "name": "listTeams",
+            "summary": "List\u0020Group\u0020Teams",
+            "url": "classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_listTeams"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\GroupApi\u003A\u003AupdateTeams\u0028\u0029",
+            "name": "updateTeams",
+            "summary": "Add\u0020or\u0020Remove\u0020Group\u0020Teams",
+            "url": "classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_updateTeams"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\GroupApi\u003A\u003AgetTeam\u0028\u0029",
+            "name": "getTeam",
+            "summary": "Get\u0020Group\u0020Team",
+            "url": "classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_getTeam"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Api\\Enterprise\\MachineTranslationEngineApi",
             "name": "MachineTranslationEngineApi",
             "summary": "Machine\u0020Translation\u0020Engines\u0020\u0028MTE\u0029\u0020are\u0020the\u0020sources\u0020for\u0020pre\u002Dtranslations.",
@@ -1411,6 +1441,36 @@ Search.appendIndex(
             "summary": "Translation\u0020Batch\u0020Operations",
             "url": "classes/CrowdinApiClient-Api-StringTranslationApi.html#method_translationsBatchOperations"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\StyleGuideApi",
+            "name": "StyleGuideApi",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Api-StyleGuideApi.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\StyleGuideApi\u003A\u003Alist\u0028\u0029",
+            "name": "list",
+            "summary": "List\u0020Style\u0020Guides",
+            "url": "classes/CrowdinApiClient-Api-StyleGuideApi.html#method_list"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\StyleGuideApi\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "Add\u0020Style\u0020Guide",
+            "url": "classes/CrowdinApiClient-Api-StyleGuideApi.html#method_create"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\StyleGuideApi\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "Get\u0020Style\u0020Guide",
+            "url": "classes/CrowdinApiClient-Api-StyleGuideApi.html#method_get"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\StyleGuideApi\u003A\u003Adelete\u0028\u0029",
+            "name": "delete",
+            "summary": "Delete\u0020Style\u0020Guide",
+            "url": "classes/CrowdinApiClient-Api-StyleGuideApi.html#method_delete"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\StyleGuideApi\u003A\u003Aupdate\u0028\u0029",
+            "name": "update",
+            "summary": "Edit\u0020Style\u0020Guide",
+            "url": "classes/CrowdinApiClient-Api-StyleGuideApi.html#method_update"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Api\\TaskApi",
             "name": "TaskApi",
             "summary": "Create\u0020and\u0020assign\u0020tasks\u0020to\u0020get\u0020files\u0020translated\u0020or\u0020proofread\u0020by\u0020specific\u0020people.",
@@ -1418,33 +1478,38 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\TaskApi\u003A\u003Alist\u0028\u0029",
             "name": "list",
-            "summary": "List\u0020Tasks",
+            "summary": "List\u0020Project\u0020Tasks",
             "url": "classes/CrowdinApiClient-Api-TaskApi.html#method_list"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\TaskApi\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Get\u0020Task",
+            "summary": "Get\u0020Project\u0020Task",
             "url": "classes/CrowdinApiClient-Api-TaskApi.html#method_get"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\TaskApi\u003A\u003Acreate\u0028\u0029",
             "name": "create",
-            "summary": "Add\u0020Task",
+            "summary": "Add\u0020Project\u0020Task",
             "url": "classes/CrowdinApiClient-Api-TaskApi.html#method_create"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\TaskApi\u003A\u003Aupdate\u0028\u0029",
             "name": "update",
-            "summary": "Edit\u0020Task",
+            "summary": "Edit\u0020Project\u0020Task",
             "url": "classes/CrowdinApiClient-Api-TaskApi.html#method_update"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\TaskApi\u003A\u003Adelete\u0028\u0029",
             "name": "delete",
-            "summary": "Delete\u0020Task",
+            "summary": "Delete\u0020Project\u0020Task",
             "url": "classes/CrowdinApiClient-Api-TaskApi.html#method_delete"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\TaskApi\u003A\u003AexportStrings\u0028\u0029",
             "name": "exportStrings",
-            "summary": "Export\u0020Task\u0020Strings",
+            "summary": "Export\u0020Project\u0020Task\u0020Strings",
             "url": "classes/CrowdinApiClient-Api-TaskApi.html#method_exportStrings"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\TaskApi\u003A\u003AlistTasks\u0028\u0029",
+            "name": "listTasks",
+            "summary": "List\u0020Tasks",
+            "url": "classes/CrowdinApiClient-Api-TaskApi.html#method_listTasks"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\TaskApi\u003A\u003AlistUserTasks\u0028\u0029",
             "name": "listUserTasks",
@@ -1458,27 +1523,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\TaskApi\u003A\u003AlistSettingsTemplates\u0028\u0029",
             "name": "listSettingsTemplates",
-            "summary": "List\u0020Task\u0020Settings\u0020template",
+            "summary": "List\u0020Project\u0020Task\u0020Settings\u0020Templates",
             "url": "classes/CrowdinApiClient-Api-TaskApi.html#method_listSettingsTemplates"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\TaskApi\u003A\u003AgetSettingsTemplate\u0028\u0029",
             "name": "getSettingsTemplate",
-            "summary": "Get\u0020Task\u0020Settings\u0020template",
+            "summary": "Get\u0020Task\u0020Settings\u0020Template",
             "url": "classes/CrowdinApiClient-Api-TaskApi.html#method_getSettingsTemplate"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\TaskApi\u003A\u003AaddSettingsTemplate\u0028\u0029",
             "name": "addSettingsTemplate",
-            "summary": "Add\u0020Task\u0020Settings\u0020Template",
+            "summary": "Add\u0020Project\u0020Task\u0020Settings\u0020Template",
             "url": "classes/CrowdinApiClient-Api-TaskApi.html#method_addSettingsTemplate"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\TaskApi\u003A\u003AdeleteSettingsTemplate\u0028\u0029",
             "name": "deleteSettingsTemplate",
-            "summary": "Delete\u0020Task\u0020Settings\u0020Template",
+            "summary": "Delete\u0020Project\u0020Task\u0020Settings\u0020Template",
             "url": "classes/CrowdinApiClient-Api-TaskApi.html#method_deleteSettingsTemplate"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\TaskApi\u003A\u003AupdateSettingsTemplate\u0028\u0029",
             "name": "updateSettingsTemplate",
-            "summary": "Update\u0020Task\u0020Settings\u0020Template",
+            "summary": "Update\u0020Project\u0020Task\u0020Settings\u0020Template",
             "url": "classes/CrowdinApiClient-Api-TaskApi.html#method_updateSettingsTemplate"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\TaskCommentApi",
@@ -1488,27 +1553,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\TaskCommentApi\u003A\u003Alist\u0028\u0029",
             "name": "list",
-            "summary": "List\u0020Task\u0020Comments",
+            "summary": "List\u0020Project\u0020Task\u0020Comments",
             "url": "classes/CrowdinApiClient-Api-TaskCommentApi.html#method_list"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\TaskCommentApi\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Get\u0020Task\u0020Comment",
+            "summary": "Get\u0020Project\u0020Task\u0020Comment",
             "url": "classes/CrowdinApiClient-Api-TaskCommentApi.html#method_get"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\TaskCommentApi\u003A\u003Acreate\u0028\u0029",
             "name": "create",
-            "summary": "Add\u0020Task\u0020Comment",
+            "summary": "Add\u0020Project\u0020Task\u0020Comment",
             "url": "classes/CrowdinApiClient-Api-TaskCommentApi.html#method_create"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\TaskCommentApi\u003A\u003Aupdate\u0028\u0029",
             "name": "update",
-            "summary": "Edit\u0020Task\u0020Comment",
+            "summary": "Edit\u0020Project\u0020Task\u0020Comment",
             "url": "classes/CrowdinApiClient-Api-TaskCommentApi.html#method_update"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\TaskCommentApi\u003A\u003Adelete\u0028\u0029",
             "name": "delete",
-            "summary": "Delete\u0020Task\u0020Comment",
+            "summary": "Delete\u0020Project\u0020Task\u0020Comment",
             "url": "classes/CrowdinApiClient-Api-TaskCommentApi.html#method_delete"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\TranslationApi",
@@ -1540,6 +1605,11 @@ Search.appendIndex(
             "name": "getPreTranslationReport",
             "summary": "Pre\u002DTranslation\u0020Report",
             "url": "classes/CrowdinApiClient-Api-TranslationApi.html#method_getPreTranslationReport"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\TranslationApi\u003A\u003AupdatePreTranslations\u0028\u0029",
+            "name": "updatePreTranslations",
+            "summary": "Batch\u0020Update\u0020Pre\u002DTranslations",
+            "url": "classes/CrowdinApiClient-Api-TranslationApi.html#method_updatePreTranslations"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\TranslationApi\u003A\u003AbuildProjectDirectoryTranslation\u0028\u0029",
             "name": "buildProjectDirectoryTranslation",
@@ -1751,15 +1821,75 @@ Search.appendIndex(
             "summary": "Get\u0020Authenticated\u0020User",
             "url": "classes/CrowdinApiClient-Api-UserApi.html#method_getAuthenticatedUser"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\UserApi\u003A\u003AupdateAuthenticatedUser\u0028\u0029",
+            "name": "updateAuthenticatedUser",
+            "summary": "Update\u0020Authenticated\u0020User",
+            "url": "classes/CrowdinApiClient-Api-UserApi.html#method_updateAuthenticatedUser"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Api\\UserApi\u003A\u003Alist\u0028\u0029",
             "name": "list",
-            "summary": "List\u0020Project\u0020Members",
+            "summary": "",
             "url": "classes/CrowdinApiClient-Api-UserApi.html#method_list"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\UserApi\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Get\u0020Member\u0020Info",
+            "summary": "",
             "url": "classes/CrowdinApiClient-Api-UserApi.html#method_get"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\UserApi\u003A\u003AlistProjectMembers\u0028\u0029",
+            "name": "listProjectMembers",
+            "summary": "List\u0020Project\u0020Members",
+            "url": "classes/CrowdinApiClient-Api-UserApi.html#method_listProjectMembers"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\UserApi\u003A\u003AaddProjectMember\u0028\u0029",
+            "name": "addProjectMember",
+            "summary": "Add\u0020Project\u0020Member",
+            "url": "classes/CrowdinApiClient-Api-UserApi.html#method_addProjectMember"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\UserApi\u003A\u003AgetProjectMemberInfo\u0028\u0029",
+            "name": "getProjectMemberInfo",
+            "summary": "Get\u0020Member\u0020Info",
+            "url": "classes/CrowdinApiClient-Api-UserApi.html#method_getProjectMemberInfo"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\UserApi\u003A\u003AreplaceProjectMemberPermissions\u0028\u0029",
+            "name": "replaceProjectMemberPermissions",
+            "summary": "Replace\u0020Project\u0020Member\u0020Permissions",
+            "url": "classes/CrowdinApiClient-Api-UserApi.html#method_replaceProjectMemberPermissions"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\UserApi\u003A\u003AdeleteMemberFromProject\u0028\u0029",
+            "name": "deleteMemberFromProject",
+            "summary": "Delete\u0020Member\u0020From\u0020Project",
+            "url": "classes/CrowdinApiClient-Api-UserApi.html#method_deleteMemberFromProject"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\UserApi\u003A\u003AlistReportSettingsTemplates\u0028\u0029",
+            "name": "listReportSettingsTemplates",
+            "summary": "List\u0020User\u0020Report\u0020Settings\u0020Templates",
+            "url": "classes/CrowdinApiClient-Api-UserApi.html#method_listReportSettingsTemplates"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\UserApi\u003A\u003AcreateReportSettingsTemplate\u0028\u0029",
+            "name": "createReportSettingsTemplate",
+            "summary": "Create\u0020User\u0020Report\u0020Settings\u0020Template",
+            "url": "classes/CrowdinApiClient-Api-UserApi.html#method_createReportSettingsTemplate"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\UserApi\u003A\u003AgetReportSettingsTemplate\u0028\u0029",
+            "name": "getReportSettingsTemplate",
+            "summary": "Get\u0020User\u0020Report\u0020Settings\u0020Template",
+            "url": "classes/CrowdinApiClient-Api-UserApi.html#method_getReportSettingsTemplate"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\UserApi\u003A\u003AdeleteReportSettingsTemplate\u0028\u0029",
+            "name": "deleteReportSettingsTemplate",
+            "summary": "Delete\u0020User\u0020Report\u0020Settings\u0020Template",
+            "url": "classes/CrowdinApiClient-Api-UserApi.html#method_deleteReportSettingsTemplate"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\UserApi\u003A\u003AupdateReportSettingsTemplate\u0028\u0029",
+            "name": "updateReportSettingsTemplate",
+            "summary": "Update\u0020User\u0020Report\u0020Settings\u0020Template",
+            "url": "classes/CrowdinApiClient-Api-UserApi.html#method_updateReportSettingsTemplate"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Api\\UserApi\u003A\u003AmakeUserReportSettingsTemplate\u0028\u0029",
+            "name": "makeUserReportSettingsTemplate",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Api-UserApi.html#method_makeUserReportSettingsTemplate"
         },                {
             "fqsen": "\\CrowdinApiClient\\Api\\WebhookApi",
             "name": "WebhookApi",
@@ -1995,6 +2125,106 @@ Search.appendIndex(
             "name": "defer",
             "summary": "Crowdin\u0020if\u0020loading\u0020of\u0020the\u0020provider\u0020is\u0020deferred.",
             "url": "classes/CrowdinApiClient-FrameworkSupport-Laravel-CrowdinServiceProvider.html#property_defer"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AbstractUserReportSettingsTemplate",
+            "name": "AbstractUserReportSettingsTemplate",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AbstractUserReportSettingsTemplate.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AbstractUserReportSettingsTemplate\u003A\u003AgetId\u0028\u0029",
+            "name": "getId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AbstractUserReportSettingsTemplate.html#method_getId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AbstractUserReportSettingsTemplate\u003A\u003AgetName\u0028\u0029",
+            "name": "getName",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AbstractUserReportSettingsTemplate.html#method_getName"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AbstractUserReportSettingsTemplate\u003A\u003AsetName\u0028\u0029",
+            "name": "setName",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AbstractUserReportSettingsTemplate.html#method_setName"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AbstractUserReportSettingsTemplate\u003A\u003AgetCurrency\u0028\u0029",
+            "name": "getCurrency",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AbstractUserReportSettingsTemplate.html#method_getCurrency"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AbstractUserReportSettingsTemplate\u003A\u003AsetCurrency\u0028\u0029",
+            "name": "setCurrency",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AbstractUserReportSettingsTemplate.html#method_setCurrency"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AbstractUserReportSettingsTemplate\u003A\u003AgetUnit\u0028\u0029",
+            "name": "getUnit",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AbstractUserReportSettingsTemplate.html#method_getUnit"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AbstractUserReportSettingsTemplate\u003A\u003AsetUnit\u0028\u0029",
+            "name": "setUnit",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AbstractUserReportSettingsTemplate.html#method_setUnit"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AbstractUserReportSettingsTemplate\u003A\u003AgetCreatedAt\u0028\u0029",
+            "name": "getCreatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AbstractUserReportSettingsTemplate.html#method_getCreatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AbstractUserReportSettingsTemplate\u003A\u003AgetUpdatedAt\u0028\u0029",
+            "name": "getUpdatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AbstractUserReportSettingsTemplate.html#method_getUpdatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AbstractUserReportSettingsTemplate\u003A\u003AtoArray\u0028\u0029",
+            "name": "toArray",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AbstractUserReportSettingsTemplate.html#method_toArray"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AbstractUserReportSettingsTemplate\u003A\u003AgetConfig\u0028\u0029",
+            "name": "getConfig",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AbstractUserReportSettingsTemplate.html#method_getConfig"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AbstractUserReportSettingsTemplate\u003A\u003AsetConfig\u0028\u0029",
+            "name": "setConfig",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AbstractUserReportSettingsTemplate.html#method_setConfig"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AbstractUserReportSettingsTemplate\u003A\u003ASUPPORTED_UNITS",
+            "name": "SUPPORTED_UNITS",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AbstractUserReportSettingsTemplate.html#constant_SUPPORTED_UNITS"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AbstractUserReportSettingsTemplate\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AbstractUserReportSettingsTemplate.html#property_id"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AbstractUserReportSettingsTemplate\u003A\u003A\u0024name",
+            "name": "name",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AbstractUserReportSettingsTemplate.html#property_name"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AbstractUserReportSettingsTemplate\u003A\u003A\u0024currency",
+            "name": "currency",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AbstractUserReportSettingsTemplate.html#property_currency"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AbstractUserReportSettingsTemplate\u003A\u003A\u0024unit",
+            "name": "unit",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AbstractUserReportSettingsTemplate.html#property_unit"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AbstractUserReportSettingsTemplate\u003A\u003A\u0024createdAt",
+            "name": "createdAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AbstractUserReportSettingsTemplate.html#property_createdAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\AbstractUserReportSettingsTemplate\u003A\u003A\u0024updatedAt",
+            "name": "updatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-AbstractUserReportSettingsTemplate.html#property_updatedAt"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\AiFileTranslation",
             "name": "AiFileTranslation",
@@ -3136,20 +3366,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-AddedProjectTeamInfo.html#method_getSkipped"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\AddedProjectTeamInfo\u003A\u003AsetSkipped\u0028\u0029",
-            "name": "setSkipped",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Enterprise-AddedProjectTeamInfo.html#method_setSkipped"
-        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\AddedProjectTeamInfo\u003A\u003AgetAdded\u0028\u0029",
             "name": "getAdded",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-AddedProjectTeamInfo.html#method_getAdded"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\AddedProjectTeamInfo\u003A\u003AsetAdded\u0028\u0029",
-            "name": "setAdded",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Enterprise-AddedProjectTeamInfo.html#method_setAdded"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\AddedProjectTeamInfo\u003A\u003A\u0024skipped",
             "name": "skipped",
@@ -3176,20 +3396,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-AddedTeamMembers.html#method_getSkipped"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\AddedTeamMembers\u003A\u003AsetSkipped\u0028\u0029",
-            "name": "setSkipped",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Enterprise-AddedTeamMembers.html#method_setSkipped"
-        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\AddedTeamMembers\u003A\u003AgetAdded\u0028\u0029",
             "name": "getAdded",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-AddedTeamMembers.html#method_getAdded"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\AddedTeamMembers\u003A\u003AsetAdded\u0028\u0029",
-            "name": "setAdded",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Enterprise-AddedTeamMembers.html#method_setAdded"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\AddedTeamMembers\u003A\u003A\u0024skipped",
             "name": "skipped",
@@ -3396,6 +3606,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-Group.html#method_getUpdatedAt"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Group\u003A\u003AgetWebUrl\u0028\u0029",
+            "name": "getWebUrl",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Group.html#method_getWebUrl"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Group\u003A\u003AgetSavingsReportSettingsTemplateId\u0028\u0029",
+            "name": "getSavingsReportSettingsTemplateId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Group.html#method_getSavingsReportSettingsTemplateId"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Group\u003A\u003A\u0024id",
             "name": "id",
             "summary": "",
@@ -3436,6 +3656,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-Group.html#property_projectsCount"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Group\u003A\u003A\u0024webUrl",
+            "name": "webUrl",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Group.html#property_webUrl"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Group\u003A\u003A\u0024savingsReportSettingsTemplateId",
+            "name": "savingsReportSettingsTemplateId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Group.html#property_savingsReportSettingsTemplateId"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Group\u003A\u003A\u0024createdAt",
             "name": "createdAt",
             "summary": "",
@@ -3445,6 +3675,76 @@ Search.appendIndex(
             "name": "updatedAt",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-Group.html#property_updatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\GroupManager",
+            "name": "GroupManager",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-GroupManager.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\GroupManager\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-GroupManager.html#method___construct"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\GroupManager\u003A\u003AgetId\u0028\u0029",
+            "name": "getId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-GroupManager.html#method_getId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\GroupManager\u003A\u003AgetUser\u0028\u0029",
+            "name": "getUser",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-GroupManager.html#method_getUser"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\GroupManager\u003A\u003AgetTeams\u0028\u0029",
+            "name": "getTeams",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-GroupManager.html#method_getTeams"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\GroupManager\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-GroupManager.html#property_id"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\GroupManager\u003A\u003A\u0024user",
+            "name": "user",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-GroupManager.html#property_user"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\GroupManager\u003A\u003A\u0024teams",
+            "name": "teams",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-GroupManager.html#property_teams"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\GroupTeam",
+            "name": "GroupTeam",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-GroupTeam.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\GroupTeam\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-GroupTeam.html#method___construct"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\GroupTeam\u003A\u003AgetId\u0028\u0029",
+            "name": "getId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-GroupTeam.html#method_getId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\GroupTeam\u003A\u003AgetTeam\u0028\u0029",
+            "name": "getTeam",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-GroupTeam.html#method_getTeam"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\GroupTeam\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-GroupTeam.html#property_id"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\GroupTeam\u003A\u003A\u0024team",
+            "name": "team",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-GroupTeam.html#property_team"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\ProjectTeam",
             "name": "ProjectTeam",
@@ -3531,35 +3831,30 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberAddedStatistics.html#method_getSkipped"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\ProjectTeamMemberAddedStatistics\u003A\u003AsetSkipped\u0028\u0029",
-            "name": "setSkipped",
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\ProjectTeamMemberAddedStatistics\u003A\u003AgetUpdated\u0028\u0029",
+            "name": "getUpdated",
             "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberAddedStatistics.html#method_setSkipped"
+            "url": "classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberAddedStatistics.html#method_getUpdated"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\ProjectTeamMemberAddedStatistics\u003A\u003AgetAdded\u0028\u0029",
             "name": "getAdded",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberAddedStatistics.html#method_getAdded"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\ProjectTeamMemberAddedStatistics\u003A\u003AsetAdded\u0028\u0029",
-            "name": "setAdded",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberAddedStatistics.html#method_setAdded"
-        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\ProjectTeamMemberAddedStatistics\u003A\u003AgetPagination\u0028\u0029",
             "name": "getPagination",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberAddedStatistics.html#method_getPagination"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\ProjectTeamMemberAddedStatistics\u003A\u003AsetPagination\u0028\u0029",
-            "name": "setPagination",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberAddedStatistics.html#method_setPagination"
-        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\ProjectTeamMemberAddedStatistics\u003A\u003A\u0024skipped",
             "name": "skipped",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberAddedStatistics.html#property_skipped"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\ProjectTeamMemberAddedStatistics\u003A\u003A\u0024updated",
+            "name": "updated",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberAddedStatistics.html#property_updated"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\ProjectTeamMemberAddedStatistics\u003A\u003A\u0024added",
             "name": "added",
@@ -3601,6 +3896,21 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_getLastName"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\ProjectTeamMemberResource\u003A\u003AgetRoles\u0028\u0029",
+            "name": "getRoles",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_getRoles"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\ProjectTeamMemberResource\u003A\u003A\u0024isAdmin",
+            "name": "isAdmin",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_isAdmin"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\ProjectTeamMemberResource\u003A\u003A\u0024isDeveloper",
+            "name": "isDeveloper",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_isDeveloper"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\ProjectTeamMemberResource\u003A\u003A\u0024isManager",
             "name": "isManager",
             "summary": "",
@@ -3616,30 +3926,15 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_isAccessToAllWorkflowSteps"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\ProjectTeamMemberResource\u003A\u003AsetAccessToAllWorkflowSteps\u0028\u0029",
-            "name": "setAccessToAllWorkflowSteps",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_setAccessToAllWorkflowSteps"
-        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\ProjectTeamMemberResource\u003A\u003AgetPermissions\u0028\u0029",
             "name": "getPermissions",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_getPermissions"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\ProjectTeamMemberResource\u003A\u003AsetPermissions\u0028\u0029",
-            "name": "setPermissions",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_setPermissions"
-        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\ProjectTeamMemberResource\u003A\u003AgetGivenAccessAt\u0028\u0029",
             "name": "getGivenAccessAt",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_getGivenAccessAt"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\ProjectTeamMemberResource\u003A\u003AsetManagerAccess\u0028\u0029",
-            "name": "setManagerAccess",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_setManagerAccess"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\ProjectTeamMemberResource\u003A\u003A\u0024id",
             "name": "id",
@@ -3661,10 +3956,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_lastName"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\ProjectTeamMemberResource\u003A\u003A\u0024managerAccess",
-            "name": "managerAccess",
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\ProjectTeamMemberResource\u003A\u003A\u0024roles",
+            "name": "roles",
             "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_managerAccess"
+            "url": "classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_roles"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\ProjectTeamMemberResource\u003A\u003A\u0024managerOfGroup",
             "name": "managerOfGroup",
@@ -3786,11 +4081,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-Team.html#method_getId"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Team\u003A\u003AsetId\u0028\u0029",
-            "name": "setId",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Enterprise-Team.html#method_setId"
-        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Team\u003A\u003AgetName\u0028\u0029",
             "name": "getName",
             "summary": "",
@@ -3806,30 +4096,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-Team.html#method_getTotalMembers"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Team\u003A\u003AsetTotalMembers\u0028\u0029",
-            "name": "setTotalMembers",
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Team\u003A\u003AgetWebUrl\u0028\u0029",
+            "name": "getWebUrl",
             "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Enterprise-Team.html#method_setTotalMembers"
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Team.html#method_getWebUrl"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Team\u003A\u003AgetCreatedAt\u0028\u0029",
             "name": "getCreatedAt",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-Team.html#method_getCreatedAt"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Team\u003A\u003AsetCreatedAt\u0028\u0029",
-            "name": "setCreatedAt",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Enterprise-Team.html#method_setCreatedAt"
-        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Team\u003A\u003AgetUpdatedAt\u0028\u0029",
             "name": "getUpdatedAt",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-Team.html#method_getUpdatedAt"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Team\u003A\u003AsetUpdatedAt\u0028\u0029",
-            "name": "setUpdatedAt",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Enterprise-Team.html#method_setUpdatedAt"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Team\u003A\u003A\u0024id",
             "name": "id",
@@ -3840,6 +4120,11 @@ Search.appendIndex(
             "name": "name",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-Team.html#property_name"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Team\u003A\u003A\u0024webUrl",
+            "name": "webUrl",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-Team.html#property_webUrl"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Team\u003A\u003A\u0024totalMembers",
             "name": "totalMembers",
@@ -3871,60 +4156,30 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-TeamMember.html#method_getId"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\TeamMember\u003A\u003AsetId\u0028\u0029",
-            "name": "setId",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Enterprise-TeamMember.html#method_setId"
-        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\TeamMember\u003A\u003AgetUsername\u0028\u0029",
             "name": "getUsername",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-TeamMember.html#method_getUsername"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\TeamMember\u003A\u003AsetUsername\u0028\u0029",
-            "name": "setUsername",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Enterprise-TeamMember.html#method_setUsername"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\TeamMember\u003A\u003AgetFirstName\u0028\u0029",
             "name": "getFirstName",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-TeamMember.html#method_getFirstName"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\TeamMember\u003A\u003AsetFirstName\u0028\u0029",
-            "name": "setFirstName",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Enterprise-TeamMember.html#method_setFirstName"
-        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\TeamMember\u003A\u003AgetLastName\u0028\u0029",
             "name": "getLastName",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-TeamMember.html#method_getLastName"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\TeamMember\u003A\u003AsetLastName\u0028\u0029",
-            "name": "setLastName",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Enterprise-TeamMember.html#method_setLastName"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\TeamMember\u003A\u003AgetAvatarUrl\u0028\u0029",
             "name": "getAvatarUrl",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-TeamMember.html#method_getAvatarUrl"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\TeamMember\u003A\u003AsetAvatarUrl\u0028\u0029",
-            "name": "setAvatarUrl",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Enterprise-TeamMember.html#method_setAvatarUrl"
-        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\TeamMember\u003A\u003AgetAddedAt\u0028\u0029",
             "name": "getAddedAt",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-TeamMember.html#method_getAddedAt"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\TeamMember\u003A\u003AsetAddedAt\u0028\u0029",
-            "name": "setAddedAt",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Enterprise-TeamMember.html#method_setAddedAt"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\TeamMember\u003A\u003A\u0024id",
             "name": "id",
@@ -4096,6 +4351,41 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-User.html#method_setFields"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\User\u003A\u003AisEmailVerified\u0028\u0029",
+            "name": "isEmailVerified",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-User.html#method_isEmailVerified"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\User\u003A\u003AgetJoinDetails\u0028\u0029",
+            "name": "getJoinDetails",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-User.html#method_getJoinDetails"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\User\u003A\u003AgetDeviceVerification\u0028\u0029",
+            "name": "getDeviceVerification",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-User.html#method_getDeviceVerification"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\User\u003A\u003AgetTrustedDevicesCount\u0028\u0029",
+            "name": "getTrustedDevicesCount",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-User.html#method_getTrustedDevicesCount"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\User\u003A\u003AgetApiTokensCount\u0028\u0029",
+            "name": "getApiTokensCount",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-User.html#method_getApiTokensCount"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\User\u003A\u003AgetLoginMethods\u0028\u0029",
+            "name": "getLoginMethods",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-User.html#method_getLoginMethods"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\User\u003A\u003AgetMfaMethods\u0028\u0029",
+            "name": "getMfaMethods",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-User.html#method_getMfaMethods"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\User\u003A\u003A\u0024id",
             "name": "id",
             "summary": "",
@@ -4155,6 +4445,41 @@ Search.appendIndex(
             "name": "fields",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Enterprise-User.html#property_fields"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\User\u003A\u003A\u0024emailVerified",
+            "name": "emailVerified",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-User.html#property_emailVerified"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\User\u003A\u003A\u0024joinDetails",
+            "name": "joinDetails",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-User.html#property_joinDetails"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\User\u003A\u003A\u0024deviceVerification",
+            "name": "deviceVerification",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-User.html#property_deviceVerification"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\User\u003A\u003A\u0024trustedDevicesCount",
+            "name": "trustedDevicesCount",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-User.html#property_trustedDevicesCount"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\User\u003A\u003A\u0024apiTokensCount",
+            "name": "apiTokensCount",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-User.html#property_apiTokensCount"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\User\u003A\u003A\u0024loginMethods",
+            "name": "loginMethods",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-User.html#property_loginMethods"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\User\u003A\u003A\u0024mfaMethods",
+            "name": "mfaMethods",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Enterprise-User.html#property_mfaMethods"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Enterprise\\Vendor",
             "name": "Vendor",
@@ -5620,6 +5945,181 @@ Search.appendIndex(
             "name": "updatedAt",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Group.html#property_updatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyBaseRates",
+            "name": "HourlyBaseRates",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyBaseRates.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyBaseRates\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyBaseRates.html#method___construct"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyBaseRates\u003A\u003AgetHourly\u0028\u0029",
+            "name": "getHourly",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyBaseRates.html#method_getHourly"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyBaseRates\u003A\u003AsetHourly\u0028\u0029",
+            "name": "setHourly",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyBaseRates.html#method_setHourly"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyBaseRates\u003A\u003AtoArray\u0028\u0029",
+            "name": "toArray",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyBaseRates.html#method_toArray"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyBaseRates\u003A\u003A\u0024hourly",
+            "name": "hourly",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyBaseRates.html#property_hourly"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyIndividualRates",
+            "name": "HourlyIndividualRates",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyIndividualRates.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyIndividualRates\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyIndividualRates.html#method___construct"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyIndividualRates\u003A\u003AgetLanguageIds\u0028\u0029",
+            "name": "getLanguageIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyIndividualRates.html#method_getLanguageIds"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyIndividualRates\u003A\u003AsetLanguageIds\u0028\u0029",
+            "name": "setLanguageIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyIndividualRates.html#method_setLanguageIds"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyIndividualRates\u003A\u003AgetUserIds\u0028\u0029",
+            "name": "getUserIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyIndividualRates.html#method_getUserIds"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyIndividualRates\u003A\u003AsetUserIds\u0028\u0029",
+            "name": "setUserIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyIndividualRates.html#method_setUserIds"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyIndividualRates\u003A\u003AgetHourly\u0028\u0029",
+            "name": "getHourly",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyIndividualRates.html#method_getHourly"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyIndividualRates\u003A\u003AsetHourly\u0028\u0029",
+            "name": "setHourly",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyIndividualRates.html#method_setHourly"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyIndividualRates\u003A\u003AtoArray\u0028\u0029",
+            "name": "toArray",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyIndividualRates.html#method_toArray"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyIndividualRates\u003A\u003A\u0024languageIds",
+            "name": "languageIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyIndividualRates.html#property_languageIds"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyIndividualRates\u003A\u003A\u0024userIds",
+            "name": "userIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyIndividualRates.html#property_userIds"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyIndividualRates\u003A\u003A\u0024hourly",
+            "name": "hourly",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyIndividualRates.html#property_hourly"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyReportSettingsTemplateConfig",
+            "name": "HourlyReportSettingsTemplateConfig",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyReportSettingsTemplateConfig.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyReportSettingsTemplateConfig\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyReportSettingsTemplateConfig.html#method___construct"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyReportSettingsTemplateConfig\u003A\u003AgetBaseRates\u0028\u0029",
+            "name": "getBaseRates",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyReportSettingsTemplateConfig.html#method_getBaseRates"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyReportSettingsTemplateConfig\u003A\u003AsetBaseRates\u0028\u0029",
+            "name": "setBaseRates",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyReportSettingsTemplateConfig.html#method_setBaseRates"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyReportSettingsTemplateConfig\u003A\u003AgetIndividualRates\u0028\u0029",
+            "name": "getIndividualRates",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyReportSettingsTemplateConfig.html#method_getIndividualRates"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyReportSettingsTemplateConfig\u003A\u003AsetIndividualRates\u0028\u0029",
+            "name": "setIndividualRates",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyReportSettingsTemplateConfig.html#method_setIndividualRates"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyReportSettingsTemplateConfig\u003A\u003AtoArray\u0028\u0029",
+            "name": "toArray",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyReportSettingsTemplateConfig.html#method_toArray"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyReportSettingsTemplateConfig\u003A\u003A\u0024baseRates",
+            "name": "baseRates",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyReportSettingsTemplateConfig.html#property_baseRates"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyReportSettingsTemplateConfig\u003A\u003A\u0024individualRates",
+            "name": "individualRates",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyReportSettingsTemplateConfig.html#property_individualRates"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyUserReportSettingsTemplate",
+            "name": "HourlyUserReportSettingsTemplate",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyUserReportSettingsTemplate.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyUserReportSettingsTemplate\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyUserReportSettingsTemplate.html#method___construct"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyUserReportSettingsTemplate\u003A\u003AgetConfig\u0028\u0029",
+            "name": "getConfig",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyUserReportSettingsTemplate.html#method_getConfig"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyUserReportSettingsTemplate\u003A\u003AsetConfig\u0028\u0029",
+            "name": "setConfig",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyUserReportSettingsTemplate.html#method_setConfig"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyUserReportSettingsTemplate\u003A\u003AtoArray\u0028\u0029",
+            "name": "toArray",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyUserReportSettingsTemplate.html#method_toArray"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyUserReportSettingsTemplate\u003A\u003ASUPPORTED_UNITS",
+            "name": "SUPPORTED_UNITS",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyUserReportSettingsTemplate.html#constant_SUPPORTED_UNITS"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyUserReportSettingsTemplate\u003A\u003A\u0024unit",
+            "name": "unit",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyUserReportSettingsTemplate.html#property_unit"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\HourlyUserReportSettingsTemplate\u003A\u003A\u0024config",
+            "name": "config",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-HourlyUserReportSettingsTemplate.html#property_config"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\IndividualRates",
             "name": "IndividualRates",
@@ -7721,6 +8221,156 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Project.html#property_fields"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMember",
+            "name": "ProjectMember",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMember.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMember\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMember.html#method___construct"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMember\u003A\u003AgetId\u0028\u0029",
+            "name": "getId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMember.html#method_getId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMember\u003A\u003AgetUsername\u0028\u0029",
+            "name": "getUsername",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMember.html#method_getUsername"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMember\u003A\u003AgetFullName\u0028\u0029",
+            "name": "getFullName",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMember.html#method_getFullName"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMember\u003A\u003AgetRole\u0028\u0029",
+            "name": "getRole",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMember.html#method_getRole"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMember\u003A\u003AgetPermissions\u0028\u0029",
+            "name": "getPermissions",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMember.html#method_getPermissions"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMember\u003A\u003AgetRoles\u0028\u0029",
+            "name": "getRoles",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMember.html#method_getRoles"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMember\u003A\u003AgetAvatarUrl\u0028\u0029",
+            "name": "getAvatarUrl",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMember.html#method_getAvatarUrl"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMember\u003A\u003AgetJoinedAt\u0028\u0029",
+            "name": "getJoinedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMember.html#method_getJoinedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMember\u003A\u003AgetTimezone\u0028\u0029",
+            "name": "getTimezone",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMember.html#method_getTimezone"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMember\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMember.html#property_id"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMember\u003A\u003A\u0024username",
+            "name": "username",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMember.html#property_username"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMember\u003A\u003A\u0024fullName",
+            "name": "fullName",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMember.html#property_fullName"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMember\u003A\u003A\u0024role",
+            "name": "role",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMember.html#property_role"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMember\u003A\u003A\u0024permissions",
+            "name": "permissions",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMember.html#property_permissions"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMember\u003A\u003A\u0024roles",
+            "name": "roles",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMember.html#property_roles"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMember\u003A\u003A\u0024avatarUrl",
+            "name": "avatarUrl",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMember.html#property_avatarUrl"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMember\u003A\u003A\u0024joinedAt",
+            "name": "joinedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMember.html#property_joinedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMember\u003A\u003A\u0024timezone",
+            "name": "timezone",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMember.html#property_timezone"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMemberAddedStatistics",
+            "name": "ProjectMemberAddedStatistics",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMemberAddedStatistics.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMemberAddedStatistics\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMemberAddedStatistics.html#method___construct"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMemberAddedStatistics\u003A\u003AgetSkipped\u0028\u0029",
+            "name": "getSkipped",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMemberAddedStatistics.html#method_getSkipped"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMemberAddedStatistics\u003A\u003AgetUpdated\u0028\u0029",
+            "name": "getUpdated",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMemberAddedStatistics.html#method_getUpdated"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMemberAddedStatistics\u003A\u003AgetAdded\u0028\u0029",
+            "name": "getAdded",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMemberAddedStatistics.html#method_getAdded"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMemberAddedStatistics\u003A\u003AgetPagination\u0028\u0029",
+            "name": "getPagination",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMemberAddedStatistics.html#method_getPagination"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMemberAddedStatistics\u003A\u003A\u0024skipped",
+            "name": "skipped",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMemberAddedStatistics.html#property_skipped"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMemberAddedStatistics\u003A\u003A\u0024updated",
+            "name": "updated",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMemberAddedStatistics.html#property_updated"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMemberAddedStatistics\u003A\u003A\u0024added",
+            "name": "added",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMemberAddedStatistics.html#property_added"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ProjectMemberAddedStatistics\u003A\u003A\u0024pagination",
+            "name": "pagination",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ProjectMemberAddedStatistics.html#property_pagination"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\QaCheck",
             "name": "QaCheck",
             "summary": "",
@@ -8130,6 +8780,11 @@ Search.appendIndex(
             "name": "UNIT_CHARS_WITH_SPACES",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Report.html#constant_UNIT_CHARS_WITH_SPACES"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Report\u003A\u003AUNIT_HOURS",
+            "name": "UNIT_HOURS",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Report.html#constant_UNIT_HOURS"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Report\u003A\u003AUNITS",
             "name": "UNITS",
@@ -8601,6 +9256,46 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-ReportSettingsTemplateConfig.html#method_setNetRateSchemes"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ReportSettingsTemplateConfig\u003A\u003AgetCalculateInternalMatches\u0028\u0029",
+            "name": "getCalculateInternalMatches",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ReportSettingsTemplateConfig.html#method_getCalculateInternalMatches"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ReportSettingsTemplateConfig\u003A\u003AsetCalculateInternalMatches\u0028\u0029",
+            "name": "setCalculateInternalMatches",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ReportSettingsTemplateConfig.html#method_setCalculateInternalMatches"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ReportSettingsTemplateConfig\u003A\u003AgetIncludePreTranslatedStrings\u0028\u0029",
+            "name": "getIncludePreTranslatedStrings",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ReportSettingsTemplateConfig.html#method_getIncludePreTranslatedStrings"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ReportSettingsTemplateConfig\u003A\u003AsetIncludePreTranslatedStrings\u0028\u0029",
+            "name": "setIncludePreTranslatedStrings",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ReportSettingsTemplateConfig.html#method_setIncludePreTranslatedStrings"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ReportSettingsTemplateConfig\u003A\u003AgetExcludeApprovalsForEditedTranslations\u0028\u0029",
+            "name": "getExcludeApprovalsForEditedTranslations",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ReportSettingsTemplateConfig.html#method_getExcludeApprovalsForEditedTranslations"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ReportSettingsTemplateConfig\u003A\u003AsetExcludeApprovalsForEditedTranslations\u0028\u0029",
+            "name": "setExcludeApprovalsForEditedTranslations",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ReportSettingsTemplateConfig.html#method_setExcludeApprovalsForEditedTranslations"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ReportSettingsTemplateConfig\u003A\u003AgetPreTranslatedStringsCategorizationAdjustment\u0028\u0029",
+            "name": "getPreTranslatedStringsCategorizationAdjustment",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ReportSettingsTemplateConfig.html#method_getPreTranslatedStringsCategorizationAdjustment"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ReportSettingsTemplateConfig\u003A\u003AsetPreTranslatedStringsCategorizationAdjustment\u0028\u0029",
+            "name": "setPreTranslatedStringsCategorizationAdjustment",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ReportSettingsTemplateConfig.html#method_setPreTranslatedStringsCategorizationAdjustment"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\ReportSettingsTemplateConfig\u003A\u003AtoArray\u0028\u0029",
             "name": "toArray",
             "summary": "",
@@ -8620,6 +9315,26 @@ Search.appendIndex(
             "name": "netRateSchemes",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-ReportSettingsTemplateConfig.html#property_netRateSchemes"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ReportSettingsTemplateConfig\u003A\u003A\u0024calculateInternalMatches",
+            "name": "calculateInternalMatches",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ReportSettingsTemplateConfig.html#property_calculateInternalMatches"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ReportSettingsTemplateConfig\u003A\u003A\u0024includePreTranslatedStrings",
+            "name": "includePreTranslatedStrings",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ReportSettingsTemplateConfig.html#property_includePreTranslatedStrings"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ReportSettingsTemplateConfig\u003A\u003A\u0024excludeApprovalsForEditedTranslations",
+            "name": "excludeApprovalsForEditedTranslations",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ReportSettingsTemplateConfig.html#property_excludeApprovalsForEditedTranslations"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\ReportSettingsTemplateConfig\u003A\u003A\u0024preTranslatedStringsCategorizationAdjustment",
+            "name": "preTranslatedStringsCategorizationAdjustment",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-ReportSettingsTemplateConfig.html#property_preTranslatedStringsCategorizationAdjustment"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Screenshot",
             "name": "Screenshot",
@@ -9686,6 +10401,146 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-StringTranslationApproval.html#property_createdAt"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\StyleGuide",
+            "name": "StyleGuide",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-StyleGuide.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\StyleGuide\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-StyleGuide.html#method___construct"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\StyleGuide\u003A\u003AgetId\u0028\u0029",
+            "name": "getId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-StyleGuide.html#method_getId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\StyleGuide\u003A\u003AgetName\u0028\u0029",
+            "name": "getName",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-StyleGuide.html#method_getName"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\StyleGuide\u003A\u003AgetAiInstructions\u0028\u0029",
+            "name": "getAiInstructions",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-StyleGuide.html#method_getAiInstructions"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\StyleGuide\u003A\u003AgetUserId\u0028\u0029",
+            "name": "getUserId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-StyleGuide.html#method_getUserId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\StyleGuide\u003A\u003AgetLanguageIds\u0028\u0029",
+            "name": "getLanguageIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-StyleGuide.html#method_getLanguageIds"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\StyleGuide\u003A\u003AgetProjectIds\u0028\u0029",
+            "name": "getProjectIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-StyleGuide.html#method_getProjectIds"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\StyleGuide\u003A\u003A\u0024isShared",
+            "name": "isShared",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-StyleGuide.html#property_isShared"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\StyleGuide\u003A\u003AgetWebUrl\u0028\u0029",
+            "name": "getWebUrl",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-StyleGuide.html#method_getWebUrl"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\StyleGuide\u003A\u003AgetDownloadLink\u0028\u0029",
+            "name": "getDownloadLink",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-StyleGuide.html#method_getDownloadLink"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\StyleGuide\u003A\u003AgetCreatedAt\u0028\u0029",
+            "name": "getCreatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-StyleGuide.html#method_getCreatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\StyleGuide\u003A\u003AgetUpdatedAt\u0028\u0029",
+            "name": "getUpdatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-StyleGuide.html#method_getUpdatedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\StyleGuide\u003A\u003AsetName\u0028\u0029",
+            "name": "setName",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-StyleGuide.html#method_setName"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\StyleGuide\u003A\u003AsetAiInstructions\u0028\u0029",
+            "name": "setAiInstructions",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-StyleGuide.html#method_setAiInstructions"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\StyleGuide\u003A\u003AsetLanguageIds\u0028\u0029",
+            "name": "setLanguageIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-StyleGuide.html#method_setLanguageIds"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\StyleGuide\u003A\u003AsetProjectIds\u0028\u0029",
+            "name": "setProjectIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-StyleGuide.html#method_setProjectIds"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\StyleGuide\u003A\u003AsetIsShared\u0028\u0029",
+            "name": "setIsShared",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-StyleGuide.html#method_setIsShared"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\StyleGuide\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-StyleGuide.html#property_id"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\StyleGuide\u003A\u003A\u0024name",
+            "name": "name",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-StyleGuide.html#property_name"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\StyleGuide\u003A\u003A\u0024aiInstructions",
+            "name": "aiInstructions",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-StyleGuide.html#property_aiInstructions"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\StyleGuide\u003A\u003A\u0024userId",
+            "name": "userId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-StyleGuide.html#property_userId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\StyleGuide\u003A\u003A\u0024languageIds",
+            "name": "languageIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-StyleGuide.html#property_languageIds"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\StyleGuide\u003A\u003A\u0024projectIds",
+            "name": "projectIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-StyleGuide.html#property_projectIds"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\StyleGuide\u003A\u003A\u0024webUrl",
+            "name": "webUrl",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-StyleGuide.html#property_webUrl"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\StyleGuide\u003A\u003A\u0024downloadLink",
+            "name": "downloadLink",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-StyleGuide.html#property_downloadLink"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\StyleGuide\u003A\u003A\u0024createdAt",
+            "name": "createdAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-StyleGuide.html#property_createdAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\StyleGuide\u003A\u003A\u0024updatedAt",
+            "name": "updatedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-StyleGuide.html#property_updatedAt"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Tag",
             "name": "Tag",
             "summary": "",
@@ -9786,16 +10641,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Task.html#method_getType"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetVendor\u0028\u0029",
-            "name": "getVendor",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Task.html#method_getVendor"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AsetVendor\u0028\u0029",
-            "name": "setVendor",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Task.html#method_setVendor"
-        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetStatus\u0028\u0029",
             "name": "getStatus",
             "summary": "",
@@ -9816,6 +10661,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Task.html#method_setTitle"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetBatchId\u0028\u0029",
+            "name": "getBatchId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_getBatchId"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetAssignees\u0028\u0029",
             "name": "getAssignees",
             "summary": "",
@@ -9835,16 +10685,6 @@ Search.appendIndex(
             "name": "setAssignedTeams",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Task.html#method_setAssignedTeams"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetFileIds\u0028\u0029",
-            "name": "getFileIds",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Task.html#method_getFileIds"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AsetFileIds\u0028\u0029",
-            "name": "setFileIds",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Task.html#method_setFileIds"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetProgress\u0028\u0029",
             "name": "getProgress",
@@ -9876,25 +10716,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Task.html#method_setDescription"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetHash\u0028\u0029",
-            "name": "getHash",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Task.html#method_getHash"
-        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetTranslationUrl\u0028\u0029",
             "name": "getTranslationUrl",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Task.html#method_getTranslationUrl"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetWebUrl\u0028\u0029",
+            "name": "getWebUrl",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_getWebUrl"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetWordsCount\u0028\u0029",
             "name": "getWordsCount",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Task.html#method_getWordsCount"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetFilesCount\u0028\u0029",
-            "name": "getFilesCount",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Task.html#method_getFilesCount"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetCommentsCount\u0028\u0029",
             "name": "getCommentsCount",
@@ -9911,10 +10746,35 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Task.html#method_setDeadline"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetStartedAt\u0028\u0029",
+            "name": "getStartedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_getStartedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AsetStartedAt\u0028\u0029",
+            "name": "setStartedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_setStartedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetResolvedAt\u0028\u0029",
+            "name": "getResolvedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_getResolvedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AsetResolvedAt\u0028\u0029",
+            "name": "setResolvedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_setResolvedAt"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetTimeRange\u0028\u0029",
             "name": "getTimeRange",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Task.html#method_getTimeRange"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetTranslationsUpdatedTimeRange\u0028\u0029",
+            "name": "getTranslationsUpdatedTimeRange",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_getTranslationsUpdatedTimeRange"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetWorkflowStepId\u0028\u0029",
             "name": "getWorkflowStepId",
@@ -9941,6 +10801,31 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Task.html#method_getUpdatedAt"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetVendor\u0028\u0029",
+            "name": "getVendor",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_getVendor"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AsetVendor\u0028\u0029",
+            "name": "setVendor",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_setVendor"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetFilesCount\u0028\u0029",
+            "name": "getFilesCount",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_getFilesCount"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetFileIds\u0028\u0029",
+            "name": "getFileIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_getFileIds"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AsetFileIds\u0028\u0029",
+            "name": "setFileIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_setFileIds"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024isArchived",
             "name": "isArchived",
             "summary": "",
@@ -9960,6 +10845,106 @@ Search.appendIndex(
             "name": "setFields",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Task.html#method_setFields"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetSourceLanguage\u0028\u0029",
+            "name": "getSourceLanguage",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_getSourceLanguage"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetTargetLanguages\u0028\u0029",
+            "name": "getTargetLanguages",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_getTargetLanguages"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetLabelIds\u0028\u0029",
+            "name": "getLabelIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_getLabelIds"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AsetLabelIds\u0028\u0029",
+            "name": "setLabelIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_setLabelIds"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetLabelMatchRule\u0028\u0029",
+            "name": "getLabelMatchRule",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_getLabelMatchRule"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AsetLabelMatchRule\u0028\u0029",
+            "name": "setLabelMatchRule",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_setLabelMatchRule"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetExcludeLabelIds\u0028\u0029",
+            "name": "getExcludeLabelIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_getExcludeLabelIds"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AsetExcludeLabelIds\u0028\u0029",
+            "name": "setExcludeLabelIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_setExcludeLabelIds"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetExcludeLabelMatchRule\u0028\u0029",
+            "name": "getExcludeLabelMatchRule",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_getExcludeLabelMatchRule"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AsetExcludeLabelMatchRule\u0028\u0029",
+            "name": "setExcludeLabelMatchRule",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_setExcludeLabelMatchRule"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetPrecedingTaskId\u0028\u0029",
+            "name": "getPrecedingTaskId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_getPrecedingTaskId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetEstimatedCost\u0028\u0029",
+            "name": "getEstimatedCost",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_getEstimatedCost"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetActualCost\u0028\u0029",
+            "name": "getActualCost",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_getActualCost"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetGenerateCostEstimate\u0028\u0029",
+            "name": "getGenerateCostEstimate",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_getGenerateCostEstimate"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AsetGenerateCostEstimate\u0028\u0029",
+            "name": "setGenerateCostEstimate",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_setGenerateCostEstimate"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetGenerateTranslationCost\u0028\u0029",
+            "name": "getGenerateTranslationCost",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_getGenerateTranslationCost"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AsetGenerateTranslationCost\u0028\u0029",
+            "name": "setGenerateTranslationCost",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_setGenerateTranslationCost"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetReportSettingsTemplateId\u0028\u0029",
+            "name": "getReportSettingsTemplateId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_getReportSettingsTemplateId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AsetReportSettingsTemplateId\u0028\u0029",
+            "name": "setReportSettingsTemplateId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_setReportSettingsTemplateId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003AgetHash\u0028\u0029",
+            "name": "getHash",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#method_getHash"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024id",
             "name": "id",
@@ -9981,11 +10966,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Task.html#property_type"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024vendor",
-            "name": "vendor",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Task.html#property_vendor"
-        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024status",
             "name": "status",
             "summary": "",
@@ -9996,6 +10976,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Task.html#property_title"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024batchId",
+            "name": "batchId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#property_batchId"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024assignees",
             "name": "assignees",
             "summary": "",
@@ -10005,11 +10990,6 @@ Search.appendIndex(
             "name": "assignedTeams",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Task.html#property_assignedTeams"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024fileIds",
-            "name": "fileIds",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Task.html#property_fileIds"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024progress",
             "name": "progress",
@@ -10036,25 +11016,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Task.html#property_description"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024hash",
-            "name": "hash",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Task.html#property_hash"
-        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024translationUrl",
             "name": "translationUrl",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Task.html#property_translationUrl"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024webUrl",
+            "name": "webUrl",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#property_webUrl"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024wordsCount",
             "name": "wordsCount",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Task.html#property_wordsCount"
-        },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024filesCount",
-            "name": "filesCount",
-            "summary": "",
-            "url": "classes/CrowdinApiClient-Model-Task.html#property_filesCount"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024commentsCount",
             "name": "commentsCount",
@@ -10066,10 +11041,25 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Task.html#property_deadline"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024startedAt",
+            "name": "startedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#property_startedAt"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024resolvedAt",
+            "name": "resolvedAt",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#property_resolvedAt"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024timeRange",
             "name": "timeRange",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Task.html#property_timeRange"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024translationsUpdatedTimeRange",
+            "name": "translationsUpdatedTimeRange",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#property_translationsUpdatedTimeRange"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024workflowStepId",
             "name": "workflowStepId",
@@ -10091,10 +11081,90 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Task.html#property_updatedAt"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024sourceLanguage",
+            "name": "sourceLanguage",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#property_sourceLanguage"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024targetLanguages",
+            "name": "targetLanguages",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#property_targetLanguages"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024labelIds",
+            "name": "labelIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#property_labelIds"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024labelMatchRule",
+            "name": "labelMatchRule",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#property_labelMatchRule"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024excludeLabelIds",
+            "name": "excludeLabelIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#property_excludeLabelIds"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024excludeLabelMatchRule",
+            "name": "excludeLabelMatchRule",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#property_excludeLabelMatchRule"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024precedingTaskId",
+            "name": "precedingTaskId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#property_precedingTaskId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024estimatedCost",
+            "name": "estimatedCost",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#property_estimatedCost"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024actualCost",
+            "name": "actualCost",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#property_actualCost"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024generateCostEstimate",
+            "name": "generateCostEstimate",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#property_generateCostEstimate"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024generateTranslationCost",
+            "name": "generateTranslationCost",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#property_generateTranslationCost"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024reportSettingsTemplateId",
+            "name": "reportSettingsTemplateId",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#property_reportSettingsTemplateId"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024vendor",
+            "name": "vendor",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#property_vendor"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024filesCount",
+            "name": "filesCount",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#property_filesCount"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024fileIds",
+            "name": "fileIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#property_fileIds"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024fields",
             "name": "fields",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-Task.html#property_fields"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\Task\u003A\u003A\u0024hash",
+            "name": "hash",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-Task.html#property_hash"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\TaskComment",
             "name": "TaskComment",
@@ -10196,6 +11266,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-TaskForUpdate.html#method___construct"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TaskForUpdate\u003A\u003AinitMissingProperties\u0028\u0029",
+            "name": "initMissingProperties",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TaskForUpdate.html#method_initMissingProperties"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\TaskForUpdate\u003A\u003AgetSplitFiles\u0028\u0029",
             "name": "getSplitFiles",
             "summary": "",
@@ -10205,6 +11280,26 @@ Search.appendIndex(
             "name": "setSplitFiles",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-TaskForUpdate.html#method_setSplitFiles"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TaskForUpdate\u003A\u003AgetSplitContent\u0028\u0029",
+            "name": "getSplitContent",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TaskForUpdate.html#method_getSplitContent"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TaskForUpdate\u003A\u003AsetSplitContent\u0028\u0029",
+            "name": "setSplitContent",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TaskForUpdate.html#method_setSplitContent"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TaskForUpdate\u003A\u003AgetStringIds\u0028\u0029",
+            "name": "getStringIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TaskForUpdate.html#method_getStringIds"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TaskForUpdate\u003A\u003AsetStringIds\u0028\u0029",
+            "name": "setStringIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TaskForUpdate.html#method_setStringIds"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\TaskForUpdate\u003A\u003AgetSkipAssignedStrings\u0028\u0029",
             "name": "getSkipAssignedStrings",
@@ -10236,20 +11331,40 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-TaskForUpdate.html#method_setDateTo"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\TaskForUpdate\u003A\u003AgetLabelIds\u0028\u0029",
-            "name": "getLabelIds",
+            "fqsen": "\\CrowdinApiClient\\Model\\TaskForUpdate\u003A\u003AgetTranslationsUpdatedDateFrom\u0028\u0029",
+            "name": "getTranslationsUpdatedDateFrom",
             "summary": "",
-            "url": "classes/CrowdinApiClient-Model-TaskForUpdate.html#method_getLabelIds"
+            "url": "classes/CrowdinApiClient-Model-TaskForUpdate.html#method_getTranslationsUpdatedDateFrom"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\TaskForUpdate\u003A\u003AsetLabelIds\u0028\u0029",
-            "name": "setLabelIds",
+            "fqsen": "\\CrowdinApiClient\\Model\\TaskForUpdate\u003A\u003AsetTranslationsUpdatedDateFrom\u0028\u0029",
+            "name": "setTranslationsUpdatedDateFrom",
             "summary": "",
-            "url": "classes/CrowdinApiClient-Model-TaskForUpdate.html#method_setLabelIds"
+            "url": "classes/CrowdinApiClient-Model-TaskForUpdate.html#method_setTranslationsUpdatedDateFrom"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TaskForUpdate\u003A\u003AgetTranslationsUpdatedDateTo\u0028\u0029",
+            "name": "getTranslationsUpdatedDateTo",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TaskForUpdate.html#method_getTranslationsUpdatedDateTo"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TaskForUpdate\u003A\u003AsetTranslationsUpdatedDateTo\u0028\u0029",
+            "name": "setTranslationsUpdatedDateTo",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TaskForUpdate.html#method_setTranslationsUpdatedDateTo"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\TaskForUpdate\u003A\u003A\u0024splitFiles",
             "name": "splitFiles",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-TaskForUpdate.html#property_splitFiles"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TaskForUpdate\u003A\u003A\u0024splitContent",
+            "name": "splitContent",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TaskForUpdate.html#property_splitContent"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TaskForUpdate\u003A\u003A\u0024stringIds",
+            "name": "stringIds",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TaskForUpdate.html#property_stringIds"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\TaskForUpdate\u003A\u003A\u0024skipAssignedStrings",
             "name": "skipAssignedStrings",
@@ -10266,10 +11381,15 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-TaskForUpdate.html#property_dateTo"
         },                {
-            "fqsen": "\\CrowdinApiClient\\Model\\TaskForUpdate\u003A\u003A\u0024labelIds",
-            "name": "labelIds",
+            "fqsen": "\\CrowdinApiClient\\Model\\TaskForUpdate\u003A\u003A\u0024translationsUpdatedDateFrom",
+            "name": "translationsUpdatedDateFrom",
             "summary": "",
-            "url": "classes/CrowdinApiClient-Model-TaskForUpdate.html#property_labelIds"
+            "url": "classes/CrowdinApiClient-Model-TaskForUpdate.html#property_translationsUpdatedDateFrom"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\TaskForUpdate\u003A\u003A\u0024translationsUpdatedDateTo",
+            "name": "translationsUpdatedDateTo",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-TaskForUpdate.html#property_translationsUpdatedDateTo"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\TaskSettingsTemplate",
             "name": "TaskSettingsTemplate",
@@ -11486,15 +12606,30 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-User.html#method_getUsername"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\User\u003A\u003AsetUsername\u0028\u0029",
+            "name": "setUsername",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-User.html#method_setUsername"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\User\u003A\u003AgetEmail\u0028\u0029",
             "name": "getEmail",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-User.html#method_getEmail"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\User\u003A\u003AgetEmailVerified\u0028\u0029",
+            "name": "getEmailVerified",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-User.html#method_getEmailVerified"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\User\u003A\u003AgetFullName\u0028\u0029",
             "name": "getFullName",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-User.html#method_getFullName"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\User\u003A\u003AsetFullName\u0028\u0029",
+            "name": "setFullName",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-User.html#method_setFullName"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\User\u003A\u003AgetAvatarUrl\u0028\u0029",
             "name": "getAvatarUrl",
@@ -11521,6 +12656,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-User.html#method_getTimezone"
         },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\User\u003A\u003AsetTimezone\u0028\u0029",
+            "name": "setTimezone",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-User.html#method_setTimezone"
+        },                {
             "fqsen": "\\CrowdinApiClient\\Model\\User\u003A\u003A\u0024id",
             "name": "id",
             "summary": "",
@@ -11535,6 +12675,11 @@ Search.appendIndex(
             "name": "email",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-User.html#property_email"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\User\u003A\u003A\u0024emailVerified",
+            "name": "emailVerified",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-User.html#property_emailVerified"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\User\u003A\u003A\u0024fullName",
             "name": "fullName",
@@ -11565,6 +12710,36 @@ Search.appendIndex(
             "name": "timezone",
             "summary": "",
             "url": "classes/CrowdinApiClient-Model-User.html#property_timezone"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\UserReportSettingsTemplate",
+            "name": "UserReportSettingsTemplate",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-UserReportSettingsTemplate.html"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\UserReportSettingsTemplate\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-UserReportSettingsTemplate.html#method___construct"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\UserReportSettingsTemplate\u003A\u003AgetConfig\u0028\u0029",
+            "name": "getConfig",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-UserReportSettingsTemplate.html#method_getConfig"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\UserReportSettingsTemplate\u003A\u003AsetConfig\u0028\u0029",
+            "name": "setConfig",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-UserReportSettingsTemplate.html#method_setConfig"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\UserReportSettingsTemplate\u003A\u003ASUPPORTED_UNITS",
+            "name": "SUPPORTED_UNITS",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-UserReportSettingsTemplate.html#constant_SUPPORTED_UNITS"
+        },                {
+            "fqsen": "\\CrowdinApiClient\\Model\\UserReportSettingsTemplate\u003A\u003A\u0024config",
+            "name": "config",
+            "summary": "",
+            "url": "classes/CrowdinApiClient-Model-UserReportSettingsTemplate.html#property_config"
         },                {
             "fqsen": "\\CrowdinApiClient\\Model\\Vote",
             "name": "Vote",

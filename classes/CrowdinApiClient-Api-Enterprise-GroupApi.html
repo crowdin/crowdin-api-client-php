@@ -164,7 +164,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/GroupApi.php"><a href="files/src-crowdinapiclient-api-enterprise-groupapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/GroupApi.php">GroupApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">15</span>
+    <span class="phpdocumentor-element-found-in__line">18</span>
 
     </aside>
 
@@ -219,11 +219,39 @@
 <dd>Get Group Info</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_getManager">getManager()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-Enterprise-GroupManager.html"><abbr title="\CrowdinApiClient\Model\Enterprise\GroupManager">GroupManager</abbr></a>|null    </span>
+</dt>
+<dd>Get Group Manager</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_getTeam">getTeam()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-Enterprise-GroupTeam.html"><abbr title="\CrowdinApiClient\Model\Enterprise\GroupTeam">GroupTeam</abbr></a>|null    </span>
+</dt>
+<dd>Get Group Team</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_list">list()</a>
     <span>
                                 &nbsp;: <a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>    </span>
 </dt>
 <dd>List Groups</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_listManagers">listManagers()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>    </span>
+</dt>
+<dd>List Group Managers</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_listTeams">listTeams()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>    </span>
+</dt>
+<dd>List Group Teams</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_report">report()</a>
@@ -238,6 +266,20 @@
                                 &nbsp;: <a href="classes/CrowdinApiClient-Model-Enterprise-Group.html"><abbr title="\CrowdinApiClient\Model\Enterprise\Group">Group</abbr></a>|mixed    </span>
 </dt>
 <dd>Edit Group</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_updateManagers">updateManagers()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>    </span>
+</dt>
+<dd>Add or Remove Group Managers</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_updateTeams">updateTeams()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>    </span>
+</dt>
+<dd>Add or Remove Group Teams</dd>
 
     </dl>
 
@@ -267,7 +309,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/GroupApi.php"><a href="files/src-crowdinapiclient-api-enterprise-groupapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/GroupApi.php">GroupApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 
     </aside>
 
@@ -337,7 +379,7 @@ string $data[description]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/GroupApi.php"><a href="files/src-crowdinapiclient-api-enterprise-groupapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/GroupApi.php">GroupApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">78</span>
+    <span class="phpdocumentor-element-found-in__line">81</span>
 
     </aside>
 
@@ -397,7 +439,7 @@ string $data[description]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/GroupApi.php"><a href="files/src-crowdinapiclient-api-enterprise-groupapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/GroupApi.php">GroupApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">39</span>
+    <span class="phpdocumentor-element-found-in__line">42</span>
 
     </aside>
 
@@ -453,6 +495,148 @@ string $data[description]</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getManager">
+        getManager()
+        <a href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_getManager" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/GroupApi.php"><a href="files/src-crowdinapiclient-api-enterprise-groupapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/GroupApi.php">GroupApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">149</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get Group Manager</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getManager</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$groupId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Enterprise-GroupManager.html"><abbr title="\CrowdinApiClient\Model\Enterprise\GroupManager">GroupManager</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$groupId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$userId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_getManager#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.groups.managers.get"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Enterprise-GroupManager.html"><abbr title="\CrowdinApiClient\Model\Enterprise\GroupManager">GroupManager</abbr></a>|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getTeam">
+        getTeam()
+        <a href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_getTeam" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/GroupApi.php"><a href="files/src-crowdinapiclient-api-enterprise-groupapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/GroupApi.php">GroupApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">199</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get Group Team</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getTeam</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$groupId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$teamId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Enterprise-GroupTeam.html"><abbr title="\CrowdinApiClient\Model\Enterprise\GroupTeam">GroupTeam</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$groupId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$teamId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_getTeam#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.groups.teams.get"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Enterprise-GroupTeam.html"><abbr title="\CrowdinApiClient\Model\Enterprise\GroupTeam">GroupTeam</abbr></a>|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_list">
         list()
         <a href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_list" class="headerlink"><i class="fas fa-link"></i></a>
@@ -461,7 +645,7 @@ string $data[description]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/GroupApi.php"><a href="files/src-crowdinapiclient-api-enterprise-groupapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/GroupApi.php">GroupApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">27</span>
+    <span class="phpdocumentor-element-found-in__line">30</span>
 
     </aside>
 
@@ -521,6 +705,157 @@ integer $params[offset]</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_listManagers">
+        listManagers()
+        <a href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_listManagers" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/GroupApi.php"><a href="files/src-crowdinapiclient-api-enterprise-groupapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/GroupApi.php">GroupApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">115</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">List Group Managers</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">listManagers</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$groupId</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$groupId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$params</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>integer $params[teamIds]<br>
+integer $params[limit]<br>
+integer $params[offset]<br>
+string $params[orderBy]</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_listManagers#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.groups.managers.getMany"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_listTeams">
+        listTeams()
+        <a href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_listTeams" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/GroupApi.php"><a href="files/src-crowdinapiclient-api-enterprise-groupapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/GroupApi.php">GroupApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">165</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">List Group Teams</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">listTeams</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$groupId</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$groupId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$params</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>integer $params[limit]<br>
+integer $params[offset]<br>
+string $params[orderBy]</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_listTeams#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.groups.teams.getMany"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_report">
         report()
         <a href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_report" class="headerlink"><i class="fas fa-link"></i></a>
@@ -529,7 +864,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/GroupApi.php"><a href="files/src-crowdinapiclient-api-enterprise-groupapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/GroupApi.php">GroupApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">93</span>
+    <span class="phpdocumentor-element-found-in__line">96</span>
 
     </aside>
 
@@ -603,7 +938,7 @@ array $data[schema]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/GroupApi.php"><a href="files/src-crowdinapiclient-api-enterprise-groupapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/GroupApi.php">GroupApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">66</span>
+    <span class="phpdocumentor-element-found-in__line">69</span>
 
     </aside>
 
@@ -650,6 +985,152 @@ array $data[schema]</p>
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Enterprise-Group.html"><abbr title="\CrowdinApiClient\Model\Enterprise\Group">Group</abbr></a>|mixed</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_updateManagers">
+        updateManagers()
+        <a href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_updateManagers" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/GroupApi.php"><a href="files/src-crowdinapiclient-api-enterprise-groupapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/GroupApi.php">GroupApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">128</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Add or Remove Group Managers</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">updateManagers</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$groupId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$groupId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$data</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>JSON Patch array with operations (add, remove)</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_updateManagers#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.groups.managers.patch"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_updateTeams">
+        updateTeams()
+        <a href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_updateTeams" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/GroupApi.php"><a href="files/src-crowdinapiclient-api-enterprise-groupapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/GroupApi.php">GroupApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">178</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Add or Remove Group Teams</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">updateTeams</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$groupId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$groupId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$data</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>JSON Patch array with operations (add, remove)</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_updateTeams#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.groups.teams.patch"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a></span>
             </section>
 
 </article>
@@ -771,9 +1252,15 @@ array $data[schema]</p>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_create">create()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_delete">delete()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_get">get()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_getManager">getManager()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_getTeam">getTeam()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_list">list()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_listManagers">listManagers()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_listTeams">listTeams()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_report">report()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_update">update()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_updateManagers">updateManagers()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-Enterprise-GroupApi.html#method_updateTeams">updateTeams()</a></li>
                                     </ul>
             </li>
                     </ul>

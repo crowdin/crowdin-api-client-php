@@ -196,7 +196,7 @@
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a class="" href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_accessToAllWorkflowSteps">$accessToAllWorkflowSteps</a>
+    <a class="-deprecated" href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_accessToAllWorkflowSteps">$accessToAllWorkflowSteps</a>
     <span>
                         &nbsp;: bool            </span>
 </dt>
@@ -220,6 +220,18 @@
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_isAdmin">$isAdmin</a>
+    <span>
+                        &nbsp;: bool            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_isDeveloper">$isDeveloper</a>
+    <span>
+                        &nbsp;: bool            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_isManager">$isManager</a>
     <span>
                         &nbsp;: bool            </span>
@@ -232,19 +244,19 @@
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a class="" href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_managerAccess">$managerAccess</a>
-    <span>
-                        &nbsp;: bool            </span>
-</dt>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_managerOfGroup">$managerOfGroup</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a class="" href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_permissions">$permissions</a>
+    <a class="-deprecated" href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_permissions">$permissions</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_roles">$roles</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
@@ -306,6 +318,12 @@
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_getRoles">getRoles()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_getUsername">getUsername()</a>
     <span>
                                 &nbsp;: string    </span>
@@ -318,27 +336,21 @@
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_isManager">isManager()</a>
+    <a class="" href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_isAdmin">isAdmin()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_setAccessToAllWorkflowSteps">setAccessToAllWorkflowSteps()</a>
+    <a class="" href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_isDeveloper">isDeveloper()</a>
     <span>
-                                &nbsp;: void    </span>
+                                &nbsp;: bool    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_setManagerAccess">setManagerAccess()</a>
+    <a class="" href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_isManager">isManager()</a>
     <span>
-                                &nbsp;: void    </span>
-</dt>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_setPermissions">setPermissions()</a>
-    <span>
-                                &nbsp;: void    </span>
+                                &nbsp;: bool    </span>
 </dt>
 
     </dl>
@@ -359,7 +371,7 @@
             phpdocumentor-element
             -property
             -protected
-                                                                    "
+                        -deprecated                                            "
 >
     <h4 class="phpdocumentor-element__name" id="property_accessToAllWorkflowSteps">
         $accessToAllWorkflowSteps
@@ -371,13 +383,19 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteammemberresource.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php">ProjectTeamMemberResource.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">52</span>
+    <span class="phpdocumentor-element-found-in__line">63</span>
 
     </aside>
 
     
+                <div class="phpdocumentor-admonition">
+        <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+            <article>
+                
+            </article>
+        </div>
     
-    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
         <span class="phpdocumentor-signature__visibility">protected</span>
             <span class="phpdocumentor-signature__type">bool</span>
     <span class="phpdocumentor-signature__name">$accessToAllWorkflowSteps</span>
@@ -445,7 +463,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteammemberresource.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php">ProjectTeamMemberResource.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">62</span>
+    <span class="phpdocumentor-element-found-in__line">74</span>
 
     </aside>
 
@@ -509,6 +527,80 @@
             -protected
                                                                     "
 >
+    <h4 class="phpdocumentor-element__name" id="property_isAdmin">
+        $isAdmin
+        <a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_isAdmin" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                            </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteammemberresource.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php">ProjectTeamMemberResource.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">52</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type">bool</span>
+    <span class="phpdocumentor-signature__name">$isAdmin</span>
+    </code>
+
+    
+    
+    
+
+        
+        
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                                    "
+>
+    <h4 class="phpdocumentor-element__name" id="property_isDeveloper">
+        $isDeveloper
+        <a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_isDeveloper" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                            </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteammemberresource.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php">ProjectTeamMemberResource.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">47</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type">bool</span>
+    <span class="phpdocumentor-signature__name">$isDeveloper</span>
+    </code>
+
+    
+    
+    
+
+        
+        
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                                    "
+>
     <h4 class="phpdocumentor-element__name" id="property_isManager">
         $isManager
         <a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_isManager" class="headerlink"><i class="fas fa-link"></i></a>
@@ -519,7 +611,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteammemberresource.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php">ProjectTeamMemberResource.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">42</span>
 
     </aside>
 
@@ -583,43 +675,6 @@
             -protected
                                                                     "
 >
-    <h4 class="phpdocumentor-element__name" id="property_managerAccess">
-        $managerAccess
-        <a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_managerAccess" class="headerlink"><i class="fas fa-link"></i></a>
-
-        <span class="phpdocumentor-element__modifiers">
-                                            </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteammemberresource.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php">ProjectTeamMemberResource.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">42</span>
-
-    </aside>
-
-    
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-        <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">bool</span>
-    <span class="phpdocumentor-signature__name">$managerAccess</span>
-    </code>
-
-    
-    
-    
-
-        
-        
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                                    "
->
     <h4 class="phpdocumentor-element__name" id="property_managerOfGroup">
         $managerOfGroup
         <a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_managerOfGroup" class="headerlink"><i class="fas fa-link"></i></a>
@@ -630,7 +685,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteammemberresource.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php">ProjectTeamMemberResource.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 
     </aside>
 
@@ -655,7 +710,7 @@
             phpdocumentor-element
             -property
             -protected
-                                                                    "
+                        -deprecated                                            "
 >
     <h4 class="phpdocumentor-element__name" id="property_permissions">
         $permissions
@@ -667,7 +722,50 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteammemberresource.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php">ProjectTeamMemberResource.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">57</span>
+    <span class="phpdocumentor-element-found-in__line">69</span>
+
+    </aside>
+
+    
+                <div class="phpdocumentor-admonition">
+        <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+            <article>
+                
+            </article>
+        </div>
+    
+    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$permissions</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+    
+    
+    
+
+        
+        
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                                    "
+>
+    <h4 class="phpdocumentor-element__name" id="property_roles">
+        $roles
+        <a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_roles" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                            </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteammemberresource.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php">ProjectTeamMemberResource.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">37</span>
 
     </aside>
 
@@ -676,8 +774,8 @@
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
             <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
-    <span class="phpdocumentor-signature__name">$permissions</span>
-     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+    <span class="phpdocumentor-signature__name">$roles</span>
+    </code>
 
     
     
@@ -746,7 +844,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteammemberresource.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php">ProjectTeamMemberResource.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">64</span>
+    <span class="phpdocumentor-element-found-in__line">76</span>
 
     </aside>
 
@@ -790,7 +888,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteammemberresource.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php">ProjectTeamMemberResource.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">98</span>
+    <span class="phpdocumentor-element-found-in__line">104</span>
 
     </aside>
 
@@ -828,7 +926,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteammemberresource.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php">ProjectTeamMemberResource.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">162</span>
+    <span class="phpdocumentor-element-found-in__line">149</span>
 
     </aside>
 
@@ -866,7 +964,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteammemberresource.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php">ProjectTeamMemberResource.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">82</span>
+    <span class="phpdocumentor-element-found-in__line">94</span>
 
     </aside>
 
@@ -904,7 +1002,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteammemberresource.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php">ProjectTeamMemberResource.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">106</span>
+    <span class="phpdocumentor-element-found-in__line">109</span>
 
     </aside>
 
@@ -942,7 +1040,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteammemberresource.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php">ProjectTeamMemberResource.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">122</span>
+    <span class="phpdocumentor-element-found-in__line">134</span>
 
     </aside>
 
@@ -980,7 +1078,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteammemberresource.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php">ProjectTeamMemberResource.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">146</span>
+    <span class="phpdocumentor-element-found-in__line">144</span>
 
     </aside>
 
@@ -988,6 +1086,44 @@
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getPermissions</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getRoles">
+        getRoles()
+        <a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_getRoles" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteammemberresource.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php">ProjectTeamMemberResource.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">114</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getRoles</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1018,7 +1154,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteammemberresource.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php">ProjectTeamMemberResource.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">90</span>
+    <span class="phpdocumentor-element-found-in__line">99</span>
 
     </aside>
 
@@ -1056,7 +1192,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteammemberresource.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php">ProjectTeamMemberResource.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">130</span>
+    <span class="phpdocumentor-element-found-in__line">139</span>
 
     </aside>
 
@@ -1064,6 +1200,82 @@
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">isAccessToAllWorkflowSteps</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_isAdmin">
+        isAdmin()
+        <a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_isAdmin" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteammemberresource.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php">ProjectTeamMemberResource.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">119</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">isAdmin</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_isDeveloper">
+        isDeveloper()
+        <a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_isDeveloper" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteammemberresource.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php">ProjectTeamMemberResource.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">124</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">isDeveloper</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1094,7 +1306,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteammemberresource.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php">ProjectTeamMemberResource.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">114</span>
+    <span class="phpdocumentor-element-found-in__line">129</span>
 
     </aside>
 
@@ -1117,138 +1329,6 @@
         <span class="phpdocumentor-signature__response_type">bool</span>
             </section>
 
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_setAccessToAllWorkflowSteps">
-        setAccessToAllWorkflowSteps()
-        <a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_setAccessToAllWorkflowSteps" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteammemberresource.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php">ProjectTeamMemberResource.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">138</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">setAccessToAllWorkflowSteps</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$accessToAllWorkflowSteps</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-argument-list__argument__name">$accessToAllWorkflowSteps</span>
-                : <span class="phpdocumentor-argument-list__argument__type">bool</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-
-        
-    
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_setManagerAccess">
-        setManagerAccess()
-        <a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_setManagerAccess" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteammemberresource.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php">ProjectTeamMemberResource.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">170</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">setManagerAccess</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$managerAccess</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-argument-list__argument__name">$managerAccess</span>
-                : <span class="phpdocumentor-argument-list__argument__type">bool</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-
-        
-    
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_setPermissions">
-        setPermissions()
-        <a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_setPermissions" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php"><a href="files/src-crowdinapiclient-model-enterprise-projectteammemberresource.html"><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php">ProjectTeamMemberResource.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">154</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">setPermissions</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$permissions</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-argument-list__argument__name">$permissions</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-
-        
-    
-    
 </article>
             </section>
 
@@ -1365,15 +1445,17 @@
                             <li class="phpdocumentor-on-this-page-section__title">Properties</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
-                                                    <li class=""><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_accessToAllWorkflowSteps">$accessToAllWorkflowSteps</a></li>
+                                                    <li class="-deprecated"><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_accessToAllWorkflowSteps">$accessToAllWorkflowSteps</a></li>
                                                     <li class=""><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_firstName">$firstName</a></li>
                                                     <li class=""><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_givenAccessAt">$givenAccessAt</a></li>
                                                     <li class=""><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_id">$id</a></li>
+                                                    <li class=""><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_isAdmin">$isAdmin</a></li>
+                                                    <li class=""><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_isDeveloper">$isDeveloper</a></li>
                                                     <li class=""><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_isManager">$isManager</a></li>
                                                     <li class=""><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_lastName">$lastName</a></li>
-                                                    <li class=""><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_managerAccess">$managerAccess</a></li>
                                                     <li class=""><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_managerOfGroup">$managerOfGroup</a></li>
-                                                    <li class=""><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_permissions">$permissions</a></li>
+                                                    <li class="-deprecated"><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_permissions">$permissions</a></li>
+                                                    <li class=""><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_roles">$roles</a></li>
                                                     <li class=""><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_username">$username</a></li>
                                             </ul>
                 </li>
@@ -1388,12 +1470,12 @@
                                             <li class=""><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_getLastName">getLastName()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_getManagerOfGroup">getManagerOfGroup()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_getPermissions">getPermissions()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_getRoles">getRoles()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_getUsername">getUsername()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_isAccessToAllWorkflowSteps">isAccessToAllWorkflowSteps()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_isAdmin">isAdmin()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_isDeveloper">isDeveloper()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_isManager">isManager()</a></li>
-                                            <li class=""><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_setAccessToAllWorkflowSteps">setAccessToAllWorkflowSteps()</a></li>
-                                            <li class=""><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_setManagerAccess">setManagerAccess()</a></li>
-                                            <li class=""><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#method_setPermissions">setPermissions()</a></li>
                                     </ul>
             </li>
                     </ul>

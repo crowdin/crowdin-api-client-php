@@ -146,6 +146,18 @@
                                     <tr>
                         <td class="phpdocumentor-cell"><a href="reports/deprecated.html#src/CrowdinApiClient/Api/TranslationApi.php">src/CrowdinApiClient/Api/TranslationApi.php</a></td>
                     </tr>
+                                    <tr>
+                        <td class="phpdocumentor-cell"><a href="reports/deprecated.html#src/CrowdinApiClient/Api/UserApi.php">src/CrowdinApiClient/Api/UserApi.php</a></td>
+                    </tr>
+                                    <tr>
+                        <td class="phpdocumentor-cell"><a href="reports/deprecated.html#src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php">src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php</a></td>
+                    </tr>
+                                    <tr>
+                        <td class="phpdocumentor-cell"><a href="reports/deprecated.html#src/CrowdinApiClient/Model/Task.php">src/CrowdinApiClient/Model/Task.php</a></td>
+                    </tr>
+                                    <tr>
+                        <td class="phpdocumentor-cell"><a href="reports/deprecated.html#src/CrowdinApiClient/Model/TaskForUpdate.php">src/CrowdinApiClient/Model/TaskForUpdate.php</a></td>
+                    </tr>
                             </table>
             
                             <a id="src/CrowdinApiClient/Api/IssueApi.php"></a>
@@ -184,10 +196,104 @@
                         <th class="phpdocumentor-heading">Reason</th>
                     </tr>
                                                                         <tr>
-                                <td class="phpdocumentor-cell">251</td>
+                                <td class="phpdocumentor-cell">279</td>
                                 <td class="phpdocumentor-cell"><a href="classes/CrowdinApiClient-Api-TranslationApi.html#method_uploadTranslations"><abbr title="\CrowdinApiClient\Api\TranslationApi::uploadTranslations()">TranslationApi::uploadTranslations()</abbr></a></td>
                                 <td class="phpdocumentor-cell"><p>Use importTranslations() instead.</p>
 </td>
+                            </tr>
+                                                            </table>
+                            <a id="src/CrowdinApiClient/Api/UserApi.php"></a>
+                <h3><abbr title="src/CrowdinApiClient/Api/UserApi.php">UserApi.php</abbr></h3>
+                <table>
+                    <tr>
+                        <th class="phpdocumentor-heading">Line</th>
+                        <th class="phpdocumentor-heading">Element</th>
+                        <th class="phpdocumentor-heading">Reason</th>
+                    </tr>
+                                                                        <tr>
+                                <td class="phpdocumentor-cell">53</td>
+                                <td class="phpdocumentor-cell"><a href="classes/CrowdinApiClient-Api-UserApi.html#method_list"><abbr title="\CrowdinApiClient\Api\UserApi::list()">UserApi::list()</abbr></a></td>
+                                <td class="phpdocumentor-cell"><p>This method returns wrong model. Use listProjectMembers method instead.</p>
+<p>List Project Members</p>
+</td>
+                            </tr>
+                                                                                                <tr>
+                                <td class="phpdocumentor-cell">68</td>
+                                <td class="phpdocumentor-cell"><a href="classes/CrowdinApiClient-Api-UserApi.html#method_get"><abbr title="\CrowdinApiClient\Api\UserApi::get()">UserApi::get()</abbr></a></td>
+                                <td class="phpdocumentor-cell"><p>This method returns wrong model. Use getProjectMemberInfo method instead.</p>
+<p>Get Member Info</p>
+</td>
+                            </tr>
+                                                            </table>
+                            <a id="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php"></a>
+                <h3><abbr title="src/CrowdinApiClient/Model/Enterprise/ProjectTeamMemberResource.php">ProjectTeamMemberResource.php</abbr></h3>
+                <table>
+                    <tr>
+                        <th class="phpdocumentor-heading">Line</th>
+                        <th class="phpdocumentor-heading">Element</th>
+                        <th class="phpdocumentor-heading">Reason</th>
+                    </tr>
+                                                                        <tr>
+                                <td class="phpdocumentor-cell">63</td>
+                                <td class="phpdocumentor-cell"><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_accessToAllWorkflowSteps"><abbr title="\CrowdinApiClient\Model\Enterprise\ProjectTeamMemberResource::$accessToAllWorkflowSteps">ProjectTeamMemberResource::$accessToAllWorkflowSteps</abbr></a></td>
+                                <td class="phpdocumentor-cell"></td>
+                            </tr>
+                                                                                                <tr>
+                                <td class="phpdocumentor-cell">69</td>
+                                <td class="phpdocumentor-cell"><a href="classes/CrowdinApiClient-Model-Enterprise-ProjectTeamMemberResource.html#property_permissions"><abbr title="\CrowdinApiClient\Model\Enterprise\ProjectTeamMemberResource::$permissions">ProjectTeamMemberResource::$permissions</abbr></a></td>
+                                <td class="phpdocumentor-cell"></td>
+                            </tr>
+                                                            </table>
+                            <a id="src/CrowdinApiClient/Model/Task.php"></a>
+                <h3><abbr title="src/CrowdinApiClient/Model/Task.php">Task.php</abbr></h3>
+                <table>
+                    <tr>
+                        <th class="phpdocumentor-heading">Line</th>
+                        <th class="phpdocumentor-heading">Element</th>
+                        <th class="phpdocumentor-heading">Reason</th>
+                    </tr>
+                                                                        <tr>
+                                <td class="phpdocumentor-cell">541</td>
+                                <td class="phpdocumentor-cell"><a href="classes/CrowdinApiClient-Model-Task.html#method_setBuyUrl"><abbr title="\CrowdinApiClient\Model\Task::setBuyUrl()">Task::setBuyUrl()</abbr></a></td>
+                                <td class="phpdocumentor-cell"><p>Crowdin API does not allow update this property. This method is will be removed in a future major release.</p>
+</td>
+                            </tr>
+                                                                                                <tr>
+                                <td class="phpdocumentor-cell">571</td>
+                                <td class="phpdocumentor-cell"><a href="classes/CrowdinApiClient-Model-Task.html#method_setVendor"><abbr title="\CrowdinApiClient\Model\Task::setVendor()">Task::setVendor()</abbr></a></td>
+                                <td class="phpdocumentor-cell"><p>Crowdin API does not allow update this property. This method is will be removed in a future major release.</p>
+</td>
+                            </tr>
+                                                                                                <tr>
+                                <td class="phpdocumentor-cell">612</td>
+                                <td class="phpdocumentor-cell"><a href="classes/CrowdinApiClient-Model-Task.html#method_setIsArchived"><abbr title="\CrowdinApiClient\Model\Task::setIsArchived()">Task::setIsArchived()</abbr></a></td>
+                                <td class="phpdocumentor-cell"><p>Crowdin API does not allow update this property. This method is will be removed in a future major release.</p>
+</td>
+                            </tr>
+                                                                                                <tr>
+                                <td class="phpdocumentor-cell">738</td>
+                                <td class="phpdocumentor-cell"><a href="classes/CrowdinApiClient-Model-Task.html#method_getHash"><abbr title="\CrowdinApiClient\Model\Task::getHash()">Task::getHash()</abbr></a></td>
+                                <td class="phpdocumentor-cell"><p>Crowdin API does not return this property anymore. This method is will be removed in a future major release.</p>
+</td>
+                            </tr>
+                                                                                                <tr>
+                                <td class="phpdocumentor-cell">64</td>
+                                <td class="phpdocumentor-cell"><a href="classes/CrowdinApiClient-Model-Task.html#property_translateProgress"><abbr title="\CrowdinApiClient\Model\Task::$translateProgress">Task::$translateProgress</abbr></a></td>
+                                <td class="phpdocumentor-cell"></td>
+                            </tr>
+                                                            </table>
+                            <a id="src/CrowdinApiClient/Model/TaskForUpdate.php"></a>
+                <h3><abbr title="src/CrowdinApiClient/Model/TaskForUpdate.php">TaskForUpdate.php</abbr></h3>
+                <table>
+                    <tr>
+                        <th class="phpdocumentor-heading">Line</th>
+                        <th class="phpdocumentor-heading">Element</th>
+                        <th class="phpdocumentor-heading">Reason</th>
+                    </tr>
+                                                                        <tr>
+                                <td class="phpdocumentor-cell">14</td>
+                                <td class="phpdocumentor-cell"><a href="classes/CrowdinApiClient-Model-TaskForUpdate.html#property_splitFiles"><abbr title="\CrowdinApiClient\Model\TaskForUpdate::$splitFiles">TaskForUpdate::$splitFiles</abbr></a></td>
+                                <td class="phpdocumentor-cell"></td>
                             </tr>
                                                             </table>
                     </div>

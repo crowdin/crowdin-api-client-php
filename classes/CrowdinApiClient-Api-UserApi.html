@@ -162,7 +162,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/UserApi.php"><a href="files/src-crowdinapiclient-api-userapi.html"><abbr title="src/CrowdinApiClient/Api/UserApi.php">UserApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">18</span>
 
     </aside>
 
@@ -196,11 +196,38 @@
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/CrowdinApiClient-Api-UserApi.html#method_get">get()</a>
+    <a class="" href="classes/CrowdinApiClient-Api-UserApi.html#method_addProjectMember">addProjectMember()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-ProjectMemberAddedStatistics.html"><abbr title="\CrowdinApiClient\Model\ProjectMemberAddedStatistics">ProjectMemberAddedStatistics</abbr></a>    </span>
+</dt>
+<dd>Add Project Member</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-UserApi.html#method_createReportSettingsTemplate">createReportSettingsTemplate()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-UserReportSettingsTemplate.html"><abbr title="\CrowdinApiClient\Model\UserReportSettingsTemplate">UserReportSettingsTemplate</abbr></a>|<a href="classes/CrowdinApiClient-Model-HourlyUserReportSettingsTemplate.html"><abbr title="\CrowdinApiClient\Model\HourlyUserReportSettingsTemplate">HourlyUserReportSettingsTemplate</abbr></a>|null    </span>
+</dt>
+<dd>Create User Report Settings Template</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-UserApi.html#method_deleteMemberFromProject">deleteMemberFromProject()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Delete Member From Project</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-UserApi.html#method_deleteReportSettingsTemplate">deleteReportSettingsTemplate()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Delete User Report Settings Template</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="-deprecated" href="classes/CrowdinApiClient-Api-UserApi.html#method_get">get()</a>
     <span>
                                 &nbsp;: <a href="classes/CrowdinApiClient-Model-User.html"><abbr title="\CrowdinApiClient\Model\User">User</abbr></a>    </span>
 </dt>
-<dd>Get Member Info</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Api-UserApi.html#method_getAuthenticatedUser">getAuthenticatedUser()</a>
@@ -210,11 +237,65 @@
 <dd>Get Authenticated User</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/CrowdinApiClient-Api-UserApi.html#method_list">list()</a>
+    <a class="" href="classes/CrowdinApiClient-Api-UserApi.html#method_getProjectMemberInfo">getProjectMemberInfo()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-ProjectMember.html"><abbr title="\CrowdinApiClient\Model\ProjectMember">ProjectMember</abbr></a>|null    </span>
+</dt>
+<dd>Get Member Info</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-UserApi.html#method_getReportSettingsTemplate">getReportSettingsTemplate()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-UserReportSettingsTemplate.html"><abbr title="\CrowdinApiClient\Model\UserReportSettingsTemplate">UserReportSettingsTemplate</abbr></a>|<a href="classes/CrowdinApiClient-Model-HourlyUserReportSettingsTemplate.html"><abbr title="\CrowdinApiClient\Model\HourlyUserReportSettingsTemplate">HourlyUserReportSettingsTemplate</abbr></a>|null    </span>
+</dt>
+<dd>Get User Report Settings Template</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="-deprecated" href="classes/CrowdinApiClient-Api-UserApi.html#method_list">list()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>    </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-UserApi.html#method_listProjectMembers">listProjectMembers()</a>
     <span>
                                 &nbsp;: <a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>    </span>
 </dt>
 <dd>List Project Members</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-UserApi.html#method_listReportSettingsTemplates">listReportSettingsTemplates()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>    </span>
+</dt>
+<dd>List User Report Settings Templates</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-UserApi.html#method_replaceProjectMemberPermissions">replaceProjectMemberPermissions()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-ProjectMember.html"><abbr title="\CrowdinApiClient\Model\ProjectMember">ProjectMember</abbr></a>|null    </span>
+</dt>
+<dd>Replace Project Member Permissions</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-UserApi.html#method_updateAuthenticatedUser">updateAuthenticatedUser()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-User.html"><abbr title="\CrowdinApiClient\Model\User">User</abbr></a>|null    </span>
+</dt>
+<dd>Update Authenticated User</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-UserApi.html#method_updateReportSettingsTemplate">updateReportSettingsTemplate()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-UserReportSettingsTemplate.html"><abbr title="\CrowdinApiClient\Model\UserReportSettingsTemplate">UserReportSettingsTemplate</abbr></a>|<a href="classes/CrowdinApiClient-Model-HourlyUserReportSettingsTemplate.html"><abbr title="\CrowdinApiClient\Model\HourlyUserReportSettingsTemplate">HourlyUserReportSettingsTemplate</abbr></a>|null    </span>
+</dt>
+<dd>Update User Report Settings Template</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a class="" href="classes/CrowdinApiClient-Api-UserApi.html#method_makeUserReportSettingsTemplate">makeUserReportSettingsTemplate()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-HourlyUserReportSettingsTemplate.html"><abbr title="\CrowdinApiClient\Model\HourlyUserReportSettingsTemplate">HourlyUserReportSettingsTemplate</abbr></a>|<a href="classes/CrowdinApiClient-Model-UserReportSettingsTemplate.html"><abbr title="\CrowdinApiClient\Model\UserReportSettingsTemplate">UserReportSettingsTemplate</abbr></a>    </span>
+</dt>
 
     </dl>
 
@@ -236,6 +317,303 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_addProjectMember">
+        addProjectMember()
+        <a href="classes/CrowdinApiClient-Api-UserApi.html#method_addProjectMember" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/UserApi.php"><a href="files/src-crowdinapiclient-api-userapi.html"><abbr title="src/CrowdinApiClient/Api/UserApi.php">UserApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">94</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Add Project Member</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">addProjectMember</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-ProjectMemberAddedStatistics.html"><abbr title="\CrowdinApiClient\Model\ProjectMemberAddedStatistics">ProjectMemberAddedStatistics</abbr></a></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$projectId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$data</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-UserApi.html#method_addProjectMember#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.projects.members.post"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-ProjectMemberAddedStatistics.html"><abbr title="\CrowdinApiClient\Model\ProjectMemberAddedStatistics">ProjectMemberAddedStatistics</abbr></a></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_createReportSettingsTemplate">
+        createReportSettingsTemplate()
+        <a href="classes/CrowdinApiClient-Api-UserApi.html#method_createReportSettingsTemplate" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/UserApi.php"><a href="files/src-crowdinapiclient-api-userapi.html"><abbr title="src/CrowdinApiClient/Api/UserApi.php">UserApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">189</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Create User Report Settings Template</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">createReportSettingsTemplate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-UserReportSettingsTemplate.html"><abbr title="\CrowdinApiClient\Model\UserReportSettingsTemplate">UserReportSettingsTemplate</abbr></a>|<a href="classes/CrowdinApiClient-Model-HourlyUserReportSettingsTemplate.html"><abbr title="\CrowdinApiClient\Model\HourlyUserReportSettingsTemplate">HourlyUserReportSettingsTemplate</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$userId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$data</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>string $data[name] required<br>
+string $data[currency] required<br>
+string $data[unit] required<br>
+array $data[config] required</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-UserApi.html#method_createReportSettingsTemplate#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.users.reports.settings-templates.post"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.users.reports.settings-templates.post"> <p>API Documentation Enterprise</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-UserReportSettingsTemplate.html"><abbr title="\CrowdinApiClient\Model\UserReportSettingsTemplate">UserReportSettingsTemplate</abbr></a>|<a href="classes/CrowdinApiClient-Model-HourlyUserReportSettingsTemplate.html"><abbr title="\CrowdinApiClient\Model\HourlyUserReportSettingsTemplate">HourlyUserReportSettingsTemplate</abbr></a>|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_deleteMemberFromProject">
+        deleteMemberFromProject()
+        <a href="classes/CrowdinApiClient-Api-UserApi.html#method_deleteMemberFromProject" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/UserApi.php"><a href="files/src-crowdinapiclient-api-userapi.html"><abbr title="src/CrowdinApiClient/Api/UserApi.php">UserApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">140</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Delete Member From Project</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">deleteMemberFromProject</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$memberId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$projectId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$memberId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-UserApi.html#method_deleteMemberFromProject#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.projects.members.delete"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_deleteReportSettingsTemplate">
+        deleteReportSettingsTemplate()
+        <a href="classes/CrowdinApiClient-Api-UserApi.html#method_deleteReportSettingsTemplate" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/UserApi.php"><a href="files/src-crowdinapiclient-api-userapi.html"><abbr title="src/CrowdinApiClient/Api/UserApi.php">UserApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">223</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Delete User Report Settings Template</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">deleteReportSettingsTemplate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$reportSettingsTemplateId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$userId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$reportSettingsTemplateId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-UserApi.html#method_deleteReportSettingsTemplate#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.users.reports.settings-templates.delete"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.users.reports.settings-templates.delete"> <p>API Documentation Enterprise</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+            -deprecated                                            "
+>
     <h4 class="phpdocumentor-element__name" id="method_get">
         get()
         <a href="classes/CrowdinApiClient-Api-UserApi.html#method_get" class="headerlink"><i class="fas fa-link"></i></a>
@@ -244,17 +622,24 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/UserApi.php"><a href="files/src-crowdinapiclient-api-userapi.html"><abbr title="src/CrowdinApiClient/Api/UserApi.php">UserApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">68</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Get Member Info</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
+    
+    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">get</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$memberId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-User.html"><abbr title="\CrowdinApiClient\Model\User">User</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
+        </div>
+                <div class="phpdocumentor-admonition">
+        <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+            <article>
+                <p>This method returns wrong model. Use getProjectMemberInfo method instead.</p>
+<p>Get Member Info</p>
+
+            </article>
         </div>
     
     
@@ -315,7 +700,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/UserApi.php"><a href="files/src-crowdinapiclient-api-userapi.html"><abbr title="src/CrowdinApiClient/Api/UserApi.php">UserApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 
     </aside>
 
@@ -361,6 +746,156 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getProjectMemberInfo">
+        getProjectMemberInfo()
+        <a href="classes/CrowdinApiClient-Api-UserApi.html#method_getProjectMemberInfo" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/UserApi.php"><a href="files/src-crowdinapiclient-api-userapi.html"><abbr title="src/CrowdinApiClient/Api/UserApi.php">UserApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">107</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get Member Info</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getProjectMemberInfo</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$memberId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-ProjectMember.html"><abbr title="\CrowdinApiClient\Model\ProjectMember">ProjectMember</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$projectId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$memberId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-UserApi.html#method_getProjectMemberInfo#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.projects.members.get"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-ProjectMember.html"><abbr title="\CrowdinApiClient\Model\ProjectMember">ProjectMember</abbr></a>|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getReportSettingsTemplate">
+        getReportSettingsTemplate()
+        <a href="classes/CrowdinApiClient-Api-UserApi.html#method_getReportSettingsTemplate" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/UserApi.php"><a href="files/src-crowdinapiclient-api-userapi.html"><abbr title="src/CrowdinApiClient/Api/UserApi.php">UserApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">207</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get User Report Settings Template</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getReportSettingsTemplate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$reportSettingsTemplateId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-UserReportSettingsTemplate.html"><abbr title="\CrowdinApiClient\Model\UserReportSettingsTemplate">UserReportSettingsTemplate</abbr></a>|<a href="classes/CrowdinApiClient-Model-HourlyUserReportSettingsTemplate.html"><abbr title="\CrowdinApiClient\Model\HourlyUserReportSettingsTemplate">HourlyUserReportSettingsTemplate</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$userId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$reportSettingsTemplateId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-UserApi.html#method_getReportSettingsTemplate#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.users.reports.settings-templates.get"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.users.reports.settings-templates.get"> <p>API Documentation Enterprise</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-UserReportSettingsTemplate.html"><abbr title="\CrowdinApiClient\Model\UserReportSettingsTemplate">UserReportSettingsTemplate</abbr></a>|<a href="classes/CrowdinApiClient-Model-HourlyUserReportSettingsTemplate.html"><abbr title="\CrowdinApiClient\Model\HourlyUserReportSettingsTemplate">HourlyUserReportSettingsTemplate</abbr></a>|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+            -deprecated                                            "
+>
     <h4 class="phpdocumentor-element__name" id="method_list">
         list()
         <a href="classes/CrowdinApiClient-Api-UserApi.html#method_list" class="headerlink"><i class="fas fa-link"></i></a>
@@ -369,17 +904,24 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/UserApi.php"><a href="files/src-crowdinapiclient-api-userapi.html"><abbr title="src/CrowdinApiClient/Api/UserApi.php">UserApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">34</span>
+    <span class="phpdocumentor-element-found-in__line">53</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">List Project Members</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
+    
+    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">list</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
+        </div>
+                <div class="phpdocumentor-admonition">
+        <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+            <article>
+                <p>This method returns wrong model. Use listProjectMembers method instead.</p>
+<p>List Project Members</p>
+
+            </article>
         </div>
     
     
@@ -423,6 +965,428 @@
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_listProjectMembers">
+        listProjectMembers()
+        <a href="classes/CrowdinApiClient-Api-UserApi.html#method_listProjectMembers" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/UserApi.php"><a href="files/src-crowdinapiclient-api-userapi.html"><abbr title="src/CrowdinApiClient/Api/UserApi.php">UserApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">81</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">List Project Members</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">listProjectMembers</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$projectId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$params</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-UserApi.html#method_listProjectMembers#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.projects.members.getMany"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_listReportSettingsTemplates">
+        listReportSettingsTemplates()
+        <a href="classes/CrowdinApiClient-Api-UserApi.html#method_listReportSettingsTemplates" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/UserApi.php"><a href="files/src-crowdinapiclient-api-userapi.html"><abbr title="src/CrowdinApiClient/Api/UserApi.php">UserApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">156</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">List User Report Settings Templates</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">listReportSettingsTemplates</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userId</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$userId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$params</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>integer $params[limit]<br>
+integer $params[offset]</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-UserApi.html#method_listReportSettingsTemplates#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.users.reports.settings-templates.getMany"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.users.reports.settings-templates.getMany"> <p>API Documentation Enterprise</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_replaceProjectMemberPermissions">
+        replaceProjectMemberPermissions()
+        <a href="classes/CrowdinApiClient-Api-UserApi.html#method_replaceProjectMemberPermissions" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/UserApi.php"><a href="files/src-crowdinapiclient-api-userapi.html"><abbr title="src/CrowdinApiClient/Api/UserApi.php">UserApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">121</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Replace Project Member Permissions</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">replaceProjectMemberPermissions</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$memberId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-ProjectMember.html"><abbr title="\CrowdinApiClient\Model\ProjectMember">ProjectMember</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$projectId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$memberId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$data</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-UserApi.html#method_replaceProjectMemberPermissions#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.projects.members.put"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-ProjectMember.html"><abbr title="\CrowdinApiClient\Model\ProjectMember">ProjectMember</abbr></a>|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_updateAuthenticatedUser">
+        updateAuthenticatedUser()
+        <a href="classes/CrowdinApiClient-Api-UserApi.html#method_updateAuthenticatedUser" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/UserApi.php"><a href="files/src-crowdinapiclient-api-userapi.html"><abbr title="src/CrowdinApiClient/Api/UserApi.php">UserApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">38</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Update Authenticated User</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">updateAuthenticatedUser</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type"><a href="classes/CrowdinApiClient-Model-User.html"><abbr title="\CrowdinApiClient\Model\User">User</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$user</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-User.html"><abbr title="\CrowdinApiClient\Model\User">User</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$user</span>
+                : <span class="phpdocumentor-argument-list__argument__type"><a href="classes/CrowdinApiClient-Model-User.html"><abbr title="\CrowdinApiClient\Model\User">User</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-UserApi.html#method_updateAuthenticatedUser#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.user.patch"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-User.html"><abbr title="\CrowdinApiClient\Model\User">User</abbr></a>|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_updateReportSettingsTemplate">
+        updateReportSettingsTemplate()
+        <a href="classes/CrowdinApiClient-Api-UserApi.html#method_updateReportSettingsTemplate" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/UserApi.php"><a href="files/src-crowdinapiclient-api-userapi.html"><abbr title="src/CrowdinApiClient/Api/UserApi.php">UserApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">237</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Update User Report Settings Template</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">updateReportSettingsTemplate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type"><a href="classes/CrowdinApiClient-Model-UserReportSettingsTemplate.html"><abbr title="\CrowdinApiClient\Model\UserReportSettingsTemplate">UserReportSettingsTemplate</abbr></a>|<a href="classes/CrowdinApiClient-Model-HourlyUserReportSettingsTemplate.html"><abbr title="\CrowdinApiClient\Model\HourlyUserReportSettingsTemplate">HourlyUserReportSettingsTemplate</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$reportSettingsTemplate</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-UserReportSettingsTemplate.html"><abbr title="\CrowdinApiClient\Model\UserReportSettingsTemplate">UserReportSettingsTemplate</abbr></a>|<a href="classes/CrowdinApiClient-Model-HourlyUserReportSettingsTemplate.html"><abbr title="\CrowdinApiClient\Model\HourlyUserReportSettingsTemplate">HourlyUserReportSettingsTemplate</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$userId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$reportSettingsTemplate</span>
+                : <span class="phpdocumentor-argument-list__argument__type"><a href="classes/CrowdinApiClient-Model-UserReportSettingsTemplate.html"><abbr title="\CrowdinApiClient\Model\UserReportSettingsTemplate">UserReportSettingsTemplate</abbr></a>|<a href="classes/CrowdinApiClient-Model-HourlyUserReportSettingsTemplate.html"><abbr title="\CrowdinApiClient\Model\HourlyUserReportSettingsTemplate">HourlyUserReportSettingsTemplate</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-UserApi.html#method_updateReportSettingsTemplate#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.users.reports.settings-templates.patch"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.users.reports.settings-templates.patch"> <p>API Documentation Enterprise</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-UserReportSettingsTemplate.html"><abbr title="\CrowdinApiClient\Model\UserReportSettingsTemplate">UserReportSettingsTemplate</abbr></a>|<a href="classes/CrowdinApiClient-Model-HourlyUserReportSettingsTemplate.html"><abbr title="\CrowdinApiClient\Model\HourlyUserReportSettingsTemplate">HourlyUserReportSettingsTemplate</abbr></a>|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_makeUserReportSettingsTemplate">
+        makeUserReportSettingsTemplate()
+        <a href="classes/CrowdinApiClient-Api-UserApi.html#method_makeUserReportSettingsTemplate" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/UserApi.php"><a href="files/src-crowdinapiclient-api-userapi.html"><abbr title="src/CrowdinApiClient/Api/UserApi.php">UserApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">248</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">makeUserReportSettingsTemplate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-HourlyUserReportSettingsTemplate.html"><abbr title="\CrowdinApiClient\Model\HourlyUserReportSettingsTemplate">HourlyUserReportSettingsTemplate</abbr></a>|<a href="classes/CrowdinApiClient-Model-UserReportSettingsTemplate.html"><abbr title="\CrowdinApiClient\Model\UserReportSettingsTemplate">UserReportSettingsTemplate</abbr></a></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$data</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-HourlyUserReportSettingsTemplate.html"><abbr title="\CrowdinApiClient\Model\HourlyUserReportSettingsTemplate">HourlyUserReportSettingsTemplate</abbr></a>|<a href="classes/CrowdinApiClient-Model-UserReportSettingsTemplate.html"><abbr title="\CrowdinApiClient\Model\UserReportSettingsTemplate">UserReportSettingsTemplate</abbr></a></span>
             </section>
 
 </article>
@@ -541,9 +1505,21 @@
                         <li class="phpdocumentor-on-this-page-section__title">Methods</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                            <li class=""><a href="classes/CrowdinApiClient-Api-UserApi.html#method_get">get()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-UserApi.html#method_addProjectMember">addProjectMember()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-UserApi.html#method_createReportSettingsTemplate">createReportSettingsTemplate()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-UserApi.html#method_deleteMemberFromProject">deleteMemberFromProject()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-UserApi.html#method_deleteReportSettingsTemplate">deleteReportSettingsTemplate()</a></li>
+                                            <li class="-deprecated"><a href="classes/CrowdinApiClient-Api-UserApi.html#method_get">get()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-UserApi.html#method_getAuthenticatedUser">getAuthenticatedUser()</a></li>
-                                            <li class=""><a href="classes/CrowdinApiClient-Api-UserApi.html#method_list">list()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-UserApi.html#method_getProjectMemberInfo">getProjectMemberInfo()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-UserApi.html#method_getReportSettingsTemplate">getReportSettingsTemplate()</a></li>
+                                            <li class="-deprecated"><a href="classes/CrowdinApiClient-Api-UserApi.html#method_list">list()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-UserApi.html#method_listProjectMembers">listProjectMembers()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-UserApi.html#method_listReportSettingsTemplates">listReportSettingsTemplates()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-UserApi.html#method_replaceProjectMemberPermissions">replaceProjectMemberPermissions()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-UserApi.html#method_updateAuthenticatedUser">updateAuthenticatedUser()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-UserApi.html#method_updateReportSettingsTemplate">updateReportSettingsTemplate()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-UserApi.html#method_makeUserReportSettingsTemplate">makeUserReportSettingsTemplate()</a></li>
                                     </ul>
             </li>
                     </ul>

@@ -133,12 +133,11 @@
                                         <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/crowdinapiclient.html">CrowdinApiClient</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/crowdinapiclient-api.html">Api</a></li>
-            <li class="phpdocumentor-breadcrumb"><a href="namespaces/crowdinapiclient-api-enterprise.html">Enterprise</a></li>
     </ul>
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    TeamMemberApi
+    StyleGuideApi
 
         <span class="phpdocumentor-element__extends">
         extends <abbr title="\CrowdinApiClient\Api\AbstractApi">AbstractApi</abbr>
@@ -147,9 +146,7 @@
             <div class="phpdocumentor-element__package">
             in package
             <ul class="phpdocumentor-breadcrumbs">
-                                    <li class="phpdocumentor-breadcrumb"><a href="packages/Crowdin.html">Crowdin</a></li>
-                                    <li class="phpdocumentor-breadcrumb"><a href="packages/Crowdin-Api.html">Api</a></li>
-                                    <li class="phpdocumentor-breadcrumb"><a href="packages/Crowdin-Api-Enterprise.html">Enterprise</a></li>
+                                    <li class="phpdocumentor-breadcrumb"><a href="packages/Application.html">Application</a></li>
                             </ul>
         </div>
     
@@ -162,14 +159,13 @@
 </div>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/TeamMemberApi.php"><a href="files/src-crowdinapiclient-api-enterprise-teammemberapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/TeamMemberApi.php">TeamMemberApi.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StyleGuideApi.php"><a href="files/src-crowdinapiclient-api-styleguideapi.html"><abbr title="src/CrowdinApiClient/Api/StyleGuideApi.php">StyleGuideApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">15</span>
+    <span class="phpdocumentor-element-found-in__line">10</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Use API to manage team members</p>
-
+        
 
 
 
@@ -178,7 +174,7 @@
     
 <h3 id="toc">
     Table of Contents
-    <a href="classes/CrowdinApiClient-Api-Enterprise-TeamMemberApi.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/CrowdinApiClient-Api-StyleGuideApi.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h3>
 
@@ -193,37 +189,44 @@
 
 <h4 id="toc-methods">
     Methods
-    <a href="classes/CrowdinApiClient-Api-Enterprise-TeamMemberApi.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/CrowdinApiClient-Api-StyleGuideApi.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/CrowdinApiClient-Api-Enterprise-TeamMemberApi.html#method_clear">clear()</a>
+    <a class="" href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_create">create()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-StyleGuide.html"><abbr title="\CrowdinApiClient\Model\StyleGuide">StyleGuide</abbr></a>|null    </span>
+</dt>
+<dd>Add Style Guide</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_delete">delete()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd>Delete All Team Members</dd>
+<dd>Delete Style Guide</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/CrowdinApiClient-Api-Enterprise-TeamMemberApi.html#method_create">create()</a>
+    <a class="" href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_get">get()</a>
     <span>
-                                &nbsp;: <a href="classes/CrowdinApiClient-Model-Enterprise-AddedTeamMembers.html"><abbr title="\CrowdinApiClient\Model\Enterprise\AddedTeamMembers">AddedTeamMembers</abbr></a>    </span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-StyleGuide.html"><abbr title="\CrowdinApiClient\Model\StyleGuide">StyleGuide</abbr></a>|null    </span>
 </dt>
-<dd>Add Team Members</dd>
+<dd>Get Style Guide</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/CrowdinApiClient-Api-Enterprise-TeamMemberApi.html#method_delete">delete()</a>
-    <span>
-                                &nbsp;: mixed    </span>
-</dt>
-<dd>Delete Team member</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/CrowdinApiClient-Api-Enterprise-TeamMemberApi.html#method_list">list()</a>
+    <a class="" href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_list">list()</a>
     <span>
                                 &nbsp;: <a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>    </span>
 </dt>
-<dd>Team Members List</dd>
+<dd>List Style Guides</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_update">update()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-StyleGuide.html"><abbr title="\CrowdinApiClient\Model\StyleGuide">StyleGuide</abbr></a>|null    </span>
+</dt>
+<dd>Edit Style Guide</dd>
 
     </dl>
 
@@ -236,7 +239,7 @@
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/CrowdinApiClient-Api-Enterprise-TeamMemberApi.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/CrowdinApiClient-Api-StyleGuideApi.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
                     <article
@@ -245,83 +248,23 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_clear">
-        clear()
-        <a href="classes/CrowdinApiClient-Api-Enterprise-TeamMemberApi.html#method_clear" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/TeamMemberApi.php"><a href="files/src-crowdinapiclient-api-enterprise-teammemberapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/TeamMemberApi.php">TeamMemberApi.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">50</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Delete All Team Members</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">clear</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$teamId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-argument-list__argument__name">$teamId</span>
-                : <span class="phpdocumentor-argument-list__argument__type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="classes/CrowdinApiClient-Api-Enterprise-TeamMemberApi.html#method_clear#tags" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">link</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.teams.members.deleteMany"> <p>API Documentation</p>
- </a>
-                    
-                                    </dd>
-                                            </dl>
-
-        
-    
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_create">
         create()
-        <a href="classes/CrowdinApiClient-Api-Enterprise-TeamMemberApi.html#method_create" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_create" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/TeamMemberApi.php"><a href="files/src-crowdinapiclient-api-enterprise-teammemberapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/TeamMemberApi.php">TeamMemberApi.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StyleGuideApi.php"><a href="files/src-crowdinapiclient-api-styleguideapi.html"><abbr title="src/CrowdinApiClient/Api/StyleGuideApi.php">StyleGuideApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">43</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Add Team Members</p>
+        <p class="phpdocumentor-summary">Add Style Guide</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">create</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$teamId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Enterprise-AddedTeamMembers.html"><abbr title="\CrowdinApiClient\Model\Enterprise\AddedTeamMembers">AddedTeamMembers</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">create</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-StyleGuide.html"><abbr title="\CrowdinApiClient\Model\StyleGuide">StyleGuide</abbr></a>|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -330,25 +273,25 @@
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-argument-list__argument__name">$teamId</span>
-                : <span class="phpdocumentor-argument-list__argument__type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-argument-list__argument__name">$data</span>
+                <span class="phpdocumentor-argument-list__argument__name">$params</span>
                 : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>string $params[name] required<br>
+int $params[storageId] required<br>
+string|null $params[aiInstructions]<br>
+string[] $params[languageIds]<br>
+int[] $params[projectIds]<br>
+bool $params[isShared]</p>
+</section>
+
             </dd>
             </dl>
 
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="classes/CrowdinApiClient-Api-Enterprise-TeamMemberApi.html#method_create#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_create#tags" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h5>
     <dl class="phpdocumentor-tag-list">
@@ -356,7 +299,15 @@
                     <span class="phpdocumentor-tag__name">link</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.teams.members.post"> <p>API Documentation</p>
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.style-guides.post"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.style-guides.post"> <p>API Documentation Enterprise</p>
  </a>
                     
                                     </dd>
@@ -366,7 +317,7 @@
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Enterprise-AddedTeamMembers.html"><abbr title="\CrowdinApiClient\Model\Enterprise\AddedTeamMembers">AddedTeamMembers</abbr></a></span>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-StyleGuide.html"><abbr title="\CrowdinApiClient\Model\StyleGuide">StyleGuide</abbr></a>|null</span>
             </section>
 
 </article>
@@ -378,21 +329,21 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_delete">
         delete()
-        <a href="classes/CrowdinApiClient-Api-Enterprise-TeamMemberApi.html#method_delete" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_delete" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/TeamMemberApi.php"><a href="files/src-crowdinapiclient-api-enterprise-teammemberapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/TeamMemberApi.php">TeamMemberApi.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StyleGuideApi.php"><a href="files/src-crowdinapiclient-api-styleguideapi.html"><abbr title="src/CrowdinApiClient/Api/StyleGuideApi.php">StyleGuideApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">63</span>
+    <span class="phpdocumentor-element-found-in__line">69</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Delete Team member</p>
+        <p class="phpdocumentor-summary">Delete Style Guide</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">delete</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$teamId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$memberId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">delete</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$styleGuideId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -401,14 +352,7 @@
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-argument-list__argument__name">$teamId</span>
-                : <span class="phpdocumentor-argument-list__argument__type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-argument-list__argument__name">$memberId</span>
+                <span class="phpdocumentor-argument-list__argument__name">$styleGuideId</span>
                 : <span class="phpdocumentor-argument-list__argument__type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
@@ -419,7 +363,7 @@
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="classes/CrowdinApiClient-Api-Enterprise-TeamMemberApi.html#method_delete#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_delete#tags" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h5>
     <dl class="phpdocumentor-tag-list">
@@ -427,7 +371,16 @@
                     <span class="phpdocumentor-tag__name">link</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.teams.members.delete"> https://developer.crowdin.com/enterprise/api/v2/#operation/api.teams.members.delete </a>
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.style-guides.delete"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.style-guides.delete"> <p>API Documentation Enterprise</p>
+ </a>
                     
                                     </dd>
                                             </dl>
@@ -442,23 +395,23 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_list">
-        list()
-        <a href="classes/CrowdinApiClient-Api-Enterprise-TeamMemberApi.html#method_list" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_get">
+        get()
+        <a href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_get" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/TeamMemberApi.php"><a href="files/src-crowdinapiclient-api-enterprise-teammemberapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/TeamMemberApi.php">TeamMemberApi.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StyleGuideApi.php"><a href="files/src-crowdinapiclient-api-styleguideapi.html"><abbr title="src/CrowdinApiClient/Api/StyleGuideApi.php">StyleGuideApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">25</span>
+    <span class="phpdocumentor-element-found-in__line">56</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Team Members List</p>
+        <p class="phpdocumentor-summary">Get Style Guide</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">list</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$teamId</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">get</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$styleGuideId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-StyleGuide.html"><abbr title="\CrowdinApiClient\Model\StyleGuide">StyleGuide</abbr></a>|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -467,16 +420,9 @@
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-argument-list__argument__name">$teamId</span>
+                <span class="phpdocumentor-argument-list__argument__name">$styleGuideId</span>
                 : <span class="phpdocumentor-argument-list__argument__type">int</span>
                             </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-argument-list__argument__name">$params</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
-                 = <span class="phpdocumentor-argument-list__argument__default-value">[]</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
@@ -485,7 +431,7 @@
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="classes/CrowdinApiClient-Api-Enterprise-TeamMemberApi.html#method_list#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_get#tags" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h5>
     <dl class="phpdocumentor-tag-list">
@@ -493,7 +439,92 @@
                     <span class="phpdocumentor-tag__name">link</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.teams.members.getMany"> <p>API Documentation</p>
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.style-guides.get"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.style-guides.get"> <p>API Documentation Enterprise</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-StyleGuide.html"><abbr title="\CrowdinApiClient\Model\StyleGuide">StyleGuide</abbr></a>|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_list">
+        list()
+        <a href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_list" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StyleGuideApi.php"><a href="files/src-crowdinapiclient-api-styleguideapi.html"><abbr title="src/CrowdinApiClient/Api/StyleGuideApi.php">StyleGuideApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">24</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">List Style Guides</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">list</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$params</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>integer $params[limit]<br>
+integer $params[offset]<br>
+string $params[orderBy]<br>
+integer $params[userId]</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_list#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.style-guides.getMany"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.style-guides.getMany"> <p>API Documentation Enterprise</p>
  </a>
                     
                                     </dd>
@@ -507,13 +538,85 @@
             </section>
 
 </article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_update">
+        update()
+        <a href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_update" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StyleGuideApi.php"><a href="files/src-crowdinapiclient-api-styleguideapi.html"><abbr title="src/CrowdinApiClient/Api/StyleGuideApi.php">StyleGuideApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">82</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Edit Style Guide</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type"><a href="classes/CrowdinApiClient-Model-StyleGuide.html"><abbr title="\CrowdinApiClient\Model\StyleGuide">StyleGuide</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$styleGuide</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-StyleGuide.html"><abbr title="\CrowdinApiClient\Model\StyleGuide">StyleGuide</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$styleGuide</span>
+                : <span class="phpdocumentor-argument-list__argument__type"><a href="classes/CrowdinApiClient-Model-StyleGuide.html"><abbr title="\CrowdinApiClient\Model\StyleGuide">StyleGuide</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_update#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.style-guides.patch"> <p>API Documentation</p>
+ </a>
+                    
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.style-guides.patch"> <p>API Documentation Enterprise</p>
+ </a>
+                    
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-StyleGuide.html"><abbr title="\CrowdinApiClient\Model\StyleGuide">StyleGuide</abbr></a>|null</span>
+            </section>
+
+</article>
             </section>
 
         <div class="phpdocumentor-modal" id="source-view">
     <div class="phpdocumentor-modal-bg" data-exit-button></div>
     <div class="phpdocumentor-modal-container">
         <div class="phpdocumentor-modal-content">
-            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/CrowdinApiClient/Api/Enterprise/TeamMemberApi.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
+            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/CrowdinApiClient/Api/StyleGuideApi.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
         </div>
         <button data-exit-button class="phpdocumentor-modal__close">&times;</button>
     </div>
@@ -614,7 +717,7 @@
             <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                                                                <li><a href="classes/CrowdinApiClient-Api-Enterprise-TeamMemberApi.html#toc-methods">Methods</a></li>
+                                                                                <li><a href="classes/CrowdinApiClient-Api-StyleGuideApi.html#toc-methods">Methods</a></li>
                                     </ul>
             </li>
             
@@ -622,10 +725,11 @@
                         <li class="phpdocumentor-on-this-page-section__title">Methods</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                            <li class=""><a href="classes/CrowdinApiClient-Api-Enterprise-TeamMemberApi.html#method_clear">clear()</a></li>
-                                            <li class=""><a href="classes/CrowdinApiClient-Api-Enterprise-TeamMemberApi.html#method_create">create()</a></li>
-                                            <li class=""><a href="classes/CrowdinApiClient-Api-Enterprise-TeamMemberApi.html#method_delete">delete()</a></li>
-                                            <li class=""><a href="classes/CrowdinApiClient-Api-Enterprise-TeamMemberApi.html#method_list">list()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_create">create()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_delete">delete()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_get">get()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_list">list()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_update">update()</a></li>
                                     </ul>
             </li>
                     </ul>
@@ -645,7 +749,7 @@
     </section>
 </section>
         </div>
-        <a href="classes/CrowdinApiClient-Api-Enterprise-TeamMemberApi.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/CrowdinApiClient-Api-StyleGuideApi.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
