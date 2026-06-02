@@ -147,6 +147,11 @@ class Branch extends BaseModel
         $this->priority = $priority;
     }
 
+    public function isProtected(): bool
+    {
+        return $this->isProtected;
+    }
+
     /**
      * @return string
      */
