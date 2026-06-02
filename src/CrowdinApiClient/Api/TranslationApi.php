@@ -43,7 +43,8 @@ class TranslationApi extends AbstractApi
      * @param int $projectId
      * @param array $params
      * string[] $params[languageIds] required<br>
-     * int[] $params[fileIds] required<br>
+     * int[] $params[fileIds] Required for file-based projects<br>
+     * int[] $params[branchIds] String-based projects only<br>
      * string $params[method]<br>
      * int $params[engineId]<br>
      * string $params[autoApproveOption]<br>
