@@ -197,19 +197,25 @@ class ApplicationApiTest extends AbstractTestApi
 
     public function testEditApplicationData(): void
     {
-        $requestBody = ['key' => 'edited-value'];
+        $operations = [
+            [
+                'op' => 'replace',
+                'path' => '/key',
+                'value' => 'edited-value'
+            ],
+        ];
 
         $this->mockRequest([
             'path' => '/applications/my-application/api/settings',
             'method' => 'patch',
-            'body' => json_encode($requestBody),
+            'body' => json_encode($operations),
             'response' => $this->getResponseJson(),
         ]);
 
         $data = $this->crowdin->application->editApplicationData(
             $this->applicationIdentifier,
             $this->path,
-            $requestBody
+            $operations
         );
 
         $this->assertInstanceOf(ApplicationData::class, $data);
