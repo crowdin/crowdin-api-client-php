@@ -51,7 +51,7 @@ class SourceStringApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $data
-     * string $data[identifier] Required for strings-based projects or file-based projects if scheme of CSV file includes identifier column<br>
+     * string $data[identifier] Required for string-based projects or file-based projects if scheme of CSV file includes identifier column<br>
      * string $data[text] required<br>
      * integer $data[branchId] Required for string-based projects<br>
      * integer $data[fileId] Required for file-based projects<br>

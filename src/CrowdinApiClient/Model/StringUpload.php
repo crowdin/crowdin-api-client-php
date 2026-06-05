@@ -38,12 +38,12 @@ class StringUpload extends BaseModel
     protected $updatedAt;
 
     /**
-     * @var string
+     * @var string|null
      */
     protected $startedAt;
 
     /**
-     * @var string
+     * @var string|null
      */
     protected $finishedAt;
 
@@ -57,8 +57,8 @@ class StringUpload extends BaseModel
         $this->attributes = (array)$this->getDataProperty('attributes');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
-        $this->startedAt = (string)$this->getDataProperty('startedAt');
-        $this->finishedAt = (string)$this->getDataProperty('finishedAt');
+        $this->startedAt = $this->getDataProperty('startedAt');
+        $this->finishedAt = $this->getDataProperty('finishedAt');
     }
 
     public function getIdentifier(): string
@@ -91,12 +91,12 @@ class StringUpload extends BaseModel
         return $this->updatedAt;
     }
 
-    public function getStartedAt(): string
+    public function getStartedAt(): ?string
     {
         return $this->startedAt;
     }
 
-    public function getFinishedAt(): string
+    public function getFinishedAt(): ?string
     {
         return $this->finishedAt;
     }
