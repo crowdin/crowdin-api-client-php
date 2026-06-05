@@ -160,7 +160,7 @@ class ApplicationApi extends AbstractApi
      *
      * @param string $applicationIdentifier
      * @param string $path
-     * @param array $data
+     * @param array $data Application-specific key-value payload (free-form, not RFC 6902 patch operations)
      * @return ApplicationData|null
      */
     public function editApplicationData(string $applicationIdentifier, string $path, array $data): ?ApplicationData

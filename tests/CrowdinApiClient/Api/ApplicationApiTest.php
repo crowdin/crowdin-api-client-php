@@ -171,10 +171,12 @@ class ApplicationApiTest extends AbstractTestApi
     {
         $requestBody = ['key' => 'updated-value'];
 
-        $this->mockRequestPut(
-            '/applications/my-application/api/settings',
-            $this->getResponseJson()
-        );
+        $this->mockRequest([
+            'path' => '/applications/my-application/api/settings',
+            'method' => 'put',
+            'body' => json_encode($requestBody),
+            'response' => $this->getResponseJson(),
+        ]);
 
         $data = $this->crowdin->application->updateOrRestoreApplicationData(
             $this->applicationIdentifier,
@@ -197,10 +199,12 @@ class ApplicationApiTest extends AbstractTestApi
     {
         $requestBody = ['key' => 'edited-value'];
 
-        $this->mockRequestPatch(
-            '/applications/my-application/api/settings',
-            $this->getResponseJson()
-        );
+        $this->mockRequest([
+            'path' => '/applications/my-application/api/settings',
+            'method' => 'patch',
+            'body' => json_encode($requestBody),
+            'response' => $this->getResponseJson(),
+        ]);
 
         $data = $this->crowdin->application->editApplicationData(
             $this->applicationIdentifier,
