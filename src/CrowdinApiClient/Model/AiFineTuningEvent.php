@@ -16,7 +16,7 @@ class AiFineTuningEvent extends BaseModel
     protected $message;
 
     /** @var array|null */
-    protected $data;
+    protected $metrics;
 
     /** @var string */
     protected $createdAt;
@@ -28,7 +28,7 @@ class AiFineTuningEvent extends BaseModel
         $this->id = (string)$this->getDataProperty('id');
         $this->type = (string)$this->getDataProperty('type');
         $this->message = (string)$this->getDataProperty('message');
-        $this->data = $this->getDataProperty('data');
+        $this->metrics = $this->getDataProperty('data');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
     }
 
@@ -49,7 +49,7 @@ class AiFineTuningEvent extends BaseModel
 
     public function getMetrics(): ?array
     {
-        return $this->data;
+        return $this->metrics;
     }
 
     public function getCreatedAt(): string
