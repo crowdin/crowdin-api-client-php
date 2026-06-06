@@ -136,6 +136,10 @@ class AiApiTest extends AbstractTestApi
         $this->assertEquals('50fb3506-4127-4ba8-8296-f97dc7e3e0c3', $fileTranslation->getIdentifier());
         $this->assertEquals('finished', $fileTranslation->getStatus());
         $this->assertEquals(100, $fileTranslation->getProgress());
+        $this->assertEquals('2026-01-23T11:26:54+00:00', $fileTranslation->getCreatedAt());
+        $this->assertEquals('2026-01-23T11:26:54+00:00', $fileTranslation->getUpdatedAt());
+        $this->assertEquals('2026-01-23T11:26:54+00:00', $fileTranslation->getStartedAt());
+        $this->assertEquals('2026-01-23T11:26:54+00:00', $fileTranslation->getFinishedAt());
     }
 
     public function testDeleteFileTranslation(): void
@@ -320,6 +324,15 @@ class AiApiTest extends AbstractTestApi
         $this->assertEquals('gpt-5.4', $prompt->getAiModelId());
         $this->assertTrue($prompt->isFineTuningAvailable());
         $this->assertEquals(42, $prompt->getUsageCount());
+        $this->assertEquals([1], $prompt->getEnabledProjectIds());
+        $this->assertNull($prompt->getPromptPreview());
+        $this->assertEquals(123, $prompt->getCreatedBy());
+        $this->assertEquals(456, $prompt->getUpdatedBy());
+        $this->assertEquals(789, $prompt->getLastUsedBy());
+        $this->assertEquals('2019-09-25T14:30:00+00:00', $prompt->getLastUsedAt());
+        $this->assertEquals('2019-09-20T11:11:05+00:00', $prompt->getCreatedAt());
+        $this->assertEquals('2019-09-20T12:22:20+00:00', $prompt->getUpdatedAt());
+        $this->assertIsArray($prompt->getConfig());
     }
 
     public function testDeletePrompt(): void
@@ -434,6 +447,10 @@ class AiApiTest extends AbstractTestApi
         $this->assertInstanceOf(AiPromptCompletion::class, $completion);
         $this->assertEquals('finished', $completion->getStatus());
         $this->assertEquals(100, $completion->getProgress());
+        $this->assertEquals('2019-09-23T11:26:54+00:00', $completion->getCreatedAt());
+        $this->assertEquals('2019-09-23T11:26:54+00:00', $completion->getUpdatedAt());
+        $this->assertEquals('2019-09-23T11:26:54+00:00', $completion->getStartedAt());
+        $this->assertEquals('2019-09-23T11:26:54+00:00', $completion->getFinishedAt());
     }
 
     public function testDeletePromptCompletion(): void
@@ -544,6 +561,11 @@ class AiApiTest extends AbstractTestApi
         $this->assertInstanceOf(AiFineTuningDataset::class, $dataset);
         $this->assertEquals('finished', $dataset->getStatus());
         $this->assertEquals(100, $dataset->getProgress());
+        $this->assertIsArray($dataset->getAttributes());
+        $this->assertEquals('2019-09-23T11:26:54+00:00', $dataset->getCreatedAt());
+        $this->assertEquals('2019-09-23T11:26:54+00:00', $dataset->getUpdatedAt());
+        $this->assertEquals('2019-09-23T11:26:54+00:00', $dataset->getStartedAt());
+        $this->assertEquals('2019-09-23T11:26:54+00:00', $dataset->getFinishedAt());
     }
 
     public function testDownloadFineTuningDataset(): void
@@ -667,6 +689,11 @@ class AiApiTest extends AbstractTestApi
         $this->assertInstanceOf(AiFineTuningJob::class, $job);
         $this->assertEquals('finished', $job->getStatus());
         $this->assertEquals(100, $job->getProgress());
+        $this->assertIsArray($job->getAttributes());
+        $this->assertEquals('2019-09-23T11:26:54+00:00', $job->getCreatedAt());
+        $this->assertEquals('2019-09-23T11:26:54+00:00', $job->getUpdatedAt());
+        $this->assertEquals('2019-09-23T11:26:54+00:00', $job->getStartedAt());
+        $this->assertEquals('2019-09-23T11:26:54+00:00', $job->getFinishedAt());
     }
 
     public function testListFineTuningJobs(): void
@@ -753,6 +780,8 @@ class AiApiTest extends AbstractTestApi
         $this->assertEquals('ftevent-0HOW0hqwQ7G1b70qOC8S7UsT', $events[0]->getId());
         $this->assertEquals('message', $events[0]->getType());
         $this->assertEquals('Created fine-tuning job: ftjob-EhnfVT9MnddMBLfjMcme71if', $events[0]->getMessage());
+        $this->assertEquals('2019-09-23T11:26:54+00:00', $events[0]->getCreatedAt());
+        $this->assertIsArray($events[1]->getMetrics());
     }
 
     public function testListProviders(): void
@@ -866,6 +895,11 @@ class AiApiTest extends AbstractTestApi
         $this->assertEquals(2, $provider->getId());
         $this->assertFalse($provider->isUseSystemCredentials());
         $this->assertEquals(42, $provider->getPromptsCount());
+        $this->assertEquals(['apiKey' => 'string'], $provider->getCredentials());
+        $this->assertIsArray($provider->getConfig());
+        $this->assertTrue($provider->isEnabled());
+        $this->assertEquals('2019-09-20T11:11:05+00:00', $provider->getCreatedAt());
+        $this->assertEquals('2019-09-20T12:22:20+00:00', $provider->getUpdatedAt());
     }
 
     public function testDeleteProvider(): void
@@ -1003,6 +1037,11 @@ class AiApiTest extends AbstractTestApi
         $this->assertInstanceOf(AiReport::class, $report);
         $this->assertEquals('finished', $report->getStatus());
         $this->assertEquals(100, $report->getProgress());
+        $this->assertIsArray($report->getAttributes());
+        $this->assertEquals('2024-01-23T11:26:54+00:00', $report->getCreatedAt());
+        $this->assertEquals('2024-09-23T11:26:54+00:00', $report->getUpdatedAt());
+        $this->assertEquals('2024-05-23T11:26:54+00:00', $report->getStartedAt());
+        $this->assertEquals('2024-05-23T11:26:54+00:00', $report->getFinishedAt());
     }
 
     public function testDownloadReport(): void
@@ -1129,6 +1168,8 @@ class AiApiTest extends AbstractTestApi
             'The product is the professional consulting service that transform challenges into opportunities.',
             $placeholder->getValue()
         );
+        $this->assertEquals('2019-09-20T11:11:05+00:00', $placeholder->getCreatedAt());
+        $this->assertEquals('2019-09-20T12:22:20+00:00', $placeholder->getUpdatedAt());
     }
 
     public function testDeleteCustomPlaceholder(): void
@@ -1224,6 +1265,8 @@ class AiApiTest extends AbstractTestApi
             'The product is the professional consulting service that transform challenges into opportunities.',
             $snippet->getValue()
         );
+        $this->assertEquals('2019-09-20T11:11:05+00:00', $snippet->getCreatedAt());
+        $this->assertEquals('2019-09-20T12:22:20+00:00', $snippet->getUpdatedAt());
     }
 
     public function testDeleteSnippet(): void
@@ -1235,5 +1278,213 @@ class AiApiTest extends AbstractTestApi
         ]);
 
         $this->crowdin->ai->deleteSnippet(1, 2);
+    }
+
+    public function testUpdatePrompt(): void
+    {
+        $prompt = new AiPrompt([
+            'id' => 2,
+            'name' => 'Pre-translate prompt',
+            'action' => 'pre_translate',
+            'aiProviderId' => 2,
+            'aiModelId' => 'gpt-5.4',
+            'isEnabled' => true,
+            'enabledProjectIds' => [1],
+            'config' => [],
+            'promptPreview' => null,
+            'isFineTuningAvailable' => true,
+            'createdBy' => 123,
+            'updatedBy' => 456,
+            'lastUsedBy' => 789,
+            'lastUsedAt' => '2019-09-25T14:30:00+00:00',
+            'usageCount' => 42,
+            'createdAt' => '2019-09-20T11:11:05+00:00',
+            'updatedAt' => '2019-09-20T12:22:20+00:00',
+        ]);
+        $prompt->setName('Updated prompt');
+        $prompt->setAction('translate');
+        $prompt->setAiProviderId(3);
+        $prompt->setAiModelId('gpt-4o');
+        $prompt->setEnabledProjectIds([2, 3]);
+        $prompt->setConfig(['mode' => 'advanced']);
+
+        $this->mockRequestPatch(
+            '/users/1/ai/prompts/2',
+            json_encode([
+                'data' => [
+                    'id' => 2,
+                    'name' => 'Updated prompt',
+                    'action' => 'translate',
+                    'aiProviderId' => 3,
+                    'aiModelId' => 'gpt-4o',
+                    'isEnabled' => true,
+                    'enabledProjectIds' => [2, 3],
+                    'config' => ['mode' => 'advanced'],
+                    'promptPreview' => null,
+                    'isFineTuningAvailable' => true,
+                    'createdBy' => 123,
+                    'updatedBy' => 456,
+                    'lastUsedBy' => 789,
+                    'lastUsedAt' => '2019-09-25T14:30:00+00:00',
+                    'usageCount' => 42,
+                    'createdAt' => '2019-09-20T11:11:05+00:00',
+                    'updatedAt' => '2019-09-20T12:22:20+00:00',
+                ],
+            ])
+        );
+
+        $updated = $this->crowdin->ai->updatePrompt(1, $prompt);
+        $this->assertInstanceOf(AiPrompt::class, $updated);
+        $this->assertEquals(2, $updated->getId());
+        $this->assertEquals('Updated prompt', $updated->getName());
+        $this->assertEquals('gpt-4o', $updated->getAiModelId());
+    }
+
+    public function testUpdateProvider(): void
+    {
+        $provider = new AiProvider([
+            'id' => 2,
+            'name' => 'OpenAI',
+            'type' => 'open_ai',
+            'credentials' => ['apiKey' => 'sk-...'],
+            'config' => [],
+            'isEnabled' => true,
+            'useSystemCredentials' => false,
+            'createdAt' => '2019-09-20T11:11:05+00:00',
+            'updatedAt' => '2019-09-20T12:22:20+00:00',
+            'promptsCount' => 42,
+        ]);
+        $provider->setName('Azure OpenAI');
+        $provider->setType('azure_open_ai');
+        $provider->setCredentials(['apiKey' => 'new-key']);
+        $provider->setConfig(['actionRules' => []]);
+        $provider->setIsEnabled(false);
+        $provider->setUseSystemCredentials(true);
+
+        $this->mockRequestPatch(
+            '/users/1/ai/providers/2',
+            json_encode([
+                'data' => [
+                    'id' => 2,
+                    'name' => 'Azure OpenAI',
+                    'type' => 'azure_open_ai',
+                    'credentials' => ['apiKey' => 'new-key'],
+                    'config' => ['actionRules' => []],
+                    'isEnabled' => false,
+                    'useSystemCredentials' => true,
+                    'createdAt' => '2019-09-20T11:11:05+00:00',
+                    'updatedAt' => '2019-09-20T12:22:20+00:00',
+                    'promptsCount' => 42,
+                ],
+            ])
+        );
+
+        $updated = $this->crowdin->ai->updateProvider(1, $provider);
+        $this->assertInstanceOf(AiProvider::class, $updated);
+        $this->assertEquals(2, $updated->getId());
+        $this->assertEquals('Azure OpenAI', $updated->getName());
+    }
+
+    public function testUpdateSettings(): void
+    {
+        $settings = new AiSettings([
+            'preTranslationAiPromptId' => 2,
+            'editorSuggestionAiPromptId' => 5,
+            'qaCheckActionAiPromptId' => 8,
+            'contextReviewAiPromptId' => 11,
+        ]);
+        $settings->setPreTranslationAiPromptId(3);
+        $settings->setEditorSuggestionAiPromptId(6);
+        $settings->setQaCheckActionAiPromptId(9);
+        $settings->setContextReviewAiPromptId(12);
+
+        $this->mockRequestPatch(
+            '/users/1/ai/settings',
+            json_encode([
+                'data' => [
+                    'preTranslationAiPromptId' => 3,
+                    'editorSuggestionAiPromptId' => 6,
+                    'qaCheckActionAiPromptId' => 9,
+                    'contextReviewAiPromptId' => 12,
+                ],
+            ])
+        );
+
+        $updated = $this->crowdin->ai->updateSettings(1, $settings);
+        $this->assertInstanceOf(AiSettings::class, $updated);
+        $this->assertEquals(3, $updated->getPreTranslationAiPromptId());
+        $this->assertEquals(6, $updated->getEditorSuggestionAiPromptId());
+        $this->assertEquals(9, $updated->getQaCheckActionAiPromptId());
+        $this->assertEquals(12, $updated->getContextReviewAiPromptId());
+    }
+
+    public function testUpdateCustomPlaceholder(): void
+    {
+        $placeholder = new AiCustomPlaceholder([
+            'id' => 2,
+            'description' => 'Product description',
+            'placeholder' => '%custom:productDescription%',
+            'value' => 'The product is the professional consulting service that transform challenges into opportunities.',
+            'createdAt' => '2019-09-20T11:11:05+00:00',
+            'updatedAt' => '2019-09-20T12:22:20+00:00',
+        ]);
+        $placeholder->setDescription('Updated description');
+        $placeholder->setPlaceholder('%custom:updatedDescription%');
+        $placeholder->setValue('Updated value.');
+
+        $this->mockRequestPatch(
+            '/users/1/ai/settings/custom-placeholders/2',
+            json_encode([
+                'data' => [
+                    'id' => 2,
+                    'description' => 'Updated description',
+                    'placeholder' => '%custom:updatedDescription%',
+                    'value' => 'Updated value.',
+                    'createdAt' => '2019-09-20T11:11:05+00:00',
+                    'updatedAt' => '2019-09-20T12:22:20+00:00',
+                ],
+            ])
+        );
+
+        $updated = $this->crowdin->ai->updateCustomPlaceholder(1, $placeholder);
+        $this->assertInstanceOf(AiCustomPlaceholder::class, $updated);
+        $this->assertEquals('Updated description', $updated->getDescription());
+        $this->assertEquals('%custom:updatedDescription%', $updated->getPlaceholder());
+        $this->assertEquals('Updated value.', $updated->getValue());
+    }
+
+    public function testUpdateSnippet(): void
+    {
+        $snippet = new AiSnippet([
+            'id' => 2,
+            'description' => 'Product description',
+            'placeholder' => '%custom:productDescription%',
+            'value' => 'The product is the professional consulting service that transform challenges into opportunities.',
+            'createdAt' => '2019-09-20T11:11:05+00:00',
+            'updatedAt' => '2019-09-20T12:22:20+00:00',
+        ]);
+        $snippet->setDescription('Updated description');
+        $snippet->setPlaceholder('%custom:updatedDescription%');
+        $snippet->setValue('Updated value.');
+
+        $this->mockRequestPatch(
+            '/users/1/ai/settings/snippets/2',
+            json_encode([
+                'data' => [
+                    'id' => 2,
+                    'description' => 'Updated description',
+                    'placeholder' => '%custom:updatedDescription%',
+                    'value' => 'Updated value.',
+                    'createdAt' => '2019-09-20T11:11:05+00:00',
+                    'updatedAt' => '2019-09-20T12:22:20+00:00',
+                ],
+            ])
+        );
+
+        $updated = $this->crowdin->ai->updateSnippet(1, $snippet);
+        $this->assertInstanceOf(AiSnippet::class, $updated);
+        $this->assertEquals('Updated description', $updated->getDescription());
+        $this->assertEquals('%custom:updatedDescription%', $updated->getPlaceholder());
+        $this->assertEquals('Updated value.', $updated->getValue());
     }
 }
