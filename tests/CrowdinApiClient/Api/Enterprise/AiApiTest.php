@@ -894,6 +894,7 @@ class AiApiTest extends AbstractTestApi
         $this->assertInstanceOf(AiProviderModel::class, $models[0]);
         $this->assertEquals('gpt-5.4', $models[0]->getId());
         $this->assertEquals('open_ai', $models[0]->getProvider());
+        $this->assertEquals('OpenAI', $models[0]->getProviderName());
     }
 
     public function testCreateProviderChatCompletion(): void
