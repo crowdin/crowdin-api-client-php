@@ -3,6 +3,9 @@
 namespace CrowdinApiClient\Api;
 
 use CrowdinApiClient\Model\Branch;
+use CrowdinApiClient\Model\BranchClone;
+use CrowdinApiClient\Model\BranchMerge;
+use CrowdinApiClient\Model\BranchMergeSummary;
 use CrowdinApiClient\ModelCollection;
 
 /**
@@ -57,7 +60,8 @@ class BranchApi extends AbstractApi
      * string $data[name] required Note: Can't contain \\ / : * ? \" < > | symbols<br>
      * string $data[title]<br>
      * string $data[exportPattern] Note: Can't contain \\ / : * ? \" < > | symbols<br>
-     * string $data[priority] Enum: "low" "normal" "high"
+     * string $data[priority] Enum: "low" "normal" "high"<br>
+     * bool $data[isProtected] String-based projects only
      * @return Branch|null
      */
     public function create(int $projectId, array $data): ?Branch
@@ -94,5 +98,102 @@ class BranchApi extends AbstractApi
     {
         $path = sprintf('projects/%d/branches/%d', $projectId, $branchId);
         return $this->_delete($path);
+    }
+
+    /**
+     * Clone Branch
+     * @link https://developer.crowdin.com/api/v2/string-based/#operation/api.projects.branches.clones.post API Documentation
+     *
+     * @param int $projectId
+     * @param int $branchId
+     * @param array $data
+     * string $data[name] required Note: Can't contain \\ / : * ? \" < > | symbols<br>
+     * string $data[title]<br>
+     * bool $data[isProtected]
+     * @return BranchClone|null
+     */
+    public function cloneBranch(int $projectId, int $branchId, array $data): ?BranchClone
+    {
+        $path = sprintf('projects/%d/branches/%d/clones', $projectId, $branchId);
+        return $this->_post($path, BranchClone::class, $data);
+    }
+
+    /**
+     * Check Branch Clone Status
+     * @link https://developer.crowdin.com/api/v2/string-based/#operation/api.projects.branches.clones.get API Documentation
+     *
+     * @param int $projectId
+     * @param int $branchId
+     * @param string $cloneId
+     * @return BranchClone|null
+     */
+    public function checkCloneStatus(int $projectId, int $branchId, string $cloneId): ?BranchClone
+    {
+        $path = sprintf('projects/%d/branches/%d/clones/%s', $projectId, $branchId, $cloneId);
+        return $this->_get($path, BranchClone::class);
+    }
+
+    /**
+     * Get Cloned Branch
+     * @link https://developer.crowdin.com/api/v2/string-based/#operation/api.projects.branches.clones.branch.get API Documentation
+     *
+     * @param int $projectId
+     * @param int $branchId
+     * @param string $cloneId
+     * @return Branch|null
+     */
+    public function getClonedBranch(int $projectId, int $branchId, string $cloneId): ?Branch
+    {
+        $path = sprintf('projects/%d/branches/%d/clones/%s/branch', $projectId, $branchId, $cloneId);
+        return $this->_get($path, Branch::class);
+    }
+
+    /**
+     * Merge Branch
+     * @link https://developer.crowdin.com/api/v2/string-based/#operation/api.projects.branches.merges.post API Documentation
+     *
+     * @param int $projectId
+     * @param int $branchId
+     * @param array $data
+     * int $data[sourceBranchId] required<br>
+     * bool $data[deleteAfterMerge]<br>
+     * bool $data[dryRun]<br>
+     * bool $data[acceptSourceChanges]
+     * @return BranchMerge|null
+     */
+    public function mergeBranch(int $projectId, int $branchId, array $data): ?BranchMerge
+    {
+        $path = sprintf('projects/%d/branches/%d/merges', $projectId, $branchId);
+        return $this->_post($path, BranchMerge::class, $data);
+    }
+
+    /**
+     * Check Branch Merge Status
+     * @link https://developer.crowdin.com/api/v2/string-based/#operation/api.projects.branches.merges.get API Documentation
+     *
+     * @param int $projectId
+     * @param int $branchId
+     * @param string $mergeId
+     * @return BranchMerge|null
+     */
+    public function checkMergeStatus(int $projectId, int $branchId, string $mergeId): ?BranchMerge
+    {
+        $path = sprintf('projects/%d/branches/%d/merges/%s', $projectId, $branchId, $mergeId);
+        return $this->_get($path, BranchMerge::class);
+    }
+
+    /**
+     * Get Branch Merge Summary
+     * @link https://developer.crowdin.com/api/v2/string-based/#operation/api.projects.branches.merges.summary.get API Documentation
+     *
+     * @param int $projectId
+     * @param int $branchId
+     * @param string $mergeId
+     * @return BranchMergeSummary|null
+     */
+    public function getMergeSummary(int $projectId, int $branchId, string $mergeId): ?BranchMergeSummary
+    {
+        $path = sprintf('projects/%d/branches/%d/merges/%s/summary', $projectId, $branchId, $mergeId);
+        return $this->_get($path, BranchMergeSummary::class);
     }
 }

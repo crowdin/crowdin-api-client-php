@@ -2,6 +2,7 @@
 
 namespace CrowdinApiClient\Api;
 
+use CrowdinApiClient\Model\Branch;
 use CrowdinApiClient\Model\Bundle;
 use CrowdinApiClient\Model\BundleExport;
 use CrowdinApiClient\Model\DownloadFile;
@@ -114,6 +115,23 @@ class BundleApi extends AbstractApi
     {
         $path = sprintf('projects/%d/bundles/%d/files', $projectId, $bundleId);
         return $this->_list($path, File::class, $params);
+    }
+
+    /**
+     * List Bundle Branches
+     * @link https://developer.crowdin.com/api/v2/string-based/#operation/api.projects.bundles.branches.getMany API Documentation
+     *
+     * @param int $projectId
+     * @param int $bundleId
+     * @param array $params
+     * integer $params[limit]<br>
+     * integer $params[offset]
+     * @return ModelCollection
+     */
+    public function listBranches(int $projectId, int $bundleId, array $params = []): ModelCollection
+    {
+        $path = sprintf('projects/%d/bundles/%d/branches', $projectId, $bundleId);
+        return $this->_list($path, Branch::class, $params);
     }
 
     /**

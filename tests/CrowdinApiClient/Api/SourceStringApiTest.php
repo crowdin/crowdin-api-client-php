@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Tests\Api;
 
 use CrowdinApiClient\Model\SourceString;
+use CrowdinApiClient\Model\StringUpload;
 use CrowdinApiClient\ModelCollection;
 
 class SourceStringApiTest extends AbstractTestApi
@@ -220,5 +221,72 @@ class SourceStringApiTest extends AbstractTestApi
           ]);
 
         $this->assertInstanceOf(SourceString::class, $batchResult);
+    }
+
+    public function testUploadStrings(): void
+    {
+        $params = [
+            'storageId' => 1001,
+            'branchId' => 34,
+        ];
+
+        $this->mockRequest([
+            'path' => '/projects/2/strings/uploads',
+            'method' => 'post',
+            'body' => json_encode($params),
+            'response' => json_encode([
+                'data' => [
+                    'identifier' => 'c5d6e7f8-a9b0-1234-5678-901cde345fab',
+                    'status' => 'created',
+                    'progress' => 0,
+                    'attributes' => [
+                        'storageId' => 1001,
+                        'branchId' => 34,
+                    ],
+                    'createdAt' => '2023-09-11T11:26:54+00:00',
+                    'updatedAt' => '2023-09-11T11:26:54+00:00',
+                    'startedAt' => null,
+                    'finishedAt' => null,
+                ],
+            ]),
+        ]);
+
+        $upload = $this->crowdin->sourceString->uploadStrings(2, $params);
+
+        $this->assertInstanceOf(StringUpload::class, $upload);
+        $this->assertEquals('c5d6e7f8-a9b0-1234-5678-901cde345fab', $upload->getIdentifier());
+        $this->assertEquals('created', $upload->getStatus());
+        $this->assertEquals(0, $upload->getProgress());
+        $this->assertEquals(['storageId' => 1001, 'branchId' => 34], $upload->getAttributes());
+    }
+
+    public function testCheckUploadStatus(): void
+    {
+        $this->mockRequestGet(
+            '/projects/2/strings/uploads/c5d6e7f8-a9b0-1234-5678-901cde345fab',
+            json_encode([
+                'data' => [
+                    'identifier' => 'c5d6e7f8-a9b0-1234-5678-901cde345fab',
+                    'status' => 'finished',
+                    'progress' => 100,
+                    'attributes' => [
+                        'storageId' => 1001,
+                        'branchId' => 34,
+                    ],
+                    'createdAt' => '2023-09-11T11:26:54+00:00',
+                    'updatedAt' => '2023-09-11T11:26:56+00:00',
+                    'startedAt' => '2023-09-11T11:26:55+00:00',
+                    'finishedAt' => '2023-09-11T11:26:56+00:00',
+                ],
+            ])
+        );
+
+        $upload = $this->crowdin->sourceString->checkUploadStatus(2, 'c5d6e7f8-a9b0-1234-5678-901cde345fab');
+
+        $this->assertInstanceOf(StringUpload::class, $upload);
+        $this->assertEquals('finished', $upload->getStatus());
+        $this->assertEquals(100, $upload->getProgress());
+        $this->assertEquals('2023-09-11T11:26:56+00:00', $upload->getFinishedAt());
+        $this->assertEquals('2023-09-11T11:26:55+00:00', $upload->getStartedAt());
     }
 }
