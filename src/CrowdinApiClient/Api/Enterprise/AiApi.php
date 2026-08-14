@@ -3,11 +3,7 @@
 namespace CrowdinApiClient\Api\Enterprise;
 
 use CrowdinApiClient\Api\AbstractApi;
-use CrowdinApiClient\Model\AiCustomPlaceholder;
 use CrowdinApiClient\Model\AiFileTranslation;
-use CrowdinApiClient\Model\AiFineTuningDataset;
-use CrowdinApiClient\Model\AiFineTuningEvent;
-use CrowdinApiClient\Model\AiFineTuningJob;
 use CrowdinApiClient\Model\AiPrompt;
 use CrowdinApiClient\Model\AiPromptCompletion;
 use CrowdinApiClient\Model\AiProvider;
@@ -274,124 +270,6 @@ class AiApi extends AbstractApi
     }
 
     /**
-     * Generate AI Prompt Fine-Tuning Dataset
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.prompts.fine-tuning.datasets.post API Documentation
-     *
-     * @param int $aiPromptId
-     * @param array $data
-     * array $data[projectIds]<br>
-     * array $data[tmIds]<br>
-     * string $data[purpose]<br>
-     * string $data[dateFrom]<br>
-     * string $data[dateTo]<br>
-     * integer $data[maxFileSize]<br>
-     * integer $data[minExamplesCount]<br>
-     * integer $data[maxExamplesCount]
-     * @return AiFineTuningDataset|null
-     */
-    public function createFineTuningDataset(int $aiPromptId, array $data): ?AiFineTuningDataset
-    {
-        $path = sprintf('ai/prompts/%d/fine-tuning/datasets', $aiPromptId);
-        return $this->_post($path, AiFineTuningDataset::class, $data);
-    }
-
-    /**
-     * Get AI Prompt Fine-Tuning Dataset Generation Status
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.prompts.fine-tuning.datasets.get API Documentation
-     *
-     * @param int $aiPromptId
-     * @param string $jobIdentifier
-     * @return AiFineTuningDataset|null
-     */
-    public function getFineTuningDataset(int $aiPromptId, string $jobIdentifier): ?AiFineTuningDataset
-    {
-        $path = sprintf('ai/prompts/%d/fine-tuning/datasets/%s', $aiPromptId, $jobIdentifier);
-        return $this->_get($path, AiFineTuningDataset::class);
-    }
-
-    /**
-     * Download AI Prompt Fine-Tuning Dataset
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.prompts.fine-tuning.datasets.download.get API Documentation
-     *
-     * @param int $aiPromptId
-     * @param string $jobIdentifier
-     * @return DownloadFile|null
-     */
-    public function downloadFineTuningDataset(int $aiPromptId, string $jobIdentifier): ?DownloadFile
-    {
-        $path = sprintf('ai/prompts/%d/fine-tuning/datasets/%s/download', $aiPromptId, $jobIdentifier);
-        return $this->_get($path, DownloadFile::class);
-    }
-
-    /**
-     * Create AI Prompt Fine-Tuning Job
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.prompts.fine-tuning.jobs.post API Documentation
-     *
-     * @param int $aiPromptId
-     * @param array $data
-     * array $data[trainingOptions] required<br>
-     * boolean $data[dryRun]<br>
-     * array $data[hyperparameters]<br>
-     * array $data[validationOptions]
-     * @return AiFineTuningJob|null
-     */
-    public function createFineTuningJob(int $aiPromptId, array $data): ?AiFineTuningJob
-    {
-        $path = sprintf('ai/prompts/%d/fine-tuning/jobs', $aiPromptId);
-        return $this->_post($path, AiFineTuningJob::class, $data);
-    }
-
-    /**
-     * Get AI Prompt Fine-Tuning Job Status
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.prompts.fine-tuning.jobs.get API Documentation
-     *
-     * @param int $aiPromptId
-     * @param string $jobIdentifier
-     * @return AiFineTuningJob|null
-     */
-    public function getFineTuningJob(int $aiPromptId, string $jobIdentifier): ?AiFineTuningJob
-    {
-        $path = sprintf('ai/prompts/%d/fine-tuning/jobs/%s', $aiPromptId, $jobIdentifier);
-        return $this->_get($path, AiFineTuningJob::class);
-    }
-
-    /**
-     * List AI Prompt Fine-Tuning Jobs
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.prompts.fine-tuning.jobs.getMany API Documentation
-     *
-     * @param array $params
-     * string $params[statuses]<br>
-     * string $params[orderBy]<br>
-     * integer $params[limit]<br>
-     * integer $params[offset]
-     * @return ModelCollection
-     */
-    public function listFineTuningJobs(array $params = []): ModelCollection
-    {
-        return $this->_list('ai/prompts/fine-tuning/jobs', AiFineTuningJob::class, $params);
-    }
-
-    /**
-     * List AI Prompt Fine-Tuning Job Events
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.prompts.fine-tuning.jobs.events.getMany API Documentation
-     *
-     * @param int $aiPromptId
-     * @param string $jobIdentifier
-     * @param array $params
-     * integer $params[limit]<br>
-     * integer $params[offset]
-     * @return ModelCollection
-     */
-    public function listFineTuningJobEvents(
-        int $aiPromptId,
-        string $jobIdentifier,
-        array $params = []
-    ): ModelCollection {
-        $path = sprintf('ai/prompts/%d/fine-tuning/jobs/%s/events', $aiPromptId, $jobIdentifier);
-        return $this->_list($path, AiFineTuningEvent::class, $params);
-    }
-
-    /**
      * List AI Providers
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.providers.getMany API Documentation
      *
@@ -555,79 +433,6 @@ class AiApi extends AbstractApi
     public function updateSettings(AiSettings $aiSettings): ?AiSettings
     {
         return $this->_update('ai/settings', $aiSettings);
-    }
-
-    /**
-     * List AI Custom Placeholders
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.settings.custom-placeholders.getMany API Documentation
-     * @deprecated Use listSnippets instead
-     *
-     * @param array $params
-     * integer $params[limit]<br>
-     * integer $params[offset]
-     * @return ModelCollection
-     */
-    public function listCustomPlaceholders(array $params = []): ModelCollection
-    {
-        return $this->_list('ai/settings/custom-placeholders', AiCustomPlaceholder::class, $params);
-    }
-
-    /**
-     * Add AI Custom Placeholder
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.settings.custom-placeholders.post API Documentation
-     * @deprecated Use createSnippet instead
-     *
-     * @param array $data
-     * string $data[description] required<br>
-     * string $data[placeholder] required<br>
-     * string $data[value] required
-     * @return AiCustomPlaceholder|null
-     */
-    public function createCustomPlaceholder(array $data): ?AiCustomPlaceholder
-    {
-        return $this->_create('ai/settings/custom-placeholders', AiCustomPlaceholder::class, $data);
-    }
-
-    /**
-     * Get AI Custom Placeholder
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.settings.custom-placeholders.get API Documentation
-     * @deprecated Use getSnippet instead
-     *
-     * @param int $aiCustomPlaceholderId
-     * @return AiCustomPlaceholder|null
-     */
-    public function getCustomPlaceholder(int $aiCustomPlaceholderId): ?AiCustomPlaceholder
-    {
-        $path = sprintf('ai/settings/custom-placeholders/%d', $aiCustomPlaceholderId);
-        return $this->_get($path, AiCustomPlaceholder::class);
-    }
-
-    /**
-     * Edit AI Custom Placeholder
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.settings.custom-placeholders.patch API Documentation
-     * @deprecated Use updateSnippet instead
-     *
-     * @param AiCustomPlaceholder $aiCustomPlaceholder
-     * @return AiCustomPlaceholder|null
-     */
-    public function updateCustomPlaceholder(AiCustomPlaceholder $aiCustomPlaceholder): ?AiCustomPlaceholder
-    {
-        $path = sprintf('ai/settings/custom-placeholders/%d', $aiCustomPlaceholder->getId());
-        return $this->_update($path, $aiCustomPlaceholder);
-    }
-
-    /**
-     * Delete AI Custom Placeholder
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.settings.custom-placeholders.delete API Documentation
-     * @deprecated Use deleteSnippet instead
-     *
-     * @param int $aiCustomPlaceholderId
-     * @return mixed
-     */
-    public function deleteCustomPlaceholder(int $aiCustomPlaceholderId)
-    {
-        $path = sprintf('ai/settings/custom-placeholders/%d', $aiCustomPlaceholderId);
-        return $this->_delete($path);
     }
 
     /**
