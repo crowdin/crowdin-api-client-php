@@ -161,9 +161,6 @@ class ApplicationApi extends AbstractApi
      * @param string $applicationIdentifier
      * @param string $path
      * @param array $data Application-specific key-value payload (free-form, not RFC 6902 patch operations)
-     * string $data[op] required Patch operation to perform (replace, add, remove, test)<br>
-     * string <json-pointer> $data[path] required<br>
-     * mixed $data[value] The value to be used within the operation (string, int, bool, or object)
      * @return ApplicationData|null
      */
     public function editApplicationData(string $applicationIdentifier, string $path, array $data): ?ApplicationData
