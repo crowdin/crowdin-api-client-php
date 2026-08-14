@@ -8,6 +8,12 @@ use CrowdinApiClient\Api\AbstractApi;
 use CrowdinApiClient\Http\ResponseDecorator\ResponseModelDecorator;
 use CrowdinApiClient\Model\AiGatewayResponse;
 
+/**
+ * AI Gateway allows you to proxy requests to your AI provider through Crowdin,
+ * giving you a single place to manage keys, monitor usage, and control access.
+ *
+ * @package Crowdin\Api
+ */
 class AiGatewayApi extends AbstractApi
 {
     /**
