@@ -2,6 +2,7 @@
 
 namespace CrowdinApiClient\Tests\Api;
 
+use CrowdinApiClient\Model\Branch;
 use CrowdinApiClient\Model\Bundle;
 use CrowdinApiClient\Model\BundleExport;
 use CrowdinApiClient\Model\DownloadFile;
@@ -216,6 +217,42 @@ class BundleApiTest extends AbstractTestApi
         $this->assertCount(1, $files);
         $this->assertInstanceOf(File::class, $files[0]);
         $this->assertEquals(44, $files[0]->getId());
+    }
+
+    public function testListBranches(): void
+    {
+        $this->mockRequest([
+            'path' => '/projects/2/bundles/34/branches',
+            'method' => 'get',
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 10,
+                            'projectId' => 2,
+                            'name' => 'develop-master',
+                            'title' => 'Master branch',
+                            'isProtected' => false,
+                            'createdAt' => '2023-09-11T11:26:54+00:00',
+                            'updatedAt' => null,
+                        ],
+                    ],
+                ],
+                'pagination' => [
+                    'offset' => 0,
+                    'limit' => 25,
+                ],
+            ]),
+        ]);
+
+        $branches = $this->crowdin->bundle->listBranches(2, 34);
+
+        $this->assertInstanceOf(ModelCollection::class, $branches);
+        $this->assertCount(1, $branches);
+        $this->assertInstanceOf(Branch::class, $branches[0]);
+        $this->assertEquals(10, $branches[0]->getId());
+        $this->assertEquals('develop-master', $branches[0]->getName());
+        $this->assertFalse($branches[0]->isProtected());
     }
 
     public function testExport(): void

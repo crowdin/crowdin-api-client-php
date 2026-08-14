@@ -51,9 +51,10 @@ class DistributionApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $data
-     * string $data[exportMode] Enum: "default" "bundle" Default: "default"<br>
+     * string $data[exportMode] Enum: "default" "bundle" Default: "default" Note: String-based projects use "bundle" only<br>
      * string $data[name] required<br>
-     * int[] $data[fileIds] required<br>
+     * int[] $data[fileIds] Required for file-based projects (default export mode)<br>
+     * int[] $data[bundleIds] Required for string-based projects<br>
      * string $data[format] required for 'bundle' export mode<br>
      * string $data[exportPattern] required for 'bundle' export mode. Note: Can't contain \\ / : * ? \" < > | symbols<br>
      * int[] $data[labelIds]<br>

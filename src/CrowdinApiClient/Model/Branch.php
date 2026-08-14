@@ -38,6 +38,11 @@ class Branch extends BaseModel
     protected $priority;
 
     /**
+     * @var bool
+     */
+    protected $isProtected;
+
+    /**
      * @var string
      */
     protected $createdAt;
@@ -57,6 +62,7 @@ class Branch extends BaseModel
         $this->title = (string)$this->getDataProperty('title');
         $this->exportPattern = (string)$this->getDataProperty('exportPattern');
         $this->priority = (string)$this->getDataProperty('priority');
+        $this->isProtected = (bool)$this->getDataProperty('isProtected');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
     }
@@ -139,6 +145,11 @@ class Branch extends BaseModel
     public function setPriority(string $priority): void
     {
         $this->priority = $priority;
+    }
+
+    public function isProtected(): bool
+    {
+        return $this->isProtected;
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Api;
 
 use CrowdinApiClient\Model\SourceString;
+use CrowdinApiClient\Model\StringUpload;
 use CrowdinApiClient\ModelCollection;
 
 /**
@@ -50,9 +51,10 @@ class SourceStringApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $data
-     * string $data[identifier] Required for strings-based projects or file-based projects if scheme of CSV file includes identifier column<br>
+     * string $data[identifier] Required for string-based projects or file-based projects if scheme of CSV file includes identifier column<br>
      * string $data[text] required<br>
-     * integer $data[fileId]<br>
+     * integer $data[branchId] Required for string-based projects<br>
+     * integer $data[fileId] Required for file-based projects<br>
      * string $data[context]<br>
      * bool $data[isHidden]<br>
      * integer $data[maxLength]
@@ -109,5 +111,42 @@ class SourceStringApi extends AbstractApi
     {
         $path = sprintf('projects/%d/strings', $projectId);
         return $this->_patch($path, SourceString::class, $data);
+    }
+
+    /**
+     * Upload Strings
+     * @link https://developer.crowdin.com/api/v2/string-based/#operation/api.projects.strings.uploads.post API Documentation
+     *
+     * @param int $projectId
+     * @param array $data
+     * int $data[storageId] required<br>
+     * int $data[branchId] required<br>
+     * string $data[type]<br>
+     * int $data[parserVersion]<br>
+     * int[] $data[labelIds]<br>
+     * bool $data[updateStrings]<br>
+     * bool $data[cleanupMode]<br>
+     * array $data[importOptions]<br>
+     * string $data[updateOption]
+     * @return StringUpload|null
+     */
+    public function uploadStrings(int $projectId, array $data): ?StringUpload
+    {
+        $path = sprintf('projects/%d/strings/uploads', $projectId);
+        return $this->_post($path, StringUpload::class, $data);
+    }
+
+    /**
+     * Check Upload Strings Status
+     * @link https://developer.crowdin.com/api/v2/string-based/#operation/api.projects.strings.uploads.get API Documentation
+     *
+     * @param int $projectId
+     * @param string $uploadId
+     * @return StringUpload|null
+     */
+    public function checkUploadStatus(int $projectId, string $uploadId): ?StringUpload
+    {
+        $path = sprintf('projects/%d/strings/uploads/%s', $projectId, $uploadId);
+        return $this->_get($path, StringUpload::class);
     }
 }
