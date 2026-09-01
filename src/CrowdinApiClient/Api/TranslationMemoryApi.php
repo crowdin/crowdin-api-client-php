@@ -150,6 +150,32 @@ class TranslationMemoryApi extends AbstractApi
     }
 
     /**
+     * TM Segment Batch Operations
+     * @link https://developer.crowdin.com/api/v2/#operation/api.tms.segments.patchBatch API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.segments.patchBatch API Documentation Enterprise
+     *
+     * @param int $tmId
+     * @param array $data JSON Patch array with operations (add, remove, replace)
+     * @return ModelCollection
+     */
+    public function batchOperations(int $tmId, array $data): ModelCollection
+    {
+        $path = sprintf('tms/%d/segments', $tmId);
+
+        $options = [
+            'body' => json_encode($data),
+            'headers' => $this->getHeaders(),
+        ];
+
+        return $this->client->apiRequest(
+            'patch',
+            $path,
+            new ResponseModelListDecorator(TranslationMemorySegment::class),
+            $options
+        );
+    }
+
+    /**
      * Delete TM Segment
      * @link https://developer.crowdin.com/api/v2/#operation/api.tms.segments.delete API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.segments.delete API Documentation Enterprise
