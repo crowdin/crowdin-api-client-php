@@ -2,6 +2,7 @@
 
 namespace CrowdinApiClient\Tests\Api;
 
+use CrowdinApiClient\Model\DeleteJob;
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\DownloadFilePreview;
 use CrowdinApiClient\Model\File;
@@ -314,6 +315,70 @@ class FileApiTest extends AbstractTestApi
     {
         $this->mockRequestDelete('/projects/2/files/44');
         $this->crowdin->file->delete(2, 44);
+    }
+
+    public function testDeleteAsync(): void
+    {
+        $this->mockRequest([
+            'path' => '/projects/2/files/44',
+            'method' => 'delete',
+            'headers' => [
+                'Authorization' => 'Bearer access_token',
+                'content-type' => 'application/json',
+                'prefer' => 'respond-async',
+            ],
+            'response' => json_encode([
+                'data' => [
+                    'identifier' => '50fb3506-4127-4ba8-8296-f97dc7e3e0c3',
+                    'status' => 'created',
+                    'progress' => 0,
+                    'attributes' => [
+                        'fileId' => 44,
+                    ],
+                    'createdAt' => '2019-09-23T11:26:54+00:00',
+                    'updatedAt' => '2019-09-23T11:26:54+00:00',
+                    'startedAt' => null,
+                    'finishedAt' => null,
+                ],
+            ]),
+        ]);
+
+        $deleteJob = $this->crowdin->file->delete(2, 44, 'respond-async');
+
+        $this->assertInstanceOf(DeleteJob::class, $deleteJob);
+        $this->assertEquals('50fb3506-4127-4ba8-8296-f97dc7e3e0c3', $deleteJob->getIdentifier());
+    }
+
+    public function testCheckDeleteStatus(): void
+    {
+        $this->mockRequestGet(
+            '/projects/2/files/44/jobs/50fb3506-4127-4ba8-8296-f97dc7e3e0c3',
+            json_encode([
+                'data' => [
+                    'identifier' => '50fb3506-4127-4ba8-8296-f97dc7e3e0c3',
+                    'status' => 'finished',
+                    'progress' => 100,
+                    'attributes' => [
+                        'fileId' => 44,
+                    ],
+                    'createdAt' => '2019-09-23T11:26:54+00:00',
+                    'updatedAt' => '2019-09-23T11:26:56+00:00',
+                    'startedAt' => '2019-09-23T11:26:55+00:00',
+                    'finishedAt' => '2019-09-23T11:26:56+00:00',
+                ],
+            ])
+        );
+
+        $deleteJob = $this->crowdin->file->checkDeleteStatus(
+            2,
+            44,
+            '50fb3506-4127-4ba8-8296-f97dc7e3e0c3'
+        );
+
+        $this->assertInstanceOf(DeleteJob::class, $deleteJob);
+        $this->assertEquals('finished', $deleteJob->getStatus());
+        $this->assertEquals(100, $deleteJob->getProgress());
+        $this->assertEquals(['fileId' => 44], $deleteJob->getAttributes());
     }
 
     public function testDownloadPreview(): void

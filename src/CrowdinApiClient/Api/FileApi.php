@@ -2,6 +2,7 @@
 
 namespace CrowdinApiClient\Api;
 
+use CrowdinApiClient\Model\DeleteJob;
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\DownloadFilePreview;
 use CrowdinApiClient\Model\File;
@@ -146,12 +147,34 @@ class FileApi extends AbstractApi
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.files.delete API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.files.delete API Documentation Enterprise
      *
-     * @return null
+     * @param string|null $prefer
+     * @return mixed
      */
-    public function delete(int $projectId, int $fileId)
+    public function delete(int $projectId, int $fileId, ?string $prefer = null)
     {
         $path = sprintf('projects/%d/files/%d', $projectId, $fileId);
-        return $this->_delete($path);
+
+        if ($prefer === null) {
+            return $this->_delete($path);
+        }
+
+        return $this->_delete($path, [], DeleteJob::class, ['prefer' => $prefer]);
+    }
+
+    /**
+     * Check Delete File Job Status
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.files.jobs.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.files.jobs.get API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param int $fileId
+     * @param string $jobIdentifier
+     * @return DeleteJob|null
+     */
+    public function checkDeleteStatus(int $projectId, int $fileId, string $jobIdentifier): ?DeleteJob
+    {
+        $path = sprintf('projects/%d/files/%d/jobs/%s', $projectId, $fileId, $jobIdentifier);
+        return $this->_get($path, DeleteJob::class);
     }
 
     /**

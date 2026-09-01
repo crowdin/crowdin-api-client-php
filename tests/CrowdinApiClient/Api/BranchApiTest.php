@@ -6,6 +6,7 @@ use CrowdinApiClient\Model\Branch;
 use CrowdinApiClient\Model\BranchClone;
 use CrowdinApiClient\Model\BranchMerge;
 use CrowdinApiClient\Model\BranchMergeSummary;
+use CrowdinApiClient\Model\DeleteJob;
 use CrowdinApiClient\ModelCollection;
 
 class BranchApiTest extends AbstractTestApi
@@ -131,6 +132,71 @@ class BranchApiTest extends AbstractTestApi
         ]);
 
         $this->crowdin->branch->delete(2, 34);
+    }
+
+    public function testDeleteAsync(): void
+    {
+        $this->mockRequest([
+            'path' => '/projects/2/branches/34',
+            'method' => 'delete',
+            'headers' => [
+                'Authorization' => 'Bearer access_token',
+                'content-type' => 'application/json',
+                'prefer' => 'respond-async',
+            ],
+            'response' => json_encode([
+                'data' => [
+                    'identifier' => '50fb3506-4127-4ba8-8296-f97dc7e3e0c3',
+                    'status' => 'created',
+                    'progress' => 0,
+                    'attributes' => [
+                        'branchId' => 34,
+                    ],
+                    'createdAt' => '2019-09-23T11:26:54+00:00',
+                    'updatedAt' => '2019-09-23T11:26:54+00:00',
+                    'startedAt' => null,
+                    'finishedAt' => null,
+                ],
+            ]),
+        ]);
+
+        $deleteJob = $this->crowdin->branch->delete(2, 34, 'respond-async');
+
+        $this->assertInstanceOf(DeleteJob::class, $deleteJob);
+        $this->assertEquals('50fb3506-4127-4ba8-8296-f97dc7e3e0c3', $deleteJob->getIdentifier());
+        $this->assertEquals('created', $deleteJob->getStatus());
+    }
+
+    public function testCheckDeleteStatus(): void
+    {
+        $this->mockRequestGet(
+            '/projects/2/branches/34/jobs/50fb3506-4127-4ba8-8296-f97dc7e3e0c3',
+            json_encode([
+                'data' => [
+                    'identifier' => '50fb3506-4127-4ba8-8296-f97dc7e3e0c3',
+                    'status' => 'finished',
+                    'progress' => 100,
+                    'attributes' => [
+                        'branchId' => 34,
+                    ],
+                    'createdAt' => '2019-09-23T11:26:54+00:00',
+                    'updatedAt' => '2019-09-23T11:26:56+00:00',
+                    'startedAt' => '2019-09-23T11:26:55+00:00',
+                    'finishedAt' => '2019-09-23T11:26:56+00:00',
+                ],
+            ])
+        );
+
+        $deleteJob = $this->crowdin->branch->checkDeleteStatus(
+            2,
+            34,
+            '50fb3506-4127-4ba8-8296-f97dc7e3e0c3'
+        );
+
+        $this->assertInstanceOf(DeleteJob::class, $deleteJob);
+        $this->assertEquals('finished', $deleteJob->getStatus());
+        $this->assertEquals(100, $deleteJob->getProgress());
+        $this->assertEquals(['branchId' => 34], $deleteJob->getAttributes());
     }
 
     public function testCloneBranch(): void
