@@ -6,6 +6,7 @@ use CrowdinApiClient\Model\Branch;
 use CrowdinApiClient\Model\BranchClone;
 use CrowdinApiClient\Model\BranchMerge;
 use CrowdinApiClient\Model\BranchMergeSummary;
+use CrowdinApiClient\Model\DeleteJob;
 use CrowdinApiClient\ModelCollection;
 
 /**
@@ -92,12 +93,34 @@ class BranchApi extends AbstractApi
      *
      * @param int $projectId
      * @param int $branchId
+     * @param string|null $prefer
      * @return mixed
      */
-    public function delete(int $projectId, int $branchId)
+    public function delete(int $projectId, int $branchId, ?string $prefer = null)
     {
         $path = sprintf('projects/%d/branches/%d', $projectId, $branchId);
-        return $this->_delete($path);
+
+        if ($prefer === null) {
+            return $this->_delete($path);
+        }
+
+        return $this->_delete($path, [], DeleteJob::class, ['prefer' => $prefer]);
+    }
+
+    /**
+     * Check Delete Branch Job Status
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.branches.jobs.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.branches.jobs.get API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param int $branchId
+     * @param string $jobIdentifier
+     * @return DeleteJob|null
+     */
+    public function checkDeleteStatus(int $projectId, int $branchId, string $jobIdentifier): ?DeleteJob
+    {
+        $path = sprintf('projects/%d/branches/%d/jobs/%s', $projectId, $branchId, $jobIdentifier);
+        return $this->_get($path, DeleteJob::class);
     }
 
     /**

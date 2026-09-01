@@ -119,17 +119,29 @@ abstract class AbstractApi implements ApiInterface
     /**
      * @param string $path
      * @param array $params
+     * @param string|null $modelName
+     * @param array $headers
      * @return mixed
      */
-    protected function _delete(string $path, array $params = [])
-    {
+    protected function _delete(
+        string $path,
+        array $params = [],
+        ?string $modelName = null,
+        array $headers = []
+    ) {
         $options = [];
 
         if (!empty($params)) {
             $options['params'] = $params;
         }
 
-        return $this->client->apiRequest('delete', $path, null, $options);
+        if (!empty($headers)) {
+            $options['headers'] = array_merge($this->getHeaders(), $headers);
+        }
+
+        $decorator = $modelName ? new ResponseModelDecorator($modelName) : null;
+
+        return $this->client->apiRequest('delete', $path, $decorator, $options);
     }
 
     /**

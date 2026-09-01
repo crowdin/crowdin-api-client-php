@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace CrowdinApiClient\Tests\Api\Enterprise;
 
+use CrowdinApiClient\Model\DeleteJob;
 use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\Enterprise\ReviewedSourceFileBuild;
 use CrowdinApiClient\ModelCollection;
@@ -124,5 +125,37 @@ class FileApiTest extends AbstractTestApi
             'https://production-enterprise-importer.downloads.crowdin.com/992000002/2/14.xliff',
             $downloadFile->getUrl()
         );
+    }
+
+    public function testDeleteFileAsync(): void
+    {
+        $this->mockRequest([
+            'path' => '/projects/2/files/44',
+            'method' => 'delete',
+            'headers' => [
+                'Authorization' => 'Bearer access_token',
+                'content-type' => 'application/json',
+                'prefer' => 'respond-async',
+            ],
+            'response' => json_encode([
+                'data' => [
+                    'identifier' => '50fb3506-4127-4ba8-8296-f97dc7e3e0c3',
+                    'status' => 'created',
+                    'progress' => 0,
+                    'attributes' => [
+                        'fileId' => 44,
+                    ],
+                    'createdAt' => '2019-09-23T11:26:54+00:00',
+                    'updatedAt' => '2019-09-23T11:26:54+00:00',
+                    'startedAt' => null,
+                    'finishedAt' => null,
+                ],
+            ]),
+        ]);
+
+        $deleteJob = $this->crowdin->file->delete(2, 44, 'respond-async');
+
+        $this->assertInstanceOf(DeleteJob::class, $deleteJob);
+        $this->assertEquals('50fb3506-4127-4ba8-8296-f97dc7e3e0c3', $deleteJob->getIdentifier());
     }
 }

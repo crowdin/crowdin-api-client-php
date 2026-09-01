@@ -2,6 +2,7 @@
 
 namespace CrowdinApiClient\Api;
 
+use CrowdinApiClient\Model\DeleteJob;
 use CrowdinApiClient\Model\Directory;
 use CrowdinApiClient\ModelCollection;
 
@@ -89,11 +90,33 @@ class DirectoryApi extends AbstractApi
      *
      * @param int $projectId
      * @param int $directoryId
+     * @param string|null $prefer
      * @return mixed
      */
-    public function delete(int $projectId, int $directoryId)
+    public function delete(int $projectId, int $directoryId, ?string $prefer = null)
     {
         $path = sprintf('projects/%d/directories/%d', $projectId, $directoryId);
-        return $this->_delete($path);
+
+        if ($prefer === null) {
+            return $this->_delete($path);
+        }
+
+        return $this->_delete($path, [], DeleteJob::class, ['prefer' => $prefer]);
+    }
+
+    /**
+     * Check Delete Directory Job Status
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.directories.jobs.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.directories.jobs.get API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param int $directoryId
+     * @param string $jobIdentifier
+     * @return DeleteJob|null
+     */
+    public function checkDeleteStatus(int $projectId, int $directoryId, string $jobIdentifier): ?DeleteJob
+    {
+        $path = sprintf('projects/%d/directories/%d/jobs/%s', $projectId, $directoryId, $jobIdentifier);
+        return $this->_get($path, DeleteJob::class);
     }
 }
