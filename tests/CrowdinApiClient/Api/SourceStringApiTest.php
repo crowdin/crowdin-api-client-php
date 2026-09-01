@@ -53,6 +53,52 @@ class SourceStringApiTest extends AbstractTestApi
         $this->assertEquals(12, $sourceStrings[0]->getBranchId());
     }
 
+    public function testSearch(): void
+    {
+        $this->mockRequest([
+            'path' => '/strings?filter=hello&projectIds=2%2C3&userId=6&scope=text&denormalizePlaceholders=1&limit=10&offset=20',
+            'method' => 'get',
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 2814,
+                            'projectId' => 2,
+                            'fileId' => 48,
+                            'branchId' => 12,
+                            'identifier' => 'greeting',
+                            'text' => 'Hello',
+                            'type' => 'text',
+                            'context' => 'welcome message',
+                        ],
+                    ],
+                ],
+                'pagination' => [
+                    [
+                        'offset' => 20,
+                        'limit' => 10,
+                    ],
+                ],
+            ]),
+        ]);
+
+        $sourceStrings = $this->crowdin->sourceString->search([
+            'filter' => 'hello',
+            'projectIds' => '2,3',
+            'userId' => 6,
+            'scope' => 'text',
+            'denormalizePlaceholders' => 1,
+            'limit' => 10,
+            'offset' => 20,
+        ]);
+
+        $this->assertInstanceOf(ModelCollection::class, $sourceStrings);
+        $this->assertCount(1, $sourceStrings);
+        $this->assertInstanceOf(SourceString::class, $sourceStrings[0]);
+        $this->assertEquals(2814, $sourceStrings[0]->getId());
+        $this->assertEquals(2, $sourceStrings[0]->getProjectId());
+    }
+
     public function testGetAndUpdate()
     {
         $this->mockRequestGet('/projects/2/strings/2814', '{

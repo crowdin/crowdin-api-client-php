@@ -60,6 +60,46 @@ class BranchApiTest extends AbstractTestApi
         $this->assertEquals('2019-09-19T13:25:27+00:00', $branchModel->getUpdatedAt());
     }
 
+    public function testSearch(): void
+    {
+        $this->mockRequest([
+            'path' => '/branches?filter=master&projectIds=2%2C3&userId=6&limit=10&offset=20',
+            'method' => 'get',
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 34,
+                            'projectId' => 2,
+                            'name' => 'develop-master',
+                            'title' => 'Master branch',
+                        ],
+                    ],
+                ],
+                'pagination' => [
+                    [
+                        'offset' => 20,
+                        'limit' => 10,
+                    ],
+                ],
+            ]),
+        ]);
+
+        $branches = $this->crowdin->branch->search([
+            'filter' => 'master',
+            'projectIds' => '2,3',
+            'userId' => 6,
+            'limit' => 10,
+            'offset' => 20,
+        ]);
+
+        $this->assertInstanceOf(ModelCollection::class, $branches);
+        $this->assertCount(1, $branches);
+        $this->assertInstanceOf(Branch::class, $branches[0]);
+        $this->assertEquals(34, $branches[0]->getId());
+        $this->assertEquals(2, $branches[0]->getProjectId());
+    }
+
     public function testGet()
     {
         $this->mockRequestGet('/projects/2/branches/34',

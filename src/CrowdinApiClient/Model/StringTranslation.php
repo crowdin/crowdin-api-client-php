@@ -13,6 +13,21 @@ class StringTranslation extends BaseModel
     protected $id;
 
     /**
+     * @var integer|null
+     */
+    protected $projectId;
+
+    /**
+     * @var integer|null
+     */
+    protected $stringId;
+
+    /**
+     * @var string|null
+     */
+    protected $languageId;
+
+    /**
      * @var string
      */
     protected $text;
@@ -42,6 +57,15 @@ class StringTranslation extends BaseModel
         parent::__construct($data);
 
         $this->id = (int)$this->getDataProperty('id');
+        $this->projectId = $this->getDataProperty('projectId') !== null
+            ? (int)$this->getDataProperty('projectId')
+            : null;
+        $this->stringId = $this->getDataProperty('stringId') !== null
+            ? (int)$this->getDataProperty('stringId')
+            : null;
+        $this->languageId = $this->getDataProperty('languageId') !== null
+            ? (string)$this->getDataProperty('languageId')
+            : null;
         $this->text = (string)$this->getDataProperty('text');
         $this->pluralCategoryName = (string)$this->getDataProperty('pluralCategoryName');
         $this->user = (array)$this->getDataProperty('user');
@@ -62,6 +86,30 @@ class StringTranslation extends BaseModel
     public function setId(int $id): void
     {
         $this->id = $id;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getProjectId(): ?int
+    {
+        return $this->projectId;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getStringId(): ?int
+    {
+        return $this->stringId;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getLanguageId(): ?string
+    {
+        return $this->languageId;
     }
 
     /**

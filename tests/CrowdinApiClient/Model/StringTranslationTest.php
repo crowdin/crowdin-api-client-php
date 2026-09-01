@@ -40,6 +40,19 @@ class StringTranslationTest extends TestCase
         $this->checkData();
     }
 
+    public function testLoadSearchData(): void
+    {
+        $stringTranslation = new StringTranslation([
+            'projectId' => 2,
+            'stringId' => 2814,
+            'languageId' => 'uk',
+        ]);
+
+        $this->assertEquals(2, $stringTranslation->getProjectId());
+        $this->assertEquals(2814, $stringTranslation->getStringId());
+        $this->assertEquals('uk', $stringTranslation->getLanguageId());
+    }
+
     public function checkData()
     {
         $this->assertEquals($this->data['id'], $this->stringTranslation->getId());

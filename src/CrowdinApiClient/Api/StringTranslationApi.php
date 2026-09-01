@@ -143,6 +143,26 @@ class StringTranslationApi extends AbstractApi
     }
 
     /**
+     * Search Translations
+     * @link https://developer.crowdin.com/api/v2/#operation/api.translations.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.translations.getMany API Documentation Enterprise
+     *
+     * @param array $params
+     * string $params[filter] required, max 128 characters<br>
+     * string $params[projectIds] Comma-separated project identifiers, max 50 projects<br>
+     * integer $params[userId] Crowdin API only<br>
+     * string $params[languageIds] Comma-separated language identifiers<br>
+     * integer $params[denormalizePlaceholders] Enum: 0 1<br>
+     * integer $params[limit]<br>
+     * integer $params[offset]
+     * @return ModelCollection
+     */
+    public function search(array $params = []): ModelCollection
+    {
+        return $this->_list('translations', StringTranslation::class, $params);
+    }
+
+    /**
      * Add Translation
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.add API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.add API Documentation Enterprise

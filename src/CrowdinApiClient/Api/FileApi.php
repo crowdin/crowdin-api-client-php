@@ -38,6 +38,24 @@ class FileApi extends AbstractApi
     }
 
     /**
+     * Search Files
+     * @link https://developer.crowdin.com/api/v2/#operation/api.files.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.files.getMany API Documentation Enterprise
+     *
+     * @param array $params
+     * string $params[filter] required, max 128 characters<br>
+     * string $params[projectIds] Comma-separated project identifiers, max 50 projects<br>
+     * integer $params[userId] Crowdin API only<br>
+     * integer $params[limit]<br>
+     * integer $params[offset]
+     * @return ModelCollection
+     */
+    public function search(array $params = []): ModelCollection
+    {
+        return $this->_list('files', File::class, $params);
+    }
+
+    /**
      * Add File
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.files.post API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.files.post API Documentation Enterprise
