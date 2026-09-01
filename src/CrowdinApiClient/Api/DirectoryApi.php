@@ -33,6 +33,24 @@ class DirectoryApi extends AbstractApi
     }
 
     /**
+     * Search Directories
+     * @link https://developer.crowdin.com/api/v2/#operation/api.directories.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.directories.getMany API Documentation Enterprise
+     *
+     * @param array $params
+     * string $params[filter] required, max 128 characters<br>
+     * string $params[projectIds] Comma-separated project identifiers, max 50 projects<br>
+     * integer $params[userId] Crowdin API only<br>
+     * integer $params[limit]<br>
+     * integer $params[offset]
+     * @return ModelCollection
+     */
+    public function search(array $params = []): ModelCollection
+    {
+        return $this->_list('directories', Directory::class, $params);
+    }
+
+    /**
      * Get Directory Info
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.directories.get  API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.directories.get  API Documentation Enterprise

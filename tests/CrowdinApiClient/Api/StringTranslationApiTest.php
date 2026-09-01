@@ -45,6 +45,52 @@ class StringTranslationApiTest extends AbstractTestApi
         $this->assertEquals(190695, $stringTranslations[0]->getId());
     }
 
+    public function testSearch(): void
+    {
+        $this->mockRequest([
+            'path' => '/translations?filter=translated&projectIds=2%2C3&userId=6&languageIds=uk%2Cpl&denormalizePlaceholders=1&limit=10&offset=20',
+            'method' => 'get',
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 190695,
+                            'projectId' => 2,
+                            'stringId' => 2814,
+                            'languageId' => 'uk',
+                            'text' => 'Перекладено',
+                            'pluralCategoryName' => 'few',
+                        ],
+                    ],
+                ],
+                'pagination' => [
+                    [
+                        'offset' => 20,
+                        'limit' => 10,
+                    ],
+                ],
+            ]),
+        ]);
+
+        $stringTranslations = $this->crowdin->stringTranslation->search([
+            'filter' => 'translated',
+            'projectIds' => '2,3',
+            'userId' => 6,
+            'languageIds' => 'uk,pl',
+            'denormalizePlaceholders' => 1,
+            'limit' => 10,
+            'offset' => 20,
+        ]);
+
+        $this->assertInstanceOf(ModelCollection::class, $stringTranslations);
+        $this->assertCount(1, $stringTranslations);
+        $this->assertInstanceOf(StringTranslation::class, $stringTranslations[0]);
+        $this->assertEquals(190695, $stringTranslations[0]->getId());
+        $this->assertEquals(2, $stringTranslations[0]->getProjectId());
+        $this->assertEquals(2814, $stringTranslations[0]->getStringId());
+        $this->assertEquals('uk', $stringTranslations[0]->getLanguageId());
+    }
+
     public function testGet(): void
     {
         $this->mockRequestGet(

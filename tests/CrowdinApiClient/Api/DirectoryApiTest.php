@@ -46,6 +46,48 @@ class DirectoryApiTest extends AbstractTestApi
         $this->assertEquals(4, $directories[0]->getId());
     }
 
+    public function testSearch(): void
+    {
+        $this->mockRequest([
+            'path' => '/directories?filter=main&projectIds=2%2C3&userId=6&limit=10&offset=20',
+            'method' => 'get',
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 4,
+                            'projectId' => 2,
+                            'branchId' => 34,
+                            'directoryId' => 0,
+                            'name' => 'main',
+                            'title' => '<Description materials>',
+                        ],
+                    ],
+                ],
+                'pagination' => [
+                    [
+                        'offset' => 20,
+                        'limit' => 10,
+                    ],
+                ],
+            ]),
+        ]);
+
+        $directories = $this->crowdin->directory->search([
+            'filter' => 'main',
+            'projectIds' => '2,3',
+            'userId' => 6,
+            'limit' => 10,
+            'offset' => 20,
+        ]);
+
+        $this->assertInstanceOf(ModelCollection::class, $directories);
+        $this->assertCount(1, $directories);
+        $this->assertInstanceOf(Directory::class, $directories[0]);
+        $this->assertEquals(4, $directories[0]->getId());
+        $this->assertEquals(2, $directories[0]->getProjectId());
+    }
+
     public function testGetAndUpdate()
     {
         $this->mockRequestGet('/projects/2/directories/34', '{

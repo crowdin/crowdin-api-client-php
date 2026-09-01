@@ -30,6 +30,26 @@ class SourceStringApi extends AbstractApi
     }
 
     /**
+     * Search Strings
+     * @link https://developer.crowdin.com/api/v2/#operation/api.strings.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.strings.getMany API Documentation Enterprise
+     *
+     * @param array $params
+     * string $params[filter] required, max 128 characters<br>
+     * string $params[projectIds] Comma-separated project identifiers, max 50 projects<br>
+     * integer $params[userId] Crowdin API only<br>
+     * string $params[scope] Enum: "all" "text" "context" "key", default: "all"<br>
+     * integer $params[denormalizePlaceholders] Enum: 0 1<br>
+     * integer $params[limit]<br>
+     * integer $params[offset]
+     * @return ModelCollection
+     */
+    public function search(array $params = []): ModelCollection
+    {
+        return $this->_list('strings', SourceString::class, $params);
+    }
+
+    /**
      * Get String
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.strings.get API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.strings.get API Documentation Enterprise

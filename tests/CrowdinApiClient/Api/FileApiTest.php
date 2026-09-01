@@ -65,6 +65,50 @@ class FileApiTest extends AbstractTestApi
         $this->assertEquals(44, $files[0]->getId());
     }
 
+    public function testSearch(): void
+    {
+        $this->mockRequest([
+            'path' => '/files?filter=source&projectIds=2%2C3&userId=6&limit=10&offset=20',
+            'method' => 'get',
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 44,
+                            'projectId' => 2,
+                            'branchId' => 34,
+                            'directoryId' => 4,
+                            'name' => 'source.json',
+                            'title' => 'Source file',
+                            'path' => '/source.json',
+                            'status' => 'active',
+                        ],
+                    ],
+                ],
+                'pagination' => [
+                    [
+                        'offset' => 20,
+                        'limit' => 10,
+                    ],
+                ],
+            ]),
+        ]);
+
+        $files = $this->crowdin->file->search([
+            'filter' => 'source',
+            'projectIds' => '2,3',
+            'userId' => 6,
+            'limit' => 10,
+            'offset' => 20,
+        ]);
+
+        $this->assertInstanceOf(ModelCollection::class, $files);
+        $this->assertCount(1, $files);
+        $this->assertInstanceOf(File::class, $files[0]);
+        $this->assertEquals(44, $files[0]->getId());
+        $this->assertEquals(2, $files[0]->getProjectId());
+    }
+
     public function testGetAndEdit(): void
     {
         $this->mockRequestGet(

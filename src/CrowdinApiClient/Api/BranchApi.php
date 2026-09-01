@@ -36,6 +36,24 @@ class BranchApi extends AbstractApi
     }
 
     /**
+     * Search Branches
+     * @link https://developer.crowdin.com/api/v2/#operation/api.branches.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.branches.getMany API Documentation Enterprise
+     *
+     * @param array $params
+     * string $params[filter] required, max 128 characters<br>
+     * string $params[projectIds] Comma-separated project identifiers, max 50 projects<br>
+     * integer $params[userId] Crowdin API only<br>
+     * integer $params[limit]<br>
+     * integer $params[offset]
+     * @return ModelCollection
+     */
+    public function search(array $params = []): ModelCollection
+    {
+        return $this->_list('branches', Branch::class, $params);
+    }
+
+    /**
      * Get Branch Info
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.branches.get API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.branches.get API Documentation Enterprise
