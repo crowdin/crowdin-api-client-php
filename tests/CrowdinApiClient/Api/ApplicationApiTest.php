@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace CrowdinApiClient\Tests\Api;
 
+use CrowdinApiClient\Model\ApplicationConsent;
 use CrowdinApiClient\Model\ApplicationData;
 use CrowdinApiClient\Model\ApplicationInstallation;
 use CrowdinApiClient\ModelCollection;
@@ -52,6 +53,30 @@ class ApplicationApiTest extends AbstractTestApi
     protected function getInstallationResponseJson(): string
     {
         return json_encode(['data' => $this->getInstallationData()]);
+    }
+
+    protected function getConsentData(): array
+    {
+        return [
+            'id' => 12,
+            'installedBy' => [
+                'id' => 1,
+                'username' => 'admin',
+                'fullName' => 'Admin User',
+                'avatarUrl' => '',
+            ],
+            'identifier' => 'my-app',
+            'name' => 'My Application',
+            'status' => 'granted',
+            'scopes' => ['project', 'tm'],
+            'createdAt' => '2026-07-24T10:00:00+00:00',
+            'updatedAt' => '2026-07-24T10:00:00+00:00',
+        ];
+    }
+
+    protected function getConsentResponseJson(): string
+    {
+        return json_encode(['data' => $this->getConsentData()]);
     }
 
     public function testListInstallations(): void
@@ -129,6 +154,92 @@ class ApplicationApiTest extends AbstractTestApi
 
         $this->assertInstanceOf(ApplicationInstallation::class, $result);
         $this->assertEquals('my-app', $result->getIdentifier());
+    }
+
+    public function testListConsents(): void
+    {
+        $this->mockRequest([
+            'uri' => 'https://api.crowdin.com/api/v2/applications/consents?identifier=my-app&orderBy=createdAt',
+            'method' => 'get',
+            'response' => json_encode([
+                'data' => [
+                    ['data' => $this->getConsentData()],
+                ],
+                'pagination' => [['offset' => 0, 'limit' => 25]],
+            ]),
+        ]);
+
+        $list = $this->crowdin->application->listConsents([
+            'identifier' => 'my-app',
+            'orderBy' => 'createdAt',
+        ]);
+
+        $this->assertInstanceOf(ModelCollection::class, $list);
+        $this->assertCount(1, $list);
+        $this->assertInstanceOf(ApplicationConsent::class, $list[0]);
+        $this->assertEquals(12, $list[0]->getId());
+        $this->assertEquals('my-app', $list[0]->getIdentifier());
+    }
+
+    public function testAddConsent(): void
+    {
+        $requestBody = [
+            'identifier' => 'my-app',
+            'installedBy' => 1,
+            'status' => 'granted',
+            'scopes' => ['project', 'tm'],
+        ];
+
+        $this->mockRequest([
+            'path' => '/applications/consents',
+            'method' => 'post',
+            'body' => json_encode($requestBody),
+            'response' => $this->getConsentResponseJson(),
+        ]);
+
+        $consent = $this->crowdin->application->addConsent($requestBody);
+
+        $this->assertInstanceOf(ApplicationConsent::class, $consent);
+        $this->assertEquals(12, $consent->getId());
+        $this->assertEquals('granted', $consent->getStatus());
+    }
+
+    public function testUpdateConsent(): void
+    {
+        $consentData = $this->getConsentData();
+        $consent = new ApplicationConsent($consentData);
+        $consent->setStatus('denied');
+        $consent->setScopes(['project']);
+
+        $this->mockRequest([
+            'path' => '/applications/consents/12',
+            'method' => 'patch',
+            'body' => json_encode([
+                [
+                    'op' => 'replace',
+                    'path' => '/status',
+                    'value' => 'denied',
+                ],
+                [
+                    'op' => 'replace',
+                    'path' => '/scopes',
+                    'value' => ['project'],
+                ],
+            ]),
+            'response' => $this->getConsentResponseJson(),
+        ]);
+
+        $result = $this->crowdin->application->updateConsent($consent);
+
+        $this->assertInstanceOf(ApplicationConsent::class, $result);
+        $this->assertEquals(12, $result->getId());
+    }
+
+    public function testDeleteConsent(): void
+    {
+        $this->mockRequestDelete('/applications/consents/12');
+
+        $this->crowdin->application->deleteConsent(12);
     }
 
     public function testGetApplicationData(): void

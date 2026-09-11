@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace CrowdinApiClient\Api;
 
+use CrowdinApiClient\Model\ApplicationConsent;
 use CrowdinApiClient\Model\ApplicationData;
 use CrowdinApiClient\Model\ApplicationInstallation;
 use CrowdinApiClient\ModelCollection;
@@ -151,6 +152,62 @@ class ApplicationApi extends AbstractApi
     public function updateInstallation(ApplicationInstallation $installation): ?ApplicationInstallation
     {
         return $this->_update('applications/installations/' . $installation->getIdentifier(), $installation);
+    }
+
+    /**
+     * List Application Consents
+     * @link https://developer.crowdin.com/api/v2/#operation/api.applications.consents.getMany API Documentation
+     *
+     * @param array $params
+     * integer $params[limit]<br>
+     * integer $params[offset]<br>
+     * string $params[identifier]<br>
+     * string $params[orderBy]
+     * @return ModelCollection
+     */
+    public function listConsents(array $params = []): ModelCollection
+    {
+        return $this->_list('applications/consents', ApplicationConsent::class, $params);
+    }
+
+    /**
+     * Add Application Consent
+     * @link https://developer.crowdin.com/api/v2/#operation/api.applications.consents.post API Documentation
+     *
+     * @param array $data
+     * string $data[identifier] required<br>
+     * integer $data[installedBy] required<br>
+     * string $data[status] required<br>
+     * array $data[scopes]
+     * @return ApplicationConsent|null
+     */
+    public function addConsent(array $data): ?ApplicationConsent
+    {
+        return $this->_create('applications/consents', ApplicationConsent::class, $data);
+    }
+
+    /**
+     * Edit Application Consent
+     * @link https://developer.crowdin.com/api/v2/#operation/api.applications.consents.patch API Documentation
+     *
+     * @param ApplicationConsent $consent
+     * @return ApplicationConsent|null
+     */
+    public function updateConsent(ApplicationConsent $consent): ?ApplicationConsent
+    {
+        return $this->_update('applications/consents/' . $consent->getId(), $consent);
+    }
+
+    /**
+     * Delete Application Consent
+     * @link https://developer.crowdin.com/api/v2/#operation/api.applications.consents.delete API Documentation
+     *
+     * @param int $consentId
+     * @return mixed
+     */
+    public function deleteConsent(int $consentId)
+    {
+        return $this->_delete('applications/consents/' . $consentId);
     }
 
     /**
