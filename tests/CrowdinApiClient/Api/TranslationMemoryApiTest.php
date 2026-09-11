@@ -354,6 +354,49 @@ class TranslationMemoryApiTest extends AbstractTestApi
         $this->assertEquals(4, $concordance[0]->getTm()->getId());
     }
 
+    public function testSearchOrganizationConcordance(): void
+    {
+        $params = [
+            'sourceLanguageId' => 'en',
+            'targetLanguageId' => 'de',
+            'autoSubstitution' => true,
+            'minRelevant' => 60,
+            'expressions' => ['Welcome!'],
+            'userId' => 6,
+        ];
+
+        $this->mockRequest([
+            'path' => '/tms/concordance',
+            'method' => 'post',
+            'body' => json_encode($params),
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'tm' => [
+                                'id' => 4,
+                                'name' => 'Knowledge Base TM',
+                            ],
+                            'recordId' => 34,
+                            'source' => 'Welcome!',
+                            'target' => 'Ласкаво просимо!',
+                            'relevant' => 100,
+                            'substituted' => null,
+                            'updatedAt' => null,
+                        ],
+                    ],
+                ],
+            ]),
+        ]);
+
+        $concordance = $this->crowdin->translationMemory->searchOrganizationConcordance($params);
+
+        $this->assertInstanceOf(ModelCollection::class, $concordance);
+        $this->assertCount(1, $concordance);
+        $this->assertInstanceOf(TranslationMemoryConcordance::class, $concordance[0]);
+        $this->assertEquals(4, $concordance[0]->getTm()->getId());
+    }
+
     public function testListSegments()
     {
         $this->mockRequest([

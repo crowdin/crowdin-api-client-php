@@ -211,6 +211,31 @@ class GlossaryApi extends AbstractApi
     }
 
     /**
+     * Concordance search in organization Glossaries
+     * @link https://developer.crowdin.com/api/v2/#operation/api.glossaries.concordance.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.glossaries.concordance.post API Documentation Enterprise
+     *
+     * @param array $params
+     * string $params[sourceLanguageId] required<br>
+     * string $params[targetLanguageId] required<br>
+     * string[] $params[expressions] required<br>
+     * integer $params[userId] Crowdin API only<br>
+     * @return ModelCollection|null
+     */
+    public function searchOrganizationConcordance(array $params): ?ModelCollection
+    {
+        return $this->client->apiRequest(
+            'post',
+            'glossaries/concordance',
+            new ResponseModelListDecorator(GlossaryConcordance::class),
+            [
+                'body' => json_encode($params),
+                'headers' => $this->getHeaders(),
+            ]
+        );
+    }
+
+    /**
      * List Terms
      * @link https://developer.crowdin.com/api/v2/#operation/api.glossaries.terms.getMany API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.glossaries.terms.getMany API Documentation Enterprise
