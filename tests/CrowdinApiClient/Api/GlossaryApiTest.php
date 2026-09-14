@@ -389,6 +389,41 @@ class GlossaryApiTest extends AbstractTestApi
         $this->assertEquals(7, $concordance[0]->getTargetTerms()[0]->getId());
     }
 
+    public function testSearchOrganizationConcordance(): void
+    {
+        $data = [
+            'sourceLanguageId' => 'en',
+            'targetLanguageId' => 'fr',
+            'expressions' => ['Welcome!'],
+            'userId' => 6,
+        ];
+
+        $this->mockRequest([
+            'path' => '/glossaries/concordance',
+            'method' => 'post',
+            'body' => json_encode($data),
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'glossary' => ['id' => 2],
+                            'concept' => ['id' => 8],
+                            'sourceTerms' => [],
+                            'targetTerms' => [],
+                        ],
+                    ],
+                ],
+            ]),
+        ]);
+
+        $concordance = $this->crowdin->glossary->searchOrganizationConcordance($data);
+
+        $this->assertInstanceOf(ModelCollection::class, $concordance);
+        $this->assertCount(1, $concordance);
+        $this->assertEquals(2, $concordance[0]->getGlossary()['id']);
+        $this->assertEquals(8, $concordance[0]->getConcept()['id']);
+    }
+
     public function testListTerms(): void
     {
         $this->mockRequestGet(

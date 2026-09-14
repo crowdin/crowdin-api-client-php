@@ -289,4 +289,31 @@ class TranslationMemoryApi extends AbstractApi
             ]
         );
     }
+
+    /**
+     * Concordance search in organization TMs
+     * @link https://developer.crowdin.com/api/v2/#operation/api.tms.concordance.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.concordance.post API Documentation Enterprise
+     *
+     * @param array $params
+     * string $params[sourceLanguageId] required<br>
+     * string $params[targetLanguageId] required<br>
+     * bool $params[autoSubstitution] required Improves TM suggestions<br>
+     * int $params[minRelevant] required Show TM suggestions with specified minimum match (1-100)<br>
+     * string[] $params[expressions] required<br>
+     * integer $params[userId] Crowdin API only<br>
+     * @return ModelCollection|null
+     */
+    public function searchOrganizationConcordance(array $params): ?ModelCollection
+    {
+        return $this->client->apiRequest(
+            'post',
+            'tms/concordance',
+            new ResponseModelListDecorator(TranslationMemoryConcordance::class),
+            [
+                'body' => json_encode($params),
+                'headers' => $this->getHeaders(),
+            ]
+        );
+    }
 }
