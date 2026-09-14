@@ -9,6 +9,7 @@ use CrowdinApiClient\Model\AiProvider;
 use CrowdinApiClient\Model\AiProviderModel;
 use CrowdinApiClient\Model\AiProxyChatCompletion;
 use CrowdinApiClient\Model\AiReport;
+use CrowdinApiClient\Model\AiRequestLog;
 use CrowdinApiClient\Model\AiSettings;
 use CrowdinApiClient\Model\AiSnippet;
 use CrowdinApiClient\Model\AiTranslation;
@@ -445,6 +446,37 @@ class AiApi extends AbstractApi
     {
         $path = sprintf('users/%d/ai/reports/%s/download', $userId, $aiReportId);
         return $this->_get($path, DownloadFile::class);
+    }
+
+    /**
+     * List AI Request Logs
+     * @link https://developer.crowdin.com/api/v2/#operation/api.ai.requestLogs.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.requestLogs.getMany API Documentation Enterprise
+     *
+     * @param int $userId
+     * @param array $params
+     * string $params[requestId] Filter by request identifier<br>
+     * integer $params[projectId] Filter by project<br>
+     * integer $params[userId] Filter by the user attributed to the AI request<br>
+     * integer $params[aiProviderId] Filter by AI provider<br>
+     * string $params[model] Filter by model name<br>
+     * string $params[sourceAction] Filter by the feature or channel that produced the request. Enum: "ai_proxy" "ai_gateway" "ai_translate_strings" "ai_file_translate" "ai_prompt_completion" "pre_translate:manual" "pre_translate:workflow" "ai_alignment" "qa_check" "ai_suggestion" "advisor"<br>
+     * string $params[promptAction] Filter by prompt action<br>
+     * string $params[statuses] Comma-separated request statuses. Enum: "pending" "success" "error" "timeout"<br>
+     * boolean $params[systemCredentials] Filter by whether system-provided credentials were used<br>
+     * boolean $params[isAutoTriggered] Filter by whether the request was triggered automatically<br>
+     * string $params[tokenName] Filter by personal access token name<br>
+     * string $params[oauthClientId] Filter by OAuth client identifier<br>
+     * string $params[createdAfter] Return logs created after this date-time<br>
+     * string $params[createdBefore] Return logs created before this date-time<br>
+     * integer $params[limit]<br>
+     * integer $params[offset]
+     * @return ModelCollection
+     */
+    public function listRequestLogs(int $userId, array $params = []): ModelCollection
+    {
+        $path = sprintf('users/%d/ai/request-logs', $userId);
+        return $this->_list($path, AiRequestLog::class, $params);
     }
 
     /**

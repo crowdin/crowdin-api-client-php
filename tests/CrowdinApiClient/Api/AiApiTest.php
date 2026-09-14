@@ -9,6 +9,7 @@ use CrowdinApiClient\Model\AiProvider;
 use CrowdinApiClient\Model\AiProviderModel;
 use CrowdinApiClient\Model\AiProxyChatCompletion;
 use CrowdinApiClient\Model\AiReport;
+use CrowdinApiClient\Model\AiRequestLog;
 use CrowdinApiClient\Model\AiSettings;
 use CrowdinApiClient\Model\AiSnippet;
 use CrowdinApiClient\Model\AiTranslation;
@@ -757,6 +758,76 @@ class AiApiTest extends AbstractTestApi
         $this->assertInstanceOf(DownloadFile::class, $download);
         $this->assertEquals('https://production-enterprise-importer.downloads.crowdin.com/992000002/2/14.xliff', $download->getUrl());
         $this->assertEquals('2019-09-20T10:31:21+00:00', $download->getExpireIn());
+    }
+
+    public function testListRequestLogs(): void
+    {
+        $this->mockRequest([
+            'path' => '/users/1/ai/request-logs?requestId=9d3b1c4e-2f3a-4b5c-8d6e-7f8a9b0c1d2e&projectId=8&userId=42&aiProviderId=3&model=gpt-5.6-sol&sourceAction=ai_gateway&promptAction=pre_translate&statuses=pending%2Csuccess&systemCredentials=1&isAutoTriggered=0&tokenName=CI+token&oauthClientId=gpbccUFxAKZDrLm5Nq8t&createdAfter=2026-01-01T00%3A00%3A00%2B00%3A00&createdBefore=2026-01-02T00%3A00%3A00%2B00%3A00&limit=10&offset=20',
+            'method' => 'get',
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 12345,
+                            'requestId' => '9d3b1c4e-2f3a-4b5c-8d6e-7f8a9b0c1d2e',
+                            'createdAt' => '2026-01-01T10:00:00+00:00',
+                            'status' => 'success',
+                            'httpStatus' => 200,
+                            'model' => 'gpt-5.6-sol',
+                            'sourceAction' => 'ai_gateway',
+                            'promptAction' => 'pre_translate',
+                            'systemCredentials' => true,
+                            'isAutoTriggered' => false,
+                            'durationMs' => 842,
+                            'inputTokens' => 512,
+                            'outputTokens' => 128,
+                            'totalCost' => 0.012345,
+                            'userId' => 42,
+                            'projectId' => 8,
+                            'promptId' => 5,
+                            'aiProviderId' => 3,
+                            'tokenName' => 'CI token',
+                            'oauthClientId' => 'gpbccUFxAKZDrLm5Nq8t',
+                            'oauthClientName' => 'AI Pipeline',
+                            'ip' => '203.0.113.42',
+                            'userAgent' => 'Mozilla/5.0',
+                            'error' => null,
+                        ],
+                    ],
+                ],
+                'pagination' => [
+                    'offset' => 20,
+                    'limit' => 10,
+                ],
+            ]),
+        ]);
+
+        $requestLogs = $this->crowdin->ai->listRequestLogs(1, [
+            'requestId' => '9d3b1c4e-2f3a-4b5c-8d6e-7f8a9b0c1d2e',
+            'projectId' => 8,
+            'userId' => 42,
+            'aiProviderId' => 3,
+            'model' => 'gpt-5.6-sol',
+            'sourceAction' => 'ai_gateway',
+            'promptAction' => 'pre_translate',
+            'statuses' => 'pending,success',
+            'systemCredentials' => true,
+            'isAutoTriggered' => false,
+            'tokenName' => 'CI token',
+            'oauthClientId' => 'gpbccUFxAKZDrLm5Nq8t',
+            'createdAfter' => '2026-01-01T00:00:00+00:00',
+            'createdBefore' => '2026-01-02T00:00:00+00:00',
+            'limit' => 10,
+            'offset' => 20,
+        ]);
+
+        $this->assertInstanceOf(ModelCollection::class, $requestLogs);
+        $this->assertCount(1, $requestLogs);
+        $this->assertInstanceOf(AiRequestLog::class, $requestLogs[0]);
+        $this->assertEquals(12345, $requestLogs[0]->getId());
+        $this->assertEquals('success', $requestLogs[0]->getStatus());
+        $this->assertEquals(0.012345, $requestLogs[0]->getTotalCost());
     }
 
     public function testGetSettings(): void
