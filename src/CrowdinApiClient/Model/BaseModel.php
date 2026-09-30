@@ -67,4 +67,12 @@ class BaseModel implements ModelInterface
     {
         return $this->getDataProperty($property) !== null ? (string)$this->getDataProperty($property) : null;
     }
+
+    /**
+     * Returns the property cast to array, or null when it is missing or null.
+     */
+    protected function nullableArray(string $property): ?array
+    {
+        return $this->getDataProperty($property) !== null ? (array)$this->getDataProperty($property) : null;
+    }
 }
