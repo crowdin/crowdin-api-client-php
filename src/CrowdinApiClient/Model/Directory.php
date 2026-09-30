@@ -57,6 +57,11 @@ class Directory extends BaseModel
      */
     protected $updatedAt;
 
+    /**
+     * @var string
+     */
+    protected $path;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -71,6 +76,7 @@ class Directory extends BaseModel
         $this->priority = (string)$this->getDataProperty('priority');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
+        $this->path = (string)$this->getDataProperty('path');
     }
 
     /**
@@ -199,5 +205,10 @@ class Directory extends BaseModel
     public function setDirectoryId(int $directoryId): void
     {
         $this->directoryId = $directoryId;
+    }
+
+    public function getPath(): string
+    {
+        return $this->path;
     }
 }

@@ -77,6 +77,26 @@ class Bundle extends BaseModel
      */
     protected $updatedAt;
 
+    /**
+     * @var string|null
+     */
+    protected $excludeLabelMatchRule;
+
+    /**
+     * @var string|null
+     */
+    protected $labelMatchRule;
+
+    /**
+     * @var array|null
+     */
+    protected $languageIds;
+
+    /**
+     * @var string
+     */
+    protected $sourceLanguageExportPattern;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -95,6 +115,10 @@ class Bundle extends BaseModel
         $this->webUrl = (string)$this->getDataProperty('webUrl');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
+        $this->excludeLabelMatchRule = $this->nullableString('excludeLabelMatchRule');
+        $this->labelMatchRule = $this->nullableString('labelMatchRule');
+        $this->languageIds = $this->nullableArray('languageIds');
+        $this->sourceLanguageExportPattern = (string)$this->getDataProperty('sourceLanguageExportPattern');
     }
 
     public function getId(): int
@@ -239,5 +263,35 @@ class Bundle extends BaseModel
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;
+    }
+
+    public function getExcludeLabelMatchRule(): ?string
+    {
+        return $this->excludeLabelMatchRule;
+    }
+
+    public function setExcludeLabelMatchRule(string $excludeLabelMatchRule): void
+    {
+        $this->excludeLabelMatchRule = $excludeLabelMatchRule;
+    }
+
+    public function getLabelMatchRule(): ?string
+    {
+        return $this->labelMatchRule;
+    }
+
+    public function setLabelMatchRule(string $labelMatchRule): void
+    {
+        $this->labelMatchRule = $labelMatchRule;
+    }
+
+    public function getLanguageIds(): ?array
+    {
+        return $this->languageIds;
+    }
+
+    public function getSourceLanguageExportPattern(): string
+    {
+        return $this->sourceLanguageExportPattern;
     }
 }

@@ -69,6 +69,11 @@ class GlossaryConcept extends BaseModel
      */
     protected $updatedAt;
 
+    /**
+     * @var array|null
+     */
+    protected $fields;
+
     public function __construct(array $data)
     {
         parent::__construct($data);
@@ -90,6 +95,7 @@ class GlossaryConcept extends BaseModel
         );
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
+        $this->fields = $this->nullableArray('fields');
     }
 
     public function getId(): int
@@ -191,5 +197,10 @@ class GlossaryConcept extends BaseModel
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;
+    }
+
+    public function getFields(): ?array
+    {
+        return $this->fields;
     }
 }

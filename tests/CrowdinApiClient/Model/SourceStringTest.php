@@ -166,4 +166,20 @@ class SourceStringTest extends TestCase
         $sourceString = new SourceString(['text' => $originalText]);
         $sourceString->setText($updatedText);
     }
+
+    public function testLoadAdditionalFields(): void
+    {
+        $model = new SourceString([
+            'webUrl' => 'value',
+        ]);
+
+        $this->assertSame('value', $model->getWebUrl());
+    }
+
+    public function testAdditionalFieldsWhenMissing(): void
+    {
+        $model = new SourceString([]);
+
+        $this->assertSame('', $model->getWebUrl());
+    }
 }

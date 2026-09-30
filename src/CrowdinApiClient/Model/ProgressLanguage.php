@@ -40,8 +40,15 @@ class ProgressLanguage extends BaseModel
     protected $etag;
 
     /**
-     * @param array $data
+     * @var int|null
      */
+    protected $branchId;
+
+    /**
+     * @var array
+     */
+    protected $qaChecksStatus;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -52,6 +59,8 @@ class ProgressLanguage extends BaseModel
         $this->approvalProgress = (int)$this->getDataProperty('approvalProgress');
         $this->fileId = (int)$this->getDataProperty('fileId');
         $this->etag = (string)$this->getDataProperty('eTag');
+        $this->branchId = $this->nullableInt('branchId');
+        $this->qaChecksStatus = (array)$this->getDataProperty('qaChecksStatus');
     }
 
     /**
@@ -100,5 +109,15 @@ class ProgressLanguage extends BaseModel
     public function getEtag(): ?string
     {
         return $this->etag;
+    }
+
+    public function getBranchId(): ?int
+    {
+        return $this->branchId;
+    }
+
+    public function getQaChecksStatus(): array
+    {
+        return $this->qaChecksStatus;
     }
 }

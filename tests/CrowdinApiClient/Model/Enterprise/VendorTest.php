@@ -39,4 +39,20 @@ class VendorTest extends TestCase
         $this->assertEquals($this->data['description'], $this->vendor->getDescription());
         $this->assertEquals($this->data['status'], $this->vendor->getStatus());
     }
+
+    public function testLoadAdditionalFields(): void
+    {
+        $model = new Vendor([
+            'webUrl' => 'value',
+        ]);
+
+        $this->assertSame('value', $model->getWebUrl());
+    }
+
+    public function testAdditionalFieldsWhenMissing(): void
+    {
+        $model = new Vendor([]);
+
+        $this->assertSame('', $model->getWebUrl());
+    }
 }

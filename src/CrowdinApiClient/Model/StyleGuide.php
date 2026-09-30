@@ -39,6 +39,9 @@ class StyleGuide extends BaseModel
     /** @var string */
     protected $updatedAt;
 
+    /** @var int|null */
+    protected $groupId;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -54,6 +57,7 @@ class StyleGuide extends BaseModel
         $this->downloadLink = (string)$this->getDataProperty('downloadLink');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
+        $this->groupId = $this->nullableInt('groupId');
     }
 
     public function getId(): int
@@ -140,5 +144,15 @@ class StyleGuide extends BaseModel
     public function setIsShared(bool $isShared): void
     {
         $this->isShared = $isShared;
+    }
+
+    public function getGroupId(): ?int
+    {
+        return $this->groupId;
+    }
+
+    public function setGroupId(int $groupId): void
+    {
+        $this->groupId = $groupId;
     }
 }

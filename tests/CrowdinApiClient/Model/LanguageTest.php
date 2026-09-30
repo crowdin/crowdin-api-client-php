@@ -79,4 +79,20 @@ class LanguageTest extends TestCase
         $this->assertEquals($this->data['textDirection'], $this->language->getTextDirection());
         $this->assertEquals($this->data['dialectOf'], $this->language->getDialectOf());
     }
+
+    public function testLoadAdditionalFields(): void
+    {
+        $model = new Language([
+            'bcp47Code' => 'value',
+        ]);
+
+        $this->assertSame('value', $model->getBcp47Code());
+    }
+
+    public function testAdditionalFieldsWhenMissing(): void
+    {
+        $model = new Language([]);
+
+        $this->assertSame('', $model->getBcp47Code());
+    }
 }

@@ -46,4 +46,23 @@ class ProgressLanguageTest extends TestCase
         $this->assertEquals($this->data['fileId'], $this->progress->getFileId());
         $this->assertEquals($this->data['eTag'], $this->progress->getEtag());
     }
+
+    public function testLoadAdditionalFields(): void
+    {
+        $model = new ProgressLanguage([
+            'branchId' => 7,
+            'qaChecksStatus' => ['key' => 'value'],
+        ]);
+
+        $this->assertSame(7, $model->getBranchId());
+        $this->assertSame(['key' => 'value'], $model->getQaChecksStatus());
+    }
+
+    public function testAdditionalFieldsWhenMissing(): void
+    {
+        $model = new ProgressLanguage([]);
+
+        $this->assertNull($model->getBranchId());
+        $this->assertSame([], $model->getQaChecksStatus());
+    }
 }

@@ -94,4 +94,20 @@ class GlossaryConceptTest extends TestCase
         $this->assertEquals($this->data['createdAt'], $this->glossaryConcept->getCreatedAt());
         $this->assertEquals($this->data['updatedAt'], $this->glossaryConcept->getUpdatedAt());
     }
+
+    public function testLoadAdditionalFields(): void
+    {
+        $model = new GlossaryConcept([
+            'fields' => ['key' => 'value'],
+        ]);
+
+        $this->assertSame(['key' => 'value'], $model->getFields());
+    }
+
+    public function testAdditionalFieldsWhenMissing(): void
+    {
+        $model = new GlossaryConcept([]);
+
+        $this->assertNull($model->getFields());
+    }
 }

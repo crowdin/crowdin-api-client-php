@@ -40,6 +40,41 @@ class LanguageTranslation extends BaseModel
     protected $plurals;
 
     /**
+     * @var string
+     */
+    protected $createdAt;
+
+    /**
+     * @var bool
+     */
+    protected $isPreTranslated;
+
+    /**
+     * @var int|null
+     */
+    protected $matchRate;
+
+    /**
+     * @var string|null
+     */
+    protected $matchType;
+
+    /**
+     * @var string|null
+     */
+    protected $provider;
+
+    /**
+     * @var int|null
+     */
+    protected $providerId;
+
+    /**
+     * @var string
+     */
+    protected $qaIssuesStatus;
+
+    /**
      * @param array $data
      */
     public function __construct(array $data = [])
@@ -57,6 +92,13 @@ class LanguageTranslation extends BaseModel
             ? (array)$this->getDataProperty('plurals') : null;
         $this->user = $this->getDataProperty('user')
             ? (array)$this->getDataProperty('user') : null;
+        $this->createdAt = (string)$this->getDataProperty('createdAt');
+        $this->isPreTranslated = (bool)$this->getDataProperty('isPreTranslated');
+        $this->matchRate = $this->nullableInt('matchRate');
+        $this->matchType = $this->nullableString('matchType');
+        $this->provider = $this->nullableString('provider');
+        $this->providerId = $this->nullableInt('providerId');
+        $this->qaIssuesStatus = (string)$this->getDataProperty('qaIssuesStatus');
     }
 
     public function getStringId(): int
@@ -107,5 +149,40 @@ class LanguageTranslation extends BaseModel
     public function setPlurals(array $plurals): void
     {
         $this->plurals = $plurals;
+    }
+
+    public function getCreatedAt(): string
+    {
+        return $this->createdAt;
+    }
+
+    public function isPreTranslated(): bool
+    {
+        return $this->isPreTranslated;
+    }
+
+    public function getMatchRate(): ?int
+    {
+        return $this->matchRate;
+    }
+
+    public function getMatchType(): ?string
+    {
+        return $this->matchType;
+    }
+
+    public function getProvider(): ?string
+    {
+        return $this->provider;
+    }
+
+    public function getProviderId(): ?int
+    {
+        return $this->providerId;
+    }
+
+    public function getQaIssuesStatus(): string
+    {
+        return $this->qaIssuesStatus;
     }
 }

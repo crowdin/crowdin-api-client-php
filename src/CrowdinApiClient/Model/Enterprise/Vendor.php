@@ -29,6 +29,11 @@ class Vendor extends BaseModel
      */
     protected $status;
 
+    /**
+     * @var string
+     */
+    protected $webUrl;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -36,6 +41,7 @@ class Vendor extends BaseModel
         $this->name = (string)$this->getDataProperty('name');
         $this->description = (string)$this->getDataProperty('description');
         $this->status = (string)$this->getDataProperty('status');
+        $this->webUrl = (string)$this->getDataProperty('webUrl');
     }
 
     /**
@@ -100,5 +106,10 @@ class Vendor extends BaseModel
     public function setStatus(string $status): void
     {
         $this->status = $status;
+    }
+
+    public function getWebUrl(): string
+    {
+        return $this->webUrl;
     }
 }

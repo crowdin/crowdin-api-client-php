@@ -53,4 +53,23 @@ class DistributionReleaseTest extends TestCase
         $this->assertEquals($this->data['currentFileId'], $this->distributionRelease->getCurrentFileId());
         $this->assertEquals($this->data['date'], $this->distributionRelease->getDate());
     }
+
+    public function testLoadAdditionalFields(): void
+    {
+        $model = new DistributionRelease([
+            'currentBranchId' => 7,
+            'error' => ['key' => 'value'],
+        ]);
+
+        $this->assertSame(7, $model->getCurrentBranchId());
+        $this->assertSame(['key' => 'value'], $model->getError());
+    }
+
+    public function testAdditionalFieldsWhenMissing(): void
+    {
+        $model = new DistributionRelease([]);
+
+        $this->assertNull($model->getCurrentBranchId());
+        $this->assertSame([], $model->getError());
+    }
 }

@@ -39,4 +39,23 @@ class LabelTest extends TestCase
         $this->assertEquals($this->data['id'], $this->label->getId());
         $this->assertEquals($this->data['title'], $this->label->getTitle());
     }
+
+    public function testLoadAdditionalFields(): void
+    {
+        $model = new Label([
+            'isShared' => true,
+            'isSystem' => true,
+        ]);
+
+        $this->assertSame(true, $model->isShared());
+        $this->assertSame(true, $model->isSystem());
+    }
+
+    public function testAdditionalFieldsWhenMissing(): void
+    {
+        $model = new Label([]);
+
+        $this->assertNull($model->isShared());
+        $this->assertNull($model->isSystem());
+    }
 }

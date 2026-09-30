@@ -30,6 +30,9 @@ class AiReport extends BaseModel
     /** @var string|null */
     protected $finishedAt;
 
+    /** @var string|null */
+    protected $eta;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -42,6 +45,7 @@ class AiReport extends BaseModel
         $this->updatedAt = $this->getDataProperty('updatedAt');
         $this->startedAt = $this->getDataProperty('startedAt');
         $this->finishedAt = $this->getDataProperty('finishedAt');
+        $this->eta = $this->nullableString('eta');
     }
 
     public function getIdentifier(): string
@@ -82,5 +86,10 @@ class AiReport extends BaseModel
     public function getFinishedAt(): ?string
     {
         return $this->finishedAt;
+    }
+
+    public function getEta(): ?string
+    {
+        return $this->eta;
     }
 }

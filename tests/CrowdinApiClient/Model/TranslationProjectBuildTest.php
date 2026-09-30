@@ -29,4 +29,29 @@ class TranslationProjectBuildTest extends TestCase
         $this->assertEquals($this->data['progress'], $translationProjectBuild->getProgress());
         $this->assertEquals($this->data['attributes'], $translationProjectBuild->getAttributes());
     }
+
+    public function testLoadAdditionalFields(): void
+    {
+        $model = new TranslationProjectBuild([
+            'createdAt' => 'value',
+            'error' => ['key' => 'value'],
+            'finishedAt' => 'value',
+            'updatedAt' => 'value',
+        ]);
+
+        $this->assertSame('value', $model->getCreatedAt());
+        $this->assertSame(['key' => 'value'], $model->getError());
+        $this->assertSame('value', $model->getFinishedAt());
+        $this->assertSame('value', $model->getUpdatedAt());
+    }
+
+    public function testAdditionalFieldsWhenMissing(): void
+    {
+        $model = new TranslationProjectBuild([]);
+
+        $this->assertNull($model->getCreatedAt());
+        $this->assertSame([], $model->getError());
+        $this->assertNull($model->getFinishedAt());
+        $this->assertNull($model->getUpdatedAt());
+    }
 }

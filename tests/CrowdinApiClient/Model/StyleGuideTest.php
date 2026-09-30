@@ -82,4 +82,28 @@ class StyleGuideTest extends TestCase
         $this->assertEquals([1, 2, 3], $styleGuide->getProjectIds());
         $this->assertTrue($styleGuide->isShared());
     }
+
+    public function testLoadAdditionalFields(): void
+    {
+        $model = new StyleGuide([
+            'groupId' => 7,
+        ]);
+
+        $this->assertSame(7, $model->getGroupId());
+    }
+
+    public function testAdditionalFieldsWhenMissing(): void
+    {
+        $model = new StyleGuide([]);
+
+        $this->assertNull($model->getGroupId());
+    }
+
+    public function testSetAdditionalFields(): void
+    {
+        $model = new StyleGuide([]);
+        $model->setGroupId(7);
+
+        $this->assertSame(7, $model->getGroupId());
+    }
 }

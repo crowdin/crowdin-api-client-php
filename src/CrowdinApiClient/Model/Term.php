@@ -88,6 +88,11 @@ class Term extends BaseModel
     protected $updatedAt;
 
     /**
+     * @var array|null
+     */
+    protected $fields;
+
+    /**
      * @param array $data
      */
     public function __construct(array $data = [])
@@ -110,6 +115,7 @@ class Term extends BaseModel
         $this->lemma = (string)$this->getDataProperty('lemma');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
+        $this->fields = $this->nullableArray('fields');
     }
 
     /**
@@ -269,5 +275,15 @@ class Term extends BaseModel
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;
+    }
+
+    public function getFields(): ?array
+    {
+        return $this->fields;
+    }
+
+    public function setFields(array $fields): void
+    {
+        $this->fields = $fields;
     }
 }

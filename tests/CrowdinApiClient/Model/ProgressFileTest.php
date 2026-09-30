@@ -61,4 +61,21 @@ class ProgressFileTest extends TestCase
         $this->assertEquals($this->data['approvalProgress'], $this->progress->getApprovalProgress());
         $this->assertEquals($this->data['eTag'], $this->progress->getEtag());
     }
+
+    public function testLoadAdditionalFields(): void
+    {
+        $model = new ProgressFile([
+            'language' => [],
+            'qaChecksStatus' => ['key' => 'value'],
+        ]);
+
+        $this->assertSame(['key' => 'value'], $model->getQaChecksStatus());
+    }
+
+    public function testAdditionalFieldsWhenMissing(): void
+    {
+        $model = new ProgressFile(['language' => []]);
+
+        $this->assertSame([], $model->getQaChecksStatus());
+    }
 }

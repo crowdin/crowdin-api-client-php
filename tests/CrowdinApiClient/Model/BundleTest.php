@@ -96,4 +96,39 @@ class BundleTest extends TestCase
         $this->assertEquals($this->data['createdAt'], $this->bundle->getCreatedAt());
         $this->assertEquals($this->data['updatedAt'], $this->bundle->getUpdatedAt());
     }
+
+    public function testLoadAdditionalFields(): void
+    {
+        $model = new Bundle([
+            'excludeLabelMatchRule' => 'value',
+            'labelMatchRule' => 'value',
+            'languageIds' => ['key' => 'value'],
+            'sourceLanguageExportPattern' => 'value',
+        ]);
+
+        $this->assertSame('value', $model->getExcludeLabelMatchRule());
+        $this->assertSame('value', $model->getLabelMatchRule());
+        $this->assertSame(['key' => 'value'], $model->getLanguageIds());
+        $this->assertSame('value', $model->getSourceLanguageExportPattern());
+    }
+
+    public function testAdditionalFieldsWhenMissing(): void
+    {
+        $model = new Bundle([]);
+
+        $this->assertNull($model->getExcludeLabelMatchRule());
+        $this->assertNull($model->getLabelMatchRule());
+        $this->assertNull($model->getLanguageIds());
+        $this->assertSame('', $model->getSourceLanguageExportPattern());
+    }
+
+    public function testSetAdditionalFields(): void
+    {
+        $model = new Bundle([]);
+        $model->setExcludeLabelMatchRule('value');
+        $model->setLabelMatchRule('value');
+
+        $this->assertSame('value', $model->getExcludeLabelMatchRule());
+        $this->assertSame('value', $model->getLabelMatchRule());
+    }
 }

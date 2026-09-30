@@ -262,6 +262,151 @@ class Project extends BaseModel
      */
     protected $fields = [];
 
+    /**
+     * @var array|null
+     */
+    protected $aiPreTranslate;
+
+    /**
+     * @var int|null
+     */
+    protected $alignmentActionAiPromptId;
+
+    /**
+     * @var array|null
+     */
+    protected $assignedGlossaries;
+
+    /**
+     * @var array|null
+     */
+    protected $assignedStyleGuides;
+
+    /**
+     * @var array|null
+     */
+    protected $assignedTms;
+
+    /**
+     * @var int|null
+     */
+    protected $clientOrganizationId;
+
+    /**
+     * @var int|null
+     */
+    protected $contextReviewAiPromptId;
+
+    /**
+     * @var bool|null
+     */
+    protected $delayedWorkflowStart;
+
+    /**
+     * @var int|null
+     */
+    protected $editorSuggestionAiPromptId;
+
+    /**
+     * @var bool|null
+     */
+    protected $exportStringsThatPassedWorkflow;
+
+    /**
+     * @var int|null
+     */
+    protected $externalOrganizationId;
+
+    /**
+     * @var int|null
+     */
+    protected $externalProjectId;
+
+    /**
+     * @var array|null
+     */
+    protected $externalQaCheckIds;
+
+    /**
+     * @var array|null
+     */
+    protected $mtPreTranslate;
+
+    /**
+     * @var string|null
+     */
+    protected $publicUrl;
+
+    /**
+     * @var int|null
+     */
+    protected $qaApprovalsCount;
+
+    /**
+     * @var int|null
+     */
+    protected $qaCheckActionAiPromptId;
+
+    /**
+     * @var int
+     */
+    protected $savingsReportSettingsTemplateId;
+
+    /**
+     * @var bool|null
+     */
+    protected $showTmSuggestionsDialects;
+
+    /**
+     * @var array
+     */
+    protected $sourceLanguage;
+
+    /**
+     * @var int|null
+     */
+    protected $tagsDetection;
+
+    /**
+     * @var bool|null
+     */
+    protected $taskBasedAccessControl;
+
+    /**
+     * @var array|null
+     */
+    protected $taskReviewerIds;
+
+    /**
+     * @var bool|null
+     */
+    protected $tmApprovedSuggestionsOnly;
+
+    /**
+     * @var string|null
+     */
+    protected $tmContextType;
+
+    /**
+     * @var array|null
+     */
+    protected $tmPenalties;
+
+    /**
+     * @var array|null
+     */
+    protected $tmPreTranslate;
+
+    /**
+     * @var int
+     */
+    protected $type;
+
+    /**
+     * @var string
+     */
+    protected $webUrl;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -309,6 +454,7 @@ class Project extends BaseModel
         $this->customQaCheckIds = (array)$this->getDataProperty('customQaCheckIds');
         $this->languageMapping = (array)$this->getDataProperty('languageMapping');
         $this->glossaryAccess = (bool)$this->getDataProperty('glossaryAccess');
+        $this->exportTranslatedOnly = (bool)$this->getDataProperty('exportTranslatedOnly');
         $this->glossaryAccessOption = $this->nullableString('glossaryAccessOption');
         $this->isSuspended = (bool)$this->getDataProperty('isSuspended');
         $this->normalizePlaceholder = (bool)$this->getDataProperty('normalizePlaceholder');
@@ -317,6 +463,35 @@ class Project extends BaseModel
         $this->defaultTmId = (int)$this->getDataProperty('defaultTmId');
         $this->defaultGlossaryId = (int)$this->getDataProperty('defaultGlossaryId');
         $this->fields = (array)$this->getDataProperty('fields');
+        $this->aiPreTranslate = $this->nullableArray('aiPreTranslate');
+        $this->alignmentActionAiPromptId = $this->nullableInt('alignmentActionAiPromptId');
+        $this->assignedGlossaries = $this->nullableArray('assignedGlossaries');
+        $this->assignedStyleGuides = $this->nullableArray('assignedStyleGuides');
+        $this->assignedTms = $this->nullableArray('assignedTms');
+        $this->clientOrganizationId = $this->nullableInt('clientOrganizationId');
+        $this->contextReviewAiPromptId = $this->nullableInt('contextReviewAiPromptId');
+        $this->delayedWorkflowStart = $this->nullableBool('delayedWorkflowStart');
+        $this->editorSuggestionAiPromptId = $this->nullableInt('editorSuggestionAiPromptId');
+        $this->exportStringsThatPassedWorkflow = $this->nullableBool('exportStringsThatPassedWorkflow');
+        $this->externalOrganizationId = $this->nullableInt('externalOrganizationId');
+        $this->externalProjectId = $this->nullableInt('externalProjectId');
+        $this->externalQaCheckIds = $this->nullableArray('externalQaCheckIds');
+        $this->mtPreTranslate = $this->nullableArray('mtPreTranslate');
+        $this->publicUrl = $this->nullableString('publicUrl');
+        $this->qaApprovalsCount = $this->nullableInt('qaApprovalsCount');
+        $this->qaCheckActionAiPromptId = $this->nullableInt('qaCheckActionAiPromptId');
+        $this->savingsReportSettingsTemplateId = (int)$this->getDataProperty('savingsReportSettingsTemplateId');
+        $this->showTmSuggestionsDialects = $this->nullableBool('showTmSuggestionsDialects');
+        $this->sourceLanguage = (array)$this->getDataProperty('sourceLanguage');
+        $this->tagsDetection = $this->nullableInt('tagsDetection');
+        $this->taskBasedAccessControl = $this->nullableBool('taskBasedAccessControl');
+        $this->taskReviewerIds = $this->nullableArray('taskReviewerIds');
+        $this->tmApprovedSuggestionsOnly = $this->nullableBool('tmApprovedSuggestionsOnly');
+        $this->tmContextType = $this->nullableString('tmContextType');
+        $this->tmPenalties = $this->nullableArray('tmPenalties');
+        $this->tmPreTranslate = $this->nullableArray('tmPreTranslate');
+        $this->type = (int)$this->getDataProperty('type');
+        $this->webUrl = (string)$this->getDataProperty('webUrl');
     }
 
     /**
@@ -1125,5 +1300,240 @@ class Project extends BaseModel
     public function setFields(array $fields): void
     {
         $this->fields = $fields;
+    }
+
+    public function getAiPreTranslate(): ?array
+    {
+        return $this->aiPreTranslate;
+    }
+
+    public function setAiPreTranslate(array $aiPreTranslate): void
+    {
+        $this->aiPreTranslate = $aiPreTranslate;
+    }
+
+    public function getAlignmentActionAiPromptId(): ?int
+    {
+        return $this->alignmentActionAiPromptId;
+    }
+
+    public function setAlignmentActionAiPromptId(int $alignmentActionAiPromptId): void
+    {
+        $this->alignmentActionAiPromptId = $alignmentActionAiPromptId;
+    }
+
+    public function getAssignedGlossaries(): ?array
+    {
+        return $this->assignedGlossaries;
+    }
+
+    public function setAssignedGlossaries(array $assignedGlossaries): void
+    {
+        $this->assignedGlossaries = $assignedGlossaries;
+    }
+
+    public function getAssignedStyleGuides(): ?array
+    {
+        return $this->assignedStyleGuides;
+    }
+
+    public function setAssignedStyleGuides(array $assignedStyleGuides): void
+    {
+        $this->assignedStyleGuides = $assignedStyleGuides;
+    }
+
+    public function getAssignedTms(): ?array
+    {
+        return $this->assignedTms;
+    }
+
+    public function setAssignedTms(array $assignedTms): void
+    {
+        $this->assignedTms = $assignedTms;
+    }
+
+    public function getClientOrganizationId(): ?int
+    {
+        return $this->clientOrganizationId;
+    }
+
+    public function getContextReviewAiPromptId(): ?int
+    {
+        return $this->contextReviewAiPromptId;
+    }
+
+    public function setContextReviewAiPromptId(int $contextReviewAiPromptId): void
+    {
+        $this->contextReviewAiPromptId = $contextReviewAiPromptId;
+    }
+
+    public function isDelayedWorkflowStart(): ?bool
+    {
+        return $this->delayedWorkflowStart;
+    }
+
+    public function getEditorSuggestionAiPromptId(): ?int
+    {
+        return $this->editorSuggestionAiPromptId;
+    }
+
+    public function setEditorSuggestionAiPromptId(int $editorSuggestionAiPromptId): void
+    {
+        $this->editorSuggestionAiPromptId = $editorSuggestionAiPromptId;
+    }
+
+    public function isExportStringsThatPassedWorkflow(): ?bool
+    {
+        return $this->exportStringsThatPassedWorkflow;
+    }
+
+    public function setExportStringsThatPassedWorkflow(bool $exportStringsThatPassedWorkflow): void
+    {
+        $this->exportStringsThatPassedWorkflow = $exportStringsThatPassedWorkflow;
+    }
+
+    public function getExternalOrganizationId(): ?int
+    {
+        return $this->externalOrganizationId;
+    }
+
+    public function getExternalProjectId(): ?int
+    {
+        return $this->externalProjectId;
+    }
+
+    public function getExternalQaCheckIds(): ?array
+    {
+        return $this->externalQaCheckIds;
+    }
+
+    public function getMtPreTranslate(): ?array
+    {
+        return $this->mtPreTranslate;
+    }
+
+    public function setMtPreTranslate(array $mtPreTranslate): void
+    {
+        $this->mtPreTranslate = $mtPreTranslate;
+    }
+
+    public function getPublicUrl(): ?string
+    {
+        return $this->publicUrl;
+    }
+
+    public function getQaApprovalsCount(): ?int
+    {
+        return $this->qaApprovalsCount;
+    }
+
+    public function setQaApprovalsCount(int $qaApprovalsCount): void
+    {
+        $this->qaApprovalsCount = $qaApprovalsCount;
+    }
+
+    public function getQaCheckActionAiPromptId(): ?int
+    {
+        return $this->qaCheckActionAiPromptId;
+    }
+
+    public function setQaCheckActionAiPromptId(int $qaCheckActionAiPromptId): void
+    {
+        $this->qaCheckActionAiPromptId = $qaCheckActionAiPromptId;
+    }
+
+    public function getSavingsReportSettingsTemplateId(): int
+    {
+        return $this->savingsReportSettingsTemplateId;
+    }
+
+    public function setSavingsReportSettingsTemplateId(int $savingsReportSettingsTemplateId): void
+    {
+        $this->savingsReportSettingsTemplateId = $savingsReportSettingsTemplateId;
+    }
+
+    public function isShowTmSuggestionsDialects(): ?bool
+    {
+        return $this->showTmSuggestionsDialects;
+    }
+
+    public function setShowTmSuggestionsDialects(bool $showTmSuggestionsDialects): void
+    {
+        $this->showTmSuggestionsDialects = $showTmSuggestionsDialects;
+    }
+
+    public function getSourceLanguage(): array
+    {
+        return $this->sourceLanguage;
+    }
+
+    public function getTagsDetection(): ?int
+    {
+        return $this->tagsDetection;
+    }
+
+    public function isTaskBasedAccessControl(): ?bool
+    {
+        return $this->taskBasedAccessControl;
+    }
+
+    public function setTaskBasedAccessControl(bool $taskBasedAccessControl): void
+    {
+        $this->taskBasedAccessControl = $taskBasedAccessControl;
+    }
+
+    public function getTaskReviewerIds(): ?array
+    {
+        return $this->taskReviewerIds;
+    }
+
+    public function setTaskReviewerIds(array $taskReviewerIds): void
+    {
+        $this->taskReviewerIds = $taskReviewerIds;
+    }
+
+    public function isTmApprovedSuggestionsOnly(): ?bool
+    {
+        return $this->tmApprovedSuggestionsOnly;
+    }
+
+    public function setTmApprovedSuggestionsOnly(bool $tmApprovedSuggestionsOnly): void
+    {
+        $this->tmApprovedSuggestionsOnly = $tmApprovedSuggestionsOnly;
+    }
+
+    public function getTmContextType(): ?string
+    {
+        return $this->tmContextType;
+    }
+
+    public function setTmContextType(string $tmContextType): void
+    {
+        $this->tmContextType = $tmContextType;
+    }
+
+    public function getTmPenalties(): ?array
+    {
+        return $this->tmPenalties;
+    }
+
+    public function getTmPreTranslate(): ?array
+    {
+        return $this->tmPreTranslate;
+    }
+
+    public function setTmPreTranslate(array $tmPreTranslate): void
+    {
+        $this->tmPreTranslate = $tmPreTranslate;
+    }
+
+    public function getType(): int
+    {
+        return $this->type;
+    }
+
+    public function getWebUrl(): string
+    {
+        return $this->webUrl;
     }
 }

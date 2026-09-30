@@ -22,6 +22,16 @@ class Label extends BaseModel
      */
     protected $title;
 
+    /**
+     * @var bool|null
+     */
+    protected $isShared;
+
+    /**
+     * @var bool|null
+     */
+    protected $isSystem;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -29,37 +39,37 @@ class Label extends BaseModel
         $this->id = (int)$this->getDataProperty('id');
         $this->projectId = (int)$this->getDataProperty('projectId');
         $this->title = (string)$this->getDataProperty('title');
+        $this->isShared = $this->nullableBool('isShared');
+        $this->isSystem = $this->nullableBool('isSystem');
     }
 
-    /**
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return int
-     */
     public function getProjectId(): int
     {
         return $this->projectId;
     }
 
-    /**
-     * @return string
-     */
     public function getTitle(): string
     {
         return $this->title;
     }
 
-    /**
-     * @param string $title
-     */
     public function setTitle(string $title): void
     {
         $this->title = $title;
+    }
+
+    public function isShared(): ?bool
+    {
+        return $this->isShared;
+    }
+
+    public function isSystem(): ?bool
+    {
+        return $this->isSystem;
     }
 }

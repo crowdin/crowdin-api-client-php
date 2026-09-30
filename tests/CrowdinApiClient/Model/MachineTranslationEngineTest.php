@@ -48,4 +48,44 @@ class MachineTranslationEngineTest extends TestCase
         $this->assertEquals($this->data['credentials'], $this->machineTranslationEngine->getCredentials());
         $this->assertEquals($this->data['projectIds'], $this->machineTranslationEngine->getProjectIds());
     }
+
+    public function testLoadAdditionalFields(): void
+    {
+        $model = new MachineTranslationEngine([
+            'enabledLanguageIds' => ['key' => 'value'],
+            'enabledProjectIds' => ['key' => 'value'],
+            'isEnabled' => true,
+            'supportedLanguageIds' => ['key' => 'value'],
+            'supportedLanguagePairs' => ['key' => 'value'],
+        ]);
+
+        $this->assertSame(['key' => 'value'], $model->getEnabledLanguageIds());
+        $this->assertSame(['key' => 'value'], $model->getEnabledProjectIds());
+        $this->assertSame(true, $model->isEnabled());
+        $this->assertSame(['key' => 'value'], $model->getSupportedLanguageIds());
+        $this->assertSame(['key' => 'value'], $model->getSupportedLanguagePairs());
+    }
+
+    public function testAdditionalFieldsWhenMissing(): void
+    {
+        $model = new MachineTranslationEngine([]);
+
+        $this->assertNull($model->getEnabledLanguageIds());
+        $this->assertNull($model->getEnabledProjectIds());
+        $this->assertNull($model->isEnabled());
+        $this->assertSame([], $model->getSupportedLanguageIds());
+        $this->assertNull($model->getSupportedLanguagePairs());
+    }
+
+    public function testSetAdditionalFields(): void
+    {
+        $model = new MachineTranslationEngine([]);
+        $model->setEnabledLanguageIds(['key' => 'value']);
+        $model->setEnabledProjectIds(['key' => 'value']);
+        $model->setIsEnabled(true);
+
+        $this->assertSame(['key' => 'value'], $model->getEnabledLanguageIds());
+        $this->assertSame(['key' => 'value'], $model->getEnabledProjectIds());
+        $this->assertSame(true, $model->isEnabled());
+    }
 }

@@ -62,6 +62,11 @@ class Glossary extends BaseModel
      */
     protected $createdAt;
 
+    /**
+     * @var bool
+     */
+    protected $isShared;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -77,6 +82,7 @@ class Glossary extends BaseModel
         $this->projectIds = (array)$this->getDataProperty('projectIds');
         $this->webUrl = (string)$this->getDataProperty('webUrl');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
+        $this->isShared = (bool)$this->getDataProperty('isShared');
     }
 
     public function getId(): int
@@ -146,5 +152,15 @@ class Glossary extends BaseModel
     public function getCreatedAt(): string
     {
         return $this->createdAt;
+    }
+
+    public function isShared(): bool
+    {
+        return $this->isShared;
+    }
+
+    public function setIsShared(bool $isShared): void
+    {
+        $this->isShared = $isShared;
     }
 }

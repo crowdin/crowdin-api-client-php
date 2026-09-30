@@ -52,4 +52,20 @@ class StringTranslationApprovalTest extends TestCase
         $this->assertEquals($this->data['workflowStepId'], $this->stringTranslationApproval->getWorkflowStepId());
         $this->assertEquals($this->data['createdAt'], $this->stringTranslationApproval->getCreatedAt());
     }
+
+    public function testLoadAdditionalFields(): void
+    {
+        $model = new StringTranslationApproval([
+            'fileId' => 7,
+        ]);
+
+        $this->assertSame(7, $model->getFileId());
+    }
+
+    public function testAdditionalFieldsWhenMissing(): void
+    {
+        $model = new StringTranslationApproval([]);
+
+        $this->assertSame(0, $model->getFileId());
+    }
 }

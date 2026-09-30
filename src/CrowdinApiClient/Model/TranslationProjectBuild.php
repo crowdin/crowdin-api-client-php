@@ -32,6 +32,26 @@ class TranslationProjectBuild extends BaseModel
      */
     protected $attributes;
 
+    /**
+     * @var string|null
+     */
+    protected $createdAt;
+
+    /**
+     * @var array
+     */
+    protected $error;
+
+    /**
+     * @var string|null
+     */
+    protected $finishedAt;
+
+    /**
+     * @var string|null
+     */
+    protected $updatedAt;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -41,6 +61,10 @@ class TranslationProjectBuild extends BaseModel
         $this->status = (string)$this->getDataProperty('status');
         $this->progress = (int)$this->getDataProperty('progress');
         $this->attributes = (array)$this->getDataProperty('attributes');
+        $this->createdAt = $this->nullableString('createdAt');
+        $this->error = (array)$this->getDataProperty('error');
+        $this->finishedAt = $this->nullableString('finishedAt');
+        $this->updatedAt = $this->nullableString('updatedAt');
     }
 
     public function getId(): int
@@ -66,5 +90,25 @@ class TranslationProjectBuild extends BaseModel
     public function getAttributes(): array
     {
         return $this->attributes;
+    }
+
+    public function getCreatedAt(): ?string
+    {
+        return $this->createdAt;
+    }
+
+    public function getError(): array
+    {
+        return $this->error;
+    }
+
+    public function getFinishedAt(): ?string
+    {
+        return $this->finishedAt;
+    }
+
+    public function getUpdatedAt(): ?string
+    {
+        return $this->updatedAt;
     }
 }

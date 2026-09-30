@@ -65,4 +65,21 @@ class ProgressTest extends TestCase
         $this->assertEquals($this->data['translationProgress'], $this->progress->getTranslationProgress());
         $this->assertEquals($this->data['approvalProgress'], $this->progress->getApprovalProgress());
     }
+
+    public function testLoadAdditionalFields(): void
+    {
+        $model = new Progress([
+            'language' => [],
+            'qaChecksStatus' => ['key' => 'value'],
+        ]);
+
+        $this->assertSame(['key' => 'value'], $model->getQaChecksStatus());
+    }
+
+    public function testAdditionalFieldsWhenMissing(): void
+    {
+        $model = new Progress(['language' => []]);
+
+        $this->assertSame([], $model->getQaChecksStatus());
+    }
 }

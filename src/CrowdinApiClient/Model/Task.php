@@ -233,6 +233,21 @@ class Task extends BaseModel
      */
     protected $hash;
 
+    /**
+     * @var array|null
+     */
+    protected $branchIds;
+
+    /**
+     * @var int
+     */
+    protected $originalWordsCount;
+
+    /**
+     * @var array|null
+     */
+    protected $syncScope;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -289,6 +304,9 @@ class Task extends BaseModel
         $this->vendor = $this->getDataProperty('vendor') ? (string)$this->getDataProperty('vendor') : null;
         $this->filesCount = (int)$this->getDataProperty('filesCount');
         $this->fileIds = (array)$this->getDataProperty('fileIds');
+        $this->branchIds = $this->nullableArray('branchIds');
+        $this->originalWordsCount = (int)$this->getDataProperty('originalWordsCount');
+        $this->syncScope = $this->nullableArray('syncScope');
 
         // User Task
         $this->isArchived = (bool)$this->getDataProperty('isArchived');
@@ -739,5 +757,20 @@ class Task extends BaseModel
     public function getHash(): ?string
     {
         return $this->hash;
+    }
+
+    public function getBranchIds(): ?array
+    {
+        return $this->branchIds;
+    }
+
+    public function getOriginalWordsCount(): int
+    {
+        return $this->originalWordsCount;
+    }
+
+    public function getSyncScope(): ?array
+    {
+        return $this->syncScope;
     }
 }

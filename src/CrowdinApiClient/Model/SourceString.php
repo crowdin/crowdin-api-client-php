@@ -109,6 +109,11 @@ class SourceString extends BaseModel
      */
     protected $fields = [];
 
+    /**
+     * @var string
+     */
+    protected $webUrl;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -139,6 +144,7 @@ class SourceString extends BaseModel
         $this->isDuplicate = (bool)$this->getDataProperty('isDuplicate');
         $this->masterStringId = $this->getDataProperty('masterStringId');
         $this->fields = (array)$this->getDataProperty('fields');
+        $this->webUrl = (string)$this->getDataProperty('webUrl');
     }
 
     /**
@@ -375,5 +381,10 @@ class SourceString extends BaseModel
     public function setFields(array $fields): void
     {
         $this->fields = $fields;
+    }
+
+    public function getWebUrl(): string
+    {
+        return $this->webUrl;
     }
 }
