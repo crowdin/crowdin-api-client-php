@@ -59,7 +59,6 @@ class ReportApi extends AbstractApi
     /**
      * List Report Settings Templates
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.reports.settings-templates.getMany API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.reports.settings-templates.getMany API Documentation Enterprise
      */
     public function listReportSettingsTemplates(int $projectId): ModelCollection
     {
@@ -70,7 +69,6 @@ class ReportApi extends AbstractApi
     /**
      * Get Report Settings Template
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.reports.settings-templates.get API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.reports.settings-templates.get API Documentation Enterprise
      */
     public function getReportSettingsTemplate(int $projectId, int $reportSettingsTemplateId): ?ReportSettingsTemplate
     {
@@ -81,7 +79,6 @@ class ReportApi extends AbstractApi
     /**
      * Add Report Settings Template
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.reports.settings-templates.post API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.reports.settings-templates.post API Documentation Enterprise
      */
     public function createReportSettingsTemplate(int $projectId, array $data): ?ReportSettingsTemplate
     {
@@ -100,7 +97,6 @@ class ReportApi extends AbstractApi
     /**
      * Edit Report Settings Template
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.reports.settings-templates.patch API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.reports.settings-templates.patch API Documentation Enterprise
      */
     public function updateReportSettingsTemplate(
         int $projectId,
@@ -113,7 +109,6 @@ class ReportApi extends AbstractApi
     /**
      * Delete Report Settings Template
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.reports.settings-templates.delete API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.reports.settings-templates.delete API Documentation Enterprise
      */
     public function deleteReportSettingsTemplate(int $projectId, int $reportSettingsTemplateId): void
     {

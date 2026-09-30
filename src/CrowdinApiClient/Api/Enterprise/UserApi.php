@@ -44,7 +44,7 @@ class UserApi extends AbstractApi
 
     /**
      * Get Project Member Permissions
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.members.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.members.get API Documentation
      *
      * @param int $projectId
      * @param int $memberId

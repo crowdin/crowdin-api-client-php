@@ -113,6 +113,7 @@ class TaskForUpdate extends Task
     }
 
     /**
+     * @deprecated Deprecated by the Crowdin API. Use getSplitContent() instead.
      * @return bool
      */
     public function getSplitFiles(): bool
@@ -121,6 +122,7 @@ class TaskForUpdate extends Task
     }
 
     /**
+     * @deprecated Deprecated by the Crowdin API. Use setSplitContent() instead.
      * @param bool $splitFiles
      */
     public function setSplitFiles(bool $splitFiles): void

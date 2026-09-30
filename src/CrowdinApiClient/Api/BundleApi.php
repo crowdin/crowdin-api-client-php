@@ -86,8 +86,8 @@ class BundleApi extends AbstractApi
 
     /**
      * Edit Bundle
-     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.branches.patch API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.branches.patch API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.bundles.patch API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.bundles.patch API Documentation Enterprise
      *
      * @param int $projectId
      * @param Bundle $bundle

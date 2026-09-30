@@ -228,6 +228,11 @@ class Project extends BaseModel
     protected $glossaryAccess;
 
     /**
+     * @var string|null
+     */
+    protected $glossaryAccessOption;
+
+    /**
      * @var bool
      */
     protected $normalizePlaceholder;
@@ -304,6 +309,9 @@ class Project extends BaseModel
         $this->customQaCheckIds = (array)$this->getDataProperty('customQaCheckIds');
         $this->languageMapping = (array)$this->getDataProperty('languageMapping');
         $this->glossaryAccess = (bool)$this->getDataProperty('glossaryAccess');
+        $this->glossaryAccessOption = $this->getDataProperty('glossaryAccessOption') !== null
+            ? (string)$this->getDataProperty('glossaryAccessOption')
+            : null;
         $this->isSuspended = (bool)$this->getDataProperty('isSuspended');
         $this->normalizePlaceholder = (bool)$this->getDataProperty('normalizePlaceholder');
         $this->saveMetaInfoInSource = (bool)$this->getDataProperty('saveMetaInfoInSource');
@@ -516,6 +524,7 @@ class Project extends BaseModel
     }
 
     /**
+     * @deprecated Deprecated by the Crowdin Enterprise API.
      * @return string
      */
     public function getBackground(): string
@@ -524,6 +533,7 @@ class Project extends BaseModel
     }
 
     /**
+     * @deprecated Deprecated by the Crowdin Enterprise API.
      * @param string $background
      */
     public function setBackground(string $background): void
@@ -974,6 +984,7 @@ class Project extends BaseModel
     }
 
     /**
+     * @deprecated Deprecated by the Crowdin API. Use getGlossaryAccessOption() instead.
      * @return bool
      */
     public function isGlossaryAccess(): bool
@@ -982,11 +993,28 @@ class Project extends BaseModel
     }
 
     /**
+     * @deprecated Deprecated by the Crowdin API. Use setGlossaryAccessOption() instead.
      * @param bool $glossaryAccess
      */
     public function setGlossaryAccess(bool $glossaryAccess): void
     {
         $this->glossaryAccess = $glossaryAccess;
+    }
+
+    /**
+     * @return string|null readOnly, fullAccess or manageDrafts
+     */
+    public function getGlossaryAccessOption(): ?string
+    {
+        return $this->glossaryAccessOption;
+    }
+
+    /**
+     * @param string $glossaryAccessOption readOnly, fullAccess or manageDrafts
+     */
+    public function setGlossaryAccessOption(string $glossaryAccessOption): void
+    {
+        $this->glossaryAccessOption = $glossaryAccessOption;
     }
 
     /**

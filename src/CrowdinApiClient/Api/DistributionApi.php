@@ -51,9 +51,9 @@ class DistributionApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $data
-     * string $data[exportMode] Enum: "default" "bundle" Default: "default" Note: String-based projects use "bundle" only<br>
+     * string $data[exportMode] Deprecated. Enum: "default" "bundle" Default: "default" Note: String-based projects use "bundle" only<br>
      * string $data[name] required<br>
-     * int[] $data[fileIds] Required for file-based projects (default export mode)<br>
+     * int[] $data[fileIds] Deprecated, use bundleIds instead. Required for file-based projects (default export mode)<br>
      * int[] $data[bundleIds] Required for string-based projects<br>
      * string $data[format] required for 'bundle' export mode<br>
      * string $data[exportPattern] required for 'bundle' export mode. Note: Can't contain \\ / : * ? \" < > | symbols<br>
@@ -68,7 +68,7 @@ class DistributionApi extends AbstractApi
 
     /**
      * Edit Distribution
-     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.distributions.post API Documentation
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.distributions.patch API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.distributions.patch API Documentation Enterprise
      */
     public function update(int $projectId, Distribution $distribution): ?Distribution
@@ -102,7 +102,7 @@ class DistributionApi extends AbstractApi
     /**
      * Get Distribution Release
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.distributions.release.get API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.distributions.release.post API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.distributions.release.get API Documentation Enterprise
      */
     public function getRelease(int $projectId, string $hash): ?DistributionRelease
     {

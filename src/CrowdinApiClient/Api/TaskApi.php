@@ -100,8 +100,8 @@ class TaskApi extends AbstractApi
 
     /**
      * Export Project Task Strings
-     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.export.get API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.export.get API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.exports.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.exports.post API Documentation Enterprise
      *
      * @param int $projectId
      * @param int $taskId
@@ -116,7 +116,6 @@ class TaskApi extends AbstractApi
     /**
      * List Tasks
      * @link https://developer.crowdin.com/api/v2/#operation/api.users.tasks.getMany API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.users.tasks.getMany API Documentation Enterprise
      *
      * @param int $userId
      * @param array $params

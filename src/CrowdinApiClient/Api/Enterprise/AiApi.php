@@ -467,7 +467,7 @@ class AiApi extends AbstractApi
 
     /**
      * List AI Snippets
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.settings.snippets.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.prompts.snippets.getMany API Documentation
      *
      * @param array $params
      * integer $params[limit]<br>
@@ -481,7 +481,7 @@ class AiApi extends AbstractApi
 
     /**
      * Add AI Snippet
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.settings.snippets.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.prompts.snippets.post API Documentation
      *
      * @param array $data
      * string $data[description] required<br>
@@ -496,7 +496,7 @@ class AiApi extends AbstractApi
 
     /**
      * Get AI Snippet
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.settings.snippets.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.prompts.snippets.get API Documentation
      *
      * @param int $aiSnippetId
      * @return AiSnippet|null
@@ -509,7 +509,7 @@ class AiApi extends AbstractApi
 
     /**
      * Edit AI Snippet
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.settings.snippets.patch API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.prompts.snippets.patch API Documentation
      *
      * @param AiSnippet $aiSnippet
      * @return AiSnippet|null
@@ -522,7 +522,7 @@ class AiApi extends AbstractApi
 
     /**
      * Delete AI Snippet
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.settings.snippets.delete API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.prompts.snippets.delete API Documentation
      *
      * @param int $aiSnippetId
      * @return mixed

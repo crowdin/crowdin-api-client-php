@@ -286,6 +286,7 @@ class SourceString extends BaseModel
     }
 
     /**
+     * @deprecated Deprecated by the Crowdin API. Use getType() and getText() instead.
      * @return bool
      */
     public function isHasPlurals(): bool
@@ -295,6 +296,7 @@ class SourceString extends BaseModel
 
     /**
      * Alias of isHasPlurals
+     * @deprecated Deprecated by the Crowdin API. Use getType() and getText() instead.
      * @return bool
      */
     public function isPlural(): bool
@@ -303,6 +305,7 @@ class SourceString extends BaseModel
     }
 
     /**
+     * @deprecated Deprecated by the Crowdin API. Use getType() instead.
      * @return bool
      */
     public function isIcu(): bool

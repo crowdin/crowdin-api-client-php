@@ -131,7 +131,7 @@ class AiApi extends AbstractApi
 
     /**
      * List AI Prompts
-     * @link https://developer.crowdin.com/api/v2/#operation/api.users.ai.prompts.getMany API Documentation
+     * @link https://developer.crowdin.com/api/v2/#operation/api.ai.prompts.getMany API Documentation
      *
      * @param int $userId
      * @param array $params
@@ -228,7 +228,7 @@ class AiApi extends AbstractApi
 
     /**
      * Create AI Prompt Completion
-     * @link https://developer.crowdin.com/api/v2/#operation/api.users.ai.prompts.completions.post API Documentation
+     * @link https://developer.crowdin.com/api/v2/#operation/api.ai.prompts.completions.post API Documentation
      *
      * @param int $userId
      * @param int $aiPromptId
@@ -291,7 +291,7 @@ class AiApi extends AbstractApi
 
     /**
      * List AI Providers
-     * @link https://developer.crowdin.com/api/v2/#operation/api.users.ai.providers.getMany API Documentation
+     * @link https://developer.crowdin.com/api/v2/#operation/api.ai.providers.getMany API Documentation
      *
      * @param int $userId
      * @param array $params
@@ -369,7 +369,7 @@ class AiApi extends AbstractApi
 
     /**
      * List AI Provider Models
-     * @link https://developer.crowdin.com/api/v2/#operation/api.users.ai.providers.models.getMany API Documentation
+     * @link https://developer.crowdin.com/api/v2/#operation/api.ai.providers.models.getMany API Documentation
      *
      * @param int $userId
      * @param int $aiProviderId
@@ -508,7 +508,7 @@ class AiApi extends AbstractApi
 
     /**
      * List AI Snippets
-     * @link https://developer.crowdin.com/api/v2/#operation/api.users.ai.settings.snippets.getMany API Documentation
+     * @link https://developer.crowdin.com/api/v2/#operation/api.ai.prompts.snippets.getMany API Documentation
      *
      * @param int $userId
      * @param array $params
@@ -524,7 +524,7 @@ class AiApi extends AbstractApi
 
     /**
      * Add AI Snippet
-     * @link https://developer.crowdin.com/api/v2/#operation/api.users.ai.settings.snippets.post API Documentation
+     * @link https://developer.crowdin.com/api/v2/#operation/api.ai.prompts.snippets.post API Documentation
      *
      * @param int $userId
      * @param array $data
@@ -541,7 +541,7 @@ class AiApi extends AbstractApi
 
     /**
      * Get AI Snippet
-     * @link https://developer.crowdin.com/api/v2/#operation/api.users.ai.settings.snippets.get API Documentation
+     * @link https://developer.crowdin.com/api/v2/#operation/api.ai.prompts.snippets.get API Documentation
      *
      * @param int $userId
      * @param int $aiSnippetId
@@ -555,7 +555,7 @@ class AiApi extends AbstractApi
 
     /**
      * Edit AI Snippet
-     * @link https://developer.crowdin.com/api/v2/#operation/api.users.ai.settings.snippets.patch API Documentation
+     * @link https://developer.crowdin.com/api/v2/#operation/api.ai.prompts.snippets.patch API Documentation
      *
      * @param int $userId
      * @param AiSnippet $aiSnippet
@@ -569,7 +569,7 @@ class AiApi extends AbstractApi
 
     /**
      * Delete AI Snippet
-     * @link https://developer.crowdin.com/api/v2/#operation/api.users.ai.settings.snippets.delete API Documentation
+     * @link https://developer.crowdin.com/api/v2/#operation/api.ai.prompts.snippets.delete API Documentation
      *
      * @param int $userId
      * @param int $aiSnippetId

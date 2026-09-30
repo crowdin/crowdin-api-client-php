@@ -404,6 +404,7 @@ class Task extends BaseModel
     }
 
     /**
+     * @deprecated Deprecated by the Crowdin API.
      * @return array|null
      */
     public function getTranslateProgress(): ?array

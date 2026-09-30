@@ -116,6 +116,7 @@ class ProjectTest extends TestCase
         ],
 
         'glossaryAccess' => true,
+        'glossaryAccessOption' => 'fullAccess',
         'normalizePlaceholder' => false,
         'saveMetaInfoInSource' => false,
         'notificationSettings' => [
@@ -191,6 +192,7 @@ class ProjectTest extends TestCase
         $this->assertEquals($this->data['isSuspended'], $project->isSuspended());
 
         $this->assertEquals($this->data['glossaryAccess'], $project->isGlossaryAccess());
+        $this->assertEquals($this->data['glossaryAccessOption'], $project->getGlossaryAccessOption());
         $this->assertEquals($this->data['normalizePlaceholder'], $project->isNormalizePlaceholder());
         $this->assertEquals($this->data['saveMetaInfoInSource'], $project->isSaveMetaInfoInSource());
         $this->assertEquals($this->data['notificationSettings'], $project->getNotificationSettings());
@@ -214,6 +216,7 @@ class ProjectTest extends TestCase
         $project->setDefaultTmId($this->data['defaultTmId']);
         $project->setDefaultGlossaryId($this->data['defaultGlossaryId']);
         $project->setFields($fields);
+        $project->setGlossaryAccessOption('manageDrafts');
 
         $this->assertEquals($this->data['name'], $project->getName());
         $this->assertEquals($this->data['cname'], $project->getCname());
@@ -223,5 +226,14 @@ class ProjectTest extends TestCase
         $this->assertEquals($this->data['defaultTmId'], $project->getDefaultTmId());
         $this->assertEquals($this->data['defaultGlossaryId'], $project->getDefaultGlossaryId());
         $this->assertEquals($fields, $project->getFields());
+        $this->assertEquals('manageDrafts', $project->getGlossaryAccessOption());
+    }
+
+    public function testLoadDataWithoutGlossaryAccessOption(): void
+    {
+        $data = $this->data;
+        unset($data['glossaryAccessOption']);
+
+        $this->assertNull((new Project($data))->getGlossaryAccessOption());
     }
 }

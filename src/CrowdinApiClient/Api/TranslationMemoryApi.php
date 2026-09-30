@@ -221,8 +221,8 @@ class TranslationMemoryApi extends AbstractApi
 
     /**
      * Download TM
-     * @link https://developer.crowdin.com/api/v2/#operation/api.tms.exports.getMany API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.exports.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.tms.exports.download.download API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.exports.download.download API Documentation Enterprise
      */
     public function download(int $translationMemoryId, string $exportId): ?DownloadFile
     {

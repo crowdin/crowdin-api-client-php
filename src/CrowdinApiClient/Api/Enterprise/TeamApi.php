@@ -21,9 +21,10 @@ class TeamApi extends AbstractApi
      * @param int $projectId
      * @param array $data
      * integer $data[teamId] required<br>
-     * boolean $data[accessToAllWorkflowSteps]<br>
+     * boolean $data[accessToAllWorkflowSteps] Deprecated, use roles instead<br>
      * boolean $data[managerAccess]<br>
-     * array $data[permissions]
+     * array $data[permissions] Deprecated, use roles instead<br>
+     * array $data[roles]
      * @return AddedProjectTeamInfo
      */
     public function addTeamToProject(int $projectId, array $data): AddedProjectTeamInfo
@@ -59,7 +60,7 @@ class TeamApi extends AbstractApi
 
     /**
      * Get Team
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.teams.post
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.teams.get
      *
      * @param int $teamId
      * @return Team
@@ -82,6 +83,9 @@ class TeamApi extends AbstractApi
     }
 
     /**
+     * Edit Team
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.teams.patch API Documentation
+     *
      * @param Team $team
      * @return Team
      */

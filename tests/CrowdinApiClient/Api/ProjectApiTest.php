@@ -365,6 +365,23 @@ class ProjectApiTest extends AbstractTestApi
         $this->assertEquals('edit test', $project->getName());
     }
 
+    public function testUpdateSendsGlossaryAccessOption(): void
+    {
+        $project = new Project(['id' => 8, 'glossaryAccessOption' => 'readOnly']);
+        $project->setGlossaryAccessOption('fullAccess');
+
+        $this->mockRequest([
+            'path' => '/projects/8',
+            'method' => 'patch',
+            'body' => json_encode([['op' => 'replace', 'path' => '/glossaryAccessOption', 'value' => 'fullAccess']]),
+            'response' => json_encode(['data' => ['id' => 8, 'glossaryAccessOption' => 'fullAccess']]),
+        ]);
+
+        $project = $this->crowdin->project->update($project);
+
+        $this->assertEquals('fullAccess', $project->getGlossaryAccessOption());
+    }
+
     public function testDelete(): void
     {
         $this->mockRequestDelete('/projects/1');

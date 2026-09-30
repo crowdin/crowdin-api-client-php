@@ -194,7 +194,7 @@ class GlossaryApi extends AbstractApi
      * string $data[sourceLanguageId]<br>
      * string $data[targetLanguageId]<br>
      * string[] $data[expressions]<br>
-     * string $data[expression]<br>
+     * string $data[expression] Deprecated, use expressions instead<br>
      * @return ModelCollection|null
      */
     public function concordance(int $projectId, array $data): ?ModelCollection
@@ -266,7 +266,8 @@ class GlossaryApi extends AbstractApi
      * string $data[text] required<br>
      * string $data[description]<br>
      * string $data[partOfSpeech]<br>
-     * integer $data[translationOfTermId]
+     * integer $data[translationOfTermId] Deprecated, use conceptId instead<br>
+     * integer $data[conceptId]
      * @return mixed
      */
     public function createTerm(int $glossaryId, array $data): ?Term
@@ -335,8 +336,8 @@ class GlossaryApi extends AbstractApi
 
     /**
      * List Concepts
-     * @link https://developer.crowdin.com/api/v2/#operation/api.glossaries.terms.getMany API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.glossaries.terms.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.glossaries.concepts.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.glossaries.concepts.getMany API Documentation Enterprise
      */
     public function listConcepts(int $glossaryId, array $params = []): ?ModelCollection
     {
