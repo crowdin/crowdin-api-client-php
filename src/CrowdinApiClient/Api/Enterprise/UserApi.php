@@ -3,6 +3,9 @@
 namespace CrowdinApiClient\Api\Enterprise;
 
 use CrowdinApiClient\Api\AbstractApi;
+use CrowdinApiClient\Http\ResponseDecorator\ResponseModelListDecorator;
+use CrowdinApiClient\Model\Enterprise\ProjectContribution;
+use CrowdinApiClient\Model\Enterprise\ProjectPermission;
 use CrowdinApiClient\Model\Enterprise\ProjectTeamMemberAddedStatistics;
 use CrowdinApiClient\Model\Enterprise\ProjectTeamMemberResource;
 use CrowdinApiClient\Model\Enterprise\User;
@@ -157,5 +160,61 @@ class UserApi extends AbstractApi
     public function update(User $user): ?User
     {
         return $this->_update('users/' . $user->getId(), $user);
+    }
+
+    /**
+     * List User Projects Permissions
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.users.projects.permissions.getMany API Documentation
+     *
+     * @param int $userId
+     * @param array $params
+     * integer $params[limit]<br>
+     * integer $params[offset]
+     * @return ModelCollection
+     */
+    public function listProjectPermissions(int $userId, array $params = []): ModelCollection
+    {
+        return $this->_list(sprintf('users/%d/projects/permissions', $userId), ProjectPermission::class, $params);
+    }
+
+    /**
+     * Permissions Batch Operations
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.users.projects.permissions.patch API Documentation
+     *
+     * @param int $userId
+     * @param array $data JSON Patch array. op: add, replace or remove, path: /{projectId}/roles<br>
+     * value: list of role name and permissions
+     * @return ModelCollection
+     */
+    public function updateProjectPermissions(int $userId, array $data): ModelCollection
+    {
+        return $this->client->apiRequest(
+            'patch',
+            sprintf('users/%d/projects/permissions', $userId),
+            new ResponseModelListDecorator(ProjectPermission::class),
+            [
+                'body' => json_encode($data),
+                'headers' => $this->getHeaders(),
+            ]
+        );
+    }
+
+    /**
+     * List User Projects Contributions
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.users.projects.contributions.getMany API Documentation
+     *
+     * @param int $userId
+     * @param array $params
+     * integer $params[limit]<br>
+     * integer $params[offset]
+     * @return ModelCollection
+     */
+    public function listProjectContributions(int $userId, array $params = []): ModelCollection
+    {
+        return $this->_list(
+            sprintf('users/%d/projects/contributions', $userId),
+            ProjectContribution::class,
+            $params
+        );
     }
 }

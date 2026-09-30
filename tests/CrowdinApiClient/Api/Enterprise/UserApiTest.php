@@ -2,6 +2,8 @@
 
 namespace CrowdinApiClient\Tests\Api\Enterprise;
 
+use CrowdinApiClient\Model\Enterprise\ProjectContribution;
+use CrowdinApiClient\Model\Enterprise\ProjectPermission;
 use CrowdinApiClient\Model\Enterprise\ProjectTeamMemberAddedStatistics;
 use CrowdinApiClient\Model\Enterprise\ProjectTeamMemberResource;
 use CrowdinApiClient\Model\Enterprise\User;
@@ -351,5 +353,89 @@ class UserApiTest extends AbstractTestApi
         $this->assertInstanceOf(User::class, $user);
         $this->assertEquals(1, $user->getId());
         $this->assertEquals('Joe', $user->getFirstName());
+    }
+
+    public function testListProjectPermissions(): void
+    {
+        $this->mockRequestGet(
+            '/users/7/projects/permissions',
+            json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 2,
+                            'roles' => [['name' => 'translator', 'permissions' => ['allLanguages' => true]]],
+                            'project' => ['id' => 2, 'name' => 'Knowledge Base', 'identifier' => 'knowledge-base'],
+                        ],
+                    ],
+                ],
+                'pagination' => ['offset' => 0, 'limit' => 25],
+            ])
+        );
+
+        $permissions = $this->crowdin->user->listProjectPermissions(7);
+
+        $this->assertInstanceOf(ModelCollection::class, $permissions);
+        $this->assertCount(1, $permissions);
+        $this->assertInstanceOf(ProjectPermission::class, $permissions[0]);
+        $this->assertEquals('Knowledge Base', $permissions[0]->getProject()->getName());
+        $this->assertEquals('translator', $permissions[0]->getRoles()[0]['name']);
+    }
+
+    public function testUpdateProjectPermissions(): void
+    {
+        $data = [['op' => 'add', 'path' => '/2/roles', 'value' => [['name' => 'translator']]]];
+
+        $this->mockRequest([
+            'path' => '/users/7/projects/permissions',
+            'method' => 'patch',
+            'body' => json_encode($data),
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 2,
+                            'roles' => [['name' => 'translator', 'permissions' => ['allLanguages' => true]]],
+                            'project' => ['id' => 2, 'name' => 'Knowledge Base', 'identifier' => 'knowledge-base'],
+                        ],
+                    ],
+                ],
+            ]),
+        ]);
+
+        $permissions = $this->crowdin->user->updateProjectPermissions(7, $data);
+
+        $this->assertInstanceOf(ModelCollection::class, $permissions);
+        $this->assertInstanceOf(ProjectPermission::class, $permissions[0]);
+    }
+
+    public function testListProjectContributions(): void
+    {
+        $this->mockRequestGet(
+            '/users/7/projects/contributions',
+            json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 2,
+                            'translated' => ['strings' => 10, 'words' => 42],
+                            'approved' => ['strings' => 3, 'words' => 12],
+                            'voted' => ['strings' => 0, 'words' => 0],
+                            'commented' => ['strings' => 1, 'words' => 0],
+                            'project' => ['id' => 2, 'name' => 'Knowledge Base', 'identifier' => 'knowledge-base'],
+                        ],
+                    ],
+                ],
+                'pagination' => ['offset' => 0, 'limit' => 25],
+            ])
+        );
+
+        $contributions = $this->crowdin->user->listProjectContributions(7);
+
+        $this->assertInstanceOf(ModelCollection::class, $contributions);
+        $this->assertCount(1, $contributions);
+        $this->assertInstanceOf(ProjectContribution::class, $contributions[0]);
+        $this->assertEquals(42, $contributions[0]->getTranslated()['words']);
+        $this->assertEquals(2, $contributions[0]->getProject()->getId());
     }
 }

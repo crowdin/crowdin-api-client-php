@@ -3,7 +3,9 @@
 namespace CrowdinApiClient\Api\Enterprise;
 
 use CrowdinApiClient\Api\AbstractApi;
+use CrowdinApiClient\Http\ResponseDecorator\ResponseModelListDecorator;
 use CrowdinApiClient\Model\Enterprise\AddedProjectTeamInfo;
+use CrowdinApiClient\Model\Enterprise\ProjectPermission;
 use CrowdinApiClient\Model\Enterprise\Team;
 use CrowdinApiClient\ModelCollection;
 
@@ -92,5 +94,42 @@ class TeamApi extends AbstractApi
     public function update(Team $team): Team
     {
         return $this->_update('teams/' . $team->getId(), $team);
+    }
+
+    /**
+     * List Team Projects Permissions
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.teams.projects.permissions.getMany API Documentation
+     *
+     * @param int $teamId
+     * @param array $params
+     * integer $params[limit]<br>
+     * integer $params[offset]
+     * @return ModelCollection
+     */
+    public function listProjectPermissions(int $teamId, array $params = []): ModelCollection
+    {
+        return $this->_list(sprintf('teams/%d/projects/permissions', $teamId), ProjectPermission::class, $params);
+    }
+
+    /**
+     * Permissions Batch Operations
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.teams.projects.permissions.patch API Documentation
+     *
+     * @param int $teamId
+     * @param array $data JSON Patch array. op: add, replace or remove, path: /{projectId}/roles<br>
+     * value: list of role name and permissions
+     * @return ModelCollection
+     */
+    public function updateProjectPermissions(int $teamId, array $data): ModelCollection
+    {
+        return $this->client->apiRequest(
+            'patch',
+            sprintf('teams/%d/projects/permissions', $teamId),
+            new ResponseModelListDecorator(ProjectPermission::class),
+            [
+                'body' => json_encode($data),
+                'headers' => $this->getHeaders(),
+            ]
+        );
     }
 }

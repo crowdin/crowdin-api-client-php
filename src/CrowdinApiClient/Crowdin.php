@@ -18,7 +18,7 @@ use UnexpectedValueException;
  * @property \CrowdinApiClient\Api\Enterprise\GroupApi $group
  * @property \CrowdinApiClient\Api\ProjectApi $project
  * @property \CrowdinApiClient\Api\BranchApi $branch
- * @property \CrowdinApiClient\Api\TaskApi $task
+ * @property \CrowdinApiClient\Api\TaskApi|\CrowdinApiClient\Api\Enterprise\TaskApi $task
  * @property \CrowdinApiClient\Api\TaskCommentApi $taskComment
  * @property \CrowdinApiClient\Api\IssueApi $issue
  * @property \CrowdinApiClient\Api\ScreenshotApi $screenshot
@@ -57,6 +57,11 @@ use UnexpectedValueException;
  * @property \CrowdinApiClient\Api\DictionaryApi $dictionary
  * @property \CrowdinApiClient\Api\SystemPlaceholderApi $systemPlaceholder
  * @property \CrowdinApiClient\Api\AdvisorApi $advisor
+ * @property \CrowdinApiClient\Api\Enterprise\CustomPlaceholderApi $customPlaceholder
+ * @property \CrowdinApiClient\Api\Enterprise\OrganizationApi $organization
+ * @property \CrowdinApiClient\Api\Enterprise\ClientApi $client
+ * @property \CrowdinApiClient\Api\Enterprise\CustomSpellcheckerApi $customSpellchecker
+ * @property \CrowdinApiClient\Api\Enterprise\ExternalQaCheckApi $externalQaCheck
  */
 class Crowdin
 {
@@ -185,6 +190,11 @@ class Crowdin
         'dictionary',
         'systemPlaceholder',
         'advisor',
+        'customPlaceholder',
+        'organization',
+        'client',
+        'customSpellchecker',
+        'externalQaCheck',
     ];
 
     public function __construct(array $config)
