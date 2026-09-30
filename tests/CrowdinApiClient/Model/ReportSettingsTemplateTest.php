@@ -13,6 +13,8 @@ class ReportSettingsTemplateTest extends TestCase
 {
     public $data = [
         'id' => 12,
+        'projectId' => null,
+        'groupId' => null,
         'name' => 'Default template',
         'currency' => 'UAH',
         'unit' => 'words',
@@ -87,6 +89,28 @@ class ReportSettingsTemplateTest extends TestCase
         $this->assertEquals($this->data['isGlobal'], $this->reportSettingsTemplate->getIsGlobal());
         $this->assertEquals($this->data['createdAt'], $this->reportSettingsTemplate->getCreatedAt());
         $this->assertEquals($this->data['updatedAt'], $this->reportSettingsTemplate->getUpdatedAt());
+        $this->assertNull($this->reportSettingsTemplate->getProjectId());
+        $this->assertNull($this->reportSettingsTemplate->getGroupId());
+    }
+
+    public function testLoadDataWithProjectAndGroup(): void
+    {
+        $reportSettingsTemplate = new ReportSettingsTemplate(
+            array_merge($this->data, ['projectId' => 12, 'groupId' => 3])
+        );
+
+        $this->assertSame(12, $reportSettingsTemplate->getProjectId());
+        $this->assertSame(3, $reportSettingsTemplate->getGroupId());
+    }
+
+    public function testLoadDataCastsNumericStringIds(): void
+    {
+        $reportSettingsTemplate = new ReportSettingsTemplate(
+            array_merge($this->data, ['projectId' => '12', 'groupId' => '3'])
+        );
+
+        $this->assertSame(12, $reportSettingsTemplate->getProjectId());
+        $this->assertSame(3, $reportSettingsTemplate->getGroupId());
     }
 
     /**

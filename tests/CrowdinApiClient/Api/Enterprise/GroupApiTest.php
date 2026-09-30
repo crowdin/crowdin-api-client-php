@@ -2,6 +2,7 @@
 
 namespace CrowdinApiClient\Tests\Api\Enterprise;
 
+use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\Enterprise\Group;
 use CrowdinApiClient\Model\Enterprise\GroupManager;
 use CrowdinApiClient\Model\Enterprise\GroupTeam;
@@ -216,6 +217,53 @@ class GroupApiTest extends AbstractTestApi
 
         $this->assertInstanceOf(Report::class, $report);
         $this->assertEquals('50fb3506-4127-4ba8-8296-f97dc7e3e0c3', $report->getIdentifier());
+    }
+
+    public function testGetReport(): void
+    {
+        $this->mockRequestGet(
+            '/groups/123/reports/50fb3506-4127-4ba8-8296-f97dc7e3e0c3',
+            json_encode([
+                'data' => [
+                    'identifier' => '50fb3506-4127-4ba8-8296-f97dc7e3e0c3',
+                    'status' => 'finished',
+                    'progress' => 100,
+                    'attributes' => [
+                        'format' => 'xlsx',
+                        'reportName' => 'costs-estimation',
+                        'schema' => [],
+                    ],
+                    'createdAt' => '2019-09-23T11:26:54+00:00',
+                    'updatedAt' => '2019-09-23T11:26:54+00:00',
+                    'startedAt' => '2019-09-23T11:26:54+00:00',
+                    'finishedAt' => '2019-09-23T11:26:54+00:00',
+                ],
+            ])
+        );
+
+        $report = $this->crowdin->group->getReport(123, '50fb3506-4127-4ba8-8296-f97dc7e3e0c3');
+
+        $this->assertInstanceOf(Report::class, $report);
+        $this->assertEquals('50fb3506-4127-4ba8-8296-f97dc7e3e0c3', $report->getIdentifier());
+        $this->assertEquals('finished', $report->getStatus());
+    }
+
+    public function testDownloadReport(): void
+    {
+        $this->mockRequestGet(
+            '/groups/123/reports/50fb3506-4127-4ba8-8296-f97dc7e3e0c3/download',
+            json_encode([
+                'data' => [
+                    'url' => 'https://production-enterprise-importer.downloads.crowdin.com/report.xlsx',
+                    'expireIn' => '2019-09-20T10:31:21+00:00',
+                ],
+            ])
+        );
+
+        $file = $this->crowdin->group->downloadReport(123, '50fb3506-4127-4ba8-8296-f97dc7e3e0c3');
+
+        $this->assertInstanceOf(DownloadFile::class, $file);
+        $this->assertEquals('https://production-enterprise-importer.downloads.crowdin.com/report.xlsx', $file->getUrl());
     }
 
     public function testListManagers(): void

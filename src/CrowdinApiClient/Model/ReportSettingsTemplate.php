@@ -17,6 +17,16 @@ class ReportSettingsTemplate extends BaseModel
     protected $id;
 
     /**
+     * @var int|null
+     */
+    protected $projectId;
+
+    /**
+     * @var int|null
+     */
+    protected $groupId;
+
+    /**
      * @var string
      */
     protected $name;
@@ -61,6 +71,12 @@ class ReportSettingsTemplate extends BaseModel
         parent::__construct($data);
 
         $this->id = (int)$this->getDataProperty('id');
+        $this->projectId = $this->getDataProperty('projectId') !== null
+            ? (int)$this->getDataProperty('projectId')
+            : null;
+        $this->groupId = $this->getDataProperty('groupId') !== null
+            ? (int)$this->getDataProperty('groupId')
+            : null;
         $this->name = (string)$this->getDataProperty('name');
         $this->currency = (string)$this->getDataProperty('currency');
         $this->unit = (string)$this->getDataProperty('unit');
@@ -74,6 +90,16 @@ class ReportSettingsTemplate extends BaseModel
     public function getId(): int
     {
         return $this->id;
+    }
+
+    public function getProjectId(): ?int
+    {
+        return $this->projectId;
+    }
+
+    public function getGroupId(): ?int
+    {
+        return $this->groupId;
     }
 
     public function getName(): string
@@ -163,6 +189,8 @@ class ReportSettingsTemplate extends BaseModel
     {
         return [
             'id' => $this->id,
+            'projectId' => $this->projectId,
+            'groupId' => $this->groupId,
             'name' => $this->name,
             'currency' => $this->currency,
             'unit' => $this->unit,

@@ -85,7 +85,7 @@ class ReportApi extends AbstractApi
      */
     public function createReportSettingsTemplate(int $projectId, array $data): ?ReportSettingsTemplate
     {
-        $forbiddenKeys = ['id', 'createdAt', 'updatedAt'];
+        $forbiddenKeys = ['id', 'projectId', 'groupId', 'createdAt', 'updatedAt'];
         $path = sprintf('projects/%d/reports/settings-templates', $projectId);
 
         return $this->_post(
