@@ -165,7 +165,7 @@ class AiApi extends AbstractApi
      * array $data[config] required<br>
      * integer $data[aiProviderId]<br>
      * string $data[aiModelId]<br>
-     * boolean $data[isEnabled]<br>
+     * boolean $data[isEnabled] Deprecated<br>
      * array $data[enabledProjectIds]
      * @return AiPrompt|null
      */
