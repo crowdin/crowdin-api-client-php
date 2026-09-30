@@ -54,6 +54,9 @@ use UnexpectedValueException;
  * @property \CrowdinApiClient\Api\StyleGuideApi $styleGuide
  * @property \CrowdinApiClient\Api\ApplicationApi $application
  * @property \CrowdinApiClient\Api\AiGatewayApi|\CrowdinApiClient\Api\Enterprise\AiGatewayApi $aiGateway
+ * @property \CrowdinApiClient\Api\DictionaryApi $dictionary
+ * @property \CrowdinApiClient\Api\SystemPlaceholderApi $systemPlaceholder
+ * @property \CrowdinApiClient\Api\AdvisorApi $advisor
  */
 class Crowdin
 {
@@ -130,6 +133,9 @@ class Crowdin
         'styleGuide',
         'application',
         'aiGateway',
+        'dictionary',
+        'systemPlaceholder',
+        'advisor',
     ];
 
     protected $servicesEnterprise = [
@@ -176,6 +182,9 @@ class Crowdin
         'styleGuide',
         'application',
         'aiGateway',
+        'dictionary',
+        'systemPlaceholder',
+        'advisor',
     ];
 
     public function __construct(array $config)
