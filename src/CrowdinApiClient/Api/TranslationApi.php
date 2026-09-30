@@ -8,6 +8,7 @@ use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\DownloadFileTranslation;
 use CrowdinApiClient\Model\PreTranslation;
 use CrowdinApiClient\Model\PreTranslationReport;
+use CrowdinApiClient\Model\QaCheck;
 use CrowdinApiClient\Model\TranslationAlignment;
 use CrowdinApiClient\Model\TranslationImport;
 use CrowdinApiClient\Model\TranslationImportReport;
@@ -367,5 +368,30 @@ class TranslationApi extends AbstractApi
     {
         $path = sprintf('projects/%d/translations/alignment', $projectId);
         return $this->_post($path, TranslationAlignment::class, $params);
+    }
+
+    /**
+     * Validate QA Checks
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.validate-qa-checks.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.validate-qa-checks.post API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param array $data list of translations to validate<br>
+     * integer $data[][stringId] required<br>
+     * string $data[][languageId] required<br>
+     * string $data[][text] required<br>
+     * string $data[][pluralCategoryName] Enum: "zero" "one" "two" "few" "many" "other"
+     * @return ModelCollection
+     */
+    public function validateQaChecks(int $projectId, array $data): ModelCollection
+    {
+        $path = sprintf('projects/%d/translations/validate-qa-checks', $projectId);
+
+        $options = [
+            'body' => json_encode($data),
+            'headers' => $this->getHeaders(),
+        ];
+
+        return $this->client->apiRequest('post', $path, new ResponseModelListDecorator(QaCheck::class), $options);
     }
 }

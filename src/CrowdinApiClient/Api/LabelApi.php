@@ -5,6 +5,7 @@ namespace CrowdinApiClient\Api;
 use CrowdinApiClient\Http\ResponseDecorator\ResponseModelListDecorator;
 use CrowdinApiClient\Model\Label;
 use CrowdinApiClient\Model\Screenshot;
+use CrowdinApiClient\Model\SourceString;
 use CrowdinApiClient\ModelCollection;
 
 /**
@@ -130,11 +131,66 @@ class LabelApi extends AbstractApi
     {
         $path = sprintf('projects/%d/labels/%d/screenshots', $projectId, $labelId);
 
+        return $this->client->apiRequest(
+            'delete',
+            $path,
+            new ResponseModelListDecorator(Screenshot::class),
+            ['params' => ['screenshotIds' => $this->joinIds($data['screenshotIds'] ?? [])]]
+        );
+    }
+
+    /**
+     * Assign Label to Strings
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.labels.strings.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.labels.strings.post API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param int $labelId
+     * @param array $data
+     * int[] $data[stringIds] required Note: You can assign up to 500 strings at a time
+     * @return ModelCollection
+     */
+    public function assignStrings(int $projectId, int $labelId, array $data): ModelCollection
+    {
+        $path = sprintf('projects/%d/labels/%d/strings', $projectId, $labelId);
+
         $options = [
             'body' => json_encode($data),
-            'headers' => ['Content-Type' => 'application/json']
+            'headers' => $this->getHeaders(),
         ];
 
-        return $this->client->apiRequest('delete', $path, new ResponseModelListDecorator(Screenshot::class), $options);
+        return $this->client->apiRequest('post', $path, new ResponseModelListDecorator(SourceString::class), $options);
+    }
+
+    /**
+     * Unassign Label from Strings
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.labels.strings.deleteMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.labels.strings.deleteMany API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param int $labelId
+     * @param array $data
+     * int[] $data[stringIds] required Note: You can unassign up to 500 strings at a time
+     * @return ModelCollection
+     */
+    public function unassignStrings(int $projectId, int $labelId, array $data): ModelCollection
+    {
+        $path = sprintf('projects/%d/labels/%d/strings', $projectId, $labelId);
+
+        return $this->client->apiRequest(
+            'delete',
+            $path,
+            new ResponseModelListDecorator(SourceString::class),
+            ['params' => ['stringIds' => $this->joinIds($data['stringIds'] ?? [])]]
+        );
+    }
+
+    /**
+     * @param int[]|string[]|string $ids
+     * @return string
+     */
+    private function joinIds($ids): string
+    {
+        return is_array($ids) ? implode(',', $ids) : (string)$ids;
     }
 }

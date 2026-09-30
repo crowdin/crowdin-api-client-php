@@ -47,6 +47,16 @@ class QaCheck extends BaseModel
      */
     protected $text;
 
+    /**
+     * @var string|null
+     */
+    protected $pluralCategoryName;
+
+    /**
+     * @var string|null
+     */
+    protected $translation;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -58,6 +68,12 @@ class QaCheck extends BaseModel
         $this->validationDescription = (string)$this->getDataProperty('validationDescription');
         $this->pluralId = (int)$this->getDataProperty('pluralId');
         $this->text = (string)$this->getDataProperty('text');
+        $this->pluralCategoryName = $this->getDataProperty('pluralCategoryName') !== null
+            ? (string)$this->getDataProperty('pluralCategoryName')
+            : null;
+        $this->translation = $this->getDataProperty('translation') !== null
+            ? (string)$this->getDataProperty('translation')
+            : null;
     }
 
     /**
@@ -122,5 +138,21 @@ class QaCheck extends BaseModel
     public function getText(): string
     {
         return $this->text;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getPluralCategoryName(): ?string
+    {
+        return $this->pluralCategoryName;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getTranslation(): ?string
+    {
+        return $this->translation;
     }
 }

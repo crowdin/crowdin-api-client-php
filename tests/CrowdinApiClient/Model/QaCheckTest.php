@@ -41,5 +41,18 @@ class QaCheckTest extends TestCase
         $this->assertEquals($this->data['validationDescription'], $this->QaCheck->getValidationDescription());
         $this->assertEquals($this->data['pluralId'], $this->QaCheck->getPluralId());
         $this->assertEquals($this->data['text'], $this->QaCheck->getText());
+        $this->assertNull($this->QaCheck->getPluralCategoryName());
+        $this->assertNull($this->QaCheck->getTranslation());
+    }
+
+    public function testLoadValidateQaChecksData(): void
+    {
+        $qaCheck = new QaCheck(array_merge($this->data, [
+            'pluralCategoryName' => 'few',
+            'translation' => 'Перша локалзація.',
+        ]));
+
+        $this->assertEquals('few', $qaCheck->getPluralCategoryName());
+        $this->assertEquals('Перша локалзація.', $qaCheck->getTranslation());
     }
 }
