@@ -71,12 +71,8 @@ class ReportSettingsTemplate extends BaseModel
         parent::__construct($data);
 
         $this->id = (int)$this->getDataProperty('id');
-        $this->projectId = $this->getDataProperty('projectId') !== null
-            ? (int)$this->getDataProperty('projectId')
-            : null;
-        $this->groupId = $this->getDataProperty('groupId') !== null
-            ? (int)$this->getDataProperty('groupId')
-            : null;
+        $this->projectId = $this->nullableInt('projectId');
+        $this->groupId = $this->nullableInt('groupId');
         $this->name = (string)$this->getDataProperty('name');
         $this->currency = (string)$this->getDataProperty('currency');
         $this->unit = (string)$this->getDataProperty('unit');

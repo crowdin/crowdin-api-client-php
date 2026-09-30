@@ -68,7 +68,7 @@ class Screenshot extends BaseModel
         $this->id = (int)$this->getDataProperty('id');
         $this->userId = (int)$this->getDataProperty('userId');
         $this->url = (string)$this->getDataProperty('url');
-        $this->webUrl = $this->getDataProperty('webUrl') !== null ? (string)$this->getDataProperty('webUrl') : null;
+        $this->webUrl = $this->nullableString('webUrl');
         $this->name = (string)$this->getDataProperty('name');
         $this->size = (array)$this->getDataProperty('size');
         $this->tagsCount = (int)$this->getDataProperty('tagsCount');

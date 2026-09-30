@@ -570,7 +570,23 @@ class TranslationMemoryApiTest extends AbstractTestApi
             'path' => '/tms/4/segments/1',
             'method' => 'patch',
             'body' => json_encode($data),
-            'response' => $this->segmentResponse(),
+            'response' => json_encode([
+                'data' => [
+                    'id' => 1,
+                    'records' => [
+                        [
+                            'id' => 7,
+                            'languageId' => 'uk',
+                            'text' => 'Перекладений текст',
+                            'usageCount' => 0,
+                            'createdBy' => 1,
+                            'updatedBy' => 1,
+                            'createdAt' => '2023-09-20T11:34:40+00:00',
+                            'updatedAt' => '2023-09-20T11:34:40+00:00',
+                        ],
+                    ],
+                ],
+            ]),
         ]);
 
         $segment = $this->crowdin->translationMemory->updateSegment(4, 1, $data);
@@ -578,66 +594,5 @@ class TranslationMemoryApiTest extends AbstractTestApi
         $this->assertInstanceOf(TranslationMemorySegment::class, $segment);
         $this->assertEquals(1, $segment->getId());
         $this->assertEquals(7, $segment->getRecords()[0]->getId());
-    }
-
-    public function testCreateSegmentRecords(): void
-    {
-        $data = ['records' => [['languageId' => 'uk', 'text' => 'Перекладений текст']]];
-
-        $this->mockRequest([
-            'path' => '/tms/4/segments/1/records',
-            'method' => 'post',
-            'body' => json_encode($data),
-            'response' => $this->segmentResponse(),
-        ]);
-
-        $segment = $this->crowdin->translationMemory->createSegmentRecords(4, 1, $data);
-
-        $this->assertInstanceOf(TranslationMemorySegment::class, $segment);
-        $this->assertEquals('uk', $segment->getRecords()[0]->getLanguageId());
-    }
-
-    public function testUpdateSegmentRecord(): void
-    {
-        $data = [['op' => 'replace', 'path' => '/text', 'value' => 'Перекладений текст']];
-
-        $this->mockRequest([
-            'path' => '/tms/4/segments/1/records/7',
-            'method' => 'patch',
-            'body' => json_encode($data),
-            'response' => $this->segmentResponse(),
-        ]);
-
-        $segment = $this->crowdin->translationMemory->updateSegmentRecord(4, 1, 7, $data);
-
-        $this->assertInstanceOf(TranslationMemorySegment::class, $segment);
-        $this->assertEquals('Перекладений текст', $segment->getRecords()[0]->getText());
-    }
-
-    private function segmentResponse(): string
-    {
-        return json_encode([
-            'data' => [
-                'id' => 1,
-                'records' => [
-                    [
-                        'id' => 7,
-                        'languageId' => 'uk',
-                        'text' => 'Перекладений текст',
-                        'usageCount' => 0,
-                        'createdBy' => 1,
-                        'updatedBy' => 1,
-                        'createdAt' => '2023-09-20T11:34:40+00:00',
-                        'updatedAt' => '2023-09-20T11:34:40+00:00',
-                    ],
-                ],
-            ],
-        ]);
-    }
-
-    public function testDeleteSegmentRecord(): void
-    {
-        $this->mockRequestDelete('/tms/4/segments/1/records/7');
-        $this->crowdin->translationMemory->deleteSegmentRecord(4, 1, 7);
     }
 }

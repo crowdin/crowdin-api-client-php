@@ -68,12 +68,8 @@ class QaCheck extends BaseModel
         $this->validationDescription = (string)$this->getDataProperty('validationDescription');
         $this->pluralId = (int)$this->getDataProperty('pluralId');
         $this->text = (string)$this->getDataProperty('text');
-        $this->pluralCategoryName = $this->getDataProperty('pluralCategoryName') !== null
-            ? (string)$this->getDataProperty('pluralCategoryName')
-            : null;
-        $this->translation = $this->getDataProperty('translation') !== null
-            ? (string)$this->getDataProperty('translation')
-            : null;
+        $this->pluralCategoryName = $this->nullableString('pluralCategoryName');
+        $this->translation = $this->nullableString('translation');
     }
 
     /**

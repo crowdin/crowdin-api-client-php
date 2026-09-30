@@ -207,62 +207,6 @@ class TranslationMemoryApi extends AbstractApi
     }
 
     /**
-     * Create TM Segment Records
-     * @link https://developer.crowdin.com/api/v2/#operation/api.tms.segments.records.post API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.segments.records.post API Documentation Enterprise
-     *
-     * @param int $tmId
-     * @param int $segmentId
-     * @param array $data
-     * array $data[records] required<br>
-     * string $data[records][][languageId]<br>
-     * string $data[records][][text]
-     * @return TranslationMemorySegment|null
-     */
-    public function createSegmentRecords(int $tmId, int $segmentId, array $data): ?TranslationMemorySegment
-    {
-        $path = sprintf('tms/%d/segments/%d/records', $tmId, $segmentId);
-        return $this->_create($path, TranslationMemorySegment::class, $data);
-    }
-
-    /**
-     * Edit TM Segment Record
-     * @link https://developer.crowdin.com/api/v2/#operation/api.tms.segments.records.patch API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.segments.records.patch API Documentation Enterprise
-     *
-     * @param int $tmId
-     * @param int $segmentId
-     * @param int $recordId
-     * @param array $data JSON Patch array. Path: /text (replace)
-     * @return TranslationMemorySegment|null
-     */
-    public function updateSegmentRecord(
-        int $tmId,
-        int $segmentId,
-        int $recordId,
-        array $data
-    ): ?TranslationMemorySegment {
-        $path = sprintf('tms/%d/segments/%d/records/%d', $tmId, $segmentId, $recordId);
-        return $this->_patch($path, TranslationMemorySegment::class, $data);
-    }
-
-    /**
-     * Delete TM Segment Record
-     * @link https://developer.crowdin.com/api/v2/#operation/api.tms.segments.records.delete API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.segments.records.delete API Documentation Enterprise
-     *
-     * @param int $tmId
-     * @param int $segmentId
-     * @param int $recordId
-     * @return mixed
-     */
-    public function deleteSegmentRecord(int $tmId, int $segmentId, int $recordId)
-    {
-        $path = sprintf('tms/%d/segments/%d/records/%d', $tmId, $segmentId, $recordId);
-        return $this->_delete($path);
-    }
-
-    /**
      * Export TM
      * @link https://developer.crowdin.com/api/v2/#operation/api.tms.exports.post API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.exports.post API Documentation Enterprise

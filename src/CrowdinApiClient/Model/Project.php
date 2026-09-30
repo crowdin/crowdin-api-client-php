@@ -309,9 +309,7 @@ class Project extends BaseModel
         $this->customQaCheckIds = (array)$this->getDataProperty('customQaCheckIds');
         $this->languageMapping = (array)$this->getDataProperty('languageMapping');
         $this->glossaryAccess = (bool)$this->getDataProperty('glossaryAccess');
-        $this->glossaryAccessOption = $this->getDataProperty('glossaryAccessOption') !== null
-            ? (string)$this->getDataProperty('glossaryAccessOption')
-            : null;
+        $this->glossaryAccessOption = $this->nullableString('glossaryAccessOption');
         $this->isSuspended = (bool)$this->getDataProperty('isSuspended');
         $this->normalizePlaceholder = (bool)$this->getDataProperty('normalizePlaceholder');
         $this->saveMetaInfoInSource = (bool)$this->getDataProperty('saveMetaInfoInSource');
