@@ -30,6 +30,13 @@ class TaskCommentTest extends TestCase
         $this->assertEquals($this->data['updatedAt'], $taskComment->getUpdatedAt());
     }
 
+    public function testLoadTimeSpent()
+    {
+        $this->assertSame(0, (new TaskComment(['timeSpent' => 0]))->getTimeSpent());
+        $this->assertNull((new TaskComment(['timeSpent' => null]))->getTimeSpent());
+        $this->assertNull((new TaskComment())->getTimeSpent());
+    }
+
     public function testSetData()
     {
         $text = 'New task comment text';
