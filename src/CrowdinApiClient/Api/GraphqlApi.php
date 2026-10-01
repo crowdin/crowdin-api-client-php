@@ -33,7 +33,8 @@ class GraphqlApi extends AbstractApi
         ];
 
         $response = $this->client->getClient()->request('post', $this->getFullUrl(), $options);
-        $response = json_decode($response, true);
+        // GuzzleHttpClient returns a stream, not a string
+        $response = json_decode((string)$response, true);
 
         $this->client->getResponseErrorHandler()->check($response);
 

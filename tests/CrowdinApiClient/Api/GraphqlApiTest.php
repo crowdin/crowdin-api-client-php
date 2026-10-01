@@ -2,8 +2,24 @@
 
 namespace CrowdinApiClient\Tests\Api;
 
+use CrowdinApiClient\Http\Client\GuzzleHttpClient;
+use GuzzleHttp\Client;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\Psr7\Response;
+
 class GraphqlApiTest extends AbstractTestApi
 {
+    public function testQueryWithGuzzleClient(): void
+    {
+        $responseBody = json_encode(['data' => ['viewer' => ['id' => 1]]]);
+        $handler = new MockHandler([new Response(200, [], $responseBody)]);
+        $this->crowdin->setClient(new GuzzleHttpClient(new Client(['handler' => $handler])));
+
+        $response = $this->crowdin->graphql->query('query { viewer { id } }');
+
+        $this->assertSame(['viewer' => ['id' => 1]], $response);
+    }
+
     public function testQuery(): void
     {
         $query = 'query Test($limit: Int) {
