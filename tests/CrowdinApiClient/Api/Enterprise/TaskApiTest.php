@@ -12,58 +12,59 @@ class TaskApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/projects/2/tasks',
             'method' => 'get',
-            'response' => '{
-                  "data": [
-                    {
-                      "data": {
-                        "id": 2,
-                        "projectId": 2,
-                        "creatorId": 6,
-                        "type": 1,
-                        "vendor": "gengo",
-                        "status": "todo",
-                        "title": "French",
-                        "assignees": [
-                          {
-                            "id": 1,
-                            "wordsCount": 5
-                          }
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 2,
+                            'projectId' => 2,
+                            'creatorId' => 6,
+                            'type' => 1,
+                            'vendor' => 'gengo',
+                            'status' => 'todo',
+                            'title' => 'French',
+                            'assignees' => [
+                                [
+                                    'id' => 1,
+                                    'wordsCount' => 5,
+                                ],
+                            ],
+                            'fileIds' => [
+                                1,
+                            ],
+                            'progress' => [
+                                'total' => 24,
+                                'done' => 15,
+                                'percent' => 62,
+                            ],
+                            'sourceLanguageId' => 'en',
+                            'targetLanguageId' => 'fr',
+                            'description' => 'Proofread all French strings',
+                            'hash' => 'dac37aff364d83899128e68afe0de4994',
+                            'translationUrl' => '/proofread/9092638ac9f2a2d1b5571d08edc53763/all/en-fr/10?task=dac37aff364d83899128e68afe0de4994',
+                            'wordsCount' => 24,
+                            'filesCount' => 2,
+                            'commentsCount' => 0,
+                            'deadline' => '2019-09-27T07:00:14+00:00',
+                            'timeRange' => 'string',
+                            'workflowStepId' => 10,
+                            'buyUrl' => 'https://www.paypal.com/cgi-bin/webscr?cmd=...',
+                            'createdAt' => '2019-09-23T09:04:29+00:00',
+                            'updatedAt' => '2019-09-23T09:04:29+00:00',
                         ],
-                        "fileIds": [
-                          1
-                        ],
-                        "progress": {
-                          "total": 24,
-                          "done": 15,
-                          "percent": 62
-                        },
-                        "sourceLanguageId": "en",
-                        "targetLanguageId": "fr",
-                        "description": "Proofread all French strings",
-                        "hash": "dac37aff364d83899128e68afe0de4994",
-                        "translationUrl": "/proofread/9092638ac9f2a2d1b5571d08edc53763/all/en-fr/10?task=dac37aff364d83899128e68afe0de4994",
-                        "wordsCount": 24,
-                        "filesCount": 2,
-                        "commentsCount": 0,
-                        "deadline": "2019-09-27T07:00:14+00:00",
-                        "timeRange": "string",
-                        "workflowStepId": 10,
-                        "buyUrl": "https://www.paypal.com/cgi-bin/webscr?cmd=...",
-                        "createdAt": "2019-09-23T09:04:29+00:00",
-                        "updatedAt": "2019-09-23T09:04:29+00:00"
-                      }
-                    }
-                  ],
-                  "pagination": [
-                    {
-                      "offset": 0,
-                      "limit": 0
-                    }
-                  ]
-                }'
+                    ],
+                ],
+                'pagination' => [
+                    [
+                        'offset' => 0,
+                        'limit' => 0,
+                    ],
+                ],
+            ]),
         ]);
 
         $tasks = $this->crowdin->task->list(2);
+
         $this->assertInstanceOf(ModelCollection::class, $tasks);
         $this->assertCount(1, $tasks);
         $this->assertInstanceOf(Task::class, $tasks[0]);
@@ -76,21 +77,18 @@ class TaskApiTest extends AbstractTestApi
             'workflowStepId' => 0,
             'title' => 'French',
             'languageId' => 'fr',
-            'fileIds' =>
-                [
-                    0 => 1,
-                ],
+            'fileIds' => [
+                1,
+            ],
             'status' => 'todo',
             'description' => 'Proofread all French strings',
             'splitFiles' => false,
-            'assignees' =>
+            'assignees' => [
                 [
-                    0 =>
-                        [
-                            'id' => 1,
-                            'wordsCount' => 5,
-                        ],
+                    'id' => 1,
+                    'wordsCount' => 5,
                 ],
+            ],
             'deadline' => '2019-09-27T07:00:14+00:00',
             'dateFrom' => '2019-09-23T07:00:14+00:00',
             'dateTo' => '2019-09-27T07:00:14+00:00',
@@ -100,141 +98,149 @@ class TaskApiTest extends AbstractTestApi
             'path' => '/projects/2/tasks',
             'method' => 'post',
             'body' => json_encode($params),
-            'response' => '{
-                  "data": {
-                    "id": 2,
-                    "projectId": 2,
-                    "creatorId": 6,
-                    "type": 1,
-                    "vendor": "gengo",
-                    "status": "todo",
-                    "title": "French",
-                    "assignees": [
-                      {
-                        "id": 1,
-                        "wordsCount": 5
-                      }
+            'response' => json_encode([
+                'data' => [
+                    'id' => 2,
+                    'projectId' => 2,
+                    'creatorId' => 6,
+                    'type' => 1,
+                    'vendor' => 'gengo',
+                    'status' => 'todo',
+                    'title' => 'French',
+                    'assignees' => [
+                        [
+                            'id' => 1,
+                            'wordsCount' => 5,
+                        ],
                     ],
-                    "fileIds": [
-                      1
+                    'fileIds' => [
+                        1,
                     ],
-                    "progress": {
-                      "total": 24,
-                      "done": 15,
-                      "percent": 62
-                    },
-                    "sourceLanguageId": "en",
-                    "targetLanguageId": "fr",
-                    "description": "Proofread all French strings",
-                    "hash": "dac37aff364d83899128e68afe0de4994",
-                    "translationUrl": "/proofread/9092638ac9f2a2d1b5571d08edc53763/all/en-fr/10?task=dac37aff364d83899128e68afe0de4994",
-                    "wordsCount": 24,
-                    "filesCount": 2,
-                    "commentsCount": 0,
-                    "deadline": "2019-09-27T07:00:14+00:00",
-                    "timeRange": "string",
-                    "workflowStepId": 10,
-                    "buyUrl": "https://www.paypal.com/cgi-bin/webscr?cmd=...",
-                    "createdAt": "2019-09-23T09:04:29+00:00",
-                    "updatedAt": "2019-09-23T09:04:29+00:00"
-                  }
-                }'
-
+                    'progress' => [
+                        'total' => 24,
+                        'done' => 15,
+                        'percent' => 62,
+                    ],
+                    'sourceLanguageId' => 'en',
+                    'targetLanguageId' => 'fr',
+                    'description' => 'Proofread all French strings',
+                    'hash' => 'dac37aff364d83899128e68afe0de4994',
+                    'translationUrl' => '/proofread/9092638ac9f2a2d1b5571d08edc53763/all/en-fr/10?task=dac37aff364d83899128e68afe0de4994',
+                    'wordsCount' => 24,
+                    'filesCount' => 2,
+                    'commentsCount' => 0,
+                    'deadline' => '2019-09-27T07:00:14+00:00',
+                    'timeRange' => 'string',
+                    'workflowStepId' => 10,
+                    'buyUrl' => 'https://www.paypal.com/cgi-bin/webscr?cmd=...',
+                    'createdAt' => '2019-09-23T09:04:29+00:00',
+                    'updatedAt' => '2019-09-23T09:04:29+00:00',
+                ],
+            ]),
         ]);
 
         $task = $this->crowdin->task->create(2, $params);
+
         $this->assertInstanceOf(Task::class, $task);
         $this->assertEquals(2, $task->getId());
     }
 
     public function testGetAndUpdate()
     {
-        $this->mockRequestGet('/projects/2/tasks/2', '{
-                  "data": {
-                    "id": 2,
-                    "projectId": 2,
-                    "creatorId": 6,
-                    "type": 1,
-                    "vendor": "gengo",
-                    "status": "todo",
-                    "title": "French",
-                    "assignees": [
-                      {
-                        "id": 1,
-                        "wordsCount": 5
-                      }
+        $this->mockRequestGet(
+            '/projects/2/tasks/2',
+            json_encode([
+                'data' => [
+                    'id' => 2,
+                    'projectId' => 2,
+                    'creatorId' => 6,
+                    'type' => 1,
+                    'vendor' => 'gengo',
+                    'status' => 'todo',
+                    'title' => 'French',
+                    'assignees' => [
+                        [
+                            'id' => 1,
+                            'wordsCount' => 5,
+                        ],
                     ],
-                    "fileIds": [
-                      1
+                    'fileIds' => [
+                        1,
                     ],
-                    "progress": {
-                      "total": 24,
-                      "done": 15,
-                      "percent": 62
-                    },
-                    "sourceLanguageId": "en",
-                    "targetLanguageId": "fr",
-                    "description": "Proofread all French strings",
-                    "hash": "dac37aff364d83899128e68afe0de4994",
-                    "translationUrl": "/proofread/9092638ac9f2a2d1b5571d08edc53763/all/en-fr/10?task=dac37aff364d83899128e68afe0de4994",
-                    "wordsCount": 24,
-                    "filesCount": 2,
-                    "commentsCount": 0,
-                    "deadline": "2019-09-27T07:00:14+00:00",
-                    "timeRange": "string",
-                    "workflowStepId": 10,
-                    "buyUrl": "https://www.paypal.com/cgi-bin/webscr?cmd=...",
-                    "createdAt": "2019-09-23T09:04:29+00:00",
-                    "updatedAt": "2019-09-23T09:04:29+00:00"
-                  }
-                }');
+                    'progress' => [
+                        'total' => 24,
+                        'done' => 15,
+                        'percent' => 62,
+                    ],
+                    'sourceLanguageId' => 'en',
+                    'targetLanguageId' => 'fr',
+                    'description' => 'Proofread all French strings',
+                    'hash' => 'dac37aff364d83899128e68afe0de4994',
+                    'translationUrl' => '/proofread/9092638ac9f2a2d1b5571d08edc53763/all/en-fr/10?task=dac37aff364d83899128e68afe0de4994',
+                    'wordsCount' => 24,
+                    'filesCount' => 2,
+                    'commentsCount' => 0,
+                    'deadline' => '2019-09-27T07:00:14+00:00',
+                    'timeRange' => 'string',
+                    'workflowStepId' => 10,
+                    'buyUrl' => 'https://www.paypal.com/cgi-bin/webscr?cmd=...',
+                    'createdAt' => '2019-09-23T09:04:29+00:00',
+                    'updatedAt' => '2019-09-23T09:04:29+00:00',
+                ],
+            ])
+        );
 
         $task = $this->crowdin->task->get(2, 2);
+
         $this->assertInstanceOf(Task::class, $task);
         $this->assertEquals(2, $task->getId());
 
-        $this->mockRequestPatch('/projects/2/tasks/2', '{
-                  "data": {
-                    "id": 2,
-                    "projectId": 2,
-                    "creatorId": 6,
-                    "type": 1,
-                    "vendor": "gengo",
-                    "status": "todo",
-                    "title": "test edit",
-                    "assignees": [
-                      {
-                        "id": 1,
-                        "wordsCount": 5
-                      }
+        $this->mockRequestPatch(
+            '/projects/2/tasks/2',
+            json_encode([
+                'data' => [
+                    'id' => 2,
+                    'projectId' => 2,
+                    'creatorId' => 6,
+                    'type' => 1,
+                    'vendor' => 'gengo',
+                    'status' => 'todo',
+                    'title' => 'test edit',
+                    'assignees' => [
+                        [
+                            'id' => 1,
+                            'wordsCount' => 5,
+                        ],
                     ],
-                    "fileIds": [
-                      1
+                    'fileIds' => [
+                        1,
                     ],
-                    "progress": {
-                      "total": 24,
-                      "done": 15,
-                      "percent": 62
-                    },
-                    "sourceLanguageId": "en",
-                    "targetLanguageId": "fr",
-                    "description": "Proofread all French strings",
-                    "hash": "dac37aff364d83899128e68afe0de4994",
-                    "translationUrl": "/proofread/9092638ac9f2a2d1b5571d08edc53763/all/en-fr/10?task=dac37aff364d83899128e68afe0de4994",
-                    "wordsCount": 24,
-                    "filesCount": 2,
-                    "commentsCount": 0,
-                    "deadline": "2019-09-27T07:00:14+00:00",
-                    "timeRange": "string",
-                    "workflowStepId": 10,
-                    "buyUrl": "https://www.paypal.com/cgi-bin/webscr?cmd=...",
-                    "createdAt": "2019-09-23T09:04:29+00:00",
-                    "updatedAt": "2019-09-23T09:04:29+00:00"
-                  }
-                }');
+                    'progress' => [
+                        'total' => 24,
+                        'done' => 15,
+                        'percent' => 62,
+                    ],
+                    'sourceLanguageId' => 'en',
+                    'targetLanguageId' => 'fr',
+                    'description' => 'Proofread all French strings',
+                    'hash' => 'dac37aff364d83899128e68afe0de4994',
+                    'translationUrl' => '/proofread/9092638ac9f2a2d1b5571d08edc53763/all/en-fr/10?task=dac37aff364d83899128e68afe0de4994',
+                    'wordsCount' => 24,
+                    'filesCount' => 2,
+                    'commentsCount' => 0,
+                    'deadline' => '2019-09-27T07:00:14+00:00',
+                    'timeRange' => 'string',
+                    'workflowStepId' => 10,
+                    'buyUrl' => 'https://www.paypal.com/cgi-bin/webscr?cmd=...',
+                    'createdAt' => '2019-09-23T09:04:29+00:00',
+                    'updatedAt' => '2019-09-23T09:04:29+00:00',
+                ],
+            ])
+        );
 
         $task->setTitle('test edit');
         $task = $this->crowdin->task->update($task);
+
         $this->assertInstanceOf(Task::class, $task);
         $this->assertEquals(2, $task->getId());
         $this->assertEquals('test edit', $task->getTitle());

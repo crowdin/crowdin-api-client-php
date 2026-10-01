@@ -16,40 +16,39 @@ class BranchApiTest extends AbstractTestApi
         $this->mockRequest([
             'uri' => 'https://api.crowdin.com/api/v2/projects/2/branches',
             'method' => 'get',
-            'response' => '{
-                  "data": [
-                    {
-                      "data": {
-                        "id": 34,
-                        "projectId": 2,
-                        "name": "develop-master",
-                        "title": "Master branch",
-                        "exportPattern": "%three_letters_code%",
-                        "priority": "normal",
-                        "createdAt": "2019-09-16T13:48:04+00:00",
-                        "updatedAt": "2019-09-19T13:25:27+00:00"
-                      }
-                    }
-                  ],
-                  "pagination": [
-                    {
-                      "offset": 0,
-                      "limit": 0
-                    }
-                  ]
-            }'
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 34,
+                            'projectId' => 2,
+                            'name' => 'develop-master',
+                            'title' => 'Master branch',
+                            'exportPattern' => '%three_letters_code%',
+                            'priority' => 'normal',
+                            'createdAt' => '2019-09-16T13:48:04+00:00',
+                            'updatedAt' => '2019-09-19T13:25:27+00:00',
+                        ],
+                    ],
+                ],
+                'pagination' => [
+                    [
+                        'offset' => 0,
+                        'limit' => 0,
+                    ],
+                ],
+            ]),
         ]);
 
         $data = $this->crowdin->branch->list(2);
 
         $this->assertInstanceOf(ModelCollection::class, $data);
         $this->assertCount(1, $data);
-        /**
-         * @var Branch $branchModel
-         */
-        $branchModel = $data[0];
-        $this->assertInstanceOf(Branch::class, $branchModel);
 
+        /** @var Branch $branchModel */
+        $branchModel = $data[0];
+
+        $this->assertInstanceOf(Branch::class, $branchModel);
         $this->assertEquals(34, $branchModel->getId());
         $this->assertEquals(2, $branchModel->getProjectId());
         $this->assertEquals('develop-master', $branchModel->getName());
@@ -102,24 +101,25 @@ class BranchApiTest extends AbstractTestApi
 
     public function testGet()
     {
-        $this->mockRequestGet('/projects/2/branches/34',
-            '{
-                  "data": {
-                    "id": 34,
-                    "projectId": 2,
-                    "name": "develop-master",
-                    "title": "Master branch",
-                    "exportPattern": "%three_letters_code%",
-                    "priority": "normal",
-                    "createdAt": "2019-09-16T13:48:04+00:00",
-                    "updatedAt": "2019-09-19T13:25:27+00:00"
-                  }
-        }');
+        $this->mockRequestGet(
+            '/projects/2/branches/34',
+            json_encode([
+                'data' => [
+                    'id' => 34,
+                    'projectId' => 2,
+                    'name' => 'develop-master',
+                    'title' => 'Master branch',
+                    'exportPattern' => '%three_letters_code%',
+                    'priority' => 'normal',
+                    'createdAt' => '2019-09-16T13:48:04+00:00',
+                    'updatedAt' => '2019-09-19T13:25:27+00:00',
+                ],
+            ])
+        );
 
         $branch = $this->crowdin->branch->get(2, 34);
 
         $this->assertInstanceOf(Branch::class, $branch);
-
         $this->assertEquals(34, $branch->getId());
         $this->assertEquals(2, $branch->getProjectId());
         $this->assertEquals('develop-master', $branch->getName());
@@ -143,18 +143,18 @@ class BranchApiTest extends AbstractTestApi
             'path' => '/projects/2/branches',
             'method' => 'post',
             'body' => json_encode($params),
-            'response' => '{
-                  "data": {
-                    "id": 34,
-                    "projectId": 2,
-                    "name": "develop-master",
-                    "title": "Master branch",
-                    "exportPattern": "%three_letters_code%",
-                    "priority": "normal",
-                    "createdAt": "2019-09-16T13:48:04+00:00",
-                    "updatedAt": "2019-09-19T13:25:27+00:00"
-                  }
-                }'
+            'response' => json_encode([
+                'data' => [
+                    'id' => 34,
+                    'projectId' => 2,
+                    'name' => 'develop-master',
+                    'title' => 'Master branch',
+                    'exportPattern' => '%three_letters_code%',
+                    'priority' => 'normal',
+                    'createdAt' => '2019-09-16T13:48:04+00:00',
+                    'updatedAt' => '2019-09-19T13:25:27+00:00',
+                ],
+            ]),
         ]);
 
         $branch = $this->crowdin->branch->create(2, $params);
@@ -429,39 +429,43 @@ class BranchApiTest extends AbstractTestApi
     public function testUpdate()
     {
         $mock = $this->mockClient
-            ->willReturn('{
-              "data": {
-                "id": 34,
-                "projectId": 2,
-                "name": "develop-master",
-                "title": "Master branch",
-                "exportPattern": "%three_letters_code%",
-                "priority": "normal",
-                "createdAt": "2019-09-16T13:48:04+00:00",
-                "updatedAt": "2019-09-19T13:25:27+00:00"
-              }
-            }');
+            ->willReturn(
+                json_encode([
+                    'data' => [
+                        'id' => 34,
+                        'projectId' => 2,
+                        'name' => 'develop-master',
+                        'title' => 'Master branch',
+                        'exportPattern' => '%three_letters_code%',
+                        'priority' => 'normal',
+                        'createdAt' => '2019-09-16T13:48:04+00:00',
+                        'updatedAt' => '2019-09-19T13:25:27+00:00',
+                    ],
+                ])
+            );
 
         $branch = $this->crowdin->branch->get(2, 34);
-
         $branch->setName('develop-master-edit');
 
-        $mock->will($this->returnCallback(function ($method, $uri, $options) {
-            $this->assertEquals('patch', $method);
-            $this->assertEquals('https://api.crowdin.com/api/v2/projects/2/branches/34', $uri);
-            return '{
-                  "data": {
-                    "id": 34,
-                    "projectId": 2,
-                    "name": "develop-master-edit",
-                    "title": "Master branch",
-                    "exportPattern": "%three_letters_code%",
-                    "priority": "normal",
-                    "createdAt": "2019-09-16T13:48:04+00:00",
-                    "updatedAt": "2019-09-19T13:25:27+00:00"
-                  }
-            }';
-        }));
+        $mock->will(
+            $this->returnCallback(function ($method, $uri) {
+                $this->assertEquals('patch', $method);
+                $this->assertEquals('https://api.crowdin.com/api/v2/projects/2/branches/34', $uri);
+
+                return json_encode([
+                    'data' => [
+                        'id' => 34,
+                        'projectId' => 2,
+                        'name' => 'develop-master-edit',
+                        'title' => 'Master branch',
+                        'exportPattern' => '%three_letters_code%',
+                        'priority' => 'normal',
+                        'createdAt' => '2019-09-16T13:48:04+00:00',
+                        'updatedAt' => '2019-09-19T13:25:27+00:00',
+                    ],
+                ]);
+            })
+        );
 
         $branchNew = $this->crowdin->branch->update($branch);
 

@@ -12,25 +12,25 @@ class WorkflowTemplateApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/workflow-templates',
             'method' => 'get',
-            'response' => '{
-                  "data": [
-                    {
-                      "data": {
-                        "id": 2,
-                        "title": "In-house + Machine Translation",
-                        "description": "Combine the efforts of human translators and Machine Translation technology.\\n• Pre-translation - Translation Memory\\n• Pre-translation - Machine Translation\\n• Translation - in-house translators\\n• Proofreading - in-house translators",
-                        "groupId": 2,
-                        "isDefault": true
-                      }
-                    }
-                  ],
-                  "pagination": [
-                    {
-                      "offset": 0,
-                      "limit": 0
-                    }
-                  ]
-                }'
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 2,
+                            'title' => 'In-house + Machine Translation',
+                            'description' => "Combine the efforts of human translators and Machine Translation technology.\n• Pre-translation - Translation Memory\n• Pre-translation - Machine Translation\n• Translation - in-house translators\n• Proofreading - in-house translators",
+                            'groupId' => 2,
+                            'isDefault' => true,
+                        ],
+                    ],
+                ],
+                'pagination' => [
+                    [
+                        'offset' => 0,
+                        'limit' => 0,
+                    ],
+                ],
+            ]),
         ]);
 
         $workflowTemplates = $this->crowdin->workflowTemplate->list();
@@ -43,17 +43,21 @@ class WorkflowTemplateApiTest extends AbstractTestApi
 
     public function testGet()
     {
-        $this->mockRequestGet('/workflow-templates/2', '{
-              "data": {
-                "id": 2,
-                "title": "In-house + Machine Translation",
-                "description": "Combine the efforts of human translators and Machine Translation technology.\\n• Pre-translation - Translation Memory\\n• Pre-translation - Machine Translation\\n• Translation - in-house translators\\n• Proofreading - in-house translators",
-                "groupId": 2,
-                "isDefault": true
-              }
-        }');
+        $this->mockRequestGet(
+            '/workflow-templates/2',
+            json_encode([
+                'data' => [
+                    'id' => 2,
+                    'title' => 'In-house + Machine Translation',
+                    'description' => "Combine the efforts of human translators and Machine Translation technology.\n• Pre-translation - Translation Memory\n• Pre-translation - Machine Translation\n• Translation - in-house translators\n• Proofreading - in-house translators",
+                    'groupId' => 2,
+                    'isDefault' => true,
+                ],
+            ])
+        );
 
         $workflowTemplate = $this->crowdin->workflowTemplate->get(2);
+
         $this->assertInstanceOf(WorkflowTemplate::class, $workflowTemplate);
         $this->assertEquals(2, $workflowTemplate->getId());
     }

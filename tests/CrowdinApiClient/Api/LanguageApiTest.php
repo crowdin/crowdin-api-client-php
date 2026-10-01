@@ -12,41 +12,42 @@ class LanguageApiTest extends AbstractTestApi
         $this->mockRequest([
             'uri' => 'https://api.crowdin.com/api/v2/languages',
             'method' => 'get',
-            'response' => '{
-                  "data": [
-                    {
-                      "data": {
-                        "id": "es",
-                        "name": "Spanish",
-                        "editorCode": "es",
-                        "twoLettersCode": "es",
-                        "threeLettersCode": "spa",
-                        "locale": "es-ES",
-                        "androidCode": "es-rES",
-                        "osxCode": "es.lproj",
-                        "osxLocale": "es",
-                        "pluralCategoryNames": [
-                          "one"
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 'es',
+                            'name' => 'Spanish',
+                            'editorCode' => 'es',
+                            'twoLettersCode' => 'es',
+                            'threeLettersCode' => 'spa',
+                            'locale' => 'es-ES',
+                            'androidCode' => 'es-rES',
+                            'osxCode' => 'es.lproj',
+                            'osxLocale' => 'es',
+                            'pluralCategoryNames' => [
+                                'one',
+                            ],
+                            'pluralRules' => '(n != 1)',
+                            'pluralExamples' => [
+                                '0, 2-999; 1.2, 2.07...',
+                            ],
+                            'textDirection' => 'ltr',
+                            'dialectOf' => 'string',
                         ],
-                        "pluralRules": "(n != 1)",
-                        "pluralExamples": [
-                          "0, 2-999; 1.2, 2.07..."
-                        ],
-                        "textDirection": "ltr",
-                        "dialectOf": "string"
-                      }
-                    }
-                  ],
-                  "pagination": [
-                    {
-                      "offset": 0,
-                      "limit": 0
-                    }
-                  ]
-                }'
+                    ],
+                ],
+                'pagination' => [
+                    [
+                        'offset' => 0,
+                        'limit' => 0,
+                    ],
+                ],
+            ]),
         ]);
 
         $languages = $this->crowdin->language->list();
+
         $this->assertInstanceOf(ModelCollection::class, $languages);
         $this->assertCount(1, $languages);
         $this->assertInstanceOf(Language::class, $languages[0]);
@@ -57,28 +58,28 @@ class LanguageApiTest extends AbstractTestApi
         $this->mockRequest([
             'uri' => 'https://api.crowdin.com/api/v2/languages',
             'method' => 'post',
-            'response' => '{
-              "data": {
-                "id": "es",
-                "name": "Spanish",
-                "editorCode": "es",
-                "twoLettersCode": "es",
-                "threeLettersCode": "spa",
-                "locale": "es-ES",
-                "androidCode": "es-rES",
-                "osxCode": "es.lproj",
-                "osxLocale": "es",
-                "pluralCategoryNames": [
-                  "one"
+            'response' => json_encode([
+                'data' => [
+                    'id' => 'es',
+                    'name' => 'Spanish',
+                    'editorCode' => 'es',
+                    'twoLettersCode' => 'es',
+                    'threeLettersCode' => 'spa',
+                    'locale' => 'es-ES',
+                    'androidCode' => 'es-rES',
+                    'osxCode' => 'es.lproj',
+                    'osxLocale' => 'es',
+                    'pluralCategoryNames' => [
+                        'one',
+                    ],
+                    'pluralRules' => '(n != 1)',
+                    'pluralExamples' => [
+                        '0, 2-999; 1.2, 2.07...',
+                    ],
+                    'textDirection' => 'ltr',
+                    'dialectOf' => 'string',
                 ],
-                "pluralRules": "(n != 1)",
-                "pluralExamples": [
-                  "0, 2-999; 1.2, 2.07..."
-                ],
-                "textDirection": "ltr",
-                "dialectOf": "string"
-              }
-            }'
+            ]),
         ]);
 
         $language = $this->crowdin->language->create([
@@ -97,28 +98,31 @@ class LanguageApiTest extends AbstractTestApi
 
     public function testGetUpdate()
     {
-        $this->mockRequestGet('/languages/es', '{
-              "data": {
-                "id": "es",
-                "name": "Spanish",
-                "editorCode": "es",
-                "twoLettersCode": "es",
-                "threeLettersCode": "spa",
-                "locale": "es-ES",
-                "androidCode": "es-rES",
-                "osxCode": "es.lproj",
-                "osxLocale": "es",
-                "pluralCategoryNames": [
-                  "one"
+        $this->mockRequestGet(
+            '/languages/es',
+            json_encode([
+                'data' => [
+                    'id' => 'es',
+                    'name' => 'Spanish',
+                    'editorCode' => 'es',
+                    'twoLettersCode' => 'es',
+                    'threeLettersCode' => 'spa',
+                    'locale' => 'es-ES',
+                    'androidCode' => 'es-rES',
+                    'osxCode' => 'es.lproj',
+                    'osxLocale' => 'es',
+                    'pluralCategoryNames' => [
+                        'one',
+                    ],
+                    'pluralRules' => '(n != 1)',
+                    'pluralExamples' => [
+                        '0, 2-999; 1.2, 2.07...',
+                    ],
+                    'textDirection' => 'ltr',
+                    'dialectOf' => 'string',
                 ],
-                "pluralRules": "(n != 1)",
-                "pluralExamples": [
-                  "0, 2-999; 1.2, 2.07..."
-                ],
-                "textDirection": "ltr",
-                "dialectOf": "string"
-              }
-        }');
+            ])
+        );
 
         $language = $this->crowdin->language->get('es');
 
@@ -127,28 +131,31 @@ class LanguageApiTest extends AbstractTestApi
 
         $language->setName('edit test');
 
-        $this->mockRequestPatch('/languages/es', '{
-              "data": {
-                "id": "es",
-                "name": "Spanish",
-                "editorCode": "es",
-                "twoLettersCode": "es",
-                "threeLettersCode": "spa",
-                "locale": "es-ES",
-                "androidCode": "es-rES",
-                "osxCode": "es.lproj",
-                "osxLocale": "es",
-                "pluralCategoryNames": [
-                  "one"
+        $this->mockRequestPatch(
+            '/languages/es',
+            json_encode([
+                'data' => [
+                    'id' => 'es',
+                    'name' => 'Spanish',
+                    'editorCode' => 'es',
+                    'twoLettersCode' => 'es',
+                    'threeLettersCode' => 'spa',
+                    'locale' => 'es-ES',
+                    'androidCode' => 'es-rES',
+                    'osxCode' => 'es.lproj',
+                    'osxLocale' => 'es',
+                    'pluralCategoryNames' => [
+                        'one',
+                    ],
+                    'pluralRules' => '(n != 1)',
+                    'pluralExamples' => [
+                        '0, 2-999; 1.2, 2.07...',
+                    ],
+                    'textDirection' => 'ltr',
+                    'dialectOf' => 'string',
                 ],
-                "pluralRules": "(n != 1)",
-                "pluralExamples": [
-                  "0, 2-999; 1.2, 2.07..."
-                ],
-                "textDirection": "ltr",
-                "dialectOf": "string"
-              }
-        }');
+            ])
+        );
 
         $this->crowdin->language->update($language);
 

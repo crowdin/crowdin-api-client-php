@@ -109,7 +109,6 @@ class FieldApiTest extends AbstractTestApi
     public function testDelete(): void
     {
         $this->mockRequestDelete('/fields/1');
-
         $this->crowdin->field->delete(1);
     }
 }

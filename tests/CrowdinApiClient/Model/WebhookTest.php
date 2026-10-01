@@ -14,18 +14,15 @@ class WebhookTest extends TestCase
         'projectId' => 2,
         'name' => 'Proofread',
         'url' => 'https://webhook.site/1c20d9b5-6e6a-4522-974d-9da7ea7595c9',
-        'events' =>
-            [
-                0 => 'file.approved',
-            ],
-        'headers' =>
-            [
-                0 => 'string',
-            ],
-        'payload' =>
-            [
-                0 => 'string',
-            ],
+        'events' => [
+            'file.approved',
+        ],
+        'headers' => [
+            'string',
+        ],
+        'payload' => [
+            'string',
+        ],
         'isActive' => true,
         'requestType' => 'GET',
         'contentType' => 'multipart/form-data',

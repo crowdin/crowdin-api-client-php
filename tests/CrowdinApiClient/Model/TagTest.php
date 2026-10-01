@@ -16,13 +16,12 @@ class TagTest extends TestCase
         'id' => 98,
         'screenshotId' => 2,
         'stringId' => 2822,
-        'position' =>
-            [
-                'x' => 474,
-                'y' => 147,
-                'width' => 490,
-                'height' => 99,
-            ],
+        'position' => [
+            'x' => 474,
+            'y' => 147,
+            'width' => 490,
+            'height' => 99,
+        ],
         'createdAt' => '2019-09-23T09:35:31+00:00',
     ];
 

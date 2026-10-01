@@ -25,15 +25,13 @@ class LanguageTest extends TestCase
         'androidCode' => 'es-rES',
         'osxCode' => 'es.lproj',
         'osxLocale' => 'es',
-        'pluralCategoryNames' =>
-            [
-                0 => 'one',
-            ],
+        'pluralCategoryNames' => [
+            'one',
+        ],
         'pluralRules' => '(n != 1)',
-        'pluralExamples' =>
-            [
-                0 => '0, 2-999; 1.2, 2.07...',
-            ],
+        'pluralExamples' => [
+            '0, 2-999; 1.2, 2.07...',
+        ],
         'textDirection' => 'ltr',
         'dialectOf' => 'string',
     ];

@@ -10,39 +10,37 @@ class StringsExporterSettingApiTest extends AbstractTestApi
     public function testList()
     {
         $this->mockRequest([
-          'path' => '/projects/2/strings-exporter-settings',
-          'method' => 'get',
-          'response' => '{
-              "data": [
-                {
-                  "data": {
-                    "id": 2,
-                    "format": "android",
-                    "settings": {
-                      "convertPlaceholders": false
-                    },
-                    "createdAt": "2019-09-19T15:10:43+00:00",
-                    "updatedAt": "2019-09-19T15:10:46+00:00"
-                  }
-                }
-              ],
-              "pagination": {
-                "offset": 0,
-                "limit": 25
-              }
-            }'
+            'path' => '/projects/2/strings-exporter-settings',
+            'method' => 'get',
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 2,
+                            'format' => 'android',
+                            'settings' => [
+                                'convertPlaceholders' => false,
+                            ],
+                            'createdAt' => '2019-09-19T15:10:43+00:00',
+                            'updatedAt' => '2019-09-19T15:10:46+00:00',
+                        ],
+                    ],
+                ],
+                'pagination' => [
+                    'offset' => 0,
+                    'limit' => 25,
+                ],
+            ]),
         ]);
 
         $data = $this->crowdin->stringsExporterSetting->list(2);
 
         $this->assertInstanceOf(ModelCollection::class, $data);
         $this->assertCount(1, $data);
-        /**
-         * @var StringsExporterSetting $stringsExporterSetting
-         */
+
+        /** @var StringsExporterSetting $stringsExporterSetting */
         $stringsExporterSetting = $data[0];
         $this->assertInstanceOf(StringsExporterSetting::class, $stringsExporterSetting);
-
         $this->assertEquals(2, $stringsExporterSetting->getId());
         $this->assertEquals('android', $stringsExporterSetting->getFormat());
     }
@@ -51,23 +49,22 @@ class StringsExporterSettingApiTest extends AbstractTestApi
     {
         $this->mockRequestGet(
             '/projects/2/strings-exporter-settings/2',
-            '{
-          "data": {
-            "id": 2,
-            "format": "android",
-            "settings": {
-              "convertPlaceholders": false
-            },
-            "createdAt": "2019-09-19T15:10:43+00:00",
-            "updatedAt": "2019-09-19T15:10:46+00:00"
-          }
-        }'
+            json_encode([
+                'data' => [
+                    'id' => 2,
+                    'format' => 'android',
+                    'settings' => [
+                        'convertPlaceholders' => false,
+                    ],
+                    'createdAt' => '2019-09-19T15:10:43+00:00',
+                    'updatedAt' => '2019-09-19T15:10:46+00:00',
+                ],
+            ])
         );
 
         $stringsExporterSetting = $this->crowdin->stringsExporterSetting->get(2, 2);
 
         $this->assertInstanceOf(StringsExporterSetting::class, $stringsExporterSetting);
-
         $this->assertEquals(2, $stringsExporterSetting->getId());
         $this->assertEquals('android', $stringsExporterSetting->getFormat());
     }
@@ -75,27 +72,27 @@ class StringsExporterSettingApiTest extends AbstractTestApi
     public function testCreate()
     {
         $params = [
-          'format' => 'android',
-          "settings" => [
-            "convertPlaceholders" => false
-          ]
+            'format' => 'android',
+            "settings" => [
+                "convertPlaceholders" => false,
+            ],
         ];
 
         $this->mockRequest([
-          'path' => '/projects/2/strings-exporter-settings',
-          'method' => 'post',
-          'body' => json_encode($params),
-          'response' => '{
-              "data": {
-                "id": 2,
-                "format": "android",
-                "settings": {
-                  "convertPlaceholders": false
-                },
-                "createdAt": "2019-09-19T15:10:43+00:00",
-                "updatedAt": "2019-09-19T15:10:46+00:00"
-              }
-            }'
+            'path' => '/projects/2/strings-exporter-settings',
+            'method' => 'post',
+            'body' => json_encode($params),
+            'response' => json_encode([
+                'data' => [
+                    'id' => 2,
+                    'format' => 'android',
+                    'settings' => [
+                        'convertPlaceholders' => false,
+                    ],
+                    'createdAt' => '2019-09-19T15:10:43+00:00',
+                    'updatedAt' => '2019-09-19T15:10:46+00:00',
+                ],
+            ]),
         ]);
 
         $stringsExporterSetting = $this->crowdin->stringsExporterSetting->create(2, $params);
@@ -108,8 +105,8 @@ class StringsExporterSettingApiTest extends AbstractTestApi
     public function testDelete()
     {
         $this->mockRequest([
-          'path' => '/projects/2/strings-exporter-settings/2',
-          'method' => 'delete',
+            'path' => '/projects/2/strings-exporter-settings/2',
+            'method' => 'delete',
         ]);
 
         $this->crowdin->stringsExporterSetting->delete(2, 2);
@@ -117,17 +114,20 @@ class StringsExporterSettingApiTest extends AbstractTestApi
 
     public function testGetAndUpdate()
     {
-        $this->mockRequestGet('/projects/2/strings-exporter-settings/2', '{
-      "data": {
-        "id": 2,
-        "format": "android",
-        "settings": {
-          "convertPlaceholders": false
-        },
-        "createdAt": "2019-09-19T15:10:43+00:00",
-        "updatedAt": "2019-09-19T15:10:46+00:00"
-      }
-    }');
+        $this->mockRequestGet(
+            '/projects/2/strings-exporter-settings/2',
+            json_encode([
+                'data' => [
+                    'id' => 2,
+                    'format' => 'android',
+                    'settings' => [
+                        'convertPlaceholders' => false,
+                    ],
+                    'createdAt' => '2019-09-19T15:10:43+00:00',
+                    'updatedAt' => '2019-09-19T15:10:46+00:00',
+                ],
+            ])
+        );
 
         $stringsExporterSetting = $this->crowdin->stringsExporterSetting->get(2, 2);
 
@@ -137,19 +137,23 @@ class StringsExporterSettingApiTest extends AbstractTestApi
 
         $stringsExporterSetting->setFormat('macosx');
 
-        $this->mockRequestPatch('/projects/2/strings-exporter-settings/2', '{
-      "data": {
-        "id": 2,
-        "format": "macosx",
-        "settings": {
-          "convertPlaceholders": false
-        },
-        "createdAt": "2019-09-19T15:10:43+00:00",
-        "updatedAt": "2019-09-19T15:10:46+00:00"
-      }
-    }');
+        $this->mockRequestPatch(
+            '/projects/2/strings-exporter-settings/2',
+            json_encode([
+                'data' => [
+                    'id' => 2,
+                    'format' => 'macosx',
+                    'settings' => [
+                        'convertPlaceholders' => false,
+                    ],
+                    'createdAt' => '2019-09-19T15:10:43+00:00',
+                    'updatedAt' => '2019-09-19T15:10:46+00:00',
+                ],
+            ])
+        );
 
         $stringsExporterSetting = $this->crowdin->stringsExporterSetting->update(2, $stringsExporterSetting);
+
         $this->assertInstanceOf(StringsExporterSetting::class, $stringsExporterSetting);
         $this->assertEquals(2, $stringsExporterSetting->getId());
         $this->assertEquals('macosx', $stringsExporterSetting->getFormat());

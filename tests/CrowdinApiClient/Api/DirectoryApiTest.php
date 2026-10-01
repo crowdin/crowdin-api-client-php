@@ -13,30 +13,30 @@ class DirectoryApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/projects/2/directories',
             'method' => 'get',
-            'response' => '{
-              "data": [
-                {
-                  "data": {
-                    "id": 4,
-                    "projectId": 2,
-                    "branchId": 34,
-                    "directoryId": 0,
-                    "name": "main",
-                    "title": "<Description materials>",
-                    "exportPattern": "/localization/%locale%/%file_name%",
-                    "priority": "normal",
-                    "createdAt": "2019-09-19T14:14:00+00:00",
-                    "updatedAt": "2019-09-19T14:14:00+00:00"
-                  }
-                }
-              ],
-              "pagination": [
-                {
-                  "offset": 0,
-                  "limit": 0
-                }
-              ]
-            }'
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 4,
+                            'projectId' => 2,
+                            'branchId' => 34,
+                            'directoryId' => 0,
+                            'name' => 'main',
+                            'title' => '<Description materials>',
+                            'exportPattern' => '/localization/%locale%/%file_name%',
+                            'priority' => 'normal',
+                            'createdAt' => '2019-09-19T14:14:00+00:00',
+                            'updatedAt' => '2019-09-19T14:14:00+00:00',
+                        ],
+                    ],
+                ],
+                'pagination' => [
+                    [
+                        'offset' => 0,
+                        'limit' => 0,
+                    ],
+                ],
+            ]),
         ]);
 
         $directories = $this->crowdin->directory->list(2);
@@ -91,18 +91,21 @@ class DirectoryApiTest extends AbstractTestApi
 
     public function testGetAndUpdate()
     {
-        $this->mockRequestGet('/projects/2/directories/34', '{
-                  "data": {
-                    "id": 34,
-                    "projectId": 2,
-                    "name": "develop-master",
-                    "title": "Master branch",
-                    "exportPattern": "%three_letters_code%",
-                    "priority": "normal",
-                    "createdAt": "2019-09-16T13:48:04+00:00",
-                    "updatedAt": "2019-09-19T13:25:27+00:00"
-                  }
-            }');
+        $this->mockRequestGet(
+            '/projects/2/directories/34',
+            json_encode([
+                'data' => [
+                    'id' => 34,
+                    'projectId' => 2,
+                    'name' => 'develop-master',
+                    'title' => 'Master branch',
+                    'exportPattern' => '%three_letters_code%',
+                    'priority' => 'normal',
+                    'createdAt' => '2019-09-16T13:48:04+00:00',
+                    'updatedAt' => '2019-09-19T13:25:27+00:00',
+                ],
+            ])
+        );
 
         $directory = $this->crowdin->directory->get(2, 34);
 
@@ -111,20 +114,24 @@ class DirectoryApiTest extends AbstractTestApi
 
         $directory->setName('edit test');
 
-        $this->mockRequestPatch('/projects/2/directories/34', '{
-                  "data": {
-                    "id": 34,
-                    "projectId": 2,
-                    "name": "edit test",
-                    "title": "Master branch",
-                    "exportPattern": "%three_letters_code%",
-                    "priority": "normal",
-                    "createdAt": "2019-09-16T13:48:04+00:00",
-                    "updatedAt": "2019-09-19T13:25:27+00:00"
-                  }
-            }');
+        $this->mockRequestPatch(
+            '/projects/2/directories/34',
+            json_encode([
+                'data' => [
+                    'id' => 34,
+                    'projectId' => 2,
+                    'name' => 'edit test',
+                    'title' => 'Master branch',
+                    'exportPattern' => '%three_letters_code%',
+                    'priority' => 'normal',
+                    'createdAt' => '2019-09-16T13:48:04+00:00',
+                    'updatedAt' => '2019-09-19T13:25:27+00:00',
+                ],
+            ])
+        );
 
         $this->crowdin->directory->update($directory);
+
         $this->assertInstanceOf(Directory::class, $directory);
         $this->assertEquals(34, $directory->getId());
         $this->assertEquals('edit test', $directory->getName());
@@ -143,21 +150,22 @@ class DirectoryApiTest extends AbstractTestApi
             'path' => '/projects/2/directories',
             'method' => 'post',
             'body' => json_encode($params),
-            'response' => '{
-                  "data": {
-                    "id": 34,
-                    "projectId": 2,
-                    "name": "develop-master",
-                    "title": "Master branch",
-                    "exportPattern": "%three_letters_code%",
-                    "priority": "normal",
-                    "createdAt": "2019-09-16T13:48:04+00:00",
-                    "updatedAt": "2019-09-19T13:25:27+00:00"
-                  }
-                }'
+            'response' => json_encode([
+                'data' => [
+                    'id' => 34,
+                    'projectId' => 2,
+                    'name' => 'develop-master',
+                    'title' => 'Master branch',
+                    'exportPattern' => '%three_letters_code%',
+                    'priority' => 'normal',
+                    'createdAt' => '2019-09-16T13:48:04+00:00',
+                    'updatedAt' => '2019-09-19T13:25:27+00:00',
+                ],
+            ]),
         ]);
 
         $directory = $this->crowdin->directory->create(2, $params);
+
         $this->assertInstanceOf(Directory::class, $directory);
         $this->assertEquals(34, $directory->getId());
     }
