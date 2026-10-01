@@ -72,81 +72,51 @@ class QaCheck extends BaseModel
         $this->translation = $this->nullableString('translation');
     }
 
-    /**
-     * @return int
-     */
     public function getStringId(): int
     {
         return $this->stringId;
     }
 
-    /**
-     * @return string
-     */
     public function getLanguageId(): string
     {
         return $this->languageId;
     }
 
-    /**
-     * @return string
-     */
     public function getCategory(): string
     {
         return $this->category;
     }
 
-    /**
-     * @return string
-     */
     public function getCategoryDescription(): string
     {
         return $this->categoryDescription;
     }
 
-    /**
-     * @return string
-     */
     public function getValidation(): string
     {
         return $this->validation;
     }
 
-    /**
-     * @return string
-     */
     public function getValidationDescription(): string
     {
         return $this->validationDescription;
     }
 
-    /**
-     * @return int
-     */
     public function getPluralId(): int
     {
         return $this->pluralId;
     }
 
-    /**
-     * @return string
-     */
     public function getText(): string
     {
         return $this->text;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPluralCategoryName(): ?string
     {
         return $this->pluralCategoryName;
     }
 
-    /**
-     * @return string|null
-     */
     public function getTranslation(): ?string
     {
         return $this->translation;

@@ -55,73 +55,46 @@ class TaskComment extends BaseModel
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
     }
 
-    /**
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return int
-     */
     public function getUserId(): int
     {
         return $this->userId;
     }
 
-    /**
-     * @return int
-     */
     public function getTaskId(): int
     {
         return $this->taskId;
     }
 
-    /**
-     * @return string
-     */
     public function getText(): string
     {
         return $this->text;
     }
 
-    /**
-     * @param string $text
-     */
     public function setText(string $text): void
     {
         $this->text = $text;
     }
 
-    /**
-     * @return int|null
-     */
     public function getTimeSpent(): ?int
     {
         return $this->timeSpent;
     }
 
-    /**
-     * @param int|null $timeSpent
-     */
     public function setTimeSpent(?int $timeSpent): void
     {
         $this->timeSpent = $timeSpent;
     }
 
-    /**
-     * @return string
-     */
     public function getCreatedAt(): string
     {
         return $this->createdAt;
     }
 
-    /**
-     * @return string
-     */
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;

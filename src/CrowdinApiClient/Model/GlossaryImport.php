@@ -61,65 +61,41 @@ class GlossaryImport extends BaseModel
         $this->finishedAt = (string)$this->getDataProperty('finishedAt');
     }
 
-    /**
-     * @return string
-     */
     public function getIdentifier(): string
     {
         return $this->identifier;
     }
 
-    /**
-     * @return string
-     */
     public function getStatus(): string
     {
         return $this->status;
     }
 
-    /**
-     * @return int
-     */
     public function getProgress(): int
     {
         return $this->progress;
     }
 
-    /**
-     * @return array
-     */
     public function getAttributes(): array
     {
         return $this->attributes;
     }
 
-    /**
-     * @return string
-     */
     public function getCreatedAt(): string
     {
         return $this->createdAt;
     }
 
-    /**
-     * @return string
-     */
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;
     }
 
-    /**
-     * @return string
-     */
     public function getStartedAt(): string
     {
         return $this->startedAt;
     }
 
-    /**
-     * @return string
-     */
     public function getFinishedAt(): string
     {
         return $this->finishedAt;

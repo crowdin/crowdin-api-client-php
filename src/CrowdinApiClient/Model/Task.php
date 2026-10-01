@@ -308,65 +308,41 @@ class Task extends BaseModel
         $this->hash = $this->nullableString('hash');
     }
 
-    /**
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return int
-     */
     public function getProjectId(): int
     {
         return $this->projectId;
     }
 
-    /**
-     * @return int
-     */
     public function getCreatorId(): int
     {
         return $this->creatorId;
     }
 
-    /**
-     * @return int
-     */
     public function getType(): int
     {
         return $this->type;
     }
 
-    /**
-     * @return string
-     */
     public function getStatus(): string
     {
         return $this->status;
     }
 
-    /**
-     * @param string $status
-     */
     public function setStatus(string $status): void
     {
         $this->status = $status;
     }
 
-    /**
-     * @return string
-     */
     public function getTitle(): string
     {
         return $this->title;
     }
 
-    /**
-     * @param string $title
-     */
     public function setTitle(string $title): void
     {
         $this->title = $title;
@@ -377,17 +353,11 @@ class Task extends BaseModel
         return $this->batchId;
     }
 
-    /**
-     * @return array
-     */
     public function getAssignees(): array
     {
         return $this->assignees;
     }
 
-    /**
-     * @param array $assignees
-     */
     public function setAssignees(array $assignees): void
     {
         $this->assignees = $assignees;
@@ -403,9 +373,6 @@ class Task extends BaseModel
         $this->assignedTeams = $assignedTeams;
     }
 
-    /**
-     * @return array
-     */
     public function getProgress(): array
     {
         return $this->progress;
@@ -420,41 +387,26 @@ class Task extends BaseModel
         return $this->translateProgress;
     }
 
-    /**
-     * @return string
-     */
     public function getSourceLanguageId(): string
     {
         return $this->sourceLanguageId;
     }
 
-    /**
-     * @return string
-     */
     public function getTargetLanguageId(): string
     {
         return $this->targetLanguageId;
     }
 
-    /**
-     * @return string
-     */
     public function getDescription(): string
     {
         return $this->description;
     }
 
-    /**
-     * @param string $description
-     */
     public function setDescription(string $description): void
     {
         $this->description = $description;
     }
 
-    /**
-     * @return string
-     */
     public function getTranslationUrl(): string
     {
         return $this->translationUrl;
@@ -465,33 +417,21 @@ class Task extends BaseModel
         return $this->webUrl;
     }
 
-    /**
-     * @return int
-     */
     public function getWordsCount(): int
     {
         return $this->wordsCount;
     }
 
-    /**
-     * @return int
-     */
     public function getCommentsCount(): int
     {
         return $this->commentsCount;
     }
 
-    /**
-     * @return string
-     */
     public function getDeadline(): string
     {
         return $this->deadline;
     }
 
-    /**
-     * @param string $deadline
-     */
     public function setDeadline(string $deadline): void
     {
         $this->deadline = $deadline;
@@ -517,9 +457,6 @@ class Task extends BaseModel
         $this->resolvedAt = $resolvedAt;
     }
 
-    /**
-     * @return string
-     */
     public function getTimeRange(): string
     {
         return $this->timeRange;
@@ -530,9 +467,6 @@ class Task extends BaseModel
         return $this->translationsUpdatedTimeRange;
     }
 
-    /**
-     * @return int
-     */
     public function getWorkflowStepId(): int
     {
         return $this->workflowStepId;
@@ -552,17 +486,11 @@ class Task extends BaseModel
         $this->buyUrl = $buyUrl;
     }
 
-    /**
-     * @return string
-     */
     public function getCreatedAt(): string
     {
         return $this->createdAt;
     }
 
-    /**
-     * @return string
-     */
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;
@@ -582,25 +510,16 @@ class Task extends BaseModel
         $this->vendor = $vendor;
     }
 
-    /**
-     * @return int
-     */
     public function getFilesCount(): int
     {
         return $this->filesCount;
     }
 
-    /**
-     * @return array
-     */
     public function getFileIds(): array
     {
         return $this->fileIds;
     }
 
-    /**
-     * @param array $fileIds
-     */
     public function setFileIds(array $fileIds): void
     {
         $this->fileIds = $fileIds;
@@ -623,17 +542,11 @@ class Task extends BaseModel
         $this->isArchived = $isArchived;
     }
 
-    /**
-     * @return array
-     */
     public function getFields(): array
     {
         return $this->fields;
     }
 
-    /**
-     * @param array $fields
-     */
     public function setFields(array $fields): void
     {
         $this->fields = $fields;

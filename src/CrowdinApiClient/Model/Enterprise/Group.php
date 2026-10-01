@@ -89,121 +89,76 @@ class Group extends BaseModel
         $this->savingsReportSettingsTemplateId = (int)$this->getDataProperty('savingsReportSettingsTemplateId');
     }
 
-    /**
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @param string $name
-     */
     public function setName(string $name): void
     {
         $this->name = $name;
     }
 
-    /**
-     * @return string
-     */
     public function getDescription(): string
     {
         return $this->description;
     }
 
-    /**
-     * @param string $description
-     */
     public function setDescription(string $description): void
     {
         $this->description = $description;
     }
 
-    /**
-     * @return int
-     */
     public function getParentId(): int
     {
         return $this->parentId;
     }
 
-    /**
-     * @param int $parentId
-     */
     public function setParentId(int $parentId): void
     {
         $this->parentId = $parentId;
     }
 
-    /**
-     * @return int
-     */
     public function getOrganizationId(): int
     {
         return $this->organizationId;
     }
 
-    /**
-     * @return int
-     */
     public function getUserId(): int
     {
         return $this->userId;
     }
 
-    /**
-     * @return int
-     */
     public function getSubgroupsCount(): int
     {
         return $this->subgroupsCount;
     }
 
-    /**
-     * @return int
-     */
     public function getProjectsCount(): int
     {
         return $this->projectsCount;
     }
 
-    /**
-     * @return string
-     */
     public function getCreatedAt(): string
     {
         return $this->createdAt;
     }
 
-    /**
-     * @return string
-     */
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;
     }
 
-    /**
-     * @return string
-     */
     public function getWebUrl(): string
     {
         return $this->webUrl;
     }
 
-    /**
-     * @return int
-     */
     public function getSavingsReportSettingsTemplateId(): int
     {
         return $this->savingsReportSettingsTemplateId;

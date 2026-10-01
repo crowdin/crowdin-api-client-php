@@ -42,9 +42,6 @@ class HourlyUserReportSettingsTemplate extends AbstractUserReportSettingsTemplat
         $this->config = $config;
     }
 
-    /**
-     * @return array
-     */
     public function toArray(): array
     {
         return [

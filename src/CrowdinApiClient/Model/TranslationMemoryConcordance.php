@@ -82,17 +82,11 @@ class TranslationMemoryConcordance extends BaseModel
         return $this->relevant;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSubstituted(): ?string
     {
         return $this->substituted;
     }
 
-    /**
-     * @return string|null
-     */
     public function getUpdatedAt(): ?string
     {
         return $this->updatedAt;

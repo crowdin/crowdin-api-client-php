@@ -62,9 +62,6 @@ class MachineTranslationEngine extends BaseModel
      */
     protected $supportedLanguagePairs;
 
-    /**
-     * @param array $data
-     */
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -82,73 +79,46 @@ class MachineTranslationEngine extends BaseModel
         $this->supportedLanguagePairs = $this->nullableArray('supportedLanguagePairs');
     }
 
-    /**
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return int
-     */
     public function getGroupId(): int
     {
         return $this->groupId;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @param string $name
-     */
     public function setName(string $name): void
     {
         $this->name = $name;
     }
 
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return $this->type;
     }
 
-    /**
-     * @param string $type
-     */
     public function setType(string $type): void
     {
         $this->type = $type;
     }
 
-    /**
-     * @return array
-     */
     public function getCredentials(): array
     {
         return $this->credentials;
     }
 
-    /**
-     * @param array $credentials
-     */
     public function setCredentials(array $credentials): void
     {
         $this->credentials = $credentials;
     }
 
-    /**
-     * @return array
-     */
     public function getProjectIds(): array
     {
         return $this->projectIds;

@@ -67,81 +67,51 @@ class Branch extends BaseModel
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
     }
 
-    /**
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return int
-     */
     public function getProjectId(): int
     {
         return $this->projectId;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @param string $name
-     */
     public function setName(string $name): void
     {
         $this->name = $name;
     }
 
-    /**
-     * @return string
-     */
     public function getTitle(): string
     {
         return $this->title;
     }
 
-    /**
-     * @param string $title
-     */
     public function setTitle(string $title): void
     {
         $this->title = $title;
     }
 
-    /**
-     * @return string
-     */
     public function getExportPattern(): string
     {
         return $this->exportPattern;
     }
 
-    /**
-     * @param string $exportPattern
-     */
     public function setExportPattern(string $exportPattern): void
     {
         $this->exportPattern = $exportPattern;
     }
 
-    /**
-     * @return string
-     */
     public function getPriority(): string
     {
         return $this->priority;
     }
 
-    /**
-     * @param string $priority
-     */
     public function setPriority(string $priority): void
     {
         $this->priority = $priority;
@@ -152,17 +122,11 @@ class Branch extends BaseModel
         return $this->isProtected;
     }
 
-    /**
-     * @return string
-     */
     public function getCreatedAt(): string
     {
         return $this->createdAt;
     }
 
-    /**
-     * @return string
-     */
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;

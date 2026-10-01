@@ -122,81 +122,51 @@ class TaskForUpdate extends Task
         $this->splitFiles = $splitFiles;
     }
 
-    /**
-     * @return bool
-     */
     public function getSplitContent(): bool
     {
         return $this->splitContent;
     }
 
-    /**
-     * @param bool $splitContent
-     */
     public function setSplitContent(bool $splitContent): void
     {
         $this->splitContent = $splitContent;
     }
 
-    /**
-     * @return array
-     */
     public function getStringIds(): array
     {
         return $this->stringIds;
     }
 
-    /**
-     * @param array $stringIds
-     */
     public function setStringIds(array $stringIds): void
     {
         $this->stringIds = $stringIds;
     }
 
-    /**
-     * @return bool
-     */
     public function getSkipAssignedStrings(): bool
     {
         return $this->skipAssignedStrings;
     }
 
-    /**
-     * @param bool $skipAssignedStrings
-     */
     public function setSkipAssignedStrings(bool $skipAssignedStrings): void
     {
         $this->skipAssignedStrings = $skipAssignedStrings;
     }
 
-    /**
-     * @return string|null
-     */
     public function getDateFrom(): ?string
     {
         return $this->dateFrom;
     }
 
-    /**
-     * @param string $dateFrom
-     */
     public function setDateFrom(string $dateFrom): void
     {
         $this->dateFrom = $dateFrom;
     }
 
-    /**
-     * @return string|null
-     */
     public function getDateTo(): ?string
     {
         return $this->dateTo;
     }
 
-    /**
-     * @param string $dateTo
-     */
     public function setDateTo(string $dateTo): void
     {
         $this->dateTo = $dateTo;

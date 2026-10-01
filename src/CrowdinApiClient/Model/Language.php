@@ -85,6 +85,7 @@ class Language extends BaseModel
     public function __construct(array $data = [])
     {
         parent::__construct($data);
+
         $this->id = (string)$this->getDataProperty('id');
         $this->name = (string)$this->getDataProperty('name');
         $this->dialectOf = $this->nullableString('dialectOf');
@@ -102,161 +103,101 @@ class Language extends BaseModel
         $this->bcp47Code = (string)$this->getDataProperty('bcp47Code');
     }
 
-    /**
-     * @return string
-     */
     public function getId(): string
     {
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @param string $name
-     */
     public function setName(string $name): void
     {
         $this->name = $name;
     }
 
-    /**
-     * @return string|null
-     */
     public function getDialectOf(): ?string
     {
         return $this->dialectOf;
     }
 
-    /**
-     * @param string|null $dialectOf
-     */
     public function setDialectOf(?string $dialectOf): void
     {
         $this->dialectOf = $dialectOf;
     }
 
-    /**
-     * @return string
-     */
     public function getTextDirection(): string
     {
         return $this->textDirection;
     }
 
-    /**
-     * @param string $textDirection
-     */
     public function setTextDirection(string $textDirection): void
     {
         $this->textDirection = $textDirection;
     }
 
-    /**
-     * @return string
-     */
     public function getEditorCode(): string
     {
         return $this->editorCode;
     }
 
-    /**
-     * @return array
-     */
     public function getPluralCategoryNames(): array
     {
         return $this->pluralCategoryNames;
     }
 
-    /**
-     * @param array $pluralCategoryNames
-     */
     public function setPluralCategoryNames(array $pluralCategoryNames): void
     {
         $this->pluralCategoryNames = $pluralCategoryNames;
     }
 
-    /**
-     * @return string
-     */
     public function getPluralRules(): string
     {
         return $this->pluralRules;
     }
 
-    /**
-     * @return array
-     */
     public function getPluralExamples(): array
     {
         return $this->pluralExamples;
     }
 
-    /**
-     * @return string
-     */
     public function getTwoLettersCode(): string
     {
         return $this->twoLettersCode;
     }
 
-    /**
-     * @param string $twoLettersCode
-     */
     public function setTwoLettersCode(string $twoLettersCode): void
     {
         $this->twoLettersCode = $twoLettersCode;
     }
 
-    /**
-     * @return string
-     */
     public function getThreeLettersCode(): string
     {
         return $this->threeLettersCode;
     }
 
-    /**
-     * @param string $threeLettersCode
-     */
     public function setThreeLettersCode(string $threeLettersCode): void
     {
         $this->threeLettersCode = $threeLettersCode;
     }
 
-    /**
-     * @return string
-     */
     public function getLocale(): string
     {
         return $this->locale;
     }
 
-    /**
-     * @return string
-     */
     public function getAndroidCode(): string
     {
         return $this->androidCode;
     }
 
-    /**
-     * @return string
-     */
     public function getOsxCode(): string
     {
         return $this->osxCode;
     }
 
-    /**
-     * @return string
-     */
     public function getOsxLocale(): string
     {
         return $this->osxLocale;

@@ -19,17 +19,11 @@ class DownloadFileTranslation extends DownloadFile
         $this->etag = $this->nullableString('etag');
     }
 
-    /**
-     * @return string|null
-     */
     public function getEtag(): ?string
     {
         return $this->etag;
     }
 
-    /**
-     * @param string|null $etag
-     */
     public function setEtag(?string $etag): void
     {
         $this->etag = $etag;

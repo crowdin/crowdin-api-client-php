@@ -43,65 +43,41 @@ class StringCorrection extends BaseModel
         $this->createdAt = (string)$this->getDataProperty('createdAt');
     }
 
-    /**
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function getText(): string
     {
         return $this->text;
     }
 
-    /**
-     * @param string $text
-     */
     public function setText(string $text): void
     {
         $this->text = $text;
     }
 
-    /**
-     * @return string
-     */
     public function getPluralCategoryName(): string
     {
         return $this->pluralCategoryName;
     }
 
-    /**
-     * @param string $pluralCategoryName
-     */
     public function setPluralCategoryName(string $pluralCategoryName): void
     {
         $this->pluralCategoryName = $pluralCategoryName;
     }
 
-    /**
-     * @return array
-     */
     public function getUser(): array
     {
         return $this->user;
     }
 
-    /**
-     * @param array $user
-     */
     public function setUser(array $user): void
     {
         $this->user = $user;
     }
 
-    /**
-     * @return string
-     */
     public function getCreatedAt(): string
     {
         return $this->createdAt;

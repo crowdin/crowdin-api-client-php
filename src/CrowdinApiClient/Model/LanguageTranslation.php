@@ -74,9 +74,6 @@ class LanguageTranslation extends BaseModel
      */
     protected $qaIssuesStatus;
 
-    /**
-     * @param array $data
-     */
     public function __construct(array $data = [])
     {
         parent::__construct($data);

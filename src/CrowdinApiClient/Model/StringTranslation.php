@@ -109,105 +109,66 @@ class StringTranslation extends BaseModel
         $this->workflowStepId = $this->nullableInt('workflowStepId');
     }
 
-    /**
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @param int $id
-     */
     public function setId(int $id): void
     {
         $this->id = $id;
     }
 
-    /**
-     * @return int|null
-     */
     public function getProjectId(): ?int
     {
         return $this->projectId;
     }
 
-    /**
-     * @return int|null
-     */
     public function getStringId(): ?int
     {
         return $this->stringId;
     }
 
-    /**
-     * @return string|null
-     */
     public function getLanguageId(): ?string
     {
         return $this->languageId;
     }
 
-    /**
-     * @return string
-     */
     public function getText(): string
     {
         return $this->text;
     }
 
-    /**
-     * @param string $text
-     */
     public function setText(string $text): void
     {
         $this->text = $text;
     }
 
-    /**
-     * @return string
-     */
     public function getPluralCategoryName(): string
     {
         return $this->pluralCategoryName;
     }
 
-    /**
-     * @param string $pluralCategoryName
-     */
     public function setPluralCategoryName(string $pluralCategoryName): void
     {
         $this->pluralCategoryName = $pluralCategoryName;
     }
 
-    /**
-     * @return array
-     */
     public function getUser(): array
     {
         return $this->user;
     }
 
-    /**
-     * @param array $user
-     */
     public function setUser(array $user): void
     {
         $this->user = $user;
     }
 
-    /**
-     * @return int
-     */
     public function getRating(): int
     {
         return $this->rating;
     }
 
-    /**
-     * @param int $rating
-     */
     public function setRating(int $rating): void
     {
         $this->rating = $rating;

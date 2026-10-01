@@ -273,17 +273,11 @@ class File extends BaseModel
         return $this->parserVersion;
     }
 
-    /**
-     * @return array
-     */
     public function getFields(): array
     {
         return $this->fields;
     }
 
-    /**
-     * @param array $fields
-     */
     public function setFields(array $fields): void
     {
         $this->fields = $fields;
