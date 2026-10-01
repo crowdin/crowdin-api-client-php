@@ -54,7 +54,8 @@ class GuzzleHttpClient implements CrowdinHttpClientInterface
      */
     public function request(string $method, string $uri, array $options): StreamInterface
     {
-        $request = new Request($method, $uri, $options['headers'] ?? [], $options['body'] ?? null);
+        // Guzzle 8 sends the method as given; API classes pass it lowercase
+        $request = new Request(strtoupper($method), $uri, $options['headers'] ?? [], $options['body'] ?? null);
 
         $this->response = $this->client->send(
             $request,
