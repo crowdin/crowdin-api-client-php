@@ -50,7 +50,7 @@ class TaskComment extends BaseModel
         $this->userId = (int)$this->getDataProperty('userId');
         $this->taskId = (int)$this->getDataProperty('taskId');
         $this->text = (string)$this->getDataProperty('text');
-        $this->timeSpent = $this->getDataProperty('timeSpent') ? (int)$this->getDataProperty('timeSpent') : null;
+        $this->timeSpent = $this->nullableInt('timeSpent');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
     }

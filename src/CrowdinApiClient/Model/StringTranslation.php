@@ -92,15 +92,9 @@ class StringTranslation extends BaseModel
         parent::__construct($data);
 
         $this->id = (int)$this->getDataProperty('id');
-        $this->projectId = $this->getDataProperty('projectId') !== null
-            ? (int)$this->getDataProperty('projectId')
-            : null;
-        $this->stringId = $this->getDataProperty('stringId') !== null
-            ? (int)$this->getDataProperty('stringId')
-            : null;
-        $this->languageId = $this->getDataProperty('languageId') !== null
-            ? (string)$this->getDataProperty('languageId')
-            : null;
+        $this->projectId = $this->nullableInt('projectId');
+        $this->stringId = $this->nullableInt('stringId');
+        $this->languageId = $this->nullableString('languageId');
         $this->text = (string)$this->getDataProperty('text');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->pluralCategoryName = (string)$this->getDataProperty('pluralCategoryName');

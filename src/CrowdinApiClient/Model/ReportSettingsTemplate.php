@@ -80,7 +80,7 @@ class ReportSettingsTemplate extends BaseModel
         $this->isPublic = (bool)$this->getDataProperty('isPublic');
         $this->isGlobal = (bool)$this->getDataProperty('isGlobal');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
-        $this->updatedAt = $this->getDataProperty('updatedAt') ? (string)$this->getDataProperty('updatedAt') : null;
+        $this->updatedAt = $this->nullableString('updatedAt');
     }
 
     public function getId(): int

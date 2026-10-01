@@ -62,9 +62,9 @@ class DeleteJob extends BaseModel
         $this->attributes = (array)$this->getDataProperty('attributes');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
-        $this->startedAt = $this->getDataProperty('startedAt');
-        $this->finishedAt = $this->getDataProperty('finishedAt');
-        $this->error = $this->getDataProperty('error');
+        $this->startedAt = $this->nullableString('startedAt');
+        $this->finishedAt = $this->nullableString('finishedAt');
+        $this->error = $this->nullableArray('error');
     }
 
     /**

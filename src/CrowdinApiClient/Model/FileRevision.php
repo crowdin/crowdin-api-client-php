@@ -44,9 +44,7 @@ class FileRevision extends BaseModel
         $this->id = (int)$this->getDataProperty('id');
         $this->projectId = (int)$this->getDataProperty('projectId');
         $this->fileId = (int)$this->getDataProperty('fileId');
-        $this->restoreToRevision = $this->getDataProperty('restoreToRevision')
-            ? (int)$this->getDataProperty('restoreToRevision')
-            : null;
+        $this->restoreToRevision = $this->nullableInt('restoreToRevision');
         $this->info = (array)$this->getDataProperty('info');
         $this->date = (string)$this->getDataProperty('date');
     }

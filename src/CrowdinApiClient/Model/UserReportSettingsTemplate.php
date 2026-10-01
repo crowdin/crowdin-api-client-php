@@ -28,7 +28,7 @@ class UserReportSettingsTemplate extends AbstractUserReportSettingsTemplate
         $this->unit = (string)$this->getDataProperty('unit');
         $this->config = new ReportSettingsTemplateConfig($this->getDataProperty('config') ?? []);
         $this->createdAt = (string)$this->getDataProperty('createdAt');
-        $this->updatedAt = $this->getDataProperty('updatedAt') ? (string)$this->getDataProperty('updatedAt') : null;
+        $this->updatedAt = $this->nullableString('updatedAt');
     }
 
     public function getConfig(): ReportSettingsTemplateConfig

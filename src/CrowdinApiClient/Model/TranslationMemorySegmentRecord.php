@@ -38,12 +38,12 @@ class TranslationMemorySegmentRecord extends BaseModel
     protected $updatedBy;
 
     /**
-     * @var ?string
+     * @var string|null
      */
     protected $createdAt;
 
     /**
-     * @var ?string
+     * @var string|null
      */
     protected $updatedAt;
 
@@ -56,8 +56,8 @@ class TranslationMemorySegmentRecord extends BaseModel
         $this->usageCount = (int)$this->getDataProperty('usageCount');
         $this->createdBy = (int)$this->getDataProperty('createdBy');
         $this->updatedBy = (int)$this->getDataProperty('updatedBy');
-        $this->createdAt = (string)$this->getDataProperty('createdAt');
-        $this->updatedAt = (string)$this->getDataProperty('updatedAt');
+        $this->createdAt = $this->nullableString('createdAt');
+        $this->updatedAt = $this->nullableString('updatedAt');
     }
 
     /**

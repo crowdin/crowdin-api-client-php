@@ -120,7 +120,7 @@ class File extends BaseModel
         $this->priority = (string)$this->getDataProperty('priority');
         $this->importOptions = (array)$this->getDataProperty('importOptions');
         $this->exportOptions = (array)$this->getDataProperty('exportOptions');
-        $this->excludedTargetLanguages = $this->getDataProperty('excludedTargetLanguages') ? (array)$this->getDataProperty('excludedTargetLanguages') : null;
+        $this->excludedTargetLanguages = $this->nullableArray('excludedTargetLanguages');
         $this->parserVersion = (int)$this->getDataProperty('parserVersion');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');

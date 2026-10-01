@@ -229,7 +229,7 @@ class Task extends BaseModel
     protected $fields = [];
 
     /**
-     * @var string
+     * @var string|null
      */
     protected $hash;
 
@@ -258,50 +258,40 @@ class Task extends BaseModel
         $this->type = (int)$this->getDataProperty('type');
         $this->status = (string)$this->getDataProperty('status');
         $this->title = (string)$this->getDataProperty('title');
-        $this->batchId = $this->getDataProperty('batchId') !== null ? (int)$this->getDataProperty('batchId') : null;
+        $this->batchId = $this->nullableInt('batchId');
         $this->assignees = (array)$this->getDataProperty('assignees');
         $this->assignedTeams = (array)$this->getDataProperty('assignedTeams');
         $this->progress = (array)$this->getDataProperty('progress');
-        $this->translateProgress = $this->getDataProperty('translateProgress')
-            ? (array)$this->getDataProperty('translateProgress')
-            : null;
+        $this->translateProgress = $this->nullableArray('translateProgress');
         $this->sourceLanguageId = (string)$this->getDataProperty('sourceLanguageId');
         $this->targetLanguageId = (string)$this->getDataProperty('targetLanguageId');
         $this->description = (string)$this->getDataProperty('description');
         $this->translationUrl = (string)$this->getDataProperty('translationUrl');
-        $this->webUrl = $this->getDataProperty('webUrl') ? (string)$this->getDataProperty('webUrl') : null;
+        $this->webUrl = $this->nullableString('webUrl');
         $this->wordsCount = (int)$this->getDataProperty('wordsCount');
         $this->commentsCount = (int)$this->getDataProperty('commentsCount');
         $this->deadline = (string)$this->getDataProperty('deadline');
-        $this->startedAt = $this->getDataProperty('startedAt') ? (string)$this->getDataProperty('startedAt') : null;
-        $this->resolvedAt = $this->getDataProperty('resolvedAt') ? (string)$this->getDataProperty('resolvedAt') : null;
+        $this->startedAt = $this->nullableString('startedAt');
+        $this->resolvedAt = $this->nullableString('resolvedAt');
         $this->timeRange = (string)$this->getDataProperty('timeRange');
         $this->translationsUpdatedTimeRange = (string)$this->getDataProperty('translationsUpdatedTimeRange');
         $this->workflowStepId = (int)$this->getDataProperty('workflowStepId');
-        $this->buyUrl = $this->getDataProperty('buyUrl') ? (string)$this->getDataProperty('buyUrl') : null;
+        $this->buyUrl = $this->nullableString('buyUrl');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
         $this->sourceLanguage = (array)$this->getDataProperty('sourceLanguage');
         $this->targetLanguages = (array)$this->getDataProperty('targetLanguages');
-        $this->labelIds = $this->getDataProperty('labelIds') !== null
-            ? (array)$this->getDataProperty('labelIds')
-            : null;
-        $this->labelMatchRule = $this->getDataProperty('labelMatchRule')
-            ? (string)$this->getDataProperty('labelMatchRule')
-            : null;
+        $this->labelIds = $this->nullableArray('labelIds');
+        $this->labelMatchRule = $this->nullableString('labelMatchRule');
         $this->excludeLabelIds = (array)$this->getDataProperty('excludeLabelIds');
-        $this->excludeLabelMatchRule = $this->getDataProperty('excludeLabelMatchRule')
-            ? (string)$this->getDataProperty('excludeLabelMatchRule')
-            : null;
+        $this->excludeLabelMatchRule = $this->nullableString('excludeLabelMatchRule');
         $this->precedingTaskId = (int)$this->getDataProperty('precedingTaskId');
         $this->estimatedCost = (array)$this->getDataProperty('estimatedCost');
         $this->actualCost = (array)$this->getDataProperty('actualCost');
         $this->generateCostEstimate = (bool)$this->getDataProperty('generateCostEstimate');
         $this->generateTranslationCost = (bool)$this->getDataProperty('generateTranslationCost');
-        $this->reportSettingsTemplateId = $this->getDataProperty('reportSettingsTemplateId')
-            ? (int)$this->getDataProperty('reportSettingsTemplateId')
-            : null;
-        $this->vendor = $this->getDataProperty('vendor') ? (string)$this->getDataProperty('vendor') : null;
+        $this->reportSettingsTemplateId = $this->nullableInt('reportSettingsTemplateId');
+        $this->vendor = $this->nullableString('vendor');
         $this->filesCount = (int)$this->getDataProperty('filesCount');
         $this->fileIds = (array)$this->getDataProperty('fileIds');
         $this->branchIds = $this->nullableArray('branchIds');
@@ -315,7 +305,7 @@ class Task extends BaseModel
         $this->fields = (array)$this->getDataProperty('fields');
 
         // Deprecated
-        $this->hash = (string)$this->getDataProperty('hash');
+        $this->hash = $this->nullableString('hash');
     }
 
     /**

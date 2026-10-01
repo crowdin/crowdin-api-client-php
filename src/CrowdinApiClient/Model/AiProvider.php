@@ -43,7 +43,7 @@ class AiProvider extends BaseModel
         $this->id = (int)$this->getDataProperty('id');
         $this->name = (string)$this->getDataProperty('name');
         $this->type = (string)$this->getDataProperty('type');
-        $this->credentials = $this->getDataProperty('credentials');
+        $this->credentials = $this->nullableArray('credentials');
         $this->config = (array)$this->getDataProperty('config');
         $this->isEnabled = (bool)$this->getDataProperty('isEnabled');
         $this->useSystemCredentials = (bool)$this->getDataProperty('useSystemCredentials');

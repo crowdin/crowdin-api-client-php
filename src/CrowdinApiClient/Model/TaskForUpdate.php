@@ -63,18 +63,10 @@ class TaskForUpdate extends Task
             : [];
         $this->skipAssignedStrings = null !== $this->getDataProperty('skipAssignedStrings')
             && $this->getDataProperty('skipAssignedStrings');
-        $this->dateFrom = null !== $this->getDataProperty('dateFrom')
-            ? (string)$this->getDataProperty('dateFrom')
-            : null;
-        $this->dateTo = null !== $this->getDataProperty('dateTo')
-            ? (string)$this->getDataProperty('dateTo')
-            : null;
-        $this->translationsUpdatedDateFrom = null !== $this->getDataProperty('translationsUpdatedDateFrom')
-            ? (string)$this->getDataProperty('translationsUpdatedDateFrom')
-            : null;
-        $this->translationsUpdatedDateTo = null !== $this->getDataProperty('translationsUpdatedDateTo')
-            ? (string)$this->getDataProperty('translationsUpdatedDateTo')
-            : null;
+        $this->dateFrom = $this->nullableString('dateFrom');
+        $this->dateTo = $this->nullableString('dateTo');
+        $this->translationsUpdatedDateFrom = $this->nullableString('translationsUpdatedDateFrom');
+        $this->translationsUpdatedDateTo = $this->nullableString('translationsUpdatedDateTo');
     }
 
     private function initMissingProperties(): void

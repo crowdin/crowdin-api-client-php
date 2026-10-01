@@ -48,12 +48,12 @@ class StringComment extends BaseModel
     protected $type;
 
     /**
-     * @var ?string
+     * @var string|null
      */
     protected $issueType;
 
     /**
-     * @var ?string
+     * @var string|null
      */
     protected $issueStatus;
 
@@ -115,6 +115,7 @@ class StringComment extends BaseModel
     public function __construct(array $data = [])
     {
         parent::__construct($data);
+
         $this->id = (int)$this->getDataProperty('id');
         $this->text = (string)$this->getDataProperty('text');
         $this->userId = (int)$this->getDataProperty('userId');

@@ -83,15 +83,10 @@ class LanguageTranslation extends BaseModel
 
         $this->stringId = (int)$this->getDataProperty('stringId');
         $this->contentType = (string)$this->getDataProperty('contentType');
-
-        $this->translationId = $this->getDataProperty('translationId')
-            ? (int)$this->getDataProperty('translationId') : null;
-        $this->text = $this->getDataProperty('text')
-            ? (string)$this->getDataProperty('text') : null;
-        $this->plurals = $this->getDataProperty('plurals')
-            ? (array)$this->getDataProperty('plurals') : null;
-        $this->user = $this->getDataProperty('user')
-            ? (array)$this->getDataProperty('user') : null;
+        $this->translationId = $this->nullableInt('translationId');
+        $this->text = $this->nullableString('text');
+        $this->plurals = $this->nullableArray('plurals');
+        $this->user = $this->nullableArray('user');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->isPreTranslated = (bool)$this->getDataProperty('isPreTranslated');
         $this->matchRate = $this->nullableInt('matchRate');

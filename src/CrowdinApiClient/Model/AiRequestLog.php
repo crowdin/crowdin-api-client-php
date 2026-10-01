@@ -86,26 +86,26 @@ class AiRequestLog extends BaseModel
         $this->requestId = (string)$this->getDataProperty('requestId');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->status = (string)$this->getDataProperty('status');
-        $this->httpStatus = $this->getDataProperty('httpStatus');
+        $this->httpStatus = $this->nullableInt('httpStatus');
         $this->model = (string)$this->getDataProperty('model');
         $this->sourceAction = (string)$this->getDataProperty('sourceAction');
-        $this->promptAction = $this->getDataProperty('promptAction');
+        $this->promptAction = $this->nullableString('promptAction');
         $this->systemCredentials = (bool)$this->getDataProperty('systemCredentials');
         $this->isAutoTriggered = (bool)$this->getDataProperty('isAutoTriggered');
-        $this->durationMs = $this->getDataProperty('durationMs');
-        $this->inputTokens = $this->getDataProperty('inputTokens');
-        $this->outputTokens = $this->getDataProperty('outputTokens');
-        $this->totalCost = $this->getDataProperty('totalCost');
-        $this->userId = $this->getDataProperty('userId');
-        $this->projectId = $this->getDataProperty('projectId');
-        $this->promptId = $this->getDataProperty('promptId');
+        $this->durationMs = $this->nullableInt('durationMs');
+        $this->inputTokens = $this->nullableInt('inputTokens');
+        $this->outputTokens = $this->nullableInt('outputTokens');
+        $this->totalCost = $this->nullableFloat('totalCost');
+        $this->userId = $this->nullableInt('userId');
+        $this->projectId = $this->nullableInt('projectId');
+        $this->promptId = $this->nullableInt('promptId');
         $this->aiProviderId = (int)$this->getDataProperty('aiProviderId');
-        $this->tokenName = $this->getDataProperty('tokenName');
-        $this->oauthClientId = $this->getDataProperty('oauthClientId');
-        $this->oauthClientName = $this->getDataProperty('oauthClientName');
-        $this->ip = $this->getDataProperty('ip');
-        $this->userAgent = $this->getDataProperty('userAgent');
-        $this->error = $this->getDataProperty('error');
+        $this->tokenName = $this->nullableString('tokenName');
+        $this->oauthClientId = $this->nullableString('oauthClientId');
+        $this->oauthClientName = $this->nullableString('oauthClientName');
+        $this->ip = $this->nullableString('ip');
+        $this->userAgent = $this->nullableString('userAgent');
+        $this->error = $this->nullableString('error');
     }
 
     public function getId(): int

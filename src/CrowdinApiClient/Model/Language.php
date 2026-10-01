@@ -87,7 +87,7 @@ class Language extends BaseModel
         parent::__construct($data);
         $this->id = (string)$this->getDataProperty('id');
         $this->name = (string)$this->getDataProperty('name');
-        $this->dialectOf = (string)$this->getDataProperty('dialectOf');
+        $this->dialectOf = $this->nullableString('dialectOf');
         $this->textDirection = (string)$this->getDataProperty('textDirection');
         $this->editorCode = (string)$this->getDataProperty('editorCode');
         $this->pluralCategoryNames = (array)$this->getDataProperty('pluralCategoryNames');

@@ -72,13 +72,13 @@ class ApplicationInstallation extends BaseModel
 
         $this->identifier = (string)$this->getDataProperty('identifier');
         $this->name = (string)$this->getDataProperty('name');
-        $this->installedBy = $this->getDataProperty('installedBy');
-        $this->description = $this->getDataProperty('description');
+        $this->installedBy = $this->nullableArray('installedBy');
+        $this->description = $this->nullableString('description');
         $this->logo = (string)$this->getDataProperty('logo');
-        $this->agent = $this->getDataProperty('agent');
+        $this->agent = $this->nullableArray('agent');
         $this->baseUrl = (string)$this->getDataProperty('baseUrl');
         $this->manifestUrl = (string)$this->getDataProperty('manifestUrl');
-        $this->createdAt = $this->getDataProperty('createdAt');
+        $this->createdAt = $this->nullableString('createdAt');
         $this->modules = (array)$this->getDataProperty('modules');
         $this->scopes = (array)$this->getDataProperty('scopes');
         $this->permissions = (array)$this->getDataProperty('permissions');
@@ -102,9 +102,6 @@ class ApplicationInstallation extends BaseModel
         return $this->name;
     }
 
-    /**
-     * @return array|null
-     */
     public function getInstalledBy(): ?array
     {
         return $this->installedBy;
@@ -120,9 +117,6 @@ class ApplicationInstallation extends BaseModel
         return $this->logo;
     }
 
-    /**
-     * @return array|null
-     */
     public function getAgent(): ?array
     {
         return $this->agent;

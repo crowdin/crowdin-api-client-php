@@ -35,9 +35,9 @@ class ApplicationConsent extends BaseModel
         parent::__construct($data);
 
         $this->id = (int)$this->getDataProperty('id');
-        $this->installedBy = $this->getDataProperty('installedBy');
+        $this->installedBy = $this->nullableArray('installedBy');
         $this->identifier = (string)$this->getDataProperty('identifier');
-        $this->name = $this->getDataProperty('name');
+        $this->name = $this->nullableString('name');
         $this->status = (string)$this->getDataProperty('status');
         $this->scopes = (array)$this->getDataProperty('scopes');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
@@ -49,9 +49,6 @@ class ApplicationConsent extends BaseModel
         return $this->id;
     }
 
-    /**
-     * @return array|null
-     */
     public function getInstalledBy(): ?array
     {
         return $this->installedBy;

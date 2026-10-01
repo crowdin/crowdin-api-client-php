@@ -48,10 +48,10 @@ class StyleGuide extends BaseModel
 
         $this->id = (int)$this->getDataProperty('id');
         $this->name = (string)$this->getDataProperty('name');
-        $this->aiInstructions = $this->getDataProperty('aiInstructions');
+        $this->aiInstructions = $this->nullableString('aiInstructions');
         $this->userId = (int)$this->getDataProperty('userId');
-        $this->languageIds = $this->getDataProperty('languageIds');
-        $this->projectIds = $this->getDataProperty('projectIds');
+        $this->languageIds = $this->nullableArray('languageIds');
+        $this->projectIds = $this->nullableArray('projectIds');
         $this->isShared = (bool)$this->getDataProperty('isShared');
         $this->webUrl = (string)$this->getDataProperty('webUrl');
         $this->downloadLink = (string)$this->getDataProperty('downloadLink');

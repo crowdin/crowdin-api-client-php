@@ -26,7 +26,7 @@ class HourlyUserReportSettingsTemplate extends AbstractUserReportSettingsTemplat
         $this->currency = (string)$this->getDataProperty('currency');
         $this->config = new HourlyReportSettingsTemplateConfig($this->getDataProperty('config') ?? []);
         $this->createdAt = (string)$this->getDataProperty('createdAt');
-        $this->updatedAt = $this->getDataProperty('updatedAt') ? (string)$this->getDataProperty('updatedAt') : null;
+        $this->updatedAt = $this->nullableString('updatedAt');
     }
 
     public function getConfig(): HourlyReportSettingsTemplateConfig

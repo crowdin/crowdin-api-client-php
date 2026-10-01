@@ -183,7 +183,7 @@ class Project extends BaseModel
     protected $inContextProcessHiddenStrings;
 
     /**
-     * @var ?string
+     * @var string|null
      */
     protected $inContextPseudoLanguageId;
 
@@ -446,7 +446,7 @@ class Project extends BaseModel
         $this->useGlobalTm = (bool)$this->getDataProperty('useGlobalTm');
         $this->inContext = (bool)$this->getDataProperty('inContext');
         $this->inContextProcessHiddenStrings = (bool)$this->getDataProperty('inContextProcessHiddenStrings');
-        $this->inContextPseudoLanguageId = (string)$this->getDataProperty('inContextPseudoLanguageId');
+        $this->inContextPseudoLanguageId = $this->nullableString('inContextPseudoLanguageId');
         $this->inContextPseudoLanguage = (array)$this->getDataProperty('inContextPseudoLanguage');
         $this->qaCheckIsActive = (bool)$this->getDataProperty('qaCheckIsActive');
         $this->qaCheckCategories = (array)$this->getDataProperty('qaCheckCategories');

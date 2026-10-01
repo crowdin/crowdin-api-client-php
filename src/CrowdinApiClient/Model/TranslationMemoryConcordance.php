@@ -53,8 +53,8 @@ class TranslationMemoryConcordance extends BaseModel
         $this->source = (string)$this->getDataProperty('source');
         $this->target = (string)$this->getDataProperty('target');
         $this->relevant = (int)$this->getDataProperty('relevant');
-        $this->substituted = $this->getDataProperty('substituted');
-        $this->updatedAt = $this->getDataProperty('updatedAt');
+        $this->substituted = $this->nullableString('substituted');
+        $this->updatedAt = $this->nullableString('updatedAt');
     }
 
     public function getTm(): TranslationMemory
