@@ -12,27 +12,28 @@ class VendorApiTest extends AbstractTestApi
         $this->mockRequest([
            'path' => '/vendors',
            'method' => 'get',
-           'response' => '{
-              "data": [
-                {
-                  "data": {
-                    "id": 52760,
-                    "name": "John Smith Translation Agency",
-                    "description": "John Smith Translation Agency provides services for software and game localization as well as translation into 70+ languages.",
-                    "status": "pending"
-                  }
-                }
-              ],
-              "pagination": [
-                {
-                  "offset": 0,
-                  "limit": 0
-                }
-              ]
-            }'
+           'response' => json_encode([
+               'data' => [
+                   [
+                       'data' => [
+                           'id' => 52760,
+                           'name' => 'John Smith Translation Agency',
+                           'description' => 'John Smith Translation Agency provides services for software and game localization as well as translation into 70+ languages.',
+                           'status' => 'pending',
+                       ],
+                   ],
+               ],
+               'pagination' => [
+                   [
+                       'offset' => 0,
+                       'limit' => 0,
+                   ],
+               ],
+           ])
         ]);
 
         $vendors = $this->crowdin->vendor->list();
+
         $this->assertInstanceOf(ModelCollection::class, $vendors);
         $this->assertCount(1, $vendors);
         $this->assertInstanceOf(Vendor::class, $vendors[0]);

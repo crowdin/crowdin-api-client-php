@@ -61,7 +61,7 @@ class ProjectApiTest extends AbstractTestApi
             'type' => 1,
             'sourceLanguageId' => 'uk',
             'targetLanguageIds' => [
-                0 => 'es',
+                'es',
             ],
             'visibility' => 'private',
             'languageAccessPolicy' => 'moderate',

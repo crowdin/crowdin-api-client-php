@@ -13,17 +13,15 @@ class TranslationMemoryTest extends TestCase
         'id' => 4,
         'groupId' => 2,
         'name' => 'Knowledge Base\'s TM',
-        'languageIds' =>
-        [
-          0 => 'el',
+        'languageIds' => [
+            'el',
         ],
         'segmentsCount' => 21,
         'defaultProjectIds' => [0],
-        'projectIds' =>
-        [
-          0 => 2,
+        'projectIds' => [
+            2,
         ],
-        'createdAt' => '2019-09-23T09:04:29+00:00'
+        'createdAt' => '2019-09-23T09:04:29+00:00',
     ];
 
     public function testLoadData()

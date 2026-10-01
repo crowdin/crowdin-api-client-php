@@ -345,10 +345,9 @@ class TranslationApiTest extends AbstractTestApi
 
         $params = [
             'branchId' => 2,
-            'targetLanguageIds' =>
-                [
-                    0 => 'uk',
-                ],
+            'targetLanguageIds' => [
+                'uk',
+            ],
             'skipUntranslatedStrings' => false,
             'skipUntranslatedFiles' => false,
             'exportApprovedOnly' => false,

@@ -12,28 +12,28 @@ class StringCorrectionApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/projects/2/corrections',
             'method' => 'get',
-            'response' => '{
-              "data": [
-                {
-                  "data": {
-                    "id": 190695,
-                    "text": "This string has been corrected",
-                    "pluralCategoryName": "few",
-                    "user": {
-                      "id": 19,
-                      "username": "john_doe",
-                      "fullName": "John Smith",
-                      "avatarUrl": ""
-                    },
-                    "createdAt": "2019-09-23T11:26:54+00:00"
-                  }
-                }
-              ],
-              "pagination": {
-                "offset": 0,
-                "limit": 25
-              }
-            }',
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 190695,
+                            'text' => 'This string has been corrected',
+                            'pluralCategoryName' => 'few',
+                            'user' => [
+                                'id' => 19,
+                                'username' => 'john_doe',
+                                'fullName' => 'John Smith',
+                                'avatarUrl' => '',
+                            ],
+                            'createdAt' => '2019-09-23T11:26:54+00:00',
+                        ],
+                    ],
+                ],
+                'pagination' => [
+                    'offset' => 0,
+                    'limit' => 25,
+                ],
+            ]),
         ]);
 
         $corrections = $this->crowdin->stringCorrection->list(2);
@@ -48,20 +48,20 @@ class StringCorrectionApiTest extends AbstractTestApi
     {
         $this->mockRequestGet(
             '/projects/2/corrections/190695',
-            '{
-              "data": {
-                "id": 190695,
-                "text": "This string has been corrected",
-                "pluralCategoryName": "few",
-                "user": {
-                  "id": 19,
-                  "username": "john_doe",
-                  "fullName": "John Smith",
-                  "avatarUrl": ""
-                },
-                "createdAt": "2019-09-23T11:26:54+00:00"
-              }
-            }'
+            json_encode([
+                'data' => [
+                    'id' => 190695,
+                    'text' => 'This string has been corrected',
+                    'pluralCategoryName' => 'few',
+                    'user' => [
+                        'id' => 19,
+                        'username' => 'john_doe',
+                        'fullName' => 'John Smith',
+                        'avatarUrl' => '',
+                    ],
+                    'createdAt' => '2019-09-23T11:26:54+00:00',
+                ],
+            ])
         );
 
         $correction = $this->crowdin->stringCorrection->get(2, 190695);
@@ -83,20 +83,20 @@ class StringCorrectionApiTest extends AbstractTestApi
             'path' => '/projects/2/corrections',
             'method' => 'post',
             'body' => json_encode($params),
-            'response' => '{
-              "data": {
-                "id": 190696,
-                "text": "Corrected string text",
-                "pluralCategoryName": "few",
-                "user": {
-                  "id": 19,
-                  "username": "john_doe",
-                  "fullName": "John Smith",
-                  "avatarUrl": ""
-                },
-                "createdAt": "2019-09-23T11:26:54+00:00"
-              }
-            }',
+            'response' => json_encode([
+                'data' => [
+                    'id' => 190696,
+                    'text' => 'Corrected string text',
+                    'pluralCategoryName' => 'few',
+                    'user' => [
+                        'id' => 19,
+                        'username' => 'john_doe',
+                        'fullName' => 'John Smith',
+                        'avatarUrl' => '',
+                    ],
+                    'createdAt' => '2019-09-23T11:26:54+00:00',
+                ],
+            ]),
         ]);
 
         $correction = $this->crowdin->stringCorrection->create(2, $params);
@@ -111,20 +111,20 @@ class StringCorrectionApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/projects/2/corrections/190695',
             'method' => 'put',
-            'response' => '{
-              "data": {
-                "id": 190695,
-                "text": "This string has been corrected",
-                "pluralCategoryName": "few",
-                "user": {
-                  "id": 19,
-                  "username": "john_doe",
-                  "fullName": "John Smith",
-                  "avatarUrl": ""
-                },
-                "createdAt": "2019-09-23T11:26:54+00:00"
-              }
-            }',
+            'response' => json_encode([
+                'data' => [
+                    'id' => 190695,
+                    'text' => 'This string has been corrected',
+                    'pluralCategoryName' => 'few',
+                    'user' => [
+                        'id' => 19,
+                        'username' => 'john_doe',
+                        'fullName' => 'John Smith',
+                        'avatarUrl' => '',
+                    ],
+                    'createdAt' => '2019-09-23T11:26:54+00:00',
+                ],
+            ]),
         ]);
 
         $correction = $this->crowdin->stringCorrection->restore(2, 190695);

@@ -80,7 +80,7 @@ class AdvisorApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/projects/2/advisors/checks',
             'method' => 'post',
-            'body' => '[]',
+            'body' => json_encode([]),
             'response' => $this->checkResponse(),
         ]);
 

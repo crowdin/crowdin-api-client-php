@@ -11,13 +11,11 @@ class MachineTranslationEngineApiTest extends AbstractTestApi
         $params = [
             'name' => 'string',
             'type' => 'google',
-            'credentials' =>
+            'credentials' => [
                 [
-                    0 =>
-                        [
-                            'apiKey' => 'string',
-                        ],
+                    'apiKey' => 'string',
                 ],
+            ],
             'groupId' => 0,
         ];
 
@@ -25,69 +23,78 @@ class MachineTranslationEngineApiTest extends AbstractTestApi
             'path' => '/mts',
             'method' => 'post',
             'body' => json_encode($params),
-            'response' => '{
-              "data": {
-                "id": 2,
-                "groupId": 2,
-                "name": "Crowdin Translate (beta)",
-                "type": "crowdin",
-                "credentials": {
-                  "crowdin_nmt": 1,
-                  "crowdin_nmt_multi_translations": 1
-                },
-                "projectIds": [
-                  1
-                ]
-              }
-            }'
+            'response' => json_encode([
+                'data' => [
+                    'id' => 2,
+                    'groupId' => 2,
+                    'name' => 'Crowdin Translate (beta)',
+                    'type' => 'crowdin',
+                    'credentials' => [
+                        'crowdin_nmt' => 1,
+                        'crowdin_nmt_multi_translations' => 1,
+                    ],
+                    'projectIds' => [
+                        1,
+                    ],
+                ],
+            ]),
         ]);
 
         $machineTranslationEngine = $this->crowdin->machineTranslationEngine->create($params);
+
         $this->assertInstanceOf(MachineTranslationEngine::class, $machineTranslationEngine);
         $this->assertEquals(2, $machineTranslationEngine->getId());
     }
 
     public function testGetAndUpdate()
     {
-        $this->mockRequestGet('/mts/2', '{
-              "data": {
-                "id": 2,
-                "groupId": 2,
-                "name": "Crowdin Translate (beta)",
-                "type": "crowdin",
-                "credentials": {
-                  "crowdin_nmt": 1,
-                  "crowdin_nmt_multi_translations": 1
-                },
-                "projectIds": [
-                  1
-                ]
-              }
-            }');
+        $this->mockRequestGet(
+            '/mts/2',
+            json_encode([
+                'data' => [
+                    'id' => 2,
+                    'groupId' => 2,
+                    'name' => 'Crowdin Translate (beta)',
+                    'type' => 'crowdin',
+                    'credentials' => [
+                        'crowdin_nmt' => 1,
+                        'crowdin_nmt_multi_translations' => 1,
+                    ],
+                    'projectIds' => [
+                        1,
+                    ],
+                ],
+            ])
+        );
 
         $machineTranslationEngine = $this->crowdin->machineTranslationEngine->get(2);
+
         $this->assertInstanceOf(MachineTranslationEngine::class, $machineTranslationEngine);
         $this->assertEquals(2, $machineTranslationEngine->getId());
 
         $machineTranslationEngine->setName('test edit');
 
-        $this->mockRequestPatch('/mts/2', '{
-              "data": {
-                "id": 2,
-                "groupId": 2,
-                "name": "test edit",
-                "type": "crowdin",
-                "credentials": {
-                  "crowdin_nmt": 1,
-                  "crowdin_nmt_multi_translations": 1
-                },
-                "projectIds": [
-                  1
-                ]
-              }
-            }');
+        $this->mockRequestPatch(
+            '/mts/2',
+            json_encode([
+                'data' => [
+                    'id' => 2,
+                    'groupId' => 2,
+                    'name' => 'test edit',
+                    'type' => 'crowdin',
+                    'credentials' => [
+                        'crowdin_nmt' => 1,
+                        'crowdin_nmt_multi_translations' => 1,
+                    ],
+                    'projectIds' => [
+                        1,
+                    ],
+                ],
+            ])
+        );
 
         $machineTranslationEngine = $this->crowdin->machineTranslationEngine->update($machineTranslationEngine);
+
         $this->assertInstanceOf(MachineTranslationEngine::class, $machineTranslationEngine);
         $this->assertEquals(2, $machineTranslationEngine->getId());
         $this->assertEquals('test edit', $machineTranslationEngine->getName());

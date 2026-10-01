@@ -12,42 +12,43 @@ class WebhookApiTest extends AbstractTestApi
         $this->mockRequest([
             'path' => '/projects/2/webhooks',
             'method' => 'get',
-            'response' => '{
-              "data": [
-                {
-                  "data": {
-                    "id": 4,
-                    "projectId": 2,
-                    "name": "Proofread",
-                    "url": "https://webhook.site/1c20d9b5-6e6a-4522-974d-9da7ea7595c9",
-                    "events": [
-                      "file.approved"
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 4,
+                            'projectId' => 2,
+                            'name' => 'Proofread',
+                            'url' => 'https://webhook.site/1c20d9b5-6e6a-4522-974d-9da7ea7595c9',
+                            'events' => [
+                                'file.approved',
+                            ],
+                            'headers' => [
+                                'string',
+                            ],
+                            'payload' => [
+                                'string',
+                            ],
+                            'isActive' => true,
+                            'batchingEnabled' => true,
+                            'requestType' => 'GET',
+                            'contentType' => 'multipart/form-data',
+                            'createdAt' => '2019-09-23T09:19:07+00:00',
+                            'updatedAt' => '2019-09-23T09:19:07+00:00',
+                        ],
                     ],
-                    "headers": [
-                      "string"
+                ],
+                'pagination' => [
+                    [
+                        'offset' => 0,
+                        'limit' => 0,
                     ],
-                    "payload": [
-                      "string"
-                    ],
-                    "isActive": true,
-                    "batchingEnabled": true,
-                    "requestType": "GET",
-                    "contentType": "multipart/form-data",
-                    "createdAt": "2019-09-23T09:19:07+00:00",
-                    "updatedAt": "2019-09-23T09:19:07+00:00"
-                  }
-                }
-              ],
-              "pagination": [
-                {
-                  "offset": 0,
-                  "limit": 0
-                }
-              ]
-            }'
+                ],
+            ]),
         ]);
 
         $webhooks = $this->crowdin->webhook->list(2);
+
         $this->assertInstanceOf(ModelCollection::class, $webhooks);
         $this->assertCount(1, $webhooks);
         $this->assertInstanceOf(Webhook::class, $webhooks[0]);
@@ -60,52 +61,48 @@ class WebhookApiTest extends AbstractTestApi
         $params = [
             'name' => 'Proofread',
             'url' => 'https://webhook.site/1c20d9b5-6e6a-4522-974d-9da7ea7595c9',
-            'events' =>
-                [
-                    0 => 'file.approved',
-                ],
+            'events' => [
+                'file.approved',
+            ],
             'requestType' => 'POST',
             'isActive' => true,
             'batchingEnabled' => false,
             'contentType' => 'multipart/form-data',
-            'headers' =>
-                [
-                ],
-            'payload' =>
-                [
-                ],
+            'headers' => [],
+            'payload' => [],
         ];
 
         $this->mockRequest([
             'path' => '/projects/2/webhooks',
             'method' => 'post',
             'body' => json_encode($params),
-            'response' => '{
-              "data": {
-                "id": 4,
-                "projectId": 2,
-                "name": "Proofread",
-                "url": "https://webhook.site/1c20d9b5-6e6a-4522-974d-9da7ea7595c9",
-                "events": [
-                  "file.approved"
+            'response' => json_encode([
+                'data' => [
+                    'id' => 4,
+                    'projectId' => 2,
+                    'name' => 'Proofread',
+                    'url' => 'https://webhook.site/1c20d9b5-6e6a-4522-974d-9da7ea7595c9',
+                    'events' => [
+                        'file.approved',
+                    ],
+                    'headers' => [
+                        'string',
+                    ],
+                    'payload' => [
+                        'string',
+                    ],
+                    'isActive' => true,
+                    'batchingEnabled' => false,
+                    'requestType' => 'GET',
+                    'contentType' => 'multipart/form-data',
+                    'createdAt' => '2019-09-23T09:19:07+00:00',
+                    'updatedAt' => '2019-09-23T09:19:07+00:00',
                 ],
-                "headers": [
-                  "string"
-                ],
-                "payload": [
-                  "string"
-                ],
-                "isActive": true,
-                "batchingEnabled": false,
-                "requestType": "GET",
-                "contentType": "multipart/form-data",
-                "createdAt": "2019-09-23T09:19:07+00:00",
-                "updatedAt": "2019-09-23T09:19:07+00:00"
-              }
-            }'
+            ]),
         ]);
 
         $webhook = $this->crowdin->webhook->create(2, $params);
+
         $this->assertInstanceOf(Webhook::class, $webhook);
         $this->assertEquals(4, $webhook->getId());
         $this->assertEquals(false, $webhook->isBatchingEnabled());
@@ -113,61 +110,70 @@ class WebhookApiTest extends AbstractTestApi
 
     public function testGetAndUpdate()
     {
-        $this->mockRequestGet('/projects/2/webhooks/4', '{
-              "data": {
-                "id": 4,
-                "projectId": 2,
-                "name": "Proofread",
-                "url": "https://webhook.site/1c20d9b5-6e6a-4522-974d-9da7ea7595c9",
-                "events": [
-                  "file.approved"
+        $this->mockRequestGet(
+            '/projects/2/webhooks/4',
+            json_encode([
+                'data' => [
+                    'id' => 4,
+                    'projectId' => 2,
+                    'name' => 'Proofread',
+                    'url' => 'https://webhook.site/1c20d9b5-6e6a-4522-974d-9da7ea7595c9',
+                    'events' => [
+                        'file.approved',
+                    ],
+                    'headers' => [
+                        'string',
+                    ],
+                    'payload' => [
+                        'string',
+                    ],
+                    'isActive' => true,
+                    'batchingEnabled' => true,
+                    'requestType' => 'GET',
+                    'contentType' => 'multipart/form-data',
+                    'createdAt' => '2019-09-23T09:19:07+00:00',
+                    'updatedAt' => '2019-09-23T09:19:07+00:00',
                 ],
-                "headers": [
-                  "string"
-                ],
-                "payload": [
-                  "string"
-                ],
-                "isActive": true,
-                "batchingEnabled": true,
-                "requestType": "GET",
-                "contentType": "multipart/form-data",
-                "createdAt": "2019-09-23T09:19:07+00:00",
-                "updatedAt": "2019-09-23T09:19:07+00:00"
-              }
-            }');
+            ])
+        );
 
         $webhook = $this->crowdin->webhook->get(2, 4);
+
         $this->assertInstanceOf(Webhook::class, $webhook);
         $this->assertEquals(4, $webhook->getId());
 
         $webhook->setName('test edit');
         $webhook->setBatchingEnabled(false);
-        $this->mockRequestPatch('/projects/2/webhooks/4', '{
-              "data": {
-                "id": 4,
-                "projectId": 2,
-                "name": "test edit",
-                "url": "https://webhook.site/1c20d9b5-6e6a-4522-974d-9da7ea7595c9",
-                "events": [
-                  "file.approved"
+
+        $this->mockRequestPatch(
+            '/projects/2/webhooks/4',
+            json_encode([
+                'data' => [
+                    'id' => 4,
+                    'projectId' => 2,
+                    'name' => 'test edit',
+                    'url' => 'https://webhook.site/1c20d9b5-6e6a-4522-974d-9da7ea7595c9',
+                    'events' => [
+                        'file.approved',
+                    ],
+                    'headers' => [
+                        'string',
+                    ],
+                    'payload' => [
+                        'string',
+                    ],
+                    'isActive' => true,
+                    'batchingEnabled' => false,
+                    'requestType' => 'GET',
+                    'contentType' => 'multipart/form-data',
+                    'createdAt' => '2019-09-23T09:19:07+00:00',
+                    'updatedAt' => '2019-09-23T09:19:07+00:00',
                 ],
-                "headers": [
-                  "string"
-                ],
-                "payload": [
-                  "string"
-                ],
-                "isActive": true,
-                "batchingEnabled": false,
-                "requestType": "GET",
-                "contentType": "multipart/form-data",
-                "createdAt": "2019-09-23T09:19:07+00:00",
-                "updatedAt": "2019-09-23T09:19:07+00:00"
-              }
-            }');
+            ])
+        );
 
         $webhook = $this->crowdin->webhook->update($webhook);
+
         $this->assertInstanceOf(Webhook::class, $webhook);
         $this->assertEquals(4, $webhook->getId());
         $this->assertEquals('test edit', $webhook->getName());
