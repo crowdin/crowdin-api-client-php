@@ -2,7 +2,7 @@
 
 PHP client for the Crowdin API v2 and Crowdin Enterprise API v2.
 
-Supports PHP >= 7.1, so write 7.1-compatible code in `src/`: no typed properties, no constructor promotion, no `match`; document property types with `/** @var */` docblocks. CI tests on 7.4–8.2.
+Supports PHP >= 7.1, so write 7.1-compatible code in `src/`: no typed properties, no constructor promotion, no `match`; document property types with `/** @var */` docblocks. CI tests on 7.4–8.5.
 
 ## Layout
 
