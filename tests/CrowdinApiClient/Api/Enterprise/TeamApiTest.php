@@ -3,6 +3,7 @@
 namespace CrowdinApiClient\Tests\Api\Enterprise;
 
 use CrowdinApiClient\Model\Enterprise\AddedProjectTeamInfo;
+use CrowdinApiClient\Model\Enterprise\ProjectPermission;
 use CrowdinApiClient\Model\Enterprise\Team;
 use CrowdinApiClient\ModelCollection;
 
@@ -152,5 +153,59 @@ class TeamApiTest extends AbstractTestApi
 
         $this->assertInstanceOf(AddedProjectTeamInfo::class, $addedProjectTeamInfo);
         $this->assertEquals(3, $addedProjectTeamInfo->getAdded()->getId());
+    }
+
+    public function testListProjectPermissions(): void
+    {
+        $this->mockRequestGet(
+            '/teams/7/projects/permissions',
+            json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 2,
+                            'roles' => [['name' => 'translator', 'permissions' => ['allLanguages' => true]]],
+                            'project' => ['id' => 2, 'name' => 'Knowledge Base', 'identifier' => 'knowledge-base'],
+                        ],
+                    ],
+                ],
+                'pagination' => ['offset' => 0, 'limit' => 25],
+            ])
+        );
+
+        $permissions = $this->crowdin->team->listProjectPermissions(7);
+
+        $this->assertInstanceOf(ModelCollection::class, $permissions);
+        $this->assertCount(1, $permissions);
+        $this->assertInstanceOf(ProjectPermission::class, $permissions[0]);
+        $this->assertEquals('Knowledge Base', $permissions[0]->getProject()->getName());
+        $this->assertEquals('translator', $permissions[0]->getRoles()[0]['name']);
+    }
+
+    public function testUpdateProjectPermissions(): void
+    {
+        $data = [['op' => 'add', 'path' => '/2/roles', 'value' => [['name' => 'translator']]]];
+
+        $this->mockRequest([
+            'path' => '/teams/7/projects/permissions',
+            'method' => 'patch',
+            'body' => json_encode($data),
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 2,
+                            'roles' => [['name' => 'translator', 'permissions' => ['allLanguages' => true]]],
+                            'project' => ['id' => 2, 'name' => 'Knowledge Base', 'identifier' => 'knowledge-base'],
+                        ],
+                    ],
+                ],
+            ]),
+        ]);
+
+        $permissions = $this->crowdin->team->updateProjectPermissions(7, $data);
+
+        $this->assertInstanceOf(ModelCollection::class, $permissions);
+        $this->assertInstanceOf(ProjectPermission::class, $permissions[0]);
     }
 }

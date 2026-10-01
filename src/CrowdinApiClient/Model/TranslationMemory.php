@@ -48,6 +48,26 @@ class TranslationMemory extends BaseModel
     protected $createdAt;
 
     /**
+     * @var bool
+     */
+    protected $isShared;
+
+    /**
+     * @var string|null
+     */
+    protected $languageId;
+
+    /**
+     * @var int|null
+     */
+    protected $userId;
+
+    /**
+     * @var string
+     */
+    protected $webUrl;
+
+    /**
      * @param array $data
      */
     public function __construct(array $data = [])
@@ -62,6 +82,10 @@ class TranslationMemory extends BaseModel
         $this->defaultProjectIds = $this->getDataProperty('defaultProjectIds');
         $this->projectIds = $this->getDataProperty('projectIds');
         $this->createdAt = $this->getDataProperty('createdAt');
+        $this->isShared = (bool)$this->getDataProperty('isShared');
+        $this->languageId = $this->nullableString('languageId');
+        $this->userId = $this->nullableInt('userId');
+        $this->webUrl = (string)$this->getDataProperty('webUrl');
     }
 
     /**
@@ -142,5 +166,35 @@ class TranslationMemory extends BaseModel
     public function setCreatedAt(string $createdAt): void
     {
         $this->createdAt = $createdAt;
+    }
+
+    public function isShared(): bool
+    {
+        return $this->isShared;
+    }
+
+    public function setIsShared(bool $isShared): void
+    {
+        $this->isShared = $isShared;
+    }
+
+    public function getLanguageId(): ?string
+    {
+        return $this->languageId;
+    }
+
+    public function setLanguageId(string $languageId): void
+    {
+        $this->languageId = $languageId;
+    }
+
+    public function getUserId(): ?int
+    {
+        return $this->userId;
+    }
+
+    public function getWebUrl(): string
+    {
+        return $this->webUrl;
     }
 }

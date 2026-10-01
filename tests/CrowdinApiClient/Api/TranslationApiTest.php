@@ -8,6 +8,7 @@ use CrowdinApiClient\Model\PreTranslation;
 use CrowdinApiClient\Model\PreTranslationReport;
 use CrowdinApiClient\Model\PreTranslationReportFile;
 use CrowdinApiClient\Model\PreTranslationReportLanguage;
+use CrowdinApiClient\Model\QaCheck;
 use CrowdinApiClient\Model\TranslationAlignment;
 use CrowdinApiClient\Model\TranslationImport;
 use CrowdinApiClient\Model\TranslationImportReport;
@@ -711,5 +712,45 @@ class TranslationApiTest extends AbstractTestApi
         $this->assertInstanceOf(PreTranslation::class, $preTranslations[0]);
         $this->assertEquals('9e7de270-4f83-41cb-b606-2f90631f26e2', $preTranslations[0]->getIdentifier());
         $this->assertEquals('canceled', $preTranslations[0]->getStatus());
+    }
+
+    public function testValidateQaChecks(): void
+    {
+        $data = [
+            ['stringId' => 35434, 'languageId' => 'uk', 'text' => 'Перша локалзація.', 'pluralCategoryName' => 'few'],
+        ];
+
+        $this->mockRequest([
+            'path' => '/projects/2/translations/validate-qa-checks',
+            'method' => 'post',
+            'body' => json_encode($data),
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'stringId' => 35434,
+                            'languageId' => 'uk',
+                            'category' => 'spellcheck',
+                            'categoryDescription' => 'Spelling',
+                            'validation' => 'spellcheck',
+                            'validationDescription' => 'Misspelling',
+                            'pluralId' => -1,
+                            'pluralCategoryName' => 'few',
+                            'text' => "Spellcheck failed for the following word: 'локалзація'.",
+                            'translation' => 'Перша локалзація.',
+                        ],
+                    ],
+                ],
+                'pagination' => ['offset' => 0, 'limit' => 25],
+            ]),
+        ]);
+
+        $qaChecks = $this->crowdin->translation->validateQaChecks(2, $data);
+
+        $this->assertInstanceOf(ModelCollection::class, $qaChecks);
+        $this->assertCount(1, $qaChecks);
+        $this->assertInstanceOf(QaCheck::class, $qaChecks[0]);
+        $this->assertEquals('spellcheck', $qaChecks[0]->getCategory());
+        $this->assertEquals('Перша локалзація.', $qaChecks[0]->getTranslation());
     }
 }

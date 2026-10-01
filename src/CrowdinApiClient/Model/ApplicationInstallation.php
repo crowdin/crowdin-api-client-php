@@ -51,6 +51,21 @@ class ApplicationInstallation extends BaseModel
     /** @var bool */
     protected $stringBasedAvailable;
 
+    /** @var string|null */
+    protected $logoUrl;
+
+    /** @var array|null */
+    protected $manifest;
+
+    /** @var string|null */
+    protected $manifestUpdatedAt;
+
+    /** @var bool */
+    protected $isManifestOutdated;
+
+    /** @var array|null */
+    protected $bundle;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -70,6 +85,11 @@ class ApplicationInstallation extends BaseModel
         $this->defaultPermissions = (array)$this->getDataProperty('defaultPermissions');
         $this->limitReached = (bool)$this->getDataProperty('limitReached');
         $this->stringBasedAvailable = (bool)$this->getDataProperty('stringBasedAvailable');
+        $this->logoUrl = $this->nullableString('logoUrl');
+        $this->manifest = $this->nullableArray('manifest');
+        $this->manifestUpdatedAt = $this->nullableString('manifestUpdatedAt');
+        $this->isManifestOutdated = (bool)$this->getDataProperty('isManifestOutdated');
+        $this->bundle = $this->nullableArray('bundle');
     }
 
     public function getIdentifier(): string
@@ -161,5 +181,33 @@ class ApplicationInstallation extends BaseModel
     public function setModules(array $modules): void
     {
         $this->modules = $modules;
+    }
+
+    public function getLogoUrl(): ?string
+    {
+        return $this->logoUrl;
+    }
+
+    public function getManifest(): ?array
+    {
+        return $this->manifest;
+    }
+
+    public function getManifestUpdatedAt(): ?string
+    {
+        return $this->manifestUpdatedAt;
+    }
+
+    public function isManifestOutdated(): bool
+    {
+        return $this->isManifestOutdated;
+    }
+
+    /**
+     * @return array|null mode ("internal" or "external") and, for external bundles, url
+     */
+    public function getBundle(): ?array
+    {
+        return $this->bundle;
     }
 }

@@ -133,21 +133,33 @@ class ReportSettingsTemplateConfig extends BaseModel
         $this->includePreTranslatedStrings = $includePreTranslatedStrings;
     }
 
+    /**
+     * @deprecated Deprecated by the Crowdin API.
+     */
     public function getExcludeApprovalsForEditedTranslations(): bool
     {
         return $this->excludeApprovalsForEditedTranslations;
     }
 
+    /**
+     * @deprecated Deprecated by the Crowdin API.
+     */
     public function setExcludeApprovalsForEditedTranslations(bool $excludeApprovalsForEditedTranslations): void
     {
         $this->excludeApprovalsForEditedTranslations = $excludeApprovalsForEditedTranslations;
     }
 
+    /**
+     * @deprecated Deprecated by the Crowdin API.
+     */
     public function getPreTranslatedStringsCategorizationAdjustment(): bool
     {
         return $this->preTranslatedStringsCategorizationAdjustment;
     }
 
+    /**
+     * @deprecated Deprecated by the Crowdin API.
+     */
     public function setPreTranslatedStringsCategorizationAdjustment(
         bool $preTranslatedStringsCategorizationAdjustment
     ): void {

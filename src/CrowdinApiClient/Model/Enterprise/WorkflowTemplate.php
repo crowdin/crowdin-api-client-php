@@ -35,44 +35,14 @@ class WorkflowTemplate extends BaseModel
     protected $isDefault;
 
     /**
-     * @return int
+     * @var array
      */
-    public function getId(): int
-    {
-        return $this->id;
-    }
+    protected $steps;
 
     /**
-     * @return string
+     * @var string
      */
-    public function getTitle(): string
-    {
-        return $this->title;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDescription(): string
-    {
-        return $this->description;
-    }
-
-    /**
-     * @return int
-     */
-    public function getGroupId(): int
-    {
-        return $this->groupId;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isDefault(): bool
-    {
-        return $this->isDefault;
-    }
+    protected $webUrl;
 
     public function __construct(array $data = [])
     {
@@ -82,5 +52,42 @@ class WorkflowTemplate extends BaseModel
         $this->description = (string)$this->getDataProperty('description');
         $this->groupId = (int)$this->getDataProperty('groupId');
         $this->isDefault = (bool)$this->getDataProperty('isDefault');
+        $this->steps = (array)$this->getDataProperty('steps');
+        $this->webUrl = (string)$this->getDataProperty('webUrl');
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function getTitle(): string
+    {
+        return $this->title;
+    }
+
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+    public function getGroupId(): int
+    {
+        return $this->groupId;
+    }
+
+    public function isDefault(): bool
+    {
+        return $this->isDefault;
+    }
+
+    public function getSteps(): array
+    {
+        return $this->steps;
+    }
+
+    public function getWebUrl(): string
+    {
+        return $this->webUrl;
     }
 }

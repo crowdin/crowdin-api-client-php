@@ -15,7 +15,7 @@ class StringCommentApi extends AbstractApi
 {
     /**
      * List String Comment
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.comments.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.comments.getMany API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.comments.getMany API Documentation Enterprise
      *
      * @param int $projectId

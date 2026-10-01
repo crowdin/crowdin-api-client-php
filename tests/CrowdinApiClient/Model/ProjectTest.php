@@ -116,6 +116,7 @@ class ProjectTest extends TestCase
         ],
 
         'glossaryAccess' => true,
+        'glossaryAccessOption' => 'fullAccess',
         'normalizePlaceholder' => false,
         'saveMetaInfoInSource' => false,
         'notificationSettings' => [
@@ -191,6 +192,7 @@ class ProjectTest extends TestCase
         $this->assertEquals($this->data['isSuspended'], $project->isSuspended());
 
         $this->assertEquals($this->data['glossaryAccess'], $project->isGlossaryAccess());
+        $this->assertEquals($this->data['glossaryAccessOption'], $project->getGlossaryAccessOption());
         $this->assertEquals($this->data['normalizePlaceholder'], $project->isNormalizePlaceholder());
         $this->assertEquals($this->data['saveMetaInfoInSource'], $project->isSaveMetaInfoInSource());
         $this->assertEquals($this->data['notificationSettings'], $project->getNotificationSettings());
@@ -214,6 +216,7 @@ class ProjectTest extends TestCase
         $project->setDefaultTmId($this->data['defaultTmId']);
         $project->setDefaultGlossaryId($this->data['defaultGlossaryId']);
         $project->setFields($fields);
+        $project->setGlossaryAccessOption('manageDrafts');
 
         $this->assertEquals($this->data['name'], $project->getName());
         $this->assertEquals($this->data['cname'], $project->getCname());
@@ -223,5 +226,162 @@ class ProjectTest extends TestCase
         $this->assertEquals($this->data['defaultTmId'], $project->getDefaultTmId());
         $this->assertEquals($this->data['defaultGlossaryId'], $project->getDefaultGlossaryId());
         $this->assertEquals($fields, $project->getFields());
+        $this->assertEquals('manageDrafts', $project->getGlossaryAccessOption());
+    }
+
+    public function testLoadDataWithoutGlossaryAccessOption(): void
+    {
+        $data = $this->data;
+        unset($data['glossaryAccessOption']);
+
+        $this->assertNull((new Project($data))->getGlossaryAccessOption());
+    }
+
+    public function testLoadAdditionalFields(): void
+    {
+        $model = new Project([
+            'aiPreTranslate' => ['key' => 'value'],
+            'alignmentActionAiPromptId' => 7,
+            'assignedGlossaries' => ['key' => 'value'],
+            'assignedStyleGuides' => ['key' => 'value'],
+            'assignedTms' => ['key' => 'value'],
+            'clientOrganizationId' => 7,
+            'contextReviewAiPromptId' => 7,
+            'delayedWorkflowStart' => true,
+            'editorSuggestionAiPromptId' => 7,
+            'exportStringsThatPassedWorkflow' => true,
+            'externalOrganizationId' => 7,
+            'externalProjectId' => 7,
+            'externalQaCheckIds' => ['key' => 'value'],
+            'mtPreTranslate' => ['key' => 'value'],
+            'publicUrl' => 'value',
+            'qaApprovalsCount' => 7,
+            'qaCheckActionAiPromptId' => 7,
+            'savingsReportSettingsTemplateId' => 7,
+            'showTmSuggestionsDialects' => true,
+            'sourceLanguage' => ['key' => 'value'],
+            'tagsDetection' => 7,
+            'taskBasedAccessControl' => true,
+            'taskReviewerIds' => ['key' => 'value'],
+            'tmApprovedSuggestionsOnly' => true,
+            'tmContextType' => 'value',
+            'tmPenalties' => ['key' => 'value'],
+            'tmPreTranslate' => ['key' => 'value'],
+            'type' => 7,
+            'webUrl' => 'value',
+        ]);
+
+        $this->assertSame(['key' => 'value'], $model->getAiPreTranslate());
+        $this->assertSame(7, $model->getAlignmentActionAiPromptId());
+        $this->assertSame(['key' => 'value'], $model->getAssignedGlossaries());
+        $this->assertSame(['key' => 'value'], $model->getAssignedStyleGuides());
+        $this->assertSame(['key' => 'value'], $model->getAssignedTms());
+        $this->assertSame(7, $model->getClientOrganizationId());
+        $this->assertSame(7, $model->getContextReviewAiPromptId());
+        $this->assertSame(true, $model->isDelayedWorkflowStart());
+        $this->assertSame(7, $model->getEditorSuggestionAiPromptId());
+        $this->assertSame(true, $model->isExportStringsThatPassedWorkflow());
+        $this->assertSame(7, $model->getExternalOrganizationId());
+        $this->assertSame(7, $model->getExternalProjectId());
+        $this->assertSame(['key' => 'value'], $model->getExternalQaCheckIds());
+        $this->assertSame(['key' => 'value'], $model->getMtPreTranslate());
+        $this->assertSame('value', $model->getPublicUrl());
+        $this->assertSame(7, $model->getQaApprovalsCount());
+        $this->assertSame(7, $model->getQaCheckActionAiPromptId());
+        $this->assertSame(7, $model->getSavingsReportSettingsTemplateId());
+        $this->assertSame(true, $model->isShowTmSuggestionsDialects());
+        $this->assertSame(['key' => 'value'], $model->getSourceLanguage());
+        $this->assertSame(7, $model->getTagsDetection());
+        $this->assertSame(true, $model->isTaskBasedAccessControl());
+        $this->assertSame(['key' => 'value'], $model->getTaskReviewerIds());
+        $this->assertSame(true, $model->isTmApprovedSuggestionsOnly());
+        $this->assertSame('value', $model->getTmContextType());
+        $this->assertSame(['key' => 'value'], $model->getTmPenalties());
+        $this->assertSame(['key' => 'value'], $model->getTmPreTranslate());
+        $this->assertSame(7, $model->getType());
+        $this->assertSame('value', $model->getWebUrl());
+    }
+
+    public function testAdditionalFieldsWhenMissing(): void
+    {
+        $model = new Project([]);
+
+        $this->assertNull($model->getAiPreTranslate());
+        $this->assertNull($model->getAlignmentActionAiPromptId());
+        $this->assertNull($model->getAssignedGlossaries());
+        $this->assertNull($model->getAssignedStyleGuides());
+        $this->assertNull($model->getAssignedTms());
+        $this->assertNull($model->getClientOrganizationId());
+        $this->assertNull($model->getContextReviewAiPromptId());
+        $this->assertNull($model->isDelayedWorkflowStart());
+        $this->assertNull($model->getEditorSuggestionAiPromptId());
+        $this->assertNull($model->isExportStringsThatPassedWorkflow());
+        $this->assertNull($model->getExternalOrganizationId());
+        $this->assertNull($model->getExternalProjectId());
+        $this->assertNull($model->getExternalQaCheckIds());
+        $this->assertNull($model->getMtPreTranslate());
+        $this->assertNull($model->getPublicUrl());
+        $this->assertNull($model->getQaApprovalsCount());
+        $this->assertNull($model->getQaCheckActionAiPromptId());
+        $this->assertSame(0, $model->getSavingsReportSettingsTemplateId());
+        $this->assertNull($model->isShowTmSuggestionsDialects());
+        $this->assertSame([], $model->getSourceLanguage());
+        $this->assertNull($model->getTagsDetection());
+        $this->assertNull($model->isTaskBasedAccessControl());
+        $this->assertNull($model->getTaskReviewerIds());
+        $this->assertNull($model->isTmApprovedSuggestionsOnly());
+        $this->assertNull($model->getTmContextType());
+        $this->assertNull($model->getTmPenalties());
+        $this->assertNull($model->getTmPreTranslate());
+        $this->assertSame(0, $model->getType());
+        $this->assertSame('', $model->getWebUrl());
+    }
+
+    public function testSetAdditionalFields(): void
+    {
+        $model = new Project([]);
+        $model->setAiPreTranslate(['key' => 'value']);
+        $model->setAlignmentActionAiPromptId(7);
+        $model->setAssignedGlossaries(['key' => 'value']);
+        $model->setAssignedStyleGuides(['key' => 'value']);
+        $model->setAssignedTms(['key' => 'value']);
+        $model->setContextReviewAiPromptId(7);
+        $model->setEditorSuggestionAiPromptId(7);
+        $model->setExportStringsThatPassedWorkflow(true);
+        $model->setMtPreTranslate(['key' => 'value']);
+        $model->setQaApprovalsCount(7);
+        $model->setQaCheckActionAiPromptId(7);
+        $model->setSavingsReportSettingsTemplateId(7);
+        $model->setShowTmSuggestionsDialects(true);
+        $model->setTaskBasedAccessControl(true);
+        $model->setTaskReviewerIds(['key' => 'value']);
+        $model->setTmApprovedSuggestionsOnly(true);
+        $model->setTmContextType('value');
+        $model->setTmPreTranslate(['key' => 'value']);
+
+        $this->assertSame(['key' => 'value'], $model->getAiPreTranslate());
+        $this->assertSame(7, $model->getAlignmentActionAiPromptId());
+        $this->assertSame(['key' => 'value'], $model->getAssignedGlossaries());
+        $this->assertSame(['key' => 'value'], $model->getAssignedStyleGuides());
+        $this->assertSame(['key' => 'value'], $model->getAssignedTms());
+        $this->assertSame(7, $model->getContextReviewAiPromptId());
+        $this->assertSame(7, $model->getEditorSuggestionAiPromptId());
+        $this->assertSame(true, $model->isExportStringsThatPassedWorkflow());
+        $this->assertSame(['key' => 'value'], $model->getMtPreTranslate());
+        $this->assertSame(7, $model->getQaApprovalsCount());
+        $this->assertSame(7, $model->getQaCheckActionAiPromptId());
+        $this->assertSame(7, $model->getSavingsReportSettingsTemplateId());
+        $this->assertSame(true, $model->isShowTmSuggestionsDialects());
+        $this->assertSame(true, $model->isTaskBasedAccessControl());
+        $this->assertSame(['key' => 'value'], $model->getTaskReviewerIds());
+        $this->assertSame(true, $model->isTmApprovedSuggestionsOnly());
+        $this->assertSame('value', $model->getTmContextType());
+        $this->assertSame(['key' => 'value'], $model->getTmPreTranslate());
+    }
+
+    public function testExportTranslatedOnlyIsHydrated(): void
+    {
+        $this->assertTrue((new Project(['exportTranslatedOnly' => true]))->isExportTranslatedOnly());
+        $this->assertFalse((new Project([]))->isExportTranslatedOnly());
     }
 }

@@ -106,4 +106,35 @@ class StringCommentTest extends TestCase
         $this->assertEquals($this->data['createdAt'], $this->stringComment->getCreatedAt());
         $this->assertEquals($this->data['attachments'], $this->stringComment->getAttachments());
     }
+
+    public function testLoadAdditionalFields(): void
+    {
+        $model = new StringComment([
+            'file' => ['key' => 'value'],
+            'fileId' => 7,
+            'isShared' => true,
+            'projectId' => 7,
+            'resolverOrganization' => ['key' => 'value'],
+            'senderOrganization' => ['key' => 'value'],
+        ]);
+
+        $this->assertSame(['key' => 'value'], $model->getFile());
+        $this->assertSame(7, $model->getFileId());
+        $this->assertSame(true, $model->isShared());
+        $this->assertSame(7, $model->getProjectId());
+        $this->assertSame(['key' => 'value'], $model->getResolverOrganization());
+        $this->assertSame(['key' => 'value'], $model->getSenderOrganization());
+    }
+
+    public function testAdditionalFieldsWhenMissing(): void
+    {
+        $model = new StringComment([]);
+
+        $this->assertNull($model->getFile());
+        $this->assertNull($model->getFileId());
+        $this->assertNull($model->isShared());
+        $this->assertSame(0, $model->getProjectId());
+        $this->assertNull($model->getResolverOrganization());
+        $this->assertNull($model->getSenderOrganization());
+    }
 }

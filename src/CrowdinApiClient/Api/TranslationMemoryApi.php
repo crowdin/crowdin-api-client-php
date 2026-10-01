@@ -191,6 +191,22 @@ class TranslationMemoryApi extends AbstractApi
     }
 
     /**
+     * Edit TM Segment
+     * @link https://developer.crowdin.com/api/v2/#operation/api.tms.segments.patch API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.segments.patch API Documentation Enterprise
+     *
+     * @param int $tmId
+     * @param int $segmentId
+     * @param array $data JSON Patch array. Paths: /records/- (add), /records/{recordId}/text (replace), /records/{recordId} (remove)
+     * @return TranslationMemorySegment|null
+     */
+    public function updateSegment(int $tmId, int $segmentId, array $data): ?TranslationMemorySegment
+    {
+        $path = sprintf('tms/%d/segments/%d', $tmId, $segmentId);
+        return $this->_patch($path, TranslationMemorySegment::class, $data);
+    }
+
+    /**
      * Export TM
      * @link https://developer.crowdin.com/api/v2/#operation/api.tms.exports.post API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.exports.post API Documentation Enterprise
@@ -221,8 +237,8 @@ class TranslationMemoryApi extends AbstractApi
 
     /**
      * Download TM
-     * @link https://developer.crowdin.com/api/v2/#operation/api.tms.exports.getMany API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.exports.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.tms.exports.download.download API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.exports.download.download API Documentation Enterprise
      */
     public function download(int $translationMemoryId, string $exportId): ?DownloadFile
     {

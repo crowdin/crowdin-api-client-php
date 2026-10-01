@@ -84,4 +84,28 @@ class TermTest extends TestCase
         $this->assertEquals($this->data['createdAt'], $this->term->getCreatedAt());
         $this->assertEquals($this->data['updatedAt'], $this->term->getUpdatedAt());
     }
+
+    public function testLoadAdditionalFields(): void
+    {
+        $model = new Term([
+            'fields' => ['key' => 'value'],
+        ]);
+
+        $this->assertSame(['key' => 'value'], $model->getFields());
+    }
+
+    public function testAdditionalFieldsWhenMissing(): void
+    {
+        $model = new Term([]);
+
+        $this->assertNull($model->getFields());
+    }
+
+    public function testSetAdditionalFields(): void
+    {
+        $model = new Term([]);
+        $model->setFields(['key' => 'value']);
+
+        $this->assertSame(['key' => 'value'], $model->getFields());
+    }
 }

@@ -13,28 +13,30 @@ class ProgressFile extends Progress
     protected $etag;
 
     /**
-     * @param array $data
+     * @var array
      */
+    protected $qaChecksStatus;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
 
         $this->etag = $this->getDataProperty('eTag');
+        $this->qaChecksStatus = (array)$this->getDataProperty('qaChecksStatus');
     }
 
-    /**
-     * @return string|null
-     */
     public function getEtag(): ?string
     {
         return $this->etag;
     }
 
-    /**
-     * @param string|null $etag
-     */
     public function setEtag(?string $etag): void
     {
         $this->etag = $etag;
+    }
+
+    public function getQaChecksStatus(): array
+    {
+        return $this->qaChecksStatus;
     }
 }

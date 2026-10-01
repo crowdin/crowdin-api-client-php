@@ -245,4 +245,32 @@ class TaskApiTest extends AbstractTestApi
         $this->mockRequestDelete('/projects/2/tasks/2');
         $this->crowdin->task->delete(2, 2);
     }
+
+    public function testListOrganizationTasks(): void
+    {
+        $this->mockRequestGet(
+            '/tasks?status=todo&projectIds=1%2C2',
+            json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 2,
+                            'projectId' => 1,
+                            'type' => 0,
+                            'status' => 'todo',
+                            'title' => 'French',
+                        ],
+                    ],
+                ],
+                'pagination' => ['offset' => 0, 'limit' => 25],
+            ])
+        );
+
+        $tasks = $this->crowdin->task->listOrganizationTasks(['status' => 'todo', 'projectIds' => '1,2']);
+
+        $this->assertInstanceOf(ModelCollection::class, $tasks);
+        $this->assertCount(1, $tasks);
+        $this->assertInstanceOf(Task::class, $tasks[0]);
+        $this->assertEquals('French', $tasks[0]->getTitle());
+    }
 }

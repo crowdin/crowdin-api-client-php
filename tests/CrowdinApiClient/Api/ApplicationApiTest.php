@@ -7,6 +7,8 @@ namespace CrowdinApiClient\Tests\Api;
 use CrowdinApiClient\Model\ApplicationConsent;
 use CrowdinApiClient\Model\ApplicationData;
 use CrowdinApiClient\Model\ApplicationInstallation;
+use CrowdinApiClient\Model\ApplicationInstallationUpdate;
+use CrowdinApiClient\Model\ApplicationKvRecord;
 use CrowdinApiClient\ModelCollection;
 
 class ApplicationApiTest extends AbstractTestApi
@@ -325,5 +327,151 @@ class ApplicationApiTest extends AbstractTestApi
 
         $this->assertInstanceOf(ApplicationData::class, $data);
         $this->assertEquals($this->getResponseData(), $data->getData());
+    }
+
+    public function testUploadInstallationBundle(): void
+    {
+        $this->mockRequest([
+            'path' => '/applications/installations/my-app/bundles',
+            'method' => 'post',
+            'body' => json_encode(['storageId' => 5]),
+            'response' => $this->getInstallationResponseJson(),
+        ]);
+
+        $installation = $this->crowdin->application->uploadInstallationBundle('my-app', ['storageId' => 5]);
+
+        $this->assertInstanceOf(ApplicationInstallation::class, $installation);
+        $this->assertEquals('my-app', $installation->getIdentifier());
+    }
+
+    public function testGetInstallationUpdate(): void
+    {
+        $this->mockRequestGet(
+            '/applications/installations/my-app/update',
+            json_encode([
+                'data' => [
+                    'manifestHash' => 'a1b2c3',
+                    'latestManifest' => ['identifier' => 'my-app'],
+                    'addedScopes' => ['tm'],
+                    'removedScopes' => [],
+                    'addedModules' => [],
+                    'removedModules' => [],
+                    'changedModules' => [],
+                    'changedEvents' => [],
+                    'baseUrlChanged' => ['from' => null, 'to' => null],
+                    'authenticationTypeChanged' => ['from' => null, 'to' => null],
+                    'hasChanges' => true,
+                ],
+            ])
+        );
+
+        $update = $this->crowdin->application->getInstallationUpdate('my-app');
+
+        $this->assertInstanceOf(ApplicationInstallationUpdate::class, $update);
+        $this->assertEquals('a1b2c3', $update->getManifestHash());
+        $this->assertEquals(['tm'], $update->getAddedScopes());
+        $this->assertTrue($update->hasChanges());
+    }
+
+    public function testApplyInstallationUpdate(): void
+    {
+        $this->mockRequest([
+            'path' => '/applications/installations/my-app/update',
+            'method' => 'post',
+            'body' => json_encode(['manifestHash' => 'a1b2c3']),
+            'response' => $this->getInstallationResponseJson(),
+        ]);
+
+        $installation = $this->crowdin->application->applyInstallationUpdate('my-app', ['manifestHash' => 'a1b2c3']);
+
+        $this->assertInstanceOf(ApplicationInstallation::class, $installation);
+    }
+
+    protected function getKvRecordData(): array
+    {
+        return [
+            'key' => 'settings.theme',
+            'value' => ['color' => 'dark'],
+            'secret' => false,
+            'createdAt' => '2026-09-01T10:00:00+00:00',
+            'updatedAt' => '2026-09-01T10:00:00+00:00',
+            'expiresAt' => null,
+        ];
+    }
+
+    public function testListKvRecords(): void
+    {
+        $this->mockRequestGet(
+            '/applications/my-application/storage/kv/records?prefix=settings.',
+            json_encode([
+                'data' => [['data' => $this->getKvRecordData()]],
+                'pagination' => ['offset' => 0, 'limit' => 25],
+            ])
+        );
+
+        $records = $this->crowdin->application->listKvRecords($this->applicationIdentifier, ['prefix' => 'settings.']);
+
+        $this->assertInstanceOf(ModelCollection::class, $records);
+        $this->assertCount(1, $records);
+        $this->assertInstanceOf(ApplicationKvRecord::class, $records[0]);
+        $this->assertEquals(['color' => 'dark'], $records[0]->getValue());
+    }
+
+    public function testAddKvRecord(): void
+    {
+        $data = ['key' => 'settings.theme', 'value' => ['color' => 'dark'], 'ttl' => 3600];
+
+        $this->mockRequest([
+            'path' => '/applications/my-application/storage/kv/records',
+            'method' => 'post',
+            'body' => json_encode($data),
+            'response' => json_encode(['data' => $this->getKvRecordData()]),
+        ]);
+
+        $record = $this->crowdin->application->addKvRecord($this->applicationIdentifier, $data);
+
+        $this->assertInstanceOf(ApplicationKvRecord::class, $record);
+        $this->assertEquals('settings.theme', $record->getKey());
+    }
+
+    public function testGetKvRecord(): void
+    {
+        $this->mockRequestGet(
+            '/applications/my-application/storage/kv/records/settings.theme',
+            json_encode(['data' => $this->getKvRecordData()])
+        );
+
+        $record = $this->crowdin->application->getKvRecord($this->applicationIdentifier, 'settings.theme');
+
+        $this->assertInstanceOf(ApplicationKvRecord::class, $record);
+        $this->assertFalse($record->isSecret());
+        $this->assertNull($record->getExpiresAt());
+    }
+
+    public function testUpdateKvRecord(): void
+    {
+        $data = [
+            ['op' => 'replace', 'path' => '/value', 'value' => ['color' => 'light']],
+            ['op' => 'replace', 'path' => '/ttl', 'value' => null],
+        ];
+
+        $this->mockRequest([
+            'path' => '/applications/my-application/storage/kv/records/settings.theme',
+            'method' => 'patch',
+            'body' => json_encode($data),
+            'response' => json_encode(['data' => array_merge($this->getKvRecordData(), ['value' => ['color' => 'light']])]),
+        ]);
+
+        $record = $this->crowdin->application->updateKvRecord($this->applicationIdentifier, 'settings.theme', $data);
+
+        $this->assertInstanceOf(ApplicationKvRecord::class, $record);
+        $this->assertEquals(['color' => 'light'], $record->getValue());
+    }
+
+    public function testDeleteKvRecord(): void
+    {
+        $this->mockRequestDelete('/applications/my-application/storage/kv/records/settings.theme');
+
+        $this->crowdin->application->deleteKvRecord($this->applicationIdentifier, 'settings.theme');
     }
 }

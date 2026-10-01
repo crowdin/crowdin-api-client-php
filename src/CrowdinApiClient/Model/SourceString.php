@@ -109,6 +109,11 @@ class SourceString extends BaseModel
      */
     protected $fields = [];
 
+    /**
+     * @var string
+     */
+    protected $webUrl;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -139,6 +144,7 @@ class SourceString extends BaseModel
         $this->isDuplicate = (bool)$this->getDataProperty('isDuplicate');
         $this->masterStringId = $this->getDataProperty('masterStringId');
         $this->fields = (array)$this->getDataProperty('fields');
+        $this->webUrl = (string)$this->getDataProperty('webUrl');
     }
 
     /**
@@ -286,6 +292,7 @@ class SourceString extends BaseModel
     }
 
     /**
+     * @deprecated Deprecated by the Crowdin API. Use getType() and getText() instead.
      * @return bool
      */
     public function isHasPlurals(): bool
@@ -295,6 +302,7 @@ class SourceString extends BaseModel
 
     /**
      * Alias of isHasPlurals
+     * @deprecated Deprecated by the Crowdin API. Use getType() and getText() instead.
      * @return bool
      */
     public function isPlural(): bool
@@ -303,6 +311,7 @@ class SourceString extends BaseModel
     }
 
     /**
+     * @deprecated Deprecated by the Crowdin API. Use getType() instead.
      * @return bool
      */
     public function isIcu(): bool
@@ -372,5 +381,10 @@ class SourceString extends BaseModel
     public function setFields(array $fields): void
     {
         $this->fields = $fields;
+    }
+
+    public function getWebUrl(): string
+    {
+        return $this->webUrl;
     }
 }

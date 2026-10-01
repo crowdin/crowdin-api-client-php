@@ -77,6 +77,11 @@ class Language extends BaseModel
      */
     protected $dialectOf;
 
+    /**
+     * @var string
+     */
+    protected $bcp47Code;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -94,6 +99,7 @@ class Language extends BaseModel
         $this->androidCode = (string)$this->getDataProperty('androidCode');
         $this->osxCode = (string)$this->getDataProperty('osxCode');
         $this->osxLocale = (string)$this->getDataProperty('osxLocale');
+        $this->bcp47Code = (string)$this->getDataProperty('bcp47Code');
     }
 
     /**
@@ -254,5 +260,10 @@ class Language extends BaseModel
     public function getOsxLocale(): string
     {
         return $this->osxLocale;
+    }
+
+    public function getBcp47Code(): string
+    {
+        return $this->bcp47Code;
     }
 }

@@ -396,6 +396,34 @@ class ReportApiTest extends AbstractTestApi
         $this->assertInstanceOf(ReportSettingsTemplateConfig::class, $reportSettingsTemplate->getConfig());
     }
 
+    public function testCreateReportSettingsTemplateFromModelSkipsReadOnlyKeys(): void
+    {
+        $template = new ReportSettingsTemplate([
+            'id' => 12,
+            'projectId' => 87,
+            'groupId' => null,
+            'name' => 'Default template',
+            'currency' => 'UAH',
+            'unit' => 'words',
+            'config' => [],
+            'isPublic' => true,
+            'isGlobal' => false,
+            'createdAt' => '2025-01-23T15:23:11+00:00',
+            'updatedAt' => null,
+        ]);
+        $expected = $template->toArray();
+        unset($expected['id'], $expected['projectId'], $expected['groupId'], $expected['createdAt'], $expected['updatedAt']);
+
+        $this->mockRequest([
+            'path' => '/projects/87/reports/settings-templates',
+            'method' => 'post',
+            'body' => json_encode($expected),
+            'response' => json_encode(['data' => $template->toArray()]),
+        ]);
+
+        $this->crowdin->report->createReportSettingsTemplate(87, $template->toArray());
+    }
+
     public function testUpdateReportSettingsTemplate(): void
     {
         $this->mockRequest([

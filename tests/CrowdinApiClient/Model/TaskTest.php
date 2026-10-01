@@ -229,4 +229,26 @@ class TaskTest extends TestCase
         $this->assertEquals($vendor, $task->getVendor());
         $this->assertEquals($isArchived, $task->isArchived());
     }
+
+    public function testLoadAdditionalFields(): void
+    {
+        $model = new Task([
+            'branchIds' => ['key' => 'value'],
+            'originalWordsCount' => 7,
+            'syncScope' => ['key' => 'value'],
+        ]);
+
+        $this->assertSame(['key' => 'value'], $model->getBranchIds());
+        $this->assertSame(7, $model->getOriginalWordsCount());
+        $this->assertSame(['key' => 'value'], $model->getSyncScope());
+    }
+
+    public function testAdditionalFieldsWhenMissing(): void
+    {
+        $model = new Task([]);
+
+        $this->assertNull($model->getBranchIds());
+        $this->assertSame(0, $model->getOriginalWordsCount());
+        $this->assertNull($model->getSyncScope());
+    }
 }

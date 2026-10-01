@@ -82,6 +82,36 @@ class StringComment extends BaseModel
      */
     protected $attachments;
 
+    /**
+     * @var array|null
+     */
+    protected $file;
+
+    /**
+     * @var int|null
+     */
+    protected $fileId;
+
+    /**
+     * @var bool|null
+     */
+    protected $isShared;
+
+    /**
+     * @var int
+     */
+    protected $projectId;
+
+    /**
+     * @var array|null
+     */
+    protected $resolverOrganization;
+
+    /**
+     * @var array|null
+     */
+    protected $senderOrganization;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -100,6 +130,12 @@ class StringComment extends BaseModel
         $this->resolvedAt = (string)$this->getDataProperty('resolvedAt');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->attachments = (array)$this->getDataProperty('attachments');
+        $this->file = $this->nullableArray('file');
+        $this->fileId = $this->nullableInt('fileId');
+        $this->isShared = $this->nullableBool('isShared');
+        $this->projectId = (int)$this->getDataProperty('projectId');
+        $this->resolverOrganization = $this->nullableArray('resolverOrganization');
+        $this->senderOrganization = $this->nullableArray('senderOrganization');
     }
 
     /**
@@ -340,5 +376,35 @@ class StringComment extends BaseModel
     public function setAttachments(array $attachments): void
     {
         $this->attachments = $attachments;
+    }
+
+    public function getFile(): ?array
+    {
+        return $this->file;
+    }
+
+    public function getFileId(): ?int
+    {
+        return $this->fileId;
+    }
+
+    public function isShared(): ?bool
+    {
+        return $this->isShared;
+    }
+
+    public function getProjectId(): int
+    {
+        return $this->projectId;
+    }
+
+    public function getResolverOrganization(): ?array
+    {
+        return $this->resolverOrganization;
+    }
+
+    public function getSenderOrganization(): ?array
+    {
+        return $this->senderOrganization;
     }
 }

@@ -53,4 +53,39 @@ class TranslationMemoryTest extends TestCase
         $this->assertEquals($this->data['projectIds'], $this->translationMemory->getProjectIds());
         $this->assertEquals($this->data['createdAt'], $this->translationMemory->getCreatedAt());
     }
+
+    public function testLoadAdditionalFields(): void
+    {
+        $model = new TranslationMemory([
+            'isShared' => true,
+            'languageId' => 'value',
+            'userId' => 7,
+            'webUrl' => 'value',
+        ]);
+
+        $this->assertSame(true, $model->isShared());
+        $this->assertSame('value', $model->getLanguageId());
+        $this->assertSame(7, $model->getUserId());
+        $this->assertSame('value', $model->getWebUrl());
+    }
+
+    public function testAdditionalFieldsWhenMissing(): void
+    {
+        $model = new TranslationMemory([]);
+
+        $this->assertSame(false, $model->isShared());
+        $this->assertNull($model->getLanguageId());
+        $this->assertNull($model->getUserId());
+        $this->assertSame('', $model->getWebUrl());
+    }
+
+    public function testSetAdditionalFields(): void
+    {
+        $model = new TranslationMemory([]);
+        $model->setIsShared(true);
+        $model->setLanguageId('value');
+
+        $this->assertSame(true, $model->isShared());
+        $this->assertSame('value', $model->getLanguageId());
+    }
 }

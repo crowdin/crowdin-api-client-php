@@ -38,6 +38,31 @@ class MachineTranslationEngine extends BaseModel
     protected $projectIds;
 
     /**
+     * @var array|null
+     */
+    protected $enabledLanguageIds;
+
+    /**
+     * @var array|null
+     */
+    protected $enabledProjectIds;
+
+    /**
+     * @var bool|null
+     */
+    protected $isEnabled;
+
+    /**
+     * @var array
+     */
+    protected $supportedLanguageIds;
+
+    /**
+     * @var array|null
+     */
+    protected $supportedLanguagePairs;
+
+    /**
      * @param array $data
      */
     public function __construct(array $data = [])
@@ -50,6 +75,11 @@ class MachineTranslationEngine extends BaseModel
         $this->type = (string)$this->getDataProperty('type');
         $this->credentials = (array)$this->getDataProperty('credentials');
         $this->projectIds = (array)$this->getDataProperty('projectIds');
+        $this->enabledLanguageIds = $this->nullableArray('enabledLanguageIds');
+        $this->enabledProjectIds = $this->nullableArray('enabledProjectIds');
+        $this->isEnabled = $this->nullableBool('isEnabled');
+        $this->supportedLanguageIds = (array)$this->getDataProperty('supportedLanguageIds');
+        $this->supportedLanguagePairs = $this->nullableArray('supportedLanguagePairs');
     }
 
     /**
@@ -122,5 +152,45 @@ class MachineTranslationEngine extends BaseModel
     public function getProjectIds(): array
     {
         return $this->projectIds;
+    }
+
+    public function getEnabledLanguageIds(): ?array
+    {
+        return $this->enabledLanguageIds;
+    }
+
+    public function setEnabledLanguageIds(array $enabledLanguageIds): void
+    {
+        $this->enabledLanguageIds = $enabledLanguageIds;
+    }
+
+    public function getEnabledProjectIds(): ?array
+    {
+        return $this->enabledProjectIds;
+    }
+
+    public function setEnabledProjectIds(array $enabledProjectIds): void
+    {
+        $this->enabledProjectIds = $enabledProjectIds;
+    }
+
+    public function isEnabled(): ?bool
+    {
+        return $this->isEnabled;
+    }
+
+    public function setIsEnabled(bool $isEnabled): void
+    {
+        $this->isEnabled = $isEnabled;
+    }
+
+    public function getSupportedLanguageIds(): array
+    {
+        return $this->supportedLanguageIds;
+    }
+
+    public function getSupportedLanguagePairs(): ?array
+    {
+        return $this->supportedLanguagePairs;
     }
 }

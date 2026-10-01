@@ -65,4 +65,20 @@ class DirectoryTest extends TestCase
         $this->assertEquals($this->data['createdAt'], $this->directory->getCreatedAt());
         $this->assertEquals($this->data['updatedAt'], $this->directory->getUpdatedAt());
     }
+
+    public function testLoadAdditionalFields(): void
+    {
+        $model = new Directory([
+            'path' => 'value',
+        ]);
+
+        $this->assertSame('value', $model->getPath());
+    }
+
+    public function testAdditionalFieldsWhenMissing(): void
+    {
+        $model = new Directory([]);
+
+        $this->assertSame('', $model->getPath());
+    }
 }

@@ -37,6 +37,16 @@ class ReportArchive extends BaseModel
      */
     protected $createdAt;
 
+    /**
+     * @var int
+     */
+    protected $progress;
+
+    /**
+     * @var string
+     */
+    protected $status;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -48,6 +58,8 @@ class ReportArchive extends BaseModel
         $this->webUrl = (string)$this->getDataProperty('webUrl');
         $this->scheme = (array)$this->getDataProperty('scheme');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
+        $this->progress = (int)$this->getDataProperty('progress');
+        $this->status = (string)$this->getDataProperty('status');
     }
 
     public function getId(): int
@@ -123,5 +135,15 @@ class ReportArchive extends BaseModel
     public function setCreatedAt(string $createdAt): void
     {
         $this->createdAt = $createdAt;
+    }
+
+    public function getProgress(): int
+    {
+        return $this->progress;
+    }
+
+    public function getStatus(): string
+    {
+        return $this->status;
     }
 }

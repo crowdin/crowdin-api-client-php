@@ -4,6 +4,7 @@ namespace CrowdinApiClient\Api\Enterprise;
 
 use CrowdinApiClient\Api\AbstractApi;
 use CrowdinApiClient\Http\ResponseDecorator\ResponseModelListDecorator;
+use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\Enterprise\Group;
 use CrowdinApiClient\Model\Enterprise\GroupManager;
 use CrowdinApiClient\Model\Enterprise\GroupTeam;
@@ -98,6 +99,32 @@ class GroupApi extends AbstractApi
         $path = sprintf('groups/%d/reports', $groupID);
 
         return $this->_post($path, Report::class, $data);
+    }
+
+    /**
+     * Check Group Report Generation Status
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.groups.reports.get API Documentation
+     *
+     * @param int $groupId
+     * @param string $reportId
+     * @return Report|null
+     */
+    public function getReport(int $groupId, string $reportId): ?Report
+    {
+        return $this->_get(sprintf('groups/%d/reports/%s', $groupId, $reportId), Report::class);
+    }
+
+    /**
+     * Download Group Report
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.groups.reports.download.download API Documentation
+     *
+     * @param int $groupId
+     * @param string $reportId
+     * @return DownloadFile|null
+     */
+    public function downloadReport(int $groupId, string $reportId): ?DownloadFile
+    {
+        return $this->_get(sprintf('groups/%d/reports/%s/download', $groupId, $reportId), DownloadFile::class);
     }
 
     /**

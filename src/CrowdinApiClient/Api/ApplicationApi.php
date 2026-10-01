@@ -7,6 +7,8 @@ namespace CrowdinApiClient\Api;
 use CrowdinApiClient\Model\ApplicationConsent;
 use CrowdinApiClient\Model\ApplicationData;
 use CrowdinApiClient\Model\ApplicationInstallation;
+use CrowdinApiClient\Model\ApplicationInstallationUpdate;
+use CrowdinApiClient\Model\ApplicationKvRecord;
 use CrowdinApiClient\ModelCollection;
 
 /**
@@ -224,5 +226,158 @@ class ApplicationApi extends AbstractApi
     {
         $url = sprintf('applications/%s/api/%s', $applicationIdentifier, $path);
         return $this->_patch($url, ApplicationData::class, $data);
+    }
+
+    /**
+     * Upload Application Installation Bundle
+     * @link https://developer.crowdin.com/api/v2/#operation/api.applications.installations.bundles.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.applications.installations.bundles.post API Documentation Enterprise
+     *
+     * @param string $identifier
+     * @param array $data
+     * integer $data[storageId] required. ZIP archive with a non-empty app.js at its root
+     * @return ApplicationInstallation|null
+     */
+    public function uploadInstallationBundle(string $identifier, array $data): ?ApplicationInstallation
+    {
+        return $this->_post(
+            sprintf('applications/installations/%s/bundles', $identifier),
+            ApplicationInstallation::class,
+            $data
+        );
+    }
+
+    /**
+     * Get Application Installation Update
+     * @link https://developer.crowdin.com/api/v2/#operation/api.applications.installations.update.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.applications.installations.update.get API Documentation Enterprise
+     *
+     * @param string $identifier
+     * @return ApplicationInstallationUpdate|null
+     */
+    public function getInstallationUpdate(string $identifier): ?ApplicationInstallationUpdate
+    {
+        return $this->_get(
+            sprintf('applications/installations/%s/update', $identifier),
+            ApplicationInstallationUpdate::class
+        );
+    }
+
+    /**
+     * Apply Application Installation Update
+     * @link https://developer.crowdin.com/api/v2/#operation/api.applications.installations.update.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.applications.installations.update.post API Documentation Enterprise
+     *
+     * @param string $identifier
+     * @param array $data
+     * string $data[manifestHash] required. From getInstallationUpdate()
+     * @return ApplicationInstallation|null
+     */
+    public function applyInstallationUpdate(string $identifier, array $data): ?ApplicationInstallation
+    {
+        return $this->_post(
+            sprintf('applications/installations/%s/update', $identifier),
+            ApplicationInstallation::class,
+            $data
+        );
+    }
+
+    /**
+     * List Application KV Records
+     * @link https://developer.crowdin.com/api/v2/#operation/api.applications.storage.kv.records.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.applications.storage.kv.records.getMany API Documentation Enterprise
+     * Note: requires the application's own access token, personal access tokens are not supported.
+     *
+     * @param string $applicationIdentifier
+     * @param array $params
+     * string $params[prefix]<br>
+     * string $params[orderBy]<br>
+     * integer $params[limit]<br>
+     * integer $params[offset]
+     * @return ModelCollection
+     */
+    public function listKvRecords(string $applicationIdentifier, array $params = []): ModelCollection
+    {
+        return $this->_list(
+            sprintf('applications/%s/storage/kv/records', $applicationIdentifier),
+            ApplicationKvRecord::class,
+            $params
+        );
+    }
+
+    /**
+     * Add Application KV Record
+     * @link https://developer.crowdin.com/api/v2/#operation/api.applications.storage.kv.records.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.applications.storage.kv.records.post API Documentation Enterprise
+     * Note: requires the application's own access token, personal access tokens are not supported.
+     *
+     * @param string $applicationIdentifier
+     * @param array $data
+     * string $data[key] required<br>
+     * mixed $data[value] required. Any JSON value except null<br>
+     * boolean $data[secret]<br>
+     * integer $data[ttl] Time to live in seconds (60-31536000)
+     * @return ApplicationKvRecord|null
+     */
+    public function addKvRecord(string $applicationIdentifier, array $data): ?ApplicationKvRecord
+    {
+        return $this->_create(
+            sprintf('applications/%s/storage/kv/records', $applicationIdentifier),
+            ApplicationKvRecord::class,
+            $data
+        );
+    }
+
+    /**
+     * Get Application KV Record
+     * @link https://developer.crowdin.com/api/v2/#operation/api.applications.storage.kv.records.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.applications.storage.kv.records.get API Documentation Enterprise
+     * Note: requires the application's own access token, personal access tokens are not supported.
+     *
+     * @param string $applicationIdentifier
+     * @param string $key
+     * @return ApplicationKvRecord|null
+     */
+    public function getKvRecord(string $applicationIdentifier, string $key): ?ApplicationKvRecord
+    {
+        return $this->_get(
+            sprintf('applications/%s/storage/kv/records/%s', $applicationIdentifier, $key),
+            ApplicationKvRecord::class
+        );
+    }
+
+    /**
+     * Edit Application KV Record
+     * @link https://developer.crowdin.com/api/v2/#operation/api.applications.storage.kv.records.patch API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.applications.storage.kv.records.patch API Documentation Enterprise
+     * Note: requires the application's own access token, personal access tokens are not supported.
+     *
+     * @param string $applicationIdentifier
+     * @param string $key
+     * @param array $data JSON Patch array. Paths: /value, /ttl (null value removes the TTL)
+     * @return ApplicationKvRecord|null
+     */
+    public function updateKvRecord(string $applicationIdentifier, string $key, array $data): ?ApplicationKvRecord
+    {
+        return $this->_patch(
+            sprintf('applications/%s/storage/kv/records/%s', $applicationIdentifier, $key),
+            ApplicationKvRecord::class,
+            $data
+        );
+    }
+
+    /**
+     * Delete Application KV Record
+     * @link https://developer.crowdin.com/api/v2/#operation/api.applications.storage.kv.records.delete API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.applications.storage.kv.records.delete API Documentation Enterprise
+     * Note: requires the application's own access token, personal access tokens are not supported.
+     *
+     * @param string $applicationIdentifier
+     * @param string $key
+     * @return mixed
+     */
+    public function deleteKvRecord(string $applicationIdentifier, string $key)
+    {
+        return $this->_delete(sprintf('applications/%s/storage/kv/records/%s', $applicationIdentifier, $key));
     }
 }

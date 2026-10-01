@@ -8,6 +8,7 @@ use CrowdinApiClient\Model\DownloadFile;
 use CrowdinApiClient\Model\DownloadFileTranslation;
 use CrowdinApiClient\Model\PreTranslation;
 use CrowdinApiClient\Model\PreTranslationReport;
+use CrowdinApiClient\Model\QaCheck;
 use CrowdinApiClient\Model\TranslationAlignment;
 use CrowdinApiClient\Model\TranslationImport;
 use CrowdinApiClient\Model\TranslationImportReport;
@@ -49,7 +50,8 @@ class TranslationApi extends AbstractApi
      * int $params[engineId]<br>
      * string $params[autoApproveOption]<br>
      * boolean $params[duplicateTranslations] Works only with TM pre-translation method<br>
-     * boolean $params[translateUntranslatedOnly] Works only with TM pre-translation method<br>
+     * boolean $params[translateUntranslatedOnly] Deprecated, use scope instead. Works only with TM pre-translation method<br>
+     * string $params[scope] Enum: "untranslated" "translated" "all" Default: "untranslated" Note: Can't be used with translateUntranslatedOnly<br>
      * boolean $params[translateWithPerfectMatchOnly] Works only with TM pre-translation method<br>
      * @return PreTranslation|null
      */
@@ -83,8 +85,8 @@ class TranslationApi extends AbstractApi
 
     /**
      * Pre-Translation Report
-     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.pre-translations.patch API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.pre-translations.patch API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.pre-translations.report.getReport API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.pre-translations.report.getReport API Documentation Enterprise
      */
     public function getPreTranslationReport(int $projectId, string $preTranslationId): ?PreTranslationReport
     {
@@ -153,7 +155,7 @@ class TranslationApi extends AbstractApi
      * @param string|null $ifNoneMatch
      * @return DownloadFile|null
      * string $params[targetLanguageId]<br>
-     * boolean $params[exportAsXliff]<br>
+     * boolean $params[exportAsXliff] Deprecated, use TranslationApi::exportProjectTranslation() instead<br>
      * boolean $params[skipUntranslatedStrings] true value can't be used with skipUntranslatedFiles=true in same request<br>
      * boolean $params[skipUntranslatedFiles] true value can't be used with skipUntranslatedStrings=true in same request<br>
      * boolean $params[exportApprovedOnly]
@@ -195,8 +197,8 @@ class TranslationApi extends AbstractApi
 
     /**
      * Build Project Translation
-     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.builds.build API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.builds.build API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.builds.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.builds.post API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $params
@@ -217,7 +219,7 @@ class TranslationApi extends AbstractApi
     /**
      * Import Translations
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.imports API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.imports API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.enterprise.imports API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $params
@@ -240,7 +242,7 @@ class TranslationApi extends AbstractApi
     /**
      * Check Translation Import Status
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.imports.get API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.imports.get API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.enterprise.imports.get API Documentation Enterprise
      */
     public function getTranslationImportStatus(int $projectId, string $importTranslationId): ?TranslationImport
     {
@@ -366,5 +368,30 @@ class TranslationApi extends AbstractApi
     {
         $path = sprintf('projects/%d/translations/alignment', $projectId);
         return $this->_post($path, TranslationAlignment::class, $params);
+    }
+
+    /**
+     * Validate QA Checks
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.validate-qa-checks.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.validate-qa-checks.post API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param array $data list of translations to validate<br>
+     * integer $data[][stringId] required<br>
+     * string $data[][languageId] required<br>
+     * string $data[][text] required<br>
+     * string $data[][pluralCategoryName] Enum: "zero" "one" "two" "few" "many" "other"
+     * @return ModelCollection
+     */
+    public function validateQaChecks(int $projectId, array $data): ModelCollection
+    {
+        $path = sprintf('projects/%d/translations/validate-qa-checks', $projectId);
+
+        $options = [
+            'body' => json_encode($data),
+            'headers' => $this->getHeaders(),
+        ];
+
+        return $this->client->apiRequest('post', $path, new ResponseModelListDecorator(QaCheck::class), $options);
     }
 }

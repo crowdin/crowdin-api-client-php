@@ -34,6 +34,16 @@ class DistributionRelease extends BaseModel
      */
     protected $date;
 
+    /**
+     * @var int|null
+     */
+    protected $currentBranchId;
+
+    /**
+     * @var array
+     */
+    protected $error;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -43,6 +53,8 @@ class DistributionRelease extends BaseModel
         $this->currentLanguageId = (string)$this->getDataProperty('currentLanguageId');
         $this->currentFileId = (int)$this->getDataProperty('currentFileId');
         $this->date = (string)$this->getDataProperty('date');
+        $this->currentBranchId = $this->nullableInt('currentBranchId');
+        $this->error = (array)$this->getDataProperty('error');
     }
 
     public function getStatus(): ?string
@@ -93,5 +105,15 @@ class DistributionRelease extends BaseModel
     public function setDate(?string $date): void
     {
         $this->date = $date;
+    }
+
+    public function getCurrentBranchId(): ?int
+    {
+        return $this->currentBranchId;
+    }
+
+    public function getError(): array
+    {
+        return $this->error;
     }
 }

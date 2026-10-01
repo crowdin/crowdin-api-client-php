@@ -19,6 +19,7 @@ class ScreenshotTest extends TestCase
         'id' => 2,
         'userId' => 6,
         'url' => 'https://production-enterprise-screenshots.downloads.crowdin.com/992000002/6/2/middle.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIGJKLQV66ZXPMMEA%2F20190923%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190923T093016Z&X-Amz-SignedHeaders=host&X-Amz-Expires=120&X-Amz-Signature=8df06f57594f7d1804b7c037629f6916224415e9b935c4f6619fbe002fb25e73',
+        'webUrl' => 'https://crowdin.com/project/example/screenshots/2',
         'name' => 'translate_with_siri.jpg',
         'size' =>
             [
@@ -71,11 +72,20 @@ class ScreenshotTest extends TestCase
         $this->assertEquals($this->data['name'], $this->screenshot->getName());
     }
 
+    public function testLoadDataWithoutWebUrl(): void
+    {
+        $data = $this->data;
+        unset($data['webUrl']);
+
+        $this->assertNull((new Screenshot($data))->getWebUrl());
+    }
+
     public function checkData()
     {
         $this->assertEquals($this->data['id'], $this->screenshot->getId());
         $this->assertEquals($this->data['userId'], $this->screenshot->getUserId());
         $this->assertEquals($this->data['url'], $this->screenshot->getUrl());
+        $this->assertEquals($this->data['webUrl'], $this->screenshot->getWebUrl());
         $this->assertEquals($this->data['name'], $this->screenshot->getName());
         $this->assertEquals($this->data['size'], $this->screenshot->getSize());
         $this->assertEquals($this->data['tagsCount'], $this->screenshot->getTagsCount());

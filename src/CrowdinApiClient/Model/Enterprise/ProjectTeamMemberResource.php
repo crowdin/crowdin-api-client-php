@@ -136,11 +136,17 @@ class ProjectTeamMemberResource extends BaseModel
         return $this->managerOfGroup;
     }
 
+    /**
+     * @deprecated Deprecated by the Crowdin Enterprise API. Use getRoles() instead.
+     */
     public function isAccessToAllWorkflowSteps(): bool
     {
         return $this->accessToAllWorkflowSteps;
     }
 
+    /**
+     * @deprecated Deprecated by the Crowdin Enterprise API. Use getRoles() instead.
+     */
     public function getPermissions(): array
     {
         return $this->permissions;

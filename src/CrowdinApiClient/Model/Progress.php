@@ -38,6 +38,11 @@ class Progress extends BaseModel
     protected $approvalProgress;
 
     /**
+     * @var array
+     */
+    protected $qaChecksStatus;
+
+    /**
      * @param array $data
      */
     public function __construct(array $data = [])
@@ -50,6 +55,7 @@ class Progress extends BaseModel
         $this->phrases = (array)$this->getDataProperty('phrases');
         $this->translationProgress = (int)$this->getDataProperty('translationProgress');
         $this->approvalProgress = (int)$this->getDataProperty('approvalProgress');
+        $this->qaChecksStatus = (array)$this->getDataProperty('qaChecksStatus');
     }
 
     public function getLanguage(): Language
@@ -95,5 +101,10 @@ class Progress extends BaseModel
     public function getApprovalProgress(): int
     {
         return $this->approvalProgress;
+    }
+
+    public function getQaChecksStatus(): array
+    {
+        return $this->qaChecksStatus;
     }
 }

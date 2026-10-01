@@ -72,7 +72,7 @@ class TranslationStatusApi extends AbstractApi
     /**
      * Get Language Progress
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.languages.files.progress.getMany API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.files.languages.progress.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.languages.files.progress.getMany API Documentation Enterprise
      *
      * @param int $projectId
      * @param string $languageId
@@ -107,8 +107,8 @@ class TranslationStatusApi extends AbstractApi
 
     /**
      * List QA Check Issues
-     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.qa-check.getMany API Documentation
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.qa-check.getMany API Documentation Enterprise
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.qa-checks.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.qa-checks.getMany API Documentation Enterprise
      *
      * @param int $projectId
      * @param array $params

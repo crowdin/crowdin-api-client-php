@@ -123,4 +123,31 @@ class ApplicationInstallationTest extends TestCase
         $this->model->setModules($newModules);
         $this->assertEquals($newModules, $this->model->getModules());
     }
+
+    public function testManifestFieldsDefaultWhenAbsent(): void
+    {
+        $this->assertNull($this->model->getLogoUrl());
+        $this->assertNull($this->model->getManifest());
+        $this->assertNull($this->model->getManifestUpdatedAt());
+        $this->assertFalse($this->model->isManifestOutdated());
+        $this->assertNull($this->model->getBundle());
+    }
+
+    public function testManifestFields(): void
+    {
+        $model = new ApplicationInstallation([
+            'identifier' => 'my-app',
+            'logoUrl' => 'https://localhost.dev/logo.png',
+            'manifest' => ['identifier' => 'my-app', 'name' => 'My Application'],
+            'manifestUpdatedAt' => '2026-09-01T10:00:00+00:00',
+            'isManifestOutdated' => true,
+            'bundle' => ['mode' => 'external', 'url' => 'https://localhost:3000'],
+        ]);
+
+        $this->assertEquals('https://localhost.dev/logo.png', $model->getLogoUrl());
+        $this->assertEquals(['identifier' => 'my-app', 'name' => 'My Application'], $model->getManifest());
+        $this->assertEquals('2026-09-01T10:00:00+00:00', $model->getManifestUpdatedAt());
+        $this->assertTrue($model->isManifestOutdated());
+        $this->assertEquals(['mode' => 'external', 'url' => 'https://localhost:3000'], $model->getBundle());
+    }
 }

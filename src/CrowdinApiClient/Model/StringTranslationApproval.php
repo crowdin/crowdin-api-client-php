@@ -42,6 +42,11 @@ class StringTranslationApproval extends BaseModel
      */
     protected $createdAt;
 
+    /**
+     * @var int
+     */
+    protected $fileId;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -53,6 +58,7 @@ class StringTranslationApproval extends BaseModel
         $this->languageId = (string)$this->getDataProperty('languageId');
         $this->workflowStepId = (int)$this->getDataProperty('workflowStepId');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
+        $this->fileId = (int)$this->getDataProperty('fileId');
     }
 
     /**
@@ -165,5 +171,10 @@ class StringTranslationApproval extends BaseModel
     public function setCreatedAt(string $createdAt): void
     {
         $this->createdAt = $createdAt;
+    }
+
+    public function getFileId(): int
+    {
+        return $this->fileId;
     }
 }

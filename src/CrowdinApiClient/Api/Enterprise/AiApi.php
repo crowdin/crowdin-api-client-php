@@ -4,6 +4,10 @@ namespace CrowdinApiClient\Api\Enterprise;
 
 use CrowdinApiClient\Api\AbstractApi;
 use CrowdinApiClient\Model\AiFileTranslation;
+use CrowdinApiClient\Model\AiFineTuningDataset;
+use CrowdinApiClient\Model\AiFineTuningEvent;
+use CrowdinApiClient\Model\AiFineTuningJob;
+use CrowdinApiClient\Model\AiMemberUsage;
 use CrowdinApiClient\Model\AiPrompt;
 use CrowdinApiClient\Model\AiPromptCompletion;
 use CrowdinApiClient\Model\AiProvider;
@@ -11,10 +15,13 @@ use CrowdinApiClient\Model\AiProviderModel;
 use CrowdinApiClient\Model\AiProxyChatCompletion;
 use CrowdinApiClient\Model\AiReport;
 use CrowdinApiClient\Model\AiRequestLog;
+use CrowdinApiClient\Model\AiRequestLogExport;
 use CrowdinApiClient\Model\AiSettings;
 use CrowdinApiClient\Model\AiSnippet;
+use CrowdinApiClient\Model\AiSupportedModel;
 use CrowdinApiClient\Model\AiTranslation;
 use CrowdinApiClient\Model\DownloadFile;
+use CrowdinApiClient\Model\ProjectAiSettings;
 use CrowdinApiClient\ModelCollection;
 
 /**
@@ -144,11 +151,11 @@ class AiApi extends AbstractApi
      *
      * @param array $data
      * string $data[name] required<br>
-     * string $data[action] required<br>
+     * string $data[action] required. Note: "assist" is deprecated<br>
      * array $data[config] required<br>
      * integer $data[aiProviderId]<br>
      * string $data[aiModelId]<br>
-     * boolean $data[isEnabled]<br>
+     * boolean $data[isEnabled] Deprecated<br>
      * array $data[enabledProjectIds]
      * @return AiPrompt|null
      */
@@ -467,7 +474,7 @@ class AiApi extends AbstractApi
 
     /**
      * List AI Snippets
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.settings.snippets.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.prompts.snippets.getMany API Documentation
      *
      * @param array $params
      * integer $params[limit]<br>
@@ -481,7 +488,7 @@ class AiApi extends AbstractApi
 
     /**
      * Add AI Snippet
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.settings.snippets.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.prompts.snippets.post API Documentation
      *
      * @param array $data
      * string $data[description] required<br>
@@ -496,7 +503,7 @@ class AiApi extends AbstractApi
 
     /**
      * Get AI Snippet
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.settings.snippets.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.prompts.snippets.get API Documentation
      *
      * @param int $aiSnippetId
      * @return AiSnippet|null
@@ -509,7 +516,7 @@ class AiApi extends AbstractApi
 
     /**
      * Edit AI Snippet
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.settings.snippets.patch API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.prompts.snippets.patch API Documentation
      *
      * @param AiSnippet $aiSnippet
      * @return AiSnippet|null
@@ -522,7 +529,7 @@ class AiApi extends AbstractApi
 
     /**
      * Delete AI Snippet
-     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.settings.snippets.delete API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.prompts.snippets.delete API Documentation
      *
      * @param int $aiSnippetId
      * @return mixed
@@ -531,5 +538,260 @@ class AiApi extends AbstractApi
     {
         $path = sprintf('ai/settings/snippets/%d', $aiSnippetId);
         return $this->_delete($path);
+    }
+
+    /**
+     * Get Project AI Settings
+     * @link https://developer.crowdin.com/api/v2/#operation/api.projects.ai.settings.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.ai.settings.get API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @return ProjectAiSettings|null
+     */
+    public function getProjectSettings(int $projectId): ?ProjectAiSettings
+    {
+        $path = sprintf('projects/%d/ai/settings', $projectId);
+        return $this->_get($path, ProjectAiSettings::class);
+    }
+
+    /**
+     * Generate AI Prompt Fine-Tuning Dataset
+     * @link https://developer.crowdin.com/api/v2/#operation/api.ai.prompts.fine-tuning.datasets.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.prompts.fine-tuning.datasets.post API Documentation Enterprise
+     *
+     * @param int $aiPromptId
+     * @param array $data
+     * int[] $data[projectIds]<br>
+     * int[] $data[tmIds]<br>
+     * string $data[purpose] Enum: "training" "validation"<br>
+     * string $data[dateFrom]<br>
+     * string $data[dateTo]<br>
+     * integer $data[maxFileSize]<br>
+     * integer $data[minExamplesCount]<br>
+     * integer $data[maxExamplesCount]
+     * @return AiFineTuningDataset|null
+     */
+    public function generateFineTuningDataset(int $aiPromptId, array $data): ?AiFineTuningDataset
+    {
+        $path = sprintf('ai/prompts/%d/fine-tuning/datasets', $aiPromptId);
+        return $this->_post($path, AiFineTuningDataset::class, $data);
+    }
+
+    /**
+     * Get AI Prompt Fine-Tuning Dataset Generation Status
+     * @link https://developer.crowdin.com/api/v2/#operation/api.users.ai.prompts.fine-tuning.datasets.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.prompts.fine-tuning.datasets.get API Documentation Enterprise
+     *
+     * @param int $aiPromptId
+     * @param string $jobIdentifier
+     * @return AiFineTuningDataset|null
+     */
+    public function getFineTuningDataset(int $aiPromptId, string $jobIdentifier): ?AiFineTuningDataset
+    {
+        $path = sprintf('ai/prompts/%d/fine-tuning/datasets/%s', $aiPromptId, $jobIdentifier);
+        return $this->_get($path, AiFineTuningDataset::class);
+    }
+
+    /**
+     * Download AI Prompt Fine-Tuning Dataset
+     * @link https://developer.crowdin.com/api/v2/#operation/api.users.ai.prompts.fine-tuning.datasets.download.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.prompts.fine-tuning.datasets.download.get API Documentation Enterprise
+     *
+     * @param int $aiPromptId
+     * @param string $jobIdentifier
+     * @return DownloadFile|null
+     */
+    public function downloadFineTuningDataset(int $aiPromptId, string $jobIdentifier): ?DownloadFile
+    {
+        $path = sprintf('ai/prompts/%d/fine-tuning/datasets/%s/download', $aiPromptId, $jobIdentifier);
+        return $this->_get($path, DownloadFile::class);
+    }
+
+    /**
+     * List AI Prompt Fine-Tuning Jobs
+     * @link https://developer.crowdin.com/api/v2/#operation/api.ai.prompts.fine-tuning.jobs.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.prompts.fine-tuning.jobs.getMany API Documentation Enterprise
+     *
+     * @param array $params
+     * string $params[statuses] Comma-separated list of statuses<br>
+     * string $params[orderBy]<br>
+     * integer $params[limit]<br>
+     * integer $params[offset]
+     * @return ModelCollection
+     */
+    public function listFineTuningJobs(array $params = []): ModelCollection
+    {
+        $path = 'ai/prompts/fine-tuning/jobs';
+        return $this->_list($path, AiFineTuningJob::class, $params);
+    }
+
+    /**
+     * Create AI Prompt Fine-Tuning Job
+     * @link https://developer.crowdin.com/api/v2/#operation/api.ai.prompts.fine-tuning.jobs.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.prompts.fine-tuning.jobs.post API Documentation Enterprise
+     *
+     * @param int $aiPromptId
+     * @param array $data
+     * boolean $data[dryRun]<br>
+     * array $data[hyperparameters] batchSize, learningRateMultiplier, nEpochs<br>
+     * array $data[trainingOptions] required. projectIds, tmIds, dateFrom, dateTo, maxFileSize, minExamplesCount, maxExamplesCount<br>
+     * array $data[validationOptions] same keys as trainingOptions
+     * @return AiFineTuningJob|null
+     */
+    public function createFineTuningJob(int $aiPromptId, array $data): ?AiFineTuningJob
+    {
+        $path = sprintf('ai/prompts/%d/fine-tuning/jobs', $aiPromptId);
+        return $this->_post($path, AiFineTuningJob::class, $data);
+    }
+
+    /**
+     * Get AI Prompt Fine-Tuning Job Status
+     * @link https://developer.crowdin.com/api/v2/#operation/api.users.ai.prompts.fine-tuning.jobs.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.prompts.fine-tuning.jobs.get API Documentation Enterprise
+     *
+     * @param int $aiPromptId
+     * @param string $jobIdentifier
+     * @return AiFineTuningJob|null
+     */
+    public function getFineTuningJob(int $aiPromptId, string $jobIdentifier): ?AiFineTuningJob
+    {
+        $path = sprintf('ai/prompts/%d/fine-tuning/jobs/%s', $aiPromptId, $jobIdentifier);
+        return $this->_get($path, AiFineTuningJob::class);
+    }
+
+    /**
+     * List AI Prompt Fine-Tuning Events
+     * @link https://developer.crowdin.com/api/v2/#operation/api.ai.prompts.fine-tuning.jobs.events.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.prompts.fine-tuning.jobs.events.getMany API Documentation Enterprise
+     *
+     * @param int $aiPromptId
+     * @param string $jobIdentifier
+     * @return ModelCollection
+     */
+    public function listFineTuningEvents(int $aiPromptId, string $jobIdentifier): ModelCollection
+    {
+        $path = sprintf('ai/prompts/%d/fine-tuning/jobs/%s/events', $aiPromptId, $jobIdentifier);
+        return $this->_list($path, AiFineTuningEvent::class);
+    }
+
+    /**
+     * List AI Provider Models (across all providers)
+     * @link https://developer.crowdin.com/api/v2/#operation/api.ai.providers.models.crowdin.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.providers.models.enterprise.getMany API Documentation Enterprise
+     *
+     * @return ModelCollection
+     */
+    public function listAllProviderModels(): ModelCollection
+    {
+        $path = 'ai/providers/models';
+        return $this->_list($path, AiProviderModel::class);
+    }
+
+    /**
+     * List Supported AI Provider Models
+     * @link https://developer.crowdin.com/api/v2/#operation/api.ai.providers.supported-models.crowdin.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.providers.supported-models.enterprise.getMany API Documentation Enterprise
+     *
+     * @param array $params
+     * string $params[providerType]<br>
+     * boolean $params[enabled]<br>
+     * string $params[orderBy]<br>
+     * integer $params[limit]<br>
+     * integer $params[offset]
+     * @return ModelCollection
+     */
+    public function listSupportedProviderModels(array $params = []): ModelCollection
+    {
+        $path = 'ai/providers/supported-models';
+        return $this->_list($path, AiSupportedModel::class, $params);
+    }
+
+    /**
+     * Export AI Request Logs
+     * @link https://developer.crowdin.com/api/v2/#operation/api.ai.requestLogs.exports.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.requestLogs.exports.post API Documentation Enterprise
+     *
+     * @param array $data
+     * string $data[format] Enum: "csv"<br>
+     * string $data[requestId]<br>
+     * integer $data[projectId]<br>
+     * integer $data[userId]<br>
+     * integer $data[aiProviderId]<br>
+     * string $data[model]<br>
+     * string $data[sourceAction]<br>
+     * string $data[promptAction]<br>
+     * string[] $data[statuses]<br>
+     * string $data[tokenName]<br>
+     * string $data[oauthClientId]<br>
+     * boolean $data[systemCredentials]<br>
+     * boolean $data[isAutoTriggered]<br>
+     * string $data[createdAfter]<br>
+     * string $data[createdBefore]
+     * @return AiRequestLogExport|null
+     */
+    public function exportRequestLogs(array $data): ?AiRequestLogExport
+    {
+        $path = 'ai/request-logs/exports';
+        return $this->_post($path, AiRequestLogExport::class, $data);
+    }
+
+    /**
+     * Check AI Request Logs Export Status
+     * @link https://developer.crowdin.com/api/v2/#operation/api.ai.requestLogs.exports.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.requestLogs.exports.get API Documentation Enterprise
+     *
+     * @param string $exportId
+     * @return AiRequestLogExport|null
+     */
+    public function getRequestLogsExport(string $exportId): ?AiRequestLogExport
+    {
+        $path = sprintf('ai/request-logs/exports/%s', $exportId);
+        return $this->_get($path, AiRequestLogExport::class);
+    }
+
+    /**
+     * Download AI Request Logs Export
+     * @link https://developer.crowdin.com/api/v2/#operation/api.ai.requestLogs.exports.download API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.requestLogs.exports.download API Documentation Enterprise
+     *
+     * @param string $exportId
+     * @return DownloadFile|null
+     */
+    public function downloadRequestLogsExport(string $exportId): ?DownloadFile
+    {
+        $path = sprintf('ai/request-logs/exports/%s/download', $exportId);
+        return $this->_get($path, DownloadFile::class);
+    }
+
+    /**
+     * List AI Usage Members
+     * @link https://developer.crowdin.com/api/v2/#operation/api.ai.usage.members.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.usage.members.getMany API Documentation Enterprise
+     *
+     * @param array $params
+     * string $params[userIds] Comma-separated list of user ids<br>
+     * string $params[orderBy]<br>
+     * integer $params[limit]<br>
+     * integer $params[offset]
+     * @return ModelCollection
+     */
+    public function listUsageMembers(array $params = []): ModelCollection
+    {
+        $path = 'ai/usage/members';
+        return $this->_list($path, AiMemberUsage::class, $params);
+    }
+
+    /**
+     * Get AI Usage Member
+     * @link https://developer.crowdin.com/api/v2/#operation/api.ai.usage.members.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.ai.usage.members.get API Documentation Enterprise
+     *
+     * @param int $memberId
+     * @return AiMemberUsage|null
+     */
+    public function getUsageMember(int $memberId): ?AiMemberUsage
+    {
+        $path = sprintf('ai/usage/members/%d', $memberId);
+        return $this->_get($path, AiMemberUsage::class);
     }
 }

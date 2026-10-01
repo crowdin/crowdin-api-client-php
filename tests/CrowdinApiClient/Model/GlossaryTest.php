@@ -57,4 +57,28 @@ class GlossaryTest extends TestCase
         $this->assertEquals($this->data['webUrl'], $this->glossary->getWebUrl());
         $this->assertEquals($this->data['createdAt'], $this->glossary->getCreatedAt());
     }
+
+    public function testLoadAdditionalFields(): void
+    {
+        $model = new Glossary([
+            'isShared' => true,
+        ]);
+
+        $this->assertSame(true, $model->isShared());
+    }
+
+    public function testAdditionalFieldsWhenMissing(): void
+    {
+        $model = new Glossary([]);
+
+        $this->assertSame(false, $model->isShared());
+    }
+
+    public function testSetAdditionalFields(): void
+    {
+        $model = new Glossary([]);
+        $model->setIsShared(true);
+
+        $this->assertSame(true, $model->isShared());
+    }
 }

@@ -26,4 +26,23 @@ class WorkflowTemplateTest extends TestCase
         $this->assertEquals($this->data['groupId'], $this->workflowTemplate->getGroupId());
         $this->assertEquals($this->data['isDefault'], $this->workflowTemplate->isDefault());
     }
+
+    public function testLoadAdditionalFields(): void
+    {
+        $model = new WorkflowTemplate([
+            'steps' => ['key' => 'value'],
+            'webUrl' => 'value',
+        ]);
+
+        $this->assertSame(['key' => 'value'], $model->getSteps());
+        $this->assertSame('value', $model->getWebUrl());
+    }
+
+    public function testAdditionalFieldsWhenMissing(): void
+    {
+        $model = new WorkflowTemplate([]);
+
+        $this->assertSame([], $model->getSteps());
+        $this->assertSame('', $model->getWebUrl());
+    }
 }
