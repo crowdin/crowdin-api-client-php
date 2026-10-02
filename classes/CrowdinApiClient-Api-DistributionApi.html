@@ -303,9 +303,9 @@
                 : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>string $data[exportMode] Enum: &quot;default&quot; &quot;bundle&quot; Default: &quot;default&quot; Note: String-based projects use &quot;bundle&quot; only<br>
+                    <section class="phpdocumentor-description"><p>string $data[exportMode] Deprecated. Enum: &quot;default&quot; &quot;bundle&quot; Default: &quot;default&quot; Note: String-based projects use &quot;bundle&quot; only<br>
 string $data[name] required<br>
-int[] $data[fileIds] Required for file-based projects (default export mode)<br>
+int[] $data[fileIds] Deprecated, use bundleIds instead. Required for file-based projects (default export mode)<br>
 int[] $data[bundleIds] Required for string-based projects<br>
 string $data[format] required for 'bundle' export mode<br>
 string $data[exportPattern] required for 'bundle' export mode. Note: Can't contain \ / : * ? &quot; &lt; &gt; | symbols<br>
@@ -548,7 +548,7 @@ int[] $data[labelIds]<br></p>
  </a>
                                     </dd>
                             <dd class="phpdocumentor-tag-list__definition">
-                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.distributions.release.post"> <p>API Documentation Enterprise</p>
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.distributions.release.get"> <p>API Documentation Enterprise</p>
  </a>
                                     </dd>
                         </dl>
@@ -769,7 +769,7 @@ integer $params[offset]  &gt;= 0 Default: 0</p>
                 <span class="phpdocumentor-tag__name">link</span>
             </dt>
                             <dd class="phpdocumentor-tag-list__definition">
-                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.projects.distributions.post"> <p>API Documentation</p>
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.projects.distributions.patch"> <p>API Documentation</p>
  </a>
                                     </dd>
                             <dd class="phpdocumentor-tag-list__definition">
