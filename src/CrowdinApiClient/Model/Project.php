@@ -183,7 +183,7 @@ class Project extends BaseModel
     protected $inContextProcessHiddenStrings;
 
     /**
-     * @var ?string
+     * @var string|null
      */
     protected $inContextPseudoLanguageId;
 
@@ -446,7 +446,7 @@ class Project extends BaseModel
         $this->useGlobalTm = (bool)$this->getDataProperty('useGlobalTm');
         $this->inContext = (bool)$this->getDataProperty('inContext');
         $this->inContextProcessHiddenStrings = (bool)$this->getDataProperty('inContextProcessHiddenStrings');
-        $this->inContextPseudoLanguageId = (string)$this->getDataProperty('inContextPseudoLanguageId');
+        $this->inContextPseudoLanguageId = $this->nullableString('inContextPseudoLanguageId');
         $this->inContextPseudoLanguage = (array)$this->getDataProperty('inContextPseudoLanguage');
         $this->qaCheckIsActive = (bool)$this->getDataProperty('qaCheckIsActive');
         $this->qaCheckCategories = (array)$this->getDataProperty('qaCheckCategories');
@@ -494,81 +494,51 @@ class Project extends BaseModel
         $this->webUrl = (string)$this->getDataProperty('webUrl');
     }
 
-    /**
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @param int $id
-     */
     public function setId(int $id): void
     {
         $this->id = $id;
     }
 
-    /**
-     * @return int
-     */
     public function getGroupId(): int
     {
         return $this->groupId;
     }
 
-    /**
-     * @param int $groupId
-     */
     public function setGroupId(int $groupId): void
     {
         $this->groupId = $groupId;
     }
 
-    /**
-     * @return int
-     */
     public function getUserId(): int
     {
         return $this->userId;
     }
 
-    /**
-     * @param int $userId
-     */
     public function setUserId(int $userId): void
     {
         $this->userId = $userId;
     }
 
-    /**
-     * @return string
-     */
     public function getSourceLanguageId(): string
     {
         return $this->sourceLanguageId;
     }
 
-    /**
-     * @param string $sourceLanguageId
-     */
     public function setSourceLanguageId(string $sourceLanguageId): void
     {
         $this->sourceLanguageId = $sourceLanguageId;
     }
 
-    /**
-     * @return array
-     */
     public function getTargetLanguageIds(): array
     {
         return $this->targetLanguageIds;
     }
 
-    /**
-     * @param array $targetLanguageIds
-     */
     public function setTargetLanguageIds(array $targetLanguageIds): void
     {
         $this->targetLanguageIds = $targetLanguageIds;
@@ -584,113 +554,71 @@ class Project extends BaseModel
         $this->targetLanguages = $targetLanguages;
     }
 
-    /**
-     * @return string
-     */
     public function getLanguageAccessPolicy(): string
     {
         return $this->languageAccessPolicy;
     }
 
-    /**
-     * @param string $languageAccessPolicy
-     */
     public function setLanguageAccessPolicy(string $languageAccessPolicy): void
     {
         $this->languageAccessPolicy = $languageAccessPolicy;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @param string $name
-     */
     public function setName(string $name): void
     {
         $this->name = $name;
     }
 
-    /**
-     * @return string
-     */
     public function getCname(): string
     {
         return $this->cname;
     }
 
-    /**
-     * @param string $cname
-     */
     public function setCname(string $cname): void
     {
         $this->cname = $cname;
     }
 
-    /**
-     * @return string
-     */
     public function getIdentifier(): string
     {
         return $this->identifier;
     }
 
-    /**
-     * @param string $identifier
-     */
     public function setIdentifier(string $identifier): void
     {
         $this->identifier = $identifier;
     }
 
-    /**
-     * @return string
-     */
     public function getDescription(): string
     {
         return $this->description;
     }
 
-    /**
-     * @param string $description
-     */
     public function setDescription(string $description): void
     {
         $this->description = $description;
     }
 
-    /**
-     * @return string
-     */
     public function getVisibility(): string
     {
         return $this->visibility;
     }
 
-    /**
-     * @param string $visibility
-     */
     public function setVisibility(string $visibility): void
     {
         $this->visibility = $visibility;
     }
 
-    /**
-     * @return string
-     */
     public function getLogo(): string
     {
         return $this->logo;
     }
 
-    /**
-     * @param string $logo
-     */
     public function setLogo(string $logo): void
     {
         $this->logo = $logo;
@@ -714,161 +642,101 @@ class Project extends BaseModel
         $this->background = $background;
     }
 
-    /**
-     * @return bool
-     */
     public function isExternal(): bool
     {
         return $this->isExternal;
     }
 
-    /**
-     * @param bool $isExternal
-     */
     public function setIsExternal(bool $isExternal): void
     {
         $this->isExternal = $isExternal;
     }
 
-    /**
-     * @return string
-     */
     public function getExternalType(): string
     {
         return $this->externalType;
     }
 
-    /**
-     * @param string $externalType
-     */
     public function setExternalType(string $externalType): void
     {
         $this->externalType = $externalType;
     }
 
-    /**
-     * @return int
-     */
     public function getWorkflowId(): int
     {
         return $this->workflowId;
     }
 
-    /**
-     * @param int $workflowId
-     */
     public function setWorkflowId(int $workflowId): void
     {
         $this->workflowId = $workflowId;
     }
 
-    /**
-     * @return bool
-     */
     public function isHasCrowdsourcing(): bool
     {
         return $this->hasCrowdsourcing;
     }
 
-    /**
-     * @param bool $hasCrowdsourcing
-     */
     public function setHasCrowdsourcing(bool $hasCrowdsourcing): void
     {
         $this->hasCrowdsourcing = $hasCrowdsourcing;
     }
 
-    /**
-     * @return string
-     */
     public function getCreatedAt(): string
     {
         return $this->createdAt;
     }
 
-    /**
-     * @param string $createdAt
-     */
     public function setCreatedAt(string $createdAt): void
     {
         $this->createdAt = $createdAt;
     }
 
-    /**
-     * @return string
-     */
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;
     }
 
-    /**
-     * @param string $updatedAt
-     */
     public function setUpdatedAt(string $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
     }
 
-    /**
-     * @return string
-     */
     public function getLastActivity(): string
     {
         return $this->lastActivity;
     }
 
-    /**
-     * @param string $lastActivity
-     */
     public function setLastActivity(string $lastActivity): void
     {
         $this->lastActivity = $lastActivity;
     }
 
-    /**
-     * @return int
-     */
     public function getTranslateDuplicates(): int
     {
         return $this->translateDuplicates;
     }
 
-    /**
-     * @param int $translateDuplicates
-     */
     public function setTranslateDuplicates(int $translateDuplicates): void
     {
         $this->translateDuplicates = $translateDuplicates;
     }
 
-    /**
-     * @return bool
-     */
     public function isMtAllowed(): bool
     {
         return $this->isMtAllowed;
     }
 
-    /**
-     * @param bool $isMtAllowed
-     */
     public function setIsMtAllowed(bool $isMtAllowed): void
     {
         $this->isMtAllowed = $isMtAllowed;
     }
 
-    /**
-     * @return bool
-     */
     public function isAutoSubstitution(): bool
     {
         return $this->autoSubstitution;
     }
 
-    /**
-     * @param bool $autoSubstitution
-     */
     public function setAutoSubstitution(bool $autoSubstitution): void
     {
         $this->autoSubstitution = $autoSubstitution;
@@ -884,209 +752,131 @@ class Project extends BaseModel
         $this->exportTranslatedOnly = $exportTranslatedOnly;
     }
 
-    /**
-     * @return bool
-     */
     public function isSkipUntranslatedStrings(): bool
     {
         return $this->skipUntranslatedStrings;
     }
 
-    /**
-     * @param bool $skipUntranslatedStrings
-     */
     public function setSkipUntranslatedStrings(bool $skipUntranslatedStrings): void
     {
         $this->skipUntranslatedStrings = $skipUntranslatedStrings;
     }
 
-    /**
-     * @return bool
-     */
     public function isSkipUntranslatedFiles(): bool
     {
         return $this->skipUntranslatedFiles;
     }
 
-    /**
-     * @param bool $skipUntranslatedFiles
-     */
     public function setSkipUntranslatedFiles(bool $skipUntranslatedFiles): void
     {
         $this->skipUntranslatedFiles = $skipUntranslatedFiles;
     }
 
-    /**
-     * @return int
-     */
     public function getExportWithMinApprovalsCount(): int
     {
         return $this->exportWithMinApprovalsCount;
     }
 
-    /**
-     * @param int $exportWithMinApprovalsCount
-     */
     public function setExportWithMinApprovalsCount(int $exportWithMinApprovalsCount): void
     {
         $this->exportWithMinApprovalsCount = $exportWithMinApprovalsCount;
     }
 
-    /**
-     * @return bool
-     */
     public function isExportApprovedOnly(): bool
     {
         return $this->exportApprovedOnly;
     }
 
-    /**
-     * @param bool $exportApprovedOnly
-     */
     public function setExportApprovedOnly(bool $exportApprovedOnly): void
     {
         $this->exportApprovedOnly = $exportApprovedOnly;
     }
 
-    /**
-     * @return bool
-     */
     public function isAutoTranslateDialects(): bool
     {
         return $this->autoTranslateDialects;
     }
 
-    /**
-     * @param bool $autoTranslateDialects
-     */
     public function setAutoTranslateDialects(bool $autoTranslateDialects): void
     {
         $this->autoTranslateDialects = $autoTranslateDialects;
     }
 
-    /**
-     * @return bool
-     */
     public function isPublicDownloads(): bool
     {
         return $this->publicDownloads;
     }
 
-    /**
-     * @param bool $publicDownloads
-     */
     public function setPublicDownloads(bool $publicDownloads): void
     {
         $this->publicDownloads = $publicDownloads;
     }
 
-    /**
-     * @return bool
-     */
     public function isHiddenStringsProofreadersAccess(): bool
     {
         return $this->hiddenStringsProofreadersAccess;
     }
 
-    /**
-     * @param bool $hiddenStringsProofreadersAccess
-     */
     public function setHiddenStringsProofreadersAccess(bool $hiddenStringsProofreadersAccess): void
     {
         $this->hiddenStringsProofreadersAccess = $hiddenStringsProofreadersAccess;
     }
 
-    /**
-     * @return bool
-     */
     public function isUseGlobalTm(): bool
     {
         return $this->useGlobalTm;
     }
 
-    /**
-     * @param bool $useGlobalTm
-     */
     public function setUseGlobalTm(bool $useGlobalTm): void
     {
         $this->useGlobalTm = $useGlobalTm;
     }
 
-    /**
-     * @return bool
-     */
     public function isInContext(): bool
     {
         return $this->inContext;
     }
 
-    /**
-     * @param bool $inContext
-     */
     public function setInContext(bool $inContext): void
     {
         $this->inContext = $inContext;
     }
 
-    /**
-     * @return bool
-     */
     public function isInContextProcessHiddenStrings(): bool
     {
         return $this->inContextProcessHiddenStrings;
     }
 
-    /**
-     * @param bool $inContextProcessHiddenStrings
-     */
     public function setInContextProcessHiddenStrings(bool $inContextProcessHiddenStrings): void
     {
         $this->inContextProcessHiddenStrings = $inContextProcessHiddenStrings;
     }
 
-    /**
-     * @return bool
-     */
     public function isQaCheckIsActive(): bool
     {
         return $this->qaCheckIsActive;
     }
 
-    /**
-     * @param bool $qaCheckIsActive
-     */
     public function setQaCheckIsActive(bool $qaCheckIsActive): void
     {
         $this->qaCheckIsActive = $qaCheckIsActive;
     }
 
-    /**
-     * @return array
-     */
     public function getQaCheckCategories(): array
     {
         return $this->qaCheckCategories;
     }
 
-    /**
-     * @param array $qaCheckCategories
-     */
     public function setQaCheckCategories(array $qaCheckCategories): void
     {
         $this->qaCheckCategories = $qaCheckCategories;
     }
 
-    /**
-     * @return array
-     */
     public function getQaChecksIgnorableCategories(): array
     {
         return $this->qaChecksIgnorableCategories;
     }
 
-    /**
-     * @param array $qaChecksIgnorableCategories
-     */
     public function setQaChecksIgnorableCategories(array $qaChecksIgnorableCategories): void
     {
         $this->qaChecksIgnorableCategories = $qaChecksIgnorableCategories;
@@ -1100,9 +890,6 @@ class Project extends BaseModel
         return $this->customQaCheckIds;
     }
 
-    /**
-     * @param array $customQaCheckIds
-     */
     public function setCustomQaCheckIds(array $customQaCheckIds): void
     {
         $this->customQaCheckIds = $customQaCheckIds;
@@ -1116,41 +903,26 @@ class Project extends BaseModel
         return $this->inContextPseudoLanguageId;
     }
 
-    /**
-     * @param ?string $inContextPseudoLanguageId
-     */
     public function setInContextPseudoLanguageId(?string $inContextPseudoLanguageId): void
     {
         $this->inContextPseudoLanguageId = $inContextPseudoLanguageId;
     }
 
-    /**
-     * @return array
-     */
     public function getInContextPseudoLanguage(): array
     {
         return $this->inContextPseudoLanguage;
     }
 
-    /**
-     * @param array $inContextPseudoLanguage
-     */
     public function setInContextPseudoLanguage(array $inContextPseudoLanguage): void
     {
         $this->inContextPseudoLanguage = $inContextPseudoLanguage;
     }
 
-    /**
-     * @return array
-     */
     public function getLanguageMapping(): array
     {
         return $this->languageMapping;
     }
 
-    /**
-     * @param array $languageMapping
-     */
     public function setLanguageMapping(array $languageMapping): void
     {
         $this->languageMapping = $languageMapping;
@@ -1190,113 +962,71 @@ class Project extends BaseModel
         $this->glossaryAccessOption = $glossaryAccessOption;
     }
 
-    /**
-     * @return bool
-     */
     public function isSuspended(): bool
     {
         return $this->isSuspended;
     }
 
-    /**
-     * @param bool $isSuspended
-     */
     public function setIsSuspended(bool $isSuspended): void
     {
         $this->isSuspended = $isSuspended;
     }
 
-    /**
-     * @return bool
-     */
     public function isNormalizePlaceholder(): bool
     {
         return $this->normalizePlaceholder;
     }
 
-    /**
-     * @param bool $normalizePlaceholder
-     */
     public function setNormalizePlaceholder(bool $normalizePlaceholder): void
     {
         $this->normalizePlaceholder = $normalizePlaceholder;
     }
 
-    /**
-     * @return bool
-     */
     public function isSaveMetaInfoInSource(): bool
     {
         return $this->saveMetaInfoInSource;
     }
 
-    /**
-     * @param bool $saveMetaInfoInSource
-     */
     public function setSaveMetaInfoInSource(bool $saveMetaInfoInSource): void
     {
         $this->saveMetaInfoInSource = $saveMetaInfoInSource;
     }
 
-    /**
-     * @return array
-     */
     public function getNotificationSettings(): array
     {
         return $this->notificationSettings;
     }
 
-    /**
-     * @param array $notificationSettings
-     */
     public function setNotificationSettings(array $notificationSettings): void
     {
         $this->notificationSettings = $notificationSettings;
     }
 
-    /**
-     * @return int|null
-     */
     public function getDefaultTmId(): ?int
     {
         return $this->defaultTmId;
     }
 
-    /**
-     * @param int|null $defaultTmId
-     */
     public function setDefaultTmId(?int $defaultTmId): void
     {
         $this->defaultTmId = $defaultTmId;
     }
 
-    /**
-     * @return int|null
-     */
     public function getDefaultGlossaryId(): ?int
     {
         return $this->defaultGlossaryId;
     }
 
-    /**
-     * @param int|null $defaultGlossaryId
-     */
     public function setDefaultGlossaryId(?int $defaultGlossaryId): void
     {
         $this->defaultGlossaryId = $defaultGlossaryId;
     }
 
-    /**
-     * @return array
-     */
     public function getFields(): array
     {
         return $this->fields;
     }
 
-    /**
-     * @param array $fields
-     */
     public function setFields(array $fields): void
     {
         $this->fields = $fields;

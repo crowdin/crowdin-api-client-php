@@ -42,9 +42,6 @@ class Progress extends BaseModel
      */
     protected $qaChecksStatus;
 
-    /**
-     * @param array $data
-     */
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -63,41 +60,26 @@ class Progress extends BaseModel
         return $this->language;
     }
 
-    /**
-     * @return string
-     */
     public function getLanguageId(): string
     {
         return $this->languageId;
     }
 
-    /**
-     * @return array
-     */
     public function getWords(): array
     {
         return $this->words;
     }
 
-    /**
-     * @return array
-     */
     public function getPhrases(): array
     {
         return $this->phrases;
     }
 
-    /**
-     * @return int
-     */
     public function getTranslationProgress(): int
     {
         return $this->translationProgress;
     }
 
-    /**
-     * @return int
-     */
     public function getApprovalProgress(): int
     {
         return $this->approvalProgress;

@@ -32,9 +32,6 @@ class WordAlignment extends BaseModel
         );
     }
 
-    /**
-     * @return string
-     */
     public function getText(): string
     {
         return $this->text;

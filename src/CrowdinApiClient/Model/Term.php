@@ -92,9 +92,6 @@ class Term extends BaseModel
      */
     protected $fields;
 
-    /**
-     * @param array $data
-     */
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -118,81 +115,51 @@ class Term extends BaseModel
         $this->fields = $this->nullableArray('fields');
     }
 
-    /**
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return int
-     */
     public function getUserId(): int
     {
         return $this->userId;
     }
 
-    /**
-     * @return int
-     */
     public function getGlossaryId(): int
     {
         return $this->glossaryId;
     }
 
-    /**
-     * @return string
-     */
     public function getLanguageId(): string
     {
         return $this->languageId;
     }
 
-    /**
-     * @return string
-     */
     public function getText(): string
     {
         return $this->text;
     }
 
-    /**
-     * @param string $text
-     */
     public function setText(string $text): void
     {
         $this->text = $text;
     }
 
-    /**
-     * @return string
-     */
     public function getDescription(): string
     {
         return $this->description;
     }
 
-    /**
-     * @param string $description
-     */
     public function setDescription(string $description): void
     {
         $this->description = $description;
     }
 
-    /**
-     * @return string
-     */
     public function getPartOfSpeech(): string
     {
         return $this->partOfSpeech;
     }
 
-    /**
-     * @param string $partOfSpeech
-     */
     public function setPartOfSpeech(string $partOfSpeech): void
     {
         $this->partOfSpeech = $partOfSpeech;
@@ -253,25 +220,16 @@ class Term extends BaseModel
         return $this->conceptId;
     }
 
-    /**
-     * @return string
-     */
     public function getLemma(): string
     {
         return $this->lemma;
     }
 
-    /**
-     * @return string
-     */
     public function getCreatedAt(): string
     {
         return $this->createdAt;
     }
 
-    /**
-     * @return string
-     */
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;

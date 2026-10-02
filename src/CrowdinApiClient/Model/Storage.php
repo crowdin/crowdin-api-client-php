@@ -24,17 +24,11 @@ class Storage extends BaseModel
         $this->fileName = (string)$this->getDataProperty('fileName');
     }
 
-    /**
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function getFileName(): string
     {
         return $this->fileName;

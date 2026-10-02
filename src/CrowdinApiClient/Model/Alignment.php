@@ -51,49 +51,31 @@ class Alignment extends BaseModel
         $this->probability = (float)$this->getDataProperty('probability');
     }
 
-    /**
-     * @return string
-     */
     public function getSourceWord(): string
     {
         return $this->sourceWord;
     }
 
-    /**
-     * @return string
-     */
     public function getSourceLemma(): string
     {
         return $this->sourceLemma;
     }
 
-    /**
-     * @return string
-     */
     public function getTargetWord(): string
     {
         return $this->targetWord;
     }
 
-    /**
-     * @return string
-     */
     public function getTargetLemma(): string
     {
         return $this->targetLemma;
     }
 
-    /**
-     * @return int
-     */
     public function getMatch(): int
     {
         return $this->match;
     }
 
-    /**
-     * @return float
-     */
     public function getProbability(): float
     {
         return $this->probability;

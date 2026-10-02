@@ -73,17 +73,11 @@ class User extends BaseModel
         $this->timezone = (string)$this->getDataProperty('timezone');
     }
 
-    /**
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function getUsername(): string
     {
         return $this->username;
@@ -94,25 +88,16 @@ class User extends BaseModel
         $this->username = $username;
     }
 
-    /**
-     * @return string
-     */
     public function getEmail(): string
     {
         return $this->email;
     }
 
-    /**
-     * @return bool
-     */
     public function getEmailVerified(): bool
     {
         return $this->emailVerified;
     }
 
-    /**
-     * @return string
-     */
     public function getFullName(): string
     {
         return $this->fullName;
@@ -123,41 +108,26 @@ class User extends BaseModel
         $this->fullName = $fullName;
     }
 
-    /**
-     * @return string
-     */
     public function getAvatarUrl(): string
     {
         return $this->avatarUrl;
     }
 
-    /**
-     * @return string
-     */
     public function getCreatedAt(): string
     {
         return $this->createdAt;
     }
 
-    /**
-     * @return string
-     */
     public function getLastSeen(): string
     {
         return $this->lastSeen;
     }
 
-    /**
-     * @return string
-     */
     public function getTwoFactor(): string
     {
         return $this->twoFactor;
     }
 
-    /**
-     * @return string
-     */
     public function getTimezone(): string
     {
         return $this->timezone;

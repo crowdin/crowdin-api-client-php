@@ -62,78 +62,51 @@ class DeleteJob extends BaseModel
         $this->attributes = (array)$this->getDataProperty('attributes');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
-        $this->startedAt = $this->getDataProperty('startedAt');
-        $this->finishedAt = $this->getDataProperty('finishedAt');
-        $this->error = $this->getDataProperty('error');
+        $this->startedAt = $this->nullableString('startedAt');
+        $this->finishedAt = $this->nullableString('finishedAt');
+        $this->error = $this->nullableArray('error');
     }
 
-    /**
-     * @return string
-     */
     public function getIdentifier(): string
     {
         return $this->identifier;
     }
 
-    /**
-     * @return string
-     */
     public function getStatus(): string
     {
         return $this->status;
     }
 
-    /**
-     * @return int
-     */
     public function getProgress(): int
     {
         return $this->progress;
     }
 
-    /**
-     * @return array
-     */
     public function getAttributes(): array
     {
         return $this->attributes;
     }
 
-    /**
-     * @return string
-     */
     public function getCreatedAt(): string
     {
         return $this->createdAt;
     }
 
-    /**
-     * @return string
-     */
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;
     }
 
-    /**
-     * @return string|null
-     */
     public function getStartedAt(): ?string
     {
         return $this->startedAt;
     }
 
-    /**
-     * @return string|null
-     */
     public function getFinishedAt(): ?string
     {
         return $this->finishedAt;
     }
 
-    /**
-     * @return array|null
-     */
     public function getError(): ?array
     {
         return $this->error;

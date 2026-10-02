@@ -45,8 +45,8 @@ class AiSettings extends BaseModel
 
         $this->preTranslationAiPromptId = (int)$this->getDataProperty('preTranslationAiPromptId');
         $this->editorSuggestionAiPromptId = (int)$this->getDataProperty('editorSuggestionAiPromptId');
-        $this->qaCheckActionAiPromptId = $this->getDataProperty('qaCheckActionAiPromptId');
-        $this->contextReviewAiPromptId = $this->getDataProperty('contextReviewAiPromptId');
+        $this->qaCheckActionAiPromptId = $this->nullableInt('qaCheckActionAiPromptId');
+        $this->contextReviewAiPromptId = $this->nullableInt('contextReviewAiPromptId');
         $this->alignmentActionAiPromptId = $this->nullableInt('alignmentActionAiPromptId');
         $this->dailyCostLimit = $this->nullableFloat('dailyCostLimit');
         $this->isLimitingActive = (bool)$this->getDataProperty('isLimitingActive');

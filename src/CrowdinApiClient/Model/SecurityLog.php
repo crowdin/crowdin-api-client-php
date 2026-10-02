@@ -61,65 +61,41 @@ class SecurityLog extends BaseModel
         $this->createdAt = (string)$this->getDataProperty('createdAt');
     }
 
-    /**
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function getEvent(): string
     {
         return $this->event;
     }
 
-    /**
-     * @return string
-     */
     public function getInfo(): string
     {
         return $this->info;
     }
 
-    /**
-     * @return int
-     */
     public function getUserId(): int
     {
         return $this->userId;
     }
 
-    /**
-     * @return string
-     */
     public function getLocation(): string
     {
         return $this->location;
     }
 
-    /**
-     * @return string
-     */
     public function getIpAddress(): string
     {
         return $this->ipAddress;
     }
 
-    /**
-     * @return string
-     */
     public function getDeviceName(): string
     {
         return $this->deviceName;
     }
 
-    /**
-     * @return string
-     */
     public function getCreatedAt(): string
     {
         return $this->createdAt;

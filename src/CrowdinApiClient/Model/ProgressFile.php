@@ -21,7 +21,7 @@ class ProgressFile extends Progress
     {
         parent::__construct($data);
 
-        $this->etag = $this->getDataProperty('eTag');
+        $this->etag = $this->nullableString('eTag');
         $this->qaChecksStatus = (array)$this->getDataProperty('qaChecksStatus');
     }
 

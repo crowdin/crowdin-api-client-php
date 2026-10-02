@@ -47,9 +47,9 @@ class AiProviderModel extends BaseModel
         parent::__construct($data);
 
         $this->id = (string)$this->getDataProperty('id');
-        $this->provider = $this->getDataProperty('provider');
-        $this->providerName = $this->getDataProperty('providerName');
-        $this->providerId = $this->getDataProperty('providerId');
+        $this->provider = $this->nullableString('provider');
+        $this->providerName = $this->nullableString('providerName');
+        $this->providerId = $this->nullableInt('providerId');
         $this->contextWindow = $this->nullableInt('contextWindow');
         $this->maxOutputTokens = $this->nullableInt('maxOutputTokens');
         $this->supportsStreaming = $this->nullableBool('supportsStreaming');

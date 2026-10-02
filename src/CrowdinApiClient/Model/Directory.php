@@ -79,129 +79,81 @@ class Directory extends BaseModel
         $this->path = (string)$this->getDataProperty('path');
     }
 
-    /**
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return int
-     */
     public function getProjectId(): int
     {
         return $this->projectId;
     }
 
-    /**
-     * @return int
-     */
     public function getBranchId(): int
     {
         return $this->branchId;
     }
 
-    /**
-     * @param int $branchId
-     */
     public function setBranchId(int $branchId): void
     {
         $this->branchId = $branchId;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @param string $name
-     */
     public function setName(string $name): void
     {
         $this->name = $name;
     }
 
-    /**
-     * @return string
-     */
     public function getTitle(): string
     {
         return $this->title;
     }
 
-    /**
-     * @param string $title
-     */
     public function setTitle(string $title): void
     {
         $this->title = $title;
     }
 
-    /**
-     * @return string
-     */
     public function getExportPattern(): string
     {
         return $this->exportPattern;
     }
 
-    /**
-     * @param string $exportPattern
-     */
     public function setExportPattern(string $exportPattern): void
     {
         $this->exportPattern = $exportPattern;
     }
 
-    /**
-     * @return string
-     */
     public function getPriority(): string
     {
         return $this->priority;
     }
 
-    /**
-     * @param string $priority
-     */
     public function setPriority(string $priority): void
     {
         $this->priority = $priority;
     }
 
-    /**
-     * @return string
-     */
     public function getCreatedAt(): string
     {
         return $this->createdAt;
     }
 
-    /**
-     * @return string
-     */
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;
     }
 
-    /**
-     * @return int
-     */
     public function getDirectoryId(): int
     {
         return $this->directoryId;
     }
 
-    /**
-     * @param int $directoryId
-     */
     public function setDirectoryId(int $directoryId): void
     {
         $this->directoryId = $directoryId;

@@ -25,12 +25,12 @@ class SourceString extends BaseModel
     protected $fileId;
 
     /**
-     * @var ?integer
+     * @var integer|null
      */
     protected $branchId;
 
     /**
-     * @var ?integer
+     * @var integer|null
      */
     protected $directoryId;
 
@@ -100,7 +100,7 @@ class SourceString extends BaseModel
     protected $isDuplicate = false;
 
     /**
-     * @var ?integer
+     * @var integer|null
      */
     protected $masterStringId;
 
@@ -121,12 +121,8 @@ class SourceString extends BaseModel
         $this->id = (int)$this->getDataProperty('id');
         $this->projectId = (int)$this->getDataProperty('projectId');
         $this->fileId = (int)$this->getDataProperty('fileId');
-        $this->branchId = $this->getDataProperty('branchId')
-            ? (int)$this->getDataProperty('branchId')
-            : null;
-        $this->directoryId = $this->getDataProperty('directoryId')
-            ? (int)$this->getDataProperty('directoryId')
-            : null;
+        $this->branchId = $this->nullableInt('branchId');
+        $this->directoryId = $this->nullableInt('directoryId');
         $this->identifier = (string)$this->getDataProperty('identifier');
         $this->text = is_array($this->getDataProperty('text'))
             ? $this->getDataProperty('text')
@@ -142,54 +138,36 @@ class SourceString extends BaseModel
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
         $this->isDuplicate = (bool)$this->getDataProperty('isDuplicate');
-        $this->masterStringId = $this->getDataProperty('masterStringId');
+        $this->masterStringId = $this->nullableInt('masterStringId');
         $this->fields = (array)$this->getDataProperty('fields');
         $this->webUrl = (string)$this->getDataProperty('webUrl');
     }
 
-    /**
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return int
-     */
     public function getProjectId(): int
     {
         return $this->projectId;
     }
 
-    /**
-     * @return int
-     */
     public function getFileId(): int
     {
         return $this->fileId;
     }
 
-    /**
-     * @return int|null
-     */
     public function getBranchId(): ?int
     {
         return $this->branchId;
     }
 
-    /**
-     * @return int|null
-     */
     public function getDirectoryId(): ?int
     {
         return $this->directoryId;
     }
 
-    /**
-     * @return string
-     */
     public function getIdentifier(): string
     {
         return $this->identifier;
@@ -227,65 +205,41 @@ class SourceString extends BaseModel
         $this->text = $text;
     }
 
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return $this->type;
     }
 
-    /**
-     * @return string
-     */
     public function getContext(): string
     {
         return $this->context;
     }
 
-    /**
-     * @param string $context
-     */
     public function setContext(string $context): void
     {
         $this->context = $context;
     }
 
-    /**
-     * @return int
-     */
     public function getMaxLength(): int
     {
         return $this->maxLength;
     }
 
-    /**
-     * @param int $maxLength
-     */
     public function setMaxLength(int $maxLength): void
     {
         $this->maxLength = $maxLength;
     }
 
-    /**
-     * @return bool
-     */
     public function isHidden(): bool
     {
         return $this->isHidden;
     }
 
-    /**
-     * @param bool $isHidden
-     */
     public function setIsHidden(bool $isHidden): void
     {
         $this->isHidden = $isHidden;
     }
 
-    /**
-     * @return int
-     */
     public function getRevision(): int
     {
         return $this->revision;
@@ -319,65 +273,41 @@ class SourceString extends BaseModel
         return $this->isIcu;
     }
 
-    /**
-     * @return array
-     */
     public function getLabelIds(): array
     {
         return $this->labelIds;
     }
 
-    /**
-     * @param array $labelIds
-     */
     public function setLabelIds(array $labelIds): void
     {
         $this->labelIds = $labelIds;
     }
 
-    /**
-     * @return string
-     */
     public function getCreatedAt(): string
     {
         return $this->createdAt;
     }
 
-    /**
-     * @return string
-     */
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;
     }
 
-    /**
-     * @return bool
-     */
     public function isDuplicate(): bool
     {
         return $this->isDuplicate;
     }
 
-    /**
-     * @return int|null
-     */
     public function getMasterStringId(): ?int
     {
         return $this->masterStringId;
     }
 
-    /**
-     * @return array
-     */
     public function getFields(): array
     {
         return $this->fields;
     }
 
-    /**
-     * @param array $fields
-     */
     public function setFields(array $fields): void
     {
         $this->fields = $fields;

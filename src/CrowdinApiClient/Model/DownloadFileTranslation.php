@@ -15,20 +15,15 @@ class DownloadFileTranslation extends DownloadFile
     public function __construct(array $data = [])
     {
         parent::__construct($data);
-        $this->etag = $this->getDataProperty('etag');
+
+        $this->etag = $this->nullableString('etag');
     }
 
-    /**
-     * @return string|null
-     */
     public function getEtag(): ?string
     {
         return $this->etag;
     }
 
-    /**
-     * @param string|null $etag
-     */
     public function setEtag(?string $etag): void
     {
         $this->etag = $etag;

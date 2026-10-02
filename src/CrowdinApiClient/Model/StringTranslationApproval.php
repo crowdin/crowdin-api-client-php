@@ -61,113 +61,71 @@ class StringTranslationApproval extends BaseModel
         $this->fileId = (int)$this->getDataProperty('fileId');
     }
 
-    /**
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @param int $id
-     */
     public function setId(int $id): void
     {
         $this->id = $id;
     }
 
-    /**
-     * @return array
-     */
     public function getUser(): array
     {
         return $this->user;
     }
 
-    /**
-     * @param array $user
-     */
     public function setUser(array $user): void
     {
         $this->user = $user;
     }
 
-    /**
-     * @return int
-     */
     public function getTranslationId(): int
     {
         return $this->translationId;
     }
 
-    /**
-     * @param int $translationId
-     */
     public function setTranslationId(int $translationId): void
     {
         $this->translationId = $translationId;
     }
 
-    /**
-     * @return int
-     */
     public function getStringId(): int
     {
         return $this->stringId;
     }
 
-    /**
-     * @param int $stringId
-     */
     public function setStringId(int $stringId): void
     {
         $this->stringId = $stringId;
     }
 
-    /**
-     * @return string
-     */
     public function getLanguageId(): string
     {
         return $this->languageId;
     }
 
-    /**
-     * @param string $languageId
-     */
     public function setLanguageId(string $languageId): void
     {
         $this->languageId = $languageId;
     }
 
-    /**
-     * @return int
-     */
     public function getWorkflowStepId(): int
     {
         return $this->workflowStepId;
     }
 
-    /**
-     * @param int $workflowStepId
-     */
     public function setWorkflowStepId(int $workflowStepId): void
     {
         $this->workflowStepId = $workflowStepId;
     }
 
-    /**
-     * @return string
-     */
     public function getCreatedAt(): string
     {
         return $this->createdAt;
     }
 
-    /**
-     * @param string $createdAt
-     */
     public function setCreatedAt(string $createdAt): void
     {
         $this->createdAt = $createdAt;

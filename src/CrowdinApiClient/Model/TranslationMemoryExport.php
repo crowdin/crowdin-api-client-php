@@ -60,129 +60,81 @@ class TranslationMemoryExport extends BaseModel
         $this->finishedAt = (string)$this->getDataProperty('finishedAt');
     }
 
-    /**
-     * @return string
-     */
     public function getIdentifier(): string
     {
         return $this->identifier;
     }
 
-    /**
-     * @param string $identifier
-     */
     public function setIdentifier(string $identifier): void
     {
         $this->identifier = $identifier;
     }
 
-    /**
-     * @return string
-     */
     public function getStatus(): string
     {
         return $this->status;
     }
 
-    /**
-     * @param string $status
-     */
     public function setStatus(string $status): void
     {
         $this->status = $status;
     }
 
-    /**
-     * @return int
-     */
     public function getProgress(): int
     {
         return $this->progress;
     }
 
-    /**
-     * @param int $progress
-     */
     public function setProgress(int $progress): void
     {
         $this->progress = $progress;
     }
 
-    /**
-     * @return array
-     */
     public function getAttributes(): array
     {
         return $this->attributes;
     }
 
-    /**
-     * @param array $attributes
-     */
     public function setAttributes(array $attributes): void
     {
         $this->attributes = $attributes;
     }
 
-    /**
-     * @return string
-     */
     public function getCreatedAt(): string
     {
         return $this->createdAt;
     }
 
-    /**
-     * @param string $createdAt
-     */
     public function setCreatedAt(string $createdAt): void
     {
         $this->createdAt = $createdAt;
     }
 
-    /**
-     * @return string
-     */
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;
     }
 
-    /**
-     * @param string $updatedAt
-     */
     public function setUpdatedAt(string $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
     }
 
-    /**
-     * @return string
-     */
     public function getStartedAt(): string
     {
         return $this->startedAt;
     }
 
-    /**
-     * @param string $startedAt
-     */
     public function setStartedAt(string $startedAt): void
     {
         $this->startedAt = $startedAt;
     }
 
-    /**
-     * @return string
-     */
     public function getFinishedAt(): string
     {
         return $this->finishedAt;
     }
 
-    /**
-     * @param string $finishedAt
-     */
     public function setFinishedAt(string $finishedAt): void
     {
         $this->finishedAt = $finishedAt;

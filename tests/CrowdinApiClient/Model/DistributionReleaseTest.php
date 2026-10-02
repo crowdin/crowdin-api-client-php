@@ -65,6 +65,17 @@ class DistributionReleaseTest extends TestCase
         $this->assertSame(['key' => 'value'], $model->getError());
     }
 
+    public function testNullableFieldsWhenMissing(): void
+    {
+        $model = new DistributionRelease([]);
+
+        $this->assertNull($model->getStatus());
+        $this->assertNull($model->getProgress());
+        $this->assertNull($model->getCurrentLanguageId());
+        $this->assertNull($model->getCurrentFileId());
+        $this->assertNull($model->getDate());
+    }
+
     public function testAdditionalFieldsWhenMissing(): void
     {
         $model = new DistributionRelease([]);

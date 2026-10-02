@@ -33,33 +33,21 @@ class MachineTranslation extends BaseModel
         $this->translations = (array)$this->getDataProperty('translations');
     }
 
-    /**
-     * @return string
-     */
     public function getSourceLanguageId(): string
     {
         return $this->sourceLanguageId;
     }
 
-    /**
-     * @param string $sourceLanguageId
-     */
     public function setSourceLanguageId(string $sourceLanguageId): void
     {
         $this->sourceLanguageId = $sourceLanguageId;
     }
 
-    /**
-     * @return string
-     */
     public function getTargetLanguageId(): string
     {
         return $this->targetLanguageId;
     }
 
-    /**
-     * @param string $targetLanguageId
-     */
     public function setTargetLanguageId(string $targetLanguageId): void
     {
         $this->targetLanguageId = $targetLanguageId;

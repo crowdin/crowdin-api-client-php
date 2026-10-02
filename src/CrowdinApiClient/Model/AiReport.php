@@ -42,9 +42,9 @@ class AiReport extends BaseModel
         $this->progress = (int)$this->getDataProperty('progress');
         $this->attributes = (array)$this->getDataProperty('attributes');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
-        $this->updatedAt = $this->getDataProperty('updatedAt');
-        $this->startedAt = $this->getDataProperty('startedAt');
-        $this->finishedAt = $this->getDataProperty('finishedAt');
+        $this->updatedAt = $this->nullableString('updatedAt');
+        $this->startedAt = $this->nullableString('startedAt');
+        $this->finishedAt = $this->nullableString('finishedAt');
         $this->eta = $this->nullableString('eta');
     }
 

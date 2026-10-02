@@ -52,113 +52,71 @@ class TranslationProjectDirectory extends BaseModel
         $this->finishedAt = (string)$this->getDataProperty('finishedAt');
     }
 
-    /**
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @param int $id
-     */
     public function setId(int $id): void
     {
         $this->id = $id;
     }
 
-    /**
-     * @return int
-     */
     public function getProjectId(): int
     {
         return $this->projectId;
     }
 
-    /**
-     * @param int $projectId
-     */
     public function setProjectId(int $projectId): void
     {
         $this->projectId = $projectId;
     }
 
-    /**
-     * @return string
-     */
     public function getStatus(): string
     {
         return $this->status;
     }
 
-    /**
-     * @param string $status
-     */
     public function setStatus(string $status): void
     {
         $this->status = $status;
     }
 
-    /**
-     * @return int
-     */
     public function getProgress(): int
     {
         return $this->progress;
     }
 
-    /**
-     * @param int $progress
-     */
     public function setProgress(int $progress): void
     {
         $this->progress = $progress;
     }
 
-    /**
-     * @return string
-     */
     public function getCreatedAt(): string
     {
         return $this->createdAt;
     }
 
-    /**
-     * @param string $createdAt
-     */
     public function setCreatedAt(string $createdAt): void
     {
         $this->createdAt = $createdAt;
     }
 
-    /**
-     * @return string
-     */
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;
     }
 
-    /**
-     * @param string $updatedAt
-     */
     public function setUpdatedAt(string $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
     }
 
-    /**
-     * @return string
-     */
     public function getFinishedAt(): string
     {
         return $this->finishedAt;
     }
 
-    /**
-     * @param string $finishedAt
-     */
     public function setFinishedAt(string $finishedAt): void
     {
         $this->finishedAt = $finishedAt;

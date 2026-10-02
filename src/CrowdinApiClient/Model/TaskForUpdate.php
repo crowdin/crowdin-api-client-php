@@ -63,18 +63,10 @@ class TaskForUpdate extends Task
             : [];
         $this->skipAssignedStrings = null !== $this->getDataProperty('skipAssignedStrings')
             && $this->getDataProperty('skipAssignedStrings');
-        $this->dateFrom = null !== $this->getDataProperty('dateFrom')
-            ? (string)$this->getDataProperty('dateFrom')
-            : null;
-        $this->dateTo = null !== $this->getDataProperty('dateTo')
-            ? (string)$this->getDataProperty('dateTo')
-            : null;
-        $this->translationsUpdatedDateFrom = null !== $this->getDataProperty('translationsUpdatedDateFrom')
-            ? (string)$this->getDataProperty('translationsUpdatedDateFrom')
-            : null;
-        $this->translationsUpdatedDateTo = null !== $this->getDataProperty('translationsUpdatedDateTo')
-            ? (string)$this->getDataProperty('translationsUpdatedDateTo')
-            : null;
+        $this->dateFrom = $this->nullableString('dateFrom');
+        $this->dateTo = $this->nullableString('dateTo');
+        $this->translationsUpdatedDateFrom = $this->nullableString('translationsUpdatedDateFrom');
+        $this->translationsUpdatedDateTo = $this->nullableString('translationsUpdatedDateTo');
     }
 
     private function initMissingProperties(): void
@@ -130,81 +122,51 @@ class TaskForUpdate extends Task
         $this->splitFiles = $splitFiles;
     }
 
-    /**
-     * @return bool
-     */
     public function getSplitContent(): bool
     {
         return $this->splitContent;
     }
 
-    /**
-     * @param bool $splitContent
-     */
     public function setSplitContent(bool $splitContent): void
     {
         $this->splitContent = $splitContent;
     }
 
-    /**
-     * @return array
-     */
     public function getStringIds(): array
     {
         return $this->stringIds;
     }
 
-    /**
-     * @param array $stringIds
-     */
     public function setStringIds(array $stringIds): void
     {
         $this->stringIds = $stringIds;
     }
 
-    /**
-     * @return bool
-     */
     public function getSkipAssignedStrings(): bool
     {
         return $this->skipAssignedStrings;
     }
 
-    /**
-     * @param bool $skipAssignedStrings
-     */
     public function setSkipAssignedStrings(bool $skipAssignedStrings): void
     {
         $this->skipAssignedStrings = $skipAssignedStrings;
     }
 
-    /**
-     * @return string|null
-     */
     public function getDateFrom(): ?string
     {
         return $this->dateFrom;
     }
 
-    /**
-     * @param string $dateFrom
-     */
     public function setDateFrom(string $dateFrom): void
     {
         $this->dateFrom = $dateFrom;
     }
 
-    /**
-     * @return string|null
-     */
     public function getDateTo(): ?string
     {
         return $this->dateTo;
     }
 
-    /**
-     * @param string $dateTo
-     */
     public function setDateTo(string $dateTo): void
     {
         $this->dateTo = $dateTo;

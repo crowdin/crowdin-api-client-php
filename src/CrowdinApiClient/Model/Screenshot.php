@@ -78,17 +78,11 @@ class Screenshot extends BaseModel
         $this->labelIds = (array)$this->getDataProperty('labelIds');
     }
 
-    /**
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return int
-     */
     public function getUserId(): int
     {
         return $this->userId;
@@ -103,73 +97,46 @@ class Screenshot extends BaseModel
         return $this->url;
     }
 
-    /**
-     * @return string|null
-     */
     public function getWebUrl(): ?string
     {
         return $this->webUrl;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @param string $name
-     */
     public function setName(string $name): void
     {
         $this->name = $name;
     }
 
-    /**
-     * @return array
-     */
     public function getSize(): array
     {
         return $this->size;
     }
 
-    /**
-     * @return int
-     */
     public function getTagsCount(): int
     {
         return $this->tagsCount;
     }
 
-    /**
-     * @return array
-     */
     public function getTags(): array
     {
         return $this->tags;
     }
 
-    /**
-     * @return string
-     */
     public function getCreatedAt(): string
     {
         return $this->createdAt;
     }
 
-    /**
-     * @return string
-     */
     public function getUpdatedAt(): string
     {
         return $this->updatedAt;
     }
 
-    /**
-     * @return array
-     */
     public function getLabelIds(): array
     {
         return $this->labelIds;

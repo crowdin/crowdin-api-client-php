@@ -42,57 +42,36 @@ class Tag extends BaseModel
         $this->createdAt = (string)$this->getDataProperty('createdAt');
     }
 
-    /**
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return int
-     */
     public function getScreenshotId(): int
     {
         return $this->screenshotId;
     }
 
-    /**
-     * @return int
-     */
     public function getStringId(): int
     {
         return $this->stringId;
     }
 
-    /**
-     * @param int $stringId
-     */
     public function setStringId(int $stringId): void
     {
         $this->stringId = $stringId;
     }
 
-    /**
-     * @return array
-     */
     public function getPosition(): array
     {
         return $this->position;
     }
 
-    /**
-     * @param array $position
-     */
     public function setPosition(array $position): void
     {
         $this->position = $position;
     }
 
-    /**
-     * @return string
-     */
     public function getCreatedAt(): string
     {
         return $this->createdAt;

@@ -67,9 +67,6 @@ class TranslationMemory extends BaseModel
      */
     protected $webUrl;
 
-    /**
-     * @param array $data
-     */
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -88,81 +85,51 @@ class TranslationMemory extends BaseModel
         $this->webUrl = (string)$this->getDataProperty('webUrl');
     }
 
-    /**
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return int
-     */
     public function getGroupId(): int
     {
         return $this->groupId;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @param string $name
-     */
     public function setName(string $name): void
     {
         $this->name = $name;
     }
 
-    /**
-     * @return array
-     */
     public function getLanguageIds(): array
     {
         return $this->languageIds;
     }
 
-    /**
-     * @return int
-     */
     public function getSegmentsCount(): int
     {
         return $this->segmentsCount;
     }
 
-    /**
-     * @return array
-     */
     public function getDefaultProjectIds(): array
     {
         return $this->defaultProjectIds;
     }
 
-    /**
-     * @return array
-     */
     public function getProjectIds(): array
     {
         return $this->projectIds;
     }
 
-    /**
-     * @return string
-     */
     public function getCreatedAt(): string
     {
         return $this->createdAt;
     }
 
-    /**
-     * @param string $createdAt
-     */
     public function setCreatedAt(string $createdAt): void
     {
         $this->createdAt = $createdAt;

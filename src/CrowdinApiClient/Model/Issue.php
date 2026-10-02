@@ -60,6 +60,7 @@ class Issue extends BaseModel
     public function __construct(array $data = [])
     {
         parent::__construct($data);
+
         $this->id = (int)$this->getDataProperty('id');
         $this->text = (string)$this->getDataProperty('text');
         $this->userId = (int)$this->getDataProperty('userId');
@@ -72,89 +73,56 @@ class Issue extends BaseModel
         $this->createdAt = (string)$this->getDataProperty('createdAt');
     }
 
-    /**
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function getText(): string
     {
         return $this->text;
     }
 
-    /**
-     * @return int
-     */
     public function getUserId(): int
     {
         return $this->userId;
     }
 
-    /**
-     * @return int
-     */
     public function getStringId(): int
     {
         return $this->stringId;
     }
 
-    /**
-     * @return array
-     */
     public function getUser(): array
     {
         return $this->user;
     }
 
-    /**
-     * @return array
-     */
     public function getString(): array
     {
         return $this->string;
     }
 
-    /**
-     * @return string
-     */
     public function getLanguageId(): string
     {
         return $this->languageId;
     }
 
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return $this->type;
     }
 
-    /**
-     * @return string
-     */
     public function getStatus(): string
     {
         return $this->status;
     }
 
-    /**
-     * @param string $status
-     */
     public function setStatus(string $status): void
     {
         $this->status = $status;
     }
 
-    /**
-     * @return string
-     */
     public function getCreatedAt(): string
     {
         return $this->createdAt;

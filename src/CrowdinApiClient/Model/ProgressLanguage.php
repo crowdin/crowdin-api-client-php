@@ -58,54 +58,36 @@ class ProgressLanguage extends BaseModel
         $this->translationProgress = (int)$this->getDataProperty('translationProgress');
         $this->approvalProgress = (int)$this->getDataProperty('approvalProgress');
         $this->fileId = (int)$this->getDataProperty('fileId');
-        $this->etag = (string)$this->getDataProperty('eTag');
+        $this->etag = $this->nullableString('eTag');
         $this->branchId = $this->nullableInt('branchId');
         $this->qaChecksStatus = (array)$this->getDataProperty('qaChecksStatus');
     }
 
-    /**
-     * @return array
-     */
     public function getWords(): array
     {
         return $this->words;
     }
 
-    /**
-     * @return array
-     */
     public function getPhrases(): array
     {
         return $this->phrases;
     }
 
-    /**
-     * @return int
-     */
     public function getTranslationProgress(): int
     {
         return $this->translationProgress;
     }
 
-    /**
-     * @return int
-     */
     public function getApprovalProgress(): int
     {
         return $this->approvalProgress;
     }
 
-    /**
-     * @return int
-     */
     public function getFileId(): int
     {
         return $this->fileId;
     }
 
-    /**
-     * @return string|null
-     */
     public function getEtag(): ?string
     {
         return $this->etag;
