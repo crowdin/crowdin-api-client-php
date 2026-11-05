@@ -47,6 +47,11 @@ class StringTranslationApproval extends BaseModel
      */
     protected $fileId;
 
+    /**
+     * @var int|null
+     */
+    protected $correctionId;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -59,6 +64,7 @@ class StringTranslationApproval extends BaseModel
         $this->workflowStepId = (int)$this->getDataProperty('workflowStepId');
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->fileId = (int)$this->getDataProperty('fileId');
+        $this->correctionId = $this->nullableInt('correctionId');
     }
 
     public function getId(): int
@@ -134,5 +140,13 @@ class StringTranslationApproval extends BaseModel
     public function getFileId(): int
     {
         return $this->fileId;
+    }
+
+    /**
+     * @return int|null Correction approvals only (Enterprise)
+     */
+    public function getCorrectionId(): ?int
+    {
+        return $this->correctionId;
     }
 }

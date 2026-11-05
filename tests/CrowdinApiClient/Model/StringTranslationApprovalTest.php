@@ -68,4 +68,10 @@ class StringTranslationApprovalTest extends TestCase
 
         $this->assertSame(0, $model->getFileId());
     }
+
+    public function testCorrectionIdIsHydrated(): void
+    {
+        $this->assertSame(190695, (new StringTranslationApproval(['correctionId' => 190695]))->getCorrectionId());
+        $this->assertNull((new StringTranslationApproval([]))->getCorrectionId());
+    }
 }

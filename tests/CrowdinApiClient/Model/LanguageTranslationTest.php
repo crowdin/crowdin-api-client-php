@@ -42,4 +42,10 @@ class LanguageTranslationTest extends TestCase
         $this->assertNull($model->getProviderId());
         $this->assertSame('', $model->getQaIssuesStatus());
     }
+
+    public function testUrlIsHydrated(): void
+    {
+        $this->assertSame('https://example.com/file.jpg', (new LanguageTranslation(['url' => 'https://example.com/file.jpg']))->getUrl());
+        $this->assertNull((new LanguageTranslation([]))->getUrl());
+    }
 }

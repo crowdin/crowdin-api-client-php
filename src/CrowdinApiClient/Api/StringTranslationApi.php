@@ -28,6 +28,7 @@ class StringTranslationApi extends AbstractApi
      * integer $params[stringId] Must be used together with languageId<br>
      * string $params[languageId] Must be used together with stringId or fileId<br>
      * integer $params[translationId] If specified, fileId, stringId and languageId are ignored<br>
+     * integer $params[correctionId] Enterprise only. Can't be used with translationId or languageId<br>
      * integer $params[limit]<br>
      * integer $params[offset]
      * @return ModelCollection
@@ -45,7 +46,8 @@ class StringTranslationApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $data
-     * integer $data[translationId] required
+     * integer $data[translationId] Either translationId or correctionId is required<br>
+     * integer $data[correctionId] Enterprise only. Either translationId or correctionId is required
      * @return StringTranslationApproval|null
      */
     public function createApproval(int $projectId, array $data): ?StringTranslationApproval
