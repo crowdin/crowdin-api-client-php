@@ -401,6 +401,7 @@ class AiApi extends AbstractApi
      * string $data[model]<br>
      * boolean $data[stream]
      * @return AiProxyChatCompletion|null
+     * @deprecated Deprecated by the Crowdin API. Use {@see AiGatewayApi::gatewayPost()} instead.
      */
     public function createProviderChatCompletion(
         int $userId,
@@ -418,7 +419,7 @@ class AiApi extends AbstractApi
      * @param int $userId
      * @param array $data
      * string $data[type] required<br>
-     * array $data[schema] required
+     * array $data[schema] required. Report filters: dateFrom, dateTo, format, projectIds, promptIds, userIds, languageIds
      * @return AiReport|null
      */
     public function generateReport(int $userId, array $data): ?AiReport

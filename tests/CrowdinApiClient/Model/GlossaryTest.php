@@ -81,4 +81,10 @@ class GlossaryTest extends TestCase
 
         $this->assertSame(true, $model->isShared());
     }
+
+    public function testManagerIdsIsHydrated(): void
+    {
+        $this->assertSame([13240049], (new Glossary(['managerIds' => [13240049]]))->getManagerIds());
+        $this->assertNull((new Glossary([]))->getManagerIds());
+    }
 }

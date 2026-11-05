@@ -69,7 +69,8 @@ class ProjectApi extends AbstractApi
      * integer $data[exportWithMinApprovalsCount]<br>
      * integer $data[exportApprovedOnly]<br>
      * integer $data[defaultTmId]<br>
-     * integer $data[defaultGlossaryId]
+     * integer $data[defaultGlossaryId]<br>
+     * array $data[externalQaChecksIgnorable] Enterprise only. External QA check IDs mapped to bool, e.g. [1 => false]
      * @return Project|null
      */
     public function create(array $data): ?Project

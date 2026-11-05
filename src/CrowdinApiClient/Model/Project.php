@@ -330,6 +330,11 @@ class Project extends BaseModel
     /**
      * @var array|null
      */
+    protected $externalQaChecksIgnorable;
+
+    /**
+     * @var array|null
+     */
     protected $mtPreTranslate;
 
     /**
@@ -476,6 +481,7 @@ class Project extends BaseModel
         $this->externalOrganizationId = $this->nullableInt('externalOrganizationId');
         $this->externalProjectId = $this->nullableInt('externalProjectId');
         $this->externalQaCheckIds = $this->nullableArray('externalQaCheckIds');
+        $this->externalQaChecksIgnorable = $this->nullableArray('externalQaChecksIgnorable');
         $this->mtPreTranslate = $this->nullableArray('mtPreTranslate');
         $this->publicUrl = $this->nullableString('publicUrl');
         $this->qaApprovalsCount = $this->nullableInt('qaApprovalsCount');
@@ -1135,6 +1141,23 @@ class Project extends BaseModel
     public function getExternalQaCheckIds(): ?array
     {
         return $this->externalQaCheckIds;
+    }
+
+    /**
+     * @return array|null External QA check IDs mapped to whether a failure can be ignored. Enterprise only
+     */
+    public function getExternalQaChecksIgnorable(): ?array
+    {
+        return $this->externalQaChecksIgnorable;
+    }
+
+    /**
+     * @param array $externalQaChecksIgnorable External QA check IDs mapped to bool, e.g. [1 => false].
+     * false blocks saving a translation when the check fails (synchronous checks only)
+     */
+    public function setExternalQaChecksIgnorable(array $externalQaChecksIgnorable): void
+    {
+        $this->externalQaChecksIgnorable = $externalQaChecksIgnorable;
     }
 
     public function getMtPreTranslate(): ?array
