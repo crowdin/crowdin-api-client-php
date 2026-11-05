@@ -78,8 +78,6 @@ class ManagerApi extends AbstractApi
 
     /**
      * Delete Manager
-     *
-     * Removes a manager or cancels a pending invitation.
      * @link https://developer.crowdin.com/api/v2/#operation/api.managers.delete API Documentation
      *
      * @param int $managerId
