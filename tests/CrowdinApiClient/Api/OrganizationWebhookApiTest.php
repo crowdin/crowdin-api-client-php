@@ -3,6 +3,8 @@
 namespace CrowdinApiClient\Tests\Api;
 
 use CrowdinApiClient\Model\OrganizationWebhook;
+use CrowdinApiClient\Model\WebhookDelivery;
+use CrowdinApiClient\Model\WebhookTestResult;
 use CrowdinApiClient\ModelCollection;
 
 class OrganizationWebhookApiTest extends AbstractTestApi
@@ -179,5 +181,152 @@ class OrganizationWebhookApiTest extends AbstractTestApi
     {
         $this->mockRequestDelete('/webhooks/4');
         $this->crowdin->organizationWebhook->delete(4);
+    }
+
+    public function testListAllDeliveries(): void
+    {
+        $this->mockRequest([
+            'path' => '/webhooks/deliveries?status=failed&events=file.translated',
+            'method' => 'get',
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => $this->deliveryData(),
+                    ],
+                ],
+                'pagination' => ['offset' => 0, 'limit' => 25],
+            ]),
+        ]);
+
+        $deliveries = $this->crowdin->organizationWebhook->listAllDeliveries(
+            ['status' => 'failed', 'events' => 'file.translated']
+        );
+
+        $this->assertInstanceOf(ModelCollection::class, $deliveries);
+        $this->assertCount(1, $deliveries);
+        $this->assertInstanceOf(WebhookDelivery::class, $deliveries[0]);
+        $this->assertEquals(101, $deliveries[0]->getId());
+    }
+
+    public function testListDeliveries(): void
+    {
+        $this->mockRequest([
+            'path' => '/webhooks/4/deliveries',
+            'method' => 'get',
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => $this->deliveryData(),
+                    ],
+                ],
+                'pagination' => ['offset' => 0, 'limit' => 25],
+            ]),
+        ]);
+
+        $deliveries = $this->crowdin->organizationWebhook->listDeliveries(4);
+
+        $this->assertInstanceOf(ModelCollection::class, $deliveries);
+        $this->assertCount(1, $deliveries);
+        $this->assertInstanceOf(WebhookDelivery::class, $deliveries[0]);
+        $this->assertEquals(4, $deliveries[0]->getWebhookId());
+    }
+
+    public function testGetDelivery(): void
+    {
+        $data = $this->deliveryData() + [
+                'requestType' => 'POST',
+                'contentType' => 'application/json',
+                'headers' => ['Authorization' => '***'],
+                'payload' => ['event' => 'file.translated'],
+            ];
+
+        $this->mockRequest([
+            'path' => '/webhooks/4/deliveries/101',
+            'method' => 'get',
+            'response' => json_encode(['data' => $data]),
+        ]);
+
+        $delivery = $this->crowdin->organizationWebhook->getDelivery(4, 101);
+
+        $this->assertInstanceOf(WebhookDelivery::class, $delivery);
+        $this->assertEquals('POST', $delivery->getRequestType());
+        $this->assertEquals(['event' => 'file.translated'], $delivery->getPayload());
+    }
+
+    public function testResendDelivery(): void
+    {
+        $this->mockRequest([
+            'path' => '/webhooks/4/deliveries/101/resend',
+            'method' => 'post',
+            'body' => json_encode([]),
+            'response' => json_encode(['data' => ['id' => 102] + $this->deliveryData()]),
+        ]);
+
+        $delivery = $this->crowdin->organizationWebhook->resendDelivery(4, 101);
+
+        $this->assertInstanceOf(WebhookDelivery::class, $delivery);
+        $this->assertEquals(102, $delivery->getId());
+    }
+
+    public function testTest(): void
+    {
+        $data = ['event' => 'file.translated'];
+
+        $this->mockRequest([
+            'path' => '/webhooks/4/tests',
+            'method' => 'post',
+            'body' => json_encode($data),
+            'response' => json_encode([
+                'data' => [
+                    'event' => 'file.translated',
+                    'url' => 'https://example.com/hook',
+                    'payload' => ['event' => 'file.translated'],
+                    'status' => 'failed',
+                    'responseStatusCode' => null,
+                    'responseBody' => null,
+                    'error' => 'timeout',
+                ],
+            ]),
+        ]);
+
+        $result = $this->crowdin->organizationWebhook->test(4, $data);
+
+        $this->assertInstanceOf(WebhookTestResult::class, $result);
+        $this->assertEquals('failed', $result->getStatus());
+        $this->assertEquals('timeout', $result->getError());
+    }
+
+    public function testTestWithoutEvent(): void
+    {
+        $this->mockRequest([
+            'path' => '/webhooks/4/tests',
+            'method' => 'post',
+            'body' => json_encode([]),
+            'response' => json_encode([
+                'data' => [
+                    'event' => 'file.added',
+                    'status' => 'success',
+                    'responseStatusCode' => 200,
+                ],
+            ]),
+        ]);
+
+        $this->assertInstanceOf(WebhookTestResult::class, $this->crowdin->organizationWebhook->test(4));
+    }
+
+    private function deliveryData(): array
+    {
+        return [
+            'id' => 101,
+            'webhookId' => 4,
+            'event' => 'file.translated',
+            'url' => 'https://example.com/hook',
+            'status' => 'failed',
+            'responseStatusCode' => 500,
+            'responseBody' => 'Internal Server Error',
+            'fileId' => 12,
+            'languageId' => 'uk',
+            'createdAt' => '2026-10-20T10:00:00+00:00',
+        ];
     }
 }
