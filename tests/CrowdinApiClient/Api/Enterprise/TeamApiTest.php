@@ -4,11 +4,49 @@ namespace CrowdinApiClient\Tests\Api\Enterprise;
 
 use CrowdinApiClient\Model\Enterprise\AddedProjectTeamInfo;
 use CrowdinApiClient\Model\Enterprise\ProjectPermission;
+use CrowdinApiClient\Model\Enterprise\ProjectTeam;
 use CrowdinApiClient\Model\Enterprise\Team;
 use CrowdinApiClient\ModelCollection;
 
 class TeamApiTest extends AbstractTestApi
 {
+    public function testListProjectTeams(): void
+    {
+        $this->mockRequest([
+            'path' => '/projects/2/teams',
+            'method' => 'get',
+            'response' => json_encode([
+                'data' => [
+                    [
+                        'data' => [
+                            'id' => 1,
+                            'name' => 'Translators Team',
+                            'hasManagerAccess' => false,
+                            'hasDeveloperAccess' => true,
+                            'hasAccessToAllWorkflowSteps' => false,
+                            'permissions' => [
+                                'it' => ['workflowStepIds' => [882]],
+                            ],
+                            'roles' => [
+                                ['name' => 'proofreader', 'permissions' => ['allLanguages' => true, 'languagesAccess' => []]],
+                            ],
+                        ],
+                    ],
+                ],
+                'pagination' => ['offset' => 0, 'limit' => 25],
+            ]),
+        ]);
+
+        $teams = $this->crowdin->team->listProjectTeams(2);
+
+        $this->assertInstanceOf(ModelCollection::class, $teams);
+        $this->assertCount(1, $teams);
+        $this->assertInstanceOf(ProjectTeam::class, $teams[0]);
+        $this->assertEquals(1, $teams[0]->getId());
+        $this->assertEquals('Translators Team', $teams[0]->getName());
+        $this->assertTrue($teams[0]->getHasDeveloperAccess());
+    }
+
     public function testList()
     {
         $this->mockRequest([

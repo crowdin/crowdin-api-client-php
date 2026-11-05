@@ -6,6 +6,7 @@ use CrowdinApiClient\Api\AbstractApi;
 use CrowdinApiClient\Http\ResponseDecorator\ResponseModelListDecorator;
 use CrowdinApiClient\Model\Enterprise\AddedProjectTeamInfo;
 use CrowdinApiClient\Model\Enterprise\ProjectPermission;
+use CrowdinApiClient\Model\Enterprise\ProjectTeam;
 use CrowdinApiClient\Model\Enterprise\Team;
 use CrowdinApiClient\ModelCollection;
 
@@ -33,6 +34,22 @@ class TeamApi extends AbstractApi
     {
         $path = sprintf('projects/%d/teams', $projectId);
         return $this->_post($path, AddedProjectTeamInfo::class, $data);
+    }
+
+    /**
+     * List Project Teams
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.teams.getMany API Documentation
+     *
+     * @param int $projectId
+     * @param array $params
+     * string $params[orderBy]<br>
+     * integer $params[limit]<br>
+     * integer $params[offset]
+     * @return ModelCollection
+     */
+    public function listProjectTeams(int $projectId, array $params = []): ModelCollection
+    {
+        return $this->_list(sprintf('projects/%d/teams', $projectId), ProjectTeam::class, $params);
     }
 
     /**
