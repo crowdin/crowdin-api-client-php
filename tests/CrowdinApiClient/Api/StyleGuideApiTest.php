@@ -188,4 +188,25 @@ class StyleGuideApiTest extends AbstractTestApi
         $this->assertEquals('Updated Style Guide', $result->getName());
         $this->assertEquals('Updated AI instructions', $result->getAiInstructions());
     }
+
+    public function testStopManaging(): void
+    {
+        $this->mockRequest([
+            'path' => '/style-guides/2',
+            'method' => 'patch',
+            'body' => json_encode([['op' => 'remove', 'path' => '/managerIds/13240049']]),
+            'response' => json_encode([
+                'data' => [
+                    'id' => 2,
+                    'name' => 'Main Style Guide',
+                    'managerIds' => [],
+                ],
+            ]),
+        ]);
+
+        $result = $this->crowdin->styleGuide->stopManaging(2, 13240049);
+
+        $this->assertInstanceOf(StyleGuide::class, $result);
+        $this->assertSame([], $result->getManagerIds());
+    }
 }

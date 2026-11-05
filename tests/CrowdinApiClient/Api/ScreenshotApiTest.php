@@ -372,44 +372,38 @@ class ScreenshotApiTest extends AbstractTestApi
         $this->assertInstanceOf(Tag::class, $tag);
         $this->assertEquals(98, $tag->getId());
 
-        $this->mockRequestPatch(
-            '/projects/2/screenshots/2/tags/98',
-            json_encode([
+        $this->mockRequest([
+            'path' => '/projects/2/screenshots/2/tags/98',
+            'method' => 'patch',
+            'body' => json_encode([['op' => 'replace', 'path' => '/stringId', 'value' => 22]]),
+            'response' => json_encode([
                 'data' => [
-                    'id' => 2,
-                    'userId' => 6,
-                    'url' => 'https://production-enterprise-screenshots.downloads.crowdin.com/992000002/6/2/middle.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIGJKLQV66ZXPMMEA%2F20190923%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190923T093016Z&X-Amz-SignedHeaders=host&X-Amz-Expires=120&X-Amz-Signature=8df06f57594f7d1804b7c037629f6916224415e9b935c4f6619fbe002fb25e73',
-                    'name' => 'translate_with_siri.jpg',
-                    'size' => [
-                        'width' => 267,
-                        'height' => 176,
+                    'id' => 98,
+                    'screenshotId' => 2,
+                    'stringId' => 22,
+                    'position' => [
+                        'x' => 474,
+                        'y' => 147,
+                        'width' => 490,
+                        'height' => 99,
                     ],
-                    'tagsCount' => 0,
-                    'tags' => [
-                        [
-                            'id' => 98,
-                            'screenshotId' => 2,
-                            'stringId' => 22,
-                            'position' => [
-                                'x' => 474,
-                                'y' => 147,
-                                'width' => 490,
-                                'height' => 99,
-                            ],
-                            'createdAt' => '2019-09-23T09:35:31+00:00',
-                        ],
-                    ],
-                    'createdAt' => '2019-09-23T09:29:19+00:00',
-                    'updatedAt' => '2019-09-23T09:29:19+00:00',
+                    'createdAt' => '2019-09-23T09:35:31+00:00',
                 ],
-            ])
-        );
+            ]),
+        ]);
 
         $tag->setStringId(22);
-        $screenshot = $this->crowdin->screenshot->updateTag(2, $tag);
+        $updatedTag = $this->crowdin->screenshot->updateTag(2, $tag);
 
-        $this->assertInstanceOf(Screenshot::class, $screenshot);
-        $this->assertEquals(22, $screenshot->getTags()[0]['stringId']);
+        $this->assertInstanceOf(Tag::class, $updatedTag);
+        $this->assertEquals(98, $updatedTag->getId());
+        $this->assertEquals(22, $updatedTag->getStringId());
+    }
+
+    public function testUpdateTagWithoutChangesSendsNoRequest(): void
+    {
+        $tag = new Tag(['id' => 98, 'screenshotId' => 2, 'stringId' => 22]);
+        $this->assertSame($tag, $this->crowdin->screenshot->updateTag(2, $tag));
     }
 
     public function testDeleteTag()

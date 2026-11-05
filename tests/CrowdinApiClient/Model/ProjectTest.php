@@ -384,4 +384,15 @@ class ProjectTest extends TestCase
         $this->assertTrue((new Project(['exportTranslatedOnly' => true]))->isExportTranslatedOnly());
         $this->assertFalse((new Project([]))->isExportTranslatedOnly());
     }
+
+    public function testExternalQaChecksIgnorable(): void
+    {
+        $this->assertSame([1 => false], (new Project(['externalQaChecksIgnorable' => [1 => false]]))->getExternalQaChecksIgnorable());
+
+        $model = new Project([]);
+        $this->assertNull($model->getExternalQaChecksIgnorable());
+
+        $model->setExternalQaChecksIgnorable([2 => true]);
+        $this->assertSame([2 => true], $model->getExternalQaChecksIgnorable());
+    }
 }

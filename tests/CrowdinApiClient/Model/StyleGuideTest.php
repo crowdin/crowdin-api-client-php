@@ -106,4 +106,10 @@ class StyleGuideTest extends TestCase
 
         $this->assertSame(7, $model->getGroupId());
     }
+
+    public function testManagerIdsIsHydrated(): void
+    {
+        $this->assertSame([13240049], (new StyleGuide(['managerIds' => [13240049]]))->getManagerIds());
+        $this->assertNull((new StyleGuide([]))->getManagerIds());
+    }
 }

@@ -57,6 +57,8 @@ use UnexpectedValueException;
  * @property \CrowdinApiClient\Api\DictionaryApi $dictionary
  * @property \CrowdinApiClient\Api\SystemPlaceholderApi $systemPlaceholder
  * @property \CrowdinApiClient\Api\AdvisorApi $advisor
+ * @property \CrowdinApiClient\Api\ManagerApi $manager
+ * @property \CrowdinApiClient\Api\DiscussionApi $discussion
  * @property \CrowdinApiClient\Api\Enterprise\CustomPlaceholderApi $customPlaceholder
  * @property \CrowdinApiClient\Api\Enterprise\OrganizationApi $organization
  * @property \CrowdinApiClient\Api\Enterprise\ClientApi $client
@@ -141,6 +143,8 @@ class Crowdin
         'dictionary',
         'systemPlaceholder',
         'advisor',
+        'manager',
+        'discussion',
     ];
 
     protected $servicesEnterprise = [

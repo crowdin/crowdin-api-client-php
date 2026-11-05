@@ -55,4 +55,10 @@ class AiSupportedModelTest extends TestCase
         $this->assertNull($model->getKnowledgeCutoff());
         $this->assertNull($model->getReleaseDate());
     }
+
+    public function testDialectIsHydrated(): void
+    {
+        $this->assertSame('anthropic', (new AiSupportedModel(['dialect' => 'anthropic']))->getDialect());
+        $this->assertNull((new AiSupportedModel([]))->getDialect());
+    }
 }

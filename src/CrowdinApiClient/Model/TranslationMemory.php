@@ -67,6 +67,11 @@ class TranslationMemory extends BaseModel
      */
     protected $webUrl;
 
+    /**
+     * @var int[]|null
+     */
+    protected $managerIds;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -83,6 +88,7 @@ class TranslationMemory extends BaseModel
         $this->languageId = $this->nullableString('languageId');
         $this->userId = $this->nullableInt('userId');
         $this->webUrl = (string)$this->getDataProperty('webUrl');
+        $this->managerIds = $this->nullableArray('managerIds');
     }
 
     public function getId(): int
@@ -163,5 +169,13 @@ class TranslationMemory extends BaseModel
     public function getWebUrl(): string
     {
         return $this->webUrl;
+    }
+
+    /**
+     * @return int[]|null IDs of managers of this resource. Crowdin only
+     */
+    public function getManagerIds(): ?array
+    {
+        return $this->managerIds;
     }
 }

@@ -42,6 +42,9 @@ class StyleGuide extends BaseModel
     /** @var int|null */
     protected $groupId;
 
+    /** @var int[]|null */
+    protected $managerIds;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -58,6 +61,7 @@ class StyleGuide extends BaseModel
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
         $this->groupId = $this->nullableInt('groupId');
+        $this->managerIds = $this->nullableArray('managerIds');
     }
 
     public function getId(): int
@@ -154,5 +158,13 @@ class StyleGuide extends BaseModel
     public function setGroupId(int $groupId): void
     {
         $this->groupId = $groupId;
+    }
+
+    /**
+     * @return int[]|null IDs of managers of this resource. Crowdin only
+     */
+    public function getManagerIds(): ?array
+    {
+        return $this->managerIds;
     }
 }

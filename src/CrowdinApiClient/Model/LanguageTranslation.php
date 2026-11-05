@@ -74,6 +74,11 @@ class LanguageTranslation extends BaseModel
      */
     protected $qaIssuesStatus;
 
+    /**
+     * @var string|null
+     */
+    protected $url;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -91,6 +96,7 @@ class LanguageTranslation extends BaseModel
         $this->provider = $this->nullableString('provider');
         $this->providerId = $this->nullableInt('providerId');
         $this->qaIssuesStatus = (string)$this->getDataProperty('qaIssuesStatus');
+        $this->url = $this->nullableString('url');
     }
 
     public function getStringId(): int
@@ -176,5 +182,13 @@ class LanguageTranslation extends BaseModel
     public function getQaIssuesStatus(): string
     {
         return $this->qaIssuesStatus;
+    }
+
+    /**
+     * @return string|null Asset translations only
+     */
+    public function getUrl(): ?string
+    {
+        return $this->url;
     }
 }

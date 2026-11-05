@@ -709,4 +709,25 @@ class GlossaryApiTest extends AbstractTestApi
         $this->mockRequestDelete('/glossaries/3/concepts/1');
         $this->crowdin->glossary->deleteConcept(3, 1);
     }
+
+    public function testStopManaging(): void
+    {
+        $this->mockRequest([
+            'path' => '/glossaries/2',
+            'method' => 'patch',
+            'body' => json_encode([['op' => 'remove', 'path' => '/managerIds/13240049']]),
+            'response' => json_encode([
+                'data' => [
+                    'id' => 2,
+                    'name' => 'Main Glossary',
+                    'managerIds' => []
+                ],
+            ]),
+        ]);
+
+        $result = $this->crowdin->glossary->stopManaging(2, 13240049);
+
+        $this->assertInstanceOf(Glossary::class, $result);
+        $this->assertSame([], $result->getManagerIds());
+    }
 }

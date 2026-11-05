@@ -57,6 +57,21 @@ class User extends BaseModel
      */
     protected $timezone;
 
+    /**
+     * @var string|null
+     */
+    protected $joinedAt;
+
+    /**
+     * @var array|null
+     */
+    protected $permissions;
+
+    /**
+     * @var array|null
+     */
+    protected $roles;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -71,6 +86,9 @@ class User extends BaseModel
         $this->lastSeen = (string)$this->getDataProperty('lastSeen');
         $this->twoFactor = (string)$this->getDataProperty('twoFactor');
         $this->timezone = (string)$this->getDataProperty('timezone');
+        $this->joinedAt = $this->nullableString('joinedAt');
+        $this->permissions = $this->nullableArray('permissions');
+        $this->roles = $this->nullableArray('roles');
     }
 
     public function getId(): int
@@ -136,5 +154,29 @@ class User extends BaseModel
     public function setTimezone(string $timezone): void
     {
         $this->timezone = $timezone;
+    }
+
+    /**
+     * @return string|null Project members only
+     */
+    public function getJoinedAt(): ?string
+    {
+        return $this->joinedAt;
+    }
+
+    /**
+     * @return array|null Project members only. Language IDs mapped to the member's role in that language
+     */
+    public function getPermissions(): ?array
+    {
+        return $this->permissions;
+    }
+
+    /**
+     * @return array|null Project members only. List of name and permissions (allLanguages, languagesAccess)
+     */
+    public function getRoles(): ?array
+    {
+        return $this->roles;
     }
 }

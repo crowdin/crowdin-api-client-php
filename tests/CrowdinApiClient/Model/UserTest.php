@@ -50,4 +50,28 @@ class UserTest extends TestCase
         $this->assertEquals($newFullName, $user->getFullName());
         $this->assertEquals($newTimezone, $user->getTimezone());
     }
+
+    public function testProjectMemberFieldsAreHydrated(): void
+    {
+        $data = [
+            'joinedAt' => '2019-07-11T07:40:22+00:00',
+            'permissions' => ['uk' => 'translator', 'it' => 'proofreader'],
+            'roles' => [['name' => 'translator', 'permissions' => ['allLanguages' => true, 'languagesAccess' => []]]],
+        ];
+
+        $user = new User($data);
+
+        $this->assertSame($data['joinedAt'], $user->getJoinedAt());
+        $this->assertSame($data['permissions'], $user->getPermissions());
+        $this->assertSame($data['roles'], $user->getRoles());
+    }
+
+    public function testProjectMemberFieldsWhenMissing(): void
+    {
+        $user = new User([]);
+
+        $this->assertNull($user->getJoinedAt());
+        $this->assertNull($user->getPermissions());
+        $this->assertNull($user->getRoles());
+    }
 }

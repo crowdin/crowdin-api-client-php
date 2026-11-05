@@ -39,6 +39,11 @@ class TranslationProjectDirectory extends BaseModel
      */
     protected $finishedAt;
 
+    /**
+     * @var array
+     */
+    protected $attributes;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -50,6 +55,7 @@ class TranslationProjectDirectory extends BaseModel
         $this->createdAt = (string)$this->getDataProperty('createdAt');
         $this->updatedAt = (string)$this->getDataProperty('updatedAt');
         $this->finishedAt = (string)$this->getDataProperty('finishedAt');
+        $this->attributes = (array)$this->getDataProperty('attributes');
     }
 
     public function getId(): int
@@ -120,5 +126,13 @@ class TranslationProjectDirectory extends BaseModel
     public function setFinishedAt(string $finishedAt): void
     {
         $this->finishedAt = $finishedAt;
+    }
+
+    /**
+     * @return array Build options: directoryId, targetLanguageIds, skipUntranslatedStrings, skipUntranslatedFiles, ...
+     */
+    public function getAttributes(): array
+    {
+        return $this->attributes;
     }
 }

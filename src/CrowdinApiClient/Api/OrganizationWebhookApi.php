@@ -3,6 +3,8 @@
 namespace CrowdinApiClient\Api;
 
 use CrowdinApiClient\Model\OrganizationWebhook;
+use CrowdinApiClient\Model\WebhookDelivery;
+use CrowdinApiClient\Model\WebhookTestResult;
 use CrowdinApiClient\ModelCollection;
 
 /**
@@ -86,5 +88,92 @@ class OrganizationWebhookApi extends AbstractApi
     public function delete(int $organizationWebhookId)
     {
         return $this->_delete(sprintf('webhooks/%d', $organizationWebhookId));
+    }
+
+    /**
+     * List All Webhook Deliveries
+     * @link https://developer.crowdin.com/api/v2/#operation/api.webhooks.deliveries.getAll API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.webhooks.deliveries.getAll API Documentation Enterprise
+     *
+     * @param array $params
+     * string $params[webhookIds] One ID or comma-separated list, deleted webhooks included<br>
+     * string $params[status] success or failed<br>
+     * string $params[events] One event or comma-separated list<br>
+     * string $params[createdAfter] ISO 8601 date<br>
+     * string $params[createdBefore] ISO 8601 date<br>
+     * integer $params[limit]<br>
+     * integer $params[offset]
+     * @return ModelCollection
+     */
+    public function listAllDeliveries(array $params = []): ModelCollection
+    {
+        return $this->_list('webhooks/deliveries', WebhookDelivery::class, $params);
+    }
+
+    /**
+     * List Webhook Deliveries
+     * @link https://developer.crowdin.com/api/v2/#operation/api.webhooks.deliveries.getMany API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.webhooks.deliveries.getMany API Documentation Enterprise
+     *
+     * @param int $organizationWebhookId
+     * @param array $params
+     * string $params[status] success or failed<br>
+     * string $params[events] One event or comma-separated list<br>
+     * string $params[createdAfter] ISO 8601 date<br>
+     * string $params[createdBefore] ISO 8601 date<br>
+     * integer $params[limit]<br>
+     * integer $params[offset]
+     * @return ModelCollection
+     */
+    public function listDeliveries(int $organizationWebhookId, array $params = []): ModelCollection
+    {
+        $path = sprintf('webhooks/%d/deliveries', $organizationWebhookId);
+        return $this->_list($path, WebhookDelivery::class, $params);
+    }
+
+    /**
+     * Get Webhook Delivery
+     * @link https://developer.crowdin.com/api/v2/#operation/api.webhooks.deliveries.get API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.webhooks.deliveries.get API Documentation Enterprise
+     *
+     * @param int $organizationWebhookId
+     * @param int $deliveryId
+     * @return WebhookDelivery|null
+     */
+    public function getDelivery(int $organizationWebhookId, int $deliveryId): ?WebhookDelivery
+    {
+        $path = sprintf('webhooks/%d/deliveries/%d', $organizationWebhookId, $deliveryId);
+        return $this->_get($path, WebhookDelivery::class);
+    }
+
+    /**
+     * Resend Webhook Delivery
+     * @link https://developer.crowdin.com/api/v2/#operation/api.webhooks.deliveries.resend.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.webhooks.deliveries.resend.post API Documentation Enterprise
+     *
+     * @param int $organizationWebhookId
+     * @param int $deliveryId
+     * @return WebhookDelivery|null The new delivery
+     */
+    public function resendDelivery(int $organizationWebhookId, int $deliveryId): ?WebhookDelivery
+    {
+        $path = sprintf('webhooks/%d/deliveries/%d/resend', $organizationWebhookId, $deliveryId);
+        return $this->_post($path, WebhookDelivery::class, []);
+    }
+
+    /**
+     * Test Webhook
+     * @link https://developer.crowdin.com/api/v2/#operation/api.webhooks.tests.post API Documentation
+     * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.webhooks.tests.post API Documentation Enterprise
+     *
+     * @param int $organizationWebhookId
+     * @param array $data
+     * string $data[event] One of the webhook events. Default is the first event of the webhook
+     * @return WebhookTestResult|null
+     */
+    public function test(int $organizationWebhookId, array $data = []): ?WebhookTestResult
+    {
+        $path = sprintf('webhooks/%d/tests', $organizationWebhookId);
+        return $this->_post($path, WebhookTestResult::class, $data);
     }
 }

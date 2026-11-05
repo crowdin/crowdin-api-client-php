@@ -14,10 +14,15 @@ class ProjectTeamTest extends TestCase
 
     public $data = [
         'id' => 1,
+        'name' => 'Translators Team',
         'hasManagerAccess' => true,
+        'hasDeveloperAccess' => true,
         'hasAccessToAllWorkflowSteps' => false,
         'permissions' => [
             'it' => ['workflowStepIds' => 313],
+        ],
+        'roles' => [
+            ['name' => 'proofreader', 'permissions' => ['allLanguages' => true, 'languagesAccess' => []]],
         ],
     ];
 
@@ -42,8 +47,21 @@ class ProjectTeamTest extends TestCase
         $this->assertEquals($this->data['permissions'], $this->projectTeam->getPermissions());
     }
 
+    public function testLoadDataWithoutOptionalFields(): void
+    {
+        $projectTeam = new ProjectTeam(['id' => 1]);
+
+        $this->assertSame('', $projectTeam->getName());
+        $this->assertFalse($projectTeam->getHasDeveloperAccess());
+        $this->assertSame([], $projectTeam->getRoles());
+    }
+
     public function checkData(): void
     {
+        $this->assertEquals($this->data['id'], $this->projectTeam->getId());
+        $this->assertEquals($this->data['name'], $this->projectTeam->getName());
+        $this->assertEquals($this->data['hasDeveloperAccess'], $this->projectTeam->getHasDeveloperAccess());
+        $this->assertEquals($this->data['roles'], $this->projectTeam->getRoles());
         $this->assertEquals($this->data['hasManagerAccess'], $this->projectTeam->getHasManagerAccess());
         $this->assertEquals(
             $this->data['hasAccessToAllWorkflowSteps'],

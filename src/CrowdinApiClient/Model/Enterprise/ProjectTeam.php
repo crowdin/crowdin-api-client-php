@@ -15,9 +15,19 @@ class ProjectTeam extends BaseModel
     protected $id;
 
     /**
+     * @var string
+     */
+    protected $name;
+
+    /**
      * @var boolean
      */
     protected $hasManagerAccess = false;
+
+    /**
+     * @var boolean
+     */
+    protected $hasDeveloperAccess = false;
 
     /**
      * @var boolean
@@ -29,14 +39,22 @@ class ProjectTeam extends BaseModel
      */
     protected $permissions;
 
+    /**
+     * @var array
+     */
+    protected $roles;
+
     public function __construct(array $data = [])
     {
         parent::__construct($data);
 
         $this->id = (int)$this->getDataProperty('id');
+        $this->name = (string)$this->getDataProperty('name');
         $this->hasManagerAccess = (bool)$this->getDataProperty('hasManagerAccess');
+        $this->hasDeveloperAccess = (bool)$this->getDataProperty('hasDeveloperAccess');
         $this->hasAccessToAllWorkflowSteps = (bool)$this->getDataProperty('hasAccessToAllWorkflowSteps');
         $this->permissions = (array)$this->getDataProperty('permissions');
+        $this->roles = (array)$this->getDataProperty('roles');
     }
 
     public function getId(): int
@@ -77,5 +95,23 @@ class ProjectTeam extends BaseModel
     public function setPermissions(array $permissions): void
     {
         $this->permissions = $permissions;
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function getHasDeveloperAccess(): bool
+    {
+        return $this->hasDeveloperAccess;
+    }
+
+    /**
+     * @return array List of roles: name and permissions (allLanguages, languagesAccess)
+     */
+    public function getRoles(): array
+    {
+        return $this->roles;
     }
 }

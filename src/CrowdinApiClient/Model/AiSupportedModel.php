@@ -21,6 +21,9 @@ class AiSupportedModel extends BaseModel
     /** @var string */
     protected $displayName;
 
+    /** @var string|null */
+    protected $dialect;
+
     /** @var bool */
     protected $supportReasoning;
 
@@ -60,6 +63,7 @@ class AiSupportedModel extends BaseModel
         $this->providerName = (string)$this->getDataProperty('providerName');
         $this->id = (string)$this->getDataProperty('id');
         $this->displayName = (string)$this->getDataProperty('displayName');
+        $this->dialect = $this->nullableString('dialect');
         $this->supportReasoning = (bool)$this->getDataProperty('supportReasoning');
         $this->intelligence = (int)$this->getDataProperty('intelligence');
         $this->speed = (int)$this->getDataProperty('speed');
@@ -146,6 +150,14 @@ class AiSupportedModel extends BaseModel
     public function getReleaseDate(): ?string
     {
         return $this->releaseDate;
+    }
+
+    /**
+     * @return string|null open_ai or anthropic. Null when the dialect follows from the provider type
+     */
+    public function getDialect(): ?string
+    {
+        return $this->dialect;
     }
 
     /**

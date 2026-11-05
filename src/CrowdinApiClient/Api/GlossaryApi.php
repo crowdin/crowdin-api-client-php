@@ -93,6 +93,23 @@ class GlossaryApi extends AbstractApi
     }
 
     /**
+     * Stop Managing Glossary
+     * @link https://developer.crowdin.com/api/v2/#operation/api.glossaries.patch API Documentation
+     *
+     * @param int $glossaryId
+     * @param int $userId Your own user ID. Crowdin only
+     * @return Glossary|null
+     */
+    public function stopManaging(int $glossaryId, int $userId): ?Glossary
+    {
+        return $this->_patch(
+            sprintf('glossaries/%d', $glossaryId),
+            Glossary::class,
+            [['op' => 'remove', 'path' => '/managerIds/' . $userId]]
+        );
+    }
+
+    /**
      * Export Glossary
      * @link https://developer.crowdin.com/api/v2/#operation/api.glossaries.exports.post API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.glossaries.exports.post API Documentation Enterprise

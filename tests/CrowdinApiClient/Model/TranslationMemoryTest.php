@@ -86,4 +86,10 @@ class TranslationMemoryTest extends TestCase
         $this->assertSame(true, $model->isShared());
         $this->assertSame('value', $model->getLanguageId());
     }
+
+    public function testManagerIdsIsHydrated(): void
+    {
+        $this->assertSame([13240049], (new TranslationMemory(['managerIds' => [13240049]]))->getManagerIds());
+        $this->assertNull((new TranslationMemory([]))->getManagerIds());
+    }
 }
