@@ -598,4 +598,25 @@ class TranslationMemoryApiTest extends AbstractTestApi
         $this->assertEquals(1, $segment->getId());
         $this->assertEquals(7, $segment->getRecords()[0]->getId());
     }
+
+    public function testStopManaging(): void
+    {
+        $this->mockRequest([
+            'path' => '/tms/2',
+            'method' => 'patch',
+            'body' => json_encode([['op' => 'remove', 'path' => '/managerIds/13240049']]),
+            'response' => json_encode([
+                'data' => [
+                    'id' => 2,
+                    'name' => 'Main TM',
+                    'managerIds' => [],
+                ],
+            ]),
+        ]);
+
+        $result = $this->crowdin->translationMemory->stopManaging(2, 13240049);
+
+        $this->assertInstanceOf(TranslationMemory::class, $result);
+        $this->assertSame([], $result->getManagerIds());
+    }
 }

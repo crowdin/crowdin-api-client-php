@@ -73,6 +73,23 @@ class TranslationMemoryApi extends AbstractApi
     }
 
     /**
+     * Stop Managing TM
+     * @link https://developer.crowdin.com/api/v2/#operation/api.tms.patch API Documentation
+     *
+     * @param int $tmId
+     * @param int $userId Your own user ID. Crowdin only
+     * @return TranslationMemory|null
+     */
+    public function stopManaging(int $tmId, int $userId): ?TranslationMemory
+    {
+        return $this->_patch(
+            sprintf('tms/%d', $tmId),
+            TranslationMemory::class,
+            [['op' => 'remove', 'path' => '/managerIds/' . $userId]]
+        );
+    }
+
+    /**
      * Delete TM
      * @link https://developer.crowdin.com/api/v2/#operation/api.tms.delete API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.delete API Documentation Enterprise

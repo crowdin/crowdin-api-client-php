@@ -83,4 +83,21 @@ class StyleGuideApi extends AbstractApi
     {
         return $this->_update('style-guides/' . $styleGuide->getId(), $styleGuide);
     }
+
+    /**
+     * Stop Managing Style Guide
+     * @link https://developer.crowdin.com/api/v2/#operation/api.style-guides.patch API Documentation
+     *
+     * @param int $styleGuideId
+     * @param int $userId Your own user ID. Crowdin only
+     * @return StyleGuide|null
+     */
+    public function stopManaging(int $styleGuideId, int $userId): ?StyleGuide
+    {
+        return $this->_patch(
+            sprintf('style-guides/%d', $styleGuideId),
+            StyleGuide::class,
+            [['op' => 'remove', 'path' => '/managerIds/' . $userId]]
+        );
+    }
 }
