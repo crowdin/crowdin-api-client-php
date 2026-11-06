@@ -33,6 +33,7 @@ class TeamMemberApi extends AbstractApi
      *
      * @param int $teamId
      * @param array $data
+     * array $data[userIds] required
      * @return AddedTeamMembers
      */
     public function create(int $teamId, array $data): AddedTeamMembers

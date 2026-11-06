@@ -29,8 +29,8 @@ class TaskApi extends AbstractApi
      * integer $params[limit] [1 .. 500] Default: 25<br>
      * integer $params[offset] >= 0 Default: 0<br>
      * string $params[status] Enum: "todo" "in_progress" "done" "closed"<br>
-     * integer $params[assigneeId]
-     *
+     * integer $params[assigneeId]<br>
+     * integer $params[batchId]
      * @return ModelCollection
      */
     public function list(int $projectId, array $params = []): ModelCollection
@@ -61,6 +61,39 @@ class TaskApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $data
+     * array $data[fileIds]<br>
+     * array $data[directoryIds]<br>
+     * array $data[branchIds]<br>
+     * string $data[title]<br>
+     * string $data[languageId]<br>
+     * integer $data[type] Enum: 0 - translate; 1 - proofread<br>
+     * array $data[labelIds]<br>
+     * string $data[labelMatchRule] Enum: "all" "any"<br>
+     * array $data[excludeLabelIds]<br>
+     * string $data[excludeLabelMatchRule] Enum: "all" "any"<br>
+     * string $data[status] Enum: "todo" "in_progress"<br>
+     * string $data[description]<br>
+     * boolean $data[splitContent]<br>
+     * boolean $data[skipAssignedStrings]<br>
+     * boolean $data[includePreTranslatedStringsOnly]<br>
+     * array $data[assignees]<br>
+     * string $data[deadline]<br>
+     * string $data[startedAt]<br>
+     * string $data[dateFrom]<br>
+     * string $data[dateTo]<br>
+     * string $data[translationsUpdatedDateFrom]<br>
+     * string $data[translationsUpdatedDateTo]<br>
+     * boolean $data[generateCostEstimate]<br>
+     * boolean $data[generateTranslationCost]<br>
+     * integer $data[reportSettingsTemplateId]<br>
+     * integer $data[batchId]<br>
+     * array $data[stringIds]<br>
+     * integer $data[precedingTaskId]<br>
+     * string $data[vendor]<br>
+     * integer $data[workflowStepId] Enterprise only<br>
+     * string $data[skipAssignedStringsScope] Enterprise only. Enum: "all" "sameWorkflowStep"<br>
+     * array $data[assignedTeams] Enterprise only<br>
+     * array $data[fields] Enterprise only
      * @return Task|null
      */
     public function create(int $projectId, array $data): ?Task
@@ -253,7 +286,6 @@ class TaskApi extends AbstractApi
 
     /**
      * Update Project Task Settings Template
-     *
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.tasks.settings-templates.patch API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.tasks.settings-templates.patch API Documentation Enterprise
      *

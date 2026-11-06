@@ -61,6 +61,14 @@ class BundleApi extends AbstractApi
      * string[] $data[ignorePatterns]<br>
      * string $data[exportPattern] required Note: Can't contain \\ / : * ? \" < > | symbols<br>
      * int[] $data[labelIds]<br>
+     * boolean $data[isMultilingual]<br>
+     * boolean $data[includeProjectSourceLanguage]<br>
+     * string $data[sourceLanguageExportPattern]<br>
+     * boolean $data[includeInContextPseudoLanguage]<br>
+     * array $data[excludeLabelIds]<br>
+     * string $data[labelMatchRule] Enum: "all" "any"<br>
+     * string $data[excludeLabelMatchRule] Enum: "all" "any"<br>
+     * array $data[languageIds]
      * @return Bundle|null
      */
     public function create(int $projectId, array $data): ?Bundle
@@ -96,7 +104,6 @@ class BundleApi extends AbstractApi
     public function update(int $projectId, Bundle $bundle): ?Bundle
     {
         $path = sprintf('projects/%d/bundles/%d', $projectId, $bundle->getId());
-
         return $this->_update($path, $bundle);
     }
 
@@ -104,6 +111,7 @@ class BundleApi extends AbstractApi
      * List Files
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.bundles.files.getMany API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.bundles.files.getMany API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $bundleId
      * @param array $params
@@ -138,6 +146,7 @@ class BundleApi extends AbstractApi
      * Export Bundle
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.bundles.exports.post API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.bundles.exports.post API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $bundleId
      * @return BundleExport
@@ -152,6 +161,7 @@ class BundleApi extends AbstractApi
      * Check Bundle Export Status
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.bundles.exports.get API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.bundles.exports.get API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $bundleId
      * @param string $exportId
@@ -167,6 +177,7 @@ class BundleApi extends AbstractApi
      * Download Bundle
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.bundles.exports.download.get API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.bundles.exports.download.get API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $bundleId
      * @param string $exportId

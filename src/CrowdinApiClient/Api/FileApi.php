@@ -28,7 +28,9 @@ class FileApi extends AbstractApi
      * integer $params[directoryId] Can't be used with branchId in the same request<br>
      * mixed $params[recursion] Works only when directoryId or branchId parameter is specified<br>
      * integer $params[limit]<br>
-     * integer $params[offset]
+     * integer $params[offset]<br>
+     * string $params[orderBy]<br>
+     * string $params[filter]
      * @return ModelCollection
      */
     public function list(int $projectId, array $params = []): ModelCollection
@@ -70,7 +72,11 @@ class FileApi extends AbstractApi
      * string $data[context]<br>
      * string $data[type]<br>
      * array $data[importOptions]<br>
-     * array $data[exportOptions]
+     * array $data[exportOptions]<br>
+     * integer $data[parserVersion]<br>
+     * array $data[excludedTargetLanguages]<br>
+     * array $data[attachLabelIds]<br>
+     * array $data[fields] Enterprise only
      * @return File
      */
     public function create(int $projectId, array $data): File
@@ -101,7 +107,11 @@ class FileApi extends AbstractApi
      * array $data[storageId] required<br>
      * array $data[updateOption]<br>
      * array $data[importOptions]<br>
-     * array $data[exportOptions]
+     * array $data[exportOptions]<br>
+     * string $data[name]<br>
+     * array $data[attachLabelIds]<br>
+     * array $data[detachLabelIds]<br>
+     * boolean $data[replaceModifiedContext]
      * @return File
      */
     public function update(int $projectId, int $fileId, array $data): File

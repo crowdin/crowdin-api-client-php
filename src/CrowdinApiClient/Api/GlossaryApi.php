@@ -30,7 +30,9 @@ class GlossaryApi extends AbstractApi
      * integer $params[groupId]<br>
      * integer $params[limit]<br>
      * integer $params[offset]<br>
-     * integer $params[userId]
+     * integer $params[userId]<br>
+     * string $params[orderBy]<br>
+     * string $params[filter]
      * @return ModelCollection
      */
     public function list(array $params = []): ModelCollection
@@ -45,7 +47,9 @@ class GlossaryApi extends AbstractApi
      *
      * @param array $params
      * string $params[name] required<br>
-     * integer $params[groupId]
+     * integer $params[groupId]<br>
+     * string $params[languageId] required<br>
+     * boolean $params[isShared]
      * @return Glossary|null
      */
     public function create(array $params): ?Glossary
@@ -263,7 +267,10 @@ class GlossaryApi extends AbstractApi
      * string $params[languageId]<br>
      * integer $params[translationOfTermId]<br>
      * integer $params[limit]<br>
-     * integer $params[offset]
+     * integer $params[offset]<br>
+     * string $params[orderBy]<br>
+     * integer $params[conceptId]<br>
+     * string $params[croql]
      * @return ModelCollection|null
      */
     public function listTerms(int $glossaryId, array $params = []): ?ModelCollection
@@ -284,7 +291,13 @@ class GlossaryApi extends AbstractApi
      * string $data[description]<br>
      * string $data[partOfSpeech]<br>
      * integer $data[translationOfTermId] Deprecated, use conceptId instead<br>
-     * integer $data[conceptId]
+     * integer $data[conceptId]<br>
+     * string $data[status] Enum: "preferred" "admitted" "not recommended" "obsolete" "draft"<br>
+     * string $data[type] Enum: "full form" "acronym" "abbreviation" "short form" "phrase" "variant"<br>
+     * string $data[gender] Enum: "masculine" "feminine" "neuter" "other"<br>
+     * string $data[note]<br>
+     * string $data[url]<br>
+     * array $data[fields] Enterprise only
      * @return mixed
      */
     public function createTerm(int $glossaryId, array $data): ?Term
@@ -355,6 +368,11 @@ class GlossaryApi extends AbstractApi
      * List Concepts
      * @link https://developer.crowdin.com/api/v2/#operation/api.glossaries.concepts.getMany API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.glossaries.concepts.getMany API Documentation Enterprise
+     *
+     * @param int $glossaryId
+     * @param array $params
+     * string $params[orderBy]
+     * @return ModelCollection|null
      */
     public function listConcepts(int $glossaryId, array $params = []): ?ModelCollection
     {
@@ -386,6 +404,8 @@ class GlossaryApi extends AbstractApi
      * string $data[url]<br>
      * string $data[figure]<br>
      * array[] $data[languageDetails]<br>
+     * array $data[languagesDetails]<br>
+     * array $data[fields] Enterprise only
      */
     public function updateConcept(int $glossaryId, int $conceptId, array $data): GlossaryConcept
     {

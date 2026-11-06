@@ -29,6 +29,11 @@ class TranslationApi extends AbstractApi
      * List Pre-Translations
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.pre-translations.getMany API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.pre-translations.getMany API Documentation Enterprise
+     *
+     * @param int $projectId
+     * @param array $params
+     * string $params[orderBy]
+     * @return ModelCollection
      */
     public function listPreTranslations(int $projectId, array $params = []): ModelCollection
     {
@@ -53,6 +58,24 @@ class TranslationApi extends AbstractApi
      * boolean $params[translateUntranslatedOnly] Deprecated, use scope instead. Works only with TM pre-translation method<br>
      * string $params[scope] Enum: "untranslated" "translated" "all" Default: "untranslated" Note: Can't be used with translateUntranslatedOnly<br>
      * boolean $params[translateWithPerfectMatchOnly] Works only with TM pre-translation method<br>
+     * array $params[directoryIds]<br>
+     * array $params[labelIds]<br>
+     * array $params[excludeLabelIds]<br>
+     * string $params[labelMatchRule] Enum: "all" "any"<br>
+     * string $params[excludeLabelMatchRule] Enum: "all" "any"<br>
+     * string $params[priority] Enum: "low" "normal" "high"<br>
+     * integer $params[aiPromptId]<br>
+     * boolean $params[skipApprovedTranslations]<br>
+     * string $params[translationModifiedBefore]<br>
+     * string $params[translationModifiedAfter]<br>
+     * string $params[replaceTranslationsOption] Enum: "none" "autoTranslated" "all"<br>
+     * boolean $params[resetApprovalStatus]<br>
+     * boolean $params[notifyOnCompletion]<br>
+     * array $params[fallbackLanguages]<br>
+     * string $params[sourceLanguageId] Crowdin only<br>
+     * string $params[customInstruction]<br>
+     * integer $params[taskId]<br>
+     * integer $params[minimumMatchRatio] Enterprise only
      * @return PreTranslation|null
      */
     public function applyPreTranslation(int $projectId, array $params): ?PreTranslation
@@ -132,6 +155,8 @@ class TranslationApi extends AbstractApi
      * boolean $params[skipUntranslatedFiles] Default: false<br>
      * boolean $params[exportApprovedOnly] Default: false<br>
      * boolean $params[preserveFolderHierarchy] Default: false<br>
+     * integer $params[exportWithMinApprovalsCount] Enterprise only<br>
+     * boolean $params[exportStringsThatPassedWorkflow] Enterprise only
      * @return TranslationProjectDirectory|null
      */
     public function buildProjectDirectoryTranslation(
@@ -140,7 +165,6 @@ class TranslationApi extends AbstractApi
         array $params = []
     ): ?TranslationProjectDirectory {
         $path = sprintf('projects/%d/translations/builds/directories/%d', $projectId, $directoryId);
-
         return $this->_post($path, TranslationProjectDirectory::class, $params);
     }
 
@@ -152,13 +176,15 @@ class TranslationApi extends AbstractApi
      * @param int $projectId
      * @param int $fileId
      * @param array $params
-     * @param string|null $ifNoneMatch
-     * @return DownloadFile|null
      * string $params[targetLanguageId]<br>
      * boolean $params[exportAsXliff] Deprecated, use TranslationApi::exportProjectTranslation() instead<br>
      * boolean $params[skipUntranslatedStrings] true value can't be used with skipUntranslatedFiles=true in same request<br>
      * boolean $params[skipUntranslatedFiles] true value can't be used with skipUntranslatedStrings=true in same request<br>
-     * boolean $params[exportApprovedOnly]
+     * boolean $params[exportApprovedOnly]<br>
+     * integer $params[exportWithMinApprovalsCount] Enterprise only<br>
+     * boolean $params[exportStringsThatPassedWorkflow] Enterprise only
+     * @param string|null $ifNoneMatch
+     * @return DownloadFile|null
      */
     public function buildProjectFileTranslation(
         int $projectId,
@@ -207,7 +233,13 @@ class TranslationApi extends AbstractApi
      * bool $params[skipUntranslatedStrings] true value can't be used with skipUntranslatedFiles=true in same request<br>
      * bool $params[skipUntranslatedFiles] true value can't be used with skipUntranslatedStrings=true in same request<br>
      * bool $params[exportApprovedOnly]<br>
-     * integer $params[exportWithMinApprovalsCount]
+     * integer $params[exportWithMinApprovalsCount]<br>
+     * boolean $params[pseudo]<br>
+     * string $params[prefix]<br>
+     * string $params[suffix]<br>
+     * integer $params[lengthTransformation]<br>
+     * string $params[charTransformation] Enum: "asian" "cyrillic" "european" "arabic"<br>
+     * boolean $params[exportStringsThatPassedWorkflow] Enterprise only
      * @return TranslationProjectBuild|null
      */
     public function buildProject(int $projectId, array $params = []): ?TranslationProjectBuild
@@ -231,6 +263,7 @@ class TranslationApi extends AbstractApi
      *  bool $params[autoApproveImported]<br>
      *  bool $params[translateHidden]<br>
      *  bool $params[addToTm]<br>
+     *  array $params[importOptions] String-based projects only
      * @return TranslationImport|null
      */
     public function importTranslations(int $projectId, array $params): ?TranslationImport
@@ -264,11 +297,11 @@ class TranslationApi extends AbstractApi
     }
 
     /**
+     * @deprecated Use importTranslations() instead.
+     *
      * Upload Translations
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.postOnLanguage API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.postOnLanguage API Documentation Enterprise
-     *
-     * @deprecated Use importTranslations() instead.
      *
      * @param int $projectId
      * @param string $languageId
@@ -277,6 +310,8 @@ class TranslationApi extends AbstractApi
      *  integer $params[fileId] required<br>
      *  bool $params[importEqSuggestions]<br>
      *  bool $params[autoApproveImported]<br>
+     * boolean $params[translateHidden]<br>
+     * boolean $params[addToTm]
      * @return array
      */
     public function uploadTranslations(int $projectId, string $languageId, array $params): array
@@ -341,8 +376,9 @@ class TranslationApi extends AbstractApi
      * bool $params[skipUntranslatedStrings] Note: Can't be used with skipUntranslatedFiles in same request<br>
      * bool $params[skipUntranslatedFiles] Note: Can't be used with skipUntranslatedStrings in same request<br>
      * bool $params[exportApprovedOnly]<br>
-     * integer $params[exportWithMinApprovalsCount]
-     *
+     * integer $params[exportWithMinApprovalsCount]<br>
+     * array $params[labelIds]<br>
+     * boolean $params[exportStringsThatPassedWorkflow] Enterprise only
      * @return DownloadFile
      */
     public function exportProjectTranslation(int $projectId, array $params = []): DownloadFile

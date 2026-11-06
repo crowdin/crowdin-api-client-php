@@ -12,11 +12,17 @@ use CrowdinApiClient\ModelCollection;
 class IssueApi extends AbstractApi
 {
     /**
+     * @deprecated Use StringCommentApi::list() instead
+     *
      * List Reported Issues
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.issues.getMany API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.issues.getMany API Documentation Enterprise
      *
-     * @deprecated Use StringCommentApi::list() instead
+     * @param int $projectId
+     * @param array $params
+     * string $params[type]<br>
+     * string $params[status]
+     * @return ModelCollection|null
      */
     public function listReportedIssues(int $projectId, array $params = []): ?ModelCollection
     {
@@ -25,11 +31,11 @@ class IssueApi extends AbstractApi
     }
 
     /**
+     * @deprecated Use StringCommentApi::update() instead
+     *
      * Edit Issue
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.issues.patch API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.issues.patch API Documentation Enterprise
-     *
-     * @deprecated Use StringCommentApi::update() instead
      */
     public function update(int $projectId, Issue $issue): ?Issue
     {

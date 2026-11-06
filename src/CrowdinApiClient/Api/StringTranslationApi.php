@@ -30,7 +30,8 @@ class StringTranslationApi extends AbstractApi
      * integer $params[translationId] If specified, fileId, stringId and languageId are ignored<br>
      * integer $params[correctionId] Enterprise only. Can't be used with translationId or languageId<br>
      * integer $params[limit]<br>
-     * integer $params[offset]
+     * integer $params[offset]<br>
+     * string $params[orderBy]
      * @return ModelCollection
      */
     public function listApprovals(int $projectId, array $params = []): ModelCollection
@@ -53,7 +54,6 @@ class StringTranslationApi extends AbstractApi
     public function createApproval(int $projectId, array $data): ?StringTranslationApproval
     {
         $path = sprintf('projects/%d/approvals', $projectId);
-
         return $this->_create($path, StringTranslationApproval::class, $data);
     }
 
@@ -111,7 +111,9 @@ class StringTranslationApi extends AbstractApi
      * string $params[croql]<br>
      * int $params[denormalizePlaceholders]<br>
      * int $params[limit]<br>
-     * int $params[offset]
+     * int $params[offset]<br>
+     * integer $params[passedWorkflow] Enterprise only<br>
+     * integer $params[minApprovalCount] Enterprise only
      * @return ModelCollection
      */
     public function listLanguageTranslations(int $projectId, string $languageId, array $params = []): ModelCollection
@@ -135,7 +137,9 @@ class StringTranslationApi extends AbstractApi
      * integer $params[languageId] required<br>
      * integer $params[denormalizePlaceholders]<br>
      * integer $params[limit]<br>
-     * integer $params[offset]
+     * integer $params[offset]<br>
+     * integer $params[fileId]<br>
+     * string $params[orderBy]
      * @return ModelCollection
      */
     public function list(int $projectId, array $params = []): ModelCollection
@@ -174,7 +178,13 @@ class StringTranslationApi extends AbstractApi
      * integer $data[stringId] required<br>
      * integer $data[languageId] required<br>
      * string $data[text] required<br>
-     * string $data[pluralCategoryName]
+     * string $data[pluralCategoryName]<br>
+     * boolean $data[addToTm]<br>
+     * string $data[provider]<br>
+     * integer $data[providerId]<br>
+     * boolean $data[isPreTranslated]<br>
+     * integer $data[fileId]<br>
+     * integer $data[storageId]
      * @return StringTranslation|null
      */
     public function create(int $projectId, array $data): ?StringTranslation
@@ -256,7 +266,8 @@ class StringTranslationApi extends AbstractApi
      * string $params[labelIds]<br>
      * string $params[excludeLabelIds]<br>
      * integer $params[limit]<br>
-     * integer $params[offset]
+     * integer $params[offset]<br>
+     * integer $params[fileId]
      * @return ModelCollection
      */
     public function listVotes(int $projectId, array $params = []): ModelCollection
@@ -297,6 +308,7 @@ class StringTranslationApi extends AbstractApi
      * Cancel Vote
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.votes.delete API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.votes.delete API Documentation Enterprise
+     *
      * @param int $projectId
      * @param int $voteId
      * @return mixed

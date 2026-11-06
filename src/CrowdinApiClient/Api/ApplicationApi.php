@@ -108,7 +108,8 @@ class ApplicationApi extends AbstractApi
      * array $data[permissions]<br>
      * array $data[modules]<br>
      * bool $data[assignAgent]<br>
-     * string $data[manifestHash] Hash of the manifest loaded for review. Install is rejected with 409 if the manifest changed
+     * string $data[manifestHash] Hash of the reviewed manifest. Install is rejected with 409 if it changed<br>
+     * array $data[manifest]
      * @return ApplicationInstallation|null
      */
     public function installApplication(array $data): ?ApplicationInstallation
@@ -285,9 +286,10 @@ class ApplicationApi extends AbstractApi
 
     /**
      * List Application KV Records
+     *
+     * Note: requires the application's own access token, personal access tokens are not supported.
      * @link https://developer.crowdin.com/api/v2/#operation/api.applications.storage.kv.records.getMany API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.applications.storage.kv.records.getMany API Documentation Enterprise
-     * Note: requires the application's own access token, personal access tokens are not supported.
      *
      * @param string $applicationIdentifier
      * @param array $params
@@ -308,9 +310,10 @@ class ApplicationApi extends AbstractApi
 
     /**
      * Add Application KV Record
+     *
+     * Note: requires the application's own access token, personal access tokens are not supported.
      * @link https://developer.crowdin.com/api/v2/#operation/api.applications.storage.kv.records.post API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.applications.storage.kv.records.post API Documentation Enterprise
-     * Note: requires the application's own access token, personal access tokens are not supported.
      *
      * @param string $applicationIdentifier
      * @param array $data
@@ -331,9 +334,10 @@ class ApplicationApi extends AbstractApi
 
     /**
      * Get Application KV Record
+     *
+     * Note: requires the application's own access token, personal access tokens are not supported.
      * @link https://developer.crowdin.com/api/v2/#operation/api.applications.storage.kv.records.get API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.applications.storage.kv.records.get API Documentation Enterprise
-     * Note: requires the application's own access token, personal access tokens are not supported.
      *
      * @param string $applicationIdentifier
      * @param string $key
@@ -349,9 +353,10 @@ class ApplicationApi extends AbstractApi
 
     /**
      * Edit Application KV Record
+     *
+     * Note: requires the application's own access token, personal access tokens are not supported.
      * @link https://developer.crowdin.com/api/v2/#operation/api.applications.storage.kv.records.patch API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.applications.storage.kv.records.patch API Documentation Enterprise
-     * Note: requires the application's own access token, personal access tokens are not supported.
      *
      * @param string $applicationIdentifier
      * @param string $key
@@ -369,9 +374,10 @@ class ApplicationApi extends AbstractApi
 
     /**
      * Delete Application KV Record
+     *
+     * Note: requires the application's own access token, personal access tokens are not supported.
      * @link https://developer.crowdin.com/api/v2/#operation/api.applications.storage.kv.records.delete API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.applications.storage.kv.records.delete API Documentation Enterprise
-     * Note: requires the application's own access token, personal access tokens are not supported.
      *
      * @param string $applicationIdentifier
      * @param string $key

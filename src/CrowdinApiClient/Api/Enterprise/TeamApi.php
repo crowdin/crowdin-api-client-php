@@ -27,7 +27,8 @@ class TeamApi extends AbstractApi
      * boolean $data[accessToAllWorkflowSteps] Deprecated, use roles instead<br>
      * boolean $data[managerAccess]<br>
      * array $data[permissions] Deprecated, use roles instead<br>
-     * array $data[roles]
+     * array $data[roles]<br>
+     * boolean $data[developerAccess]
      * @return AddedProjectTeamInfo
      */
     public function addTeamToProject(int $projectId, array $data): AddedProjectTeamInfo
@@ -57,6 +58,12 @@ class TeamApi extends AbstractApi
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.teams.getMany API Documentation
      *
      * @param array $params
+     * string $params[search]<br>
+     * string $params[projectIds]<br>
+     * string $params[projectRoles]<br>
+     * string $params[languageIds]<br>
+     * string $params[groupIds]<br>
+     * string $params[orderBy]
      * @return ModelCollection
      */
     public function list(array $params = []): ModelCollection

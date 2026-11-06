@@ -20,6 +20,12 @@ class StringCommentApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $params
+     * string $params[orderBy]<br>
+     * integer $params[stringId]<br>
+     * integer $params[fileId]<br>
+     * string $params[type]<br>
+     * string $params[issueType]<br>
+     * string $params[issueStatus]
      * @return ModelCollection|null
      */
     public function list(int $projectId, array $params = []): ?ModelCollection
@@ -50,6 +56,14 @@ class StringCommentApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $data
+     * integer $data[stringId]<br>
+     * string $data[text] required<br>
+     * string $data[type] required. Enum: "comment" "issue"<br>
+     * string $data[targetLanguageId]<br>
+     * string $data[issueType] Enum: "general_question" "translation_mistake" "context_request" "source_mistake"<br>
+     * array $data[attachments]<br>
+     * integer $data[fileId]<br>
+     * boolean $data[isShared] Enterprise only
      * @return StringComment|null
      */
     public function create(int $projectId, array $data): ?StringComment

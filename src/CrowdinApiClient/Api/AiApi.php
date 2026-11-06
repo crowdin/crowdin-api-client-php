@@ -45,7 +45,8 @@ class AiApi extends AbstractApi
      * integer $data[aiProviderId]<br>
      * string $data[aiModelId]<br>
      * array $data[instructions]<br>
-     * array $data[attachmentIds]
+     * array $data[attachmentIds]<br>
+     * array $data[styleGuideIds]
      * @return AiTranslation|null
      */
     public function translateStrings(int $userId, array $data): ?AiTranslation
@@ -71,7 +72,8 @@ class AiApi extends AbstractApi
      * integer $data[aiProviderId]<br>
      * string $data[aiModelId]<br>
      * array $data[instructions]<br>
-     * array $data[attachmentIds]
+     * array $data[attachmentIds]<br>
+     * array $data[styleGuideIds]
      * @return AiFileTranslation|null
      */
     public function createFileTranslation(int $userId, array $data): ?AiFileTranslation
@@ -392,6 +394,8 @@ class AiApi extends AbstractApi
     }
 
     /**
+     * @deprecated Deprecated by the Crowdin API. Use {@see AiGatewayApi::gatewayPost()} instead.
+     *
      * Create AI Provider Chat Completion
      * @link https://developer.crowdin.com/api/v2/#operation/api.users.ai.providers.chat.completions.post API Documentation
      *
@@ -401,7 +405,6 @@ class AiApi extends AbstractApi
      * string $data[model]<br>
      * boolean $data[stream]
      * @return AiProxyChatCompletion|null
-     * @deprecated Deprecated by the Crowdin API. Use {@see AiGatewayApi::gatewayPost()} instead.
      */
     public function createProviderChatCompletion(
         int $userId,

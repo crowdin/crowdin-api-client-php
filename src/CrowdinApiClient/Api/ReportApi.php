@@ -79,6 +79,16 @@ class ReportApi extends AbstractApi
     /**
      * Add Report Settings Template
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.reports.settings-templates.post API Documentation
+     *
+     * @param int $projectId
+     * @param array $data
+     * string $data[name] required<br>
+     * string $data[currency] required<br>
+     * string $data[unit] required. Enum: "strings" "words" "chars" "chars_with_spaces"<br>
+     * array $data[config] required<br>
+     * boolean $data[isPublic]<br>
+     * boolean $data[isGlobal]
+     * @return ReportSettingsTemplate|null
      */
     public function createReportSettingsTemplate(int $projectId, array $data): ?ReportSettingsTemplate
     {
