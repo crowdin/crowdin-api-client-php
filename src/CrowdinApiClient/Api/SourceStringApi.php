@@ -21,6 +21,16 @@ class SourceStringApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $params
+     * string $params[orderBy] Crowdin only<br>
+     * integer $params[denormalizePlaceholders]<br>
+     * string $params[labelIds]<br>
+     * integer $params[fileId]<br>
+     * integer $params[branchId]<br>
+     * integer $params[directoryId]<br>
+     * integer $params[taskId]<br>
+     * string $params[croql]<br>
+     * string $params[filter]<br>
+     * string $params[scope]
      * @return ModelCollection
      */
     public function list(int $projectId, array $params = []): ModelCollection
@@ -77,7 +87,9 @@ class SourceStringApi extends AbstractApi
      * integer $data[fileId] Required for file-based projects<br>
      * string $data[context]<br>
      * bool $data[isHidden]<br>
-     * integer $data[maxLength]
+     * integer $data[maxLength]<br>
+     * array $data[labelIds]<br>
+     * array $data[fields] Enterprise only
      * @return SourceString|null
      */
     public function create(int $projectId, array $data): ?SourceString

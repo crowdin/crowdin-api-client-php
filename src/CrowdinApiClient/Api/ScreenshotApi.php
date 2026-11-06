@@ -23,13 +23,18 @@ class ScreenshotApi extends AbstractApi
      * @param int $projectId
      * @param array $params
      * integer $params[limit]<br>
-     * integer $params[offset]
+     * integer $params[offset]<br>
+     * string $params[search]<br>
+     * string $params[orderBy]<br>
+     * integer $params[stringId]<br>
+     * string $params[stringIds]<br>
+     * string $params[labelIds]<br>
+     * string $params[excludeLabelIds]
      * @return ModelCollection
      */
     public function list(int $projectId, array $params = []): ModelCollection
     {
         $path = sprintf('projects/%d/screenshots', $projectId);
-
         return $this->_list($path, Screenshot::class, $params);
     }
 
@@ -52,11 +57,16 @@ class ScreenshotApi extends AbstractApi
      * Add Screenshot
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.screenshots.post API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.screenshots.post API Documentation Enterprise
+     *
      * @param int $projectId
      * @param array $data
      * integer $data[storageId] required<br>
      * string $data[name] required<br>
-     * bool $data[autoTag] Automatically tags screenshot
+     * bool $data[autoTag] Automatically tags screenshot<br>
+     * integer $data[fileId]<br>
+     * integer $data[branchId]<br>
+     * integer $data[directoryId]<br>
+     * array $data[labelIds]
      * @return Screenshot|null
      */
     public function create(int $projectId, array $data): ?Screenshot
@@ -69,6 +79,7 @@ class ScreenshotApi extends AbstractApi
      * Edit Screenshot
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.screenshots.patch API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.screenshots.patch API Documentation Enterprise
+     *
      * @param int $projectId
      * @param Screenshot $screenshot
      * @return Screenshot|null
@@ -141,6 +152,10 @@ class ScreenshotApi extends AbstractApi
      * @param int $projectId
      * @param int $screenshotId
      * @param array $data
+     * boolean $data[autoTag]<br>
+     * integer $data[fileId]<br>
+     * integer $data[branchId]<br>
+     * integer $data[directoryId]
      * @return mixed
      */
     public function replaceTags(int $projectId, int $screenshotId, array $data)
