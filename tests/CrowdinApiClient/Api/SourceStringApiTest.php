@@ -162,6 +162,24 @@ class SourceStringApiTest extends AbstractTestApi
         $this->assertEquals(12, $sourceString->getBranchId());
     }
 
+    public function testUpdateWithUpdateOption(): void
+    {
+        $sourceString = new SourceString(['id' => 2814, 'projectId' => 2, 'text' => 'old text']);
+        $sourceString->setText('new text');
+
+        $this->mockRequest([
+            'path' => '/projects/2/strings/2814?updateOption=clear_translations_and_approvals',
+            'method' => 'patch',
+            'body' => json_encode([['op' => 'replace', 'path' => '/text', 'value' => 'new text']]),
+            'response' => json_encode(['data' => ['id' => 2814, 'projectId' => 2, 'text' => 'new text']]),
+        ]);
+
+        $updated = $this->crowdin->sourceString->update($sourceString, ['updateOption' => 'clear_translations_and_approvals']);
+
+        $this->assertInstanceOf(SourceString::class, $updated);
+        $this->assertEquals('new text', $updated->getText());
+    }
+
     public function testCreate()
     {
         $params = [
@@ -275,6 +293,22 @@ class SourceStringApiTest extends AbstractTestApi
                 ],
             ]
         );
+
+        $this->assertInstanceOf(SourceString::class, $batchResult);
+    }
+
+    public function testBatchWithUpdateOption(): void
+    {
+        $data = [['op' => 'replace', 'path' => '/2814/text', 'value' => 'updated text']];
+
+        $this->mockRequest([
+            'path' => '/projects/2/strings?updateOption=keep_translations',
+            'method' => 'patch',
+            'body' => json_encode($data),
+            'response' => json_encode(['data' => [['data' => ['id' => 2814, 'text' => 'updated text']]]]),
+        ]);
+
+        $batchResult = $this->crowdin->sourceString->batchOperations(2, $data, ['updateOption' => 'keep_translations']);
 
         $this->assertInstanceOf(SourceString::class, $batchResult);
     }

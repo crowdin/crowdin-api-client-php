@@ -104,12 +104,15 @@ class SourceStringApi extends AbstractApi
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.strings.patch API Documentation Enterprise
      *
      * @param SourceString $sourceString
+     * @param array $params
+     * string $params[updateOption] Applied when text or identifier changes. Default: keep_translations_and_approvals.
+     * Enum: "keep_translations_and_approvals" "keep_translations" "clear_translations_and_approvals"
      * @return SourceString|null
      */
-    public function update(SourceString $sourceString): ?SourceString
+    public function update(SourceString $sourceString, array $params = []): ?SourceString
     {
         $path = sprintf('projects/%d/strings/%d', $sourceString->getProjectId(), $sourceString->getId());
-        return $this->_update($path, $sourceString);
+        return $this->_update($path, $sourceString, $params);
     }
 
     /**
@@ -137,12 +140,15 @@ class SourceStringApi extends AbstractApi
      * string $data[op] required Patch operation to perform (replace, add, remove)<br>
      * string <json-pointer> $data[path] required
      * value $data[value] required object, string, int, or bool
+     * @param array $params
+     * string $params[updateOption] Applied when text or identifier changes. Default: keep_translations_and_approvals.
+     * Enum: "keep_translations_and_approvals" "keep_translations" "clear_translations_and_approvals"
      * @return mixed
      */
-    public function batchOperations(int $projectId, array $data)
+    public function batchOperations(int $projectId, array $data, array $params = [])
     {
         $path = sprintf('projects/%d/strings', $projectId);
-        return $this->_patch($path, SourceString::class, $data);
+        return $this->_patch($path, SourceString::class, $data, $params);
     }
 
     /**

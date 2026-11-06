@@ -53,9 +53,10 @@ abstract class AbstractApi implements ApiInterface
     /**
      * @param string $path
      * @param ModelInterface $model
+     * @param array $params Query parameters
      * @return mixed
      */
-    protected function _update(string $path, ModelInterface $model)
+    protected function _update(string $path, ModelInterface $model, array $params = [])
     {
         $properties = $model->getProperties();
         $data = [];
@@ -83,6 +84,7 @@ abstract class AbstractApi implements ApiInterface
         $options = [
             'body' => json_encode($data),
             'headers' => $this->getHeaders(),
+            'params' => $params,
         ];
 
         return $this->client->apiRequest('patch', $path, new ResponseModelDecorator(get_class($model)), $options);
