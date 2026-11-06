@@ -48,6 +48,10 @@ class UserApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $params
+     * string $params[orderBy]<br>
+     * string $params[search]<br>
+     * string $params[role]<br>
+     * string $params[languageId]
      * @return ModelCollection
      */
     public function list(int $projectId, array $params = []): ModelCollection
@@ -76,6 +80,10 @@ class UserApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $params
+     * string $params[orderBy]<br>
+     * string $params[search]<br>
+     * string $params[role]<br>
+     * string $params[languageId]
      * @return ModelCollection
      */
     public function listProjectMembers(int $projectId, array $params = []): ModelCollection
@@ -89,6 +97,13 @@ class UserApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $data
+     * array $data[userIds]<br>
+     * array $data[usernames]<br>
+     * array $data[emails]<br>
+     * boolean $data[managerAccess]<br>
+     * boolean $data[developerAccess]<br>
+     * array $data[roles]<br>
+     * string $data[message]
      * @return ProjectMemberAddedStatistics
      */
     public function addProjectMember(int $projectId, array $data): ProjectMemberAddedStatistics
@@ -116,6 +131,9 @@ class UserApi extends AbstractApi
      * @param int $projectId
      * @param int $memberId
      * @param array $data
+     * boolean $data[managerAccess]<br>
+     * boolean $data[developerAccess]<br>
+     * array $data[roles]
      * @return ProjectMember|null
      */
     public function replaceProjectMemberPermissions(

@@ -25,7 +25,9 @@ class GroupApi extends AbstractApi
      * @param array $params
      * integer $params[parentId]<br>
      * integer $params[limit]<br>
-     * integer $params[offset]
+     * integer $params[offset]<br>
+     * string $params[orderBy]<br>
+     * string $params[filter]
      * @return ModelCollection
      */
     public function list(array $params = []): ModelCollection
@@ -50,10 +52,11 @@ class GroupApi extends AbstractApi
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.groups.post API Documentation
      *
      * @param array $data
-     * @return Group|null
      * string $data[name] required<br>
      * integer $data[parentId]<br>
-     * string $data[description]
+     * string $data[description]<br>
+     * integer $data[savingsReportSettingsTemplateId]
+     * @return Group|null
      */
     public function create(array $data): ?Group
     {

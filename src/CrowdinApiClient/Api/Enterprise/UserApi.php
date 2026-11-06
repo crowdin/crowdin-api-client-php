@@ -25,6 +25,12 @@ class UserApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $data
+     * array $data[userIds]<br>
+     * array $data[usernames]<br>
+     * array $data[emails]<br>
+     * boolean $data[managerAccess]<br>
+     * boolean $data[developerAccess]<br>
+     * array $data[roles]
      * @return ProjectTeamMemberAddedStatistics|null
      */
     public function addProjectTeamMember(int $projectId, array $data): ?ProjectTeamMemberAddedStatistics
@@ -38,6 +44,10 @@ class UserApi extends AbstractApi
      *
      * @param int $projectId
      * @param array $data
+     * string $data[orderBy]<br>
+     * string $data[search]<br>
+     * string $data[languageId]<br>
+     * integer $data[workflowStepId]
      * @return ModelCollection
      */
     public function listProjectMembers(int $projectId, array $data = []): ModelCollection
@@ -65,6 +75,9 @@ class UserApi extends AbstractApi
      * @param int $projectId
      * @param int $memberId
      * @param array $data
+     * boolean $data[managerAccess]<br>
+     * boolean $data[developerAccess]<br>
+     * array $data[roles]
      * @return ProjectTeamMemberResource|null
      */
     public function replaceProjectMemberPermissions(
@@ -96,6 +109,18 @@ class UserApi extends AbstractApi
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.users.getMany API Documentation
      *
      * @param array $params
+     * string $params[orderBy]<br>
+     * string $params[status]<br>
+     * string $params[search]<br>
+     * string $params[twoFactor]<br>
+     * string $params[organizationRoles]<br>
+     * integer $params[teamId]<br>
+     * string $params[projectIds]<br>
+     * string $params[projectRoles]<br>
+     * string $params[languageIds]<br>
+     * string $params[groupIds]<br>
+     * string $params[lastSeenFrom]<br>
+     * string $params[lastSeenTo]
      * @return ModelCollection
      */
     public function list(array $params = []): ModelCollection
@@ -131,6 +156,11 @@ class UserApi extends AbstractApi
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.users.post API Documentation
      *
      * @param array $data
+     * string $data[email] required<br>
+     * string $data[firstName]<br>
+     * string $data[lastName]<br>
+     * string $data[timezone]<br>
+     * boolean $data[adminAccess]
      * @return User|null
      */
     public function invite(array $data): ?User

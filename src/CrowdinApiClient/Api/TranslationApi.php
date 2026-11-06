@@ -297,11 +297,11 @@ class TranslationApi extends AbstractApi
     }
 
     /**
+     * @deprecated Use importTranslations() instead.
+     *
      * Upload Translations
      * @link https://developer.crowdin.com/api/v2/#operation/api.projects.translations.postOnLanguage API Documentation
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.translations.postOnLanguage API Documentation Enterprise
-     *
-     * @deprecated Use importTranslations() instead.
      *
      * @param int $projectId
      * @param string $languageId
