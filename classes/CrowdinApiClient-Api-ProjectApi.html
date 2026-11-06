@@ -312,7 +312,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/ProjectApi.php"><a href="files/src-crowdinapiclient-api-projectapi.html"><abbr title="src/CrowdinApiClient/Api/ProjectApi.php">ProjectApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">75</span>
+    <span class="phpdocumentor-element-found-in__line">119</span>
 
     </aside>
 
@@ -353,7 +353,48 @@ boolean $data[skipUntranslatedFiles]<br>
 integer $data[exportWithMinApprovalsCount]<br>
 integer $data[exportApprovedOnly]<br>
 integer $data[defaultTmId]<br>
-integer $data[defaultGlossaryId]</p>
+integer $data[defaultGlossaryId]<br>
+array $data[externalQaChecksIgnorable] Enterprise only. External QA check IDs mapped to bool, e.g. [1 =&gt; false]<br>
+integer $data[tagsDetection] Enum: 0 - Auto; 1 - Count tags; 2 - Skip tags<br>
+boolean $data[isMtAllowed]<br>
+boolean $data[taskBasedAccessControl]<br>
+boolean $data[autoSubstitution]<br>
+boolean $data[autoTranslateDialects]<br>
+boolean $data[publicDownloads]<br>
+boolean $data[hiddenStringsProofreadersAccess]<br>
+boolean $data[useGlobalTm] Crowdin only<br>
+boolean $data[showTmSuggestionsDialects]<br>
+boolean $data[tmApprovedSuggestionsOnly]<br>
+boolean $data[qaCheckIsActive]<br>
+array $data[qaCheckCategories]<br>
+array $data[qaChecksIgnorableCategories]<br>
+array $data[languageMapping]<br>
+string $data[glossaryAccessOption] Enum: &quot;readOnly&quot; &quot;fullAccess&quot; &quot;manageDrafts&quot;<br>
+boolean $data[normalizePlaceholder]<br>
+array $data[notificationSettings]<br>
+array $data[tmPreTranslate] Crowdin only<br>
+array $data[mtPreTranslate] Crowdin only<br>
+array $data[aiPreTranslate] Crowdin only<br>
+integer $data[editorSuggestionAiPromptId]<br>
+integer $data[qaCheckActionAiPromptId]<br>
+integer $data[contextReviewAiPromptId]<br>
+integer $data[savingsReportSettingsTemplateId]<br>
+array $data[assignedStyleGuides]<br>
+boolean $data[inContext]<br>
+boolean $data[inContextProcessHiddenStrings]<br>
+string $data[inContextPseudoLanguageId]<br>
+boolean $data[saveMetaInfoInSource]<br>
+string $data[tmContextType] Enum: &quot;segmentContext&quot; &quot;auto&quot; &quot;prevAndNextSegment&quot;<br>
+array $data[steps] Enterprise only<br>
+integer $data[translateDuplicates] Enterprise only. Enum: 0 - Show; 1 - Hide; 2 - Show, but auto-translate;
+3 - Show within a version branch; 4 - Hide (strict); 5 - Show within a version branch (strict)<br>
+array $data[taskReviewerIds] Enterprise only<br>
+boolean $data[exportStringsThatPassedWorkflow] Enterprise only<br>
+integer $data[qaApprovalsCount] Enterprise only<br>
+array $data[customQaCheckIds] Enterprise only<br>
+array $data[externalQaCheckIds] Enterprise only<br>
+array $data[fields] Enterprise only<br>
+integer $data[alignmentActionAiPromptId] Enterprise only</p>
 </section>
 
             </dd>
@@ -401,7 +442,7 @@ integer $data[defaultGlossaryId]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/ProjectApi.php"><a href="files/src-crowdinapiclient-api-projectapi.html"><abbr title="src/CrowdinApiClient/Api/ProjectApi.php">ProjectApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">144</span>
+    <span class="phpdocumentor-element-found-in__line">194</span>
 
     </aside>
 
@@ -429,7 +470,10 @@ integer $data[defaultGlossaryId]</p>
                 : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>string $data[format] required<br>
+array $data[settings] required</p>
+</section>
+
             </dd>
             </dl>
 
@@ -473,7 +517,7 @@ integer $data[defaultGlossaryId]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/ProjectApi.php"><a href="files/src-crowdinapiclient-api-projectapi.html"><abbr title="src/CrowdinApiClient/Api/ProjectApi.php">ProjectApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">98</span>
+    <span class="phpdocumentor-element-found-in__line">142</span>
 
     </aside>
 
@@ -536,7 +580,7 @@ integer $data[defaultGlossaryId]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/ProjectApi.php"><a href="files/src-crowdinapiclient-api-projectapi.html"><abbr title="src/CrowdinApiClient/Api/ProjectApi.php">ProjectApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">166</span>
+    <span class="phpdocumentor-element-found-in__line">216</span>
 
     </aside>
 
@@ -604,7 +648,7 @@ integer $data[defaultGlossaryId]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/ProjectApi.php"><a href="files/src-crowdinapiclient-api-projectapi.html"><abbr title="src/CrowdinApiClient/Api/ProjectApi.php">ProjectApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">108</span>
+    <span class="phpdocumentor-element-found-in__line">152</span>
 
     </aside>
 
@@ -676,7 +720,7 @@ integer $data[defaultGlossaryId]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/ProjectApi.php"><a href="files/src-crowdinapiclient-api-projectapi.html"><abbr title="src/CrowdinApiClient/Api/ProjectApi.php">ProjectApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 
     </aside>
 
@@ -743,7 +787,7 @@ integer $data[defaultGlossaryId]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/ProjectApi.php"><a href="files/src-crowdinapiclient-api-projectapi.html"><abbr title="src/CrowdinApiClient/Api/ProjectApi.php">ProjectApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">155</span>
+    <span class="phpdocumentor-element-found-in__line">205</span>
 
     </aside>
 
@@ -815,7 +859,7 @@ integer $data[defaultGlossaryId]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/ProjectApi.php"><a href="files/src-crowdinapiclient-api-projectapi.html"><abbr title="src/CrowdinApiClient/Api/ProjectApi.php">ProjectApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">34</span>
 
     </aside>
 
@@ -836,11 +880,14 @@ integer $data[defaultGlossaryId]</p>
                 : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">[]</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>integer $params[groupId] for enterprise only<br>
-integer $params[hasManagerAccess] for enterprise only Enum{0,1} (0 -false, 1 true)<br>
+                    <section class="phpdocumentor-description"><p>integer $params[groupId] Enterprise only<br>
+integer $params[hasManagerAccess] Enterprise only. Enum: 0 - false, 1 - true<br>
 integer $params[limit]<br>
 integer $params[offset]<br>
-integer $params[userId] Get user own projects</p>
+integer $params[userId] Get user own projects<br>
+string $params[orderBy]<br>
+string $params[filter]<br>
+integer $params[type] Crowdin only</p>
 </section>
 
             </dd>
@@ -888,7 +935,7 @@ integer $params[userId] Get user own projects</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/ProjectApi.php"><a href="files/src-crowdinapiclient-api-projectapi.html"><abbr title="src/CrowdinApiClient/Api/ProjectApi.php">ProjectApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">133</span>
+    <span class="phpdocumentor-element-found-in__line">177</span>
 
     </aside>
 
@@ -960,7 +1007,7 @@ integer $params[userId] Get user own projects</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/ProjectApi.php"><a href="files/src-crowdinapiclient-api-projectapi.html"><abbr title="src/CrowdinApiClient/Api/ProjectApi.php">ProjectApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">121</span>
+    <span class="phpdocumentor-element-found-in__line">165</span>
 
     </aside>
 
@@ -1028,7 +1075,7 @@ integer $params[userId] Get user own projects</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/ProjectApi.php"><a href="files/src-crowdinapiclient-api-projectapi.html"><abbr title="src/CrowdinApiClient/Api/ProjectApi.php">ProjectApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">85</span>
+    <span class="phpdocumentor-element-found-in__line">129</span>
 
     </aside>
 
@@ -1095,7 +1142,7 @@ integer $params[userId] Get user own projects</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/ProjectApi.php"><a href="files/src-crowdinapiclient-api-projectapi.html"><abbr title="src/CrowdinApiClient/Api/ProjectApi.php">ProjectApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">176</span>
+    <span class="phpdocumentor-element-found-in__line">226</span>
 
     </aside>
 

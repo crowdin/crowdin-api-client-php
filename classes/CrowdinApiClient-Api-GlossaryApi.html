@@ -335,6 +335,13 @@ Glossary export and import are asynchronous operations and shall be completed wi
 <dd>Concordance search in organization Glossaries</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-GlossaryApi.html#method_stopManaging">stopManaging()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-Glossary.html"><abbr title="\CrowdinApiClient\Model\Glossary">Glossary</abbr></a>|null    </span>
+</dt>
+<dd>Stop Managing Glossary</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Api-GlossaryApi.html#method_update">update()</a>
     <span>
                                 &nbsp;: <a href="classes/CrowdinApiClient-Model-Glossary.html"><abbr title="\CrowdinApiClient\Model\Glossary">Glossary</abbr></a>|null    </span>
@@ -383,7 +390,7 @@ Glossary export and import are asynchronous operations and shall be completed wi
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/GlossaryApi.php"><a href="files/src-crowdinapiclient-api-glossaryapi.html"><abbr title="src/CrowdinApiClient/Api/GlossaryApi.php">GlossaryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">287</span>
+    <span class="phpdocumentor-element-found-in__line">317</span>
 
     </aside>
 
@@ -446,7 +453,7 @@ Glossary export and import are asynchronous operations and shall be completed wi
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/GlossaryApi.php"><a href="files/src-crowdinapiclient-api-glossaryapi.html"><abbr title="src/CrowdinApiClient/Api/GlossaryApi.php">GlossaryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">200</span>
+    <span class="phpdocumentor-element-found-in__line">221</span>
 
     </aside>
 
@@ -525,7 +532,7 @@ string $data[expression] Deprecated, use expressions instead<br></p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/GlossaryApi.php"><a href="files/src-crowdinapiclient-api-glossaryapi.html"><abbr title="src/CrowdinApiClient/Api/GlossaryApi.php">GlossaryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">51</span>
+    <span class="phpdocumentor-element-found-in__line">55</span>
 
     </aside>
 
@@ -547,7 +554,9 @@ string $data[expression] Deprecated, use expressions instead<br></p>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>string $params[name] required<br>
-integer $params[groupId]</p>
+integer $params[groupId]<br>
+string $params[languageId] required<br>
+boolean $params[isShared]</p>
 </section>
 
             </dd>
@@ -595,7 +604,7 @@ integer $params[groupId]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/GlossaryApi.php"><a href="files/src-crowdinapiclient-api-glossaryapi.html"><abbr title="src/CrowdinApiClient/Api/GlossaryApi.php">GlossaryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">273</span>
+    <span class="phpdocumentor-element-found-in__line">303</span>
 
     </aside>
 
@@ -628,7 +637,13 @@ string $data[text] required<br>
 string $data[description]<br>
 string $data[partOfSpeech]<br>
 integer $data[translationOfTermId] Deprecated, use conceptId instead<br>
-integer $data[conceptId]</p>
+integer $data[conceptId]<br>
+string $data[status] Enum: &quot;preferred&quot; &quot;admitted&quot; &quot;not recommended&quot; &quot;obsolete&quot; &quot;draft&quot;<br>
+string $data[type] Enum: &quot;full form&quot; &quot;acronym&quot; &quot;abbreviation&quot; &quot;short form&quot; &quot;phrase&quot; &quot;variant&quot;<br>
+string $data[gender] Enum: &quot;masculine&quot; &quot;feminine&quot; &quot;neuter&quot; &quot;other&quot;<br>
+string $data[note]<br>
+string $data[url]<br>
+array $data[fields] Enterprise only</p>
 </section>
 
             </dd>
@@ -672,7 +687,7 @@ integer $data[conceptId]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/GlossaryApi.php"><a href="files/src-crowdinapiclient-api-glossaryapi.html"><abbr title="src/CrowdinApiClient/Api/GlossaryApi.php">GlossaryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">77</span>
+    <span class="phpdocumentor-element-found-in__line">81</span>
 
     </aside>
 
@@ -735,7 +750,7 @@ integer $data[conceptId]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/GlossaryApi.php"><a href="files/src-crowdinapiclient-api-glossaryapi.html"><abbr title="src/CrowdinApiClient/Api/GlossaryApi.php">GlossaryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">386</span>
+    <span class="phpdocumentor-element-found-in__line">423</span>
 
     </aside>
 
@@ -805,7 +820,7 @@ integer $data[conceptId]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/GlossaryApi.php"><a href="files/src-crowdinapiclient-api-glossaryapi.html"><abbr title="src/CrowdinApiClient/Api/GlossaryApi.php">GlossaryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">317</span>
+    <span class="phpdocumentor-element-found-in__line">347</span>
 
     </aside>
 
@@ -875,7 +890,7 @@ integer $data[conceptId]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/GlossaryApi.php"><a href="files/src-crowdinapiclient-api-glossaryapi.html"><abbr title="src/CrowdinApiClient/Api/GlossaryApi.php">GlossaryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">148</span>
+    <span class="phpdocumentor-element-found-in__line">169</span>
 
     </aside>
 
@@ -949,7 +964,7 @@ integer $data[conceptId]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/GlossaryApi.php"><a href="files/src-crowdinapiclient-api-glossaryapi.html"><abbr title="src/CrowdinApiClient/Api/GlossaryApi.php">GlossaryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">105</span>
+    <span class="phpdocumentor-element-found-in__line">126</span>
 
     </aside>
 
@@ -1030,7 +1045,7 @@ integer $data[conceptId]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/GlossaryApi.php"><a href="files/src-crowdinapiclient-api-glossaryapi.html"><abbr title="src/CrowdinApiClient/Api/GlossaryApi.php">GlossaryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">64</span>
+    <span class="phpdocumentor-element-found-in__line">68</span>
 
     </aside>
 
@@ -1097,7 +1112,7 @@ integer $data[conceptId]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/GlossaryApi.php"><a href="files/src-crowdinapiclient-api-glossaryapi.html"><abbr title="src/CrowdinApiClient/Api/GlossaryApi.php">GlossaryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">353</span>
+    <span class="phpdocumentor-element-found-in__line">388</span>
 
     </aside>
 
@@ -1171,7 +1186,7 @@ integer $data[conceptId]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/GlossaryApi.php"><a href="files/src-crowdinapiclient-api-glossaryapi.html"><abbr title="src/CrowdinApiClient/Api/GlossaryApi.php">GlossaryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">133</span>
+    <span class="phpdocumentor-element-found-in__line">154</span>
 
     </aside>
 
@@ -1245,7 +1260,7 @@ integer $data[conceptId]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/GlossaryApi.php"><a href="files/src-crowdinapiclient-api-glossaryapi.html"><abbr title="src/CrowdinApiClient/Api/GlossaryApi.php">GlossaryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">181</span>
+    <span class="phpdocumentor-element-found-in__line">202</span>
 
     </aside>
 
@@ -1319,7 +1334,7 @@ integer $data[conceptId]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/GlossaryApi.php"><a href="files/src-crowdinapiclient-api-glossaryapi.html"><abbr title="src/CrowdinApiClient/Api/GlossaryApi.php">GlossaryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">302</span>
+    <span class="phpdocumentor-element-found-in__line">332</span>
 
     </aside>
 
@@ -1393,7 +1408,7 @@ integer $data[conceptId]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/GlossaryApi.php"><a href="files/src-crowdinapiclient-api-glossaryapi.html"><abbr title="src/CrowdinApiClient/Api/GlossaryApi.php">GlossaryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">166</span>
+    <span class="phpdocumentor-element-found-in__line">187</span>
 
     </aside>
 
@@ -1471,7 +1486,7 @@ boolean $data[firstLineContainsHeader]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/GlossaryApi.php"><a href="files/src-crowdinapiclient-api-glossaryapi.html"><abbr title="src/CrowdinApiClient/Api/GlossaryApi.php">GlossaryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">36</span>
+    <span class="phpdocumentor-element-found-in__line">38</span>
 
     </aside>
 
@@ -1495,7 +1510,9 @@ boolean $data[firstLineContainsHeader]</p>
                     <section class="phpdocumentor-description"><p>integer $params[groupId]<br>
 integer $params[limit]<br>
 integer $params[offset]<br>
-integer $params[userId]</p>
+integer $params[userId]<br>
+string $params[orderBy]<br>
+string $params[filter]</p>
 </section>
 
             </dd>
@@ -1543,7 +1560,7 @@ integer $params[userId]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/GlossaryApi.php"><a href="files/src-crowdinapiclient-api-glossaryapi.html"><abbr title="src/CrowdinApiClient/Api/GlossaryApi.php">GlossaryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">342</span>
+    <span class="phpdocumentor-element-found-in__line">377</span>
 
     </aside>
 
@@ -1571,7 +1588,9 @@ integer $params[userId]</p>
                 : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">[]</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>string $params[orderBy]</p>
+</section>
+
             </dd>
             </dl>
 
@@ -1617,7 +1636,7 @@ integer $params[userId]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/GlossaryApi.php"><a href="files/src-crowdinapiclient-api-glossaryapi.html"><abbr title="src/CrowdinApiClient/Api/GlossaryApi.php">GlossaryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">252</span>
+    <span class="phpdocumentor-element-found-in__line">276</span>
 
     </aside>
 
@@ -1649,7 +1668,10 @@ integer $params[userId]</p>
 string $params[languageId]<br>
 integer $params[translationOfTermId]<br>
 integer $params[limit]<br>
-integer $params[offset]</p>
+integer $params[offset]<br>
+string $params[orderBy]<br>
+integer $params[conceptId]<br>
+string $params[croql]</p>
 </section>
 
             </dd>
@@ -1697,7 +1719,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/GlossaryApi.php"><a href="files/src-crowdinapiclient-api-glossaryapi.html"><abbr title="src/CrowdinApiClient/Api/GlossaryApi.php">GlossaryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">225</span>
+    <span class="phpdocumentor-element-found-in__line">246</span>
 
     </aside>
 
@@ -1761,6 +1783,78 @@ integer $params[userId] Crowdin API only<br></p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_stopManaging">
+        stopManaging()
+        <a href="classes/CrowdinApiClient-Api-GlossaryApi.html#method_stopManaging" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/GlossaryApi.php"><a href="files/src-crowdinapiclient-api-glossaryapi.html"><abbr title="src/CrowdinApiClient/Api/GlossaryApi.php">GlossaryApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">107</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Stop Managing Glossary</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">stopManaging</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$glossaryId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Glossary.html"><abbr title="\CrowdinApiClient\Model\Glossary">Glossary</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$glossaryId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$userId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Your own user ID. Crowdin only</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="method_stopManaging_tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-GlossaryApi.html#method_stopManaging_tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                    <dt class="phpdocumentor-tag-list__entry">
+                <span class="phpdocumentor-tag__name">link</span>
+            </dt>
+                            <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.glossaries.patch"> <p>API Documentation</p>
+ </a>
+                                    </dd>
+                        </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-Glossary.html"><abbr title="\CrowdinApiClient\Model\Glossary">Glossary</abbr></a>|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_update">
         update()
         <a href="classes/CrowdinApiClient-Api-GlossaryApi.html#method_update" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1769,7 +1863,7 @@ integer $params[userId] Crowdin API only<br></p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/GlossaryApi.php"><a href="files/src-crowdinapiclient-api-glossaryapi.html"><abbr title="src/CrowdinApiClient/Api/GlossaryApi.php">GlossaryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">90</span>
+    <span class="phpdocumentor-element-found-in__line">94</span>
 
     </aside>
 
@@ -1836,7 +1930,7 @@ integer $params[userId] Crowdin API only<br></p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/GlossaryApi.php"><a href="files/src-crowdinapiclient-api-glossaryapi.html"><abbr title="src/CrowdinApiClient/Api/GlossaryApi.php">GlossaryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">373</span>
+    <span class="phpdocumentor-element-found-in__line">410</span>
 
     </aside>
 
@@ -1877,7 +1971,9 @@ bool $data[translatable]<br>
 string $data[note]<br>
 string $data[url]<br>
 string $data[figure]<br>
-array[] $data[languageDetails]<br></p>
+array[] $data[languageDetails]<br>
+array $data[languagesDetails]<br>
+array $data[fields] Enterprise only</p>
 </section>
 
             </dd>
@@ -1925,7 +2021,7 @@ array[] $data[languageDetails]<br></p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/GlossaryApi.php"><a href="files/src-crowdinapiclient-api-glossaryapi.html"><abbr title="src/CrowdinApiClient/Api/GlossaryApi.php">GlossaryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">331</span>
+    <span class="phpdocumentor-element-found-in__line">361</span>
 
     </aside>
 
@@ -2019,6 +2115,7 @@ array[] $data[languageDetails]<br></p>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-GlossaryApi.html#method_listConcepts">listConcepts()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-GlossaryApi.html#method_listTerms">listTerms()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-GlossaryApi.html#method_searchOrganizationConcordance">searchOrganizationConcordance()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-GlossaryApi.html#method_stopManaging">stopManaging()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-GlossaryApi.html#method_update">update()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-GlossaryApi.html#method_updateConcept">updateConcept()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-GlossaryApi.html#method_updateTerm">updateTerm()</a></li>

@@ -323,6 +323,13 @@ Translation Memory export and import are asynchronous operations and shall be co
 <dd>Concordance search in organization TMs</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_stopManaging">stopManaging()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-TranslationMemory.html"><abbr title="\CrowdinApiClient\Model\TranslationMemory">TranslationMemory</abbr></a>|null    </span>
+</dt>
+<dd>Stop Managing TM</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_update">update()</a>
     <span>
                                 &nbsp;: <a href="classes/CrowdinApiClient-Model-TranslationMemory.html"><abbr title="\CrowdinApiClient\Model\TranslationMemory">TranslationMemory</abbr></a>|null    </span>
@@ -364,7 +371,7 @@ Translation Memory export and import are asynchronous operations and shall be co
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">161</span>
+    <span class="phpdocumentor-element-found-in__line">183</span>
 
     </aside>
 
@@ -440,7 +447,7 @@ Translation Memory export and import are asynchronous operations and shall be co
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">232</span>
+    <span class="phpdocumentor-element-found-in__line">254</span>
 
     </aside>
 
@@ -514,7 +521,7 @@ Translation Memory export and import are asynchronous operations and shall be co
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">275</span>
+    <span class="phpdocumentor-element-found-in__line">297</span>
 
     </aside>
 
@@ -588,7 +595,7 @@ Translation Memory export and import are asynchronous operations and shall be co
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">94</span>
+    <span class="phpdocumentor-element-found-in__line">116</span>
 
     </aside>
 
@@ -655,7 +662,7 @@ Translation Memory export and import are asynchronous operations and shall be co
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">296</span>
+    <span class="phpdocumentor-element-found-in__line">318</span>
 
     </aside>
 
@@ -736,7 +743,7 @@ string $params[expression] Deprecated Note: Can't be used with expressions in sa
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">61</span>
+    <span class="phpdocumentor-element-found-in__line">66</span>
 
     </aside>
 
@@ -757,7 +764,10 @@ string $params[expression] Deprecated Note: Can't be used with expressions in sa
                 : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>string $data[name]</p>
+                    <section class="phpdocumentor-description"><p>string $data[name]<br>
+string $data[languageId] required<br>
+boolean $data[isShared]<br>
+integer $data[groupId] Enterprise only</p>
 </section>
 
             </dd>
@@ -801,7 +811,7 @@ string $params[expression] Deprecated Note: Can't be used with expressions in sa
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">146</span>
+    <span class="phpdocumentor-element-found-in__line">168</span>
 
     </aside>
 
@@ -879,7 +889,7 @@ string $data[records][][text]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">82</span>
+    <span class="phpdocumentor-element-found-in__line">104</span>
 
     </aside>
 
@@ -946,7 +956,7 @@ string $data[records][][text]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">187</span>
+    <span class="phpdocumentor-element-found-in__line">209</span>
 
     </aside>
 
@@ -1020,7 +1030,7 @@ string $data[records][][text]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">243</span>
+    <span class="phpdocumentor-element-found-in__line">265</span>
 
     </aside>
 
@@ -1094,7 +1104,7 @@ string $data[records][][text]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">221</span>
+    <span class="phpdocumentor-element-found-in__line">243</span>
 
     </aside>
 
@@ -1172,7 +1182,7 @@ string $params[format]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">49</span>
 
     </aside>
 
@@ -1239,7 +1249,7 @@ string $params[format]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">128</span>
+    <span class="phpdocumentor-element-found-in__line">150</span>
 
     </aside>
 
@@ -1313,7 +1323,7 @@ string $params[format]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">254</span>
+    <span class="phpdocumentor-element-found-in__line">276</span>
 
     </aside>
 
@@ -1401,7 +1411,7 @@ string $params[format]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 
     </aside>
 
@@ -1425,7 +1435,9 @@ string $params[format]</p>
                     <section class="phpdocumentor-description"><p>integer $params[userId]<br>
 integer $params[groupId]<br>
 integer $params[limit]<br>
-integer $params[offset]</p>
+integer $params[offset]<br>
+string $params[orderBy]<br>
+string $params[filter]</p>
 </section>
 
             </dd>
@@ -1473,7 +1485,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">113</span>
+    <span class="phpdocumentor-element-found-in__line">135</span>
 
     </aside>
 
@@ -1552,7 +1564,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">323</span>
+    <span class="phpdocumentor-element-found-in__line">345</span>
 
     </aside>
 
@@ -1618,6 +1630,78 @@ integer $params[userId] Crowdin API only<br></p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_stopManaging">
+        stopManaging()
+        <a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_stopManaging" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">88</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Stop Managing TM</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">stopManaging</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$tmId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-TranslationMemory.html"><abbr title="\CrowdinApiClient\Model\TranslationMemory">TranslationMemory</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$tmId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$userId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Your own user ID. Crowdin only</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="method_stopManaging_tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_stopManaging_tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                    <dt class="phpdocumentor-tag-list__entry">
+                <span class="phpdocumentor-tag__name">link</span>
+            </dt>
+                            <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.tms.patch"> <p>API Documentation</p>
+ </a>
+                                    </dd>
+                        </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-TranslationMemory.html"><abbr title="\CrowdinApiClient\Model\TranslationMemory">TranslationMemory</abbr></a>|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_update">
         update()
         <a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_update" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1626,7 +1710,7 @@ integer $params[userId] Crowdin API only<br></p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">70</span>
+    <span class="phpdocumentor-element-found-in__line">75</span>
 
     </aside>
 
@@ -1689,7 +1773,7 @@ integer $params[userId] Crowdin API only<br></p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationMemoryApi.php"><a href="files/src-crowdinapiclient-api-translationmemoryapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationMemoryApi.php">TranslationMemoryApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">203</span>
+    <span class="phpdocumentor-element-found-in__line">225</span>
 
     </aside>
 
@@ -1797,6 +1881,7 @@ integer $params[userId] Crowdin API only<br></p>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_list">list()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_listSegments">listSegments()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_searchOrganizationConcordance">searchOrganizationConcordance()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_stopManaging">stopManaging()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_update">update()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-TranslationMemoryApi.html#method_updateSegment">updateSegment()</a></li>
                                     </ul>

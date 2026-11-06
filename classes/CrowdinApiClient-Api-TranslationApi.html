@@ -332,7 +332,6 @@ Pre-translate and build are asynchronous operations and shall be completed with 
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd>Upload Translations</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Api-TranslationApi.html#method_validateQaChecks">validateQaChecks()</a>
@@ -369,7 +368,7 @@ Pre-translate and build are asynchronous operations and shall be completed with 
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">367</span>
+    <span class="phpdocumentor-element-found-in__line">403</span>
 
     </aside>
 
@@ -447,7 +446,7 @@ string $params[text] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">81</span>
 
     </aside>
 
@@ -484,7 +483,25 @@ string $params[autoApproveOption]<br>
 boolean $params[duplicateTranslations] Works only with TM pre-translation method<br>
 boolean $params[translateUntranslatedOnly] Deprecated, use scope instead. Works only with TM pre-translation method<br>
 string $params[scope] Enum: &quot;untranslated&quot; &quot;translated&quot; &quot;all&quot; Default: &quot;untranslated&quot; Note: Can't be used with translateUntranslatedOnly<br>
-boolean $params[translateWithPerfectMatchOnly] Works only with TM pre-translation method<br></p>
+boolean $params[translateWithPerfectMatchOnly] Works only with TM pre-translation method<br>
+array $params[directoryIds]<br>
+array $params[labelIds]<br>
+array $params[excludeLabelIds]<br>
+string $params[labelMatchRule] Enum: &quot;all&quot; &quot;any&quot;<br>
+string $params[excludeLabelMatchRule] Enum: &quot;all&quot; &quot;any&quot;<br>
+string $params[priority] Enum: &quot;low&quot; &quot;normal&quot; &quot;high&quot;<br>
+integer $params[aiPromptId]<br>
+boolean $params[skipApprovedTranslations]<br>
+string $params[translationModifiedBefore]<br>
+string $params[translationModifiedAfter]<br>
+string $params[replaceTranslationsOption] Enum: &quot;none&quot; &quot;autoTranslated&quot; &quot;all&quot;<br>
+boolean $params[resetApprovalStatus]<br>
+boolean $params[notifyOnCompletion]<br>
+array $params[fallbackLanguages]<br>
+string $params[sourceLanguageId] Crowdin only<br>
+string $params[customInstruction]<br>
+integer $params[taskId]<br>
+integer $params[minimumMatchRatio] Enterprise only</p>
 </section>
 
             </dd>
@@ -532,7 +549,7 @@ boolean $params[translateWithPerfectMatchOnly] Works only with TM pre-translatio
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">213</span>
+    <span class="phpdocumentor-element-found-in__line">245</span>
 
     </aside>
 
@@ -565,7 +582,13 @@ array $params[targetLanguageIds]<br>
 bool $params[skipUntranslatedStrings] true value can't be used with skipUntranslatedFiles=true in same request<br>
 bool $params[skipUntranslatedFiles] true value can't be used with skipUntranslatedStrings=true in same request<br>
 bool $params[exportApprovedOnly]<br>
-integer $params[exportWithMinApprovalsCount]</p>
+integer $params[exportWithMinApprovalsCount]<br>
+boolean $params[pseudo]<br>
+string $params[prefix]<br>
+string $params[suffix]<br>
+integer $params[lengthTransformation]<br>
+string $params[charTransformation] Enum: &quot;asian&quot; &quot;cyrillic&quot; &quot;european&quot; &quot;arabic&quot;<br>
+boolean $params[exportStringsThatPassedWorkflow] Enterprise only</p>
 </section>
 
             </dd>
@@ -613,7 +636,7 @@ integer $params[exportWithMinApprovalsCount]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">137</span>
+    <span class="phpdocumentor-element-found-in__line">162</span>
 
     </aside>
 
@@ -652,7 +675,9 @@ integer $params[exportWithMinApprovalsCount]</p>
 boolean $params[skipUntranslatedStrings] Default: false<br>
 boolean $params[skipUntranslatedFiles] Default: false<br>
 boolean $params[exportApprovedOnly] Default: false<br>
-boolean $params[preserveFolderHierarchy] Default: false<br></p>
+boolean $params[preserveFolderHierarchy] Default: false<br>
+integer $params[exportWithMinApprovalsCount] Enterprise only<br>
+boolean $params[exportStringsThatPassedWorkflow] Enterprise only</p>
 </section>
 
             </dd>
@@ -700,7 +725,7 @@ boolean $params[preserveFolderHierarchy] Default: false<br></p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">163</span>
+    <span class="phpdocumentor-element-found-in__line">189</span>
 
     </aside>
 
@@ -735,7 +760,15 @@ boolean $params[preserveFolderHierarchy] Default: false<br></p>
                 : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">[]</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>string $params[targetLanguageId]<br>
+boolean $params[exportAsXliff] Deprecated, use TranslationApi::exportProjectTranslation() instead<br>
+boolean $params[skipUntranslatedStrings] true value can't be used with skipUntranslatedFiles=true in same request<br>
+boolean $params[skipUntranslatedFiles] true value can't be used with skipUntranslatedStrings=true in same request<br>
+boolean $params[exportApprovedOnly]<br>
+integer $params[exportWithMinApprovalsCount] Enterprise only<br>
+boolean $params[exportStringsThatPassedWorkflow] Enterprise only</p>
+</section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$ifNoneMatch</span>
@@ -771,14 +804,6 @@ boolean $params[preserveFolderHierarchy] Default: false<br></p>
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-DownloadFile.html"><abbr title="\CrowdinApiClient\Model\DownloadFile">DownloadFile</abbr></a>|null</span>
-                    &mdash;
-                <section class="phpdocumentor-description"><p>string $params[targetLanguageId]<br>
-boolean $params[exportAsXliff] Deprecated, use TranslationApi::exportProjectTranslation() instead<br>
-boolean $params[skipUntranslatedStrings] true value can't be used with skipUntranslatedFiles=true in same request<br>
-boolean $params[skipUntranslatedFiles] true value can't be used with skipUntranslatedStrings=true in same request<br>
-boolean $params[exportApprovedOnly]</p>
-</section>
-
             </section>
 
 </article>
@@ -796,7 +821,7 @@ boolean $params[exportApprovedOnly]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">323</span>
+    <span class="phpdocumentor-element-found-in__line">358</span>
 
     </aside>
 
@@ -866,7 +891,7 @@ boolean $params[exportApprovedOnly]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">299</span>
+    <span class="phpdocumentor-element-found-in__line">334</span>
 
     </aside>
 
@@ -940,7 +965,7 @@ boolean $params[exportApprovedOnly]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">258</span>
+    <span class="phpdocumentor-element-found-in__line">291</span>
 
     </aside>
 
@@ -1014,7 +1039,7 @@ boolean $params[exportApprovedOnly]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">348</span>
+    <span class="phpdocumentor-element-found-in__line">384</span>
 
     </aside>
 
@@ -1050,7 +1075,9 @@ int[] $params[fileIds] Note: Can't be used with branchIds or directoryIds in sam
 bool $params[skipUntranslatedStrings] Note: Can't be used with skipUntranslatedFiles in same request<br>
 bool $params[skipUntranslatedFiles] Note: Can't be used with skipUntranslatedStrings in same request<br>
 bool $params[exportApprovedOnly]<br>
-integer $params[exportWithMinApprovalsCount]</p>
+integer $params[exportWithMinApprovalsCount]<br>
+array $params[labelIds]<br>
+boolean $params[exportStringsThatPassedWorkflow] Enterprise only</p>
 </section>
 
             </dd>
@@ -1098,7 +1125,7 @@ integer $params[exportWithMinApprovalsCount]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">69</span>
+    <span class="phpdocumentor-element-found-in__line">92</span>
 
     </aside>
 
@@ -1172,7 +1199,7 @@ integer $params[exportWithMinApprovalsCount]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">91</span>
+    <span class="phpdocumentor-element-found-in__line">114</span>
 
     </aside>
 
@@ -1246,7 +1273,7 @@ integer $params[exportWithMinApprovalsCount]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">192</span>
+    <span class="phpdocumentor-element-found-in__line">218</span>
 
     </aside>
 
@@ -1324,7 +1351,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">310</span>
+    <span class="phpdocumentor-element-found-in__line">345</span>
 
     </aside>
 
@@ -1398,7 +1425,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">247</span>
+    <span class="phpdocumentor-element-found-in__line">280</span>
 
     </aside>
 
@@ -1472,7 +1499,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">236</span>
+    <span class="phpdocumentor-element-found-in__line">269</span>
 
     </aside>
 
@@ -1507,7 +1534,8 @@ integer $params[fileId] required for file-based projects (except XLIFF format)<b
 bool $params[importEqSuggestions]<br>
 bool $params[autoApproveImported]<br>
 bool $params[translateHidden]<br>
-bool $params[addToTm]<br></p>
+bool $params[addToTm]<br>
+array $params[importOptions] String-based projects only</p>
 </section>
 
             </dd>
@@ -1555,7 +1583,7 @@ bool $params[addToTm]<br></p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">38</span>
 
     </aside>
 
@@ -1583,7 +1611,9 @@ bool $params[addToTm]<br></p>
                 : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">[]</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>string $params[orderBy]</p>
+</section>
+
             </dd>
             </dl>
 
@@ -1629,7 +1659,7 @@ bool $params[addToTm]<br></p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">80</span>
+    <span class="phpdocumentor-element-found-in__line">103</span>
 
     </aside>
 
@@ -1703,7 +1733,7 @@ bool $params[addToTm]<br></p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">105</span>
+    <span class="phpdocumentor-element-found-in__line">128</span>
 
     </aside>
 
@@ -1775,12 +1805,11 @@ bool $params[addToTm]<br></p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">282</span>
+    <span class="phpdocumentor-element-found-in__line">317</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Upload Translations</p>
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">uploadTranslations</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$languageId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
@@ -1791,6 +1820,7 @@ bool $params[addToTm]<br></p>
         <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
             <article>
                 <p>Use importTranslations() instead.</p>
+<p>Upload Translations</p>
 
             </article>
         </div>
@@ -1820,7 +1850,9 @@ bool $params[addToTm]<br></p>
                     <section class="phpdocumentor-description"><p>integer $params[storageId] required<br>
 integer $params[fileId] required<br>
 bool $params[importEqSuggestions]<br>
-bool $params[autoApproveImported]<br></p>
+bool $params[autoApproveImported]<br>
+boolean $params[translateHidden]<br>
+boolean $params[addToTm]</p>
 </section>
 
             </dd>
@@ -1868,7 +1900,7 @@ bool $params[autoApproveImported]<br></p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TranslationApi.php"><a href="files/src-crowdinapiclient-api-translationapi.html"><abbr title="src/CrowdinApiClient/Api/TranslationApi.php">TranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">386</span>
+    <span class="phpdocumentor-element-found-in__line">422</span>
 
     </aside>
 

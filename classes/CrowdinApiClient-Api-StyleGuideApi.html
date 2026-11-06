@@ -225,6 +225,13 @@
 <dd>List Style Guides</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_stopManaging">stopManaging()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-Model-StyleGuide.html"><abbr title="\CrowdinApiClient\Model\StyleGuide">StyleGuide</abbr></a>|null    </span>
+</dt>
+<dd>Stop Managing Style Guide</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_update">update()</a>
     <span>
                                 &nbsp;: <a href="classes/CrowdinApiClient-Model-StyleGuide.html"><abbr title="\CrowdinApiClient\Model\StyleGuide">StyleGuide</abbr></a>|null    </span>
@@ -259,7 +266,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StyleGuideApi.php"><a href="files/src-crowdinapiclient-api-styleguideapi.html"><abbr title="src/CrowdinApiClient/Api/StyleGuideApi.php">StyleGuideApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 
     </aside>
 
@@ -285,7 +292,8 @@ int $params[storageId] required<br>
 string|null $params[aiInstructions]<br>
 string[] $params[languageIds]<br>
 int[] $params[projectIds]<br>
-bool $params[isShared]</p>
+bool $params[isShared]<br>
+integer $params[groupId] Enterprise only</p>
 </section>
 
             </dd>
@@ -333,7 +341,7 @@ bool $params[isShared]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StyleGuideApi.php"><a href="files/src-crowdinapiclient-api-styleguideapi.html"><abbr title="src/CrowdinApiClient/Api/StyleGuideApi.php">StyleGuideApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">69</span>
+    <span class="phpdocumentor-element-found-in__line">70</span>
 
     </aside>
 
@@ -396,7 +404,7 @@ bool $params[isShared]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StyleGuideApi.php"><a href="files/src-crowdinapiclient-api-styleguideapi.html"><abbr title="src/CrowdinApiClient/Api/StyleGuideApi.php">StyleGuideApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">56</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 
     </aside>
 
@@ -527,6 +535,78 @@ integer $params[userId]</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_stopManaging">
+        stopManaging()
+        <a href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_stopManaging" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StyleGuideApi.php"><a href="files/src-crowdinapiclient-api-styleguideapi.html"><abbr title="src/CrowdinApiClient/Api/StyleGuideApi.php">StyleGuideApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">96</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Stop Managing Style Guide</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">stopManaging</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$styleGuideId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-StyleGuide.html"><abbr title="\CrowdinApiClient\Model\StyleGuide">StyleGuide</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$styleGuideId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$userId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Your own user ID. Crowdin only</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="method_stopManaging_tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_stopManaging_tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                    <dt class="phpdocumentor-tag-list__entry">
+                <span class="phpdocumentor-tag__name">link</span>
+            </dt>
+                            <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/api/v2/#operation/api.style-guides.patch"> <p>API Documentation</p>
+ </a>
+                                    </dd>
+                        </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-StyleGuide.html"><abbr title="\CrowdinApiClient\Model\StyleGuide">StyleGuide</abbr></a>|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_update">
         update()
         <a href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_update" class="headerlink"><i class="fas fa-link"></i></a>
@@ -535,7 +615,7 @@ integer $params[userId]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StyleGuideApi.php"><a href="files/src-crowdinapiclient-api-styleguideapi.html"><abbr title="src/CrowdinApiClient/Api/StyleGuideApi.php">StyleGuideApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">82</span>
+    <span class="phpdocumentor-element-found-in__line">83</span>
 
     </aside>
 
@@ -614,6 +694,7 @@ integer $params[userId]</p>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_delete">delete()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_get">get()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_list">list()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_stopManaging">stopManaging()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-StyleGuideApi.html#method_update">update()</a></li>
                                     </ul>
             </li>

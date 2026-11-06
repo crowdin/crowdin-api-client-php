@@ -359,7 +359,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">320</span>
+    <span class="phpdocumentor-element-found-in__line">334</span>
 
     </aside>
 
@@ -433,7 +433,7 @@ value $data[value] required The value to be used within the operation (string, i
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">178</span>
+    <span class="phpdocumentor-element-found-in__line">190</span>
 
     </aside>
 
@@ -464,7 +464,13 @@ value $data[value] required The value to be used within the operation (string, i
                     <section class="phpdocumentor-description"><p>integer $data[stringId] required<br>
 integer $data[languageId] required<br>
 string $data[text] required<br>
-string $data[pluralCategoryName]</p>
+string $data[pluralCategoryName]<br>
+boolean $data[addToTm]<br>
+string $data[provider]<br>
+integer $data[providerId]<br>
+boolean $data[isPreTranslated]<br>
+integer $data[fileId]<br>
+integer $data[storageId]</p>
 </section>
 
             </dd>
@@ -512,7 +518,7 @@ string $data[pluralCategoryName]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">51</span>
+    <span class="phpdocumentor-element-found-in__line">54</span>
 
     </aside>
 
@@ -540,7 +546,8 @@ string $data[pluralCategoryName]</p>
                 : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>integer $data[translationId] required</p>
+                    <section class="phpdocumentor-description"><p>integer $data[translationId] Either translationId or correctionId is required<br>
+integer $data[correctionId] Enterprise only. Either translationId or correctionId is required</p>
 </section>
 
             </dd>
@@ -588,7 +595,7 @@ string $data[pluralCategoryName]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">288</span>
+    <span class="phpdocumentor-element-found-in__line">301</span>
 
     </aside>
 
@@ -665,7 +672,7 @@ integer $data[translationId] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">238</span>
+    <span class="phpdocumentor-element-found-in__line">250</span>
 
     </aside>
 
@@ -735,7 +742,7 @@ integer $data[translationId] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">78</span>
+    <span class="phpdocumentor-element-found-in__line">80</span>
 
     </aside>
 
@@ -805,7 +812,7 @@ integer $data[translationId] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">89</span>
+    <span class="phpdocumentor-element-found-in__line">91</span>
 
     </aside>
 
@@ -875,7 +882,7 @@ integer $data[translationId] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">194</span>
+    <span class="phpdocumentor-element-found-in__line">206</span>
 
     </aside>
 
@@ -952,7 +959,7 @@ integer $data[translationId] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">302</span>
+    <span class="phpdocumentor-element-found-in__line">316</span>
 
     </aside>
 
@@ -1022,7 +1029,7 @@ integer $data[translationId] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">212</span>
+    <span class="phpdocumentor-element-found-in__line">224</span>
 
     </aside>
 
@@ -1096,7 +1103,7 @@ integer $data[translationId] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">63</span>
+    <span class="phpdocumentor-element-found-in__line">65</span>
 
     </aside>
 
@@ -1170,7 +1177,7 @@ integer $data[translationId] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">271</span>
+    <span class="phpdocumentor-element-found-in__line">284</span>
 
     </aside>
 
@@ -1244,7 +1251,7 @@ integer $data[translationId] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">139</span>
+    <span class="phpdocumentor-element-found-in__line">145</span>
 
     </aside>
 
@@ -1276,7 +1283,9 @@ integer $data[translationId] required</p>
 integer $params[languageId] required<br>
 integer $params[denormalizePlaceholders]<br>
 integer $params[limit]<br>
-integer $params[offset]</p>
+integer $params[offset]<br>
+integer $params[fileId]<br>
+string $params[orderBy]</p>
 </section>
 
             </dd>
@@ -1324,7 +1333,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">35</span>
+    <span class="phpdocumentor-element-found-in__line">37</span>
 
     </aside>
 
@@ -1358,8 +1367,10 @@ string $params[excludeLabelIds]<br>
 integer $params[stringId] Must be used together with languageId<br>
 string $params[languageId] Must be used together with stringId or fileId<br>
 integer $params[translationId] If specified, fileId, stringId and languageId are ignored<br>
+integer $params[correctionId] Enterprise only. Can't be used with translationId or languageId<br>
 integer $params[limit]<br>
-integer $params[offset]</p>
+integer $params[offset]<br>
+string $params[orderBy]</p>
 </section>
 
             </dd>
@@ -1407,7 +1418,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">115</span>
+    <span class="phpdocumentor-element-found-in__line">119</span>
 
     </aside>
 
@@ -1452,7 +1463,9 @@ int $params[approvedOnly]<br>
 string $params[croql]<br>
 int $params[denormalizePlaceholders]<br>
 int $params[limit]<br>
-int $params[offset]</p>
+int $params[offset]<br>
+integer $params[passedWorkflow] Enterprise only<br>
+integer $params[minApprovalCount] Enterprise only</p>
 </section>
 
             </dd>
@@ -1500,7 +1513,7 @@ int $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">260</span>
+    <span class="phpdocumentor-element-found-in__line">273</span>
 
     </aside>
 
@@ -1534,7 +1547,8 @@ integer $params[translationId] If specified, stringId and languageId are ignored
 string $params[labelIds]<br>
 string $params[excludeLabelIds]<br>
 integer $params[limit]<br>
-integer $params[offset]</p>
+integer $params[offset]<br>
+integer $params[fileId]</p>
 </section>
 
             </dd>
@@ -1582,7 +1596,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">223</span>
+    <span class="phpdocumentor-element-found-in__line">235</span>
 
     </aside>
 
@@ -1656,7 +1670,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">160</span>
+    <span class="phpdocumentor-element-found-in__line">166</span>
 
     </aside>
 
@@ -1731,7 +1745,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/StringTranslationApi.php"><a href="files/src-crowdinapiclient-api-stringtranslationapi.html"><abbr title="src/CrowdinApiClient/Api/StringTranslationApi.php">StringTranslationApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">338</span>
+    <span class="phpdocumentor-element-found-in__line">352</span>
 
     </aside>
 

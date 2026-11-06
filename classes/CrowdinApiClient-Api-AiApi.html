@@ -241,11 +241,10 @@
 <dd>Add AI Provider</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/CrowdinApiClient-Api-AiApi.html#method_createProviderChatCompletion">createProviderChatCompletion()</a>
+    <a class="-deprecated" href="classes/CrowdinApiClient-Api-AiApi.html#method_createProviderChatCompletion">createProviderChatCompletion()</a>
     <span>
                                 &nbsp;: <a href="classes/CrowdinApiClient-Model-AiProxyChatCompletion.html"><abbr title="\CrowdinApiClient\Model\AiProxyChatCompletion">AiProxyChatCompletion</abbr></a>|null    </span>
 </dt>
-<dd>Create AI Provider Chat Completion</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Api-AiApi.html#method_createSnippet">createSnippet()</a>
@@ -569,7 +568,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">230</span>
+    <span class="phpdocumentor-element-found-in__line">232</span>
 
     </aside>
 
@@ -648,7 +647,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">77</span>
+    <span class="phpdocumentor-element-found-in__line">79</span>
 
     </aside>
 
@@ -687,7 +686,8 @@ integer $data[aiPromptId]<br>
 integer $data[aiProviderId]<br>
 string $data[aiModelId]<br>
 array $data[instructions]<br>
-array $data[attachmentIds]</p>
+array $data[attachmentIds]<br>
+array $data[styleGuideIds]</p>
 </section>
 
             </dd>
@@ -731,7 +731,7 @@ array $data[attachmentIds]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">694</span>
+    <span class="phpdocumentor-element-found-in__line">698</span>
 
     </aside>
 
@@ -817,7 +817,7 @@ array $data[validationOptions] same keys as trainingOptions</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">172</span>
+    <span class="phpdocumentor-element-found-in__line">174</span>
 
     </aside>
 
@@ -895,7 +895,7 @@ array $data[enabledProjectIds]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">248</span>
+    <span class="phpdocumentor-element-found-in__line">250</span>
 
     </aside>
 
@@ -976,7 +976,7 @@ mixed $data[tool_choice]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">329</span>
+    <span class="phpdocumentor-element-found-in__line">331</span>
 
     </aside>
 
@@ -1043,7 +1043,7 @@ boolean $data[useSystemCredentials]</p>
         class="phpdocumentor-element
             -method
             -public
-                                                        "
+            -deprecated                                            "
 >
     <h4 class="phpdocumentor-element__name" id="method_createProviderChatCompletion">
         createProviderChatCompletion()
@@ -1053,17 +1053,24 @@ boolean $data[useSystemCredentials]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">405</span>
+    <span class="phpdocumentor-element-found-in__line">409</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Create AI Provider Chat Completion</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
+    
+    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">createProviderChatCompletion</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$aiProviderId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-Model-AiProxyChatCompletion.html"><abbr title="\CrowdinApiClient\Model\AiProxyChatCompletion">AiProxyChatCompletion</abbr></a>|null</span></code>
 
     <div class="phpdocumentor-label-line">
+        </div>
+                <div class="phpdocumentor-admonition">
+        <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+            <article>
+                <p>Deprecated by the Crowdin API. Use <a href="classes/CrowdinApiClient-Api-AiGatewayApi.html#method_gatewayPost"><abbr title="\CrowdinApiClient\Api\AiGatewayApi::gatewayPost()">AiGatewayApi::gatewayPost()</abbr></a> instead.</p>
+<p>Create AI Provider Chat Completion</p>
+
+            </article>
         </div>
     
     
@@ -1133,7 +1140,7 @@ boolean $data[stream]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">543</span>
+    <span class="phpdocumentor-element-found-in__line">547</span>
 
     </aside>
 
@@ -1207,7 +1214,7 @@ string $data[value] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">105</span>
+    <span class="phpdocumentor-element-found-in__line">107</span>
 
     </aside>
 
@@ -1273,7 +1280,7 @@ string $data[value] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">214</span>
+    <span class="phpdocumentor-element-found-in__line">216</span>
 
     </aside>
 
@@ -1339,7 +1346,7 @@ string $data[value] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">278</span>
+    <span class="phpdocumentor-element-found-in__line">280</span>
 
     </aside>
 
@@ -1412,7 +1419,7 @@ string $data[value] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">371</span>
+    <span class="phpdocumentor-element-found-in__line">373</span>
 
     </aside>
 
@@ -1478,7 +1485,7 @@ string $data[value] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">585</span>
+    <span class="phpdocumentor-element-found-in__line">589</span>
 
     </aside>
 
@@ -1544,7 +1551,7 @@ string $data[value] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">119</span>
+    <span class="phpdocumentor-element-found-in__line">121</span>
 
     </aside>
 
@@ -1614,7 +1621,7 @@ string $data[value] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">133</span>
+    <span class="phpdocumentor-element-found-in__line">135</span>
 
     </aside>
 
@@ -1684,7 +1691,7 @@ string $data[value] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">655</span>
+    <span class="phpdocumentor-element-found-in__line">659</span>
 
     </aside>
 
@@ -1765,7 +1772,7 @@ string $data[value] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">293</span>
+    <span class="phpdocumentor-element-found-in__line">295</span>
 
     </aside>
 
@@ -1842,7 +1849,7 @@ string $data[value] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">452</span>
+    <span class="phpdocumentor-element-found-in__line">456</span>
 
     </aside>
 
@@ -1912,7 +1919,7 @@ string $data[value] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">820</span>
+    <span class="phpdocumentor-element-found-in__line">824</span>
 
     </aside>
 
@@ -1986,7 +1993,7 @@ string $data[value] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">790</span>
+    <span class="phpdocumentor-element-found-in__line">794</span>
 
     </aside>
 
@@ -2076,7 +2083,7 @@ string $data[createdBefore]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">623</span>
+    <span class="phpdocumentor-element-found-in__line">627</span>
 
     </aside>
 
@@ -2166,7 +2173,7 @@ integer $data[maxExamplesCount]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">424</span>
+    <span class="phpdocumentor-element-found-in__line">428</span>
 
     </aside>
 
@@ -2195,7 +2202,7 @@ integer $data[maxExamplesCount]</p>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>string $data[type] required<br>
-array $data[schema] required</p>
+array $data[schema] required. Report filters: dateFrom, dateTo, format, projectIds, promptIds, userIds, languageIds</p>
 </section>
 
             </dd>
@@ -2239,7 +2246,7 @@ array $data[schema] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">91</span>
+    <span class="phpdocumentor-element-found-in__line">93</span>
 
     </aside>
 
@@ -2309,7 +2316,7 @@ array $data[schema] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">639</span>
+    <span class="phpdocumentor-element-found-in__line">643</span>
 
     </aside>
 
@@ -2390,7 +2397,7 @@ array $data[schema] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">710</span>
+    <span class="phpdocumentor-element-found-in__line">714</span>
 
     </aside>
 
@@ -2471,7 +2478,7 @@ array $data[schema] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">599</span>
+    <span class="phpdocumentor-element-found-in__line">603</span>
 
     </aside>
 
@@ -2538,7 +2545,7 @@ array $data[schema] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">186</span>
+    <span class="phpdocumentor-element-found-in__line">188</span>
 
     </aside>
 
@@ -2608,7 +2615,7 @@ array $data[schema] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">263</span>
+    <span class="phpdocumentor-element-found-in__line">265</span>
 
     </aside>
 
@@ -2685,7 +2692,7 @@ array $data[schema] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">343</span>
+    <span class="phpdocumentor-element-found-in__line">345</span>
 
     </aside>
 
@@ -2755,7 +2762,7 @@ array $data[schema] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">438</span>
+    <span class="phpdocumentor-element-found-in__line">442</span>
 
     </aside>
 
@@ -2825,7 +2832,7 @@ array $data[schema] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">805</span>
+    <span class="phpdocumentor-element-found-in__line">809</span>
 
     </aside>
 
@@ -2899,7 +2906,7 @@ array $data[schema] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">496</span>
+    <span class="phpdocumentor-element-found-in__line">500</span>
 
     </aside>
 
@@ -2962,7 +2969,7 @@ array $data[schema] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">557</span>
+    <span class="phpdocumentor-element-found-in__line">561</span>
 
     </aside>
 
@@ -3032,7 +3039,7 @@ array $data[schema] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">854</span>
+    <span class="phpdocumentor-element-found-in__line">858</span>
 
     </aside>
 
@@ -3106,7 +3113,7 @@ array $data[schema] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">740</span>
+    <span class="phpdocumentor-element-found-in__line">744</span>
 
     </aside>
 
@@ -3173,7 +3180,7 @@ array $data[schema] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">726</span>
+    <span class="phpdocumentor-element-found-in__line">730</span>
 
     </aside>
 
@@ -3254,7 +3261,7 @@ array $data[schema] required</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">674</span>
+    <span class="phpdocumentor-element-found-in__line">678</span>
 
     </aside>
 
@@ -3333,7 +3340,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">151</span>
+    <span class="phpdocumentor-element-found-in__line">153</span>
 
     </aside>
 
@@ -3408,7 +3415,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">388</span>
+    <span class="phpdocumentor-element-found-in__line">390</span>
 
     </aside>
 
@@ -3488,7 +3495,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">309</span>
+    <span class="phpdocumentor-element-found-in__line">311</span>
 
     </aside>
 
@@ -3561,7 +3568,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">483</span>
+    <span class="phpdocumentor-element-found-in__line">487</span>
 
     </aside>
 
@@ -3652,7 +3659,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">526</span>
+    <span class="phpdocumentor-element-found-in__line">530</span>
 
     </aside>
 
@@ -3725,7 +3732,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">760</span>
+    <span class="phpdocumentor-element-found-in__line">764</span>
 
     </aside>
 
@@ -3805,7 +3812,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">839</span>
+    <span class="phpdocumentor-element-found-in__line">843</span>
 
     </aside>
 
@@ -3884,7 +3891,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">51</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 
     </aside>
 
@@ -3921,7 +3928,8 @@ integer $data[aiPromptId]<br>
 integer $data[aiProviderId]<br>
 string $data[aiModelId]<br>
 array $data[instructions]<br>
-array $data[attachmentIds]</p>
+array $data[attachmentIds]<br>
+array $data[styleGuideIds]</p>
 </section>
 
             </dd>
@@ -3965,7 +3973,7 @@ array $data[attachmentIds]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">200</span>
+    <span class="phpdocumentor-element-found-in__line">202</span>
 
     </aside>
 
@@ -4035,7 +4043,7 @@ array $data[attachmentIds]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">357</span>
+    <span class="phpdocumentor-element-found-in__line">359</span>
 
     </aside>
 
@@ -4105,7 +4113,7 @@ array $data[attachmentIds]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">510</span>
+    <span class="phpdocumentor-element-found-in__line">514</span>
 
     </aside>
 
@@ -4175,7 +4183,7 @@ array $data[attachmentIds]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/AiApi.php"><a href="files/src-crowdinapiclient-api-aiapi.html"><abbr title="src/CrowdinApiClient/Api/AiApi.php">AiApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">571</span>
+    <span class="phpdocumentor-element-found-in__line">575</span>
 
     </aside>
 
@@ -4259,7 +4267,7 @@ array $data[attachmentIds]</p>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-AiApi.html#method_createPrompt">createPrompt()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-AiApi.html#method_createPromptCompletion">createPromptCompletion()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-AiApi.html#method_createProvider">createProvider()</a></li>
-                                            <li class=""><a href="classes/CrowdinApiClient-Api-AiApi.html#method_createProviderChatCompletion">createProviderChatCompletion()</a></li>
+                                            <li class="-deprecated"><a href="classes/CrowdinApiClient-Api-AiApi.html#method_createProviderChatCompletion">createProviderChatCompletion()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-AiApi.html#method_createSnippet">createSnippet()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-AiApi.html#method_deleteFileTranslation">deleteFileTranslation()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-AiApi.html#method_deletePrompt">deletePrompt()</a></li>

@@ -328,7 +328,7 @@ Use API to create, modify, and delete specific tasks.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TaskApi.php"><a href="files/src-crowdinapiclient-api-taskapi.html"><abbr title="src/CrowdinApiClient/Api/TaskApi.php">TaskApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">233</span>
+    <span class="phpdocumentor-element-found-in__line">266</span>
 
     </aside>
 
@@ -405,7 +405,7 @@ array $data[config] required<br></p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TaskApi.php"><a href="files/src-crowdinapiclient-api-taskapi.html"><abbr title="src/CrowdinApiClient/Api/TaskApi.php">TaskApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">66</span>
+    <span class="phpdocumentor-element-found-in__line">99</span>
 
     </aside>
 
@@ -433,7 +433,41 @@ array $data[config] required<br></p>
                 : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>array $data[fileIds]<br>
+array $data[directoryIds]<br>
+array $data[branchIds]<br>
+string $data[title]<br>
+string $data[languageId]<br>
+integer $data[type] Enum: 0 - translate; 1 - proofread<br>
+array $data[labelIds]<br>
+string $data[labelMatchRule] Enum: &quot;all&quot; &quot;any&quot;<br>
+array $data[excludeLabelIds]<br>
+string $data[excludeLabelMatchRule] Enum: &quot;all&quot; &quot;any&quot;<br>
+string $data[status] Enum: &quot;todo&quot; &quot;in_progress&quot;<br>
+string $data[description]<br>
+boolean $data[splitContent]<br>
+boolean $data[skipAssignedStrings]<br>
+boolean $data[includePreTranslatedStringsOnly]<br>
+array $data[assignees]<br>
+string $data[deadline]<br>
+string $data[startedAt]<br>
+string $data[dateFrom]<br>
+string $data[dateTo]<br>
+string $data[translationsUpdatedDateFrom]<br>
+string $data[translationsUpdatedDateTo]<br>
+boolean $data[generateCostEstimate]<br>
+boolean $data[generateTranslationCost]<br>
+integer $data[reportSettingsTemplateId]<br>
+integer $data[batchId]<br>
+array $data[stringIds]<br>
+integer $data[precedingTaskId]<br>
+string $data[vendor]<br>
+integer $data[workflowStepId] Enterprise only<br>
+string $data[skipAssignedStringsScope] Enterprise only. Enum: &quot;all&quot; &quot;sameWorkflowStep&quot;<br>
+array $data[assignedTeams] Enterprise only<br>
+array $data[fields] Enterprise only</p>
+</section>
+
             </dd>
             </dl>
 
@@ -479,7 +513,7 @@ array $data[config] required<br></p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TaskApi.php"><a href="files/src-crowdinapiclient-api-taskapi.html"><abbr title="src/CrowdinApiClient/Api/TaskApi.php">TaskApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">95</span>
+    <span class="phpdocumentor-element-found-in__line">128</span>
 
     </aside>
 
@@ -549,7 +583,7 @@ array $data[config] required<br></p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TaskApi.php"><a href="files/src-crowdinapiclient-api-taskapi.html"><abbr title="src/CrowdinApiClient/Api/TaskApi.php">TaskApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">248</span>
+    <span class="phpdocumentor-element-found-in__line">281</span>
 
     </aside>
 
@@ -619,7 +653,7 @@ array $data[config] required<br></p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TaskApi.php"><a href="files/src-crowdinapiclient-api-taskapi.html"><abbr title="src/CrowdinApiClient/Api/TaskApi.php">TaskApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">110</span>
+    <span class="phpdocumentor-element-found-in__line">143</span>
 
     </aside>
 
@@ -767,7 +801,7 @@ array $data[config] required<br></p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TaskApi.php"><a href="files/src-crowdinapiclient-api-taskapi.html"><abbr title="src/CrowdinApiClient/Api/TaskApi.php">TaskApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">216</span>
+    <span class="phpdocumentor-element-found-in__line">249</span>
 
     </aside>
 
@@ -873,7 +907,8 @@ array $data[config] required<br></p>
 integer $params[limit] [1 .. 500] Default: 25<br>
 integer $params[offset] &gt;= 0 Default: 0<br>
 string $params[status] Enum: &quot;todo&quot; &quot;in_progress&quot; &quot;done&quot; &quot;closed&quot;<br>
-integer $params[assigneeId]</p>
+integer $params[assigneeId]<br>
+integer $params[batchId]</p>
 </section>
 
             </dd>
@@ -921,7 +956,7 @@ integer $params[assigneeId]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TaskApi.php"><a href="files/src-crowdinapiclient-api-taskapi.html"><abbr title="src/CrowdinApiClient/Api/TaskApi.php">TaskApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">201</span>
+    <span class="phpdocumentor-element-found-in__line">234</span>
 
     </aside>
 
@@ -998,7 +1033,7 @@ integer $params[offset] &gt;= 0 Default: 0<br></p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TaskApi.php"><a href="files/src-crowdinapiclient-api-taskapi.html"><abbr title="src/CrowdinApiClient/Api/TaskApi.php">TaskApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">139</span>
+    <span class="phpdocumentor-element-found-in__line">172</span>
 
     </aside>
 
@@ -1083,7 +1118,7 @@ string $params[deadlineTo]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TaskApi.php"><a href="files/src-crowdinapiclient-api-taskapi.html"><abbr title="src/CrowdinApiClient/Api/TaskApi.php">TaskApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">159</span>
+    <span class="phpdocumentor-element-found-in__line">192</span>
 
     </aside>
 
@@ -1156,7 +1191,7 @@ string $params[isArchived] Enum: &quot;0&quot; &quot;1&quot;</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TaskApi.php"><a href="files/src-crowdinapiclient-api-taskapi.html"><abbr title="src/CrowdinApiClient/Api/TaskApi.php">TaskApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">80</span>
+    <span class="phpdocumentor-element-found-in__line">113</span>
 
     </aside>
 
@@ -1223,7 +1258,7 @@ string $params[isArchived] Enum: &quot;0&quot; &quot;1&quot;</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TaskApi.php"><a href="files/src-crowdinapiclient-api-taskapi.html"><abbr title="src/CrowdinApiClient/Api/TaskApi.php">TaskApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">264</span>
+    <span class="phpdocumentor-element-found-in__line">296</span>
 
     </aside>
 
@@ -1297,7 +1332,7 @@ string $params[isArchived] Enum: &quot;0&quot; &quot;1&quot;</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/TaskApi.php"><a href="files/src-crowdinapiclient-api-taskapi.html"><abbr title="src/CrowdinApiClient/Api/TaskApi.php">TaskApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">174</span>
+    <span class="phpdocumentor-element-found-in__line">207</span>
 
     </aside>
 

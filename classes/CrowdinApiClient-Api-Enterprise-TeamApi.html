@@ -167,7 +167,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/TeamApi.php"><a href="files/src-crowdinapiclient-api-enterprise-teamapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/TeamApi.php">TeamApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">18</span>
 
     </aside>
 
@@ -243,6 +243,13 @@
 <dd>List Team Projects Permissions</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CrowdinApiClient-Api-Enterprise-TeamApi.html#method_listProjectTeams">listProjectTeams()</a>
+    <span>
+                                &nbsp;: <a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a>    </span>
+</dt>
+<dd>List Project Teams</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CrowdinApiClient-Api-Enterprise-TeamApi.html#method_update">update()</a>
     <span>
                                 &nbsp;: <a href="classes/CrowdinApiClient-Model-Enterprise-Team.html"><abbr title="\CrowdinApiClient\Model\Enterprise\Team">Team</abbr></a>    </span>
@@ -284,7 +291,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/TeamApi.php"><a href="files/src-crowdinapiclient-api-enterprise-teamapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/TeamApi.php">TeamApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">32</span>
+    <span class="phpdocumentor-element-found-in__line">34</span>
 
     </aside>
 
@@ -316,7 +323,8 @@
 boolean $data[accessToAllWorkflowSteps] Deprecated, use roles instead<br>
 boolean $data[managerAccess]<br>
 array $data[permissions] Deprecated, use roles instead<br>
-array $data[roles]</p>
+array $data[roles]<br>
+boolean $data[developerAccess]</p>
 </section>
 
             </dd>
@@ -360,7 +368,7 @@ array $data[roles]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/TeamApi.php"><a href="files/src-crowdinapiclient-api-enterprise-teamapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/TeamApi.php">TeamApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">82</span>
 
     </aside>
 
@@ -425,7 +433,7 @@ array $data[roles]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/TeamApi.php"><a href="files/src-crowdinapiclient-api-enterprise-teamapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/TeamApi.php">TeamApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">82</span>
+    <span class="phpdocumentor-element-found-in__line">106</span>
 
     </aside>
 
@@ -484,7 +492,7 @@ array $data[roles]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/TeamApi.php"><a href="files/src-crowdinapiclient-api-enterprise-teamapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/TeamApi.php">TeamApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">70</span>
+    <span class="phpdocumentor-element-found-in__line">94</span>
 
     </aside>
 
@@ -546,7 +554,7 @@ array $data[roles]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/TeamApi.php"><a href="files/src-crowdinapiclient-api-enterprise-teamapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/TeamApi.php">TeamApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">45</span>
+    <span class="phpdocumentor-element-found-in__line">69</span>
 
     </aside>
 
@@ -567,7 +575,14 @@ array $data[roles]</p>
                 : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">[]</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>string $params[search]<br>
+string $params[projectIds]<br>
+string $params[projectRoles]<br>
+string $params[languageIds]<br>
+string $params[groupIds]<br>
+string $params[orderBy]</p>
+</section>
+
             </dd>
             </dl>
 
@@ -609,7 +624,7 @@ array $data[roles]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/TeamApi.php"><a href="files/src-crowdinapiclient-api-enterprise-teamapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/TeamApi.php">TeamApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">109</span>
+    <span class="phpdocumentor-element-found-in__line">133</span>
 
     </aside>
 
@@ -674,6 +689,80 @@ integer $params[offset]</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_listProjectTeams">
+        listProjectTeams()
+        <a href="classes/CrowdinApiClient-Api-Enterprise-TeamApi.html#method_listProjectTeams" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/TeamApi.php"><a href="files/src-crowdinapiclient-api-enterprise-teamapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/TeamApi.php">TeamApi.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">51</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">List Project Teams</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">listProjectTeams</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$projectId</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$projectId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$params</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>string $params[orderBy]<br>
+integer $params[limit]<br>
+integer $params[offset]</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="method_listProjectTeams_tags">
+        Tags
+        <a href="classes/CrowdinApiClient-Api-Enterprise-TeamApi.html#method_listProjectTeams_tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                    <dt class="phpdocumentor-tag-list__entry">
+                <span class="phpdocumentor-tag__name">link</span>
+            </dt>
+                            <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.teams.getMany"> <p>API Documentation</p>
+ </a>
+                                    </dd>
+                        </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CrowdinApiClient-ModelCollection.html"><abbr title="\CrowdinApiClient\ModelCollection">ModelCollection</abbr></a></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_update">
         update()
         <a href="classes/CrowdinApiClient-Api-Enterprise-TeamApi.html#method_update" class="headerlink"><i class="fas fa-link"></i></a>
@@ -682,7 +771,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/TeamApi.php"><a href="files/src-crowdinapiclient-api-enterprise-teamapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/TeamApi.php">TeamApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">94</span>
+    <span class="phpdocumentor-element-found-in__line">118</span>
 
     </aside>
 
@@ -745,7 +834,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/Enterprise/TeamApi.php"><a href="files/src-crowdinapiclient-api-enterprise-teamapi.html"><abbr title="src/CrowdinApiClient/Api/Enterprise/TeamApi.php">TeamApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">123</span>
+    <span class="phpdocumentor-element-found-in__line">147</span>
 
     </aside>
 
@@ -832,6 +921,7 @@ value: list of role name and permissions</p>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-Enterprise-TeamApi.html#method_get">get()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-Enterprise-TeamApi.html#method_list">list()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-Enterprise-TeamApi.html#method_listProjectPermissions">listProjectPermissions()</a></li>
+                                            <li class=""><a href="classes/CrowdinApiClient-Api-Enterprise-TeamApi.html#method_listProjectTeams">listProjectTeams()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-Enterprise-TeamApi.html#method_update">update()</a></li>
                                             <li class=""><a href="classes/CrowdinApiClient-Api-Enterprise-TeamApi.html#method_updateProjectPermissions">updateProjectPermissions()</a></li>
                                     </ul>

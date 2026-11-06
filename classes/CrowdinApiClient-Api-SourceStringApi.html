@@ -291,7 +291,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/SourceStringApi.php"><a href="files/src-crowdinapiclient-api-sourcestringapi.html"><abbr title="src/CrowdinApiClient/Api/SourceStringApi.php">SourceStringApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">130</span>
+    <span class="phpdocumentor-element-found-in__line">142</span>
 
     </aside>
 
@@ -365,7 +365,7 @@ value $data[value] required object, string, int, or bool</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/SourceStringApi.php"><a href="files/src-crowdinapiclient-api-sourcestringapi.html"><abbr title="src/CrowdinApiClient/Api/SourceStringApi.php">SourceStringApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">167</span>
+    <span class="phpdocumentor-element-found-in__line">179</span>
 
     </aside>
 
@@ -435,7 +435,7 @@ value $data[value] required object, string, int, or bool</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/SourceStringApi.php"><a href="files/src-crowdinapiclient-api-sourcestringapi.html"><abbr title="src/CrowdinApiClient/Api/SourceStringApi.php">SourceStringApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">83</span>
+    <span class="phpdocumentor-element-found-in__line">95</span>
 
     </aside>
 
@@ -469,7 +469,9 @@ integer $data[branchId] Required for string-based projects<br>
 integer $data[fileId] Required for file-based projects<br>
 string $data[context]<br>
 bool $data[isHidden]<br>
-integer $data[maxLength]</p>
+integer $data[maxLength]<br>
+array $data[labelIds]<br>
+array $data[fields] Enterprise only</p>
 </section>
 
             </dd>
@@ -517,7 +519,7 @@ integer $data[maxLength]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/SourceStringApi.php"><a href="files/src-crowdinapiclient-api-sourcestringapi.html"><abbr title="src/CrowdinApiClient/Api/SourceStringApi.php">SourceStringApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">112</span>
+    <span class="phpdocumentor-element-found-in__line">124</span>
 
     </aside>
 
@@ -587,7 +589,7 @@ integer $data[maxLength]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/SourceStringApi.php"><a href="files/src-crowdinapiclient-api-sourcestringapi.html"><abbr title="src/CrowdinApiClient/Api/SourceStringApi.php">SourceStringApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">61</span>
+    <span class="phpdocumentor-element-found-in__line">71</span>
 
     </aside>
 
@@ -661,7 +663,7 @@ integer $data[maxLength]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/SourceStringApi.php"><a href="files/src-crowdinapiclient-api-sourcestringapi.html"><abbr title="src/CrowdinApiClient/Api/SourceStringApi.php">SourceStringApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">36</span>
 
     </aside>
 
@@ -689,7 +691,18 @@ integer $data[maxLength]</p>
                 : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">[]</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>string $params[orderBy] Crowdin only<br>
+integer $params[denormalizePlaceholders]<br>
+string $params[labelIds]<br>
+integer $params[fileId]<br>
+integer $params[branchId]<br>
+integer $params[directoryId]<br>
+integer $params[taskId]<br>
+string $params[croql]<br>
+string $params[filter]<br>
+string $params[scope]</p>
+</section>
+
             </dd>
             </dl>
 
@@ -735,7 +748,7 @@ integer $data[maxLength]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/SourceStringApi.php"><a href="files/src-crowdinapiclient-api-sourcestringapi.html"><abbr title="src/CrowdinApiClient/Api/SourceStringApi.php">SourceStringApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 
     </aside>
 
@@ -810,7 +823,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/SourceStringApi.php"><a href="files/src-crowdinapiclient-api-sourcestringapi.html"><abbr title="src/CrowdinApiClient/Api/SourceStringApi.php">SourceStringApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">97</span>
+    <span class="phpdocumentor-element-found-in__line">109</span>
 
     </aside>
 
@@ -877,7 +890,7 @@ integer $params[offset]</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/CrowdinApiClient/Api/SourceStringApi.php"><a href="files/src-crowdinapiclient-api-sourcestringapi.html"><abbr title="src/CrowdinApiClient/Api/SourceStringApi.php">SourceStringApi.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">153</span>
+    <span class="phpdocumentor-element-found-in__line">165</span>
 
     </aside>
 
