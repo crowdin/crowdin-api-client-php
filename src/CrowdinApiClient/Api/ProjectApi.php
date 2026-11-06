@@ -21,11 +21,14 @@ class ProjectApi extends AbstractApi
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.projects.getMany API Documentation Enterprise
      *
      * @param array $params
-     * integer $params[groupId] for enterprise only<br>
-     * integer $params[hasManagerAccess] for enterprise only Enum{0,1} (0 -false, 1 true)<br>
+     * integer $params[groupId] Enterprise only<br>
+     * integer $params[hasManagerAccess] Enterprise only. Enum: 0 - false, 1 - true<br>
      * integer $params[limit]<br>
      * integer $params[offset]<br>
-     * integer $params[userId] Get user own projects
+     * integer $params[userId] Get user own projects<br>
+     * string $params[orderBy]<br>
+     * string $params[filter]<br>
+     * integer $params[type] Crowdin only
      * @return ModelCollection
      */
     public function list(array $params = []): ModelCollection
@@ -70,7 +73,47 @@ class ProjectApi extends AbstractApi
      * integer $data[exportApprovedOnly]<br>
      * integer $data[defaultTmId]<br>
      * integer $data[defaultGlossaryId]<br>
-     * array $data[externalQaChecksIgnorable] Enterprise only. External QA check IDs mapped to bool, e.g. [1 => false]
+     * array $data[externalQaChecksIgnorable] Enterprise only. External QA check IDs mapped to bool, e.g. [1 => false]<br>
+     * integer $data[tagsDetection] Enum: 0 - Auto; 1 - Count tags; 2 - Skip tags<br>
+     * boolean $data[isMtAllowed]<br>
+     * boolean $data[taskBasedAccessControl]<br>
+     * boolean $data[autoSubstitution]<br>
+     * boolean $data[autoTranslateDialects]<br>
+     * boolean $data[publicDownloads]<br>
+     * boolean $data[hiddenStringsProofreadersAccess]<br>
+     * boolean $data[useGlobalTm] Crowdin only<br>
+     * boolean $data[showTmSuggestionsDialects]<br>
+     * boolean $data[tmApprovedSuggestionsOnly]<br>
+     * boolean $data[qaCheckIsActive]<br>
+     * array $data[qaCheckCategories]<br>
+     * array $data[qaChecksIgnorableCategories]<br>
+     * array $data[languageMapping]<br>
+     * string $data[glossaryAccessOption] Enum: "readOnly" "fullAccess" "manageDrafts"<br>
+     * boolean $data[normalizePlaceholder]<br>
+     * array $data[notificationSettings]<br>
+     * array $data[tmPreTranslate] Crowdin only<br>
+     * array $data[mtPreTranslate] Crowdin only<br>
+     * array $data[aiPreTranslate] Crowdin only<br>
+     * integer $data[editorSuggestionAiPromptId]<br>
+     * integer $data[qaCheckActionAiPromptId]<br>
+     * integer $data[contextReviewAiPromptId]<br>
+     * integer $data[savingsReportSettingsTemplateId]<br>
+     * array $data[assignedStyleGuides]<br>
+     * boolean $data[inContext]<br>
+     * boolean $data[inContextProcessHiddenStrings]<br>
+     * string $data[inContextPseudoLanguageId]<br>
+     * boolean $data[saveMetaInfoInSource]<br>
+     * string $data[tmContextType] Enum: "segmentContext" "auto" "prevAndNextSegment"<br>
+     * array $data[steps] Enterprise only<br>
+     * integer $data[translateDuplicates] Enterprise only. Enum: 0 - Show; 1 - Hide; 2 - Show, but auto-translate;
+     * 3 - Show within a version branch; 4 - Hide (strict); 5 - Show within a version branch (strict)<br>
+     * array $data[taskReviewerIds] Enterprise only<br>
+     * boolean $data[exportStringsThatPassedWorkflow] Enterprise only<br>
+     * integer $data[qaApprovalsCount] Enterprise only<br>
+     * array $data[customQaCheckIds] Enterprise only<br>
+     * array $data[externalQaCheckIds] Enterprise only<br>
+     * array $data[fields] Enterprise only<br>
+     * integer $data[alignmentActionAiPromptId] Enterprise only
      * @return Project|null
      */
     public function create(array $data): ?Project
@@ -141,6 +184,12 @@ class ProjectApi extends AbstractApi
      * Add Project File Format Settings
      * @link https://support.crowdin.com/developer/api/v2/#tag/Projects/operation/api.projects.file-format-settings.post
      * @link https://support.crowdin.com/developer/enterprise/api/v2/#tag/Projects-and-Groups/operation/api.projects.file-format-settings.post
+     *
+     * @param int $projectId
+     * @param array $data
+     * string $data[format] required<br>
+     * array $data[settings] required
+     * @return FileFormatSettings|null
      */
     public function createFileFormatSettings(int $projectId, array $data): ?FileFormatSettings
     {
