@@ -321,13 +321,13 @@ class Crowdin
     protected function request(string $method, string $uri, array $options = [])
     {
         $options['body'] = $options['body'] ?? null;
-        $options['headers'] = array_merge([
-            'Authorization' => 'Bearer ' . $this->accessToken,
-        ], $options['headers'] ?? []);
+        $options['headers'] = array_merge(
+            ['Authorization' => 'Bearer ' . $this->accessToken],
+            $options['headers'] ?? []
+        );
 
         if (!empty($options['params'])) {
             $uri .= '?' . http_build_query($options['params']);
-            $options['body'] = null;
         }
 
         return $this->client->request($method, $uri, $options);
