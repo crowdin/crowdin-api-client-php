@@ -176,8 +176,6 @@ class TranslationApi extends AbstractApi
      * @param int $projectId
      * @param int $fileId
      * @param array $params
-     * @param string|null $ifNoneMatch
-     * @return DownloadFile|null
      * string $params[targetLanguageId]<br>
      * boolean $params[exportAsXliff] Deprecated, use TranslationApi::exportProjectTranslation() instead<br>
      * boolean $params[skipUntranslatedStrings] true value can't be used with skipUntranslatedFiles=true in same request<br>
@@ -185,6 +183,8 @@ class TranslationApi extends AbstractApi
      * boolean $params[exportApprovedOnly]<br>
      * integer $params[exportWithMinApprovalsCount] Enterprise only<br>
      * boolean $params[exportStringsThatPassedWorkflow] Enterprise only
+     * @param string|null $ifNoneMatch
+     * @return DownloadFile|null
      */
     public function buildProjectFileTranslation(
         int $projectId,
