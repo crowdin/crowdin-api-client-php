@@ -37,7 +37,8 @@ class StyleGuideApi extends AbstractApi
      * string|null $params[aiInstructions]<br>
      * string[] $params[languageIds]<br>
      * int[] $params[projectIds]<br>
-     * bool $params[isShared]
+     * bool $params[isShared]<br>
+     * integer $params[groupId] Enterprise only
      * @return StyleGuide|null
      */
     public function create(array $params): ?StyleGuide

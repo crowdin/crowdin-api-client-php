@@ -23,7 +23,8 @@ class LabelApi extends AbstractApi
      * @param int $projectId
      * @param array $params
      * integer $params[limit]<br>
-     * integer $params[offset]
+     * integer $params[offset]<br>
+     * string $params[orderBy]
      * @return ModelCollection
      */
     public function list(int $projectId, array $params = []): ModelCollection

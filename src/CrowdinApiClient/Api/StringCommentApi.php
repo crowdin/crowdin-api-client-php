@@ -57,8 +57,8 @@ class StringCommentApi extends AbstractApi
      * @param int $projectId
      * @param array $data
      * integer $data[stringId]<br>
-     * string $data[text]<br>
-     * string $data[type] Enum: "comment" "issue"<br>
+     * string $data[text] required<br>
+     * string $data[type] required. Enum: "comment" "issue"<br>
      * string $data[targetLanguageId]<br>
      * string $data[issueType] Enum: "general_question" "translation_mistake" "context_request" "source_mistake"<br>
      * array $data[attachments]<br>

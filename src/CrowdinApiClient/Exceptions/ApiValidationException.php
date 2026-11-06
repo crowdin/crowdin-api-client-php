@@ -3,7 +3,6 @@
 namespace CrowdinApiClient\Exceptions;
 
 /**
- * Class ApiValidationException
  * @package Crowdin\Exceptions
  */
 class ApiValidationException extends CrowdinException

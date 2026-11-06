@@ -59,7 +59,8 @@ class WebhookApi extends AbstractApi
      * boolean $data[isActive]<br>
      * string $data[contentType]<br>
      * array $data[headers]<br>
-     * array $data[payload]
+     * array $data[payload]<br>
+     * boolean $data[batchingEnabled]
      * @return Webhook|null
      */
     public function create(int $projectId, array $data): ?Webhook

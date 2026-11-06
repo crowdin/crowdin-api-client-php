@@ -10,7 +10,9 @@ use CrowdinApiClient\Model\QaCheckRevalidation;
 use CrowdinApiClient\ModelCollection;
 
 /**
- * Class TranslationStatusApi
+ * Status represents the general localization progress on both translations and proofreading.
+ * Use API to check translation and proofreading progress on different levels: file, language, branch, directory.
+ *
  * @package Crowdin\Api
  */
 class TranslationStatusApi extends AbstractApi
@@ -116,7 +118,9 @@ class TranslationStatusApi extends AbstractApi
      * integer $params[offset] default 0<br>
      * string $params[category]<br>
      * string $params[validation]<br>
-     * string $params[languageIds]
+     * string $params[languageIds]<br>
+     * integer $params[taskId]<br>
+     * integer $params[fileId]
      * @return ModelCollection|null
      */
     public function listQACheckIssues(int $projectId, array $params = []): ?ModelCollection
@@ -134,7 +138,8 @@ class TranslationStatusApi extends AbstractApi
      * @param array $params
      * string[] $params[qaCheckCategories]<br>
      * string[] $params[languageIds]<br>
-     * boolean $params[failedOnly]
+     * boolean $params[failedOnly]<br>
+     * array $params[externalQaCheckIds] Enterprise only
      * @return QaCheckRevalidation|null
      */
     public function startQaChecksRevalidation(int $projectId, array $params = []): ?QaCheckRevalidation

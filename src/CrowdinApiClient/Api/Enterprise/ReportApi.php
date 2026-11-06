@@ -138,7 +138,8 @@ class ReportApi extends AbstractApi
      * string $data[unit] required<br>
      * array $data[config] required<br>
      * integer $data[projectId] Can't be used together with groupId<br>
-     * integer $data[groupId] Can't be used together with projectId
+     * integer $data[groupId] Can't be used together with projectId<br>
+     * boolean $data[isPublic]
      * @return ReportSettingsTemplate|null
      */
     public function createReportSettingsTemplate(array $data): ?ReportSettingsTemplate

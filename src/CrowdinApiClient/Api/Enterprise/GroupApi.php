@@ -100,7 +100,6 @@ class GroupApi extends AbstractApi
     public function report(int $groupID, array $data): ?Report
     {
         $path = sprintf('groups/%d/reports', $groupID);
-
         return $this->_post($path, Report::class, $data);
     }
 

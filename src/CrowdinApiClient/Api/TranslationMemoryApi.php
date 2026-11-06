@@ -31,7 +31,9 @@ class TranslationMemoryApi extends AbstractApi
      * integer $params[userId]<br>
      * integer $params[groupId]<br>
      * integer $params[limit]<br>
-     * integer $params[offset]
+     * integer $params[offset]<br>
+     * string $params[orderBy]<br>
+     * string $params[filter]
      * @return ModelCollection
      */
     public function list(array $params = []): ModelCollection
@@ -55,7 +57,10 @@ class TranslationMemoryApi extends AbstractApi
      * @link https://developer.crowdin.com/enterprise/api/v2/#operation/api.tms.post API Documentation Enterprise
      *
      * @param array $data
-     * string $data[name]
+     * string $data[name]<br>
+     * string $data[languageId] required<br>
+     * boolean $data[isShared]<br>
+     * integer $data[groupId] Enterprise only
      * @return mixed
      */
     public function create(array $data): ?TranslationMemory

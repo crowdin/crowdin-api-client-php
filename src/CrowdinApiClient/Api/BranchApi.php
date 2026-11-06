@@ -27,7 +27,8 @@ class BranchApi extends AbstractApi
      * @param array $params
      * string $params[name]<br>
      * integer $params[limit]<br>
-     * integer $params[offset]
+     * integer $params[offset]<br>
+     * string $params[orderBy]
      * @return ModelCollection
      */
     public function list(int $projectId, array $params = []): ModelCollection
@@ -100,7 +101,6 @@ class BranchApi extends AbstractApi
     public function update(Branch $branch): ?Branch
     {
         $path = sprintf('projects/%d/branches/%d', $branch->getProjectId(), $branch->getId());
-
         return $this->_update($path, $branch);
     }
 

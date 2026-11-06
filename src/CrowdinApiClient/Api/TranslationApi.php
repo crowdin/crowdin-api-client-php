@@ -165,7 +165,6 @@ class TranslationApi extends AbstractApi
         array $params = []
     ): ?TranslationProjectDirectory {
         $path = sprintf('projects/%d/translations/builds/directories/%d', $projectId, $directoryId);
-
         return $this->_post($path, TranslationProjectDirectory::class, $params);
     }
 

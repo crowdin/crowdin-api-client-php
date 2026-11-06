@@ -23,7 +23,12 @@ class ReportArchiveApi extends AbstractApi
      * string $params[scopeType]
      * integer $params[scopeId]
      * integer $params[limit]
-     * integer $params[offset]
+     * integer $params[offset]<br>
+     * integer $params[userId]<br>
+     * integer $params[taskId]<br>
+     * string $params[name]<br>
+     * string $params[dateFrom]<br>
+     * string $params[dateTo]
      * @return ModelCollection
      */
     public function list(int $userId, array $params = []): ModelCollection

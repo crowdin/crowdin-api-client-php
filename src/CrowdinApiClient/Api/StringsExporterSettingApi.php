@@ -72,7 +72,6 @@ class StringsExporterSettingApi extends AbstractApi
     public function update(int $projectId, StringsExporterSetting $stringsExporterSetting): ?StringsExporterSetting
     {
         $path = sprintf('projects/%d/strings-exporter-settings/%d', $projectId, $stringsExporterSetting->getId());
-
         return $this->_update($path, $stringsExporterSetting);
     }
 

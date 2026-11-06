@@ -44,6 +44,14 @@ class WorkflowStepApi extends AbstractApi
     /**
      * List Strings on the Workflow Step
      * @link https://support.crowdin.com/developer/enterprise/api/v2/#tag/Workflows/operation/api.projects.workflow-steps.strings.getMany API Documentation
+     *
+     * @param int $projectId
+     * @param int $stepId
+     * @param array $params
+     * string $params[languageIds]<br>
+     * string $params[orderBy]<br>
+     * string $params[status]
+     * @return ModelCollection
      */
     public function listStrings(int $projectId, int $stepId, array $params = []): ModelCollection
     {

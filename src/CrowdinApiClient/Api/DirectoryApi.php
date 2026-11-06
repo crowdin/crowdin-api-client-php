@@ -24,7 +24,9 @@ class DirectoryApi extends AbstractApi
      * integer $params[directoryId]<br>
      * integer $params[recursion]<br>
      * integer $params[limit]<br>
-     * integer $params[offset]
+     * integer $params[offset]<br>
+     * string $params[orderBy]<br>
+     * string $params[filter]
      * @return ModelCollection
      */
     public function list(int $projectId, array $params = []): ModelCollection

@@ -21,7 +21,10 @@ class MachineTranslationEngineApi extends CrowdinMachineTranslationEngineApi
      * string $data[name] required<br>
      * string $data[type] required<br>
      * array $data[credentials] required<br>
-     * integer $data[groupId]
+     * integer $data[groupId]<br>
+     * array $data[enabledLanguageIds]<br>
+     * array $data[enabledProjectIds]<br>
+     * boolean $data[isEnabled]
      * @return MachineTranslationEngine|null
      */
     public function create(array $data): ?MachineTranslationEngine

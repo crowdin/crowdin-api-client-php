@@ -108,7 +108,8 @@ class ApplicationApi extends AbstractApi
      * array $data[permissions]<br>
      * array $data[modules]<br>
      * bool $data[assignAgent]<br>
-     * string $data[manifestHash] Hash of the manifest loaded for review. Install is rejected with 409 if the manifest changed
+     * string $data[manifestHash] Hash of the reviewed manifest. Install is rejected with 409 if it changed<br>
+     * array $data[manifest]
      * @return ApplicationInstallation|null
      */
     public function installApplication(array $data): ?ApplicationInstallation
