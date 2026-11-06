@@ -263,6 +263,7 @@ class TranslationApi extends AbstractApi
      *  bool $params[autoApproveImported]<br>
      *  bool $params[translateHidden]<br>
      *  bool $params[addToTm]<br>
+     *  array $params[importOptions] String-based projects only
      * @return TranslationImport|null
      */
     public function importTranslations(int $projectId, array $params): ?TranslationImport

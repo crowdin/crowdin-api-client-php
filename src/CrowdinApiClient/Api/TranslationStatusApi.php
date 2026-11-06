@@ -120,7 +120,8 @@ class TranslationStatusApi extends AbstractApi
      * string $params[validation]<br>
      * string $params[languageIds]<br>
      * integer $params[taskId]<br>
-     * integer $params[fileId]
+     * integer $params[fileId]<br>
+     * integer $params[branchId] String-based projects only
      * @return ModelCollection|null
      */
     public function listQACheckIssues(int $projectId, array $params = []): ?ModelCollection
